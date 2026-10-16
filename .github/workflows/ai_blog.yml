@@ -2,9 +2,9 @@ name: Tự động tạo bài viết Blog bằng AI & Chờ duyệt
 
 on:
   schedule:
-    # Chạy vào lúc 08:00 sáng (giờ VN, tức 01:00 UTC) vào các ngày Thứ 2, Thứ 4, Thứ 6, Chủ Nhật (tần suất ~2 ngày/lần)
+    # Chạy tự động lúc 08:00 sáng giờ VN (01:00 UTC) vào các ngày cách 2 hôm 1 lần
     - cron: '0 1 */2 * *'
-  # Cho phép bạn ấn chạy thử nghiệm bất cứ lúc nào trên GitHub
+  # Cho phép bạn bấm chạy thử nghiệm bất kỳ lúc nào
   workflow_dispatch:
 
 jobs:
@@ -14,14 +14,14 @@ jobs:
       - name: Checkout mã nguồn
         uses: actions/checkout@v4
 
-      - name: Cài đặt môi trường Python
+      - name: Cài đặt Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Cài đặt thư viện AI
+      - name: Cài đặt thư viện AI mới nhất
         run: |
-          pip install google-generativeai
+          pip install --upgrade google-generativeai
 
       - name: Chạy script tạo bài viết AI
         env:
@@ -29,7 +29,7 @@ jobs:
         run: |
           python scripts/auto_post_ai.py
 
-      - name: Tạo Pull Request (Bản nháp gửi bạn duyệt)
+      - name: Tạo Pull Request (Bản nháp gửi duyệt)
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -40,8 +40,8 @@ jobs:
             
             Hệ thống AI vừa khởi tạo một bài viết khoa học mới cho mục Blog. 
             
-            - **Trạng thái:** Đang chờ Thầy duyệt.
-            - **Thao tác duyệt:** Nếu nội dung đạt yêu cầu, Thầy chỉ cần bấm nút **Merge pull request** ở bên dưới để đăng tải lên website.
-            - **Hủy bài:** Nếu chưa ưng ý, bấm **Close pull request** để loại bỏ.
+            - **Xem trước:** Bấm vào tab **Files changed** ở trên để đọc nội dung và hình ảnh.
+            - **Duyệt bài:** Bấm nút **Merge pull request** để đăng bài lên website.
+            - **Hủy bài:** Bấm **Close pull request** nếu chưa ưng ý.
           branch: auto-blog-draft
           delete-branch: true

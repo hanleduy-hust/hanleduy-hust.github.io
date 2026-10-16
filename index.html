@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TS. Hán Lê Duy | Dr. Duy Le Han - Academic Profile (HUST)</title>
     <meta name="description" content="Academic Profile of Dr. Duy Le Han (TS. Hán Lê Duy) - Lecturer & Vice Director at School of Mechanical Engineering, Hanoi University of Science and Technology (HUST).">
-    <!-- Tailwind CSS & FontAwesome Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -17,27 +16,25 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-    <!-- Thanh điều hướng (Navbar) -->
+    <!-- Thanh điều hướng (Navbar chung cho các trang) -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <!-- Logo / Tên -->
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-red-700"></span>
-                    <span class="font-bold text-lg text-slate-900 tracking-tight lang-vi">TS. Hán Lê Duy</span>
-                    <span class="font-bold text-lg text-slate-900 tracking-tight lang-en">Dr. Duy Le Han</span>
-                    <span class="hidden sm:inline-block text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Ph.D. (Osaka Univ.)</span>
+                    <a href="index.html" class="font-bold text-lg text-slate-900 tracking-tight lang-vi">TS. Hán Lê Duy</a>
+                    <a href="index.html" class="font-bold text-lg text-slate-900 tracking-tight lang-en">Dr. Duy Le Han</a>
+                    <span class="hidden sm:inline-block text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Ph.D.</span>
                 </div>
 
-                <!-- Menu & Nút chuyển đổi ngôn ngữ -->
                 <div class="flex items-center space-x-6">
                     <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
-                        <a href="#about" class="hover:text-red-700 transition"><span class="lang-vi">Giới thiệu</span><span class="lang-en">Biography</span></a>
-                        <a href="#education" class="hover:text-red-700 transition"><span class="lang-vi">Học vấn & Công tác</span><span class="lang-en">Experience</span></a>
-                        <a href="#publications" class="hover:text-red-700 transition"><span class="lang-vi">Công bố</span><span class="lang-en">Publications</span></a>
-                        <a href="#projects" class="hover:text-red-700 transition"><span class="lang-vi">Đề tài</span><span class="lang-en">Projects</span></a>
-                        <a href="#teaching" class="hover:text-red-700 transition"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
-                        <a href="#blog" class="hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
+                        <a href="index.html" class="text-red-700 font-semibold"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
+                        <a href="profile.html" class="hover:text-red-700 transition"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
+                        <a href="research.html" class="hover:text-red-700 transition"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
+                        <a href="publication.html" class="hover:text-red-700 transition"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
+                        <a href="teaching.html" class="hover:text-red-700 transition"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
+                        <a href="blog.html" class="hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
                     </div>
 
                     <!-- Nút Toggle VI / EN -->
@@ -50,350 +47,48 @@
         </div>
     </nav>
 
-    <!-- Nội dung chính -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Nội dung Trang chủ -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-4 flex flex-col items-center text-center">
+                <img src="avatar.jpg" alt="TS. Hán Lê Duy" onerror="this.src='https://ui-avatars.com/api/?name=Han+Le+Duy&size=256&background=b91c1c&color=fff&bold=true'" 
+                     class="w-44 h-44 rounded-full object-cover border-4 border-slate-100 shadow-md mb-4">
+            </div>
+            <div class="md:col-span-8 space-y-4 text-center md:text-left">
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 lang-vi">TS. Hán Lê Duy</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 lang-en">Duy Le Han, Ph.D.</h1>
+                
+                <p class="text-sm text-red-700 font-semibold lang-vi">Giảng viên • Phó Giám đốc Trung tâm NC Công nghệ Hàn & Ghép nối</p>
+                <p class="text-sm text-red-700 font-semibold lang-en">Lecturer & Vice Director, Joining and Welding Research Center</p>
 
-            <!-- CỘT TRÁI: Hồ sơ cá nhân & Liên hệ (4/12 cột) -->
-            <aside class="lg:col-span-4">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 sticky top-24">
-                    <div class="flex flex-col items-center text-center">
-                        <img src="avatar.jpg" alt="TS. Hán Lê Duy - Dr. Duy Le Han" onerror="this.src='https://ui-avatars.com/api/?name=Han+Le+Duy&size=256&background=b91c1c&color=fff&bold=true'" 
-                             class="w-36 h-36 rounded-full object-cover border-4 border-slate-100 shadow-md mb-4">
-                        
-                        <h1 class="text-xl font-bold text-slate-900 lang-vi">TS. Hán Lê Duy</h1>
-                        <h1 class="text-xl font-bold text-slate-900 lang-en">Duy Le Han, Ph.D.</h1>
-                        
-                        <div class="mt-3 space-y-1">
-                            <p class="text-sm text-red-700 font-semibold lang-vi">Giảng viên • Phó Giám đốc Trung tâm</p>
-                            <p class="text-sm text-red-700 font-semibold lang-en">Lecturer • Vice Director</p>
+                <p class="text-sm text-slate-600 lang-vi">Trường Cơ khí – Đại học Bách khoa Hà Nội (HUST)</p>
+                <p class="text-sm text-slate-600 lang-en">School of Mechanical Engineering, Hanoi University of Science and Technology (HUST)</p>
 
-                            <p class="text-xs text-slate-600 lang-vi">Trung tâm NC Công nghệ Hàn & Ghép nối</p>
-                            <p class="text-xs text-slate-600 lang-en">Research Center for Welding & Joining Technology</p>
-
-                            <p class="text-xs text-slate-600 font-medium lang-vi">Trường Cơ khí – ĐH Bách khoa Hà Nội (HUST)</p>
-                            <p class="text-xs text-slate-600 font-medium lang-en">School of Mechanical Engineering, HUST</p>
-                        </div>
-
-                        <div class="mt-3 inline-flex items-center gap-1.5 bg-blue-50 text-blue-800 text-xs font-medium px-3 py-1 rounded-full border border-blue-100">
-                            <i class="fa-solid fa-award text-blue-600"></i>
-                            <span class="lang-vi">Tổng thư ký Hội KHKT Hàn Việt Nam (VWS)</span>
-                            <span class="lang-en">General Secretary, Vietnam Welding Society (VWS)</span>
-                        </div>
-                    </div>
-
-                    <hr class="my-5 border-slate-100">
-
-                    <!-- Thông tin liên hệ -->
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot w-4 text-slate-400 mt-1"></i>
-                            <span class="text-xs leading-relaxed lang-vi">Số 3 ngõ 15 Tạ Quang Bửu, Phường Bạch Mai, Hà Nội, Việt Nam</span>
-                            <span class="text-xs leading-relaxed lang-en">No.3/15 Ta Quang Buu street, Bach Mai ward, Hanoi, Vietnam</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope w-4 text-slate-400"></i>
-                            <a href="mailto:duy.hanle@hust.edu.vn" class="text-xs hover:text-red-700 break-all font-medium">duy.hanle@hust.edu.vn</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-regular fa-envelope w-4 text-slate-400"></i>
-                            <a href="mailto:hanleduy@gmail.com" class="text-xs hover:text-red-700 break-all">hanleduy@gmail.com</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone w-4 text-slate-400"></i>
-                            <span class="text-xs">+84 96 606 4486</span>
-                        </li>
-                    </ul>
-
-                    <!-- Liên kết Học thuật -->
-                    <div class="mt-6 pt-5 border-t border-slate-100">
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center mb-3">
-                            <span class="lang-vi">Hồ sơ học thuật</span>
-                            <span class="lang-en">Academic Profiles</span>
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="https://scholar.google.com/citations?user=VmBCs30AAAAJ&hl=en" target="_blank" class="px-3 py-2 rounded-lg bg-slate-100 flex items-center gap-2 text-xs font-medium text-slate-700 hover:bg-blue-600 hover:text-white transition">
-                                <i class="fa-brands fa-google-scholar text-sm"></i> Google Scholar
-                            </a>
-                            <a href="https://github.com/hanleduy-hust" target="_blank" class="px-3 py-2 rounded-lg bg-slate-100 flex items-center gap-2 text-xs font-medium text-slate-700 hover:bg-slate-900 hover:text-white transition">
-                                <i class="fa-brands fa-github text-sm"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Chứng chỉ Quốc tế -->
-                    <div class="mt-5 pt-5 border-t border-slate-100">
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2.5">
-                            <span class="lang-vi">Chứng chỉ Quốc tế</span>
-                            <span class="lang-en">International Certifications</span>
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-1 rounded font-medium">AWS CWI</span>
-                            <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-1 rounded font-medium">IIW IWI-S</span>
-                            <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-1 rounded font-medium">UNIDO ISO 50001</span>
-                            <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-1 rounded font-medium">AWF Assessor</span>
-                        </div>
-                    </div>
-
-                    <!-- Nút tải CV PDF theo ngôn ngữ -->
-                    <div class="mt-6 pt-5 border-t border-slate-100">
-                        <a href="CV_HanLeDuy_VN.pdf" target="_blank" rel="noopener noreferrer" 
-                           class="lang-vi flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-red-700 text-white text-xs font-semibold hover:bg-red-800 shadow-xs transition">
-                            <i class="fa-solid fa-file-pdf text-sm"></i><span>Tải Lý lịch khoa học (PDF)</span>
-                        </a>
-                        <a href="CV_HanLeDuy_EN.pdf" target="_blank" rel="noopener noreferrer" 
-                           class="lang-en flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-red-700 text-white text-xs font-semibold hover:bg-red-800 shadow-xs transition">
-                            <i class="fa-solid fa-file-pdf text-sm"></i><span>Download Curriculum Vitae (PDF)</span>
-                        </a>
-                    </div>
+                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+                    <a href="profile.html" class="px-5 py-2.5 rounded-xl bg-red-700 text-white text-xs font-semibold hover:bg-red-800 shadow-xs transition">
+                        <span class="lang-vi">Xem Hồ sơ chi tiết →</span><span class="lang-en">View Profile →</span>
+                    </a>
+                    <a href="publication.html" class="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold hover:bg-slate-200 transition">
+                        <span class="lang-vi">Danh mục Công bố →</span><span class="lang-en">Publications →</span>
+                    </a>
                 </div>
-            </aside>
-
-            <!-- CỘT PHẢI: Nội dung chi tiết (8/12 cột) -->
-            <div class="lg:col-span-8 space-y-8">
-
-                <!-- 1. Giới thiệu chung -->
-                <section id="about" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-4">
-                        <i class="fa-solid fa-user-graduate text-red-700"></i>
-                        <span class="lang-vi">Giới thiệu & Hướng nghiên cứu</span>
-                        <span class="lang-en">Biography & Research Interests</span>
-                    </h2>
-                    
-                    <div class="text-slate-600 text-sm leading-relaxed space-y-3 lang-vi">
-                        <p><strong>TS. Hán Lê Duy</strong> hiện là Giảng viên tại Nhóm chuyên môn Hàn và Công nghệ Kim loại, đồng thời giữ chức vụ Phó Giám đốc Trung tâm nghiên cứu Công nghệ Hàn & Ghép nối, Trường Cơ khí, Đại học Bách khoa Hà Nội (HUST). Ông tốt nghiệp Tiến sĩ ngành Khoa học và Sản xuất Vật liệu tại Viện Nghiên cứu Công nghệ Hàn và Ghép nối (JWRI), Đại học Osaka, Nhật Bản (2018–2022) dưới sự hướng dẫn của GS. Hiroshi Nishikawa.</p>
-                        <p>Bên cạnh công tác giảng dạy và nghiên cứu, ông đảm nhiệm vai trò <strong>Tổng thư ký Hội Khoa học Kỹ thuật Hàn Việt Nam (VWS)</strong> nhiệm kỳ 2024–2029, đồng thời là chuyên gia đào tạo, thanh tra hàn quốc tế (AWS CWI, IIW IWI-S) và tư vấn hệ thống quản lý chất lượng ISO 3834.</p>
-                    </div>
-
-                    <div class="text-slate-600 text-sm leading-relaxed space-y-3 lang-en">
-                        <p><strong>Dr. Duy Le Han</strong> is currently a Lecturer at the Department of Welding Engineering and Metals Technology, and serves as the Vice Director of Joining and Welding Research Institute (JWRI HUST-UOsaka), School of Mechanical Engineering, Hanoi University of Science and Technology (HUST). He received his Ph.D. in Materials and Manufacturing Science from the Joining and Welding Research Institute (JWRI), Osaka University, Japan (2018–2022).</p>
-                        <p>Alongside his academic activities, he serves as the <strong>General Secretary of the Vietnam Welding Society (VWS)</strong> for the 2024–2029 term, and is an accredited international welding inspector and trainer (AWS CWI, IIW IWI-S).</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <h3 class="font-semibold text-slate-900 text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-microchip text-red-600"></i>
-                                <span class="lang-vi">Vảy hàn không chì & Đóng gói điện tử</span>
-                                <span class="lang-en">Lead-Free Solders & Packaging</span>
-                            </h3>
-                            <p class="text-xs text-slate-600 mt-1.5 lang-vi">Phát triển hợp kim hàn nhiệt độ thấp không chì (In–Sn–Cu, In–Sn–Ag), liên kết đồng xốp nano cho linh kiện vi điện tử.</p>
-                            <p class="text-xs text-slate-600 mt-1.5 lang-en">Low-temperature lead-free solder alloys and solid-state nanoporous Cu bonding for microelectronics.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <h3 class="font-semibold text-slate-900 text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-fire-burner text-red-600"></i>
-                                <span class="lang-vi">Hàn & Kết nối tiên tiến</span>
-                                <span class="lang-en">Advanced Welding & Joining</span>
-                            </h3>
-                            <p class="text-xs text-slate-600 mt-1.5 lang-vi">Hàn ma sát khuấy (FSW), công nghệ GTAW cho tấm siêu mỏng, hàn thép chịu nhiệt P91 nhiệt điện.</p>
-                            <p class="text-xs text-slate-600 mt-1.5 lang-en">Friction Stir Welding (FSW), novel GTAW for ultra-thin sheets, and P91 steel welding.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 2. Quá trình Đào tạo & Công tác (id="education") -->
-                <section id="education" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-5">
-                        <i class="fa-solid fa-building-columns text-red-700"></i>
-                        <span class="lang-vi">Học vấn & Kinh nghiệm công tác</span>
-                        <span class="lang-en">Education & Academic Appointments</span>
-                    </h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
-                                <span class="lang-vi">Quá trình Đào tạo</span><span class="lang-en">Education</span>
-                            </h3>
-                            <div class="space-y-4 border-l-2 border-slate-200 pl-4 text-sm">
-                                <div>
-                                    <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">2018 – 2022</span>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-vi">TS. Khoa học & Sản xuất Vật liệu</h4>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-en">Ph.D. in Materials & Manufacturing Science</h4>
-                                    <p class="text-xs text-slate-600 lang-vi">Viện JWRI, Đại học Osaka, Nhật Bản</p>
-                                    <p class="text-xs text-slate-600 lang-en">JWRI, Osaka University, Japan</p>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2013 – 2015</span>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-vi">Thạc sĩ Kỹ thuật Cơ khí</h4>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-en">M.Sc. in Mechanical Engineering</h4>
-                                    <p class="text-xs text-slate-600 lang-vi">Đại học Bách khoa Hà Nội (HUST)</p>
-                                    <p class="text-xs text-slate-600 lang-en">Hanoi University of Science and Technology</p>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2005 – 2010</span>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-vi">Kỹ sư Chuyên ngành Công nghệ Hàn</h4>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-en">B.Eng. in Welding Engineering</h4>
-                                    <p class="text-xs text-slate-600 lang-vi">Đại học Bách khoa Hà Nội (HUST)</p>
-                                    <p class="text-xs text-slate-600 lang-en">Hanoi University of Science and Technology</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
-                                <span class="lang-vi">Chức vụ & Công tác</span><span class="lang-en">Professional Experience</span>
-                            </h3>
-                            <div class="space-y-4 border-l-2 border-slate-200 pl-4 text-sm">
-                                <div>
-                                    <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">2024 – 2029</span>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-vi">Tổng thư ký Hội KHKT Hàn Việt Nam (VWS)</h4>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-en">General Secretary, Vietnam Welding Society</h4>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">12/2023 – nay</span>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-vi">Phó Giám đốc Trung tâm NC Công nghệ Hàn & Ghép nối, HUST</h4>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-en">Vice Director, Joining and Welding Research Institute (JWRI HUST-UOsaka), HUST</h4>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">03/2011 – nay</span>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-vi">Giảng viên - Nhóm chuyên môn Hàn & CNKL, HUST</h4>
-                                    <h4 class="font-bold text-slate-900 mt-1 lang-en">Lecturer - Dept. of Welding Engineering & Metals Tech, HUST</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 3. Công bố khoa học (Đồng bộ tự động từ Google Scholar qua scholar_pubs.json) -->
-                <section id="publications" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="flex flex-wrap justify-between items-center gap-2 mb-5">
-                        <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5">
-                            <i class="fa-solid fa-book-journal-whills text-red-700"></i>
-                            <span class="lang-vi">Công bố Khoa học Quốc tế (Đồng bộ tự động từ Scholar)</span>
-                            <span class="lang-en">International Publications (Auto-synced from Scholar)</span>
-                        </h2>
-                        <a href="https://scholar.google.com/citations?user=VmBCs30AAAAJ&hl=en" target="_blank" class="text-xs font-medium text-blue-600 hover:underline">
-                            Google Scholar →
-                        </a>
-                    </div>
-                    
-                    <!-- Nơi danh sách bài báo từ Google Scholar tự động đổ vào -->
-                    <div id="scholar-pubs-container" class="space-y-4 text-xs">
-                        <p class="text-slate-400 italic">Đang đồng bộ danh sách công bố từ Google Scholar...</p>
-                    </div>
-                </section>
-
-                <!-- 4. Đề tài Nghiên cứu (id="projects") -->
-                <section id="projects" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-4">
-                        <i class="fa-solid fa-diagram-project text-red-700"></i>
-                        <span class="lang-vi">Đề tài Nghiên cứu Khoa học</span>
-                        <span class="lang-en">Research Grants & Projects</span>
-                    </h2>
-                    <ul class="space-y-3 text-xs text-slate-600">
-                        <li class="flex justify-between items-start gap-4 pb-3 border-b border-slate-100">
-                            <div>
-                                <strong class="text-slate-900 block text-sm lang-vi">Nghiên cứu xây dựng quy trình công nghệ và chế tạo hệ thống thiết bị hàn tự động để hàn đối đầu ống áp lực vật liệu dẻo khác nhau</strong>
-                                <strong class="text-slate-900 block text-sm lang-en">Automated welding equipment and technology for thermoplastic pressure pipes</strong>
-                                <span class="text-slate-500 lang-vi">Đề tài Cấp Bộ • Thành viên chính (Mã số: B2023-BKA-12)</span>
-                                <span class="text-slate-500 lang-en">Ministry-Level Project • Key Member (Code: B2023-BKA-12)</span>
-                            </div>
-                        </li>
-                        <li class="flex justify-between items-start gap-4 pb-3 border-b border-slate-100">
-                            <div>
-                                <strong class="text-slate-900 block text-sm lang-vi">Nghiên cứu ảnh hưởng của nhiệt độ già hóa tới độ bền của vảy hàn không chì nhiệt độ thấp</strong>
-                                <strong class="text-slate-900 block text-sm lang-en">Effect of aging temperature on the mechanical strength of low-temperature solders</strong>
-                                <span class="text-slate-500 lang-vi">Đề tài Tiến sĩ trẻ • Chủ nhiệm (Mã số: T2022-TT-006)</span>
-                                <span class="text-slate-500 lang-en">Young Ph.D. Grant • PI (Code: T2022-TT-006)</span>
-                            </div>
-                        </li>
-                        <li class="flex justify-between items-start gap-4">
-                            <div>
-                                <strong class="text-slate-900 block text-sm lang-vi">Nghiên cứu công nghệ hàn thép hợp kim chịu nhiệt SA335 P91 dùng trong nhà máy nhiệt điện</strong>
-                                <strong class="text-slate-900 block text-sm lang-en">Welding technology of SA335 P91 heat-resistant alloy steel for thermal power plants</strong>
-                                <span class="text-slate-500 lang-vi">Đề tài Cấp Trường • Chủ nhiệm (Mã số: T2015-211)</span>
-                                <span class="text-slate-500 lang-en">University-Level Project • PI (Code: T2015-211)</span>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- 5. Giảng dạy (id="teaching") -->
-                <section id="teaching" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-4">
-                        <i class="fa-solid fa-chalkboard-user text-red-700"></i>
-                        <span class="lang-vi">Học phần Giảng dạy & Đào tạo Quốc tế</span>
-                        <span class="lang-en">Teaching & International Training</span>
-                    </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                        <div class="p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
-                            <span class="font-medium text-slate-800 lang-vi">Các quá trình Hàn & Công nghệ Hàn</span>
-                            <span class="font-medium text-slate-800 lang-en">Welding Processes & Technology</span>
-                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded">HUST</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
-                            <span class="font-medium text-slate-800 lang-vi">Công nghệ & Thiết bị Hàn vảy</span>
-                            <span class="font-medium text-slate-800 lang-en">Brazing & Soldering Technology</span>
-                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded">HUST</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl border border-red-100 bg-red-50/50 sm:col-span-2 flex items-center justify-between gap-4">
-                            <div>
-                                <span class="font-semibold text-slate-900 block lang-vi">Đào tạo & Chứng nhận Nhân lực Hàn Quốc tế (IIW / AWS)</span>
-                                <span class="font-semibold text-slate-900 block lang-en">International Welding Personnel Training (IIW / AWS)</span>
-                                <span class="text-xs text-slate-600 lang-vi">Giảng dạy theo hệ thống Viện Hàn Quốc tế (IIW) và Hiệp hội Hàn Hoa Kỳ (AWS)[cite: 1].</span>
-                                <span class="text-xs text-slate-600 lang-en">Authorized instructor for IIW and AWS certification programs.</span>
-                            </div>
-                            <span class="text-xs font-semibold text-red-700 bg-white px-2.5 py-1 rounded border border-red-200 whitespace-nowrap">IIW / AWS</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 6. Góc Chuyên gia / Blog Học thuật tự động từ AI (id="blog") -->
-                <section id="blog" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="flex justify-between items-center mb-5">
-                        <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5">
-                            <i class="fa-solid fa-pen-nib text-red-700"></i>
-                            <span class="lang-vi">Góc Chuyên gia & Chia sẻ Khoa học</span>
-                            <span class="lang-en">Technical Insights & Academic Blog</span>
-                        </h2>
-                        <span class="text-[11px] font-medium bg-red-50 text-red-700 px-2.5 py-1 rounded-full border border-red-100">
-                            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i>AI-Assisted
-                        </span>
-                    </div>
-
-                    <div id="blog-container" class="space-y-4">
-                        <p class="text-xs text-slate-400 italic">Đang tải bài viết...</p>
-                    </div>
-                </section>
-
-                <!-- Cửa sổ đọc bài viết chi tiết (Modal) -->
-                <div id="blog-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-                    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-xl border border-slate-200">
-                        <div class="flex justify-between items-start gap-4 border-b border-slate-100 pb-4">
-                            <div>
-                                <span id="modal-date" class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded"></span>
-                                <h3 id="modal-title-vi" class="text-lg font-bold text-slate-900 mt-2 lang-vi"></h3>
-                                <h3 id="modal-title-en" class="text-lg font-bold text-slate-900 mt-2 lang-en"></h3>
-                            </div>
-                            <button onclick="closeBlogModal()" class="text-slate-400 hover:text-slate-700 text-xl leading-none">&times;</button>
-                        </div>
-                        <div id="modal-content-vi" class="mt-5 text-sm text-slate-700 leading-relaxed lang-vi"></div>
-                        <div id="modal-content-en" class="mt-5 text-sm text-slate-700 leading-relaxed lang-en"></div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </main>
 
-    <!-- Chân trang -->
-    <footer class="border-t border-slate-200 bg-white mt-12 py-6">
+    <footer class="border-t border-slate-200 bg-white mt-20 py-6">
         <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500">
-            <span class="lang-vi">© 2026 TS. Hán Lê Duy — Trường Cơ khí, Đại học Bách khoa Hà Nội (HUST). Hosted on GitHub Pages.</span>
-            <span class="lang-en">© 2026 Dr. Duy Le Han — School of Mechanical Engineering, Hanoi University of Science and Technology (HUST).</span>
+            <span class="lang-vi">© 2026 TS. Hán Lê Duy — Trường Cơ khí, Đại học Bách khoa Hà Nội (HUST).</span>
+            <span class="lang-en">© 2026 Dr. Duy Le Han — School of Mechanical Engineering, HUST.</span>
         </div>
     </footer>
 
-    <!-- Script xử lý ngôn ngữ, Tải Blog từ posts.json & Tải danh mục bài báo từ scholar_pubs.json -->
     <script>
         function setLanguage(lang) {
             document.documentElement.setAttribute('lang', lang);
             localStorage.setItem('preferred_lang', lang);
-
             const btnVi = document.getElementById('btn-vi');
             const btnEn = document.getElementById('btn-en');
-
             if (lang === 'en') {
                 btnEn.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs';
                 btnVi.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900';
@@ -402,78 +97,9 @@
                 btnEn.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900';
             }
         }
-
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferred_lang') || 'vi';
-            setLanguage(savedLang);
-
-            // 1. Tải dữ liệu blog từ posts.json
-            fetch('posts.json')
-                .then(res => res.json())
-                .then(posts => {
-                    window.allPosts = posts;
-                    const container = document.getElementById('blog-container');
-                    container.innerHTML = posts.map((post, idx) => `
-                        <article class="p-4 rounded-xl border border-slate-200 hover:border-red-300 transition bg-slate-50/50 cursor-pointer" onclick="openBlogModal(${idx})">
-                            <div class="flex items-center gap-2 text-xs text-slate-500 mb-1.5">
-                                <span class="font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded lang-vi">${post.category_vi}</span>
-                                <span class="font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded lang-en">${post.category_en}</span>
-                                <span>• ${post.date}</span>
-                            </div>
-                            <h3 class="text-sm font-bold text-slate-900 lang-vi">${post.title_vi}</h3>
-                            <h3 class="text-sm font-bold text-slate-900 lang-en">${post.title_en}</h3>
-                            <p class="text-xs text-slate-600 mt-1 line-clamp-2 lang-vi">${post.summary_vi}</p>
-                            <p class="text-xs text-slate-600 mt-1 line-clamp-2 lang-en">${post.summary_en}</p>
-                            <span class="inline-block mt-2 text-xs font-semibold text-red-700 lang-vi">Đọc chi tiết →</span>
-                            <span class="inline-block mt-2 text-xs font-semibold text-red-700 lang-en">Read article →</span>
-                        </article>
-                    `).join('');
-                }).catch(() => {
-                    document.getElementById('blog-container').innerHTML = '<p class="text-xs text-slate-400">Chưa có bài viết blog nào hoặc đang chờ đồng bộ từ posts.json.</p>';
-                });
-
-            // 2. Tải danh sách công bố từ Google Scholar (scholar_pubs.json)
-            fetch('scholar_pubs.json')
-                .then(res => res.json())
-                .then(pubs => {
-                    const container = document.getElementById('scholar-pubs-container');
-                    container.innerHTML = pubs.map(pub => `
-                        <div class="border-l-2 border-red-600 pl-4 py-1">
-                            <span class="font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded">${pub.year}</span>
-                            <h3 class="text-sm font-semibold text-slate-900 mt-1">${pub.title}</h3>
-                            <p class="text-slate-600 mt-0.5">${pub.authors}</p>
-                            <p class="italic text-slate-500">${pub.venue}</p>
-                            <a href="${pub.url}" target="_blank" class="text-blue-600 hover:underline mt-1 inline-block">[Xem chi tiết trên Scholar]</a>
-                        </div>
-                    `).join('');
-                }).catch(() => {
-                    // Dự phòng giữ lại danh sách tĩnh nếu chưa có file scholar_pubs.json được tạo tự động
-                    document.getElementById('scholar-pubs-container').innerHTML = `
-                        <div class="border-l-2 border-red-600 pl-4 py-1">
-                            <span class="font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded">2025</span>
-                            <span class="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded ml-1">Q1 • IF: 6.1</span>
-                            <h3 class="text-sm font-semibold text-slate-900 mt-1">Properties of In-Sn-xCu Alloys and Their Joints on a Cu Substrate Before and After Isothermal Aging</h3>
-                            <p class="text-slate-600 mt-0.5"><strong>Duy Le Han</strong>, Bui Van Hanh, Nguyen Van Anh, Trinh Quang Ngoc, Hiroshi Nishikawa</p>
-                            <p class="italic text-slate-500">Materials Science and Engineering: A (2025), 147796</p>
-                            <a href="https://doi.org/10.1016/j.msea.2025.147796" target="_blank" class="text-blue-600 hover:underline mt-1 inline-block">[DOI: 10.1016/j.msea.2025.147796]</a>
-                        </div>
-                    `;
-                });
+            setLanguage(localStorage.getItem('preferred_lang') || 'vi');
         });
-
-        function openBlogModal(index) {
-            const post = window.allPosts[index];
-            document.getElementById('modal-date').textContent = post.date;
-            document.getElementById('modal-title-vi').textContent = post.title_vi;
-            document.getElementById('modal-title-en').textContent = post.title_en;
-            document.getElementById('modal-content-vi').innerHTML = post.content_vi;
-            document.getElementById('modal-content-en').innerHTML = post.content_en;
-            document.getElementById('blog-modal').classList.remove('hidden');
-        }
-
-        function closeBlogModal() {
-            document.getElementById('blog-modal').classList.add('hidden');
-        }
     </script>
 </body>
 </html>

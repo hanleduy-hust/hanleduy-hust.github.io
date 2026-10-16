@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ học thuật | Profile - TS. Hán Lê Duy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        html[lang="vi"] .lang-en { display: none !important; }
+        html[lang="en"] .lang-vi { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+            <a href="index.html" class="font-bold text-lg text-slate-900">TS. Hán Lê Duy</a>
+            <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-red-700"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
+                <a href="profile.html" class="text-red-700 font-semibold"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
+                <a href="research.html" class="hover:text-red-700"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
+                <a href="publication.html" class="hover:text-red-700"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
+                <a href="teaching.html" class="hover:text-red-700"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
+                <a href="blog.html" class="hover:text-red-700"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
+            </div>
+            <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+                <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white">VI</button>
+                <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+        <!-- Thông tin liên hệ & CV -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div class="flex flex-col items-center">
+                <img src="avatar.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Han+Le+Duy&size=256&background=b91c1c&color=fff&bold=true'" class="w-32 h-32 rounded-full object-cover border-4 border-slate-100 shadow">
+            </div>
+            <div class="md:col-span-2 space-y-2 text-sm text-slate-600">
+                <h1 class="text-xl font-bold text-slate-900 lang-vi">Thông tin Liên hệ & Lý lịch</h1>
+                <h1 class="text-xl font-bold text-slate-900 lang-en">Contact & Curriculum Vitae</h1>
+                <p><i class="fa-solid fa-location-dot w-5 text-slate-400"></i> <span class="lang-vi">Số 3 ngõ 15 Tạ Quang Bửu, Hà Nội</span><span class="lang-en">No.3/15 Ta Quang Buu St, Hanoi</span></p>
+                <p><i class="fa-solid fa-envelope w-5 text-slate-400"></i> duy.hanle@hust.edu.vn | hanleduy@gmail.com</p>
+                <div class="pt-3 flex gap-3">
+                    <a href="CV_HanLeDuy_VN.pdf" target="_blank" class="lang-vi inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-xl text-xs font-semibold hover:bg-red-800"><i class="fa-solid fa-file-pdf"></i> Tải CV tiếng Việt</a>
+                    <a href="CV_HanLeDuy_EN.pdf" target="_blank" class="lang-en inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-xl text-xs font-semibold hover:bg-red-800"><i class="fa-solid fa-file-pdf"></i> Download English CV</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Học vấn & Công tác -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-5">
+                <i class="fa-solid fa-building-columns text-red-700"></i>
+                <span class="lang-vi">Quá trình Đào tạo & Công tác</span>
+                <span class="lang-en">Education & Professional Experience</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-4 border-l-2 border-slate-200 pl-4">
+                    <h3 class="font-bold text-slate-400 text-xs uppercase">Education</h3>
+                    <div>
+                        <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">2018 – 2022</span>
+                        <h4 class="font-bold text-slate-900 mt-1">Ph.D. in Materials & Manufacturing Science</h4>
+                        <p class="text-xs text-slate-600">JWRI, Osaka University, Japan</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2013 – 2015</span>
+                        <h4 class="font-bold text-slate-900 mt-1">M.Sc. in Mechanical Engineering</h4>
+                        <p class="text-xs text-slate-600">Hanoi University of Science and Technology (HUST)</p>
+                    </div>
+                </div>
+                <div class="space-y-4 border-l-2 border-slate-200 pl-4">
+                    <h3 class="font-bold text-slate-400 text-xs uppercase">Appointments</h3>
+                    <div>
+                        <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">2024 – 2029</span>
+                        <h4 class="font-bold text-slate-900 mt-1">General Secretary, Vietnam Welding Society (VWS)</h4>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">12/2023 – Nay</span>
+                        <h4 class="font-bold text-slate-900 mt-1">Vice Director, Research Center for Welding & Joining Tech, HUST</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white mt-12 py-6 text-center text-xs text-slate-500">
+        © 2026 TS. Hán Lê Duy — HUST
+    </footer>
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            localStorage.setItem('preferred_lang', lang);
+        }
+        document.addEventListener('DOMContentLoaded', () => setLanguage(localStorage.getItem('preferred_lang') || 'vi'));
+    </script>
+</body>
+</html>

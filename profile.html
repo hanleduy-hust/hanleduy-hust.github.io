@@ -16,20 +16,61 @@
 <body class="bg-slate-50 text-slate-800 antialiased">
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-            <a href="index.html" class="font-bold text-lg text-slate-900">TS. Hán Lê Duy</a>
-            <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
-                <a href="index.html" class="hover:text-red-700"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
-                <a href="profile.html" class="text-red-700 font-semibold"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
-                <a href="research.html" class="hover:text-red-700"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
-                <a href="publication.html" class="hover:text-red-700"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
-                <a href="teaching.html" class="hover:text-red-700"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
-                <a href="blog.html" class="hover:text-red-700"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Tên / Logo -->
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-700"></span>
+                    <a href="index.html" class="font-bold text-lg text-slate-900 tracking-tight lang-vi">TS. Hán Lê Duy</a>
+                    <a href="index.html" class="font-bold text-lg text-slate-900 tracking-tight lang-en">Dr. Duy Le Han</a>
+                    <span class="hidden sm:inline-block text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Ph.D.</span>
+                </div>
+
+                <!-- Menu Desktop & Nút chức năng -->
+                <div class="flex items-center space-x-3 md:space-x-6">
+                    <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
+                        <a href="index.html" class="hover:text-red-700 transition"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
+                        <a href="profile.html" class="text-red-700 font-semibold"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
+                        <a href="research.html" class="hover:text-red-700 transition"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
+                        <a href="publication.html" class="hover:text-red-700 transition"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
+                        <a href="teaching.html" class="hover:text-red-700 transition"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
+                        <a href="blog.html" class="hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
+                    </div>
+
+                    <!-- Nút Toggle VI / EN -->
+                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+                        <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs">VI</button>
+                        <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900">EN</button>
+                    </div>
+
+                    <!-- Nút Hamburger Menu (Chỉ hiển thị trên Mobile) -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-red-700 hover:bg-slate-100 focus:outline-none transition" aria-label="Toggle Navigation">
+                        <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
             </div>
-            <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
-                <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white">VI</button>
-                <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600">EN</button>
-            </div>
+        </div>
+
+        <!-- Menu thả xuống trên Mobile (Ẩn mặc định) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-5 space-y-2 shadow-md">
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span>
+            </a>
+            <a href="profile.html" class="block px-3 py-2 rounded-lg text-sm font-semibold bg-red-50 text-red-700">
+                <span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span>
+            </a>
+            <a href="research.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span>
+            </a>
+            <a href="publication.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Công bố</span><span class="lang-en">Publication</span>
+            </a>
+            <a href="teaching.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span>
+            </a>
+            <a href="blog.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span>
+            </a>
         </div>
     </nav>
 
@@ -79,23 +120,4 @@
                         <h4 class="font-bold text-slate-900 mt-1">General Secretary, Vietnam Welding Society (VWS)</h4>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">12/2023 – Nay</span>
-                        <h4 class="font-bold text-slate-900 mt-1">Vice Director, Research Center for Welding & Joining Tech, HUST</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="border-t border-slate-200 bg-white mt-12 py-6 text-center text-xs text-slate-500">
-        © 2026 TS. Hán Lê Duy — HUST
-    </footer>
-    <script>
-        function setLanguage(lang) {
-            document.documentElement.setAttribute('lang', lang);
-            localStorage.setItem('preferred_lang', lang);
-        }
-        document.addEventListener('DOMContentLoaded', () => setLanguage(localStorage.getItem('preferred_lang') || 'vi'));
-    </script>
-</body>
-</html>
+                        <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">12/20

@@ -19,10 +19,10 @@ Bạn là TS. Hán Lê Duy, chuyên gia về Công nghệ Hàn & Ghép nối, Vi
 Hãy viết 01 bài chia sẻ học thuật/công nghệ hấp dẫn, chuyên nghiệp cho mục Blog Góc Chuyên gia.
 
 Chủ đề xoay quanh một trong các hướng sau:
-- Công nghệ hàn tiên tiến (FSW, GTAW tấm mỏng, PAW, hàn laser, robot hàn)
-- Đóng gói vi điện tử & vật liệu vảy hàn không chì (In-Sn, SAC, thiêu kết đồng nano)
-- Đảm bảo chất lượng hàn theo tiêu chuẩn quốc tế ISO 3834, AWS, IIW
-- Xử lý nhiệt, luyện kim mối hàn thép chịu nhiệt P91, công nghệ hàn ống áp lực
+- Công nghệ hàn tiên tiến (FSW, GTAW tấm mỏng, PAW, hàn laser, robot hàn, WAAM, DED, Soldering, electronic packaging...)
+- Đóng gói vi điện tử & vật liệu vảy hàn không chì (In-Sn, SAC, thiêu kết đồng nano...)
+- Đảm bảo chất lượng hàn theo tiêu chuẩn quốc tế ISO 3834, AWS, IIW...
+- Xử lý nhiệt, luyện kim mối hàn thép chịu nhiệt P91, công nghệ hàn ống áp lực...
 
 Yêu cầu trả về DUY NHẤT một chuỗi JSON hợp lệ (không kèm markdown ```json bọc ngoài), có cấu trúc:
 {

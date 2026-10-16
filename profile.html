@@ -18,7 +18,6 @@
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <!-- Tên / Logo -->
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-red-700"></span>
                     <a href="index.html" class="font-bold text-lg text-slate-900 tracking-tight lang-vi">TS. Hán Lê Duy</a>
@@ -26,7 +25,6 @@
                     <span class="hidden sm:inline-block text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Ph.D.</span>
                 </div>
 
-                <!-- Menu Desktop & Nút chức năng -->
                 <div class="flex items-center space-x-3 md:space-x-6">
                     <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
                         <a href="index.html" class="hover:text-red-700 transition"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
@@ -37,13 +35,11 @@
                         <a href="blog.html" class="hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
                     </div>
 
-                    <!-- Nút Toggle VI / EN -->
                     <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
                         <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs">VI</button>
                         <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900">EN</button>
                     </div>
 
-                    <!-- Nút Hamburger Menu (Chỉ hiển thị trên Mobile) -->
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-red-700 hover:bg-slate-100 focus:outline-none transition" aria-label="Toggle Navigation">
                         <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
                     </button>
@@ -51,26 +47,13 @@
             </div>
         </div>
 
-        <!-- Menu thả xuống trên Mobile (Ẩn mặc định) -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-5 space-y-2 shadow-md">
-            <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span>
-            </a>
-            <a href="profile.html" class="block px-3 py-2 rounded-lg text-sm font-semibold bg-red-50 text-red-700">
-                <span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span>
-            </a>
-            <a href="research.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span>
-            </a>
-            <a href="publication.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Công bố</span><span class="lang-en">Publication</span>
-            </a>
-            <a href="teaching.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span>
-            </a>
-            <a href="blog.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span>
-            </a>
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
+            <a href="profile.html" class="block px-3 py-2 rounded-lg text-sm font-semibold bg-red-50 text-red-700"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
+            <a href="research.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
+            <a href="publication.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
+            <a href="teaching.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
+            <a href="blog.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
         </div>
     </nav>
 
@@ -78,46 +61,182 @@
         <!-- Thông tin liên hệ & CV -->
         <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div class="flex flex-col items-center">
-                <img src="avatar.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Han+Le+Duy&size=256&background=b91c1c&color=fff&bold=true'" class="w-32 h-32 rounded-full object-cover border-4 border-slate-100 shadow">
+                <img src="avatar.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Han+Le+Duy&size=256&background=b91c1c&color=fff&bold=true'" class="w-36 h-36 rounded-full object-cover border-4 border-slate-100 shadow">
             </div>
             <div class="md:col-span-2 space-y-2 text-sm text-slate-600">
-                <h1 class="text-xl font-bold text-slate-900 lang-vi">Thông tin Liên hệ & Lý lịch</h1>
-                <h1 class="text-xl font-bold text-slate-900 lang-en">Contact & Curriculum Vitae</h1>
-                <p><i class="fa-solid fa-location-dot w-5 text-slate-400"></i> <span class="lang-vi">Số 3 ngõ 15 Tạ Quang Bửu, Hà Nội</span><span class="lang-en">No.3/15 Ta Quang Buu St, Hanoi</span></p>
+                <h1 class="text-xl font-bold text-slate-900 lang-vi">TS. Hán Lê Duy — Thông tin & Lý lịch</h1>
+                <h1 class="text-xl font-bold text-slate-900 lang-en">Dr. Duy Le Han — Contact & Curriculum Vitae</h1>
+                <p><i class="fa-solid fa-location-dot w-5 text-slate-400"></i> <span class="lang-vi">Số 3 ngõ 15 Tạ Quang Bửu, P. Bách Mai, Q. Hai Bà Trưng, Hà Nội</span><span class="lang-en">No.3/15 Ta Quang Buu street, Bach Mai ward, Hanoi, Vietnam</span></p>
+                <p><i class="fa-solid fa-phone w-5 text-slate-400"></i> (+84) 96 606 4486</p>
                 <p><i class="fa-solid fa-envelope w-5 text-slate-400"></i> duy.hanle@hust.edu.vn | hanleduy@gmail.com</p>
+                <p><i class="fa-solid fa-language w-5 text-slate-400"></i> <span class="lang-vi">Ngoại ngữ: Tiếng Việt (Bản ngữ), Tiếng Anh (Thành thạo), Tiếng Nhật (Trung cấp)</span><span class="lang-en">Languages: Vietnamese (Native), English (Fluent), Japanese (Intermediate)</span></p>
                 <div class="pt-3 flex gap-3">
-                    <a href="CV_HanLeDuy_VN.pdf" target="_blank" class="lang-vi inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-xl text-xs font-semibold hover:bg-red-800"><i class="fa-solid fa-file-pdf"></i> Tải CV tiếng Việt</a>
-                    <a href="CV_HanLeDuy_EN.pdf" target="_blank" class="lang-en inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-xl text-xs font-semibold hover:bg-red-800"><i class="fa-solid fa-file-pdf"></i> Download English CV</a>
+                    <a href="CV_HanLeDuy_EN.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-xl text-xs font-semibold hover:bg-red-800 transition">
+                        <i class="fa-solid fa-file-pdf"></i> <span class="lang-vi">Tải CV (Bản tiếng Anh)</span><span class="lang-en">Download Curriculum Vitae (PDF)</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Học vấn & Công tác -->
+        <!-- Quá trình Đào tạo & Bổ nhiệm Công tác -->
         <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
             <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-5">
                 <i class="fa-solid fa-building-columns text-red-700"></i>
-                <span class="lang-vi">Quá trình Đào tạo & Công tác</span>
-                <span class="lang-en">Education & Professional Experience</span>
+                <span class="lang-vi">Quá trình Đào tạo & Quá trình Công tác</span>
+                <span class="lang-en">Education & Professional Appointments</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div class="space-y-4 border-l-2 border-slate-200 pl-4">
-                    <h3 class="font-bold text-slate-400 text-xs uppercase">Education</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                <!-- Cột Đào tạo -->
+                <div class="space-y-5 border-l-2 border-slate-200 pl-4">
+                    <h3 class="font-bold text-slate-400 text-xs uppercase tracking-wider">Học vấn / Education</h3>
                     <div>
                         <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">2018 – 2022</span>
                         <h4 class="font-bold text-slate-900 mt-1">Ph.D. in Materials & Manufacturing Science</h4>
-                        <p class="text-xs text-slate-600">JWRI, Osaka University, Japan</p>
+                        <p class="text-xs text-slate-600">Joining and Welding Research Institute (JWRI), Osaka University, Japan</p>
+                        <p class="text-[11px] text-slate-500 italic mt-0.5 lang-vi">Hướng nghiên cứu: Hợp kim vảy hàn không chì nhiệt độ thấp, vi cấu trúc mặt phân cách và liên kết đồng xốp nano phục vụ đóng gói linh kiện bán dẫn và công suất cao.</p>
+                        <p class="text-[11px] text-slate-500 italic mt-0.5 lang-en">Research focus: Low-temperature lead-free solders, interfacial microstructure evolution, and nanoporous Cu bonding for microelectronics & power packaging.</p>
                     </div>
                     <div>
                         <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2013 – 2015</span>
-                        <h4 class="font-bold text-slate-900 mt-1">M.Sc. in Mechanical Engineering</h4>
-                        <p class="text-xs text-slate-600">Hanoi University of Science and Technology (HUST)</p>
+                        <h4 class="font-bold text-slate-900 mt-1">Master of Engineering (M.Eng.) in Mechanical Engineering</h4>
+                        <p class="text-xs text-slate-600">School of Mechanical Engineering, HUST</p>
+                        <p class="text-[11px] text-slate-500 italic mt-0.5">Thesis: "Study about welding engineering and technology of heat-resistant steel"</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2005 – 2010</span>
+                        <h4 class="font-bold text-slate-900 mt-1">Bachelor of Engineering (B.Eng.) in Welding Engineering</h4>
+                        <p class="text-xs text-slate-600">School of Mechanical Engineering, HUST</p>
                     </div>
                 </div>
-                <div class="space-y-4 border-l-2 border-slate-200 pl-4">
-                    <h3 class="font-bold text-slate-400 text-xs uppercase">Appointments</h3>
+
+                <!-- Cột Công tác -->
+                <div class="space-y-5 border-l-2 border-slate-200 pl-4">
+                    <h3 class="font-bold text-slate-400 text-xs uppercase tracking-wider">Bổ nhiệm & Công tác / Appointments</h3>
                     <div>
                         <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">2024 – 2029</span>
-                        <h4 class="font-bold text-slate-900 mt-1">General Secretary, Vietnam Welding Society (VWS)</h4>
+                        <h4 class="font-bold text-slate-900 mt-1"><span class="lang-vi">Tổng Thư ký Hội Hàn Việt Nam (VWS)</span><span class="lang-en">General Secretary, Vietnam Welding Society (VWS)</span></h4>
+                        <p class="text-xs text-slate-600 lang-vi">Điều phối kết nối viện - trường - doanh nghiệp, thúc đẩy hợp tác quốc tế và phát triển cộng đồng nghề hàn.</p>
+                        <p class="text-xs text-slate-600 lang-en">Coordinating industry-academia linkages, fostering international collaborations, and developing the national professional welding community.</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">12/20
+                        <span class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded">12/2023 – Nay</span>
+                        <h4 class="font-bold text-slate-900 mt-1"><span class="lang-vi">Phó Giám đốc Trung tâm NC Công nghệ Hàn & Ghép nối, HUST</span><span class="lang-en">Vice Director, Research Center for Welding & Joining Tech, HUST</span></h4>
+                        <p class="text-xs text-slate-600 lang-vi">Lãnh đạo các hướng NCKH, chuyển giao công nghệ công nghiệp và tư vấn kỹ thuật ghép nối tiên tiến.</p>
+                        <p class="text-xs text-slate-600 lang-en">Leading scientific research initiatives, technology transfer, and consulting on advanced joining solutions.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">03/2011 – Nay</span>
+                        <h4 class="font-bold text-slate-900 mt-1"><span class="lang-vi">Giảng viên & Nhà nghiên cứu — Bộ môn Kỹ thuật Hàn & CN Kim loại, HUST</span><span class="lang-en">Lecturer & Researcher — Dept. of Welding Eng. & Metals Technology, HUST</span></h4>
+                        <p class="text-xs text-slate-600 lang-vi">Giảng dạy ĐH & Sau ĐH, hướng dẫn luận văn/đồ án, đào tạo chứng chỉ quốc tế IIW/AWS.</p>
+                        <p class="text-xs text-slate-600 lang-en">Teaching undergraduate & graduate courses, supervising theses, and conducting IIW/AWS certification training.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2018</span>
+                        <h4 class="font-bold text-slate-900 mt-1"><span class="lang-vi">Chuyên gia Kỹ thuật & Đào tạo — Dự án TV05B (Tổng cục GDNN - Bộ LĐTBXH)</span><span class="lang-en">Technical & Training Expert — Pilot Project TV05B (DVET / MOLISA)</span></h4>
+                        <p class="text-xs text-slate-600 lang-vi">Thực hiện chương trình đào tạo kỹ thuật viên hàn theo tiêu chuẩn CH Pháp.</p>
+                        <p class="text-xs text-slate-600 lang-en">Implemented welding technician training programs according to French national standards.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2012 – 2016</span>
+                        <h4 class="font-bold text-slate-900 mt-1"><span class="lang-vi">Trưởng phòng Đào tạo & Trưởng phòng Kinh doanh — CTWEL JSC</span><span class="lang-en">Head of Training & Business Division — CTWEL JSC</span></h4>
+                        <p class="text-xs text-slate-600 lang-vi">Tổ chức đào tạo thợ hàn theo AWS; tư vấn công nghệ và hệ thống quản lý chất lượng ISO 3834.</p>
+                        <p class="text-xs text-slate-600 lang-en">Managed welding personnel training under AWS; provided consulting on welding engineering and ISO 3834.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">2009 – 2010</span>
+                        <h4 class="font-bold text-slate-900 mt-1"><span class="lang-vi">Kỹ thuật viên Hàn / Thực tập — Công ty TNHH Tân Thế Kỷ</span><span class="lang-en">Welding Technician / Intern — Tan The Ky Co., Ltd.</span></h4>
+                        <p class="text-xs text-slate-600 lang-vi">Lắp đặt, chuyển giao thiết bị hàn công nghiệp, nguồn điện và robot hàn.</p>
+                        <p class="text-xs text-slate-600 lang-en">Installed and commissioned industrial welding equipment, power sources, and robotic welding systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chứng chỉ Quốc tế & Đào tạo Chuyên sâu -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-5">
+                <i class="fa-solid fa-award text-red-700"></i>
+                <span class="lang-vi">Chứng chỉ Nghề nghiệp & Đào tạo Chuyên ngành Quốc tế</span>
+                <span class="lang-en">Professional Certifications & Specialized Training</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700">
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex gap-3">
+                    <i class="fa-solid fa-certificate text-red-700 text-base mt-0.5"></i>
+                    <div>
+                        <strong class="block text-slate-900 text-sm">Chuyên gia Quản lý Năng lượng ISO 50001 (2024–2025)</strong>
+                        <p class="text-slate-600">Bộ Công Thương (MOIT) phối hợp Tổ chức Phát triển Công nghiệp Liên Hợp Quốc (UNIDO).</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex gap-3">
+                    <i class="fa-solid fa-certificate text-red-700 text-base mt-0.5"></i>
+                    <div>
+                        <strong class="block text-slate-900 text-sm">Certified Assessor & Examiner (04/2017)</strong>
+                        <p class="text-slate-600">Liên đoàn Hàn Châu Á / Asian Welding Federation (AWF).</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex gap-3">
+                    <i class="fa-solid fa-certificate text-red-700 text-base mt-0.5"></i>
+                    <div>
+                        <strong class="block text-slate-900 text-sm">Certified Welding Inspector (AWS CWI)</strong>
+                        <p class="text-slate-600">Hiệp hội Hàn Hoa Kỳ / American Welding Society (Cert. No. 15080521).</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex gap-3">
+                    <i class="fa-solid fa-certificate text-red-700 text-base mt-0.5"></i>
+                    <div>
+                        <strong class="block text-slate-900 text-sm">International Welding Inspector - Standard (IIW IWI-S)</strong>
+                        <p class="text-slate-600">Viện Hàn Quốc tế (Diploma No. VN-SL-Hanoi-1178-111226-008-IIW).</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex gap-3">
+                    <i class="fa-solid fa-certificate text-red-700 text-base mt-0.5"></i>
+                    <div>
+                        <strong class="block text-slate-900 text-sm">Chứng chỉ Đọc phim Chụp ảnh phóng xạ (RT) (02/2015)</strong>
+                        <p class="text-slate-600">Radiographic Testing (RT) Film Interpretation Certificate.</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex gap-3">
+                    <i class="fa-solid fa-certificate text-red-700 text-base mt-0.5"></i>
+                    <div>
+                        <strong class="block text-slate-900 text-sm">Canadian Welding Engineer Training Program (02/2014)</strong>
+                        <p class="text-slate-600">Chương trình đào tạo kỹ sư hàn theo tiêu chuẩn Canada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white mt-12 py-6 text-center text-xs text-slate-500">
+        <span class="lang-vi">© 2026 TS. Hán Lê Duy — HUST</span>
+        <span class="lang-en">© 2026 Dr. Duy Le Han — HUST</span>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            localStorage.setItem('preferred_lang', lang);
+            const btnVi = document.getElementById('btn-vi');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'en') {
+                btnEn.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs';
+                btnVi.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900';
+            } else {
+                btnVi.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs';
+                btnEn.className = 'px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900';
+            }
+        }
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (menuIcon) menuIcon.className = isHidden ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => setLanguage(localStorage.getItem('preferred_lang') || 'vi'));
+    </script>
+</body>
+</html>

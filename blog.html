@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc Chuyên gia | Blog - TS. Hán Lê Duy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        html[lang="vi"] .lang-en { display: none !important; }
+        html[lang="en"] .lang-vi { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+            <a href="index.html" class="font-bold text-lg text-slate-900">TS. Hán Lê Duy</a>
+            <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-red-700">Trang chủ</a>
+                <a href="profile.html" class="hover:text-red-700">Profile</a>
+                <a href="research.html" class="hover:text-red-700">Research</a>
+                <a href="publication.html" class="hover:text-red-700">Publication</a>
+                <a href="teaching.html" class="hover:text-red-700">Teaching</a>
+                <a href="blog.html" class="text-red-700 font-semibold">Blog</a>
+            </div>
+            <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+                <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white">VI</button>
+                <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5">
+                    <i class="fa-solid fa-pen-nib text-red-700"></i>
+                    <span class="lang-vi">Góc Chuyên gia & Chia sẻ Khoa học</span>
+                    <span class="lang-en">Technical Insights & Academic Blog</span>
+                </h2>
+                <span class="text-[11px] font-medium bg-red-50 text-red-700 px-2.5 py-1 rounded-full border border-red-100">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-1"></i>AI-Assisted
+                </span>
+            </div>
+
+            <div id="blog-container" class="space-y-4">
+                <p class="text-xs text-slate-400 italic">Đang tải bài viết...</p>
+            </div>
+        </section>
+
+        <!-- Modal đọc bài viết -->
+        <div id="blog-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-xl border border-slate-200">
+                <div class="flex justify-between items-start gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span id="modal-date" class="text-xs font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded"></span>
+                        <h3 id="modal-title-vi" class="text-lg font-bold text-slate-900 mt-2 lang-vi"></h3>
+                        <h3 id="modal-title-en" class="text-lg font-bold text-slate-900 mt-2 lang-en"></h3>
+                    </div>
+                    <button onclick="closeBlogModal()" class="text-slate-400 hover:text-slate-700 text-xl leading-none">&times;</button>
+                </div>
+                <div id="modal-content-vi" class="mt-5 text-sm text-slate-700 leading-relaxed lang-vi"></div>
+                <div id="modal-content-en" class="mt-5 text-sm text-slate-700 leading-relaxed lang-en"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white mt-12 py-6 text-center text-xs text-slate-500">
+        © 2026 TS. Hán Lê Duy — HUST
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            localStorage.setItem('preferred_lang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(localStorage.getItem('preferred_lang') || 'vi');
+            fetch('posts.json')
+                .then(res => res.json())
+                .then(posts => {
+                    window.allPosts = posts;
+                    const container = document.getElementById('blog-container');
+                    container.innerHTML = posts.map((post, idx) => `
+                        <article class="p-4 rounded-xl border border-slate-200 hover:border-red-300 transition bg-slate-50/50 cursor-pointer" onclick="openBlogModal(${idx})">
+                            <div class="flex items-center gap-2 text-xs text-slate-500 mb-1.5">
+                                <span class="font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded lang-vi">${post.category_vi}</span>
+                                <span class="font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded lang-en">${post.category_en}</span>
+                                <span>• ${post.date}</span>
+                            </div>
+                            <h3 class="text-sm font-bold text-slate-900 lang-vi">${post.title_vi}</h3>
+                            <h3 class="text-sm font-bold text-slate-900 lang-en">${post.title_en}</h3>
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2 lang-vi">${post.summary_vi}</p>
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2 lang-en">${post.summary_en}</p>
+                            <span class="inline-block mt-2 text-xs font-semibold text-red-700 lang-vi">Đọc chi tiết →</span>
+                            <span class="inline-block mt-2 text-xs font-semibold text-red-700 lang-en">Read article →</span>
+                        </article>
+                    `).join('');
+                }).catch(() => {
+                    document.getElementById('blog-container').innerHTML = '<p class="text-xs text-slate-400">Chưa có bài viết blog nào.</p>';
+                });
+        });
+
+        function openBlogModal(index) {
+            const post = window.allPosts[index];
+            document.getElementById('modal-date').textContent = post.date;
+            document.getElementById('modal-title-vi').textContent = post.title_vi;
+            document.getElementById('modal-title-en').textContent = post.title_en;
+            document.getElementById('modal-content-vi').innerHTML = post.content_vi;
+            document.getElementById('modal-content-en').innerHTML = post.content_en;
+            document.getElementById('blog-modal').classList.remove('hidden');
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blog-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

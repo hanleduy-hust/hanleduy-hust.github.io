@@ -1,0 +1,47 @@
+name: Tự động tạo bài viết Blog bằng AI & Chờ duyệt
+
+on:
+  schedule:
+    # Chạy vào lúc 08:00 sáng (giờ VN, tức 01:00 UTC) vào các ngày Thứ 2, Thứ 4, Thứ 6, Chủ Nhật (tần suất ~2 ngày/lần)
+    - cron: '0 1 */2 * *'
+  # Cho phép bạn ấn chạy thử nghiệm bất cứ lúc nào trên GitHub
+  workflow_dispatch:
+
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài đặt môi trường Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Cài đặt thư viện AI
+        run: |
+          pip install google-generativeai
+
+      - name: Chạy script tạo bài viết AI
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/auto_post_ai.py
+
+      - name: Tạo Pull Request (Bản nháp gửi bạn duyệt)
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "AI Post: Bản nháp bài viết mới cần duyệt"
+          title: "📝 [Cần duyệt] Bài viết Blog mới do AI tạo"
+          body: |
+            Chào Thầy Duy,
+            
+            Hệ thống AI vừa khởi tạo một bài viết khoa học mới cho mục Blog. 
+            
+            - **Trạng thái:** Đang chờ Thầy duyệt.
+            - **Thao tác duyệt:** Nếu nội dung đạt yêu cầu, Thầy chỉ cần bấm nút **Merge pull request** ở bên dưới để đăng tải lên website.
+            - **Hủy bài:** Nếu chưa ưng ý, bấm **Close pull request** để loại bỏ.
+          branch: auto-blog-draft
+          delete-branch: true

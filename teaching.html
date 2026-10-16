@@ -18,7 +18,6 @@
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <!-- Tên / Logo -->
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-red-700"></span>
                     <a href="index.html" class="font-bold text-lg text-slate-900 tracking-tight lang-vi">TS. Hán Lê Duy</a>
@@ -26,7 +25,6 @@
                     <span class="hidden sm:inline-block text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Ph.D.</span>
                 </div>
 
-                <!-- Menu Desktop & Nút chức năng -->
                 <div class="flex items-center space-x-3 md:space-x-6">
                     <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
                         <a href="index.html" class="hover:text-red-700 transition"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
@@ -37,13 +35,11 @@
                         <a href="blog.html" class="hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
                     </div>
 
-                    <!-- Nút Toggle VI / EN -->
                     <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
                         <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs">VI</button>
                         <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900">EN</button>
                     </div>
 
-                    <!-- Nút Hamburger Menu (Chỉ hiển thị trên Mobile) -->
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-red-700 hover:bg-slate-100 focus:outline-none transition" aria-label="Toggle Navigation">
                         <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
                     </button>
@@ -51,56 +47,75 @@
             </div>
         </div>
 
-        <!-- Menu thả xuống trên Mobile (Ẩn mặc định) -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-5 space-y-2 shadow-md">
-            <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span>
-            </a>
-            <a href="profile.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span>
-            </a>
-            <a href="research.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span>
-            </a>
-            <a href="publication.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Công bố</span><span class="lang-en">Publication</span>
-            </a>
-            <a href="teaching.html" class="block px-3 py-2 rounded-lg text-sm font-semibold bg-red-50 text-red-700">
-                <span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span>
-            </a>
-            <a href="blog.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
-                <span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span>
-            </a>
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
+            <a href="profile.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
+            <a href="research.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
+            <a href="publication.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
+            <a href="teaching.html" class="block px-3 py-2 rounded-lg text-sm font-semibold bg-red-50 text-red-700"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
+            <a href="blog.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+        <!-- Các môn học giảng dạy tại HUST -->
         <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
             <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-6">
-                <i class="fa-solid fa-chalkboard-user text-red-700"></i>
-                <span class="lang-vi">Học phần Giảng dạy & Đào tạo Quốc tế</span>
-                <span class="lang-en">Teaching Courses & International Training</span>
+                <i class="fa-solid fa-graduation-cap text-red-700"></i>
+                <span class="lang-vi">Học phần Giảng dạy Đại học & Sau Đại học (HUST)</span>
+                <span class="lang-en">University Courses (HUST)</span>
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div class="p-4 rounded-xl border border-slate-200 flex items-center justify-between">
-                    <span class="font-medium text-slate-800 lang-vi">Các quá trình Hàn & Công nghệ Hàn</span>
-                    <span class="font-medium text-slate-800 lang-en">Welding Processes & Technology</span>
-                    <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded">HUST</span>
+                    <div>
+                        <span class="font-semibold text-slate-900 block lang-vi">Các quá trình Hàn & Kỹ thuật Hàn</span>
+                        <span class="font-semibold text-slate-900 block lang-en">Welding Processes and Welding Engineering</span>
+                        <span class="text-xs text-slate-500">Trường Cơ khí — ĐHBK Hà Nội</span>
+                    </div>
+                    <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-mono">HUST</span>
                 </div>
                 <div class="p-4 rounded-xl border border-slate-200 flex items-center justify-between">
-                    <span class="font-medium text-slate-800 lang-vi">Công nghệ & Thiết bị Hàn vảy</span>
-                    <span class="font-medium text-slate-800 lang-en">Brazing & Soldering Technology</span>
-                    <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded">HUST</span>
-                </div>
-                <div class="p-4 rounded-xl border border-red-100 bg-red-50/50 sm:col-span-2 flex items-center justify-between gap-4">
                     <div>
-                        <span class="font-semibold text-slate-900 block lang-vi">Đào tạo & Chứng nhận Nhân lực Hàn Quốc tế (IIW / AWS)</span>
-                        <span class="font-semibold text-slate-900 block lang-en">International Welding Personnel Training (IIW / AWS)</span>
-                        <span class="text-xs text-slate-600 lang-vi">Chuyên gia giảng dạy và cấp chứng chỉ theo tiêu chuẩn Viện Hàn Quốc tế (IIW) và Hiệp hội Hàn Hoa Kỳ (AWS)[cite: 1].</span>
-                        <span class="text-xs text-slate-600 lang-en">Authorized instructor for IIW and AWS international certification programs[cite: 1].</span>
+                        <span class="font-semibold text-slate-900 block lang-vi">Công nghệ & Thiết bị Hàn vảy</span>
+                        <span class="font-semibold text-slate-900 block lang-en">Brazing and Soldering Technology & Equipment</span>
+                        <span class="text-xs text-slate-500">Trường Cơ khí — ĐHBK Hà Nội</span>
                     </div>
-                    <span class="text-xs font-semibold text-red-700 bg-white px-3 py-1.5 rounded border border-red-200 whitespace-nowrap">IIW / AWS</span>
+                    <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-mono">HUST</span>
                 </div>
+                <div class="p-4 rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div>
+                        <span class="font-semibold text-slate-900 block lang-vi">Đảm bảo Chất lượng Hàn</span>
+                        <span class="font-semibold text-slate-900 block lang-en">Welding Quality Assurance (ISO 3834)</span>
+                        <span class="text-xs text-slate-500">Trường Cơ khí — ĐHBK Hà Nội</span>
+                    </div>
+                    <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-mono">HUST</span>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div>
+                        <span class="font-semibold text-slate-900 block lang-vi">Xử lý Nhiệt Mối hàn</span>
+                        <span class="font-semibold text-slate-900 block lang-en">Heat Treatment of Welded Joints</span>
+                        <span class="text-xs text-slate-500">Trường Cơ khí — ĐHBK Hà Nội</span>
+                    </div>
+                    <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-mono">HUST</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Đào tạo & Cấp chứng nhận Quốc tế -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-6">
+                <i class="fa-solid fa-chalkboard-user text-red-700"></i>
+                <span class="lang-vi">Đào tạo Chứng chỉ Nghề Hàn Quốc tế (IIW / AWS)</span>
+                <span class="lang-en">International Certification Training (IIW / AWS)</span>
+            </h2>
+            <div class="p-5 rounded-xl border border-red-100 bg-red-50/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                    <span class="font-bold text-slate-900 block text-base lang-vi">Giảng viên / Chuyên gia Đào tạo Quốc tế được Ủy quyền (Authorized Instructor)</span>
+                    <span class="font-bold text-slate-900 block text-base lang-en">Authorized Instructor for International Welding Certification Programs</span>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed lang-vi">Chuyên gia giảng dạy, sát hạch và chứng nhận năng lực nhân sự ngành hàn theo tiêu chuẩn của <strong>Viện Hàn Quốc tế (IIW)</strong> và <strong>Hiệp hội Hàn Hoa Kỳ (AWS)</strong> trên nhiều cấp độ chuyên môn (IWE, IWT, IWI, CWI...).</p>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed lang-en">Authorized instructor for International Institute of Welding (IIW) and American Welding Society (AWS) personnel qualification and certification programs across multiple levels.</p>
+                </div>
+                <span class="text-xs font-bold text-red-700 bg-white px-3.5 py-2 rounded-lg border border-red-200 shadow-2xs whitespace-nowrap">IIW / AWS Accredited</span>
             </div>
         </section>
     </main>
@@ -125,23 +140,17 @@
             }
         }
 
-        // Bật/tắt thanh Mobile Menu
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
-
         if (menuBtn && mobileMenu) {
             menuBtn.addEventListener('click', () => {
                 const isHidden = mobileMenu.classList.toggle('hidden');
-                if (menuIcon) {
-                    menuIcon.className = isHidden ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
-                }
+                if (menuIcon) menuIcon.className = isHidden ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
             });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            setLanguage(localStorage.getItem('preferred_lang') || 'vi');
-        });
+        document.addEventListener('DOMContentLoaded', () => setLanguage(localStorage.getItem('preferred_lang') || 'vi'));
     </script>
 </body>
 </html>

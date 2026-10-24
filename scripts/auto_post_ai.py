@@ -351,8 +351,12 @@ def candidate_images(page_url, soup):
         url = urljoin(page_url, src)
         if url in seen or BAD_IMG.search(url):
             continue
-        cap_el = fig.find("figcaption") or fig.find(class_=re.compile("caption|legend|fig.*desc|description", re.I))
-        caption = clean_text(cap_el.get_text(" ") if cap_el else "", 450)
+        parts = []
+        for el in [fig.find("figcaption")] + fig.find_all(class_=re.compile("caption|legend|fig.*desc|description", re.I)):
+            t = clean_text(el.get_text(" ")) if el else ""
+            if t and not any(t in q for q in parts):
+                parts = [q for q in parts if q not in t] + [t]
+        caption = clean_text(" ".join(parts), 450)
         if len(caption) < 20:  # hình thật trong bài báo luôn có chú thích
             continue
         m = FIG_LABEL.match(caption)
@@ -444,21 +448,61 @@ def pdf_figures(pdf_bytes, max_n=3):
     return out
 
 
-def get_pdf(p):
-    """Tải PDF: ưu tiên kho PDF của OpenAlex (không bị nhà xuất bản chặn), sau đó link PDF của nhà xuất bản."""
+MDPI_JOURNALS = {
+    "ma": "materials", "met": "metals", "cryst": "crystals", "mi": "micromachines", "fluids": "fluids",
+    "app": "applsci", "coatings": "coatings", "jmmp": "jmmp", "polym": "polymers", "nano": "nanomaterials",
+    "en": "energies", "electronics": "electronics", "machines": "machines", "sensors": "sensors",
+    "lubricants": "lubricants", "designs": "designs", "processes": "processes", "jcs": "jcs",
+    "alloys": "alloys", "eng": "eng", "technologies": "technologies", "inventions": "inventions",
+}
+
+
+def mdpi_pdf_urls(doi):
+    """MDPI chặn máy chủ GitHub ở trang chính; thử bản PDF trên CDN mdpi-res.com (suy ra từ DOI)."""
+    m = re.fullmatch(r"10\.3390/([a-z]+)(\d{2})(\d{2})(\d{4,5})", doi or "")
+    if not m or m.group(1) not in MDPI_JOURNALS:
+        return []
+    j = MDPI_JOURNALS[m.group(1)]
+    name = f"{j}-{int(m.group(2))}-{int(m.group(4)):05d}"
+    return [f"https://mdpi-res.com/d_attachment/{j}/{name}/article_deploy/{name}.pdf",
+            f"https://pub.mdpi-res.com/d_attachment/{j}/{name}/article_deploy/{name}.pdf"]
+
+
+def zenodo_pdf_urls(url):
+    m = re.search(r"zenodo\.org/(?:records?|record)/(\d+)", url or "")
+    if not m:
+        return []
+    try:
+        r = SESSION.get(f"https://zenodo.org/api/records/{m.group(1)}", timeout=30)
+        files = r.json().get("files", []) if r.status_code == 200 else []
+        return [f["links"]["self"] for f in files if f.get("key", "").lower().endswith(".pdf")][:1]
+    except Exception:
+        return []
+
+
+def get_pdf(p, page_url="", page_pdf=""):
+    """Tải PDF bài báo, thử lần lượt: kho PDF OpenAlex → link PDF trong trang bài báo (citation_pdf_url)
+    → link PDF từ OpenAlex → Zenodo → CDN của MDPI."""
     urls = []
     if p.get("has_pdf") and p.get("openalex_id") and OPENALEX_API_KEY:
         urls.append(f"https://content.openalex.org/works/{p['openalex_id']}.pdf?api_key={OPENALEX_API_KEY}")
-    if p.get("pdf"):
-        urls.append(p["pdf"])
+    urls += [u for u in (page_pdf, p.get("pdf")) if u]
+    urls += zenodo_pdf_urls(page_url or p.get("landing", ""))
+    urls += mdpi_pdf_urls(p.get("doi"))
+    seen = set()
     for u in urls:
+        if u in seen:
+            continue
+        seen.add(u)
         try:
-            r = WEB.get(u, timeout=60, allow_redirects=True)
+            r = WEB.get(u, timeout=60, allow_redirects=True, headers={"Accept": "application/pdf,*/*"})
             if r.status_code == 200 and r.content[:5] == b"%PDF-":
                 return r.content, u.split("?")[0]
-            diag(f"    PDF {u.split('?')[0][:70]} → HTTP {r.status_code} {r.headers.get('Content-Type', '')[:30]}")
+            diag(f"    PDF {u.split('?')[0][:80]} → HTTP {r.status_code} {r.headers.get('Content-Type', '')[:25]}")
         except Exception as e:
-            diag(f"    PDF lỗi: {type(e).__name__}")
+            diag(f"    PDF {u.split('?')[0][:60]} lỗi {type(e).__name__}")
+    if not urls:
+        diag("    (không có nguồn PDF)")
     return None, ""
 
 
@@ -475,10 +519,15 @@ def collect_figures(papers, post_id):
         got = None
         # (1) HTML
         page = p["landing"] or f"https://doi.org/{p['doi']}"
+        page_url, page_pdf = page, ""
         try:
             r = WEB.get(page, timeout=30, allow_redirects=True)
+            page_url = r.url
             if r.status_code == 200 and "html" in r.headers.get("Content-Type", ""):
-                cands = candidate_images(r.url, BeautifulSoup(r.text, "html.parser"))
+                soup = BeautifulSoup(r.text, "html.parser")
+                meta = soup.find("meta", attrs={"name": "citation_pdf_url"})
+                page_pdf = urljoin(r.url, meta["content"]) if meta and meta.get("content") else ""
+                cands = candidate_images(r.url, soup)
                 for url, caption, label in cands:
                     try:
                         size = download_image(url, r.url, dest)
@@ -495,7 +544,7 @@ def collect_figures(papers, post_id):
             diag(f"  [{idx}] HTML lỗi {type(e).__name__}")
         # (2) PDF
         if not got:
-            data, src = get_pdf(p)
+            data, src = get_pdf(p, page_url, page_pdf)
             if data:
                 try:
                     for png, caption, label in pdf_figures(data):

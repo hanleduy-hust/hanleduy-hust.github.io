@@ -45,7 +45,7 @@ OPENALEX_API_KEY = os.environ.get("OPENALEX_API_KEY", "").strip()
 CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "").strip()
 MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "15"))
 MIN_PAPERS = 5
-LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "14"))
+LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "21"))
 MAX_FIGURES = 4
 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
@@ -55,15 +55,22 @@ SESSION.headers.update({"User-Agent": UA})
 # Chủ đề và truy vấn tìm kiếm (tiếng Anh, vì gần như toàn bộ bài báo quốc tế bằng tiếng Anh)
 TOPICS = [
     {"key": "welding", "vi": "Công nghệ hàn", "en": "Welding technology",
-     "queries": ["arc welding", "laser welding", "friction stir welding", "weld microstructure mechanical properties"]},
+     "queries": ['"arc welding"', '"laser welding"', '"friction stir welding"', '"welded joint" AND microstructure'],
+     "must": [r"\bweld"]},
     {"key": "metal_am", "vi": "In 3D kim loại", "en": "Metal additive manufacturing",
-     "queries": ["wire arc additive manufacturing", "directed energy deposition", "laser powder bed fusion"]},
+     "queries": ['"wire arc additive manufacturing"', '"directed energy deposition"', '"laser powder bed fusion"'],
+     "must": [r"additive(ly)? manufactur|\bwaam\b|directed energy deposition|powder bed fusion|\bl-?pbf\b|\bslm\b|3d[- ]print",
+              r"alloy|steel|metal|titanium|nickel|alumin|inconel|copper|magnesium|weld"]},
     {"key": "brazing", "vi": "Hàn vảy (brazing/soldering)", "en": "Brazing & soldering",
-     "queries": ["brazing joint", "lead-free solder", "transient liquid phase bonding"]},
+     "queries": ['brazing AND joint', '"lead-free solder"', '"transient liquid phase bonding"'],
+     "must": [r"braz|solder|transient liquid phase|\btlp\b"]},
     {"key": "packaging", "vi": "Đóng gói điện tử", "en": "Electronic packaging",
-     "queries": ["electronic packaging interconnect", "sintered silver die attach", "hybrid bonding copper", "solder joint reliability"]},
+     "queries": ['"electronic packaging"', '"die attach" AND sintering', '"hybrid bonding" AND copper', '"solder joint" AND reliability'],
+     "must": [r"packag|die[- ]attach|solder|hybrid bond|wire bond|flip[- ]chip|sinter|interconnect|bonding",
+              r"electron|chip|semiconductor|power module|\bdie\b|device|microelectron|\bic\b|photonic"]},
     {"key": "applications", "vi": "Hàn trong ngành trọng điểm", "en": "Welding in key industries",
-     "queries": ["welding nuclear", "welding hydrogen pipeline", "welding aerospace alloy", "welding battery electric vehicle", "shipbuilding welding"]},
+     "queries": ['welding AND nuclear', 'weld AND hydrogen AND pipeline', 'welding AND aerospace', 'welding AND battery', 'welding AND (ship OR shipbuilding)'],
+     "must": [r"\bweld|braz|solder|joining"]},
 ]
 
 # Giấy phép cho phép tái sử dụng hình (có ghi nguồn). Không dùng biến thể ND để an toàn.
@@ -157,7 +164,8 @@ def load_published():
 
 def openalex_search(query, since):
     params = {
-        "search": query,
+        # Tìm trong tiêu đề + tóm tắt, dùng cụm từ chính xác/AND để tránh bài không liên quan
+        "search.title_and_abstract": query,
         "filter": f"from_publication_date:{since},is_oa:true,type:article,has_doi:true",
         "sort": "publication_date:desc",
         "per-page": 15,
@@ -192,7 +200,7 @@ def openalex_search(query, since):
 
 def crossref_search(query, since):
     params = {
-        "query.bibliographic": query,
+        "query.bibliographic": re.sub(r'["()]|\bAND\b|\bOR\b', " ", query),
         "filter": f"from-pub-date:{since},type:journal-article,has-license:true",
         "sort": "published",
         "order": "desc",
@@ -229,6 +237,15 @@ def crossref_search(query, since):
     return out
 
 
+TOPIC_BY_KEY = {t["key"]: t for t in TOPICS}
+
+
+def relevant(paper, topic_key):
+    """Bài phải chứa đủ các nhóm từ khóa của chủ đề trong tiêu đề hoặc tóm tắt."""
+    text = f"{paper['title']} {paper['abstract']}".lower()
+    return all(re.search(pat, text) for pat in TOPIC_BY_KEY[topic_key]["must"])
+
+
 def collect_papers():
     since = (dt.date.today() - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
     published = load_published()
@@ -261,6 +278,9 @@ def collect_papers():
             if not it["doi"] or it["doi"] in seen or len(it["title"]) < 15:
                 continue
             if len(it["abstract"]) < 200:  # cần tóm tắt đủ dài để AI viết chính xác
+                continue
+            if not relevant(it, key):  # chặn bài lạc đề (y sinh, lịch sử…) do công cụ tìm kiếm trả về
+                log(f"  bỏ (lạc đề): {it['title'][:80]}")
                 continue
             seen.add(it["doi"])
             good.append(it)
@@ -424,7 +444,7 @@ brazing & soldering, electronic packaging, and welding in key industries.
 RULES
 - Group the papers into 3–5 thematic sections with an <h3> heading each. In each section, explain in plain but precise
   technical language what each study did, the key quantitative findings (only numbers that appear in the abstracts)
-  and why it matters for industry/practice. Mention every paper at least once.
+  and why it matters for industry/practice. Cover every paper that belongs to these fields; if a paper is clearly outside welding/joining, metal AM, brazing/soldering or electronic packaging, leave it out entirely.
 - Cite with square brackets right after the claim, e.g. "... tăng 18% độ bền kéo [3]." Use only the numbers [1]..[{len(papers)}].
 - Do NOT invent results, authors, numbers or institutions not in the abstracts. Do not write a reference list (it is added automatically).
 - Place each figure placeholder exactly once, on its own line, in the section discussing its paper: {{{{FIG1}}}}, {{{{FIG2}}}}…

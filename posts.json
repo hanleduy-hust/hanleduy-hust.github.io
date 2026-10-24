@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-10-24-chuyen-de-ung-dung-tri-tue-nhan-tao-ai-trong-linh-vuc-han-va",
+    "date": "2026-10-24",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Ứng Dụng Trí Tuệ Nhân Tạo (AI) Trong Lĩnh Vực Hàn Và Xu Thế Tương Lai",
+    "title_en": "Applications of Artificial Intelligence (AI) in Welding Technology and Future Trends",
+    "summary_vi": "Tổng quan chuyên sâu về việc tích hợp trí tuệ nhân tạo, học máy và học sâu trong giám sát thời gian thực, phát hiện khuyết tật NDT, tối ưu hóa thông số và bản sao số cho các công nghệ hàn và sản xuất bồi đắp kim loại.",
+    "summary_en": "An in-depth review of the integration of artificial intelligence, machine learning, and deep learning across in-process monitoring, NDT defect detection, parameter optimization, and digital twins in welding and metal additive manufacturing.",
+    "tags": [
+      "Artificial Intelligence",
+      "Welding Technology",
+      "Machine Learning",
+      "Defect Detection",
+      "Additive Manufacturing",
+      "Digital Twin"
+    ],
+    "cover": "images/blog/2026-10-24-chuyen-de-ung-dung-tri-tue-nhan-tao-ai-trong-linh-vuc-han-va/fig7.jpg",
+    "file": "posts/2026-10-24-chuyen-de-ung-dung-tri-tue-nhan-tao-ai-trong-linh-vuc-han-va.json"
+  },
+  {
     "id": "2026-10-24-diem-tin-khoa-hoc-1916",
     "date": "2026-10-24",
     "type": "digest",

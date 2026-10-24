@@ -46,7 +46,7 @@ CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "").strip()
 MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "15"))
 MIN_PAPERS = 5
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "21"))
-MAX_FIGURES = 4
+MAX_FIGURES = 8  # tối đa 1 hình/bài báo, mỗi mục của bản tin có ít nhất 1 hình
 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
 SESSION = requests.Session()
@@ -284,6 +284,8 @@ def collect_papers():
                 continue
             seen.add(it["doi"])
             good.append(it)
+        # Ưu tiên bài có giấy phép CC (lấy được hình minh họa), sau đó đến bài mới nhất
+        good.sort(key=lambda x: (x["license"] in REUSABLE_LICENSES, x["date"]), reverse=True)
         pools[key] = good
 
     # Lấy xen kẽ giữa các chủ đề để bản tin đa dạng
@@ -302,10 +304,20 @@ def collect_papers():
 BAD_IMG = re.compile(r"(logo|cover|icon|banner|orcid|crossmark|badge|avatar|sprite|placeholder|journal[-_]?thumb|ads?/)", re.I)
 
 
+FIG_CONTAINER = re.compile(r"(^|[-_\s])(fig|figure|html-fig|figure-container|figure-wrap)([-_\s\d]|$)", re.I)
+FIG_LABEL = re.compile(r"^\s*((?:fig(?:ure)?|hình)\.?\s*\d+[a-z]?)[.:\s]*", re.I)
+
+
 def candidate_images(page_url, soup):
-    """Trả về [(url, caption)] theo thứ tự ưu tiên: <figure> trong bài, rồi og:image."""
-    cands = []
-    for fig in soup.find_all("figure"):
+    """Chỉ lấy HÌNH TRONG BÀI BÁO: ảnh nằm trong khối figure có chú thích (caption).
+    Không dùng og:image / ảnh bìa tạp chí / logo. Trả về [(url, caption, nhãn hình gốc)]."""
+    for junk in soup.find_all(["header", "nav", "footer", "aside"]):
+        junk.decompose()
+    containers = soup.find_all("figure")
+    containers += [el for el in soup.find_all(["div", "section"])
+                   if FIG_CONTAINER.search(" ".join(el.get("class", [])) + " " + (el.get("id") or ""))]
+    cands, seen = [], set()
+    for fig in containers:
         img = fig.find("img")
         if not img:
             continue
@@ -316,20 +328,27 @@ def candidate_images(page_url, soup):
                 break
         if not src and img.get("srcset"):
             src = img["srcset"].split(",")[-1].strip().split(" ")[0]
-        # nhiều trang có link tới bản hình lớn
-        a = fig.find("a", href=re.compile(r"\.(jpe?g|png|webp)(\?|$)", re.I))
+        a = fig.find("a", href=re.compile(r"\.(jpe?g|png|webp)(\?|$)", re.I))  # bản hình độ phân giải cao
         if a:
             src = a["href"]
-        cap_el = fig.find("figcaption") or fig.find(class_=re.compile("caption", re.I))
-        caption = clean_text(cap_el.get_text(" ") if cap_el else img.get("alt", ""), 400)
-        if src and not src.startswith("data:"):
-            cands.append((urljoin(page_url, src), caption))
-        if len(cands) >= 3:
+        if not src or src.startswith("data:"):
+            continue
+        url = urljoin(page_url, src)
+        if url in seen or BAD_IMG.search(url):
+            continue
+        cap_el = fig.find("figcaption") or fig.find(class_=re.compile("caption|legend|fig.*desc|description", re.I))
+        caption = clean_text(cap_el.get_text(" ") if cap_el else "", 450)
+        if len(caption) < 20:  # hình thật trong bài báo luôn có chú thích
+            continue
+        m = FIG_LABEL.match(caption)
+        label = m.group(1) if m else ""
+        if m:
+            caption = caption[m.end():].strip()
+        seen.add(url)
+        cands.append((url, caption, label))
+        if len(cands) >= 4:
             break
-    og = soup.find("meta", property="og:image") or soup.find("meta", attrs={"name": "twitter:image"})
-    if og and og.get("content"):
-        cands.append((urljoin(page_url, og["content"]), ""))
-    return [(u, c) for u, c in cands if not BAD_IMG.search(u)]
+    return cands
 
 
 def download_image(url, dest):
@@ -370,7 +389,7 @@ def collect_figures(papers, post_id):
         except Exception as e:
             log(f"  Không mở được trang bài {p['doi']}: {e}")
             continue
-        for url, caption in candidate_images(r.url, soup):
+        for url, caption, label in candidate_images(r.url, soup):
             n = len(figures) + 1
             dest = IMG_DIR / post_id / f"fig{n}.jpg"
             try:
@@ -380,7 +399,7 @@ def collect_figures(papers, post_id):
             if size:
                 figures.append({
                     "n": n, "paper": idx, "src": f"images/blog/{post_id}/fig{n}.jpg",
-                    "caption_original": caption, "source_url": url, "license": p["license"],
+                    "caption_original": caption, "orig_label": label, "source_url": url, "license": p["license"],
                 })
                 log(f"  + Hình {n} từ [{idx}] {p['doi']} ({size[0]}×{size[1]})")
                 break
@@ -428,10 +447,12 @@ def gemini_json(prompt):
 
 def build_prompt(papers, figures, today):
     topic_names = {t["key"]: t["en"] for t in TOPICS}
+    fig_of = {f["paper"]: f["n"] for f in figures}
     lines = []
     for i, p in enumerate(papers, 1):
+        has = f"  [HAS FIGURE: FIG{fig_of[i]}]" if i in fig_of else ""
         lines.append(
-            f"[{i}] Topic: {topic_names[p['topic']]}\nTitle: {p['title']}\nJournal: {p['journal']} ({p['date']})\n"
+            f"[{i}] Topic: {topic_names[p['topic']]}{has}\nTitle: {p['title']}\nJournal: {p['journal']} ({p['date']})\n"
             f"Abstract: {clean_text(p['abstract'], 1600)}\n")
     figs = "\n".join(f"FIG{f['n']} – from paper [{f['paper']}]; original caption: {f['caption_original'] or '(none)'}"
                      for f in figures) or "(no figures)"
@@ -442,12 +463,16 @@ based ONLY on the {len(papers)} newly published papers below. Fields: welding, m
 brazing & soldering, electronic packaging, and welding in key industries.
 
 RULES
-- Group the papers into 3–5 thematic sections with an <h3> heading each. In each section, explain in plain but precise
+- Group the papers into 4–6 thematic sections with an <h3> heading each. Build each section around at least one paper
+  marked [HAS FIGURE] so that EVERY section is illustrated by one figure from the papers it discusses. In each section, explain in plain but precise
   technical language what each study did, the key quantitative findings (only numbers that appear in the abstracts)
   and why it matters for industry/practice. Cover every paper that belongs to these fields; if a paper is clearly outside welding/joining, metal AM, brazing/soldering or electronic packaging, leave it out entirely.
 - Cite with square brackets right after the claim, e.g. "... tăng 18% độ bền kéo [3]." Use only the numbers [1]..[{len(papers)}].
 - Do NOT invent results, authors, numbers or institutions not in the abstracts. Do not write a reference list (it is added automatically).
-- Place each figure placeholder exactly once, on its own line, in the section discussing its paper: {{{{FIG1}}}}, {{{{FIG2}}}}…
+- FIGURES: put each figure placeholder exactly once, as its own paragraph, right after the paragraph that discusses
+  the paper it comes from: {{{{FIG1}}}}, {{{{FIG2}}}}… Each thematic section should contain one figure (two at most).
+  In the text, briefly tell the reader what the figure shows (e.g. "Ảnh SEM dưới đây cho thấy…") but do NOT write
+  figure numbers – numbering is added automatically. Never describe details that are not in the caption or abstract.
   Available figures:
 {figs}
 - Start with a 2–3 sentence lead paragraph (<p class="lead">) summarising the day's highlights; end with a short
@@ -464,8 +489,8 @@ Return ONLY a JSON object:
   "title_vi": "...", "title_en": "...",
   "summary_vi": "2 câu", "summary_en": "2 sentences",
   "tags": ["3-6 short English keywords"],
-  "figure_captions_vi": {{"1": "chú thích tiếng Việt ngắn cho FIG1", "...": "..."}},
-  "figure_captions_en": {{"1": "short English caption for FIG1", "...": "..."}},
+  "figure_captions_vi": {{"1": "bản dịch tiếng Việt trung thành, ngắn gọn của chú thích gốc FIG1 (không thêm thông tin)", "...": "..."}},
+  "figure_captions_en": {{"1": "faithful, concise English version of the original FIG1 caption (no new information)", "...": "..."}},
   "content_vi": "HTML",
   "content_en": "HTML"
 }}
@@ -493,13 +518,37 @@ def sanitize(html_text):
     return str(soup)
 
 
-def figure_html(f, caption, lang, paper):
+LICENSE_URL = {
+    "cc-by": "https://creativecommons.org/licenses/by/4.0/",
+    "cc-by-sa": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "cc-by-nc": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "cc-by-nc-sa": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "cc0": "https://creativecommons.org/publicdomain/zero/1.0/",
+}
+
+
+def figure_html(f, caption, lang, paper, number=None):
+    """Hình kèm chú thích + trích dẫn đầy đủ bài báo gốc (tác giả, năm, tên bài, tạp chí, DOI, giấy phép)."""
+    vi = lang == "vi"
     lic = f["license"].upper().replace("CC-", "CC ")
-    src_label = "Nguồn" if lang == "vi" else "Source"
+    lic_html = (f'<a href="{LICENSE_URL[f["license"]]}" target="_blank" rel="noopener">{lic}</a>'
+                if f["license"] in LICENSE_URL else lic)
+    orig = f.get("orig_label") or ""
+    if orig:
+        orig = re.sub(r"(?i)^fig(ure)?\.?", "Hình" if vi else "Fig.", orig).strip()
+        where = f'{orig} trong bài gốc' if vi else f'{orig} of the original article'
+    else:
+        where = "Hình trích từ bài gốc" if vi else "Figure reproduced from the original article"
+    doi = html.escape(paper["doi"])
+    credit = (f'{"Nguồn" if vi else "Source"}: {where} – {html.escape(short_cite(paper))}, '
+              f'“{html.escape(paper["title"])}”, <em>{html.escape(paper["journal"])}</em>, '
+              f'<a href="https://doi.org/{doi}" target="_blank" rel="noopener">doi:{doi}</a> '
+              f'[<a href="#ref-{f["paper"]}">{f["paper"]}</a>]. '
+              f'{"Giấy phép" if vi else "Licence"}: {lic_html}'
+              f'{"; ảnh được thu nhỏ, không chỉnh sửa nội dung" if vi else "; resized, content unchanged"}.')
     return (f'<figure class="post-figure"><img src="{f["src"]}" alt="{html.escape(caption)}" loading="lazy">'
-            f'<figcaption><strong>{"Hình" if lang == "vi" else "Figure"} {f["n"]}.</strong> {html.escape(caption)} '
-            f'<span class="fig-credit">{src_label}: {html.escape(short_cite(paper))} '
-            f'[<a href="#ref-{f["paper"]}">{f["paper"]}</a>], {lic}.</span></figcaption></figure>')
+            f'<figcaption><strong>{"Hình" if vi else "Figure"} {number or f["n"]}.</strong> {html.escape(caption)} '
+            f'<span class="fig-credit">{credit}</span></figcaption></figure>')
 
 
 def short_cite(p):
@@ -520,17 +569,43 @@ def finalize_content(content, figures, captions, lang, papers):
         return "<sup class=\"cite\">[" + ", ".join(f'<a href="#ref-{n}">{n}</a>' for n in nums) + "]</sup>"
 
     content = re.sub(r"\[(\d+(?:\s*[,–-]\s*\d+)*)\]", cite, content)
-    used = set()
-    for f in figures:
-        cap = captions.get(str(f["n"])) or f["caption_original"] or ""
-        block = figure_html(f, cap, lang, papers[f["paper"] - 1])
-        pattern = re.compile(r"(<p>\s*)?\{\{\s*FIG" + str(f["n"]) + r"\s*\}\}(\s*</p>)?")
-        if pattern.search(content):
-            content = pattern.sub(lambda _: block, content, count=1)
-            used.add(f["n"])
-        else:
-            content += block
-    content = re.sub(r"\{\{\s*FIG\d+\s*\}\}", "", content)
+    by_n = {f["n"]: f for f in figures}
+    token = re.compile(r"(?:<p>\s*)?\{\{\s*FIG(\d+)\s*\}\}(?:\s*</p>)?")
+
+    # Những hình AI quên đặt: chèn vào cuối các mục (<h3>) chưa có hình, ưu tiên mục có trích dẫn bài báo của hình đó
+    placed = {int(n) for n in token.findall(content) if int(n) in by_n}
+    unused = [f for f in figures if f["n"] not in placed]
+    if unused:
+        parts = re.split(r"(?=<h3>)", content)
+        body = [i for i, part in enumerate(parts) if part.startswith("<h3>")][:-1] or \
+               [i for i, part in enumerate(parts) if part.startswith("<h3>")]  # bỏ mục "Góc nhìn chuyên gia" cuối
+        for i in body:
+            if not unused:
+                break
+            if token.search(parts[i]):
+                continue
+            cited = {int(x) for x in re.findall(r'href="#ref-(\d+)"', parts[i])}
+            pick = next((f for f in unused if f["paper"] in cited), unused[0])
+            unused.remove(pick)
+            parts[i] += f"{{{{FIG{pick['n']}}}}}"
+        content = "".join(parts)
+        for f in unused:  # vẫn còn dư: đặt trước mục kết luận
+            content += f"{{{{FIG{f['n']}}}}}"
+
+    # Đánh số hình theo thứ tự xuất hiện trong bài; mỗi hình chỉ dùng một lần
+    counter, done = [0], set()
+
+    def put(m):
+        n = int(m.group(1))
+        if n not in by_n or n in done:
+            return ""
+        done.add(n)
+        counter[0] += 1
+        f = by_n[n]
+        cap = captions.get(str(n)) or f["caption_original"] or ""
+        return figure_html(f, cap, lang, papers[f["paper"] - 1], number=counter[0])
+
+    content = token.sub(put, content)
     content = re.sub(r"<p>\s*</p>", "", content)
     return content
 
@@ -551,6 +626,13 @@ def main():
     post_id = f"{today}-diem-tin-khoa-hoc"
     if (POSTS_DIR / f"{post_id}.json").exists():
         post_id += "-" + now_vn.strftime("%H%M")
+
+    # Bảo đảm các thư mục tồn tại (kể cả khi hôm nay không lấy được hình nào),
+    # nếu không bước tạo Pull Request sẽ lỗi "pathspec 'images/blog/**' did not match any files"
+    IMG_DIR.mkdir(parents=True, exist_ok=True)
+    (IMG_DIR / ".gitkeep").touch()
+    POSTS_DIR.mkdir(exist_ok=True)
+    (POSTS_DIR / ".gitkeep").touch()
 
     figures = collect_figures(papers, post_id)
     log(f"Thu được {len(figures)} hình minh họa")
@@ -574,12 +656,14 @@ def main():
         "summary_vi": clean_text(ai.get("summary_vi", "")),
         "summary_en": clean_text(ai.get("summary_en", "")),
         "tags": [clean_text(t) for t in ai.get("tags", [])][:6],
-        "cover": figures[0]["src"] if figures else "",
+        "cover": "",
         "content_vi": finalize_content(ai["content_vi"], figures, ai.get("figure_captions_vi", {}) or {}, "vi", papers),
         "content_en": finalize_content(ai["content_en"], figures, ai.get("figure_captions_en", {}) or {}, "en", papers),
         "references": refs,
         "generated_by": "AI (Gemini) – biên tập & duyệt bởi TS. Hán Lê Duy",
     }
+    m = re.search(r'<img src="([^"]+)"', post["content_vi"])
+    post["cover"] = m.group(1) if m else ""
 
     POSTS_DIR.mkdir(exist_ok=True)
     (POSTS_DIR / f"{post_id}.json").write_text(json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8")

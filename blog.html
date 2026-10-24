@@ -296,15 +296,15 @@
             const now = new Date();
             const accVi = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
             const accEn = `${MONTHS_EN[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
-            const ai = p.type === 'digest';
-            const tagVi = ai ? ' [Bản tin khoa học tổng hợp bởi AI]' : '';
-            const tagEn = ai ? ' [AI-generated science digest]' : '';
+            const ai = p.type === 'digest' || p.type === 'feature';
+            const tagVi = p.type === 'feature' ? ' [Bài chuyên đề tổng hợp bởi AI]' : ai ? ' [Bản tin khoa học tổng hợp bởi AI]' : '';
+            const tagEn = p.type === 'feature' ? ' [AI-generated in-depth article]' : ai ? ' [AI-generated science digest]' : '';
             const bibKey = 'hanleduy' + (p.date || '').replace(/-/g, '');
             return {
                 apa_vi: `Hán Lê Duy (Biên tập). (${y}, ${d} tháng ${m}). ${p.title_vi}${tagVi}. Góc Chuyên gia – TS. Hán Lê Duy, Đại học Bách khoa Hà Nội. Truy cập ngày ${accVi}, từ ${url}`,
                 apa_en: `Han, D. L. (Ed.). (${y}, ${MONTHS_EN[m - 1]} ${d}). ${p.title_en}${tagEn}. Expert Corner – Dr. Duy Le Han, Hanoi University of Science and Technology. Retrieved ${accEn}, from ${url}`,
-                ieee: `D. L. Han, Ed., "${p.title_en}," ${ai ? 'AI-generated science digest, ' : ''}Expert Corner – Dr. Duy Le Han, Hanoi Univ. Sci. Technol., ${MON_IEEE[m - 1]} ${d}, ${y}. [Online]. Available: ${url} [Accessed: ${MON_IEEE[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}].`,
-                bibtex: `@misc{${bibKey},\n  editor       = {Han, Duy Le},\n  title        = {{${p.title_en}}},\n  howpublished = {Expert Corner -- Dr. Duy Le Han, Hanoi University of Science and Technology},\n  year         = {${y}},\n  month        = {${MONTHS_EN[m - 1].slice(0, 3).toLowerCase()}},\n  url          = {${url}},\n  note         = {${ai ? 'AI-generated science digest, reviewed by the editor. ' : ''}Accessed: ${now.toISOString().slice(0, 10)}}\n}`,
+                ieee: `D. L. Han, Ed., "${p.title_en}," ${p.type === 'feature' ? 'AI-generated in-depth article, ' : ai ? 'AI-generated science digest, ' : ''}Expert Corner – Dr. Duy Le Han, Hanoi Univ. Sci. Technol., ${MON_IEEE[m - 1]} ${d}, ${y}. [Online]. Available: ${url} [Accessed: ${MON_IEEE[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}].`,
+                bibtex: `@misc{${bibKey},\n  editor       = {Han, Duy Le},\n  title        = {{${p.title_en}}},\n  howpublished = {Expert Corner -- Dr. Duy Le Han, Hanoi University of Science and Technology},\n  year         = {${y}},\n  month        = {${MONTHS_EN[m - 1].slice(0, 3).toLowerCase()}},\n  url          = {${url}},\n  note         = {${p.type === 'feature' ? 'AI-generated in-depth article, reviewed by the editor. ' : ai ? 'AI-generated science digest, reviewed by the editor. ' : ''}Accessed: ${now.toISOString().slice(0, 10)}}\n}`,
             };
         }
         let citeStore = [];

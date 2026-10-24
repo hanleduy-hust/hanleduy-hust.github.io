@@ -46,6 +46,11 @@ CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "").strip()
 MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "15"))
 MIN_PAPERS = 5
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "21"))
+# Chế độ BÀI CHUYÊN ĐỀ (thay cho bản tin hằng ngày) khi có FEATURE_TOPIC
+FEATURE_TOPIC = os.environ.get("FEATURE_TOPIC", "").strip()
+FEATURE_QUERIES = [q.strip() for q in os.environ.get("FEATURE_QUERIES", "").split(";") if q.strip()]
+FEATURE_MUST = os.environ.get("FEATURE_MUST", "").strip()  # regex bắt buộc thêm (ví dụ nhóm từ khóa AI)
+FEATURE_PAPERS = int(os.environ.get("FEATURE_PAPERS", "20"))
 MAX_FIGURES = 8  # tối đa 1 hình/bài báo, mỗi mục của bản tin có ít nhất 1 hình
 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
@@ -175,14 +180,14 @@ def load_published():
 # 1. Thu thập bài báo
 
 
-def openalex_search(query, since):
+def openalex_search(query, since, work_type="article", sort="publication_date:desc", per_page=15):
     params = {
         # Tìm trong tiêu đề + tóm tắt, dùng cụm từ chính xác/AND để tránh bài không liên quan
         "search.title_and_abstract": query,
-        "filter": f"from_publication_date:{since},is_oa:true,type:article,has_doi:true",
-        "sort": "publication_date:desc",
-        "per-page": 15,
-        "select": "id,doi,title,publication_date,authorships,primary_location,best_oa_location,abstract_inverted_index,language,has_content,content_urls",
+        "filter": f"from_publication_date:{since},is_oa:true,type:{work_type},has_doi:true",
+        "sort": sort,
+        "per-page": per_page,
+        "select": "id,doi,title,publication_date,authorships,primary_location,best_oa_location,abstract_inverted_index,language,has_content,content_urls,cited_by_count",
     }
     if OPENALEX_API_KEY:
         params["api_key"] = OPENALEX_API_KEY
@@ -209,6 +214,8 @@ def openalex_search(query, since):
             "pdf": loc.get("pdf_url") or "",
             "openalex_id": (w.get("id") or "").rsplit("/", 1)[-1],
             "has_pdf": bool((w.get("has_content") or {}).get("pdf")),
+            "cited": w.get("cited_by_count") or 0,
+            "kind": "review" if work_type == "review" else "article",
         })
     return out
 
@@ -259,6 +266,48 @@ def relevant(paper, topic_key):
     """Bài phải chứa đủ các nhóm từ khóa của chủ đề trong tiêu đề hoặc tóm tắt."""
     text = f"{paper['title']} {paper['abstract']}".lower()
     return all(re.search(pat, text) for pat in TOPIC_BY_KEY[topic_key]["must"])
+
+
+JOINING = re.compile(r"\bweld|braz|solder|additive(ly)? manufactur|\bwaam\b|directed energy deposition|joining", re.I)
+
+
+def collect_feature_papers():
+    """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng), đúng chủ đề."""
+    today = dt.date.today()
+    since_review = (today - dt.timedelta(days=5 * 365)).isoformat()
+    since_recent = (today - dt.timedelta(days=548)).isoformat()
+    must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
+    reviews, recent = [], []
+    for q in FEATURE_QUERIES or [FEATURE_TOPIC]:
+        for kind, since, sort, bucket in (("review", since_review, "cited_by_count:desc", reviews),
+                                          ("article", since_recent, "cited_by_count:desc", recent)):
+            try:
+                bucket += openalex_search(q, since, work_type=kind, sort=sort, per_page=10)
+            except Exception as e:
+                diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
+            time.sleep(0.3)
+    log(f"Chuyên đề: {len(reviews)} bài tổng quan, {len(recent)} bài nghiên cứu (thô)")
+
+    def ok(it):
+        text = f"{it['title']} {it['abstract']}"
+        return (it["doi"] and len(it["abstract"]) >= 200 and JOINING.search(text)
+                and (must is None or must.search(text)))
+
+    chosen, seen = [], set()
+    key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
+    for pool, quota in ((reviews, 6), (recent, FEATURE_PAPERS)):
+        n = 0
+        for it in sorted(pool, key=key, reverse=True):
+            if len(chosen) >= FEATURE_PAPERS or n >= quota:
+                break
+            if it["doi"] in seen or not ok(it):
+                continue
+            seen.add(it["doi"])
+            it["topic"] = "feature"
+            chosen.append(it)
+            n += 1
+    log(f"Chọn {len(chosen)} bài cho chuyên đề")
+    return chosen
 
 
 def collect_papers():
@@ -595,7 +644,7 @@ def gemini_json(prompt):
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         body = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 16384},
+            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 32768},
         }
         for attempt in range(2):
             try:
@@ -619,6 +668,67 @@ def gemini_json(prompt):
                 break  # model không dùng được → thử model kế tiếp
             time.sleep(5)
     raise RuntimeError(f"Gọi Gemini thất bại: {last}")
+
+
+def build_feature_prompt(papers, figures, today):
+    fig_of = {f["paper"]: f["n"] for f in figures}
+    lines = []
+    for i, p in enumerate(papers, 1):
+        has = f"  [HAS FIGURE: FIG{fig_of[i]}]" if i in fig_of else ""
+        kind = "REVIEW" if p.get("kind") == "review" else "RESEARCH"
+        lines.append(f"[{i}] {kind}{has}\nTitle: {p['title']}\nJournal: {p['journal']} ({p['date']})\n"
+                     f"Abstract: {clean_text(p['abstract'], 1800)}\n")
+    figs = "\n".join(f"FIG{f['n']} – from paper [{f['paper']}]; original caption: {f['caption_original'] or '(none)'}"
+                     for f in figures) or "(no figures)"
+    return f"""You are a science writer for a welding & joining technology blog.
+Write an IN-DEPTH bilingual Vietnamese–English feature article on the topic:
+"{FEATURE_TOPIC}"
+for engineers, lecturers and graduate students. Base every technical claim on the {len(papers)} papers below
+(review papers give the big picture; research papers give concrete, recent examples).
+
+STRUCTURE (each part an <h3> section):
+1. Lead paragraph (<p class="lead">, 3–4 sentences) on why the topic matters now.
+2. "Bối cảnh" / "Background": the problem AI addresses in welding (variability, defects, skilled-labour shortage, quality assurance).
+3. 4–6 application sections grouped by theme as supported by the papers — e.g. vision-based seam tracking & robot guidance,
+   in-process monitoring (arc/acoustic/thermal signals), defect detection & NDT (radiography, ultrasonic), process-parameter
+   optimisation & quality/property prediction, digital twins, AI for metal additive manufacturing (WAAM/DED/L-PBF),
+   brazing/soldering/electronic packaging. For each: the AI methods used (CNN, LSTM, transformers, reinforcement learning,
+   physics-informed ML…), what was achieved (only numbers present in the abstracts), and limitations.
+4. "Thách thức" / "Challenges": data scarcity & labelling, generalisation across materials/machines, explainability,
+   real-time/edge constraints, integration with qualification standards (WPS/PQR, ISO 3834) — grounded in the papers.
+5. "Xu thế tương lai" / "Future trends": 4–6 trends with reasoning drawn from the reviews (e.g. foundation/multimodal models,
+   physics-informed and hybrid models, closed-loop autonomous welding cells, digital twins, human–AI collaboration, standards).
+   Clearly phrase forward-looking statements as expectations, not facts.
+6. "Hàm ý thực tiễn" / "Practical implications": 3–4 concrete implications for Vietnamese industry and education.
+
+RULES
+- Cite with [n] right after each claim; use only [1]..[{len(papers)}]. No reference list (added automatically).
+- Do NOT invent numbers, datasets, companies or results not present in the abstracts.
+- VOICE: neutral, impersonal. NEVER mention any blog owner, author, editor, lab, university or "experts" as the source of
+  the analysis. Refer to cited authors only as "nhóm tác giả [n]" / "the authors of [n]".
+- FIGURES: put each placeholder exactly once, as its own paragraph, right after the paragraph discussing its paper:
+  {{{{FIG1}}}}, {{{{FIG2}}}}… Aim for one figure per application section. Do not write figure numbers in the text.
+  Available figures:
+{figs}
+- Allowed HTML: <h3>, <p>, <ul>, <li>, <strong>, <em>, <sub>, <sup>. No styles, images or links.
+- Vietnamese must be natural, with standard Vietnamese welding/AI terminology and English abbreviations in parentheses
+  (e.g. "mạng nơ-ron tích chập (CNN)", "dò đường hàn (seam tracking)", "bản sao số (digital twin)").
+- Length: about 2200–3000 words per language.
+
+Return ONLY a JSON object:
+{{
+  "category_vi": "Chuyên đề", "category_en": "In-depth",
+  "title_vi": "...", "title_en": "...",
+  "summary_vi": "2–3 câu", "summary_en": "2–3 sentences",
+  "tags": ["4-6 short English keywords"],
+  "figure_captions_vi": {{"1": "bản dịch tiếng Việt trung thành, ngắn gọn của chú thích gốc FIG1", "...": "..."}},
+  "figure_captions_en": {{"1": "faithful, concise English version of the original FIG1 caption", "...": "..."}},
+  "content_vi": "HTML",
+  "content_en": "HTML"
+}}
+
+PAPERS (date of writing: {today})
+{chr(10).join(lines)}"""
 
 
 def build_prompt(papers, figures, today):
@@ -806,13 +916,14 @@ def main():
     now_vn = dt.datetime.utcnow() + dt.timedelta(hours=7)
     today = now_vn.date().isoformat()
 
-    papers = collect_papers()
+    feature = bool(FEATURE_TOPIC)
+    papers = collect_feature_papers() if feature else collect_papers()
     if len(papers) < MIN_PAPERS:
         log(f"Chỉ có {len(papers)} bài mới (< {MIN_PAPERS}) – hôm nay không tạo bản tin.")
         write_output(skipped="true")
         return
 
-    post_id = f"{today}-diem-tin-khoa-hoc"
+    post_id = f"{today}-chuyen-de-{slugify(FEATURE_TOPIC, 50)}" if feature else f"{today}-diem-tin-khoa-hoc"
     if (POSTS_DIR / f"{post_id}.json").exists():
         post_id += "-" + now_vn.strftime("%H%M")
 
@@ -826,7 +937,7 @@ def main():
     figures = collect_figures(papers, post_id)
     log(f"Thu được {len(figures)} hình minh họa")
 
-    prompt = build_prompt(papers, figures, today)
+    prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
     ai = gemini_json(prompt)
     bad = self_refs(ai)
     if bad:  # AI vẫn nhắc tên tác giả blog / "chuyên gia" → yêu cầu viết lại một lần
@@ -843,9 +954,9 @@ def main():
     post = {
         "id": post_id,
         "date": today,
-        "type": "digest",
-        "category_vi": ai.get("category_vi") or "Điểm tin khoa học",
-        "category_en": ai.get("category_en") or "Science Digest",
+        "type": "feature" if feature else "digest",
+        "category_vi": ("Chuyên đề" if feature else ai.get("category_vi")) or "Điểm tin khoa học",
+        "category_en": ("In-depth" if feature else ai.get("category_en")) or "Science Digest",
         "title_vi": clean_text(ai["title_vi"]),
         "title_en": clean_text(ai["title_en"]),
         "summary_vi": clean_text(ai.get("summary_vi", "")),

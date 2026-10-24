@@ -11,6 +11,18 @@ on:
         description: 'Gửi email duyệt bài'
         type: boolean
         default: true
+      feature_topic:
+        description: 'Bài chuyên đề: chủ đề (để trống = bản tin hằng ngày)'
+        type: string
+        default: ''
+      feature_queries:
+        description: 'Bài chuyên đề: các truy vấn tìm bài báo (tiếng Anh, cách nhau bằng dấu ;)'
+        type: string
+        default: ''
+      feature_must:
+        description: 'Bài chuyên đề: từ khóa bắt buộc (regex, tùy chọn)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -44,6 +56,9 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
           CONTACT_EMAIL: ${{ secrets.MAIL_USERNAME }}
+          FEATURE_TOPIC: ${{ github.event.inputs.feature_topic }}
+          FEATURE_QUERIES: ${{ github.event.inputs.feature_queries }}
+          FEATURE_MUST: ${{ github.event.inputs.feature_must }}
         run: python scripts/auto_post_ai.py
 
       - name: Tạo Pull Request bản nháp

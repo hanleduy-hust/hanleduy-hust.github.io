@@ -51,12 +51,18 @@ def email_body(content):
 
 
 def main():
-    user = os.environ.get("MAIL_USERNAME", "").strip()
-    pwd = os.environ.get("MAIL_APP_PASSWORD", "").replace(" ", "").strip()
+    user = os.environ.get("MAIL_USERNAME", "").strip().strip('"\'')
+    # App Password Google hiển thị dạng "abcd efgh ijkl mnop": bỏ mọi khoảng trắng (kể cả khoảng trắng đặc biệt khi copy)
+    pwd = re.sub(r"[\s\u00a0\u200b\"']", "", os.environ.get("MAIL_APP_PASSWORD", ""))
     to = [a.strip() for a in (os.environ.get("MAIL_TO") or user).split(",") if a.strip()]
     pr_url = os.environ.get("PR_URL", "").strip() or f"https://github.com/hanleduy-hust/hanleduy-hust.github.io/pulls"
     if not user or not pwd:
         sys.exit("Thiếu MAIL_USERNAME hoặc MAIL_APP_PASSWORD")
+    if "@" not in user:
+        print(f"⚠ MAIL_USERNAME phải là địa chỉ Gmail đầy đủ (hiện có {len(user)} ký tự, không chứa @)")
+    if not re.fullmatch(r"[a-zA-Z]{16}", pwd):
+        print(f"⚠ MAIL_APP_PASSWORD thường gồm đúng 16 chữ cái; giá trị hiện tại có {len(pwd)} ký tự"
+              f"{', có ký tự không phải chữ cái' if not pwd.isalpha() else ''}. Hãy tạo lại App Password.")
 
     post = json.loads((DRAFT_DIR / "post.json").read_text(encoding="utf-8"))
     n_figs = len(re.findall(r'class="post-figure"', post["content_vi"]))
@@ -109,10 +115,31 @@ def main():
         part.add_header("Content-Disposition", "inline", filename=img.name)
         msg.attach(part)
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl.create_default_context()) as s:
-        s.login(user, pwd)
-        s.sendmail(user, to, msg.as_string())
-    print(f"Đã gửi email duyệt tới {', '.join(to)}")
+    errors = []
+    for port in (465, 587):
+        try:
+            if port == 465:
+                s = smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl.create_default_context(), timeout=60)
+            else:
+                s = smtplib.SMTP("smtp.gmail.com", 587, timeout=60)
+                s.ehlo()
+                s.starttls(context=ssl.create_default_context())
+                s.ehlo()
+            with s:
+                s.login(user, pwd)
+                s.sendmail(user, to, msg.as_string())
+            print(f"Đã gửi email duyệt tới {', '.join(to)} (cổng {port})")
+            return
+        except smtplib.SMTPAuthenticationError as e:
+            errors.append(f"cổng {port}: Gmail từ chối đăng nhập {e.smtp_code} {e.smtp_error[:200]!r}")
+            break  # sai tài khoản/mật khẩu – thử cổng khác cũng vô ích
+        except Exception as e:
+            errors.append(f"cổng {port}: {type(e).__name__}: {e}")
+    print("\n".join(errors))
+    sys.exit("Không gửi được email. Kiểm tra lại: (1) MAIL_USERNAME là địa chỉ Gmail đầy đủ; "
+             "(2) MAIL_APP_PASSWORD là App Password 16 chữ cái tạo tại myaccount.google.com/apppasswords "
+             "(tài khoản phải bật Xác minh 2 bước), không phải mật khẩu Gmail. "
+             f"Bản nháp vẫn có trong Pull Request: {pr_url}")
 
 
 if __name__ == "__main__":

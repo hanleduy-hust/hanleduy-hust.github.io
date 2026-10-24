@@ -632,8 +632,7 @@ def build_prompt(papers, figures, today):
             f"Abstract: {clean_text(p['abstract'], 1600)}\n")
     figs = "\n".join(f"FIG{f['n']} – from paper [{f['paper']}]; original caption: {f['caption_original'] or '(none)'}"
                      for f in figures) or "(no figures)"
-    return f"""You are the science editor of the blog of Dr. Han Le Duy (TS. Hán Lê Duy), welding & joining expert
-at the School of Mechanical Engineering, Hanoi University of Science and Technology (HUST).
+    return f"""You are a science news editor for a welding & joining technology blog.
 Write today's ({today}) bilingual Vietnamese–English science news digest for engineers, lecturers and graduate students,
 based ONLY on the {len(papers)} newly published papers below. Fields: welding, metal 3D printing (WAAM/DED/L-PBF),
 brazing & soldering, electronic packaging, and welding in key industries.
@@ -652,7 +651,11 @@ RULES
   Available figures:
 {figs}
 - Start with a 2–3 sentence lead paragraph (<p class="lead">) summarising the day's highlights; end with a short
-  <h3> section "Góc nhìn chuyên gia" / "Expert takeaway" with 2–3 practical implications for Vietnamese industry/education.
+  <h3> section "Hàm ý thực tiễn" / "Practical implications" with 2–3 practical implications for Vietnamese industry/education.
+- VOICE: neutral, impersonal news style. NEVER mention any blog owner, author, editor, lab, research team, university or
+  "expert(s)" as the source of the analysis (e.g. no "TS./Dr. …", "nhóm nghiên cứu của chúng tôi", "chuyên gia nhận định",
+  "our lab"). Use impersonal phrasing such as "có thể rút ra…", "kết quả cho thấy…", "these findings suggest…".
+  Only the authors of the cited papers may be referred to, and only as "nhóm tác giả [n]" / "the authors of [n]".
 - Allowed HTML: <h3>, <p>, <ul>, <li>, <strong>, <em>, <sub>, <sup>. No inline styles, no images, no links.
 - Vietnamese must be natural, using standard Vietnamese welding terminology (e.g. "vùng ảnh hưởng nhiệt (HAZ)",
   "kim loại mối hàn", "hàn vảy", "in 3D kim loại bằng hồ quang dây (WAAM)"), keeping English abbreviations in parentheses.
@@ -754,7 +757,7 @@ def finalize_content(content, figures, captions, lang, papers):
     if unused:
         parts = re.split(r"(?=<h3>)", content)
         body = [i for i, part in enumerate(parts) if part.startswith("<h3>")][:-1] or \
-               [i for i, part in enumerate(parts) if part.startswith("<h3>")]  # bỏ mục "Góc nhìn chuyên gia" cuối
+               [i for i, part in enumerate(parts) if part.startswith("<h3>")]  # bỏ mục kết luận "Hàm ý thực tiễn" cuối
         for i in body:
             if not unused:
                 break
@@ -786,6 +789,16 @@ def finalize_content(content, figures, captions, lang, papers):
     return content
 
 
+SELF_REF = re.compile(r"Hán Lê Duy|Han Le Duy|Duy Le Han|Bách khoa Hà Nội|\bHUST\b|Hanoi University of Science|"
+                      r"chuyên gia (?:nhận định|cho rằng|đánh giá)|nhóm (?:nghiên cứu|chuyên gia) (?:của chúng tôi|tại)|"
+                      r"our (?:lab|team|research group)|expert(?:s)? (?:believe|note|say|suggest)", re.I)
+
+
+def self_refs(ai):
+    return sorted({m.group(0) for k in ("content_vi", "content_en", "summary_vi", "summary_en", "title_vi", "title_en")
+                   for m in SELF_REF.finditer(ai.get(k, "") or "")})
+
+
 def main():
     if not GEMINI_API_KEY:
         sys.exit("Thiếu biến môi trường GEMINI_API_KEY")
@@ -813,7 +826,13 @@ def main():
     figures = collect_figures(papers, post_id)
     log(f"Thu được {len(figures)} hình minh họa")
 
-    ai = gemini_json(build_prompt(papers, figures, today))
+    prompt = build_prompt(papers, figures, today)
+    ai = gemini_json(prompt)
+    bad = self_refs(ai)
+    if bad:  # AI vẫn nhắc tên tác giả blog / "chuyên gia" → yêu cầu viết lại một lần
+        diag(f"  Bản đầu nhắc tới: {', '.join(bad)} → yêu cầu AI viết lại giọng trung tính")
+        ai = gemini_json(prompt + "\n\nIMPORTANT: your previous draft mentioned " + ", ".join(bad) +
+                         ". Rewrite in a fully neutral, impersonal voice without naming any blog owner, lab, university or experts.")
 
     refs = [{
         "n": i, "authors": p["authors"][:6], "more_authors": len(p["authors"]) > 6,
@@ -836,7 +855,7 @@ def main():
         "content_vi": finalize_content(ai["content_vi"], figures, ai.get("figure_captions_vi", {}) or {}, "vi", papers),
         "content_en": finalize_content(ai["content_en"], figures, ai.get("figure_captions_en", {}) or {}, "en", papers),
         "references": refs,
-        "generated_by": "AI (Gemini) – biên tập & duyệt bởi TS. Hán Lê Duy",
+        "generated_by": "AI (Gemini)",
     }
     m = re.search(r'<img src="([^"]+)"', post["content_vi"])
     post["cover"] = m.group(1) if m else ""

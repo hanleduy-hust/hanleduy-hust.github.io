@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-10-24-chuyen-de-ung-dung-ai-hoc-may-ml-va-thi-giac-may-tinh-trong",
+    "date": "2026-10-24",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Ứng dụng Trí tuệ Nhân tạo, Học máy và Thị giác Máy tính trong Nghiên cứu và Chế tạo Vật liệu: Từ Dự đoán Nguyên tử đến Tự động hóa Sản xuất",
+    "title_en": "Applications of Artificial Intelligence, Machine Learning, and Computer Vision in Materials Research and Manufacturing: From Atomic-Scale Prediction to Production Automation",
+    "summary_vi": "Bài viết tổng quan chuyên sâu phân tích sự chuyển dịch mang tính cấu trúc của khoa học vật liệu dưới tác động của trí tuệ nhân tạo, học máy và thị giác máy tính. Dựa trên các nghiên cứu thực nghiệm và đánh giá hệ thống mới nhất, chuyên đề làm rõ các đột phá từ thiết kế hợp kim entropy cao, thế tương tác nguyên tử, mô hình hóa cấu trúc - cơ tính, đến xử lý ảnh hiển vi tự động và tối ưu hóa chế tạo bồi đắp kim loại. Đồng thời, bài viết chỉ ra những nút thắt cốt lõi về độ ổn định động học, độ lệch miền dữ liệu và đề xuất định hướng phát triển thực tiễn cho nghiên cứu cũng như công nghiệp chế tạo.",
+    "summary_en": "This comprehensive in-depth feature examines the structural shift in materials science driven by artificial intelligence, machine learning, and computer vision. Drawing upon the latest empirical and systematic review studies, this article details breakthroughs spanning high-entropy alloy inverse design, machine-learned interatomic potentials, microstructure–property linkages, automated micrograph segmentation, and additive manufacturing optimization. Furthermore, it addresses critical bottlenecks regarding dynamical stability and domain shift, outlining actionable pathways for materials research and industrial fabrication.",
+    "tags": [
+      "Machine Learning",
+      "Computer Vision",
+      "Alloy Design",
+      "Additive Manufacturing",
+      "Microstructure Segmentation",
+      "Interatomic Potentials"
+    ],
+    "cover": "images/blog/2026-10-24-chuyen-de-ung-dung-ai-hoc-may-ml-va-thi-giac-may-tinh-trong/fig1.jpg",
+    "file": "posts/2026-10-24-chuyen-de-ung-dung-ai-hoc-may-ml-va-thi-giac-may-tinh-trong.json"
+  },
+  {
     "id": "2026-10-24-chuyen-de-ung-dung-tri-tue-nhan-tao-ai-trong-linh-vuc-han-va",
     "date": "2026-10-24",
     "type": "feature",

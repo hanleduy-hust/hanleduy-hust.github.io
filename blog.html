@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Góc Chuyên gia | Blog - TS. Hán Lê Duy</title>
+    <meta name="description" content="Điểm tin khoa học hằng ngày về hàn, in 3D kim loại, hàn vảy và đóng gói điện tử – TS. Hán Lê Duy (HUST). Daily science digests on welding, metal AM, brazing/soldering and electronic packaging.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -12,9 +13,28 @@
         html[lang="vi"] .lang-en { display: none !important; }
         html[lang="en"] .lang-vi { display: none !important; }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+    <style>
+        .prose-post { color: #334155; line-height: 1.75; font-size: 15.5px; }
+        .prose-post h3 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 2rem 0 .75rem; padding-left: .75rem; border-left: 4px solid #b91c1c; }
+        .prose-post h4 { font-weight: 700; color: #0f172a; margin: 1.5rem 0 .5rem; }
+        .prose-post p { margin: 0 0 1rem; }
+        .prose-post p.lead { font-size: 1.05rem; color: #0f172a; font-weight: 500; background: #fef2f2; border-radius: 1rem; padding: 1rem 1.25rem; }
+        .prose-post ul, .prose-post ol { margin: 0 0 1rem 1.25rem; }
+        .prose-post ul { list-style: disc; } .prose-post ol { list-style: decimal; }
+        .prose-post li { margin-bottom: .35rem; }
+        .prose-post sup.cite a { color: #b91c1c; font-weight: 600; text-decoration: none; }
+        .prose-post sup.cite a:hover { text-decoration: underline; }
+        .prose-post figure.post-figure { margin: 1.75rem 0; }
+        .prose-post figure.post-figure img { width: 100%; height: auto; border-radius: .75rem; border: 1px solid #e2e8f0; background: #fff; }
+        .prose-post figcaption { font-size: 13px; color: #64748b; margin-top: .5rem; line-height: 1.55; }
+        .prose-post figcaption .fig-credit { display: block; color: #94a3b8; margin-top: .15rem; }
+        .prose-post figcaption a { color: #b91c1c; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
-    <!-- Navbar -->
+
+    <!-- Thanh điều hướng (Navbar chung cho các trang) -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-xs">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -26,9 +46,255 @@
                     <span class="hidden sm:inline-block text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Ph.D.</span>
                 </div>
 
-                <!-- Menu Desktop & Nút chức năng -->
+                <!-- Khu vực Menu trên Desktop & Nút chức năng -->
                 <div class="flex items-center space-x-3 md:space-x-6">
+                    <!-- Menu trên máy tính -->
                     <div class="hidden md:flex space-x-5 text-sm font-medium text-slate-600">
                         <a href="index.html" class="hover:text-red-700 transition"><span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span></a>
                         <a href="profile.html" class="hover:text-red-700 transition"><span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span></a>
                         <a href="research.html" class="hover:text-red-700 transition"><span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span></a>
+                        <a href="publication.html" class="hover:text-red-700 transition"><span class="lang-vi">Công bố</span><span class="lang-en">Publication</span></a>
+                        <a href="teaching.html" class="hover:text-red-700 transition"><span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span></a>
+                        <a href="blog.html" class="text-red-700 font-semibold"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span></a>
+                    </div>
+
+                    <!-- Nút Toggle VI / EN -->
+                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+                        <button id="btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs">VI</button>
+                        <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900">EN</button>
+                    </div>
+
+                    <!-- Nút Hamburger Menu (Chỉ hiển thị trên Mobile) -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-red-700 hover:bg-slate-100 focus:outline-none transition" aria-label="Toggle Navigation">
+                        <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu dạng thả xuống trên Mobile (Ẩn mặc định) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-5 space-y-2 shadow-md">
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Trang chủ</span><span class="lang-en">Home</span>
+            </a>
+            <a href="profile.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Hồ sơ & Công tác</span><span class="lang-en">Profile</span>
+            </a>
+            <a href="research.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Nghiên cứu & Đề tài</span><span class="lang-en">Research</span>
+            </a>
+            <a href="publication.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Công bố</span><span class="lang-en">Publication</span>
+            </a>
+            <a href="teaching.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-red-700 transition">
+                <span class="lang-vi">Giảng dạy</span><span class="lang-en">Teaching</span>
+            </a>
+            <a href="blog.html" class="block px-3 py-2 rounded-lg text-sm font-semibold bg-red-50 text-red-700">
+                <span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Blog</span>
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- Nội dung Góc Chuyên gia (Blog) -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Danh sách bài -->
+        <section id="list-view">
+            <header class="mb-8">
+                <p class="text-xs font-semibold tracking-widest text-red-700 uppercase"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Expert Corner</span></p>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1"><span class="lang-vi">Tin tức &amp; Điểm tin khoa học</span><span class="lang-en">Science News &amp; Digests</span></h1>
+                <p class="text-sm text-slate-600 mt-2 max-w-2xl">
+                    <span class="lang-vi">Tổng hợp hằng ngày các công bố mới về hàn, in 3D kim loại, hàn vảy, đóng gói điện tử và ứng dụng hàn trong các ngành trọng điểm – có trích dẫn nguồn đầy đủ.</span>
+                    <span class="lang-en">Daily digests of new research on welding, metal additive manufacturing, brazing &amp; soldering, electronic packaging and welding in key industries – fully referenced.</span>
+                </p>
+            </header>
+            <div id="filters" class="flex flex-wrap gap-2 mb-6"></div>
+            <div id="post-list" class="grid gap-5"></div>
+            <p id="list-empty" class="hidden text-sm text-slate-500"><span class="lang-vi">Chưa có bài viết.</span><span class="lang-en">No posts yet.</span></p>
+        </section>
+
+        <!-- Đọc bài -->
+        <article id="post-view" class="hidden">
+            <a href="blog.html" onclick="return showList()" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-red-700 mb-6">
+                <i class="fa-solid fa-arrow-left"></i><span class="lang-vi">Tất cả bài viết</span><span class="lang-en">All posts</span>
+            </a>
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10">
+                <p id="post-meta" class="text-xs font-semibold text-red-700 uppercase tracking-wide"></p>
+                <h1 id="post-title" class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 leading-tight"></h1>
+                <p id="post-summary" class="text-slate-600 mt-3"></p>
+                <div id="post-tags" class="flex flex-wrap gap-2 mt-4"></div>
+                <div id="post-content" class="prose-post mt-8"></div>
+                <section id="post-refs" class="hidden mt-10 pt-6 border-t border-slate-200">
+                    <h3 class="text-base font-bold text-slate-900 mb-3"><span class="lang-vi">Tài liệu tham khảo</span><span class="lang-en">References</span></h3>
+                    <ol id="ref-list" class="list-decimal pl-5 space-y-2 text-sm text-slate-600"></ol>
+                </section>
+                <p id="post-note" class="hidden mt-8 text-xs text-slate-500 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <span class="lang-vi"><i class="fa-solid fa-robot mr-1"></i>Bản tin được AI tổng hợp từ tóm tắt các bài báo open access và đã được TS. Hán Lê Duy duyệt trước khi đăng. Hình minh họa trích từ bài báo gốc theo giấy phép Creative Commons, ghi rõ nguồn. Vui lòng tham khảo bài báo gốc để có thông tin đầy đủ.</span>
+                    <span class="lang-en"><i class="fa-solid fa-robot mr-1"></i>This digest was compiled by AI from abstracts of open-access papers and reviewed by Dr. Duy Le Han before publication. Figures are reproduced from the original papers under Creative Commons licences with attribution. Please consult the original papers for full details.</span>
+                </p>
+            </div>
+        </article>
+
+        <div id="loading" class="text-sm text-slate-500"><i class="fa-solid fa-spinner fa-spin mr-2"></i><span class="lang-vi">Đang tải…</span><span class="lang-en">Loading…</span></div>
+        <div id="load-error" class="hidden text-sm text-red-700"></div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white mt-20 py-6">
+        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500">
+            <span class="lang-vi">© 2026 TS. Hán Lê Duy — Trường Cơ khí, Đại học Bách khoa Hà Nội (HUST).</span>
+            <span class="lang-en">© 2026 Dr. Duy Le Han — School of Mechanical Engineering, HUST.</span>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            try { localStorage.setItem('preferred_lang', lang); } catch (e) {}
+            const on = 'px-2.5 py-1 text-xs font-bold rounded-md transition bg-red-700 text-white shadow-xs';
+            const off = 'px-2.5 py-1 text-xs font-bold rounded-md transition text-slate-600 hover:text-slate-900';
+            document.getElementById('btn-en').className = lang === 'en' ? on : off;
+            document.getElementById('btn-vi').className = lang === 'en' ? off : on;
+            if (currentPost) document.title = (lang === 'en' ? currentPost.title_en : currentPost.title_vi) + ' | ' + (lang === 'en' ? 'Dr. Duy Le Han' : 'TS. Hán Lê Duy');
+        }
+
+        // Mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (menuIcon) menuIcon.className = isHidden ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+            });
+        }
+
+        // ---------------- Blog ----------------
+        let posts = [];
+        let currentPost = null;
+        let activeCat = 'all';
+        const $ = (id) => document.getElementById(id);
+        const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        function basicSanitize(h) {
+            const doc = new DOMParser().parseFromString('<div>' + (h || '') + '</div>', 'text/html');
+            doc.querySelectorAll('script,style,iframe,object,embed,form').forEach(n => n.remove());
+            doc.querySelectorAll('*').forEach(n => [...n.attributes].forEach(a => {
+                if (/^on/i.test(a.name) || /^\s*javascript:/i.test(a.value)) n.removeAttribute(a.name);
+            }));
+            return doc.body.firstChild.innerHTML;
+        }
+        const clean = (h) => window.DOMPurify ? DOMPurify.sanitize(h || '', {ADD_ATTR: ['loading']}) : basicSanitize(h);
+        const bi = (vi, en) => `<span class="lang-vi">${vi}</span><span class="lang-en">${en}</span>`;
+
+        function fmtDate(d) {
+            if (!d) return '';
+            const [y, m, day] = d.split('-').map(Number);
+            const date = new Date(Date.UTC(y, (m || 1) - 1, day || 1));
+            return bi(date.toLocaleDateString('vi-VN', {day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC'}),
+                      date.toLocaleDateString('en-GB', {day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'}));
+        }
+
+        function renderFilters() {
+            const cats = [];
+            posts.forEach(p => { if (!cats.find(c => c.vi === p.category_vi)) cats.push({vi: p.category_vi, en: p.category_en}); });
+            if (cats.length < 2) { $('filters').innerHTML = ''; return; }
+            const btn = (key, label) => `<button onclick="filterCat('${esc(key)}')" class="px-3 py-1.5 rounded-full text-xs font-semibold border transition ${activeCat === key ? 'bg-red-700 text-white border-red-700' : 'bg-white text-slate-600 border-slate-200 hover:border-red-300 hover:text-red-700'}">${label}</button>`;
+            $('filters').innerHTML = btn('all', bi('Tất cả', 'All')) + cats.map(c => btn(c.vi, bi(esc(c.vi), esc(c.en)))).join('');
+        }
+        function filterCat(key) { activeCat = key; renderFilters(); renderList(); }
+
+        function renderList() {
+            const list = posts.filter(p => activeCat === 'all' || p.category_vi === activeCat);
+            $('list-empty').classList.toggle('hidden', list.length > 0);
+            $('post-list').innerHTML = list.map(p => `
+                <a href="blog.html?post=${encodeURIComponent(p.id)}" onclick="openPost('${esc(p.id)}'); return false;"
+                   class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-red-200 transition overflow-hidden grid ${p.cover ? 'sm:grid-cols-[220px_1fr]' : ''}">
+                    ${p.cover ? `<div class="bg-slate-100 h-44 sm:h-full"><img src="${esc(p.cover)}" alt="" loading="lazy" class="w-full h-full object-cover"></div>` : ''}
+                    <div class="p-5 sm:p-6">
+                        <p class="text-xs font-semibold text-red-700 uppercase tracking-wide">${bi(esc(p.category_vi), esc(p.category_en))} · <span class="text-slate-500 normal-case font-medium">${fmtDate(p.date)}</span></p>
+                        <h2 class="text-lg font-bold text-slate-900 mt-1.5 leading-snug group-hover:text-red-700 transition">${bi(esc(p.title_vi), esc(p.title_en))}</h2>
+                        <p class="text-sm text-slate-600 mt-2 line-clamp-3">${bi(esc(p.summary_vi), esc(p.summary_en))}</p>
+                        <span class="inline-block text-xs font-semibold text-red-700 mt-3">${bi('Đọc tiếp →', 'Read more →')}</span>
+                    </div>
+                </a>`).join('');
+        }
+
+        async function loadPost(entry) {
+            if (entry.content_vi || !entry.file) return entry;
+            const r = await fetch(entry.file + '?v=' + encodeURIComponent(entry.date || ''));
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        }
+
+        function refItem(r) {
+            const authors = esc((r.authors || []).join(', ')) + (r.more_authors ? ' et al.' : '');
+            return `<li id="ref-${r.n}" class="scroll-mt-24">${authors} (${esc((r.date || '').slice(0, 4))}). ${esc(r.title)}. <em>${esc(r.journal)}</em>. 
+                <a class="text-red-700 hover:underline break-all" href="${esc(r.url)}" target="_blank" rel="noopener">doi:${esc(r.doi)}</a>
+                ${r.license ? `<span class="ml-1 text-[10px] font-semibold bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">${esc(r.license.toUpperCase())}</span>` : ''}</li>`;
+        }
+
+        async function openPost(id, push = true) {
+            const entry = posts.find(p => p.id === id);
+            if (!entry) { showList(false); return false; }
+            $('loading').classList.remove('hidden');
+            try {
+                const p = await loadPost(entry);
+                currentPost = p;
+                $('post-meta').innerHTML = `${bi(esc(p.category_vi), esc(p.category_en))} · <span class="text-slate-500 normal-case font-medium">${fmtDate(p.date)}</span>`;
+                $('post-title').innerHTML = bi(esc(p.title_vi), esc(p.title_en));
+                $('post-summary').innerHTML = bi(esc(p.summary_vi), esc(p.summary_en));
+                $('post-tags').innerHTML = (p.tags || []).map(t => `<span class="text-[11px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded">#${esc(t)}</span>`).join('');
+                $('post-content').innerHTML = `<div class="lang-vi">${clean(p.content_vi)}</div><div class="lang-en">${clean(p.content_en)}</div>`;
+                const refs = p.references || [];
+                $('ref-list').innerHTML = refs.map(refItem).join('');
+                $('post-refs').classList.toggle('hidden', !refs.length);
+                $('post-note').classList.toggle('hidden', p.type !== 'digest');
+                $('list-view').classList.add('hidden');
+                $('post-view').classList.remove('hidden');
+                if (push) history.pushState({post: id}, '', 'blog.html?post=' + encodeURIComponent(id));
+                setLanguage(document.documentElement.lang);
+                window.scrollTo(0, 0);
+            } catch (e) {
+                $('load-error').textContent = 'Không tải được bài viết / Failed to load post: ' + e.message;
+                $('load-error').classList.remove('hidden');
+            } finally {
+                $('loading').classList.add('hidden');
+            }
+            return false;
+        }
+
+        function showList(push = true) {
+            currentPost = null;
+            document.title = 'Góc Chuyên gia | Blog - TS. Hán Lê Duy';
+            $('post-view').classList.add('hidden');
+            $('list-view').classList.remove('hidden');
+            if (push) history.pushState({}, '', 'blog.html');
+            return false;
+        }
+
+        function route(push) {
+            const id = new URLSearchParams(location.search).get('post');
+            if (id) openPost(id, false); else showList(false);
+        }
+        window.addEventListener('popstate', () => route(false));
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            let lang = 'vi';
+            try { lang = localStorage.getItem('preferred_lang') || 'vi'; } catch (e) {}
+            setLanguage(lang);
+            try {
+                const r = await fetch('posts.json?v=' + Date.now());
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                posts = (await r.json()).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+                renderFilters();
+                renderList();
+                route(false);
+            } catch (e) {
+                $('load-error').textContent = 'Không tải được danh sách bài / Failed to load posts: ' + e.message;
+                $('load-error').classList.remove('hidden');
+            } finally {
+                $('loading').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

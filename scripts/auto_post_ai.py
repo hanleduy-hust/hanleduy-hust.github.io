@@ -51,6 +51,19 @@ MAX_FIGURES = 8  # tối đa 1 hình/bài báo, mỗi mục của bản tin có 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA})
+# Trang nhà xuất bản thường chặn công cụ tự động → dùng header giống trình duyệt khi tải trang/hình/PDF bài báo
+WEB = requests.Session()
+WEB.headers.update({
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/*,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+})
+DIAG = []  # nhật ký ngắn về việc lấy hình, đưa vào mô tả Pull Request để dễ kiểm tra
+
+
+def diag(msg):
+    log(msg)
+    DIAG.append(msg.strip())
 
 # Chủ đề và truy vấn tìm kiếm (tiếng Anh, vì gần như toàn bộ bài báo quốc tế bằng tiếng Anh)
 TOPICS = [
@@ -169,7 +182,7 @@ def openalex_search(query, since):
         "filter": f"from_publication_date:{since},is_oa:true,type:article,has_doi:true",
         "sort": "publication_date:desc",
         "per-page": 15,
-        "select": "id,doi,title,publication_date,authorships,primary_location,best_oa_location,abstract_inverted_index,language",
+        "select": "id,doi,title,publication_date,authorships,primary_location,best_oa_location,abstract_inverted_index,language,has_content,content_urls",
     }
     if OPENALEX_API_KEY:
         params["api_key"] = OPENALEX_API_KEY
@@ -194,6 +207,8 @@ def openalex_search(query, since):
             "license": norm_license(loc.get("license")),
             "landing": loc.get("landing_page_url") or "",
             "pdf": loc.get("pdf_url") or "",
+            "openalex_id": (w.get("id") or "").rsplit("/", 1)[-1],
+            "has_pdf": bool((w.get("has_content") or {}).get("pdf")),
         })
     return out
 
@@ -351,58 +366,154 @@ def candidate_images(page_url, soup):
     return cands
 
 
-def download_image(url, dest):
-    r = http_get(url, timeout=30, tries=2)
-    if r.status_code != 200 or "image" not in r.headers.get("Content-Type", "image"):
-        return None
-    if len(r.content) > 8_000_000:
+def save_image(data, dest, min_w=400):
+    """Kiểm tra, thu nhỏ (tối đa 1200 px) và lưu JPEG. Trả về kích thước hoặc None."""
+    if not data or len(data) > 12_000_000:
         return None
     try:
-        im = Image.open(io.BytesIO(r.content))
+        im = Image.open(io.BytesIO(data))
         im.load()
     except Exception:
         return None
     w, h = im.size
-    if w < 400 or h < 200 or w / h > 4 or h / w > 3:  # bỏ ảnh nhỏ / quá dài (logo, banner)
+    if w < min_w or h < 200 or w / h > 4 or h / w > 3:  # bỏ ảnh nhỏ / quá dài (logo, banner)
         return None
+    if im.mode in ("RGBA", "LA", "P"):
+        im = im.convert("RGBA")
+        bg = Image.new("RGB", im.size, "white")
+        bg.paste(im, mask=im.split()[-1])
+        im = bg
     im = im.convert("RGB")
     if w > 1200:
         im = im.resize((1200, int(h * 1200 / w)), Image.LANCZOS)
     dest.parent.mkdir(parents=True, exist_ok=True)
-    im.save(dest, "JPEG", quality=82, optimize=True, progressive=True)
+    im.save(dest, "JPEG", quality=85, optimize=True, progressive=True)
     return im.size
 
 
+def download_image(url, referer, dest):
+    r = WEB.get(url, timeout=30, headers={"Referer": referer})
+    if r.status_code != 200 or "image" not in r.headers.get("Content-Type", "image"):
+        return None
+    return save_image(r.content, dest)
+
+
+PDF_CAPTION = re.compile(r"^\s*(fig(?:ure)?\.?\s*\d+[a-z]?)[.:\s]", re.I)
+
+
+def pdf_figures(pdf_bytes, max_n=3):
+    """Cắt hình trong PDF bài báo: tìm dòng chú thích 'Figure N.' rồi chụp vùng ảnh nằm ngay phía trên.
+    Trả về [(png_bytes, caption, label)]."""
+    import pymupdf as fitz  # PyMuPDF
+    out = []
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    for page in doc:
+        if len(out) >= max_n:
+            break
+        blocks = [b for b in page.get_text("blocks") if b[6] == 0]
+        caps = [b for b in blocks if PDF_CAPTION.match(b[4])]
+        if not caps:
+            continue
+        rects = []
+        for img in page.get_images(full=True):
+            try:
+                rects += [r for r in page.get_image_rects(img[0]) if r.width > 60 and r.height > 60]
+            except Exception:
+                pass
+        for cap in caps:
+            cap_top = cap[1]
+            above = [r for r in rects if r.y1 <= cap_top + 8 and cap_top - r.y1 < 80]
+            if not above:
+                continue
+            clip = above[0]
+            for r in above[1:]:
+                if r.y1 > clip.y0 - 120:  # gộp các ảnh con của cùng một hình
+                    clip |= r
+            clip = clip & page.rect
+            if clip.width < 150 or clip.height < 100:
+                continue
+            pix = page.get_pixmap(clip=clip, dpi=170)
+            text = clean_text(cap[4], 600)
+            m = FIG_LABEL.match(text)
+            label = m.group(1) if m else ""
+            caption = text[m.end():].strip() if m else text
+            if len(caption) >= 20:
+                out.append((pix.tobytes("png"), caption[:450], label))
+            if len(out) >= max_n:
+                break
+    return out
+
+
+def get_pdf(p):
+    """Tải PDF: ưu tiên kho PDF của OpenAlex (không bị nhà xuất bản chặn), sau đó link PDF của nhà xuất bản."""
+    urls = []
+    if p.get("has_pdf") and p.get("openalex_id") and OPENALEX_API_KEY:
+        urls.append(f"https://content.openalex.org/works/{p['openalex_id']}.pdf?api_key={OPENALEX_API_KEY}")
+    if p.get("pdf"):
+        urls.append(p["pdf"])
+    for u in urls:
+        try:
+            r = WEB.get(u, timeout=60, allow_redirects=True)
+            if r.status_code == 200 and r.content[:5] == b"%PDF-":
+                return r.content, u.split("?")[0]
+            diag(f"    PDF {u.split('?')[0][:70]} → HTTP {r.status_code} {r.headers.get('Content-Type', '')[:30]}")
+        except Exception as e:
+            diag(f"    PDF lỗi: {type(e).__name__}")
+    return None, ""
+
+
 def collect_figures(papers, post_id):
+    """Lấy tối đa 1 hình/bài báo từ: (1) trang HTML bài báo, (2) file PDF bài báo."""
     figures = []
     for idx, p in enumerate(papers, start=1):
         if len(figures) >= MAX_FIGURES:
             break
         if p["license"] not in REUSABLE_LICENSES:
             continue
+        n = len(figures) + 1
+        dest = IMG_DIR / post_id / f"fig{n}.jpg"
+        got = None
+        # (1) HTML
         page = p["landing"] or f"https://doi.org/{p['doi']}"
         try:
-            r = http_get(page, timeout=30, tries=2, allow_redirects=True)
-            if r.status_code != 200 or "html" not in r.headers.get("Content-Type", ""):
-                continue
-            soup = BeautifulSoup(r.text, "html.parser")
+            r = WEB.get(page, timeout=30, allow_redirects=True)
+            if r.status_code == 200 and "html" in r.headers.get("Content-Type", ""):
+                cands = candidate_images(r.url, BeautifulSoup(r.text, "html.parser"))
+                for url, caption, label in cands:
+                    try:
+                        size = download_image(url, r.url, dest)
+                    except Exception:
+                        size = None
+                    if size:
+                        got = (caption, label, url, "html")
+                        break
+                if not got:
+                    diag(f"  [{idx}] HTML {r.url[:60]}: {len(cands)} hình ứng viên, không tải được")
+            else:
+                diag(f"  [{idx}] HTML {page[:60]} → HTTP {r.status_code}")
         except Exception as e:
-            log(f"  Không mở được trang bài {p['doi']}: {e}")
-            continue
-        for url, caption, label in candidate_images(r.url, soup):
-            n = len(figures) + 1
-            dest = IMG_DIR / post_id / f"fig{n}.jpg"
-            try:
-                size = download_image(url, dest)
-            except Exception:
-                size = None
-            if size:
-                figures.append({
-                    "n": n, "paper": idx, "src": f"images/blog/{post_id}/fig{n}.jpg",
-                    "caption_original": caption, "orig_label": label, "source_url": url, "license": p["license"],
-                })
-                log(f"  + Hình {n} từ [{idx}] {p['doi']} ({size[0]}×{size[1]})")
-                break
+            diag(f"  [{idx}] HTML lỗi {type(e).__name__}")
+        # (2) PDF
+        if not got:
+            data, src = get_pdf(p)
+            if data:
+                try:
+                    for png, caption, label in pdf_figures(data):
+                        size = save_image(png, dest, min_w=300)
+                        if size:
+                            got = (caption, label, src, "pdf")
+                            break
+                    if not got:
+                        diag(f"  [{idx}] PDF: không tách được hình có chú thích")
+                except Exception as e:
+                    diag(f"  [{idx}] PDF lỗi tách hình: {type(e).__name__}: {str(e)[:80]}")
+        if got:
+            caption, label, url, how = got
+            figures.append({
+                "n": n, "paper": idx, "src": f"images/blog/{post_id}/fig{n}.jpg",
+                "caption_original": caption, "orig_label": label, "source_url": url, "license": p["license"],
+            })
+            diag(f"  + Hình {n} ({how}) từ [{idx}] {p['doi']} {label}")
     return figures
 
 
@@ -678,7 +789,8 @@ def main():
     DRAFT_DIR.mkdir(parents=True, exist_ok=True)
     (DRAFT_DIR / "post.json").write_text(json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8")
     log(f"Đã tạo bài: {post['title_vi']}")
-    write_output(skipped="false", post_id=post_id, title=post["title_vi"])
+    write_output(skipped="false", post_id=post_id, title=post["title_vi"],
+                 diag="\n".join(DIAG[-60:]) or "(không có ghi chú)")
 
 
 def write_output(**kv):
@@ -686,7 +798,11 @@ def write_output(**kv):
     if out:
         with open(out, "a", encoding="utf-8") as f:
             for k, v in kv.items():
-                f.write(f"{k}={str(v).replace(chr(10), ' ')}\n")
+                v = str(v)
+                if "\n" in v:
+                    f.write(f"{k}<<__EOF__\n{v}\n__EOF__\n")
+                else:
+                    f.write(f"{k}={v}\n")
 
 
 if __name__ == "__main__":

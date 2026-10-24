@@ -29,7 +29,7 @@ jobs:
           python-version: '3.12'
 
       - name: Cài đặt thư viện
-        run: pip install requests beautifulsoup4 pillow
+        run: pip install requests beautifulsoup4 pillow pymupdf
 
       - name: Thu thập bài báo & viết bản tin bằng AI
         id: gen
@@ -66,6 +66,13 @@ jobs:
             - **Không đăng:** bấm **Close pull request**.
 
             Nếu chưa duyệt, bản nháp này sẽ được thay bằng bản tin của ngày hôm sau.
+
+            <details><summary>Nhật ký lấy hình (kỹ thuật)</summary>
+
+            ```
+            ${{ steps.gen.outputs.diag }}
+            ```
+            </details>
 
       - name: Gửi email duyệt bài
         if: steps.cpr.outputs.pull-request-url != ''

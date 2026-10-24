@@ -1,0 +1,298 @@
+{
+  "id": "2026-10-25-diem-tin-khoa-hoc",
+  "date": "2026-10-25",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Điểm tin công nghệ hàn và ghép nối: Tối ưu hóa vi cấu trúc mối hàn, công nghệ in 3D kim loại và giải pháp đóng gói điện tử thế hệ mới",
+  "title_en": "Welding and Joining Digest: Microstructural Optimization, Metal Additive Manufacturing, and Advanced Packaging Solutions",
+  "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong hàn kết cấu thép và nhôm, kiểm soát khuyết tật hàn khuấy ma sát, in 3D hợp kim entropy và niken-titan bằng L-PBF, cùng các giải pháp hàn vảy và đóng gói vi điện tử công suất cao.",
+  "summary_en": "This digest highlights recent breakthroughs in structural steel and aluminum joining, real-time friction stir welding defect detection, high-performance L-PBF additive manufacturing, and advanced brazing and electronic packaging solutions.",
+  "tags": [
+    "Welding Technology",
+    "Metal 3D Printing",
+    "Brazing and Soldering",
+    "Electronic Packaging",
+    "Materials Characterization"
+  ],
+  "cover": "images/blog/2026-10-25-diem-tin-khoa-hoc/fig3.jpg",
+  "content_vi": "<p class=\"lead\">Điểm tin hôm nay tổng hợp những nghiên cứu nổi bật về công nghệ nối và chế tạo bồi đắp kim loại công bố trong tháng 10/2026. Các phát hiện tập trung vào tối ưu hóa vi cấu trúc mối hàn nóng chảy, kiểm soát khuyết tật trong hàn khuấy ma sát, cải thiện khả năng chống gião và ăn mòn trong in 3D L-PBF, cũng như nâng cao độ tin cậy của vật liệu đóng gói vi điện tử và mối nối pin công suất cao.</p><h3>Hàn nóng chảy kết cấu thép và biến tính bề mặt sau hàn</h3><p>Việc gia cường và phục hồi các công trình thép cũ xây dựng từ giai đoạn 1880–1940 đòi hỏi kỹ thuật hàn tương thích cao với thép Siemens-Martin vốn chứa nhiều tạp chất như phốt pho, lưu huỳnh và nitơ. Nghiên cứu của nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã khảo sát liên kết giữa thép Siemens-Martin với thép hạt mịn hiện đại S355J2 + N bằng hàn hồ quang kim loại trong môi trường khí bảo vệ (GMAW) sử dụng dây đặc austenit G 18 8 Mn, và với thép S355ML bằng hàn hồ quang dây lõi thuốc (FCAW) sử dụng dây bazơ T42 6 1Ni B M21 1 H5 ở ba mức năng lượng đường 5, 10 và 15 kJ/cm. Kết quả cho thấy dây lõi thuốc bazơ tạo ra mối hàn ngấu hoàn toàn không khuyết tật, trong khi dây đặc austenit xuất hiện rỗ khí, lẫn xỉ và thiếu ngấu vượt ngưỡng cho phép, minh chứng kim loại điền đầy không xỉ kém dung nạp tạp chất hơn <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Ảnh SEM và bản đồ phân bố nguyên tố EDX tại vùng nóng chảy G 18 8 Mn, vùng ảnh hưởng nhiệt (HAZ) và kim loại cơ bản.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Ảnh SEM và bản đồ phân bố nguyên tố EDX tại vùng nóng chảy G 18 8 Mn, vùng ảnh hưởng nhiệt (HAZ) và kim loại cơ bản. <span class=\"fig-credit\">Nguồn: Hình 12 trong bài gốc – Uhlig et al. (2026), “Reinforcement of old mild steel structures using fine-grained steel with austenitic solid wire and ferritic flux-cored wire”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02667-w\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02667-w</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Đối với thép không gỉ austenit AISI 304, nhóm nghiên cứu <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> đã kết hợp hàn laser với dây hàn ER308LSi ở công suất 560 W (tần số xung 3000 Hz) và xử lý biến tính bề mặt tinh thể nano bằng siêu âm (UNSM) dưới tải trọng tĩnh 10 N, tốc độ quét 1000 mm/min, tần số 20 kHz và biên độ 20 μm. Quá trình UNSM gây biến dạng dẻo mãnh liệt, làm tăng vi độ cứng từ 212 lên 411 HV ở kim loại cơ bản, từ 194 lên 422 HV ở vùng ảnh hưởng nhiệt (HAZ), và từ 244 lên 496 HV ở vùng nóng chảy; đồng thời diện tích tiết diện vết mòn giảm mạnh từ 63.241 xuống 29.648 μm<sup>2</sup>, nâng cao rõ rệt độ bền mòn của liên kết <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig6.jpg\" alt=\"Ảnh SEM vi cấu trúc mối hàn laser thép không gỉ AISI 304 sử dụng dây hàn ER308LSi.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Ảnh SEM vi cấu trúc mối hàn laser thép không gỉ AISI 304 sử dụng dây hàn ER308LSi. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Baizhan et al. (2026), “Influence of Ultrasonic Nanocrystalline Surface Modification on the Microstructure and Mechanical Properties of Laser-Welded Butt Joints of AISI 304 Austenitic Stainless Steel”, <em>Applied Sciences</em>, <a href=\"https://doi.org/10.3390/app162010365\" target=\"_blank\" rel=\"noopener\">doi:10.3390/app162010365</a> [<a href=\"#ref-2\">2</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Công nghệ hàn trạng thái rắn và giám sát khuyết tật thời gian thực</h3><p>Trong chế tạo thùng xe đường sắt từ hợp kim nhôm AA6061-T6 dày 6 mm, kích thước chốt dụng cụ trong hàn khuấy ma sát (FSW) đóng vai trò quyết định đến độ bền cơ học <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Thử nghiệm với vai hàn phẳng 13 mm và chốt trụ thẳng đường kính 3, 4 và 5 mm (ở tốc độ quay 1130 vòng/phút, tốc độ hàn 20 mm/phút, góc nghiêng 3°) ghi nhận độ bền kéo trung bình giảm từ 210,06 ± 5,87 MPa đối với chốt 3 mm xuống 190,96 ± 26,57 MPa và 146,36 ± 62,26 MPa lần lượt đối với chốt 4 và 5 mm <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Đường kính chốt có tương quan nghịch rõ rệt với độ bền kéo (hệ số Spearman ρ = −0,74, p = 0,023), và chốt 3 mm cho lượng bavia ít nhất cùng độ bền ổn định nhất <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Quy trình hàn khuấy ma sát và thử nghiệm kéo mối hàn hợp kim nhôm.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Quy trình hàn khuấy ma sát và thử nghiệm kéo mối hàn hợp kim nhôm. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Prasetya et al. (2026), “Effect of Tool Pin Diameter on the Tensile Strength of Friction Stir Welded AA6061 Joints: Implications for Railway Carbodies”, <em>Journal of Railway Transportation and Technology</em>, <a href=\"https://doi.org/10.37367/jrtt.v5i2.99\" target=\"_blank\" rel=\"noopener\">doi:10.37367/jrtt.v5i2.99</a> [<a href=\"#ref-3\">3</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-SA</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Nhằm phát hiện sớm khuyết tật rãnh (groove defect) trong hàn FSW nhôm dị chất AA2139 và AA7075 mà không cần lắp đặt thêm cảm biến ngoài phức tạp, nghiên cứu <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> đã thu thập và phân tích tín hiệu dòng điện trục chính của máy CNC qua biến đổi Fourier nhanh (FFT), mật độ phổ công suất (PSD) và phân tích tương quan phổ (spectral coherence). Kết quả chụp cắt lớp vi tính tia X (XCT) xác nhận rằng sự suy giảm mạnh độ tương quan phổ tại tần số cơ bản của trục chính và các hài bậc cao phản ánh sự hình thành bất liên tục ngầm dưới bề mặt ngay trước khi khuyết tật rãnh lộ rõ ra bên ngoài <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><p>Ở lĩnh vực kết nối cực pin đa lớp, kỹ thuật hàn siêu âm tấm ghép Ni/Al/Ni thể hiện sự tiến triển luyện kim dị đối xứng giữa các mặt phân cách <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Do trường nhiệt cơ không đồng đều, mặt tiếp xúc 1/2 và 2/3 có mức tăng bền bóc tách phi đồng bộ, dẫn đến chênh lệch 23% về độ bền bóc tách chữ T (T-peel) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Quá trình kết tinh lại động trong lớp nhôm thúc đẩy liên kết trạng thái rắn và tạo pha liên kim Al<sub>3</sub>Ni dưới điểm nóng chảy, trong đó điện trở biểu kiến phụ thuộc vào sự cân bằng giữa diện tích tiếp xúc thực tế và độ dày lớp hợp chất liên kim <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Sự phát triển lực bóc tách chữ T (T-peel) trong mối hàn nhiều lớp Ni/Al/Ni theo năng lượng hàn.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Sự phát triển lực bóc tách chữ T (T-peel) trong mối hàn nhiều lớp Ni/Al/Ni theo năng lượng hàn. <span class=\"fig-credit\">Nguồn: Hình 5a trong bài gốc – Hu et al. (2026), “Asymmetric interfacial metallurgical evolution and mechanical-electrical response of ultrasonically welded Ni/Al/Ni multilayers”, <em>Materials &amp; Design</em>, <a href=\"https://doi.org/10.1016/j.matdes.2026.117219\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.matdes.2026.117219</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Chế tạo bồi đắp kim loại L-PBF: Nâng cao độ bền gião và chống ăn mòn</h3><p>Gia công bột kim loại bằng laser trên nền bột (L-PBF) đối với hợp kim entropy nhẹ gốc nhôm Al<sub>85</sub>Cu<sub>5</sub>Li<sub>4</sub>Mg<sub>3</sub>Zn<sub>3</sub> đã mở ra triển vọng cho các chi tiết làm việc ở nhiệt độ cao <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Khi ủ nhiệt tại 300 °C, mạng lưới cùng tinh dạng tế bào kích thước nano được duy trì cùng các pha S-Al<sub>2</sub>CuMg và T<sub>B</sub>-Al<sub>7</sub>Cu<sub>4</sub>Li, trong khi ủ ở 400 °C làm mạng lưới này phân rã thành các pha thô σ-Al<sub>5</sub>Cu<sub>6</sub>Mg<sub>2</sub> và R-Al<sub>5</sub>CuLi<sub>3</sub> <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Mẫu xử lý ở 300 °C đạt tốc độ biến dạng gião nén tối thiểu thấp nhất, với ứng suất ngưỡng hữu hiệu đạt 80,2 MPa ở 200 °C và 69,6 MPa ở 300 °C nhờ sự ghim giữ và sắp xếp lại các mạng lệch tại ranh giới tế bào <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Đặc trưng vi cấu trúc đa thang đo của hợp kim entropy Al85Cu5Li4Mg3Zn3 sau chế tạo L-PBF.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Đặc trưng vi cấu trúc đa thang đo của hợp kim entropy Al85Cu5Li4Mg3Zn3 sau chế tạo L-PBF. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Wang et al. (2026), “Crack-free laser powder bed fusion processing and stress-assisted phase transformations during high-temperature creep of Al 85 Cu 5 Li 4 Mg 3 Zn 3 lightweight Al-based entropy alloy”, <em>Virtual and Physical Prototyping</em>, <a href=\"https://doi.org/10.1080/17452759.2026.2744849\" target=\"_blank\" rel=\"noopener\">doi:10.1080/17452759.2026.2744849</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong khi đó, việc điều khiển mật độ vũng hàn trong in L-PBF hợp kim nhớ hình NiTi bằng công suất laser thấp (80 W) và tốc độ quét 480 mm/s kết hợp ủ trung gian đã tạo ra tỷ lệ hạt dạng tế bào (CG) đạt 41,2% với mức vi biến dạng thấp <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Mẫu này mở rộng vùng thụ động hóa lên tới xấp xỉ 1800 mV (rộng gấp 1,2 đến 9 lần so với phần lớn hợp kim NiTi từng được công bố), tăng cường vượt bậc khả năng chống ăn mòn điểm trong môi trường chứa ion clorua nhờ màng thụ động giàu TiO<sub>2</sub> bền vững <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><h3>Kỹ thuật hàn vảy và phát triển hợp kim điền đầy hiệu năng cao</h3><p>Để cải thiện khả năng giữ hạt kim cương trong dụng cụ mài, nghiên cứu <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã sử dụng phương pháp bề mặt đáp ứng Box-Behnken (BBD) để tối ưu hóa thành phần hợp kim hàn vảy Cu-Sn-Ti biến tính bằng Ni, In, Fe và Si. Thành phần tối ưu được xác định là 1,23% Ni, 2,87% In, 4,85% Fe và 0,58% Si (theo trọng lượng) <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Hợp kim biến tính giảm nhiệt độ nóng chảy 20 °C, tăng diện tích làm ướt 16,23% (đạt 100,86 mm<sup>2</sup>), tăng vi độ cứng 37,5% và giảm lượng mòn 49,5% (chỉ còn 5,05 mg hao hụt), giúp đĩa mài kim cương tăng 91,4% lượng bóc tách vật liệu gốm Al<sub>2</sub>O<sub>3</sub> <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig4.jpg\" alt=\"So sánh giữa giá trị dự đoán và thực nghiệm đối với diện tích làm ướt và độ hao mòn kim loại điền đầy.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> So sánh giữa giá trị dự đoán và thực nghiệm đối với diện tích làm ướt và độ hao mòn kim loại điền đầy. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Du et al. (2026), “Optimization of Cu-Sn-Ti filler metal composition and brazing joint properties using response surface methodology”, <em>Functional Diamond</em>, <a href=\"https://doi.org/10.1080/26941112.2026.2737067\" target=\"_blank\" rel=\"noopener\">doi:10.1080/26941112.2026.2737067</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Ở chế độ nhiệt độ cực cao, liên kết dị chất giữa hợp kim titan–zirconi–molipđen (TZM) và graphite được thực hiện bằng lớp lót Zr nguyên chất trong chân không cao ở dải nhiệt 1540–1580 °C <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Tại 1540 °C, phản ứng bề mặt chưa đủ dẫn đến độ bền kéo chỉ đạt 8,9 MPa; tại 1580 °C, sự xuất hiện lỗ xốp làm ứng suất phá hủy giảm xuống 15,5 MPa <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Nhiệt độ 1560 °C đem lại liên kết liên tục tối ưu nhờ phản ứng khuếch tán Mo–Zr và hình thành vùng giàu Zr–C với độ cứng 389 HV, đạt độ bền kéo 19,4 MPa và vị trí đứt gãy chuyển sang phần vật liệu graphite <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig8.jpg\" alt=\"Đường cong ứng suất danh nghĩa – độ dịch chuyển kéo tiêu biểu cho mối hàn TZM/Zr/graphite.\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Đường cong ứng suất danh nghĩa – độ dịch chuyển kéo tiêu biểu cho mối hàn TZM/Zr/graphite. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Kim et al. (2026), “Effect of Brazing Temperature on the Interfacial Micro-Structure and Mechanical Properties of TZM/Graphite Joints Using a Zirconium Interlayer”, <em>Applied Sciences</em>, <a href=\"https://doi.org/10.3390/app16199958\" target=\"_blank\" rel=\"noopener\">doi:10.3390/app16199958</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong lĩnh vực hàn mềm không chì, việc bổ sung vi lượng Fe (0,2–0,5% khối lượng) vào hợp kim Sn-0,7Cu đã tinh luyện đáng kể tổ chức tế vi <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Sau khi hòa tan ở 150 °C trong 3 giờ và hóa già ở 100 °C (từ 6 đến 96 giờ), mẫu chứa 0,4% Fe phân bố đồng đều các pha liên kim FeSn<sub>2</sub> và Cu<sub>6</sub>Sn<sub>5</sub>, giúp ghim lệch, làm giảm ma sát nội, tăng mô đun đàn hồi động Young và cải thiện tính ổn định điện hóa chống ăn mòn <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><h3>Đóng gói điện tử bán dẫn công suất và độ bền mỏi kết cấu</h3><p>Xu hướng chuyển dịch từ hàn mềm sang thiêu kết kim loại trong đóng gói linh kiện bán dẫn công suất SiC đang diễn ra mạnh mẽ nhằm đáp ứng yêu cầu nhiệt độ cao và mật độ dòng điện lớn <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Tổng quan <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> so sánh ba công nghệ then chốt: thiêu kết pha lỏng quá độ (TLPS) cho phép nối nhiệt độ thấp nhưng làm việc nhiệt độ cao, song hạn chế bởi pha liên kim giòn; thiêu kết nano bạc (Ag) có độ dẫn nhiệt và điện vượt trội nhưng giá thành cao và có rủi ro dịch chuyển điện hóa; thiêu kết đồng (Cu) có chi phí thấp và kháng dịch chuyển điện hóa tốt nhưng đòi hỏi xử lý chống oxy hóa nghiêm ngặt và áp lực ép cao <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>Đối với vật liệu chèn đáy (underfill) gốc epoxy trong tích hợp dị chất 3D, báo cáo tổng quan <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup> nhấn mạnh vai trò của kỹ thuật hạt độn đa cấp, trong đó hiệu ứng chắn ứng suất (stress shielding) của hạt micro kết hợp hạt nano giúp tối ưu hóa đồng thời tính dẫn nhiệt, độ dẻo dai chống lan truyền nứt và độ nhớt khi điền đầy vi mạch <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Hiệu ứng gia cường dẻo dai đồng vận trong nền epoxy chứa hạt độn micro/nano-silica lai.\" loading=\"lazy\"><figcaption><strong>Hình 8.</strong> Hiệu ứng gia cường dẻo dai đồng vận trong nền epoxy chứa hạt độn micro/nano-silica lai. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Wang et al. (2026), “Recent Advances in Performance-Driven Multiscale Strategies for Epoxy-Based Underfill Materials for Advanced Packaging”, <em>Polymers</em>, <a href=\"https://doi.org/10.3390/polym18202481\" target=\"_blank\" rel=\"noopener\">doi:10.3390/polym18202481</a> [<a href=\"#ref-13\">13</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Bên cạnh đó, màng composite polyimide (PI) gia cường 10% hạt nanosphere SiO<sub>2</sub> rỗng kích thước 110 nm đã tăng 33% độ bền kéo ở nhiệt độ phòng (đạt 68 MPa), tăng 28% ở 200 °C (đạt 64 MPa) và tăng 64% ở 250 °C (đạt 66 MPa), đồng thời độ giãn dài khi đứt tăng 1,3% và hằng số điện môi giảm 3,5%, mở ra tiềm năng cách điện chịu nhiệt cao cho bao gói vi điện tử <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p><p>Về độ bền khai thác kết cấu nhôm hàn trong môi trường biển, nghiên cứu <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup> đánh giá ảnh hưởng của ăn mòn đến tuổi thọ mỏi của mối hàn chồng hợp kim Al-Mg 5083. Dữ liệu thử nghiệm chu kỳ cho thấy ăn mòn làm giảm nghiêm trọng giới hạn bền mỏi ở 2·10<sup>6</sup> chu trình: giảm khoảng 50% theo phương pháp ứng suất danh nghĩa và giảm 38% theo phương pháp ứng suất đáy rãnh, đòi hỏi phải tính toán bù trừ tải trọng ăn mòn mỏi trong thiết kế tàu thuyền và công trình biển <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Hàm ý thực tiễn cho kỹ nghệ hàn và đào tạo tại Việt Nam</h3><ul><li><strong>Tận dụng dữ liệu máy CNC để giám sát chất lượng hàn:</strong> Các xưởng cơ khí chính xác có thể ứng dụng phân tích phổ dòng điện trục chính theo nghiên cứu <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> để phát hiện sớm khuyết tật hàn khuấy ma sát mà không cần đầu tư hệ thống cảm biến lực đắt tiền.</li><li><strong>Cải tiến quy trình phục hồi công trình và kết cấu biển:</strong> Đối với việc gia cố kết cấu thép cũ hoặc chế tạo tàu thuyền bằng hợp kim nhôm 5083, việc chuyển đổi sang dây hàn lõi thuốc bazơ <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> và đưa hệ số suy giảm mỏi do ăn mòn (~38–50%) <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup> vào tiêu chuẩn bảo dưỡng định kỳ là cần thiết.</li><li><strong>Nghiên cứu công nghệ thiêu kết nano và xử lý bề mặt sau hàn:</strong> Các trường đại học kỹ thuật nên mở rộng chương trình đào tạo về công nghệ đóng gói SiC (thiêu kết Cu/Ag) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> và công nghệ biến tính bề mặt UNSM <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> nhằm đón đầu làn sóng đầu tư vào công nghiệp bán dẫn và xe điện tại Việt Nam.</li></ul>",
+  "content_en": "<p class=\"lead\">Today's digest presents key breakthroughs across welding technology, solid-state joining, laser additive manufacturing, brazing, and advanced power electronics packaging published in October 2026. The reported studies provide practical methodologies for structural repair, defect detection in friction stir welding, high-temperature creep resistance in printed alloys, and thermal-mechanical reliability in electronic interconnections.</p><h3>Fusion Welding of Steels and Post-Weld Surface Strengthening</h3><p>Strengthening historic steel infrastructure dating from 1880 to 1940 requires welding procedures tolerant to elevated phosphorus, sulfur, and nitrogen segregation inherent to legacy production. The authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> evaluated the weldability of early twentieth-century Siemens-Martin steel joined to modern fine-grained steels S355J2 + N and S355ML. Joining S355J2 + N via gas metal arc welding (GMAW) using austenitic solid wire G 18 8 Mn resulted in unacceptable porosity, slag inclusions, and lack of fusion across heat inputs of 5, 10, and 15 kJ/cm <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. In contrast, flux-cored arc welding (FCAW) of S355ML using basic wire T42 6 1Ni B M21 1 H5 achieved sound, defect-free full-penetration joints, proving that slag-free austenitic wire possesses lower tolerance to legacy base metal impurities <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig3.jpg\" alt=\"SEM image and EDX element maps of the fusion zone G 18 8 Mn, HAZ, and base metal.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> SEM image and EDX element maps of the fusion zone G 18 8 Mn, HAZ, and base metal. <span class=\"fig-credit\">Source: Fig. 12 of the original article – Uhlig et al. (2026), “Reinforcement of old mild steel structures using fine-grained steel with austenitic solid wire and ferritic flux-cored wire”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02667-w\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02667-w</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>For AISI 304 austenitic stainless steel, post-weld surface integrity was addressed by combining laser welding using ER308LSi filler wire (at 560 W and 3000 Hz) with Ultrasonic Nanocrystalline Surface Modification (UNSM) at a 10 N static load, 1000 mm/min scan speed, 20 kHz frequency, and 20 μm amplitude <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Severe surface plastic deformation induced by UNSM refined the microstructure, elevating microhardness from 212 to 411 HV in the base metal, 194 to 422 HV in the heat-affected zone (HAZ), and 244 to 496 HV in the cellular-dendritic fusion zone <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Simultaneously, the wear track cross-sectional area decreased from 63,241 to 29,648 μm<sup>2</sup>, significantly enhancing wear resistance <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig6.jpg\" alt=\"SEM images of the laser-welded AISI 304 joint produced using ER308LSi filler wire.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> SEM images of the laser-welded AISI 304 joint produced using ER308LSi filler wire. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Baizhan et al. (2026), “Influence of Ultrasonic Nanocrystalline Surface Modification on the Microstructure and Mechanical Properties of Laser-Welded Butt Joints of AISI 304 Austenitic Stainless Steel”, <em>Applied Sciences</em>, <a href=\"https://doi.org/10.3390/app162010365\" target=\"_blank\" rel=\"noopener\">doi:10.3390/app162010365</a> [<a href=\"#ref-2\">2</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Solid-State Joining and Real-Time Process Monitoring</h3><p>In railway carbody manufacturing from 6 mm thick AA6061-T6 aluminum plates, tool geometry critically dictates mechanical integrity <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Using high-speed steel tools with a 13 mm flat shoulder, butt joints welded at 1130 rpm, 20 mm/min traverse speed, and 3° tilt angle revealed that mean tensile strength dropped from 210.06 ± 5.87 MPa for a 3 mm pin to 190.96 ± 26.57 MPa and 146.36 ± 62.26 MPa for 4 and 5 mm pins, respectively <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Spearman rank analysis confirmed a significant negative correlation between pin diameter and tensile strength (ρ = −0.74, p = 0.023), with the 3 mm pin minimizing flash formation and yielding optimal consistency <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Friction stir welding process and tensile testing of aluminum alloy joints.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Friction stir welding process and tensile testing of aluminum alloy joints. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Prasetya et al. (2026), “Effect of Tool Pin Diameter on the Tensile Strength of Friction Stir Welded AA6061 Joints: Implications for Railway Carbodies”, <em>Journal of Railway Transportation and Technology</em>, <a href=\"https://doi.org/10.37367/jrtt.v5i2.99\" target=\"_blank\" rel=\"noopener\">doi:10.37367/jrtt.v5i2.99</a> [<a href=\"#ref-3\">3</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-SA</a>; resized, content unchanged.</span></figcaption></figure><p>For early detection of subsurface groove defects during friction stir welding (FSW) of dissimilar AA2139 and AA7075 alloys, a sensorless data-driven monitoring framework was established using CNC machine electrical signals <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. By computing Fast Fourier Transform (FFT), power spectral density (PSD), and spectral coherence on spindle current data, defect-free welds maintained high spectral coherence, whereas impending groove defects produced a sharp drop in coherence at the fundamental frequency and harmonics <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. X-ray computed tomography (XCT) confirmed that these coherence anomalies precede visible surface defect emergence <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><p>In ultrasonic welding of multilayer Ni/Al/Ni battery tabs, asymmetric interfacial deformation governs joint evolution <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Non-uniform thermomechanical history induced a 23% disparity in T-peel strength between the 1/2 and 2/3 interfaces <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Dynamic recrystallization in the aluminum interlayer drove solid-state bonding and the formation of continuous sub-melting Al<sub>3</sub>Ni intermetallic layers, where macroscopic apparent electrical resistance balances mechanical contact consolidation against excessive intermetallic resistivity <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Evolution of T-peel load in Ni/Al/Ni multilayers as a function of welding energy.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Evolution of T-peel load in Ni/Al/Ni multilayers as a function of welding energy. <span class=\"fig-credit\">Source: Fig. 5a of the original article – Hu et al. (2026), “Asymmetric interfacial metallurgical evolution and mechanical-electrical response of ultrasonically welded Ni/Al/Ni multilayers”, <em>Materials &amp; Design</em>, <a href=\"https://doi.org/10.1016/j.matdes.2026.117219\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.matdes.2026.117219</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Laser Powder Bed Fusion: Creep Resistance and Passivation Engineering</h3><p>In laser powder bed fusion (L-PBF) of the lightweight Al-based entropy alloy Al<sub>85</sub>Cu<sub>5</sub>Li<sub>4</sub>Mg<sub>3</sub>Zn<sub>3</sub>, thermal exposure governs high-temperature creep performance <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Following thermal exposure at 300 °C, continuous nano-sized cellular eutectic networks and strengthening S-Al<sub>2</sub>CuMg and T<sub>B</sub>-Al<sub>7</sub>Cu<sub>4</sub>Li phases remained stable, yielding the lowest minimum compressive creep rate and threshold stresses of 80.2 MPa at 200 °C and 69.6 MPa at 300 °C <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Conversely, exposure at 400 °C broke the cellular structure into coarse σ-Al<sub>5</sub>Cu<sub>6</sub>Mg<sub>2</sub> and R-Al<sub>5</sub>CuLi<sub>3</sub> phases, degrading dislocation confinement <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Multiscale microstructural characterization of as-printed Al85Cu5Li4Mg3Zn3 LAEA.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Multiscale microstructural characterization of as-printed Al85Cu5Li4Mg3Zn3 LAEA. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Wang et al. (2026), “Crack-free laser powder bed fusion processing and stress-assisted phase transformations during high-temperature creep of Al 85 Cu 5 Li 4 Mg 3 Zn 3 lightweight Al-based entropy alloy”, <em>Virtual and Physical Prototyping</em>, <a href=\"https://doi.org/10.1080/17452759.2026.2744849\" target=\"_blank\" rel=\"noopener\">doi:10.1080/17452759.2026.2744849</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; resized, content unchanged.</span></figcaption></figure><p>To overcome chloride-induced pitting in L-PBF NiTi shape memory alloys, cellular grain (CG) proportion was tailored through melt pool density control using a laser power of 80 W and scanning speed of 480 mm/s followed by stress-relief annealing <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. The resulting microstructure possessed 41.2% cellular grains with reduced micro-strain, extending the passive electrochemical window up to ~1800 mV (1.2 to 9 times wider than typical reported NiTi alloys) due to a regenerative, dense TiO<sub>2</sub> passive layer, while net-like Ti<sub>4</sub>Ni<sub>2</sub>O<sub>x</sub> nanoprecipitates initiated only transient metastable pits <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><h3>Brazing Technologies and Advanced Filler Development</h3><p>To improve diamond retention and wear resistance in Cu-Sn-Ti brazing alloys, Box-Behnken Design response surface methodology and genetic algorithm optimization established an optimal filler composition of 1.23 wt.% Ni, 2.87 wt.% In, 4.85 wt.% Fe, and 0.58 wt.% Si <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. This formulation lowered melting temperature by 20 °C, increased wetted area by 16.23% (to 100.86 mm<sup>2</sup>), raised microhardness by 37.5%, and reduced wear loss by 49.5% (to 5.05 mg) <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Brazed diamond grinding wheels achieved a 91.4% increase in Al<sub>2</sub>O<sub>3</sub> ceramic material removal with stabilized friction coefficients <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Comparison of predicted and experimental values for wetted area and filler metal wear loss.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Comparison of predicted and experimental values for wetted area and filler metal wear loss. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Du et al. (2026), “Optimization of Cu-Sn-Ti filler metal composition and brazing joint properties using response surface methodology”, <em>Functional Diamond</em>, <a href=\"https://doi.org/10.1080/26941112.2026.2737067\" target=\"_blank\" rel=\"noopener\">doi:10.1080/26941112.2026.2737067</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Joining titanium–zirconium–molybdenum (TZM) alloy to graphite in vacuum using a pure Zr interlayer proved highly sensitive to brazing temperatures between 1540 and 1580 °C <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. At 1540 °C, incomplete interfacial reaction resulted in a low nominal tensile failure stress of 8.9 MPa; at 1580 °C, void formation reduced strength to 15.5 MPa <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. An optimum brazing temperature of 1560 °C promoted balanced Mo–Zr interdiffusion and Zr–C compound growth with an interlayer hardness of 389 HV, shifting tensile fracture entirely into the graphite substrate at 19.4 MPa <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig8.jpg\" alt=\"Representative nominal tensile stress–displacement curves for TZM/Zr/graphite joints.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> Representative nominal tensile stress–displacement curves for TZM/Zr/graphite joints. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Kim et al. (2026), “Effect of Brazing Temperature on the Interfacial Micro-Structure and Mechanical Properties of TZM/Graphite Joints Using a Zirconium Interlayer”, <em>Applied Sciences</em>, <a href=\"https://doi.org/10.3390/app16199958\" target=\"_blank\" rel=\"noopener\">doi:10.3390/app16199958</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In electronics soldering, adding 0.2–0.5 wt.% Fe to Sn-0.7Cu lead-free solder refined matrix microstructure following solution treatment at 150 °C for 3 h and aging at 100 °C <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. The 0.4 wt.% Fe alloy formed uniformly dispersed FeSn<sub>2</sub> and Cu<sub>6</sub>Sn<sub>5</sub> intermetallic precipitates that pinned dislocation climb, reducing internal friction, increasing dynamic Young's modulus, and enhancing interfacial electrochemical stability against corrosion <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><h3>Electronic Packaging Interconnections and Environmental Durability</h3><p>Wide-bandgap SiC power electronics increasingly demand alternatives to standard solder interconnects under high-temperature and cyclic thermal conditions <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. A comprehensive review <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> highlights transient liquid-phase sintering (TLPS), silver sintering, and copper sintering: TLPS provides low-temperature processing with high-temperature capability but is constrained by brittle intermetallic compounds; Ag sintering delivers unmatched electrical and thermal conductivity but faces cost and electrochemical migration hurdles; Cu sintering balances cost and migration resistance but requires strict atmospheric control and pressure-assisted densification <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>For high-density advanced packaging, multiscale epoxy underfill design addresses thermal expansion mismatch between dies and organic substrates <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Hybrid micro/nano-silica filler networks exhibit stress-shielding mechanisms that decouple mechanical toughening from rheological penalties during capillary flow <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-25-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Synergistic toughening mechanism in hybrid micro/nano-silica filled epoxy.\" loading=\"lazy\"><figcaption><strong>Figure 8.</strong> Synergistic toughening mechanism in hybrid micro/nano-silica filled epoxy. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Wang et al. (2026), “Recent Advances in Performance-Driven Multiscale Strategies for Epoxy-Based Underfill Materials for Advanced Packaging”, <em>Polymers</em>, <a href=\"https://doi.org/10.3390/polym18202481\" target=\"_blank\" rel=\"noopener\">doi:10.3390/polym18202481</a> [<a href=\"#ref-13\">13</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Simultaneously, dielectric polyimide (PI) films incorporated with 10% in-situ hollow SiO<sub>2</sub> nanospheres (110 nm) achieved a 33% increase in tensile strength at room temperature (68 MPa), 28% at 200 °C (64 MPa), and 64% at 250 °C (66 MPa), along with a 1.3% rise in failure elongation and a 3.5% reduction in dielectric constant <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p><p>Finally, regarding marine welded assemblies, fatigue evaluations on lap-welded 5083 aluminum joints demonstrated that environmental corrosion induces severe fatigue degradation <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>. At 2·10<sup>6</sup> cycles, corrosion exposure reduced fatigue strength by approximately 50% under the nominal stress approach and by 38% under the notch stress approach, highlighting the necessity of accounting for environmental damage in lifecycle structural assessments <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Practical Implications for Industry and Education</h3><ul><li><strong>Data-Driven Welding Quality Assurance:</strong> Manufacturing plants can implement sensorless spindle current spectral coherence monitoring <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> on existing CNC machinery to intercept subsurface friction stir welding defects without incurring capital costs for external transducer arrays.</li><li><strong>Corrosion-Fatigue Design Margins:</strong> Marine fabricators working with 5083 aluminum lap joints must integrate explicit corrosion knock-down factors (38–50% reduction in fatigue strength) <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup> into structural maintenance intervals and inspection criteria.</li><li><strong>Curricular Focus on Power Packaging and Surface Engineering:</strong> Engineering programs should modernize joining curricula to incorporate power module sintering technologies (Cu/Ag sintering) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> and post-weld ultrasonic nanocrystalline surface modification <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> to meet the workforce demands of the expanding electric vehicle and semiconductor sectors.</li></ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "M. Uhlig",
+        "M. Homeyer",
+        "Nina Schroeder",
+        "Kevin Hoefer",
+        "Thomas Kannengießer",
+        "Richard Maria Stroetmann"
+      ],
+      "more_authors": true,
+      "title": "Reinforcement of old mild steel structures using fine-grained steel with austenitic solid wire and ferritic flux-cored wire",
+      "journal": "Welding in the World",
+      "date": "2026-10-21",
+      "doi": "10.1007/s40194-026-02667-w",
+      "url": "https://doi.org/10.1007/s40194-026-02667-w",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Daryn Baizhan",
+        "Нуртолеу Магазов",
+        "Arkhat Urykkaliyev",
+        "Dosym Erbolatuly",
+        "Laila Sulyubayeva",
+        "Dastan Buitkenov"
+      ],
+      "more_authors": true,
+      "title": "Influence of Ultrasonic Nanocrystalline Surface Modification on the Microstructure and Mechanical Properties of Laser-Welded Butt Joints of AISI 304 Austenitic Stainless Steel",
+      "journal": "Applied Sciences",
+      "date": "2026-10-20",
+      "doi": "10.3390/app162010365",
+      "url": "https://doi.org/10.3390/app162010365",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Henry Widya Prasetya",
+        "Dadang Sanjaya Atmaja",
+        "I Made Agus Putrawan",
+        "Dimas Adi Perwira",
+        "Ilham Satrio Utomo",
+        "Moch Aziz Kurniawan"
+      ],
+      "more_authors": false,
+      "title": "Effect of Tool Pin Diameter on the Tensile Strength of Friction Stir Welded AA6061 Joints: Implications for Railway Carbodies",
+      "journal": "Journal of Railway Transportation and Technology",
+      "date": "2026-10-22",
+      "doi": "10.37367/jrtt.v5i2.99",
+      "url": "https://doi.org/10.37367/jrtt.v5i2.99",
+      "license": "cc-by-sa",
+      "topic": "welding"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Ersilia Cozzolino",
+        "Vitantonio Esperto",
+        "Felice Rubino",
+        "Antonello Astarita",
+        "Pierpaolo Carlone"
+      ],
+      "more_authors": false,
+      "title": "Early detection of groove defect in friction stir welding through data-driven process monitoring",
+      "journal": "The International Journal of Advanced Manufacturing Technology",
+      "date": "2026-10-06",
+      "doi": "10.1007/s00170-026-19213-z",
+      "url": "https://doi.org/10.1007/s00170-026-19213-z",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Kuan-Chieh Hu",
+        "Yanlin Zhu",
+        "Hong-Han Chen",
+        "Jhong-Ren Huang",
+        "Jhe-Yu Lin",
+        "Satoshi Kameoka"
+      ],
+      "more_authors": false,
+      "title": "Asymmetric interfacial metallurgical evolution and mechanical-electrical response of ultrasonically welded Ni/Al/Ni multilayers",
+      "journal": "Materials & Design",
+      "date": "2026-10-09",
+      "doi": "10.1016/j.matdes.2026.117219",
+      "url": "https://doi.org/10.1016/j.matdes.2026.117219",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Enmao Wang",
+        "Swee Leong Sing",
+        "Danyang Zhou",
+        "Xiaohang Jia",
+        "Boyang Fan",
+        "Huibin Wu"
+      ],
+      "more_authors": false,
+      "title": "Crack-free laser powder bed fusion processing and stress-assisted phase transformations during high-temperature creep of Al85Cu5Li4Mg3Zn3 lightweight Al-based entropy alloy",
+      "journal": "Figshare",
+      "date": "2026-10-20",
+      "doi": "10.6084/m9.figshare.34716145",
+      "url": "https://doi.org/10.6084/m9.figshare.34716145",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Enmao Wang",
+        "Swee Leong Sing",
+        "Danyang Zhou",
+        "Xiaohang Jia",
+        "Boyang Fan",
+        "Huibin Wu"
+      ],
+      "more_authors": false,
+      "title": "Crack-free laser powder bed fusion processing and stress-assisted phase transformations during high-temperature creep of Al 85 Cu 5 Li 4 Mg 3 Zn 3 lightweight Al-based entropy alloy",
+      "journal": "Virtual and Physical Prototyping",
+      "date": "2026-10-20",
+      "doi": "10.1080/17452759.2026.2744849",
+      "url": "https://doi.org/10.1080/17452759.2026.2744849",
+      "license": "cc-by-nc",
+      "topic": "metal_am"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "A. Yan",
+        "W.S. Cai",
+        "X.B. Wei",
+        "P.X. Li",
+        "Z.C. He",
+        "X.W. Li"
+      ],
+      "more_authors": true,
+      "title": "Cellular grain control for enhanced pitting resistance in LPBF NiTi alloys",
+      "journal": "Materials & Design",
+      "date": "2026-10-20",
+      "doi": "10.1016/j.matdes.2026.117303",
+      "url": "https://doi.org/10.1016/j.matdes.2026.117303",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Quanbin Du",
+        "Xu Liu",
+        "Lei Wang",
+        "Guang Dong",
+        "Yongjiang Huyan",
+        "Zhanjiang Fang"
+      ],
+      "more_authors": true,
+      "title": "Optimization of Cu-Sn-Ti filler metal composition and brazing joint properties using response surface methodology",
+      "journal": "Functional Diamond",
+      "date": "2026-10-08",
+      "doi": "10.1080/26941112.2026.2737067",
+      "url": "https://doi.org/10.1080/26941112.2026.2737067",
+      "license": "cc-by",
+      "topic": "brazing"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Gun-Woo Kim",
+        "Dong-Su Park",
+        "HyunKyu Kweon",
+        "Young-Hun Chae"
+      ],
+      "more_authors": false,
+      "title": "Effect of Brazing Temperature on the Interfacial Micro-Structure and Mechanical Properties of TZM/Graphite Joints Using a Zirconium Interlayer",
+      "journal": "Applied Sciences",
+      "date": "2026-10-08",
+      "doi": "10.3390/app16199958",
+      "url": "https://doi.org/10.3390/app16199958",
+      "license": "cc-by",
+      "topic": "brazing"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Shereen M. Abdelaziz",
+        "M. Abd El-Hafez",
+        "Heba Yehia Zahran",
+        "Alaa Farag Abd El-Rehim",
+        "Eman AbdElRhiem"
+      ],
+      "more_authors": false,
+      "title": "The effect of minor iron additions and aging time on the internal friction, dynamic Young's modulus, and corrosion behavior of Sn-0.7Cu lead-free solder alloy",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-10-12",
+      "doi": "10.1016/j.jmrt.2026.10.093",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.10.093",
+      "license": "cc-by",
+      "topic": "brazing"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Jinghan Yuan"
+      ],
+      "more_authors": false,
+      "title": "From Soldering to Sintering: Novel Interconnection Technology for SiC Power Device Package",
+      "journal": "Applied and Computational Engineering",
+      "date": "2026-10-13",
+      "doi": "10.54254/2755-2721/2026.37704",
+      "url": "https://doi.org/10.54254/2755-2721/2026.37704",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Yi Wang",
+        "Yi Wang",
+        "Yage Wang",
+        "Yage Wang",
+        "Yihang Wu",
+        "Yujie Yan"
+      ],
+      "more_authors": true,
+      "title": "Recent Advances in Performance-Driven Multiscale Strategies for Epoxy-Based Underfill Materials for Advanced Packaging",
+      "journal": "Polymers",
+      "date": "2026-10-11",
+      "doi": "10.3390/polym18202481",
+      "url": "https://doi.org/10.3390/polym18202481",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Zheng Wu",
+        "Rui Meng",
+        "Chonggui Zhong",
+        "Yanyan Huang",
+        "Juehong Guo",
+        "Yuchi Cheng"
+      ],
+      "more_authors": true,
+      "title": "Synergistically Enhanced Properties of Polyimide Films via In-Situ Hollow SiO2 Nanospheres",
+      "journal": "Molecules",
+      "date": "2026-10-07",
+      "doi": "10.3390/molecules31193567",
+      "url": "https://doi.org/10.3390/molecules31193567",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Tomislav Matić",
+        "Dražen Kustura",
+        "Ivan Peko",
+        "Francisko Lukša"
+      ],
+      "more_authors": false,
+      "title": "Influence of Corrosion on the Fatigue Behaviour of 5083 Lap-Welded Joints",
+      "journal": "International Journal for Engineering Modelling",
+      "date": "2026-10-07",
+      "doi": "10.31534/engmod.2026.2.ri.01v",
+      "url": "https://doi.org/10.31534/engmod.2026.2.ri.01v",
+      "license": "cc-by",
+      "topic": "applications"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

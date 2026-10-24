@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-25-diem-tin-khoa-hoc",
+    "date": "2026-10-25",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin công nghệ hàn và ghép nối: Tối ưu hóa vi cấu trúc mối hàn, công nghệ in 3D kim loại và giải pháp đóng gói điện tử thế hệ mới",
+    "title_en": "Welding and Joining Digest: Microstructural Optimization, Metal Additive Manufacturing, and Advanced Packaging Solutions",
+    "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong hàn kết cấu thép và nhôm, kiểm soát khuyết tật hàn khuấy ma sát, in 3D hợp kim entropy và niken-titan bằng L-PBF, cùng các giải pháp hàn vảy và đóng gói vi điện tử công suất cao.",
+    "summary_en": "This digest highlights recent breakthroughs in structural steel and aluminum joining, real-time friction stir welding defect detection, high-performance L-PBF additive manufacturing, and advanced brazing and electronic packaging solutions.",
+    "tags": [
+      "Welding Technology",
+      "Metal 3D Printing",
+      "Brazing and Soldering",
+      "Electronic Packaging",
+      "Materials Characterization"
+    ],
+    "cover": "images/blog/2026-10-25-diem-tin-khoa-hoc/fig3.jpg",
+    "file": "posts/2026-10-25-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-24-chuyen-de-ung-dung-ai-hoc-may-ml-va-thi-giac-may-tinh-trong",
     "date": "2026-10-24",
     "type": "feature",

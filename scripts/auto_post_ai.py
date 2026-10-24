@@ -323,6 +323,22 @@ FIG_CONTAINER = re.compile(r"(^|[-_\s])(fig|figure|html-fig|figure-container|fig
 FIG_LABEL = re.compile(r"^\s*((?:fig(?:ure)?|hình)\.?\s*\d+[a-z]?)[.:\s]*", re.I)
 
 
+GOOD_FIG = re.compile(r"microstructur|sem\b|ebsd|tem\b|optical micrograph|fractur|morpholog|cross[- ]section|"
+                      r"interface|intermetallic|imc\b|hardness|stress|strain|tensile|distribution|temperature field|"
+                      r"simulat|melt pool|bead|porosity|crack|grain|phase|xrd|comparison|effect of|evolution|result", re.I)
+BAD_FIG = re.compile(r"specimen|geometr|dimension|flow ?chart|framework|topolog|sampling|location of|"
+                     r"workflow|research route|outline|overview of (the )?(study|paper)|graphical abstract|setup|set-up", re.I)
+
+
+def figure_score(caption, label):
+    """Ưu tiên hình kết quả (vi cấu trúc, phá hủy, phân bố ứng suất…) hơn hình sơ đồ/mẫu thử."""
+    score = 2 * len(GOOD_FIG.findall(caption)) - 3 * len(BAD_FIG.findall(caption))
+    m = re.search(r"\d+", label or "")
+    if m and int(m.group()) == 1:
+        score -= 1  # Hình 1 thường là sơ đồ thí nghiệm
+    return score
+
+
 def candidate_images(page_url, soup):
     """Chỉ lấy HÌNH TRONG BÀI BÁO: ảnh nằm trong khối figure có chú thích (caption).
     Không dùng og:image / ảnh bìa tạp chí / logo. Trả về [(url, caption, nhãn hình gốc)]."""
@@ -365,9 +381,9 @@ def candidate_images(page_url, soup):
             caption = caption[m.end():].strip()
         seen.add(url)
         cands.append((url, caption, label))
-        if len(cands) >= 4:
+        if len(cands) >= 8:
             break
-    return cands
+    return sorted(cands, key=lambda c: figure_score(c[1], c[2]), reverse=True)
 
 
 def save_image(data, dest, min_w=400):
@@ -405,7 +421,7 @@ def download_image(url, referer, dest):
 PDF_CAPTION = re.compile(r"^\s*(fig(?:ure)?\.?\s*\d+[a-z]?)[.:\s]", re.I)
 
 
-def pdf_figures(pdf_bytes, max_n=3):
+def pdf_figures(pdf_bytes, max_n=8):
     """Cắt hình trong PDF bài báo: tìm dòng chú thích 'Figure N.' rồi chụp vùng ảnh nằm ngay phía trên.
     Trả về [(png_bytes, caption, label)]."""
     import pymupdf as fitz  # PyMuPDF
@@ -445,7 +461,7 @@ def pdf_figures(pdf_bytes, max_n=3):
                 out.append((pix.tobytes("png"), caption[:450], label))
             if len(out) >= max_n:
                 break
-    return out
+    return sorted(out, key=lambda f: figure_score(f[1], f[2]), reverse=True)
 
 
 MDPI_JOURNALS = {

@@ -51,6 +51,10 @@ FEATURE_TOPIC = os.environ.get("FEATURE_TOPIC", "").strip()
 FEATURE_QUERIES = [q.strip() for q in os.environ.get("FEATURE_QUERIES", "").split(";") if q.strip()]
 FEATURE_MUST = os.environ.get("FEATURE_MUST", "").strip()  # regex bắt buộc thêm (ví dụ nhóm từ khóa AI)
 FEATURE_PAPERS = int(os.environ.get("FEATURE_PAPERS", "20"))
+# Lĩnh vực bắt buộc của bài báo (regex). Mặc định: hàn/liên kết. "-" = không giới hạn lĩnh vực.
+FEATURE_DOMAIN = os.environ.get("FEATURE_DOMAIN", "").strip()
+# Dàn ý gợi ý cho các mục ứng dụng (tùy chọn, mỗi ý cách nhau bằng dấu ;)
+FEATURE_OUTLINE = [x.strip() for x in os.environ.get("FEATURE_OUTLINE", "").split(";") if x.strip()]
 MAX_FIGURES = 8  # tối đa 1 hình/bài báo, mỗi mục của bản tin có ít nhất 1 hình
 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
@@ -272,41 +276,60 @@ JOINING = re.compile(r"\bweld|braz|solder|additive(ly)? manufactur|\bwaam\b|dire
 
 
 def collect_feature_papers():
-    """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng), đúng chủ đề."""
+    """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng).
+    Chọn xen kẽ theo từng truy vấn để mọi khía cạnh của chủ đề đều có bài, và lọc chặt độ liên quan."""
     today = dt.date.today()
     since_review = (today - dt.timedelta(days=5 * 365)).isoformat()
     since_recent = (today - dt.timedelta(days=548)).isoformat()
     must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
-    reviews, recent = [], []
-    for q in FEATURE_QUERIES or [FEATURE_TOPIC]:
-        for kind, since, sort, bucket in (("review", since_review, "cited_by_count:desc", reviews),
-                                          ("article", since_recent, "cited_by_count:desc", recent)):
-            try:
-                bucket += openalex_search(q, since, work_type=kind, sort=sort, per_page=10)
-            except Exception as e:
-                diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
-            time.sleep(0.3)
-    log(f"Chuyên đề: {len(reviews)} bài tổng quan, {len(recent)} bài nghiên cứu (thô)")
+    domain = None if FEATURE_DOMAIN == "-" else (re.compile(FEATURE_DOMAIN, re.I) if FEATURE_DOMAIN else JOINING)
+    queries = FEATURE_QUERIES or [FEATURE_TOPIC]
+
+    def strong(rx, it):
+        """Từ khóa xuất hiện trong tiêu đề, hoặc ít nhất 2 lần trong tóm tắt (tránh bài chỉ nhắc lướt qua)."""
+        return rx is None or rx.search(it["title"]) or len(rx.findall(it["abstract"])) >= 2
 
     def ok(it):
-        text = f"{it['title']} {it['abstract']}"
-        return (it["doi"] and len(it["abstract"]) >= 200 and JOINING.search(text)
-                and (must is None or must.search(text)))
+        return it["doi"] and len(it["abstract"]) >= 200 and strong(domain, it) and strong(must, it)
+
+    key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
+    pools = {"review": [], "article": []}
+    for qi, q in enumerate(queries):
+        for kind, since in (("review", since_review), ("article", since_recent)):
+            try:
+                items = openalex_search(q, since, work_type=kind, sort="cited_by_count:desc", per_page=10)
+            except Exception as e:
+                diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
+                items = []
+            good = sorted([it for it in items if ok(it)], key=key, reverse=True)
+            dropped = len(items) - len(good)
+            if dropped:
+                log(f"  [{kind}] {q[:50]}: bỏ {dropped} bài ít liên quan")
+            pools[kind].append(good)
+            time.sleep(0.3)
 
     chosen, seen = [], set()
-    key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
-    for pool, quota in ((reviews, 6), (recent, FEATURE_PAPERS)):
-        n = 0
-        for it in sorted(pool, key=key, reverse=True):
-            if len(chosen) >= FEATURE_PAPERS or n >= quota:
+
+    def take(lists, limit):
+        """Lấy xen kẽ: mỗi truy vấn một bài, lặp lại cho tới khi đủ."""
+        added = 0
+        while added < limit and any(lists):
+            for lst in lists:
+                while lst and lst[0]["doi"] in seen:
+                    lst.pop(0)
+                if lst and added < limit and len(chosen) < FEATURE_PAPERS:
+                    it = lst.pop(0)
+                    seen.add(it["doi"])
+                    it["topic"] = "feature"
+                    chosen.append(it)
+                    added += 1
+            if len(chosen) >= FEATURE_PAPERS:
                 break
-            if it["doi"] in seen or not ok(it):
-                continue
-            seen.add(it["doi"])
-            it["topic"] = "feature"
-            chosen.append(it)
-            n += 1
-    log(f"Chọn {len(chosen)} bài cho chuyên đề")
+
+    take(pools["review"], 7)                      # khung tổng quan
+    take(pools["article"], FEATURE_PAPERS)        # ví dụ nghiên cứu cụ thể, mới
+    log(f"Chọn {len(chosen)} bài cho chuyên đề "
+        f"({sum(1 for c in chosen if c['kind'] == 'review')} tổng quan)")
     return chosen
 
 
@@ -639,35 +662,39 @@ GEMINI_MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(),
 
 
 def gemini_json(prompt):
-    last = None
+    errors = []
     for model in GEMINI_MODELS:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         body = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 32768},
+            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 65536},
         }
         for attempt in range(2):
             try:
                 r = SESSION.post(url, headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
-                                 json=body, timeout=240)
+                                 json=body, timeout=600)
             except requests.RequestException as e:
-                last = str(e)
+                errors.append(f"{model}: {type(e).__name__}")
                 continue
             if r.status_code == 200:
                 try:
                     cand = r.json()["candidates"][0]
-                    text = "".join(p.get("text", "") for p in cand["content"]["parts"])
+                    finish = cand.get("finishReason", "")
+                    text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", [])
+                                   if not p.get("thought"))
                     text = re.sub(r"^```(json)?|```$", "", text.strip()).strip()
+                    data = json.loads(text)
                     log(f"Gemini model: {model}")
-                    return json.loads(text)
+                    return data
                 except Exception as e:
-                    last = f"{model}: không đọc được JSON ({e})"
+                    errors.append(f"{model}: không đọc được JSON (finishReason={finish or '?'}, {type(e).__name__}, "
+                                  f"{len(text) if 'text' in dir() else 0} ký tự)")
                     continue
-            last = f"{model}: HTTP {r.status_code} {r.text[:300]}"
+            errors.append(f"{model}: HTTP {r.status_code} {r.text[:160]}")
             if r.status_code in (400, 403, 404):
                 break  # model không dùng được → thử model kế tiếp
-            time.sleep(5)
-    raise RuntimeError(f"Gọi Gemini thất bại: {last}")
+            time.sleep(10)
+    raise RuntimeError("Gọi Gemini thất bại: " + " | ".join(errors))
 
 
 def build_feature_prompt(papers, figures, today):
@@ -680,7 +707,11 @@ def build_feature_prompt(papers, figures, today):
                      f"Abstract: {clean_text(p['abstract'], 1800)}\n")
     figs = "\n".join(f"FIG{f['n']} – from paper [{f['paper']}]; original caption: {f['caption_original'] or '(none)'}"
                      for f in figures) or "(no figures)"
-    return f"""You are a science writer for a welding & joining technology blog.
+    outline = (" — suggested themes: " + "; ".join(FEATURE_OUTLINE)) if FEATURE_OUTLINE else (
+        " — e.g. vision-based seam tracking & robot guidance, in-process monitoring (arc/acoustic/thermal signals), defect "
+        "detection & NDT, process-parameter optimisation & quality/property prediction, digital twins, AI for metal additive "
+        "manufacturing, brazing/soldering/electronic packaging")
+    return f"""You are a science writer for an engineering blog on welding, joining and materials technology.
 Write an IN-DEPTH bilingual Vietnamese–English feature article on the topic:
 "{FEATURE_TOPIC}"
 for engineers, lecturers and graduate students. Base every technical claim on the {len(papers)} papers below
@@ -688,16 +719,12 @@ for engineers, lecturers and graduate students. Base every technical claim on th
 
 STRUCTURE (each part an <h3> section):
 1. Lead paragraph (<p class="lead">, 3–4 sentences) on why the topic matters now.
-2. "Bối cảnh" / "Background": the problem AI addresses in welding (variability, defects, skilled-labour shortage, quality assurance).
-3. 4–6 application sections grouped by theme as supported by the papers — e.g. vision-based seam tracking & robot guidance,
-   in-process monitoring (arc/acoustic/thermal signals), defect detection & NDT (radiography, ultrasonic), process-parameter
-   optimisation & quality/property prediction, digital twins, AI for metal additive manufacturing (WAAM/DED/L-PBF),
-   brazing/soldering/electronic packaging. For each: the AI methods used (CNN, LSTM, transformers, reinforcement learning,
-   physics-informed ML…), what was achieved (only numbers present in the abstracts), and limitations.
-4. "Thách thức" / "Challenges": data scarcity & labelling, generalisation across materials/machines, explainability,
-   real-time/edge constraints, integration with qualification standards (WPS/PQR, ISO 3834) — grounded in the papers.
-5. "Xu thế tương lai" / "Future trends": 4–6 trends with reasoning drawn from the reviews (e.g. foundation/multimodal models,
-   physics-informed and hybrid models, closed-loop autonomous welding cells, digital twins, human–AI collaboration, standards).
+2. "Bối cảnh" / "Background": why the topic matters and which problems/bottlenecks it addresses.
+3. 4–6 thematic sections grouped as supported by the papers{outline}. For each: the methods used, what was achieved
+   (only numbers present in the abstracts), representative examples and limitations.
+4. "Thách thức" / "Challenges": e.g. data scarcity & quality, generalisation, explainability, reproducibility,
+   integration with industrial practice and standards — grounded in the papers.
+5. "Xu thế tương lai" / "Future trends": 4–6 trends with reasoning drawn from the reviews.
    Clearly phrase forward-looking statements as expectations, not facts.
 6. "Hàm ý thực tiễn" / "Practical implications": 3–4 concrete implications for Vietnamese industry and education.
 
@@ -711,8 +738,8 @@ RULES
   Available figures:
 {figs}
 - Allowed HTML: <h3>, <p>, <ul>, <li>, <strong>, <em>, <sub>, <sup>. No styles, images or links.
-- Vietnamese must be natural, with standard Vietnamese welding/AI terminology and English abbreviations in parentheses
-  (e.g. "mạng nơ-ron tích chập (CNN)", "dò đường hàn (seam tracking)", "bản sao số (digital twin)").
+- Vietnamese must be natural, with standard Vietnamese technical terminology and English abbreviations in parentheses
+  (e.g. "mạng nơ-ron tích chập (CNN)", "học máy (ML)", "bản sao số (digital twin)", "vi cấu trúc (microstructure)").
 - Length: about 2200–3000 words per language.
 
 Return ONLY a JSON object:
@@ -851,13 +878,12 @@ def finalize_content(content, figures, captions, lang, papers):
     n_ref = len(papers)
 
     def cite(m):
-        nums = [int(x) for x in re.findall(r"\d+", m.group(1))]
-        nums = [n for n in nums if 1 <= n <= n_ref]
-        if not nums:
-            return ""
+        nums = cite_numbers(m.group(1))
+        if not nums or any(not 1 <= n <= n_ref for n in nums):
+            return m.group(0)  # không phải trích dẫn (ví dụ chỉ số Miller [110]) → giữ nguyên
         return "<sup class=\"cite\">[" + ", ".join(f'<a href="#ref-{n}">{n}</a>' for n in nums) + "]</sup>"
 
-    content = re.sub(r"\[(\d+(?:\s*[,–-]\s*\d+)*)\]", cite, content)
+    content = CITE_RX.sub(cite, content)
     by_n = {f["n"]: f for f in figures}
     token = re.compile(r"(?:<p>\s*)?\{\{\s*FIG(\d+)\s*\}\}(?:\s*</p>)?")
 
@@ -897,6 +923,61 @@ def finalize_content(content, figures, captions, lang, papers):
     content = token.sub(put, content)
     content = re.sub(r"<p>\s*</p>", "", content)
     return content
+
+
+CITE_RX = re.compile(r"\[(\d+(?:\s*[,;–-]\s*\d+)*)\]")
+
+
+def cite_numbers(group):
+    """'1, 3–5' → [1, 3, 4, 5]"""
+    out = []
+    for part in re.split(r"\s*[,;]\s*", group):
+        m = re.fullmatch(r"(\d+)\s*[–-]\s*(\d+)", part.strip())
+        if m and int(m.group(1)) <= int(m.group(2)) <= int(m.group(1)) + 30:
+            out += list(range(int(m.group(1)), int(m.group(2)) + 1))
+        elif part.strip().isdigit() and not part.strip().startswith("0"):  # [001] là chỉ số Miller, không phải trích dẫn
+            out.append(int(part))
+    return out
+
+
+def renumber_citations(ai, papers, figures):
+    """Đánh số lại tài liệu tham khảo theo thứ tự xuất hiện lần đầu trong bài (kiểu Vancouver/IEEE):
+    trích dẫn đầu tiên là [1], tiếp theo [2]… Bài báo không được trích dẫn xếp cuối danh mục."""
+    n = len(papers)
+    order = []
+    for key in ("content_vi", "content_en"):
+        text = ai.get(key, "") or ""
+        # hình cũng tính là một lần "trích dẫn" bài báo nguồn tại vị trí đặt hình
+        for m in re.finditer(r"\{\{\s*FIG(\d+)\s*\}\}|" + CITE_RX.pattern, text):
+            if m.group(1):
+                f = next((f for f in figures if f["n"] == int(m.group(1))), None)
+                nums = [f["paper"]] if f else []
+            else:
+                nums = cite_numbers(m.group(2))
+            if not nums or any(not 1 <= x <= n for x in nums):
+                continue
+            for x in nums:
+                if x not in order:
+                    order.append(x)
+    order += [x for x in range(1, n + 1) if x not in order]
+    new = {old: i for i, old in enumerate(order, 1)}
+
+    def sub(m):
+        raw = cite_numbers(m.group(1))
+        if not raw or any(x not in new for x in raw):
+            return m.group(0)  # không phải trích dẫn (ví dụ hướng tinh thể [110]) → giữ nguyên
+        return "[" + ", ".join(map(str, sorted({new[x] for x in raw}))) + "]"
+
+    for key in ("content_vi", "content_en"):
+        if ai.get(key):
+            ai[key] = CITE_RX.sub(sub, ai[key])
+    for key in ("figure_captions_vi", "figure_captions_en"):
+        caps = ai.get(key) or {}
+        for k in list(caps):
+            caps[k] = CITE_RX.sub(sub, caps[k] or "")
+    for f in figures:
+        f["paper"] = new[f["paper"]]
+    return [papers[old - 1] for old in order]
 
 
 SELF_REF = re.compile(r"Hán Lê Duy|Han Le Duy|Duy Le Han|Bách khoa Hà Nội|\bHUST\b|Hanoi University of Science|"
@@ -944,6 +1025,8 @@ def main():
         diag(f"  Bản đầu nhắc tới: {', '.join(bad)} → yêu cầu AI viết lại giọng trung tính")
         ai = gemini_json(prompt + "\n\nIMPORTANT: your previous draft mentioned " + ", ".join(bad) +
                          ". Rewrite in a fully neutral, impersonal voice without naming any blog owner, lab, university or experts.")
+
+    papers = renumber_citations(ai, papers, figures)
 
     refs = [{
         "n": i, "authors": p["authors"][:6], "more_authors": len(p["authors"]) > 6,

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "2026-10-24-diem-tin-khoa-hoc",
+    "date": "2026-10-24",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin Khoa học Hàn & Kỹ thuật Gia công Liên kết (24/10/2026)",
+    "title_en": "Welding & Joining Science Digest (October 24, 2026)",
+    "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong điều khiển chùm tia laser động, biến tính tần số thấp hàn nhôm, in 3D hồ quang thép siêu bền 1.600 MPa và liên kết vật liệu tiên tiến cho công nghệ bán dẫn và năng lượng hydro.",
+    "summary_en": "This digest highlights the latest advancements in dynamic laser beam shaping, low-frequency modulation in aluminum welding, WAAM of 1,600 MPa ultra-high-strength steel, and advanced joining for semiconductor and hydrogen energy sectors.",
+    "tags": [
+      "Laser Welding",
+      "WAAM",
+      "Brazing",
+      "Electronic Packaging",
+      "Pipeline Welding"
+    ],
+    "cover": "",
+    "file": "posts/2026-10-24-diem-tin-khoa-hoc.json"
+  }
+]

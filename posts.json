@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-10-24-diem-tin-khoa-hoc-1916",
+    "date": "2026-10-24",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin Khoa học Công nghệ Hàn & Gia công Bồi đắp (24/10/2026): Từ Kiểm soát Nhiệt WAAM, Hàn Vảy Cấu trúc Nhiệt đến Trí tuệ Nhân tạo trong Hàn Siêu âm",
+    "title_en": "Welding & Additive Manufacturing Science Digest (2026-10-24): From WAAM Thermal Control and Thermal-Shield Brazing to AI-Driven Ultrasonic Welding",
+    "summary_vi": "Bản tin hôm nay cập nhật các nghiên cứu mới nhất về công nghệ in 3D kim loại, kỹ thuật hàn vảy gốm-kim loại và đóng gói điện tử công suất cao. Các công trình nổi bật tập trung vào ứng dụng học sâu kiểm soát chất lượng hàn siêu âm cuộn pin, tối ưu hóa chu kỳ nhiệt WAAM và giải pháp giảm trở kháng nhiệt ranh giới.",
+    "summary_en": "Today's digest covers breakthrough research in metal additive manufacturing, ceramic-to-metal brazing, and thermal management for high-power electronic packaging. Key highlights include deep-learning-based quality monitoring in battery foil ultrasonic welding, thermal cycle optimization in WAAM, and advanced strategies to mitigate thermal boundary resistance.",
+    "tags": [
+      "WAAM",
+      "LPBF",
+      "Brazing",
+      "Ultrasonic Welding",
+      "Electronic Packaging",
+      "Friction Stir Welding"
+    ],
+    "cover": "images/blog/2026-10-24-diem-tin-khoa-hoc-1916/fig1.jpg",
+    "file": "posts/2026-10-24-diem-tin-khoa-hoc-1916.json"
+  },
+  {
     "id": "2026-10-24-diem-tin-khoa-hoc",
     "date": "2026-10-24",
     "type": "digest",

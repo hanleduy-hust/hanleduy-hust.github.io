@@ -323,6 +323,22 @@ FIG_CONTAINER = re.compile(r"(^|[-_\s])(fig|figure|html-fig|figure-container|fig
 FIG_LABEL = re.compile(r"^\s*((?:fig(?:ure)?|hình)\.?\s*\d+[a-z]?)[.:\s]*", re.I)
 
 
+GOOD_FIG = re.compile(r"microstructur|sem\b|ebsd|tem\b|optical micrograph|fractur|morpholog|cross[- ]section|"
+                      r"interface|intermetallic|imc\b|hardness|stress|strain|tensile|distribution|temperature field|"
+                      r"simulat|melt pool|bead|porosity|crack|grain|phase|xrd|comparison|effect of|evolution|result", re.I)
+BAD_FIG = re.compile(r"specimen|geometr|dimension|flow ?chart|framework|topolog|sampling|location of|"
+                     r"workflow|research route|outline|overview of (the )?(study|paper)|graphical abstract|setup|set-up", re.I)
+
+
+def figure_score(caption, label):
+    """Ưu tiên hình kết quả (vi cấu trúc, phá hủy, phân bố ứng suất…) hơn hình sơ đồ/mẫu thử."""
+    score = 2 * len(GOOD_FIG.findall(caption)) - 3 * len(BAD_FIG.findall(caption))
+    m = re.search(r"\d+", label or "")
+    if m and int(m.group()) == 1:
+        score -= 1  # Hình 1 thường là sơ đồ thí nghiệm
+    return score
+
+
 def candidate_images(page_url, soup):
     """Chỉ lấy HÌNH TRONG BÀI BÁO: ảnh nằm trong khối figure có chú thích (caption).
     Không dùng og:image / ảnh bìa tạp chí / logo. Trả về [(url, caption, nhãn hình gốc)]."""
@@ -351,8 +367,12 @@ def candidate_images(page_url, soup):
         url = urljoin(page_url, src)
         if url in seen or BAD_IMG.search(url):
             continue
-        cap_el = fig.find("figcaption") or fig.find(class_=re.compile("caption|legend|fig.*desc|description", re.I))
-        caption = clean_text(cap_el.get_text(" ") if cap_el else "", 450)
+        parts = []
+        for el in [fig.find("figcaption")] + fig.find_all(class_=re.compile("caption|legend|fig.*desc|description", re.I)):
+            t = clean_text(el.get_text(" ")) if el else ""
+            if t and not any(t in q for q in parts):
+                parts = [q for q in parts if q not in t] + [t]
+        caption = clean_text(" ".join(parts), 450)
         if len(caption) < 20:  # hình thật trong bài báo luôn có chú thích
             continue
         m = FIG_LABEL.match(caption)
@@ -361,9 +381,9 @@ def candidate_images(page_url, soup):
             caption = caption[m.end():].strip()
         seen.add(url)
         cands.append((url, caption, label))
-        if len(cands) >= 4:
+        if len(cands) >= 8:
             break
-    return cands
+    return sorted(cands, key=lambda c: figure_score(c[1], c[2]), reverse=True)
 
 
 def save_image(data, dest, min_w=400):
@@ -401,7 +421,7 @@ def download_image(url, referer, dest):
 PDF_CAPTION = re.compile(r"^\s*(fig(?:ure)?\.?\s*\d+[a-z]?)[.:\s]", re.I)
 
 
-def pdf_figures(pdf_bytes, max_n=3):
+def pdf_figures(pdf_bytes, max_n=8):
     """Cắt hình trong PDF bài báo: tìm dòng chú thích 'Figure N.' rồi chụp vùng ảnh nằm ngay phía trên.
     Trả về [(png_bytes, caption, label)]."""
     import pymupdf as fitz  # PyMuPDF
@@ -441,24 +461,64 @@ def pdf_figures(pdf_bytes, max_n=3):
                 out.append((pix.tobytes("png"), caption[:450], label))
             if len(out) >= max_n:
                 break
-    return out
+    return sorted(out, key=lambda f: figure_score(f[1], f[2]), reverse=True)
 
 
-def get_pdf(p):
-    """Tải PDF: ưu tiên kho PDF của OpenAlex (không bị nhà xuất bản chặn), sau đó link PDF của nhà xuất bản."""
+MDPI_JOURNALS = {
+    "ma": "materials", "met": "metals", "cryst": "crystals", "mi": "micromachines", "fluids": "fluids",
+    "app": "applsci", "coatings": "coatings", "jmmp": "jmmp", "polym": "polymers", "nano": "nanomaterials",
+    "en": "energies", "electronics": "electronics", "machines": "machines", "sensors": "sensors",
+    "lubricants": "lubricants", "designs": "designs", "processes": "processes", "jcs": "jcs",
+    "alloys": "alloys", "eng": "eng", "technologies": "technologies", "inventions": "inventions",
+}
+
+
+def mdpi_pdf_urls(doi):
+    """MDPI chặn máy chủ GitHub ở trang chính; thử bản PDF trên CDN mdpi-res.com (suy ra từ DOI)."""
+    m = re.fullmatch(r"10\.3390/([a-z]+)(\d{2})(\d{2})(\d{4,5})", doi or "")
+    if not m or m.group(1) not in MDPI_JOURNALS:
+        return []
+    j = MDPI_JOURNALS[m.group(1)]
+    name = f"{j}-{int(m.group(2))}-{int(m.group(4)):05d}"
+    return [f"https://mdpi-res.com/d_attachment/{j}/{name}/article_deploy/{name}.pdf",
+            f"https://pub.mdpi-res.com/d_attachment/{j}/{name}/article_deploy/{name}.pdf"]
+
+
+def zenodo_pdf_urls(url):
+    m = re.search(r"zenodo\.org/(?:records?|record)/(\d+)", url or "")
+    if not m:
+        return []
+    try:
+        r = SESSION.get(f"https://zenodo.org/api/records/{m.group(1)}", timeout=30)
+        files = r.json().get("files", []) if r.status_code == 200 else []
+        return [f["links"]["self"] for f in files if f.get("key", "").lower().endswith(".pdf")][:1]
+    except Exception:
+        return []
+
+
+def get_pdf(p, page_url="", page_pdf=""):
+    """Tải PDF bài báo, thử lần lượt: kho PDF OpenAlex → link PDF trong trang bài báo (citation_pdf_url)
+    → link PDF từ OpenAlex → Zenodo → CDN của MDPI."""
     urls = []
     if p.get("has_pdf") and p.get("openalex_id") and OPENALEX_API_KEY:
         urls.append(f"https://content.openalex.org/works/{p['openalex_id']}.pdf?api_key={OPENALEX_API_KEY}")
-    if p.get("pdf"):
-        urls.append(p["pdf"])
+    urls += [u for u in (page_pdf, p.get("pdf")) if u]
+    urls += zenodo_pdf_urls(page_url or p.get("landing", ""))
+    urls += mdpi_pdf_urls(p.get("doi"))
+    seen = set()
     for u in urls:
+        if u in seen:
+            continue
+        seen.add(u)
         try:
-            r = WEB.get(u, timeout=60, allow_redirects=True)
+            r = WEB.get(u, timeout=60, allow_redirects=True, headers={"Accept": "application/pdf,*/*"})
             if r.status_code == 200 and r.content[:5] == b"%PDF-":
                 return r.content, u.split("?")[0]
-            diag(f"    PDF {u.split('?')[0][:70]} → HTTP {r.status_code} {r.headers.get('Content-Type', '')[:30]}")
+            diag(f"    PDF {u.split('?')[0][:80]} → HTTP {r.status_code} {r.headers.get('Content-Type', '')[:25]}")
         except Exception as e:
-            diag(f"    PDF lỗi: {type(e).__name__}")
+            diag(f"    PDF {u.split('?')[0][:60]} lỗi {type(e).__name__}")
+    if not urls:
+        diag("    (không có nguồn PDF)")
     return None, ""
 
 
@@ -475,10 +535,15 @@ def collect_figures(papers, post_id):
         got = None
         # (1) HTML
         page = p["landing"] or f"https://doi.org/{p['doi']}"
+        page_url, page_pdf = page, ""
         try:
             r = WEB.get(page, timeout=30, allow_redirects=True)
+            page_url = r.url
             if r.status_code == 200 and "html" in r.headers.get("Content-Type", ""):
-                cands = candidate_images(r.url, BeautifulSoup(r.text, "html.parser"))
+                soup = BeautifulSoup(r.text, "html.parser")
+                meta = soup.find("meta", attrs={"name": "citation_pdf_url"})
+                page_pdf = urljoin(r.url, meta["content"]) if meta and meta.get("content") else ""
+                cands = candidate_images(r.url, soup)
                 for url, caption, label in cands:
                     try:
                         size = download_image(url, r.url, dest)
@@ -495,7 +560,7 @@ def collect_figures(papers, post_id):
             diag(f"  [{idx}] HTML lỗi {type(e).__name__}")
         # (2) PDF
         if not got:
-            data, src = get_pdf(p)
+            data, src = get_pdf(p, page_url, page_pdf)
             if data:
                 try:
                     for png, caption, label in pdf_figures(data):
@@ -806,4 +871,12 @@ def write_output(**kv):
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        # Hiện lỗi thành "annotation" trên trang Actions để dễ thấy nguyên nhân
+        msg = f"{type(e).__name__}: {e}".replace("%", "%25").replace("\r", " ").replace("\n", " ")
+        print(f"::error title=Lỗi tạo bản tin::{msg[:900]}")
+        sys.exit(1)

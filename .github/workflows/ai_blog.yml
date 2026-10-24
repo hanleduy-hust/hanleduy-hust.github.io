@@ -6,6 +6,11 @@ on:
     - cron: '17 23 * * *'
   # Cho phép bấm "Run workflow" để chạy thử bất kỳ lúc nào
   workflow_dispatch:
+    inputs:
+      send_email:
+        description: 'Gửi email duyệt bài'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -75,7 +80,7 @@ jobs:
             </details>
 
       - name: Gửi email duyệt bài
-        if: steps.cpr.outputs.pull-request-url != ''
+        if: steps.cpr.outputs.pull-request-url != '' && github.event.inputs.send_email != 'false'
         env:
           DRAFT_DIR: ${{ runner.temp }}/draft
           MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}

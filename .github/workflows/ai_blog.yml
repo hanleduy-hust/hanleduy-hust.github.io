@@ -19,8 +19,6 @@ jobs:
   create-post:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    env:
-      DRAFT_DIR: ${{ runner.temp }}/draft
     steps:
       - name: Checkout mã nguồn
         uses: actions/checkout@v4
@@ -36,6 +34,7 @@ jobs:
       - name: Thu thập bài báo & viết bản tin bằng AI
         id: gen
         env:
+          DRAFT_DIR: ${{ runner.temp }}/draft
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
@@ -71,6 +70,7 @@ jobs:
       - name: Gửi email duyệt bài
         if: steps.cpr.outputs.pull-request-url != ''
         env:
+          DRAFT_DIR: ${{ runner.temp }}/draft
           MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
           MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}

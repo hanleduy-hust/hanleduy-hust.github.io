@@ -644,35 +644,39 @@ GEMINI_MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(),
 
 
 def gemini_json(prompt):
-    last = None
+    errors = []
     for model in GEMINI_MODELS:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         body = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 32768},
+            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 65536},
         }
         for attempt in range(2):
             try:
                 r = SESSION.post(url, headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
-                                 json=body, timeout=240)
+                                 json=body, timeout=600)
             except requests.RequestException as e:
-                last = str(e)
+                errors.append(f"{model}: {type(e).__name__}")
                 continue
             if r.status_code == 200:
                 try:
                     cand = r.json()["candidates"][0]
-                    text = "".join(p.get("text", "") for p in cand["content"]["parts"])
+                    finish = cand.get("finishReason", "")
+                    text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", [])
+                                   if not p.get("thought"))
                     text = re.sub(r"^```(json)?|```$", "", text.strip()).strip()
+                    data = json.loads(text)
                     log(f"Gemini model: {model}")
-                    return json.loads(text)
+                    return data
                 except Exception as e:
-                    last = f"{model}: không đọc được JSON ({e})"
+                    errors.append(f"{model}: không đọc được JSON (finishReason={finish or '?'}, {type(e).__name__}, "
+                                  f"{len(text) if 'text' in dir() else 0} ký tự)")
                     continue
-            last = f"{model}: HTTP {r.status_code} {r.text[:300]}"
+            errors.append(f"{model}: HTTP {r.status_code} {r.text[:160]}")
             if r.status_code in (400, 403, 404):
                 break  # model không dùng được → thử model kế tiếp
-            time.sleep(5)
-    raise RuntimeError(f"Gọi Gemini thất bại: {last}")
+            time.sleep(10)
+    raise RuntimeError("Gọi Gemini thất bại: " + " | ".join(errors))
 
 
 def build_feature_prompt(papers, figures, today):

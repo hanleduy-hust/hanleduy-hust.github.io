@@ -108,6 +108,24 @@
                     <span class="lang-en">Daily digests of new research on welding, metal additive manufacturing, brazing &amp; soldering, electronic packaging and welding in key industries – fully referenced.</span>
                 </p>
             </header>
+
+            <!-- Giới thiệu & miễn trừ trách nhiệm -->
+            <aside id="blog-intro" class="mb-8 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+                <div class="flex items-start gap-4 p-5 sm:p-6">
+                    <div class="shrink-0 w-11 h-11 rounded-xl bg-red-50 text-red-700 flex items-center justify-center text-lg"><i class="fa-solid fa-robot"></i></div>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <h2 class="text-base font-bold text-slate-900"><span class="lang-vi">Giới thiệu về chuyên mục</span><span class="lang-en">About this section</span></h2>
+                        <p class="lang-vi">Chuyên mục <strong>Góc Chuyên gia</strong> được <strong>xây dựng và tổng hợp hoàn toàn tự động bởi trí tuệ nhân tạo (AI)</strong>. Hằng ngày, hệ thống tìm các bài báo khoa học open access mới công bố, dùng AI tóm lược thành bản tin song ngữ và trích hình minh họa từ bài gốc theo giấy phép Creative Commons. Bản nháp được TS. Hán Lê Duy xem qua trước khi đăng, nhưng không phải là bài viết chuyên môn được thẩm định chi tiết.</p>
+                        <p class="lang-en">The <strong>Expert Corner</strong> is <strong>built and compiled entirely automatically by artificial intelligence (AI)</strong>. Every day the system collects newly published open-access papers, uses AI to summarise them into a bilingual digest, and reproduces figures from the original papers under Creative Commons licences. Drafts are looked over by Dr. Duy Le Han before publication, but they are not peer-reviewed expert articles.</p>
+                        <div class="bg-amber-50 border border-amber-200 text-amber-900 rounded-xl p-3 text-[13px]">
+                            <p class="lang-vi"><i class="fa-solid fa-triangle-exclamation mr-1"></i><strong>Lưu ý:</strong> Nội dung chỉ mang tính chất <strong>tham khảo</strong> và có thể chứa sai sót do AI. Người đọc <strong>tự chịu trách nhiệm</strong> khi áp dụng, trích dẫn hoặc tham chiếu. Với các quyết định kỹ thuật, thiết kế, chế tạo hay nghiên cứu, vui lòng đối chiếu trực tiếp với <strong>bài báo gốc</strong> (đường dẫn DOI ở cuối mỗi bản tin) và các tiêu chuẩn hiện hành.</p>
+                            <p class="lang-en"><i class="fa-solid fa-triangle-exclamation mr-1"></i><strong>Disclaimer:</strong> Content is provided <strong>for reference only</strong> and may contain AI-generated errors. Readers are <strong>solely responsible</strong> for any application, citation or reference to it. For engineering, design, manufacturing or research decisions, always verify against the <strong>original papers</strong> (DOI links at the end of each digest) and applicable standards.</p>
+                        </div>
+                        <p><a href="blog.html?view=cite" onclick="showCite(); return false;" class="inline-flex items-center gap-1.5 text-red-700 font-semibold hover:underline"><i class="fa-solid fa-quote-left"></i><span class="lang-vi">Hướng dẫn trích dẫn bài viết →</span><span class="lang-en">How to cite these posts →</span></a></p>
+                    </div>
+                </div>
+            </aside>
+
             <div id="filters" class="flex flex-wrap gap-2 mb-6"></div>
             <div id="post-list" class="grid gap-5"></div>
             <p id="list-empty" class="hidden text-sm text-slate-500"><span class="lang-vi">Chưa có bài viết.</span><span class="lang-en">No posts yet.</span></p>
@@ -128,12 +146,47 @@
                     <h3 class="text-base font-bold text-slate-900 mb-3"><span class="lang-vi">Tài liệu tham khảo</span><span class="lang-en">References</span></h3>
                     <ol id="ref-list" class="list-decimal pl-5 space-y-2 text-sm text-slate-600"></ol>
                 </section>
-                <p id="post-note" class="hidden mt-8 text-xs text-slate-500 bg-slate-50 border border-slate-200 rounded-xl p-4">
-                    <span class="lang-vi"><i class="fa-solid fa-robot mr-1"></i>Bản tin được AI tổng hợp từ tóm tắt các bài báo open access và đã được TS. Hán Lê Duy duyệt trước khi đăng. Hình minh họa trích từ bài báo gốc theo giấy phép Creative Commons, ghi rõ nguồn. Vui lòng tham khảo bài báo gốc để có thông tin đầy đủ.</span>
-                    <span class="lang-en"><i class="fa-solid fa-robot mr-1"></i>This digest was compiled by AI from abstracts of open-access papers and reviewed by Dr. Duy Le Han before publication. Figures are reproduced from the original papers under Creative Commons licences with attribution. Please consult the original papers for full details.</span>
+                <section id="cite" class="mt-10 pt-6 border-t border-slate-200 scroll-mt-24">
+                    <h3 class="text-base font-bold text-slate-900 mb-1"><i class="fa-solid fa-quote-left text-red-700 mr-1.5"></i><span class="lang-vi">Trích dẫn bài viết này</span><span class="lang-en">Cite this post</span></h3>
+                    <p class="text-xs text-slate-500 mb-3"><span class="lang-vi">Khuyến nghị trích dẫn <strong>bài báo gốc</strong> trong danh mục tài liệu tham khảo ở trên; chỉ trích dẫn bản tin này khi cần dẫn chính nội dung tổng hợp.</span><span class="lang-en">We recommend citing the <strong>original papers</strong> listed above; cite this digest only when referring to the compiled summary itself.</span></p>
+                    <div id="post-cite"></div>
+                    <a href="blog.html?view=cite" onclick="showCite(); return false;" class="inline-block mt-3 text-xs font-semibold text-red-700 hover:underline"><span class="lang-vi">Xem hướng dẫn trích dẫn đầy đủ →</span><span class="lang-en">Full citation guide →</span></a>
+                </section>
+                <p id="post-note" class="mt-8 text-xs text-slate-500 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <span class="lang-vi"><i class="fa-solid fa-robot mr-1"></i>Nội dung được xây dựng và tổng hợp tự động bởi AI từ tóm tắt các bài báo khoa học open access; hình minh họa trích từ bài báo gốc theo giấy phép Creative Commons, có ghi nguồn. Bài viết chỉ mang tính chất tham khảo – người đọc tự chịu trách nhiệm khi áp dụng, trích dẫn hoặc tham chiếu, và nên đối chiếu với bài báo gốc.</span>
+                    <span class="lang-en"><i class="fa-solid fa-robot mr-1"></i>This content was built and compiled automatically by AI from abstracts of open-access papers; figures are reproduced from the original papers under Creative Commons licences with attribution. It is for reference only – readers are solely responsible for any application, citation or reference, and should verify against the original papers.</span>
                 </p>
             </div>
         </article>
+
+        <!-- Trang hướng dẫn trích dẫn -->
+        <section id="cite-view" class="hidden">
+            <a href="blog.html" onclick="return showList()" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-red-700 mb-6">
+                <i class="fa-solid fa-arrow-left"></i><span class="lang-vi">Tất cả bài viết</span><span class="lang-en">All posts</span>
+            </a>
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 space-y-6 text-sm text-slate-600">
+                <header>
+                    <p class="text-xs font-semibold tracking-widest text-red-700 uppercase"><span class="lang-vi">Góc Chuyên gia</span><span class="lang-en">Expert Corner</span></p>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1"><span class="lang-vi">Hướng dẫn trích dẫn</span><span class="lang-en">How to cite</span></h1>
+                </header>
+                <div class="space-y-2">
+                    <h2 class="text-base font-bold text-slate-900"><span class="lang-vi">1. Ưu tiên trích dẫn bài báo gốc</span><span class="lang-en">1. Cite the original papers first</span></h2>
+                    <p class="lang-vi">Các bản tin là phần tóm lược do AI tổng hợp. Khi sử dụng một kết quả, số liệu hay hình ảnh cụ thể, vui lòng trích dẫn <strong>bài báo gốc</strong> (có DOI trong mục <em>Tài liệu tham khảo</em> của từng bản tin) và kiểm tra lại thông tin trong bài gốc. Hình minh họa thuộc bản quyền của tác giả/nhà xuất bản gốc theo giấy phép Creative Commons ghi kèm.</p>
+                    <p class="lang-en">Digests are AI-compiled summaries. When using a specific result, number or figure, please cite the <strong>original paper</strong> (DOI in each digest's <em>References</em>) and verify it there. Figures remain the copyright of the original authors/publishers under the stated Creative Commons licence.</p>
+                </div>
+                <div class="space-y-2">
+                    <h2 class="text-base font-bold text-slate-900"><span class="lang-vi">2. Khi cần trích dẫn chính bản tin</span><span class="lang-en">2. When citing a digest itself</span></h2>
+                    <p class="lang-vi">Ghi rõ đây là nội dung do AI tổng hợp, kèm ngày truy cập. Mẫu chung (APA 7):</p>
+                    <p class="lang-en">State that the content is AI-generated and include the access date. General template (APA 7):</p>
+                    <pre class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs whitespace-pre-wrap break-words text-slate-700"><span class="lang-vi">Hán Lê Duy (Biên tập). (Năm, ngày tháng). <em>Tiêu đề bản tin</em> [Bản tin khoa học tổng hợp bởi AI]. Góc Chuyên gia – TS. Hán Lê Duy, Đại học Bách khoa Hà Nội. Truy cập ngày …, từ URL</span><span class="lang-en">Han, D. L. (Ed.). (Year, Month Day). <em>Title of digest</em> [AI-generated science digest]. Expert Corner – Dr. Duy Le Han, Hanoi University of Science and Technology. Retrieved Month Day, Year, from URL</span></pre>
+                </div>
+                <div class="space-y-3">
+                    <h2 class="text-base font-bold text-slate-900"><span class="lang-vi">3. Trích dẫn có sẵn cho từng bài</span><span class="lang-en">3. Ready-made citations for each post</span></h2>
+                    <div id="cite-all" class="space-y-5"></div>
+                </div>
+                <p class="text-xs text-slate-500 bg-amber-50 border border-amber-200 rounded-xl p-3"><span class="lang-vi">Nội dung chỉ mang tính chất tham khảo. Người trích dẫn tự chịu trách nhiệm về tính chính xác khi sử dụng.</span><span class="lang-en">Content is for reference only. Those citing it are responsible for verifying accuracy.</span></p>
+            </div>
+        </section>
 
         <div id="loading" class="text-sm text-slate-500"><i class="fa-solid fa-spinner fa-spin mr-2"></i><span class="lang-vi">Đang tải…</span><span class="lang-en">Loading…</span></div>
         <div id="load-error" class="hidden text-sm text-red-700"></div>
@@ -232,6 +285,66 @@
                 ${r.license ? `<span class="ml-1 text-[10px] font-semibold bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">${esc(r.license.toUpperCase())}</span>` : ''}</li>`;
         }
 
+        // ---------- Trích dẫn ----------
+        const SITE = 'https://hanleduy-hust.github.io/';
+        const MONTHS_EN = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        const MON_IEEE = ['Jan.','Feb.','Mar.','Apr.','May','Jun.','Jul.','Aug.','Sep.','Oct.','Nov.','Dec.'];
+        function ymd(d) { const [y, m, day] = (d || '').split('-').map(Number); return {y, m: m || 1, d: day || 1}; }
+        function citations(p) {
+            const {y, m, d} = ymd(p.date);
+            const url = SITE + 'blog.html?post=' + encodeURIComponent(p.id);
+            const now = new Date();
+            const accVi = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
+            const accEn = `${MONTHS_EN[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            const ai = p.type === 'digest';
+            const tagVi = ai ? ' [Bản tin khoa học tổng hợp bởi AI]' : '';
+            const tagEn = ai ? ' [AI-generated science digest]' : '';
+            const bibKey = 'hanleduy' + (p.date || '').replace(/-/g, '');
+            return {
+                apa_vi: `Hán Lê Duy (Biên tập). (${y}, ${d} tháng ${m}). ${p.title_vi}${tagVi}. Góc Chuyên gia – TS. Hán Lê Duy, Đại học Bách khoa Hà Nội. Truy cập ngày ${accVi}, từ ${url}`,
+                apa_en: `Han, D. L. (Ed.). (${y}, ${MONTHS_EN[m - 1]} ${d}). ${p.title_en}${tagEn}. Expert Corner – Dr. Duy Le Han, Hanoi University of Science and Technology. Retrieved ${accEn}, from ${url}`,
+                ieee: `D. L. Han, Ed., "${p.title_en}," ${ai ? 'AI-generated science digest, ' : ''}Expert Corner – Dr. Duy Le Han, Hanoi Univ. Sci. Technol., ${MON_IEEE[m - 1]} ${d}, ${y}. [Online]. Available: ${url} [Accessed: ${MON_IEEE[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}].`,
+                bibtex: `@misc{${bibKey},\n  editor       = {Han, Duy Le},\n  title        = {{${p.title_en}}},\n  howpublished = {Expert Corner -- Dr. Duy Le Han, Hanoi University of Science and Technology},\n  year         = {${y}},\n  month        = {${MONTHS_EN[m - 1].slice(0, 3).toLowerCase()}},\n  url          = {${url}},\n  note         = {${ai ? 'AI-generated science digest, reviewed by the editor. ' : ''}Accessed: ${now.toISOString().slice(0, 10)}}\n}`,
+            };
+        }
+        let citeStore = [];
+        function citeBlock(p) {
+            const c = citations(p);
+            const rows = [
+                ['APA 7', bi('APA 7 (tiếng Việt)', 'APA 7 (Vietnamese)'), c.apa_vi],
+                ['APA 7', bi('APA 7 (tiếng Anh)', 'APA 7 (English)'), c.apa_en],
+                ['IEEE', 'IEEE', c.ieee],
+                ['BibTeX', 'BibTeX', c.bibtex],
+            ];
+            return '<div class="border border-slate-200 rounded-xl divide-y divide-slate-200 bg-slate-50/50">' + rows.map(([, label, text]) => {
+                const i = citeStore.push(text) - 1;
+                return `<div class="p-3"><div class="flex items-center justify-between gap-2 mb-1.5"><span class="text-[11px] font-bold uppercase tracking-wide text-slate-500">${label}</span>
+                    <button onclick="copyCite(${i}, this)" class="text-[11px] font-semibold text-red-700 border border-red-200 bg-white rounded-md px-2 py-0.5 hover:bg-red-50"><i class="fa-regular fa-copy mr-1"></i>${bi('Sao chép', 'Copy')}</button></div>
+                    <pre class="text-xs text-slate-700 whitespace-pre-wrap break-words font-mono">${esc(text)}</pre></div>`;
+            }).join('') + '</div>';
+        }
+        async function copyCite(i, btn) {
+            const text = citeStore[i];
+            try { await navigator.clipboard.writeText(text); }
+            catch (e) { const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (_) {} t.remove(); }
+            const old = btn.innerHTML; btn.innerHTML = bi('✓ Đã chép', '✓ Copied'); setTimeout(() => btn.innerHTML = old, 1500);
+        }
+        function showView(name) {
+            ['list-view', 'post-view', 'cite-view'].forEach(v => $(v).classList.toggle('hidden', v !== name));
+        }
+        function showCite(push = true) {
+            currentPost = null;
+            document.title = 'Hướng dẫn trích dẫn | Blog - TS. Hán Lê Duy';
+            citeStore = [];
+            $('cite-all').innerHTML = posts.length ? posts.map(p => `<div><p class="font-semibold text-slate-900 mb-2"><a class="hover:text-red-700" href="blog.html?post=${encodeURIComponent(p.id)}" onclick="openPost('${esc(p.id)}'); return false;">${bi(esc(p.title_vi), esc(p.title_en))}</a> <span class="text-xs font-normal text-slate-500">· ${fmtDate(p.date)}</span></p>${citeBlock(p)}</div>`).join('')
+                : bi('Chưa có bài viết.', 'No posts yet.');
+            showView('cite-view');
+            if (push) history.pushState({view: 'cite'}, '', 'blog.html?view=cite');
+            setLanguage(document.documentElement.lang);
+            window.scrollTo(0, 0);
+            return false;
+        }
+
         async function openPost(id, push = true) {
             const entry = posts.find(p => p.id === id);
             if (!entry) { showList(false); return false; }
@@ -247,9 +360,9 @@
                 const refs = p.references || [];
                 $('ref-list').innerHTML = refs.map(refItem).join('');
                 $('post-refs').classList.toggle('hidden', !refs.length);
-                $('post-note').classList.toggle('hidden', p.type !== 'digest');
-                $('list-view').classList.add('hidden');
-                $('post-view').classList.remove('hidden');
+                citeStore = [];
+                $('post-cite').innerHTML = citeBlock(p);
+                showView('post-view');
                 if (push) history.pushState({post: id}, '', 'blog.html?post=' + encodeURIComponent(id));
                 setLanguage(document.documentElement.lang);
                 window.scrollTo(0, 0);
@@ -265,15 +378,16 @@
         function showList(push = true) {
             currentPost = null;
             document.title = 'Góc Chuyên gia | Blog - TS. Hán Lê Duy';
-            $('post-view').classList.add('hidden');
-            $('list-view').classList.remove('hidden');
+            showView('list-view');
             if (push) history.pushState({}, '', 'blog.html');
             return false;
         }
 
         function route(push) {
-            const id = new URLSearchParams(location.search).get('post');
-            if (id) openPost(id, false); else showList(false);
+            const q = new URLSearchParams(location.search);
+            if (q.get('post')) openPost(q.get('post'), false);
+            else if (q.get('view') === 'cite') showCite(false);
+            else showList(false);
         }
         window.addEventListener('popstate', () => route(false));
 

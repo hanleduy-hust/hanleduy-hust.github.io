@@ -276,42 +276,60 @@ JOINING = re.compile(r"\bweld|braz|solder|additive(ly)? manufactur|\bwaam\b|dire
 
 
 def collect_feature_papers():
-    """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng), đúng chủ đề."""
+    """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng).
+    Chọn xen kẽ theo từng truy vấn để mọi khía cạnh của chủ đề đều có bài, và lọc chặt độ liên quan."""
     today = dt.date.today()
     since_review = (today - dt.timedelta(days=5 * 365)).isoformat()
     since_recent = (today - dt.timedelta(days=548)).isoformat()
     must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
     domain = None if FEATURE_DOMAIN == "-" else (re.compile(FEATURE_DOMAIN, re.I) if FEATURE_DOMAIN else JOINING)
-    reviews, recent = [], []
-    for q in FEATURE_QUERIES or [FEATURE_TOPIC]:
-        for kind, since, sort, bucket in (("review", since_review, "cited_by_count:desc", reviews),
-                                          ("article", since_recent, "cited_by_count:desc", recent)):
-            try:
-                bucket += openalex_search(q, since, work_type=kind, sort=sort, per_page=10)
-            except Exception as e:
-                diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
-            time.sleep(0.3)
-    log(f"Chuyên đề: {len(reviews)} bài tổng quan, {len(recent)} bài nghiên cứu (thô)")
+    queries = FEATURE_QUERIES or [FEATURE_TOPIC]
+
+    def strong(rx, it):
+        """Từ khóa xuất hiện trong tiêu đề, hoặc ít nhất 2 lần trong tóm tắt (tránh bài chỉ nhắc lướt qua)."""
+        return rx is None or rx.search(it["title"]) or len(rx.findall(it["abstract"])) >= 2
 
     def ok(it):
-        text = f"{it['title']} {it['abstract']}"
-        return (it["doi"] and len(it["abstract"]) >= 200 and (domain is None or domain.search(text))
-                and (must is None or must.search(text)))
+        return it["doi"] and len(it["abstract"]) >= 200 and strong(domain, it) and strong(must, it)
+
+    key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
+    pools = {"review": [], "article": []}
+    for qi, q in enumerate(queries):
+        for kind, since in (("review", since_review), ("article", since_recent)):
+            try:
+                items = openalex_search(q, since, work_type=kind, sort="cited_by_count:desc", per_page=10)
+            except Exception as e:
+                diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
+                items = []
+            good = sorted([it for it in items if ok(it)], key=key, reverse=True)
+            dropped = len(items) - len(good)
+            if dropped:
+                log(f"  [{kind}] {q[:50]}: bỏ {dropped} bài ít liên quan")
+            pools[kind].append(good)
+            time.sleep(0.3)
 
     chosen, seen = [], set()
-    key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
-    for pool, quota in ((reviews, 6), (recent, FEATURE_PAPERS)):
-        n = 0
-        for it in sorted(pool, key=key, reverse=True):
-            if len(chosen) >= FEATURE_PAPERS or n >= quota:
+
+    def take(lists, limit):
+        """Lấy xen kẽ: mỗi truy vấn một bài, lặp lại cho tới khi đủ."""
+        added = 0
+        while added < limit and any(lists):
+            for lst in lists:
+                while lst and lst[0]["doi"] in seen:
+                    lst.pop(0)
+                if lst and added < limit and len(chosen) < FEATURE_PAPERS:
+                    it = lst.pop(0)
+                    seen.add(it["doi"])
+                    it["topic"] = "feature"
+                    chosen.append(it)
+                    added += 1
+            if len(chosen) >= FEATURE_PAPERS:
                 break
-            if it["doi"] in seen or not ok(it):
-                continue
-            seen.add(it["doi"])
-            it["topic"] = "feature"
-            chosen.append(it)
-            n += 1
-    log(f"Chọn {len(chosen)} bài cho chuyên đề")
+
+    take(pools["review"], 7)                      # khung tổng quan
+    take(pools["article"], FEATURE_PAPERS)        # ví dụ nghiên cứu cụ thể, mới
+    log(f"Chọn {len(chosen)} bài cho chuyên đề "
+        f"({sum(1 for c in chosen if c['kind'] == 'review')} tổng quan)")
     return chosen
 
 

@@ -51,6 +51,10 @@ FEATURE_TOPIC = os.environ.get("FEATURE_TOPIC", "").strip()
 FEATURE_QUERIES = [q.strip() for q in os.environ.get("FEATURE_QUERIES", "").split(";") if q.strip()]
 FEATURE_MUST = os.environ.get("FEATURE_MUST", "").strip()  # regex bắt buộc thêm (ví dụ nhóm từ khóa AI)
 FEATURE_PAPERS = int(os.environ.get("FEATURE_PAPERS", "20"))
+# Lĩnh vực bắt buộc của bài báo (regex). Mặc định: hàn/liên kết. "-" = không giới hạn lĩnh vực.
+FEATURE_DOMAIN = os.environ.get("FEATURE_DOMAIN", "").strip()
+# Dàn ý gợi ý cho các mục ứng dụng (tùy chọn, mỗi ý cách nhau bằng dấu ;)
+FEATURE_OUTLINE = [x.strip() for x in os.environ.get("FEATURE_OUTLINE", "").split(";") if x.strip()]
 MAX_FIGURES = 8  # tối đa 1 hình/bài báo, mỗi mục của bản tin có ít nhất 1 hình
 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
@@ -277,6 +281,7 @@ def collect_feature_papers():
     since_review = (today - dt.timedelta(days=5 * 365)).isoformat()
     since_recent = (today - dt.timedelta(days=548)).isoformat()
     must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
+    domain = None if FEATURE_DOMAIN == "-" else (re.compile(FEATURE_DOMAIN, re.I) if FEATURE_DOMAIN else JOINING)
     reviews, recent = [], []
     for q in FEATURE_QUERIES or [FEATURE_TOPIC]:
         for kind, since, sort, bucket in (("review", since_review, "cited_by_count:desc", reviews),
@@ -290,7 +295,7 @@ def collect_feature_papers():
 
     def ok(it):
         text = f"{it['title']} {it['abstract']}"
-        return (it["doi"] and len(it["abstract"]) >= 200 and JOINING.search(text)
+        return (it["doi"] and len(it["abstract"]) >= 200 and (domain is None or domain.search(text))
                 and (must is None or must.search(text)))
 
     chosen, seen = [], set()
@@ -680,7 +685,11 @@ def build_feature_prompt(papers, figures, today):
                      f"Abstract: {clean_text(p['abstract'], 1800)}\n")
     figs = "\n".join(f"FIG{f['n']} – from paper [{f['paper']}]; original caption: {f['caption_original'] or '(none)'}"
                      for f in figures) or "(no figures)"
-    return f"""You are a science writer for a welding & joining technology blog.
+    outline = (" — suggested themes: " + "; ".join(FEATURE_OUTLINE)) if FEATURE_OUTLINE else (
+        " — e.g. vision-based seam tracking & robot guidance, in-process monitoring (arc/acoustic/thermal signals), defect "
+        "detection & NDT, process-parameter optimisation & quality/property prediction, digital twins, AI for metal additive "
+        "manufacturing, brazing/soldering/electronic packaging")
+    return f"""You are a science writer for an engineering blog on welding, joining and materials technology.
 Write an IN-DEPTH bilingual Vietnamese–English feature article on the topic:
 "{FEATURE_TOPIC}"
 for engineers, lecturers and graduate students. Base every technical claim on the {len(papers)} papers below
@@ -688,16 +697,12 @@ for engineers, lecturers and graduate students. Base every technical claim on th
 
 STRUCTURE (each part an <h3> section):
 1. Lead paragraph (<p class="lead">, 3–4 sentences) on why the topic matters now.
-2. "Bối cảnh" / "Background": the problem AI addresses in welding (variability, defects, skilled-labour shortage, quality assurance).
-3. 4–6 application sections grouped by theme as supported by the papers — e.g. vision-based seam tracking & robot guidance,
-   in-process monitoring (arc/acoustic/thermal signals), defect detection & NDT (radiography, ultrasonic), process-parameter
-   optimisation & quality/property prediction, digital twins, AI for metal additive manufacturing (WAAM/DED/L-PBF),
-   brazing/soldering/electronic packaging. For each: the AI methods used (CNN, LSTM, transformers, reinforcement learning,
-   physics-informed ML…), what was achieved (only numbers present in the abstracts), and limitations.
-4. "Thách thức" / "Challenges": data scarcity & labelling, generalisation across materials/machines, explainability,
-   real-time/edge constraints, integration with qualification standards (WPS/PQR, ISO 3834) — grounded in the papers.
-5. "Xu thế tương lai" / "Future trends": 4–6 trends with reasoning drawn from the reviews (e.g. foundation/multimodal models,
-   physics-informed and hybrid models, closed-loop autonomous welding cells, digital twins, human–AI collaboration, standards).
+2. "Bối cảnh" / "Background": why the topic matters and which problems/bottlenecks it addresses.
+3. 4–6 thematic sections grouped as supported by the papers{outline}. For each: the methods used, what was achieved
+   (only numbers present in the abstracts), representative examples and limitations.
+4. "Thách thức" / "Challenges": e.g. data scarcity & quality, generalisation, explainability, reproducibility,
+   integration with industrial practice and standards — grounded in the papers.
+5. "Xu thế tương lai" / "Future trends": 4–6 trends with reasoning drawn from the reviews.
    Clearly phrase forward-looking statements as expectations, not facts.
 6. "Hàm ý thực tiễn" / "Practical implications": 3–4 concrete implications for Vietnamese industry and education.
 
@@ -711,8 +716,8 @@ RULES
   Available figures:
 {figs}
 - Allowed HTML: <h3>, <p>, <ul>, <li>, <strong>, <em>, <sub>, <sup>. No styles, images or links.
-- Vietnamese must be natural, with standard Vietnamese welding/AI terminology and English abbreviations in parentheses
-  (e.g. "mạng nơ-ron tích chập (CNN)", "dò đường hàn (seam tracking)", "bản sao số (digital twin)").
+- Vietnamese must be natural, with standard Vietnamese technical terminology and English abbreviations in parentheses
+  (e.g. "mạng nơ-ron tích chập (CNN)", "học máy (ML)", "bản sao số (digital twin)", "vi cấu trúc (microstructure)").
 - Length: about 2200–3000 words per language.
 
 Return ONLY a JSON object:

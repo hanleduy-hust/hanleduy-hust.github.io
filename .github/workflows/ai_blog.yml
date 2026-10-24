@@ -1,15 +1,26 @@
-name: Tự động tạo bài viết Blog bằng AI & Chờ duyệt
+name: Điểm tin khoa học hằng ngày (AI) – gửi email duyệt
 
 on:
   schedule:
-    # Chạy tự động lúc 08:00 sáng giờ VN (01:00 UTC) vào các ngày cách 2 hôm 1 lần
-    - cron: '0 1 */2 * *'
-  # Cho phép bạn bấm chạy thử nghiệm bất kỳ lúc nào
+    # 06:17 sáng giờ Việt Nam (23:17 UTC hôm trước), mỗi ngày
+    - cron: '17 23 * * *'
+  # Cho phép bấm "Run workflow" để chạy thử bất kỳ lúc nào
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ai-blog
+  cancel-in-progress: false
 
 jobs:
   create-post:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DRAFT_DIR: ${{ runner.temp }}/draft
     steps:
       - name: Checkout mã nguồn
         uses: actions/checkout@v4
@@ -17,31 +28,51 @@ jobs:
       - name: Cài đặt Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
-      - name: Cài đặt thư viện AI mới nhất
-        run: |
-          pip install --upgrade google-generativeai
+      - name: Cài đặt thư viện
+        run: pip install requests beautifulsoup4 pillow
 
-      - name: Chạy script tạo bài viết AI
+      - name: Thu thập bài báo & viết bản tin bằng AI
+        id: gen
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python scripts/auto_post_ai.py
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          CONTACT_EMAIL: ${{ secrets.MAIL_USERNAME }}
+        run: python scripts/auto_post_ai.py
 
-      - name: Tạo Pull Request (Bản nháp gửi duyệt)
+      - name: Tạo Pull Request bản nháp
+        id: cpr
+        if: steps.gen.outputs.skipped == 'false'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "AI Post: Bản nháp bài viết mới cần duyệt"
-          title: "📝 [Cần duyệt] Bài viết Blog mới do AI tạo"
-          body: |
-            Chào Thầy Duy,
-            
-            Hệ thống AI vừa khởi tạo một bài viết khoa học mới cho mục Blog. 
-            
-            - **Xem trước:** Bấm vào tab **Files changed** ở trên để đọc nội dung và hình ảnh.
-            - **Duyệt bài:** Bấm nút **Merge pull request** để đăng bài lên website.
-            - **Hủy bài:** Bấm **Close pull request** nếu chưa ưng ý.
           branch: auto-blog-draft
+          base: main
           delete-branch: true
+          add-paths: |
+            posts.json
+            posts/**
+            images/blog/**
+          commit-message: "AI Post (nháp): ${{ steps.gen.outputs.title }}"
+          title: "📝 [Cần duyệt] ${{ steps.gen.outputs.title }}"
+          labels: blog-draft
+          body: |
+            Bản tin khoa học hằng ngày do AI tổng hợp: **${{ steps.gen.outputs.title }}**
+
+            - **Đọc bản xem trước:** đã gửi qua email (có hình). Hoặc xem tab **Files changed**.
+            - **Sửa câu chữ:** Files changed → `posts/${{ steps.gen.outputs.post_id }}.json` → ✏️.
+            - **Duyệt & đăng:** bấm **Merge pull request** (bài lên website sau 1–2 phút).
+            - **Không đăng:** bấm **Close pull request**.
+
+            Nếu chưa duyệt, bản nháp này sẽ được thay bằng bản tin của ngày hôm sau.
+
+      - name: Gửi email duyệt bài
+        if: steps.cpr.outputs.pull-request-url != ''
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+        run: python scripts/send_review_email.py

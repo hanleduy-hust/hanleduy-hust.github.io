@@ -1,0 +1,290 @@
+{
+  "id": "2026-10-24-diem-tin-khoa-hoc",
+  "date": "2026-10-24",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Điểm tin khoa học Hàn & Chế tạo bồi đắp: Từ kỹ thuật điều khiển chùm laser động đến liên kết composite nâng cao",
+  "title_en": "Welding & Additive Manufacturing Digest: From Dynamic Beam Shaping to Advanced Composite Bonding",
+  "summary_vi": "Điểm tin khoa học tổng hợp 15 nghiên cứu mới nhất trong các lĩnh vực hàn hồ quang/laser, in 3D kim loại (WAAM/PBF-LB), hàn vảy-TLP, đóng gói điện tử và ứng dụng công nghiệp trọng điểm. Bản tin cung cấp các số liệu thực nghiệm chính xác và định hướng ứng dụng thực tiễn cho kỹ sư, giảng viên và học viên cao học.",
+  "summary_en": "This science digest summarizes 15 new publications across arc/laser welding, metal AM (WAAM/PBF-LB), brazing/TLP bonding, electronic packaging, and key industry applications. It offers precise empirical findings and strategic insights for engineers, lecturers, and graduate students.",
+  "tags": [
+    "Welding Technology",
+    "Metal Additive Manufacturing",
+    "WAAM",
+    "Brazing & Soldering",
+    "Electronic Packaging",
+    "Cryogenic Welding"
+  ],
+  "cover": "",
+  "content_vi": "<p class=\"lead\">Điểm tin khoa học ngày 24/10/2026 mang đến cái nhìn toàn diện về những tiến bộ mới nhất trong công nghệ hàn và sản xuất bồi đắp kim loại. Từ kỹ thuật điều khiển chùm laser động kHz, in 3D thép siêu cao bền 1600 MPa, đến hàn vảy composite chịu nhiệt và bao gói vi điện tử, các nghiên cứu mới cung cấp cơ sở khoa học vững chắc nhằm tối ưu hóa chất lượng liên kết và độ tin cậy của cấu trúc công nghiệp.</p><h3>Công nghệ hàn hồ quang và laser tiên tiến</h3><p>Trong lĩnh vực hàn laser, nghiên cứu sử dụng hệ thống laser sợi liên tục đa kW kết hợp bộ phối hợp chùm thấu suốt và mảng pha quang học để điều chế mật độ năng lượng ở quy mô micro giây <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Thử nghiệm hàn thấu hoàn toàn dạng bead-on-plate trên tấm hợp kim nhôm AA6082 dày 1.5 mm dưới thiết lập gá dạng sên đòn bẩy tự hãm cho thấy sự thay đổi rõ rệt của vi cấu trúc hạt theo các dạng chùm laser động tần số kHz, mở ra khả năng kiểm soát vũng hàn linh hoạt <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Đồng thời, đối với hợp kim nhôm AA6061, việc áp dụng công nghệ hàn hồ quang kim loại trong môi trường khí bảo vệ xung kép (DP-GMAW) với tần số điều chế thấp từ 41.67 Hz đến 1.39 Hz (tỷ lệ số xung giữa nhóm mạnh và yếu từ 1:1 đến 30:30) đã làm rõ cơ chế hình thành độ thấu mối hàn <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Hiện tượng biến thiên chiều sâu chảy ngoằn ngoèo chu kỳ chỉ xuất hiện khi số xung mỗi nhóm đạt từ 7 xung trở lên (ranh giới tần số từ 8.33 Hz xuống 5.95 Hz). Chênh lệch độ thấu đỉnh-đáy đạt cực đại 664.33 μm ở tần số 2.78 Hz; đặc biệt tại 3.79 Hz, chênh lệch độ thấu (627.83 μm) gấp tới 532.06% chênh lệch chiều cao nhô bề mặt, với góc đáy đạt 91.52° và góc đỉnh đạt 158.33° <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><p>Ở mảng hàn hợp kim không gỉ dùng cho môi trường nhiệt độ siêu xói (cryogenic), nghiên cứu hàn GTAW thép không gỉ austenitic 316L sử dụng hai loại dây hàn ER309L và ER312 đã so sánh ảnh hưởng của pha δ-ferrite <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Mặc dù mối hàn ER312 chứa tỷ lệ δ-ferrite cao hơn so với ER309L, kim loại hàn ER312 vẫn thể hiện khả năng chống ăn mòn vượt trội nhờ hàm lượng Cr cao hơn, đồng thời đạt độ bền kéo cao hơn ở cả 300 K và 123 K. Sự gia tăng độ bền ở 123 K được xác nhận chủ yếu do biến đổi pha mactensit do biến dạng và tạo cặp song tinh biến dạng <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><h3>Cơ học và vi cấu trúc trong in 3D kim loại (AM)</h3><p>Tích hợp in 3D hồ quang dây (WAAM) vào quy trình Xâm nhập Hồ vữa Chọn lọc (SPI) mở ra khả năng tự động hóa chế tạo bê tông cốt thép phức tạp <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Thử nghiệm kéo tuột (push-through) trên thanh thép gia cường đường kính 16 mm cho thấy nhiệt độ bề mặt thép gần mối hàn thủ công 7 điểm đạt 214–277 °C ngay sau khi hàn và hạ xuống 125–162 °C sau 2–3 phút. Mặc dù chịu các chu kỳ nhiệt lặp đi lặp lại, ứng suất liên kết cực đại trung bình của nhóm hàn đạt 20.5 MPa, chỉ chênh lệch nhẹ 1.9 MPa (9%) so với nhóm đối chứng dán keo không nhiệt (22.4 MPa), khẳng định nhiệt lượng hàn không làm suy giảm đáng kể lực bám dính <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Đối với thép siêu cao bền hạ kim (LUHSS) cấp 1600 MPa, công nghệ WAAM dựa trên sóng dải CMT+P dưới các mức năng lượng đường 3.73, 7.37 và 11.8 kJ/cm đã chứng minh khả năng điều khiển hiệu ứng biến tính tại chỗ (in situ tempering) <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Mức năng lượng đường 3.73 kJ/cm tạo ra sự kết hợp tối ưu giữa độ bền và độ dẻo với tính đẳng hướng cao: độ bền kéo đạt 1529 MPa, giới hạn chảy đạt 1272 MPa và độ giãn dài đạt 12.3%. Năng lượng đường gia tăng thúc đẩy sự chuyển pha cacbit từ Cr<sub>23</sub>C<sub>6</sub> thuần túy sang sự đồng tồn tại của Cr<sub>23</sub>C<sub>6</sub> và Cr<sub>3</sub>C, cuối cùng hình thành Cr<sub>7</sub>C<sub>3</sub> <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Ngoài ra, công nghệ in 3D Laser Powder Bed Fusion (PBF-LB) dùng nguồn laser xanh lá chế tạo đồng nguyên chất đã được chuẩn hóa mô hình động lực học Johnson–Cook cải tiến <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Qua thử nghiệm va đập Taylor ở các tốc độ 122 m/s, 166 m/s và 204 m/s, hệ số nhạy cảm tốc độ biến dạng C được tối ưu hóa lên mức 0.059 (thay vì 0.037638 ban đầu), giúp mô hình phỏng đoán đạt sai số tương đối cực nhỏ chỉ 0.1596% và 0.1259% cho hai điều kiện kiểm chứng độc lập <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><h3>Công nghệ hàn vảy và liên kết khuếch tán tiên tiến</h3><p>Trong kỹ thuật nối kim loại khác loại Cu/Al, việc sử dụng kim loại điền đầy Zn-15Al ở dải nhiệt độ 480–540 °C trong 1–9 phút đã xác định được cơ chế tiến hóa pha giao diện <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Ở mức nhiệt đầu vào thấp, cấu trúc giàu Al<sub>4.2</sub>Cu<sub>3.2</sub>Zn<sub>0.7</sub> hình thành trên lớp nền Cu<sub>9</sub>Al<sub>4</sub>; khi nhiệt vào tăng, pha CuAl<sub>2</sub> xuất hiện và chiếm ưu thế làm giảm độ bền cắt. Điều kiện tối ưu theo mô hình bề mặt đáp ứng (RSM) là 488.3 °C trong 1.0 phút (dự đoán đạt 62.2 MPa), và mẫu kiểm chứng thực nghiệm đạt độ bền cắt tới 65.4 MPa (sai số 5.1%) với lớp phản ứng dày 12 ± 2 μm <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><p>Đối với đóng gói công suất cao, liên kết pha lỏng quá độ (TLP) bằng màng nhiều lớp Cu/Sn phun xạ đã được đánh giá qua lão hóa nhiệt ở 175 °C lên tới 500 giờ <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Cấu trúc ban đầu 5 lớp/5 lớp cho độ bền cắt ban đầu cao nhất nhờ vùng Cu<sub>3</sub>Sn dạng đảo, nhưng sau 500 giờ lão hóa, cấu trúc 3 lớp lại đạt độ bền cao nhất do tỷ lệ lỗ xốp giao diện thấp hơn <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Bên cạnh đó, việc liên kết composite Cf/C với kim loại chịu nhiệt được giải quyết bằng hợp kim entropy cao FeCoNiAlCuTi mạng lập phương tâm mặt (FCC) <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Kỹ thuật này ngăn chặn sự xuất hiện của lớp pha giòn liên tục ở giao diện Cf/C, tạo đường rãnh khóa cơ học với pha dẻo FeCoNiAl, giúp giảm ứng suất Mises đỉnh từ 371 MPa xuống 274 MPa. Tại chế độ hàn 1340 °C trong 20 phút, độ bền cắt mối nối Cf/C đạt 40.7 MPa <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p><h3>Đóng gói điện tử và kiểm tra chất lượng mối hàn</h3><p>Nghiên cứu tổng quan về chất hàn nhiệt độ thấp hệ Sn-Bi và Sn-Zn nhấn mạnh hợp kim eutectic Sn-58Bi giúp giảm nhiệt độ hàn xuống khoảng 139 °C, tuy nhiên cần bổ sung Zn, In hoặc Sb để khắc phục hiện tượng thô hóa pha Bi giòn và kiểm soát sự phát triển của hợp chất liên kim Cu<sub>6</sub>Sn<sub>5</sub>/Cu<sub>3</sub>Sn tại giao diện Cu <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Trong lĩnh vực kiểm tra chất lượng tự động, một hệ thống AOI đa phổ giá thành thấp sử dụng vi điều khiển STM32F407 kết hợp camera đơn sắc MT9V034 và cảm biến hồng ngoại MLX90640 đã được phát triển <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Mô hình suy luận NCNN chạy trên máy tính xử lý ảnh hiển vi và bản đồ nhiệt để phân loại 5 dạng lỗi mối hàn PCB (hàn nguội, thiếu thiếc, cầu nối, thiếu vảy, dư vảy) với độ chính xác trên tập huấn luyện vượt 90% <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Ở khía cạnh vi lưu, nghiên cứu cơ chế phun dòng kim loại Sn lỏng theo yêu cầu bằng khí nén đã xây dựng thành công mô hình dự đoán chiều dài giới hạn dòng chảy không chiều, chỉ ra sự chuyển giao giữa lực quán tính và lực mao dẫn bề mặt quyết định sự ổn định của việc tạo giọt đơn lẻ trong in mạch dẻo <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p><h3>Ứng dụng công nghệ hàn trong ngành công nghiệp trọng điểm</h3><p>Ảnh hưởng của môi trường hòa trộn hydro (CH<sub>4</sub>-H<sub>2</sub> với 5–20% H<sub>2</sub> ở áp suất 4–10 MPa) lên mối hàn chu vi đường ống thép API X70 đã được đánh giá thông qua thử nghiệm kéo tốc độ biến dạng chậm (SSRT) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Ở điều kiện khắc nghiệt nhất (10 MPa, 20% H<sub>2</sub>), độ bền kéo cực đại và độ bền chảy giảm tương ứng 3.9% và 7.2%, trong khi độ giãn dài giảm mạnh từ 16.46% xuống 13.04%. Phân tích EBSD tại vết nứt phụ (7 MPa, 20% H<sub>2</sub>) ghi nhận các dải KAM tích tụ biến dạng dẻo nội hạt đạt đỉnh 2.65°–3.87°, phù hợp với cơ chế giòn do dẻo hóa cục bộ bởi hydro (HELP) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><p>Trong ngành đóng tàu, thuật toán di truyền thế giới nhỏ động (DSWGA) được phát triển cho hệ thống rô-bốt hàn cổng hai tay máy nhằm tối ưu hóa việc phân bổ nhiệm vụ hàn đa dạng <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Bằng cách điều chỉnh động tham số kết nối mạng và chiến lược lai ghép/đột biến thích ứng dựa trên sự tương đồng cấu trúc, DSWGA đã rút ngắn thời gian hoàn thành hệ thống (makespan) và cân bằng tải trọng làm việc giữa các rô-bốt <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Cuối cùng, một thiết kế mối nối kín hoàn toàn cho vỏ nhiên liệu hạt nhân SiC sử dụng nắp đầu Niobium đã được phát triển thành công cho các lò vi phản ứng nhiệt độ cao và lò SMR, giúp triệt tiêu bất dãi nở nhiệt và sốc nhiệt khi hàn <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Góc nhìn chuyên gia</h3><ul><li><strong>Tối ưu hóa năng lượng đường trong WAAM:</strong> Các cơ sở sản xuất cấu trúc kim loại lớn tại Việt Nam nên áp dụng chế độ WAAM sóng dải (CMT+P) ở mức năng lượng đường thấp (khoảng 3.7 kJ/cm) đối với thép cường độ cao nhằm tận dụng hiệu ứng biến tính tại chỗ, ngăn ngừa sự thô hóa cacbit Cr<sub>7</sub>C<sub>3</sub> và đạt độ bền kéo trên 1500 MPa mà không cần nhiệt luyện sau khi hàn.</li><li><strong>Ứng dụng AOI đa phổ giá rẻ trong đào tạo &amp; chế tạo PCB:</strong> Việc kết hợp cảm biến nhiệt hồng ngoại MLX90640 và camera thị giác máy STM32/NCNN cung cấp giải pháp kiểm tra chất lượng mối hàn PCB đạt độ chính xác trên 90% với chi phí thấp, rất phù hợp để triển khai tại các phòng thí nghiệm đại học và doanh nghiệp SME Việt Nam.</li><li><strong>Đánh giá an toàn đường ống dẫn khí pha hydro:</strong> Ngành năng lượng Việt Nam khi chuyển đổi đường ống khí thiên nhiên sang dẫn trộn Hydro cần lưu ý hiện tượng giảm độ giãn dài mối hàn API X70 (tới 20% mức giảm tương đối) ở áp suất 10 MPa để thiết lập quy chuẩn kiểm tra nứt do hydro (HELP) định kỳ.</li></ul>",
+  "content_en": "<p class=\"lead\">The science news digest for October 24, 2026, presents a comprehensive overview of recent breakthroughs in welding engineering and metal additive manufacturing. Spanning kHz dynamic laser beam modulation, 1600 MPa ultra-high-strength steel WAAM, heat-resistant composite brazing, and microelectronic packaging, these studies provide rigorous empirical foundations to optimize joint quality and structural integrity across industrial sectors.</p><h3>Advanced Arc and Laser Welding Technologies</h3><p>In laser beam welding, recent research leveraged a multi-kW continuous-wave laser coupled with a coherent beam combiner and an optical phased array to modulate fluence distribution at microsecond scales <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Full-penetration bead-on-plate welds performed on 1.5 mm AA6082 aluminum alloy sheets under a self-restraint cantilever setup revealed direct correlations between kHz-regime dynamic beam shaping and microstructural evolution, opening new pathways for molten pool control <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Simultaneously, for AA6061 alloy, double-pulsed gas metal arc welding (DP-GMAW) operating under low-frequency modulation (41.67 Hz down to 1.39 Hz, with strong-to-weak pulse ratios from 1:1 to 30:30) elucidated the mechanism driving penetration profiles <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Periodic penetration fluctuation emerged only when the number of pulses per group reached 7 or more (frequency bracketed between 8.33 Hz and 5.95 Hz). The maximum penetration peak-to-valley difference reached 664.33 μm at 2.78 Hz; notably at 3.79 Hz, the penetration difference (627.83 μm) equaled 532.06% of the reinforcement height difference, with valley and peak angles reaching 91.52° and 158.33°, respectively <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><p>Addressing cryogenic applications, gas tungsten arc welding (GTAW) of 316L austenitic stainless steel using ER309L and ER312 filler metals evaluated the influence of δ-ferrite characteristics <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Despite displaying a higher δ-ferrite fraction, the ER312 weld metal exhibited superior corrosion resistance compared to ER309L due to its higher Cr content. Furthermore, ER312 welds achieved higher tensile strength at both 300 K and 123 K, where cryogenic strengthening was primarily driven by strain-induced martensitic transformation and deformation twinning <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><h3>Mechanics and Microstructure in Metal Additive Manufacturing</h3><p>Integrating Wire Arc Additive Manufacturing (WAAM) into Selective Paste Intrusion (SPI) enables the automated digital fabrication of reinforced concrete structures <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Push-through tests on 16 mm reinforcing steel bars embedded in SPI concrete indicated that local surface temperatures near manual welding joints reached 214–277 °C immediately after welding and 125–162 °C after 2–3 minutes. Despite repeated thermal cycles, the welded group achieved a mean maximum bond stress of 20.5 MPa, showing an insignificant difference of 1.9 MPa (9%) compared to the unheated adhesively bonded reference (22.4 MPa), confirming that thermal exposure does not compromise concrete-rebar bond capacity <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>For 1600 MPa grade low-alloy ultra-high-strength steel (LUHSS), cold metal transfer plus pulse (CMT+P)-based WAAM under gradient heat inputs (3.73, 7.37, and 11.8 kJ/cm) demonstrated precise control over in situ tempering <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. At 3.73 kJ/cm, the deposited steel achieved an optimal strength-ductility synergy: ultimate tensile strength of 1529 MPa, yield strength of 1272 MPa, and elongation of 12.3%. Higher heat input promoted carbide transformation from pure Cr<sub>23</sub>C<sub>6</sub> to coexisting Cr<sub>23</sub>C<sub>6</sub>/Cr<sub>3</sub>C and eventually Cr<sub>7</sub>C<sub>3</sub> <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Meanwhile, in green-laser Powder Bed Fusion (PBF-LB) of pure copper, a modified Johnson–Cook constitutive model was calibrated using Taylor impact tests at 122, 166, and 204 m/s <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. The optimized strain-rate sensitivity coefficient C reached 0.059 (compared to the initial 0.037638), reducing relative prediction errors to 0.1596% and 0.1259% for independent dynamic validation conditions <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><h3>Advanced Brazing and TLP Bonding Technologies</h3><p>In heterogeneous Cu/Al joining, brazing with Zn-15Al filler metal between 480 °C and 540 °C for 1–9 minutes revealed thermal input-driven interfacial evolution <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Low heat input induced an Al<sub>4.2</sub>Cu<sub>3.2</sub>Zn<sub>0.7</sub>-rich layer over Cu<sub>9</sub>Al<sub>4</sub>, whereas excessive heat input formed brittle CuAl<sub>2</sub>, reducing joint strength. Response surface methodology (RSM) identified optimal parameters at 488.3 °C for 1.0 minute (predicted strength of 62.2 MPa); empirical validation achieved 65.4 MPa (5.1% error) with a 12 ± 2 μm reaction layer <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><p>For high-power electronics, transient liquid phase (TLP) bonding using sputtered Cu/Sn multilayers was evaluated under isothermal aging at 175 °C up to 500 hours <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. While the 5-layer/5-layer initial configuration exhibited the highest as-bonded shear strength due to island-shaped Cu<sub>3</sub>Sn regions, the 3-layer architecture achieved the highest shear strength after 500 hours owing to a lower interfacial void fraction <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Additionally, brazing carbon fiber reinforced carbon matrix composites (C<sub>f</sub>/C) to refractory metals was accomplished using an FCC FeCoNiAlCuTi high-entropy alloy <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. This suppressed continuous brittle phase formation at the C<sub>f</sub>/C interface and created a gully-shaped interlocking morphology with ductile FeCoNiAl, reducing peak Mises stress from 371 MPa to 274 MPa and yielding a shear strength of 40.7 MPa at 1340 °C for 20 minutes <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p><h3>Electronic Packaging and Solder Joint Inspection</h3><p>A comprehensive review of low-temperature Sn-Bi and Sn-Zn solder systems highlighted that eutectic Sn-58Bi lowers soldering temperatures to ~139 °C, though additions of Zn, In, or Sb are essential to mitigate Bi-phase embrittlement and control interfacial Cu<sub>6</sub>Sn5/Cu<sub>3</sub>Sn intermetallic compound growth <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. In automated quality control, a low-cost multispectral AOI system combining an STM32F407 microcontroller, an MT9V034 monochrome camera, and an MLX90640 infrared thermal array sensor was implemented <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. An NCNN inference model categorized 5 solder joint defect types (cold solder, missing solder, bridges, insufficient, and excess solder) with over 90% classification accuracy on the training set <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Furthermore, microfluidic research on pneumatic drop-on-demand liquid Sn ejection established a dimensionless limiting jet length model, detailing the competition between inertial and capillary forces to ensure stable single-droplet generation for flexible circuit printing <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p><h3>Welding Applications in Key Industries</h3><p>Hydrogen embrittlement susceptibility of API X70 pipeline girth welds exposed to CH<sub>4</sub>-H<sub>2</sub> mixtures (5–20% H<sub>2</sub> at 4–10 MPa) was analyzed via slow strain rate tensile testing <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Under the 10 MPa–20% H<sub>2</sub> condition, ultimate tensile strength and yield strength decreased by up to 3.9% and 7.2%, respectively, while elongation dropped from 16.46% to 13.04%. EBSD fractography near secondary cracks (7 MPa–20% H<sub>2</sub>) revealed localized high KAM bands peaking at 2.65°–3.87°, supporting a hydrogen-enhanced localized plasticity (HELP) mechanism <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><p>In marine manufacturing, a Dynamic Small-World Genetic Algorithm (DSWGA) was developed for multi-objective task allocation in gantry-type dual-arm welding multi-robot systems <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. By dynamically adjusting network connectivity parameters and applying adaptive crossover/mutation strategies, DSWGA minimized overall makespan and workload imbalance across complex ship subassemblies <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Lastly, an engineering design for hermetically sealing silicon carbide (SiC) nuclear fuel cladding using Niobium end closures was established for high-temperature micro-reactors and SMRs, successfully eliminating thermal expansion mismatch and thermal shock defects <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Expert Takeaway</h3><ul><li><strong>Heat Input Optimization in WAAM:</strong> Vietnamese manufacturers fabricating large structural steel components should adopt low heat input regimes (~3.7 kJ/cm) in pulse-assisted WAAM (CMT+P) for ultra-high-strength steel to exploit in situ tempering, prevent coarse Cr<sub>7</sub>C<sub>3</sub> carbide precipitation, and achieve tensile strengths exceeding 1500 MPa without post-weld heat treatment.</li><li><strong>Low-Cost Multispectral Inspection for Electronics:</strong> Combining infrared thermal sensors (MLX90640) with lightweight edge-AI vision models (STM32/NCNN) provides a cost-effective solder joint inspection solution (&gt;90% accuracy), highly suitable for university laboratories and local electronics SMEs in Vietnam.</li><li><strong>Safety Assessment for Hydrogen-Blended Pipelines:</strong> As Vietnam advances green energy transitions, natural gas pipeline operators blending hydrogen into API X70 steel networks must account for up to a 20% relative drop in weld elongation at 10 MPa and implement HELP-assisted cracking monitoring protocols.</li></ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Reshad Bakhtari",
+        "Sharhid Jabbar",
+        "Hiren Ramniklal Kotadia",
+        "Pasquale Franciosa"
+      ],
+      "more_authors": false,
+      "title": "A Multiscale and Multiphysics Framework for Laser Beam Welding with Dynamic Beam Shaping",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "date": "2026-12-20",
+      "doi": "10.5281/zenodo.19881080",
+      "url": "https://doi.org/10.5281/zenodo.19881080",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Alexander Straßer",
+        "Freek Paul Bos",
+        "Christoph Gehlen"
+      ],
+      "more_authors": false,
+      "title": "Selective Paste Intrusion—Effect of Process-Integrated Welding of Reinforcement Segments on Bond Strength",
+      "journal": "Materials",
+      "date": "2026-10-23",
+      "doi": "10.3390/ma19214459",
+      "url": "https://doi.org/10.3390/ma19214459",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Tao Chen",
+        "Peng He",
+        "Tengzhou Xu",
+        "Jingyi Luo",
+        "Yinyu Liu",
+        "Liangyu Di"
+      ],
+      "more_authors": true,
+      "title": "Thermal Input-Driven Interfacial Phase Evolution and Mechanical Reliability of Zn-15Al Brazed Cu/Al Joints",
+      "journal": "Crystals",
+      "date": "2026-10-22",
+      "doi": "10.3390/cryst16110682",
+      "url": "https://doi.org/10.3390/cryst16110682",
+      "license": "cc-by",
+      "topic": "brazing"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Eunsung Kim",
+        "Sujith Lal",
+        "Omkar A. Patil",
+        "Chih‐Ming Chen",
+        "Baoyang Lu",
+        "Sooman Lim"
+      ],
+      "more_authors": true,
+      "title": "Overview of Low-Temperature Sn-Bi and Sn-Zn Solder Systems and Cu Interfacial Reliability for Advanced Electronic Packaging",
+      "journal": "Micromachines",
+      "date": "2026-10-22",
+      "doi": "10.3390/mi17111216",
+      "url": "https://doi.org/10.3390/mi17111216",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Yufa Deng",
+        "Chun Kang",
+        "Guichuan Chang",
+        "Gang Yang",
+        "Penggang Zhang",
+        "Mingji Huang"
+      ],
+      "more_authors": true,
+      "title": "Hydrogen-Induced Damage Evolution and Quasi-Cleavage Cracking in API X70 Pipeline Girth Welds Under Blended CH4-H2 Environments",
+      "journal": "Crystals",
+      "date": "2026-10-21",
+      "doi": "10.3390/cryst16100680",
+      "url": "https://doi.org/10.3390/cryst16100680",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Haneul Jeong",
+        "Hyunbin Nam",
+        "Yongju Yoon",
+        "Kyungho Yu",
+        "박철호"
+      ],
+      "more_authors": false,
+      "title": "Influence of Filler Metal Composition and δ-Ferrite Characteristics on GTA Weldability of Stainless Steel for Cryogenic Applications",
+      "journal": "Metals",
+      "date": "2026-10-23",
+      "doi": "10.3390/met16111172",
+      "url": "https://doi.org/10.3390/met16111172",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Kun Li",
+        "Shuang Jun Zhang",
+        "Ziche Li",
+        "Xu Shixin",
+        "Xuru Hou",
+        "Peng Li"
+      ],
+      "more_authors": true,
+      "title": "Regulation mechanism of heat input on in situ tempering and precipitation behavior of wire arc additively manufactured 1,600 MPa low-alloy ultra-high-strength steel",
+      "journal": "Engineering Science in Additive Manufacturing",
+      "date": "2026-10-22",
+      "doi": "10.36922/esam026370021",
+      "url": "https://doi.org/10.36922/esam026370021",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Dong-Yurl Yu",
+        "Junhyuk Son",
+        "Kim Yun-Chan",
+        "Yong-Ho Ko",
+        "Tae-Young Lee",
+        "So-Jeong Lee"
+      ],
+      "more_authors": true,
+      "title": "Transient Liquid Phase Bonding Using Sputtered Cu/Sn Multilayers",
+      "journal": "Materials",
+      "date": "2026-10-22",
+      "doi": "10.3390/ma19214440",
+      "url": "https://doi.org/10.3390/ma19214440",
+      "license": "cc-by",
+      "topic": "brazing"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Zhao WanYue"
+      ],
+      "more_authors": false,
+      "title": "PCB Solder Joint Quality Inspection System Based on Multispectral Imaging and Image Recognition",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "date": "2026-10-22",
+      "doi": "10.5281/zenodo.23555636",
+      "url": "https://doi.org/10.5281/zenodo.23555636",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Yu Lu",
+        "Lijia Tao",
+        "Tao Ma",
+        "Zhenhua Zhang",
+        "Mingxin Yuan"
+      ],
+      "more_authors": false,
+      "title": "Task Allocation for Gantry-Type Multi-Robot Systems with Heterogeneous Welding Tasks",
+      "journal": "Metals",
+      "date": "2026-10-21",
+      "doi": "10.3390/met16101159",
+      "url": "https://doi.org/10.3390/met16101159",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Zhanhui Zhang",
+        "Lai Zhou",
+        "Dong Chen",
+        "Wenbo Liao",
+        "Shenggui Chen",
+        "Yu Li"
+      ],
+      "more_authors": true,
+      "title": "Effect of Low-Frequency Modulation on the Penetration Profile and Microstructure in Double-Pulsed GMAW of AA6061 Aluminum Alloy",
+      "journal": "Materials",
+      "date": "2026-10-23",
+      "doi": "10.3390/ma19214455",
+      "url": "https://doi.org/10.3390/ma19214455",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Feihong Zhao",
+        "Shuang Zhao",
+        "Jing Cao",
+        "Tie Han",
+        "Jinghui Wei",
+        "Liwei Yang"
+      ],
+      "more_authors": true,
+      "title": "Taylor-modified Johnson–Cook constitutive model for pure copper produced using PBF-LB with a green laser source",
+      "journal": "Materials Science in Additive Manufacturing",
+      "date": "2026-10-22",
+      "doi": "10.36922/msam026360092",
+      "url": "https://doi.org/10.36922/msam026360092",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Jinzheng Li",
+        "Pengcheng Wang",
+        "Jinze Chi",
+        "Heng Shao",
+        "Zhaoyi Pan",
+        "Jing Wang"
+      ],
+      "more_authors": true,
+      "title": "Brittle interfacial layer suppression in Cf/C brazed joints with refractory metal via hierarchical microstructure engineering",
+      "journal": "Advanced Composites and Hybrid Materials",
+      "date": "2026-10-19",
+      "doi": "10.1007/s42114-026-02101-1",
+      "url": "https://doi.org/10.1007/s42114-026-02101-1",
+      "license": "cc-by",
+      "topic": "brazing"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Shanshan Gao",
+        "田智威",
+        "Liuchen Tai"
+      ],
+      "more_authors": false,
+      "title": "Study on the Jet Evolution Mechanism and Prediction Model of the Dimensionless Limiting Jet Length for Pneumatic Drop-on-Demand Metal Sn Droplet",
+      "journal": "Fluids",
+      "date": "2026-10-21",
+      "doi": "10.3390/fluids11100264",
+      "url": "https://doi.org/10.3390/fluids11100264",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Austen Palmer"
+      ],
+      "more_authors": false,
+      "title": "Advanced Hermetic Fuel Cladding Closure with Integrated Thermal-Chemical Mitigation for High-Temperature Micro-Reactors",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "date": "2026-10-16",
+      "doi": "10.5281/zenodo.23424866",
+      "url": "https://doi.org/10.5281/zenodo.23424866",
+      "license": "cc-by",
+      "topic": "applications"
+    }
+  ],
+  "generated_by": "AI (Gemini) – biên tập & duyệt bởi TS. Hán Lê Duy"
+}

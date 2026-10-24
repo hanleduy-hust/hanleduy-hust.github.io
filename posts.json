@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "2026-10-24-diem-tin-khoa-hoc",
+    "date": "2026-10-24",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin khoa học Hàn & Chế tạo bồi đắp: Từ kỹ thuật điều khiển chùm laser động đến liên kết composite nâng cao",
+    "title_en": "Welding & Additive Manufacturing Digest: From Dynamic Beam Shaping to Advanced Composite Bonding",
+    "summary_vi": "Điểm tin khoa học tổng hợp 15 nghiên cứu mới nhất trong các lĩnh vực hàn hồ quang/laser, in 3D kim loại (WAAM/PBF-LB), hàn vảy-TLP, đóng gói điện tử và ứng dụng công nghiệp trọng điểm. Bản tin cung cấp các số liệu thực nghiệm chính xác và định hướng ứng dụng thực tiễn cho kỹ sư, giảng viên và học viên cao học.",
+    "summary_en": "This science digest summarizes 15 new publications across arc/laser welding, metal AM (WAAM/PBF-LB), brazing/TLP bonding, electronic packaging, and key industry applications. It offers precise empirical findings and strategic insights for engineers, lecturers, and graduate students.",
+    "tags": [
+      "Welding Technology",
+      "Metal Additive Manufacturing",
+      "WAAM",
+      "Brazing & Soldering",
+      "Electronic Packaging",
+      "Cryogenic Welding"
+    ],
+    "cover": "",
+    "file": "posts/2026-10-24-diem-tin-khoa-hoc.json"
+  }
+]

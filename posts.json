@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "2026-10-24-diem-tin-khoa-hoc",
+    "date": "2026-10-24",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin Khoa học Công nghệ Hàn & Nối: Tối ưu hóa vi cấu trúc, In 3D Kim loại và Độ tin cậy Đóng gói Điện tử",
+    "title_en": "Welding & Joining Science Digest: Microstructural Control, Metal AM, and Electronic Packaging Reliability",
+    "summary_vi": "Bản tin khoa học tổng hợp 15 nghiên cứu mới nhất ngày 24/10/2026 về công nghệ hàn hồ quang/laser, in 3D kim loại (WAAM, PBF-LB), hàn vảy (brazing) và đóng gói điện tử. Các kết quả tập trung vào kiểm soát năng lượng đường, triệt tiêu pha giòn liên kim và tối ưu hóa quy trình tự động hóa cho công nghiệp.",
+    "summary_en": "This science digest highlights 15 newly published studies on October 24, 2026, covering arc/laser welding, metal additive manufacturing (WAAM, PBF-LB), brazing, and electronic packaging. Key findings focus on heat input control, suppression of brittle intermetallics, and process optimization for industrial automation.",
+    "tags": [
+      "welding technology",
+      "additive manufacturing",
+      "WAAM",
+      "brazing",
+      "electronic packaging"
+    ],
+    "cover": "images/blog/2026-10-24-diem-tin-khoa-hoc/fig5.jpg",
+    "file": "posts/2026-10-24-diem-tin-khoa-hoc.json"
+  }
+]

@@ -878,13 +878,12 @@ def finalize_content(content, figures, captions, lang, papers):
     n_ref = len(papers)
 
     def cite(m):
-        nums = [int(x) for x in re.findall(r"\d+", m.group(1))]
-        nums = [n for n in nums if 1 <= n <= n_ref]
-        if not nums:
-            return ""
+        nums = cite_numbers(m.group(1))
+        if not nums or any(not 1 <= n <= n_ref for n in nums):
+            return m.group(0)  # không phải trích dẫn (ví dụ chỉ số Miller [110]) → giữ nguyên
         return "<sup class=\"cite\">[" + ", ".join(f'<a href="#ref-{n}">{n}</a>' for n in nums) + "]</sup>"
 
-    content = re.sub(r"\[(\d+(?:\s*[,–-]\s*\d+)*)\]", cite, content)
+    content = CITE_RX.sub(cite, content)
     by_n = {f["n"]: f for f in figures}
     token = re.compile(r"(?:<p>\s*)?\{\{\s*FIG(\d+)\s*\}\}(?:\s*</p>)?")
 
@@ -924,6 +923,61 @@ def finalize_content(content, figures, captions, lang, papers):
     content = token.sub(put, content)
     content = re.sub(r"<p>\s*</p>", "", content)
     return content
+
+
+CITE_RX = re.compile(r"\[(\d+(?:\s*[,;–-]\s*\d+)*)\]")
+
+
+def cite_numbers(group):
+    """'1, 3–5' → [1, 3, 4, 5]"""
+    out = []
+    for part in re.split(r"\s*[,;]\s*", group):
+        m = re.fullmatch(r"(\d+)\s*[–-]\s*(\d+)", part.strip())
+        if m and int(m.group(1)) <= int(m.group(2)) <= int(m.group(1)) + 30:
+            out += list(range(int(m.group(1)), int(m.group(2)) + 1))
+        elif part.strip().isdigit() and not part.strip().startswith("0"):  # [001] là chỉ số Miller, không phải trích dẫn
+            out.append(int(part))
+    return out
+
+
+def renumber_citations(ai, papers, figures):
+    """Đánh số lại tài liệu tham khảo theo thứ tự xuất hiện lần đầu trong bài (kiểu Vancouver/IEEE):
+    trích dẫn đầu tiên là [1], tiếp theo [2]… Bài báo không được trích dẫn xếp cuối danh mục."""
+    n = len(papers)
+    order = []
+    for key in ("content_vi", "content_en"):
+        text = ai.get(key, "") or ""
+        # hình cũng tính là một lần "trích dẫn" bài báo nguồn tại vị trí đặt hình
+        for m in re.finditer(r"\{\{\s*FIG(\d+)\s*\}\}|" + CITE_RX.pattern, text):
+            if m.group(1):
+                f = next((f for f in figures if f["n"] == int(m.group(1))), None)
+                nums = [f["paper"]] if f else []
+            else:
+                nums = cite_numbers(m.group(2))
+            if not nums or any(not 1 <= x <= n for x in nums):
+                continue
+            for x in nums:
+                if x not in order:
+                    order.append(x)
+    order += [x for x in range(1, n + 1) if x not in order]
+    new = {old: i for i, old in enumerate(order, 1)}
+
+    def sub(m):
+        raw = cite_numbers(m.group(1))
+        if not raw or any(x not in new for x in raw):
+            return m.group(0)  # không phải trích dẫn (ví dụ hướng tinh thể [110]) → giữ nguyên
+        return "[" + ", ".join(map(str, sorted({new[x] for x in raw}))) + "]"
+
+    for key in ("content_vi", "content_en"):
+        if ai.get(key):
+            ai[key] = CITE_RX.sub(sub, ai[key])
+    for key in ("figure_captions_vi", "figure_captions_en"):
+        caps = ai.get(key) or {}
+        for k in list(caps):
+            caps[k] = CITE_RX.sub(sub, caps[k] or "")
+    for f in figures:
+        f["paper"] = new[f["paper"]]
+    return [papers[old - 1] for old in order]
 
 
 SELF_REF = re.compile(r"Hán Lê Duy|Han Le Duy|Duy Le Han|Bách khoa Hà Nội|\bHUST\b|Hanoi University of Science|"
@@ -971,6 +1025,8 @@ def main():
         diag(f"  Bản đầu nhắc tới: {', '.join(bad)} → yêu cầu AI viết lại giọng trung tính")
         ai = gemini_json(prompt + "\n\nIMPORTANT: your previous draft mentioned " + ", ".join(bad) +
                          ". Rewrite in a fully neutral, impersonal voice without naming any blog owner, lab, university or experts.")
+
+    papers = renumber_citations(ai, papers, figures)
 
     refs = [{
         "n": i, "authors": p["authors"][:6], "more_authors": len(p["authors"]) > 6,

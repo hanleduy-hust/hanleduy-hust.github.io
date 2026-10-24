@@ -871,4 +871,12 @@ def write_output(**kv):
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        # Hiện lỗi thành "annotation" trên trang Actions để dễ thấy nguyên nhân
+        msg = f"{type(e).__name__}: {e}".replace("%", "%25").replace("\r", " ").replace("\n", " ")
+        print(f"::error title=Lỗi tạo bản tin::{msg[:900]}")
+        sys.exit(1)

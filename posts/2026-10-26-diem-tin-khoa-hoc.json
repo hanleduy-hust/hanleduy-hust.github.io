@@ -1,0 +1,289 @@
+{
+  "id": "2026-10-26-diem-tin-khoa-hoc",
+  "date": "2026-10-26",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Bản tin Công nghệ Hàn và Chế tạo Tiên tiến: Đột phá trong Bù Sai lệch Hình học, Kiểm soát Vi cấu trúc và Vật liệu Đóng gói Mới",
+  "title_en": "Welding and Advanced Manufacturing Digest: Breakthroughs in Misalignment Compensation, Microstructural Control, and Packaging Materials",
+  "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong công nghệ hàn ma sát khuấy bổ sung dây, kiểm soát vi tách pha trong hàn hồ quang kim loại xung và chế tạo bồi đắp hợp kim magie, titan. Bên cạnh đó là các giải pháp vật liệu đóng gói điện tử tiên tiến và cơ cấu robot kiểm tra, hàn trong không gian hẹp.",
+  "summary_en": "This digest highlights recent advances in wire-based friction stir welding for severe misalignment compensation, microsegregation control in pulsed GMAW, and additive manufacturing of magnesium and titanium alloys. It also covers novel thermal interface materials for electronic packaging and robotic systems designed for confined welding and inspection tasks.",
+  "tags": [
+    "welding technology",
+    "additive manufacturing",
+    "electronic packaging",
+    "brazing",
+    "friction stir welding"
+  ],
+  "cover": "images/blog/2026-10-26-diem-tin-khoa-hoc/fig1.jpg",
+  "content_vi": "<p class=\"lead\">Ngày 26 tháng 10 năm 2026 chứng kiến nhiều công bố khoa học đáng chú ý trong lĩnh vực công nghệ hàn, luyện kim bồi đắp và vật liệu liên kết bán dẫn. Các nghiên cứu tập trung giải quyết những thách thức cố hữu về sai lệch lắp ghép cơ học, cơ chế nứt tế vi do phân bố nhiệt, đồng thời nâng cao hiệu năng tản nhiệt và tự động hóa trong không gian giới hạn.</p><h3>Công nghệ hàn vảy và hàn ma sát khuấy: Tối ưu hóa liên kết dị chủng và bù sai lệch hình học</h3><p>Trong các kết cấu tấm lớn, sai lệch phẳng (linear misalignment - LM) phát sinh do dung sai chế tạo và gá đặt luôn là thách thức lớn đối với công nghệ hàn ma sát khuấy (FSW) truyền thống vốn phụ thuộc vào biên dạng chốt cố định. Nghiên cứu của nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã chứng minh tính khả thi của kỹ thuật hàn ma sát khuấy nhiều chốt bổ sung dây (W-FSW) trên tấm hợp kim nhôm EN AW-6082-T6 dày 2 mm sử dụng dây hàn phụ EN AW-6082. Khi đưa vào các mức sai lệch nghiêm trọng 1,0 mm và 1,5 mm (tương ứng 50% và 75% chiều dày tấm cơ sở), việc hàn không có dây phụ dẫn đến khuyết tật dính không ngấu nghiêm trọng. Ngược lại, cấp dây liên tục giúp bù đắp hoàn toàn khe hở lệch, đạt độ bền kéo từ 198,8 đến 210,0 MPa, tương đương mối hàn chuẩn không lệch (208,71 MPa), với vị trí đứt luôn nằm tại vùng ảnh hưởng nhiệt (HAZ) bị hóa mềm <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><p>Ảnh chụp kiểm tra khuyết tật bằng tia X dưới đây cho thấy khu vực mối hàn được điền đầy hoàn chỉnh, không xuất hiện khuyết tật bên trong nghiêm trọng, độ dày mối nối cục bộ được tăng cường giúp cải thiện khả năng chịu tải cơ học.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-26-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Kết quả kiểm tra chụp ảnh phóng xạ của các mẫu thử nghiệm V05–V08 cho thấy không có khuyết tật bên trong đáng kể nào, các chỉ báo cục bộ chủ yếu liên quan đến độ nhám bề mặt, với chiều dày mối nối cục bộ đạt 3,0 mm và 3,5 mm tương ứng với độ lệch LM 1,0 mm và 1,5 mm.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Kết quả kiểm tra chụp ảnh phóng xạ của các mẫu thử nghiệm V05–V08 cho thấy không có khuyết tật bên trong đáng kể nào, các chỉ báo cục bộ chủ yếu liên quan đến độ nhám bề mặt, với chiều dày mối nối cục bộ đạt 3,0 mm và 3,5 mm tương ứng với độ lệch LM 1,0 mm và 1,5 mm. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Donaubauer et al. (2026), “Compensation of Linear Misalignments in EN AW-6082-T6 Aluminium Sheets by Multi-Pin Wire-Based Friction Stir Welding”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10100446\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10100446</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Kiểm soát dao động chùm tia cũng là chìa khóa trong liên kết hợp kim nhôm bằng nguồn nhiệt tập trung. Khi hàn laser hợp kim nhôm AA1100 với dây bù ER5356, nghiên cứu thực nghiệm và phân tích phương sai hai nhân tố (ANOVA) chỉ ra rằng biên độ lắc chùm tia (wobble size) tác động có ý nghĩa thống kê (p &lt; 0,05) đến độ bền kéo, trong khi công suất laser (800–900 W) không mang lại khác biệt đáng kể (p &gt; 0,05) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Giá trị độ bền kéo cao nhất đạt 159,52 MPa tại công suất 800 W và biên độ lắc 2 mm, trong khi biên độ lắc 3 mm làm giảm độ bền xuống 127,03 MPa do hình thái tổ chức kim loại mối hàn kém đồng nhất <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Đối với các kết cấu dị chủng nhôm/titan, hàn vảy ma sát khuấy (FSB) sử dụng lớp đệm kẽm (Zn) đã giải quyết vấn đề giòn hóa do hợp chất liên kim (IMC) <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Ở chế độ tối ưu (tốc độ quay 2000 vòng/phút, tốc độ hàn 120 mm/phút), mối nối đạt tải trọng kéo trượt cực đại 5585,9 N nhờ cơ chế đùn đẩy lớp Zn ở trung tâm sang hai biên và chuyển đổi cơ chế phá hủy từ tách giòn sang trượt dẻo trên nền nhôm <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Ở cấp độ nhiệt độ cao hơn, nghiên cứu hàn vảy Mo-5Re và Nb-1Zr bằng kim loại điền đầy Ni-Pd chỉ ra rằng cửa sổ nhiệt độ 1200–1220 °C hình thành mạng lưới dung dịch rắn β-(Nb,Mo) mịn đan xen pha liên kim NiNb, giúp làm lệch hướng nứt và đạt độ bền kéo 135,0 MPa ở nhiệt độ phòng <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Khi nhiệt độ vượt lên 1240 °C, sự thô đại hóa pha β làm giảm độ bền xuống còn 65,0 MPa <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Trong các ứng dụng pin nhiên liệu oxit rắn (MS-SOFC) và tế bào điện phân (SOEC), việc ứng dụng gioăng nén gốc phlogopite và Thermiculite® kết hợp lớp phủ thủy tinh-gốm hoặc hàn pha lỏng quá độ (TLP) đang mở ra giải pháp làm kín chịu nhiệt độ cao ổn định và kinh tế <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><h3>Luyện kim hàn nóng chảy và chế tạo bồi đắp kim loại: Kiểm soát vi cấu trúc và phát hiện khuyết tật</h3><p>Đặc tính cơ học của mối hàn nóng chảy đồng dạng thường biến động mạnh theo năng lượng đường. Khảo sát hàn đắp xung (P-GMAW) trên hợp kim nhôm AA6061 với dây hàn ER4047 cho thấy khi tăng dòng điện đáy từ 30 A lên 110 A, tương ứng năng lượng đường tăng từ 122 J/mm lên 235 J/mm, biên giới hạt (GB) chuyển từ dạng lồi sang dạng lõm <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Hiện tượng vi tách pha diễn ra dữ dội khi hàm lượng Mg và Si tại biên giới hạt cao gấp 8,5 và 31 lần trong lòng hạt, trong khi nhôm bị suy giảm còn 66,68%, thúc đẩy nứt kết tinh phát triển <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Hệ quả là độ bền kéo giảm từ 276,13 MPa xuống 252,92 MPa và năng lượng va đập giảm từ 2,02 J xuống 1,57 J, mặc dù độ giãn dài tăng từ 4,21% lên 4,99% do sự chuyển dịch cơ chế phá hủy sang dẻo trước khi chuyển sang phá hủy xé hoàn toàn ở mức nhiệt cao nhất <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><p>Ảnh chụp hiển vi quang học và ảnh quét SEM dưới đây thể hiện rõ hình thái tế vi vùng nóng chảy, mặt tiếp giáp với vùng ảnh hưởng nhiệt cũng như vị trí kiểm tra phân tích vi tách pha nguyên tố.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-26-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Ảnh chụp hiển vi quang học và ảnh SEM của đường hàn, cấu trúc tế vi vùng nóng chảy kèm vị trí phân tích EDS, và mặt phân giới giữa vùng nóng chảy và vùng ảnh hưởng nhiệt (HAZ) của đường hàn B30 và B70.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Ảnh chụp hiển vi quang học và ảnh SEM của đường hàn, cấu trúc tế vi vùng nóng chảy kèm vị trí phân tích EDS, và mặt phân giới giữa vùng nóng chảy và vùng ảnh hưởng nhiệt (HAZ) của đường hàn B30 và B70. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Zhang et al. (2026), “Influence Mechanism of the Heat Input on the Element Distribution and Mechanical Behavior of Beads Welded by Pulsed GMAW”, <em>Coatings</em>, <a href=\"https://doi.org/10.3390/coatings16101243\" target=\"_blank\" rel=\"noopener\">doi:10.3390/coatings16101243</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong lĩnh vực in 3D kim loại, kiểm soát cấu trúc pha sau in giữ vai trò quyết định. Nghiên cứu trên hợp kim Mg-8Gd-1Er-0.5Zr (GE81) chế tạo bằng phương pháp lắng đọng năng lượng có định hướng hồ quang dây (WA-DED) đã so sánh ba quy trình làm nguội sau hòa tan: làm nguội trong không khí (AC), nguội theo lò (FC) và xử lý nhiệt luyện siêu lạnh (DCT) trước khi hóa già đỉnh <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Xử lý DCT bảo tồn được cấu trúc hạt mịn không đồng nhất với kích thước hạt 19,93 μm ở HAZ, 10,39 μm ở ranh giới vũng chảy và 13,27 μm ở tâm vũng chảy, đồng thời duy trì mật độ lệch cần thiết hình học cao nhất (0,52–0,61 × 10¹⁴ m⁻²) <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Mẫu DCT đạt giới hạn bền kéo 296 MPa, giới hạn chảy 186 MPa và độ giãn dài 14,6% nhờ kích thước kết tủa β′ được kiểm soát ở mức 18,8 nm chiều dài và 8,5 nm chiều rộng <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><p>Đối với công nghệ nung chảy chọn lọc bằng laser trên nền bột (L-PBF), giải pháp hợp kim hóa vi lượng để tạo mạng lưới phân tán nano (TiB + Y<sub>2</sub>O<sub>3</sub>) với thể tích chỉ 0,35 vol% trên hợp kim titan gần-α TA15 đã giúp tăng hơn 10% độ bền ở nhiệt độ phòng và tăng 15% độ bền ở 500 °C mà vẫn duy trì độ dẻo <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Song song với nâng cao cơ tính, công tác kiểm tra không phá hủy (NDT) theo thời gian thực trong L-PBF đạt bước tiến mới nhờ phương pháp nhiệt ký chủ động đồng bộ xung laser (Synchronized Path Infrared Thermography) kết hợp cổng thời gian quang học <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Phương pháp này triệt tiêu hoàn toàn hiện tượng bão hòa cảm biến do bức xạ laser phản xạ, cho phép phát hiện các lỗ rỗng nhân tạo có đường kính trung bình nhỏ tới 111 μm ở độ sâu 40 μm, và phát hiện khuyết tật kích thước 977 μm ở độ sâu lên tới 120 μm <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><h3>Vật liệu đóng gói điện tử và công nghệ robot hàn trong không gian hẹp</h3><p>Sự gia tăng mật độ công suất trong linh kiện bán dẫn đòi hỏi vật liệu giao diện nhiệt (TIM) có độ dẫn nhiệt vượt trội. Mô phỏng phần tử hữu hạn trên các thể tích đại diện ba chiều (RVE) dựa trên trường ngẫu nhiên Gaussian đã làm sáng tỏ cơ chế truyền nhiệt trong composite bạc thiêu kết gia cường hạt kim cương <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Qua 180 kịch bản mô phỏng, độ xốp được xác định là yếu tố chi phối lớn nhất: khi độ xốp tăng từ 10% lên 50%, độ dẫn nhiệt hiệu dụng (k<sub>eff</sub>) sụt giảm xấp xỉ 40% <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Việc tăng hàm lượng kim cương chỉ phát huy hiệu quả rõ nét ở mức độ xốp thấp, trong khi kích thước hạt kim cương (khảo sát từ 1 đến 9 voxel) có mối tương quan thuận với k<sub>eff</sub> <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><p>Mô hình biểu diễn vi cấu trúc ngẫu nhiên ba chiều dưới đây minh họa các tổ hợp thông số hình học của hạt kim cương và độ xốp được sử dụng để tính toán các đặc tính truyền nhiệt cục bộ.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-26-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Biểu diễn vi cấu trúc thể tích đại diện (RVE) dưới sáu tổ hợp thông số khác nhau: (a) 10%_1.0_27_7, (b) 50%_1.0_27_7, (c) 50%_2.0_27_7, (d) 50%_1.0_125_7, (e) 10%_1.0_125_7, và (f) 10%_1.0_125_3.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Biểu diễn vi cấu trúc thể tích đại diện (RVE) dưới sáu tổ hợp thông số khác nhau: (a) 10%_1.0_27_7, (b) 50%_1.0_27_7, (c) 50%_2.0_27_7, (d) 50%_1.0_125_7, (e) 10%_1.0_125_7, và (f) 10%_1.0_125_3. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Tian et al. (2026), “A Numerical Study of the Microstructure-Dependent Thermal Conductivity of Diamond-Reinforced Sintered Silver Composites”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19194246\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19194246</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Cùng hướng nghiên cứu vật liệu đóng gói, copolymer polymaleimide biến tính nhóm biphenyl (PMI) phối trộn với bisphenol A cyanate (BADCy) ở tỷ lệ P(BT-8/2) ghi nhận nhiệt độ phân hủy nhiệt 5% đạt 392 °C, độ bền nhiệt dư ở 800 °C là 48,6%, nhiệt độ chuyển pha thủy tinh (T<sub>g</sub>) đạt 323 °C cùng hằng số điện môi thấp 2,935 và tổn hao điện môi 0,00572 tại tần số 10 GHz <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Trong khi đó, composite nền PA6 gia cường mạng lưới lai nano 3D giữa MXene (Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub>) và ống nano carbon đa vách (MWCNTs) theo tỷ lệ M4C1 mang lại bước nhảy vọt về độ dẫn điện, phục vụ hiệu quả yêu cầu tản điện tích tĩnh điện (ESD) trong vỏ bọc vi mạch <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>Bên cạnh vật liệu, khả năng tiếp cận và thực thi mối hàn trong không gian chật hẹp cũng được giải quyết bằng các cơ cấu robot mới. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup> đề xuất chiến lược điều khiển ba giai đoạn kết hợp tối ưu hóa tư thế nhằm gia tăng độ cứng vững không gian tác vụ cho cánh tay robot dạng rắn (snake robot) hoạt động trong hộp cánh máy bay và lò phản ứng hạt nhân. Mặt khác, một thiết kế robot dạng rắn siêu mỏng chế tạo từ các màng polyimide (PI) hàn kín bằng nhiệt đã hình thành bộ truyền động chênh lệch độ cứng hai chiều (BB-DSA), đạt tốc độ di chuyển 1,38 mm/s và lực kéo 14,57 mN để luồn lách kiểm tra hệ thống đường ống phức tạp <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Cuối cùng, một khung thiết kế tối ưu hóa đa mục tiêu kết hợp các ràng buộc chế tạo cho dầm xe rơ-moóc nhôm chỉ ra rằng độ bền mỏi và khả năng tiếp cận mối hàn là hai tiêu chí cốt lõi cần cân bằng cùng trọng lượng kết cấu trong sản xuất thực tế <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Hàm ý thực tiễn cho ngành hàn và sản xuất tại Việt Nam</h3><ul><li><strong>Ứng dụng hàn ma sát khuấy bổ sung dây (W-FSW) trong đóng tàu và giao thông nhôm:</strong> Việc sử dụng dây hàn phụ để bù sai lệch lắp ghép lên đến 75% chiều dày tấm mở ra cơ hội cơ giới hóa liên kết tấm nhôm kích thước lớn tại các nhà máy đóng tàu và phương tiện đường sắt Việt Nam mà không đòi hỏi độ chính xác gia công phôi quá khắt khe.</li><li><strong>Tối ưu hóa nhiệt luyện làm nguội sâu (DCT) cho chi tiết in 3D hợp kim nhẹ:</strong> Các phòng thí nghiệm và doanh nghiệp đang nghiên cứu công nghệ WAAM và LPBF có thể áp dụng quy trình xử lý nhiệt lạnh sâu sau ủ hòa tan để tinh định kích thước hạt và kiểm soát pha kết tủa, giải quyết triệt để tính bất đẳng hướng cơ tính của phôi kim loại in 3D.</li><li><strong>Kiểm soát năng lượng đường trong liên kết tự động:</strong> Kết quả về sự vi phân tách Si/Mg tại biên hạt trong hàn xung GMAW nhôm là cơ sở thực nghiệm quan trọng để các kỹ sư hàn trong nước thiết lập giới hạn nhiệt độ giữa các đường hàn (interpass temperature) và dải thông số dòng đáy nhằm ngăn chặn hiện tượng nứt nóng.</li></ul>",
+  "content_en": "<p class=\"lead\">The October 26, 2026 science digest covers notable advancements spanning fusion and solid-state welding, wire and powder-based metal additive manufacturing, and high-performance electronic packaging. Recent studies provide quantitative insights into joint misalignment compensation, grain boundary microsegregation, and specialized robotic manipulation within confined industrial geometries.</p><h3>Brazing and Friction Stir Welding: Optimizing Dissimilar Joints and Geometric Misalignment Compensation</h3><p>Linear misalignment (LM) caused by manufacturing tolerances and clamping limitations poses a severe challenge to conventional friction stir welding (FSW) due to its rigid pin architecture. The study by <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> demonstrated the effectiveness of multi-pin wire-based friction stir welding (W-FSW) in joining 2 mm thick EN AW-6082-T6 aluminium sheets using EN AW-6082 filler wire. While welding without filler wire caused severe bonding defects and incomplete penetration under LM values of 1.0 mm and 1.5 mm (50% and 75% of sheet thickness), continuous wire addition successfully compensated for these severe out-of-plane deviations. The resulting joints exhibited tensile strengths between 198.8 and 210.0 MPa, matching the 208.71 MPa benchmark of aligned joints, with fracture occurring consistently in the softened heat-affected zone (HAZ) rather than the joint interface <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><p>The radiographic examination below illustrates the complete volumetric consolidation of the joint zone without severe internal flaws, where the increased local thickness provides sufficient load-bearing capability.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-26-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Radiographic examination of experiments V05–V08, revealing no pronounced internal defects apart from minor surface-related indications, with local joint thicknesses reaching 3.0 mm and 3.5 mm for LM values of 1.0 mm and 1.5 mm, respectively.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Radiographic examination of experiments V05–V08, revealing no pronounced internal defects apart from minor surface-related indications, with local joint thicknesses reaching 3.0 mm and 3.5 mm for LM values of 1.0 mm and 1.5 mm, respectively. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Donaubauer et al. (2026), “Compensation of Linear Misalignments in EN AW-6082-T6 Aluminium Sheets by Multi-Pin Wire-Based Friction Stir Welding”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10100446\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10100446</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Laser welding parameters likewise govern weld integrity in lightweight alloys. An investigation on laser-welded AA1100 aluminium sheets using ER5356 filler wire demonstrated through two-way ANOVA that wobble size exerted a statistically significant influence on tensile strength (p &lt; 0.05), whereas laser power within 800–900 W did not (p &gt; 0.05) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. The maximum tensile strength of 159.52 MPa was recorded at 800 W with a 2 mm wobble size, while increasing the wobble size to 3 mm reduced the strength to 127.03 MPa due to less homogeneous weld metal morphology <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>For dissimilar structural joining, friction stir brazing (FSB) of Al/Ti with a Zn interlayer demonstrated that balance between thermal input and mechanical stirring is vital <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. At 2000 rpm and 120 mm/min, optimal central Zn evacuation and edge enrichment yielded a peak tensile shear load of 5585.9 N, shifting the failure mode from interfacial brittle separation to ductile shear within the aluminium matrix <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. At elevated operating regimes, brazing Mo-5Re to Nb-1Zr using Ni-Pd filler established an optimal window of 1200–1220 °C; joints brazed at 1220 °C produced an interlocking network of fine β-(Nb,Mo) solid solution and NiNb intermetallics that deflected cracks, yielding a tensile strength of 135.0 MPa <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Brazing at 1240 °C coarsened the β-phase, degrading strength to 65.0 MPa <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Finally, in energy systems, comprehensive assessments of compressive gaskets based on phlogopite paper and Thermiculite®, integrated with glass-ceramics or transient liquid-phase (TLP) bonding, offer validated high-temperature hermetic sealing routes for solid oxide cells <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><h3>Fusion Welding Metallurgy and Metal Additive Manufacturing: Microstructure Control and Defect Monitoring</h3><p>In fusion welding, macroscopic bead uniformity often masks critical microstructural degradation driven by heat input. An investigation on pulsed gas metal arc welding (P-GMAW) of AA6061 using ER4047 filler varied the heat input from 122 J/mm to 235 J/mm by adjusting the base current from 30 A to 110 A <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Higher heat inputs transformed grain boundary (GB) morphology from convex to concave, inducing severe segregation: Mg and Si concentrations at GBs reached 8.5 and 31 times their grain interior values, while Al content dropped to 66.68% <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Consequently, solidification cracking susceptibility increased, reducing tensile strength from 276.13 MPa to 252.92 MPa and impact toughness from 2.02 J to 1.57 J, even as elongation rose slightly from 4.21% to 4.99% before transitioning toward cleavage failure <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><p>The optical and scanning electron micrographs below display the weld bead morphology, the fusion zone matrix evaluated by EDS microanalysis, and the transition boundary across the heat-affected zone.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-26-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Optical and SEM micrographs of the weld bead, the fusion zone microstructure with the area sampled by EDS, and the fusion zone–HAZ interface of beads B30 and B70.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Optical and SEM micrographs of the weld bead, the fusion zone microstructure with the area sampled by EDS, and the fusion zone–HAZ interface of beads B30 and B70. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Zhang et al. (2026), “Influence Mechanism of the Heat Input on the Element Distribution and Mechanical Behavior of Beads Welded by Pulsed GMAW”, <em>Coatings</em>, <a href=\"https://doi.org/10.3390/coatings16101243\" target=\"_blank\" rel=\"noopener\">doi:10.3390/coatings16101243</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In additive manufacturing, tailoring post-deposition thermal history provides a direct path to superior properties. For wire-arc directed energy deposition (WA-DED) of a Mg-8Gd-1Er-0.5Zr alloy, applying deep cryogenic treatment (DCT) after solution treatment preserved a refined grain morphology (19.93 μm in HAZ, 10.39 μm at melt-pool boundaries, and 13.27 μm in pool centres) and achieved the highest dislocation density (0.52–0.61 × 10¹⁴ m⁻²) <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. After peak aging, DCT specimens reached an ultimate tensile strength of 296 MPa, yield strength of 186 MPa, and 14.6% elongation, with nanoscale β′ precipitates measuring 18.8 nm in length and 8.5 nm in width <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><p>In laser powder bed fusion (LPBF), precursor-assisted microalloying of near-α TA15 with only 0.35 vol% of hierarchical (TiB + Y<sub>2</sub>O<sub>3</sub>) nanodispersions produced a &gt;10% increase in room-temperature tensile strength and a 15% increase at 500 °C without sacrificing ductility <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Complementing material design, real-time quality assurance in LPBF has been advanced by stroboscopic active thermography using synchronized dual-scanhead optics <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. By temporally gating infrared acquisition to exclude direct laser reflection, the system detected subsurface voids with mean diameters as small as 111 μm at a depth of 40 μm, with an ultimate detection limit of 977 μm at 120 μm depth <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><h3>Electronic Packaging Materials and Robotic Systems for Confined Welding Applications</h3><p>Thermal management in power electronics demands thermal interface materials (TIMs) with high thermal conductivity and thermomechanical compliance. Steady-state finite element simulations on 3D representative volume elements (RVEs) generated by Gaussian random fields examined silver-diamond composites across 180 parameter sets <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Porosity emerged as the governing factor: increasing porosity from 10% to 50% induced an approximate 40% reduction in effective thermal conductivity (k<sub>eff</sub>) <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Diamond reinforcement significantly enhanced k<sub>eff</sub> only under low porosity levels, while diamond particle size (1–9 voxels) showed a positive correlation with conduction efficiency <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><p>The three-dimensional microstructural RVE models below illustrate the spatial distribution of diamond reinforcements and stochastic porosity across representative parameter sets.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-26-diem-tin-khoa-hoc/fig2.jpg\" alt=\"RVE microstructural representations under six parameter combinations: (a) 10%_1.0_27_7, (b) 50%_1.0_27_7, (c) 50%_2.0_27_7, (d) 50%_1.0_125_7, (e) 10%_1.0_125_7, and (f) 10%_1.0_125_3.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> RVE microstructural representations under six parameter combinations: (a) 10%_1.0_27_7, (b) 50%_1.0_27_7, (c) 50%_2.0_27_7, (d) 50%_1.0_125_7, (e) 10%_1.0_125_7, and (f) 10%_1.0_125_3. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Tian et al. (2026), “A Numerical Study of the Microstructure-Dependent Thermal Conductivity of Diamond-Reinforced Sintered Silver Composites”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19194246\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19194246</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Dielectric matrix systems have also seen progress. A biphenyl-containing polymaleimide/cyanate ester copolymer blend, P(BT-8/2), demonstrated excellent processing solubility (&gt;70% in toluene and 2-butanone), a 5% decomposition temperature of 392 °C, a glass transition temperature (T<sub>g</sub>) of 323 °C, and a low dielectric constant of 2.935 with a dielectric loss of 0.00572 at 10 GHz <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. For electrostatic dissipation in packaging enclosures, PA6 nanocomposites incorporating a 3D interconnected network of Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> MXene functionalized with multiwalled carbon nanotubes (M4C1 ratio) achieved high electrical conductivity while retaining polymer semi-crystallinity <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>At the structural execution level, executing welds and inspections inside congested spaces requires compliant robotics. A variable-geometry snake robot utilizing a three-stage motion optimization strategy decoupled obstacle avoidance from posture adjustment, significantly increasing task-space stiffness for operations inside aircraft wing boxes and nuclear reactor compartments <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Addressing pipe inspections, an ultra-thin snake robot fabricated from welded polyimide (PI) films formed a bidirectional bending differential stiffness actuator (BB-DSA), achieving a travel speed of 1.38 mm/s and a traction force of 14.57 mN <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Complementing these execution tools, structural design frameworks for welded aluminium trailer chassis demonstrate that accounting for weld access and member fatigue limits is far more critical than pure weight minimization <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Practical Implications for Vietnamese Industry and Education</h3><ul><li><strong>W-FSW implementation for shipbuilding and railway fabrication:</strong> The capability of wire-based FSW to accommodate plate misalignments up to 75% of material thickness offers domestic shipyards and rail manufacturers a robust method to mechanize large aluminium panel joining without requiring prohibitive machining tolerances.</li><li><strong>Deep cryogenic post-processing for metal additive manufacturing:</strong> R&amp;D centres and emerging metal 3D printing facilities in Vietnam can adopt deep cryogenic treatment (DCT) following solution treatment to refine grain structures and control precipitate kinetics, thereby overcoming anisotropic mechanical properties in WAAM parts.</li><li><strong>Interpass heat input management in automated GMAW:</strong> Quantitative data linking excessive heat input to severe Si/Mg grain boundary segregation provides local welding engineers with clear operational guidelines for restricting interpass temperatures to prevent hot cracking in high-strength aluminium assemblies.</li></ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Stefan Donaubauer",
+        "Amin Ghobishavi",
+        "Stefan Weihe",
+        "Martin Werz"
+      ],
+      "more_authors": false,
+      "title": "Compensation of Linear Misalignments in EN AW-6082-T6 Aluminium Sheets by Multi-Pin Wire-Based Friction Stir Welding",
+      "journal": "Journal of Manufacturing and Materials Processing",
+      "date": "2026-10-20",
+      "doi": "10.3390/jmmp10100446",
+      "url": "https://doi.org/10.3390/jmmp10100446",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "A M Sanjaya",
+        "Elka Faizal"
+      ],
+      "more_authors": false,
+      "title": "Pengaruh Laser Power dan Wobble Size terhadap Kekuatan Tarik pada Pengelasan Laser Material Aluminium Alloy 1100",
+      "journal": "Venus Jurnal Publikasi Rumpun Ilmu Teknik ",
+      "date": "2026-10-19",
+      "doi": "10.61132/venus.v4i5.1752",
+      "url": "https://doi.org/10.61132/venus.v4i5.1752",
+      "license": "cc-by-sa",
+      "topic": "welding"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Shucong Xu",
+        "Yafeng Zhao",
+        "Yu Chen",
+        "Hua Liu",
+        "K.A. Sadyrov",
+        "Siyang Chen"
+      ],
+      "more_authors": true,
+      "title": "Friction stir brazing of Al/Ti with a Zn interlayer: effects of rotational speed and welding speed on joint microstructure, properties and fracture mechanism",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-10-14",
+      "doi": "10.1016/j.jmrt.2026.10.131",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.10.131",
+      "license": "cc-by-nc-nd",
+      "topic": "brazing"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Jie Sun",
+        "Shengpeng Hu",
+        "Xiaochen Li",
+        "Xianpin Zhao",
+        "Naibin Chen",
+        "Chenbin Li"
+      ],
+      "more_authors": true,
+      "title": "Linking brazing temperature to microstructure-controlled cracking in Ni-Pd brazed Mo-5Re/Nb-1Zr dissimilar joint",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-10-14",
+      "doi": "10.1016/j.jmrt.2026.10.118",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.10.118",
+      "license": "cc-by-nc-nd",
+      "topic": "brazing"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Guilherme Santos Niekraszewicz",
+        "Iuri Dantas Passos da Mota",
+        "Gerhard Ett",
+        "Julia Fernandes Gabriel"
+      ],
+      "more_authors": false,
+      "title": "Bibliographic Analysis of Compressive Sealants for Metal Supported Solid Oxide Fuel Cells and Electrolyzers",
+      "journal": "Journal of Bioengineering, Technologies and Health",
+      "date": "2026-10-22",
+      "doi": "10.34178/jbth.v9i9.723",
+      "url": "https://doi.org/10.34178/jbth.v9i9.723",
+      "license": "",
+      "topic": "brazing"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Zhanhui Zhang",
+        "Dong Chen",
+        "Shenggui Chen",
+        "Zhiwen Feng",
+        "Yu Li",
+        "Lai Zhou"
+      ],
+      "more_authors": true,
+      "title": "Influence Mechanism of the Heat Input on the Element Distribution and Mechanical Behavior of Beads Welded by Pulsed GMAW",
+      "journal": "Coatings",
+      "date": "2026-10-19",
+      "doi": "10.3390/coatings16101243",
+      "url": "https://doi.org/10.3390/coatings16101243",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Chaoqun Fan",
+        "Yunlong Li",
+        "Dongdong Zhang",
+        "Liqing Wang",
+        "Kai Ma",
+        "Zhen Zhang"
+      ],
+      "more_authors": true,
+      "title": "Microstructural evolution and mechanical properties of a WA-DED Mg-8Gd-1Er-0.5Zr alloy under different post-solution cooling paths",
+      "journal": "Virtual and Physical Prototyping",
+      "date": "2026-10-23",
+      "doi": "10.1080/17452759.2026.2746842",
+      "url": "https://doi.org/10.1080/17452759.2026.2746842",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Bochao Li",
+        "Ruxin Cao",
+        "Zhe Xin",
+        "Jianhang Yao",
+        "Haiyang Fan",
+        "Kai Kang"
+      ],
+      "more_authors": true,
+      "title": "Harnessing additive manufacturing to architect hierarchical (TiB + Y 2 O 3 ) nanodispersions for exceptional strengthening of near-α titanium alloy",
+      "journal": "Virtual and Physical Prototyping",
+      "date": "2026-10-23",
+      "doi": "10.1080/17452759.2026.2742573",
+      "url": "https://doi.org/10.1080/17452759.2026.2742573",
+      "license": "cc-by-nc",
+      "topic": "metal_am"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Christian Sauer",
+        "Dennis Höfflin",
+        "Andreas Schiffler",
+        "Alexander Versch",
+        "Hartmann Jürgen"
+      ],
+      "more_authors": false,
+      "title": "Temporally Gated Active Thermography for Defect Detection in Laser-Based Powder Bed Fusion of Metals",
+      "journal": "Journal of Nondestructive Evaluation",
+      "date": "2026-10-24",
+      "doi": "10.1007/s10921-026-01419-6",
+      "url": "https://doi.org/10.1007/s10921-026-01419-6",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Zhengyang Tian",
+        "Jianxin Wu",
+        "Lunhu Hu",
+        "Yutai Su",
+        "Tiancai Cheng"
+      ],
+      "more_authors": false,
+      "title": "A Numerical Study of the Microstructure-Dependent Thermal Conductivity of Diamond-Reinforced Sintered Silver Composites",
+      "journal": "Materials",
+      "date": "2026-10-07",
+      "doi": "10.3390/ma19194246",
+      "url": "https://doi.org/10.3390/ma19194246",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Yiqing Xia",
+        "Renfei Zhang",
+        "Yuping Sheng",
+        "Chunguang Zhu",
+        "Junlong Zhu",
+        "Wilfred Emori"
+      ],
+      "more_authors": true,
+      "title": "Synthesis, Characterization and Dielectric Properties of Biphenyl Group Containing Polymaleimide and Cyanate Ester Copolymer",
+      "journal": "Journal of Applied Polymer Science",
+      "date": "2026-10-21",
+      "doi": "10.1002/app.71671",
+      "url": "https://doi.org/10.1002/app.71671",
+      "license": "",
+      "topic": "packaging"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "P. C. Srivastava",
+        "Beate Krause",
+        "Rani Rohini"
+      ],
+      "more_authors": false,
+      "title": "MXene ‐ MWCNTs Hybrid Reinforced PA6 Nanocomposites for Electronic Packaging Applications",
+      "journal": "Polymer Composites",
+      "date": "2026-10-17",
+      "doi": "10.1002/pc.71737",
+      "url": "https://doi.org/10.1002/pc.71737",
+      "license": "",
+      "topic": "packaging"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Yinjun Zhao",
+        "Pietro Davide Maddío",
+        "Alessandro Cammarata",
+        "Rosario Sinatra",
+        "Yingzhong Tian",
+        "Fengfeng Xi"
+      ],
+      "more_authors": false,
+      "title": "Enhancing snake robot stiffness in confined spaces: Pose optimization and motion strategy for pose adjustment",
+      "journal": "Mechanism and Machine Theory",
+      "date": "2026-10-05",
+      "doi": "10.1016/j.mechmachtheory.2026.106631",
+      "url": "https://doi.org/10.1016/j.mechmachtheory.2026.106631",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Kaisei Takahashi",
+        "Daisuke Yamaguchi",
+        "Shuichi Wakimoto",
+        "Takefumi Kanda"
+      ],
+      "more_authors": false,
+      "title": "Design and Fabrication of a Snake Robot Using Modular Pneumatic Film Actuators",
+      "journal": "Journal of Robotics and Mechatronics",
+      "date": "2026-10-19",
+      "doi": "10.20965/jrm.2026.p1393",
+      "url": "https://doi.org/10.20965/jrm.2026.p1393",
+      "license": "cc-by-nd",
+      "topic": "applications"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Vinod Sachin Mungade"
+      ],
+      "more_authors": false,
+      "title": "ADAPTIVE LIGHTWEIGHT STRUCTURAL DESIGN FRAMEWORK FOR ALUMINIUM TRAILER PLATFORMS USING MULTI-OBJECTIVE FINITE ELEMENT OPTIMIZATION AND MANUFACTURABILITY CONSTRAINTS",
+      "journal": "World Journal of Advanced Engineering Technology and Sciences",
+      "date": "2026-10-18",
+      "doi": "10.30574/wjaets.2026.21.1.0429",
+      "url": "https://doi.org/10.30574/wjaets.2026.21.1.0429",
+      "license": "",
+      "topic": "applications"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

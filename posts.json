@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-26-diem-tin-khoa-hoc",
+    "date": "2026-10-26",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Bản tin Công nghệ Hàn và Chế tạo Tiên tiến: Đột phá trong Bù Sai lệch Hình học, Kiểm soát Vi cấu trúc và Vật liệu Đóng gói Mới",
+    "title_en": "Welding and Advanced Manufacturing Digest: Breakthroughs in Misalignment Compensation, Microstructural Control, and Packaging Materials",
+    "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong công nghệ hàn ma sát khuấy bổ sung dây, kiểm soát vi tách pha trong hàn hồ quang kim loại xung và chế tạo bồi đắp hợp kim magie, titan. Bên cạnh đó là các giải pháp vật liệu đóng gói điện tử tiên tiến và cơ cấu robot kiểm tra, hàn trong không gian hẹp.",
+    "summary_en": "This digest highlights recent advances in wire-based friction stir welding for severe misalignment compensation, microsegregation control in pulsed GMAW, and additive manufacturing of magnesium and titanium alloys. It also covers novel thermal interface materials for electronic packaging and robotic systems designed for confined welding and inspection tasks.",
+    "tags": [
+      "welding technology",
+      "additive manufacturing",
+      "electronic packaging",
+      "brazing",
+      "friction stir welding"
+    ],
+    "cover": "images/blog/2026-10-26-diem-tin-khoa-hoc/fig1.jpg",
+    "file": "posts/2026-10-26-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-25-diem-tin-khoa-hoc",
     "date": "2026-10-25",
     "type": "digest",

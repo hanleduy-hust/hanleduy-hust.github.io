@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-27-diem-tin-khoa-hoc",
+    "date": "2026-10-27",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin Khoa học Công nghệ Hàn & Gia công Bồi đắp Kim loại (27/10/2026)",
+    "title_en": "Welding & Metal Additive Manufacturing Technology Digest (October 27, 2026)",
+    "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong công nghệ hàn laser tab pin, hàn hồ quang kích hoạt, hàn ma sát khuấy đồng và hợp kim nhôm in 3D, cùng giải pháp tối ưu hóa nhiệt luyện cho chế tạo bồi đắp kim loại L-PBF và WAAM. Các kết quả nghiên cứu mang lại chỉ dẫn định lượng quan trọng cho ứng dụng trong công nghiệp đóng tàu, đóng gói điện tử và vật liệu cấy ghép y sinh.",
+    "summary_en": "This digest highlights recent advances in laser wobble welding of battery tabs, activated GTAW, friction stir welding of copper and 3D-printed aluminum, alongside post-heat treatment strategies for L-PBF and WAAM components. The reported quantitative findings provide practical guidelines for shipbuilding automation, electronic packaging, and biomedical implant manufacturing.",
+    "tags": [
+      "Laser Welding",
+      "Friction Stir Welding",
+      "WAAM",
+      "LPBF",
+      "Electronic Packaging"
+    ],
+    "cover": "images/blog/2026-10-27-diem-tin-khoa-hoc/fig1.jpg",
+    "file": "posts/2026-10-27-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-26-diem-tin-khoa-hoc",
     "date": "2026-10-26",
     "type": "digest",

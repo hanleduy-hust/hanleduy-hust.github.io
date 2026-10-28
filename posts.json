@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-29-diem-tin-khoa-hoc",
+    "date": "2026-10-29",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Điểm tin công nghệ hàn và in 3D kim loại: Từ tối ưu hóa chùm tia laser, mô hình hóa nhiệt WAAM đến kiểm soát vi cấu trúc",
+    "title_en": "Welding & Metal AM Digest: From Laser Beam Shaping and WAAM Thermal Modeling to Microstructural Control",
+    "summary_vi": "Bản điểm tin tổng hợp 15 nghiên cứu mới nhất trong lĩnh vực công nghệ hàn, sản xuất bồi đắp kim loại và đóng gói điện tử ngày 29/10/2026. Các điểm nhấn bao gồm kỹ thuật phân bố chùm tia laser phẳng hạn chế nứt nẻ, mô hình hóa nhiệt WAAM từ mã CNC G-code và kiểm tra đồng trục OCT trong sản xuất cuộn dây xe điện.",
+    "summary_en": "This digest highlights 15 newly published studies in welding, metal additive manufacturing, and electronic packaging as of October 29, 2026. Key advancements include flat-top laser beam shaping for crack mitigation, CNC G-code-driven thermal modeling in WAAM, and coaxial OCT inspection for EV motor hairpin welding.",
+    "tags": [
+      "Additive Manufacturing",
+      "Laser Welding",
+      "WAAM",
+      "Friction Stir Welding",
+      "Microstructure"
+    ],
+    "cover": "images/blog/2026-10-29-diem-tin-khoa-hoc/fig1.jpg",
+    "file": "posts/2026-10-29-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-28-diem-tin-khoa-hoc",
     "date": "2026-10-28",
     "type": "digest",

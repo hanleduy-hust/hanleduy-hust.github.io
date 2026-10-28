@@ -1,0 +1,282 @@
+{
+  "id": "2026-10-28-diem-tin-khoa-hoc",
+  "date": "2026-10-28",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Bản tin Công nghệ Hàn & Gia công Bồi đắp Kim loại: Tối ưu hóa Hồ quang Đôi, Giám sát Laser Trực tuyến và Kỹ thuật Hỗ trợ Rung Cơ học",
+  "title_en": "Welding & Metal Additive Manufacturing Digest: Tandem Arc Optimization, In-Situ Laser Monitoring, and Vibration-Assisted Processing",
+  "summary_vi": "Bản tin tổng hợp các tiến bộ mới nhất trong công nghệ hàn và in 3D kim loại, từ phương pháp hàn hồ quang đôi TWIN GMAW, hàn hybrid laser xanh–hồng ngoại đến kiểm soát vi cấu trúc bằng dao động cơ học. Các nghiên cứu tập trung vào tối ưu hóa độ ngấu, giảm biến dạng tấm mỏng và phát triển hệ thống giám sát quang học nhằm nâng cao độ tin cậy trong công nghiệp hàng hải, kết cấu và điện tử.",
+  "summary_en": "This digest highlights recent breakthroughs in welding and metal additive manufacturing, spanning TWIN tandem GMAW optimization, blue–near-infrared hybrid laser DED, and vibration-assisted grain refinement. Key investigations focus on penetration modeling, thin-sheet distortion mitigation, and in-situ optical monitoring to enhance manufacturing reliability across marine, structural, and electronic applications.",
+  "tags": [
+    "Welding Technology",
+    "Metal Additive Manufacturing",
+    "Directed Energy Deposition",
+    "GMAW Optimization",
+    "Microstructure Control"
+  ],
+  "cover": "images/blog/2026-10-28-diem-tin-khoa-hoc/fig1.jpg",
+  "content_vi": "<p class=\"lead\">Bản tin khoa học hôm nay tổng hợp những nghiên cứu nổi bật về tối ưu hóa quy trình hàn hồ quang năng suất cao, mô phỏng vi cấu trúc có hỗ trợ ngoại lực cơ học và các bước tiến trong kiểm soát chất lượng in 3D kim loại. Trọng tâm nghiên cứu hướng tới việc nâng cao độ ngấu, giảm thiểu biến dạng tấm mỏng và thiết lập các mô hình dự đoán kích thước hình học chính xác trong chế tạo kết cấu hàng hải, kết cấu thép chịu lực và linh kiện điện tử.</p>\n<h3>1. Công nghệ hàn trong ngành đóng tàu và kết cấu công nghiệp</h3>\n<p>Chế tạo các cấu kiện chịu ăn mòn phục vụ môi trường biển đòi hỏi sự kết hợp khắt khe giữa cơ tính và độ bền điện hóa. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã tổng quan toàn diện các quy trình hàn phổ biến như hàn hồ quang vonfram trong khí bảo vệ (GTAW), hàn hồ quang kim loại trong khí bảo vệ (GMAW), hàn hồ quang tay (SMAW), hàn hồ quang dây lõi thuốc (FCAW), hàn hồ quang chìm (SAW) và hàn khuấy ma sát (FSW) áp dụng trên các vật liệu mác cao như thép không gỉ duplex, hợp kim nhôm, đồng-niken và siêu hợp kim niken. Nghiên cứu nhấn mạnh cơ chế ăn mòn điểm, ăn mòn kẽ hở và nứt do ăn mòn ứng suất, đồng thời chỉ ra nhu cầu cấp thiết về các thử nghiệm phơi nhiễm dài hạn trong nước biển thực tế <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p>\n<p>Sơ đồ dưới đây minh họa các phương pháp hàn chủ đạo thường được áp dụng trong lĩnh vực đóng tàu và kết cấu công trình biển:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Các kỹ thuật hàn thông dụng được sử dụng trong chế tạo chi tiết hàng hải.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Các kỹ thuật hàn thông dụng được sử dụng trong chế tạo chi tiết hàng hải. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – John et al. (2026), “Evaluation of Welding Techniques for Fabricating Corrosion-Resistant Marine Components”, <em>Zenodo (CERN European Organization for Nuclear Research)</em>, <a href=\"https://doi.org/10.5281/zenodo.23660464\" target=\"_blank\" rel=\"noopener\">doi:10.5281/zenodo.23660464</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Trong ứng dụng cụ thể trên tàu kéo, chất lượng mối hàn ống nối bích (pipe-to-plate) của hệ thống nhiên liệu đóng vai trò sống còn. Nghiên cứu thực nghiệm <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> trên liên kết giữa ống thép không gỉ đúc ASTM A106 Grade B và tấm thép SS400 bằng phương pháp SMAW (sử dụng que hàn E6013 và lót đáy bằng E7016 LB-52U) tại các mức dòng điện 60 A, 75 A và 90 A cho thấy kim loại mối hàn luôn đạt độ cứng cao nhất. Giá trị độ cứng cực đại đạt 183,86 HV đối với thiết kế vát mép đơn (single bevel) và 187,03 HV đối với mối ghép không vát mép (non-bevel) tại dòng điện 90 A, trong đó kết cấu không vát mép mang lại sự phân bố độ cứng đồng đều hơn <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Ở khía cạnh gia công kết cấu phụ trợ, quy trình mô hình hóa số bằng SOLIDWORKS kết hợp hàn hồ quang điện đã được tiêu chuẩn hóa nhằm chế tạo khung bệ chịu tải lớn bằng thép carbon cho thiết bị hỗ trợ lắp đặt trục cán (ABPIR), bảo đảm an toàn vận hành và giảm thiểu sai số gá đặt <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p>\n<h3>2. Giám sát quang phổ plasma và vật liệu vi liên kết trong đóng gói điện tử</h3>\n<p>Kiểm soát khuyết tật trong quá trình hàn chùm tia laser trên thép kết cấu 09G2S đòi hỏi các giải pháp giám sát thời gian thực không phá hủy. Nhóm nghiên cứu <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> đã ứng dụng quang phổ phát xạ quang học (OES) từ luồng plasma cảm ứng laser sợi quang liên tục ở ba dải bước sóng khác nhau. Thông qua phân tích các đặc trưng thống kê gồm giá trị trung bình, độ lệch chuẩn và độ nhọn (kurtosis), mối tương quan chặt chẽ giữa tín hiệu bức xạ plasma và kích thước các khuyết tật hình học như cháy chân, không ngấu, lõm chân hay võng mối hàn đã được xác lập <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<p>Hình ảnh chụp mặt cắt ngang dưới đây phân loại các dạng khuyết tật hình học điển hình phát sinh trong mối hàn laser:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Ảnh mặt cắt ngang mẫu hàn thể hiện các dạng khuyết tật: cháy chân liên tục (a), lõm chân (b), không ngấu (c), thấu quá mức (d), võng mối hàn (e) và lệch mép (f).\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Ảnh mặt cắt ngang mẫu hàn thể hiện các dạng khuyết tật: cháy chân liên tục (a), lõm chân (b), không ngấu (c), thấu quá mức (d), võng mối hàn (e) và lệch mép (f). <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Gresko et al. (2026), “Plasma plume radiation spectrograms for assessing weld quality during laser welding of steel”, <em>Scientific and technical journal of information technologies mechanics and optics</em>, <a href=\"https://doi.org/10.17586/2226-1494-2026-26-5-909-918\" target=\"_blank\" rel=\"noopener\">doi:10.17586/2226-1494-2026-26-5-909-918</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Bên cạnh hàn vĩ mô, lĩnh vực đóng gói điện tử độ tin cậy cao cũng đạt bước tiến mới trong việc phát triển chất trợ kết dính không chì. Khảo sát ảnh hưởng của tỷ lệ Bi<sub>2</sub>O<sub>3</sub>/B<sub>2</sub>O<sub>3</sub> trong hệ thủy tinh Bi<sub>2</sub>O<sub>3</sub>–B<sub>2</sub>O<sub>3</sub>–TeO<sub>2</sub> đối với hồ dẫn điện vàng (Au) màng dày chỉ ra rằng việc dư thừa Bi<sub>2</sub>O<sub>3</sub> gây phân tách pha cục bộ, trong khi dư thừa B<sub>2</sub>O<sub>3</sub> làm suy giảm độ thấm ướt <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Hệ thủy tinh tối ưu A3 giúp màng dẫn P3 đạt độ xốp chỉ 3,12%, điện trở mặt 2,92 mΩ/sq và độ bám dính giao diện đạt 3,78 N/mm<sup>2</sup>. Độ biến thiên điện trở mặt duy trì ở mức cực thấp (+0,96% và −1,02%) sau hai chu kỳ nung lại, đáp ứng yêu cầu đóng gói xanh không chứa chì <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<h3>3. Tối ưu hóa hàn hồ quang năng suất cao và độ bền kết cấu sau cháy</h3>\n<p>Quy trình hàn GMAW hồ quang đôi (TWIN Tandem GMAW) cho phép đạt tốc độ đắp cực cao nhờ sử dụng hai dây hàn độc lập trong cùng một vũng hàn chảy. Nghiên cứu thực nghiệm trên thép S355J2+N dày 12 mm với 44 lượt chạy lặp lại ba lần (132 mẫu thử) đã khảo sát ảnh hưởng tương hỗ giữa tốc độ hàn, cạnh cùn (root face) và chế độ hồ quang (xung hoặc phun) của dây dẫn trước và dây sau <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Sử dụng phương pháp tối ưu hóa số học, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> đã xác định bộ thông số tối ưu gồm tốc độ hàn 54,39 cm/min, cạnh cùn 1,34 mm với chế độ hồ quang xung cho cả hai dây, mang lại độ thấu 12,00 mm, chiều rộng mối hàn 18,02 mm, chiều cao kim loại đắp 1,22 mm với hàm độ thỏa dụng tuyệt đối 1,000.</p>\n<p>Biểu đồ dưới đây thể hiện bước kiểm tra giả định phân phối chuẩn đối với độ ngấu thu được từ mô hình toán học:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Kiểm tra giả định phân phối chuẩn đối với độ ngấu mối hàn trong quá trình tối ưu hóa.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Kiểm tra giả định phân phối chuẩn đối với độ ngấu mối hàn trong quá trình tối ưu hóa. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Jagnjić et al. (2026), “Experimental Investigation and Optimization of Welding Speed, Root Face and Arc-Mode Distribution in TWIN Tandem GMAW”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110453\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110453</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Đối với kết cấu dạng hộp rỗng (SHS) thành mỏng 2,5 mm chế tạo bằng in 3D kim loại hồ quang dây (WAAM), việc đánh giá cơ tính sau hỏa hoạn là tiêu chí an toàn cốt lõi. Khảo sát 32 mẫu thử từ các dây hàn ER308L, ER2209, ER70S và ER120S sau khi ủ nhiệt từ 300 °C đến 1000 °C trong lò điện cho thấy thép không gỉ austenit ER308L duy trì độ bền kéo và độ dẻo rất tốt <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Ngược lại, toàn bộ mẫu thép không gỉ duplex ER2209 chịu nhiệt độ từ 850 °C trở lên đều bị đứt gãy sớm trước khi ghi nhận độ bền kéo giới hạn. Các mô hình cấu tạo hiệu chỉnh đã mô phỏng chính xác ứng xử với sai số căn bậc hai chuẩn hóa trung vị chỉ từ 1,87% đến 3,60% <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<h3>4. Đột phá trong gia công bồi đắp kim loại (DED và L-PBF)</h3>\n<p>Lắng đọng năng lượng định hướng bằng bột kim loại (DED-LP) là giải pháp hàng đầu để chế tạo và sửa chữa chi tiết giá trị cao, song việc kiểm soát vũng hàn đòi hỏi thuật toán xử lý hình ảnh thị giác đơn cực kỳ nhạy bén <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Bằng cách áp dụng phép chiếu afin để chuyển đổi biên dạng ngưỡng cường độ sáng sang tọa độ thực, sai số phần trăm tuyệt đối trung bình (MAPE) đạt 2,5% cho chiều rộng và 16,2% cho chiều cao đường đắp. Khi tích hợp mô hình hồi quy quá trình Gauss (GPR), độ chính xác được nâng cao vượt bậc với MAPE giảm xuống chỉ còn 1,4% cho chiều rộng và 3,7% cho chiều cao <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<p>Nhằm khắc phục độ phản xạ cao của đồng nguyên chất T2 dưới tia laser hồng ngoại, công nghệ DED hybrid kết hợp laser xanh và cận hồng ngoại đã được triển khai để đắp hợp kim CuCrZr với mục tiêu khống chế độ pha loãng ở mức 15% <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Các thông số tối ưu hóa gồm công suất laser cận hồng ngoại 2700 W, tốc độ cấp bột 12 g/min, tốc độ quét 18 mm/s và khoảng dịch bước quét 0,7 mm đã tạo ra lớp đắp có độ pha loãng trung bình 14,81%, mật độ tương đối đạt xấp xỉ 99,99%. Độ vi cứng tăng 15,90%, hệ số ma sát trung bình giảm 20,5%, trong khi thể tích mài mòn và tốc độ mòn riêng đều giảm 49,9% so với nền đồng <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<p>Ảnh dưới đây cung cấp phổ phân bố kích thước hạt và hình thái hạt bột CuCrZr sử dụng trong quá trình đắp:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Phân bố kích thước hạt và ảnh SEM hình thái bột hợp kim CuCrZr: (a) phân bố kích thước hạt; (b) ảnh SEM.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Phân bố kích thước hạt và ảnh SEM hình thái bột hợp kim CuCrZr: (a) phân bố kích thước hạt; (b) ảnh SEM. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Liu et al. (2026), “Process Optimization and Performance Evaluation of CuCrZr Alloy Deposited by Blue–Near-Infrared Hybrid Laser Directed Energy Deposition”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214488\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214488</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Đối với công nghệ nung chảy lớp bột bằng laser (L-PBF), việc sẵn sàng sản xuất hàng loạt đang đối mặt với nút thắt về quy trình kiểm định trước khi vận hành. Một tổng quan <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> chỉ ra rằng các phương pháp hiện hành phụ thuộc quá mức vào các chi tiết mẫu chuẩn hoặc thử nghiệm phá hủy tốn kém, đòi hỏi phải tiêu chuẩn hóa các giải pháp kiểm tra nhanh và kinh tế. Song song đó, chụp cắt lớp quang học (Optical Tomography - OT) nổi lên như một kỹ thuật giám sát từng lớp theo thời gian thực giàu tiềm năng, mở đường cho điều khiển vòng kín và xây dựng bản sao số (digital twin) <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Ở cấp độ luyện kim, sự tích tụ ứng suất dư trong thép xử lý L-PBF được phân tách rõ rệt giữa thép không chuyển pha (như thép austenit 316L, chịu chi phối bởi ứng suất nhiệt) và thép có chuyển pha trạng thái rắn (như thép làm khuôn nóng H13, nơi biến dạng do chuyển pha martensite hoặc bainite triệt tiêu một phần co ngót nhiệt) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p>\n<h3>5. Kiểm soát vi cấu trúc và giảm biến dạng tấm mỏng bằng dao động mỏ hàn</h3>\n<p>Hàn hồ quang tấm mỏng hợp kim nhôm Al-Mg thường đối mặt với nguy cơ biến dạng ngoài mặt phẳng nghiêm trọng và cấu trúc hạt cột thô to do mật độ nhiệt tập trung. Khi hàn đối đầu tấm hợp kim nhôm AA5083-H112 dày 2 mm sử dụng dây hàn ER5183 trên hệ thống hàn CMT có hỗ trợ dao động mỏ hàn hình sin, biên độ dao động đã tác động sâu sắc đến sự khuấy đảo cơ học vũng hàn <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Biên độ tối ưu được ghi nhận ở mức 2 mm, giúp hạt được làm mịn đáng kể và chuyển sang dạng hạt cầu đẳng hướng đồng thời giảm nhẹ cường độ vân định hướng tinh thể.</p>\n<p>Biểu đồ dưới đây thống kê kích thước hạt tại vùng tâm mối hàn và vùng ranh giới nóng chảy, phản ánh hiệu quả tinh luyện hạt rõ rệt khi mỏ hàn dao động:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Thống kê kích thước hạt tại vùng tâm mối hàn và đường nóng chảy khi có và không có dao động mỏ hàn.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Thống kê kích thước hạt tại vùng tâm mối hàn và đường nóng chảy khi có và không có dao động mỏ hàn. <span class=\"fig-credit\">Nguồn: Hình 9 trong bài gốc – Wang et al. (2026), “Torch Oscillation-Induced Microstructure Evolution, Deformation Mitigation and Mechanical Property Enhancement in Thin-Plate 5083 Aluminum Alloy Butt Welds”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19204344\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19204344</a> [<a href=\"#ref-13\">13</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Ở biên độ dao động 2 mm, mối hàn đạt giới hạn bền kéo 219,03 MPa, giới hạn chảy 112,14 MPa và độ giãn dài đạt 18,45% với bề mặt đứt gãy dạng lúm lõm dẻo điển hình <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Tuy nhiên, nếu biên độ tăng vượt quá 3 mm, vũng hàn sẽ mất ổn định, dẫn đến các khuyết tật ngậm khí và không ngấu cục bộ, khiến cơ tính suy giảm mạnh sang trạng thái phá hủy giòn <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p>\n<h3>6. Mô phỏng số hóa động học nhánh tinh thể dưới hỗ trợ rung cơ học</h3>\n<p>Bên cạnh dao động mỏ hàn, việc áp dụng rung động cơ học tần số thấp trong quá trình hàn GMAW thép chịu thời tiết Q450NQR1 đã mở ra khả năng can thiệp trực tiếp vào quá trình kết tinh kim loại mối hàn <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Nhóm tác giả đã phát triển mô hình đa tỷ lệ kết hợp giữa trường nhiệt vĩ mô (phần tử hữu hạn) và thuật toán tế bào tự động (Cellular Automaton - CA), tích hợp cơ chế bẻ gãy nhánh tinh thể dưới tác động sóng cơ học <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p>\n<p>Hình ảnh mô phỏng trường nhiệt độ, dòng chảy vũng hàn và sự tiến triển hình thái nhánh tinh thể được thể hiện chi tiết dưới đây:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig6.jpg\" alt=\"(a) Kết quả mô phỏng trường nhiệt độ và dòng chảy, (b) trường nhiệt độ mặt cắt YZ, (c) hình thái phát triển nhánh tinh thể.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> (a) Kết quả mô phỏng trường nhiệt độ và dòng chảy, (b) trường nhiệt độ mặt cắt YZ, (c) hình thái phát triển nhánh tinh thể. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Wei et al. (2026), “Numerical Study on Dendritic Growth During Solidification in Vibration-Assisted GMAW of Q450NQR1 Steel Using a Coupled Temperature–Cellular Automaton Model”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19204328\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19204328</a> [<a href=\"#ref-14\">14</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Kết quả mô phỏng và thực nghiệm khẳng định rung động tần số thấp thúc đẩy các nhánh tinh thể bị bẻ gãy chuyển hóa thành các mầm tinh thể ổn định. Tại biên độ rung 0,10 mm, khi tăng tần số dao động từ 0 lên 50 Hz, kích thước hạt trung bình đã giảm từ 68,5 µm xuống còn 35,2 µm, tương ứng với tỷ lệ làm mịn hạt đạt tới 48,6% và đồng thời ức chế hiện tượng phân thiên thiên tích nguyên tố hợp kim <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p>\n<h3>Hàm ý thực tiễn cho kỹ thuật hàn và đào tạo tại Việt Nam</h3>\n<ul>\n<li><strong>Chuyển dịch sang công nghệ hàn hồ quang năng suất cao:</strong> Các doanh nghiệp đóng tàu và gia công kết cấu thép lớn tại Việt Nam có thể ứng dụng công nghệ hàn GMAW hồ quang đôi (TWIN Tandem) hoặc kết hợp dao động mỏ hàn trên dây chuyền tự động nhằm tối ưu hóa độ ngấu trên thép dày hoặc khống chế biến dạng trên tôn mỏng, giảm đáng kể chi phí nắn phẳng sau hàn.</li>\n<li><strong>Đầu tư vào giám sát quang học và gia công bồi đắp lai ghép:</strong> Việc kết hợp laser xanh và laser hồng ngoại trong in 3D hợp kim đồng độ dẫn nhiệt cao mở ra tiềm năng lớn cho chế tạo khuôn mẫu và linh kiện tản nhiệt phức tạp, thay thế phương pháp gia công cắt gọt truyền thống.</li>\n<li><strong>Cập nhật chương trình đào tạo kỹ thuật:</strong> Các trường đại học kỹ thuật cần đẩy mạnh giảng dạy mô phỏng số vi cấu trúc (như mô hình Cellular Automaton) kết hợp công nghệ xử lý hình ảnh nhiệt/quang phổ thời gian thực, trang bị cho sinh viên và học viên cao học năng lực vận hành dây chuyền sản xuất thông minh theo định hướng Công nghiệp 4.0.</li>\n</ul>",
+  "content_en": "<p class=\"lead\">Today's scientific digest highlights major advancements in high-productivity arc welding optimization, multiscale solidification modeling under external mechanical dynamic fields, and quality control strategies for metal additive manufacturing. These studies focus on improving penetration predictability, mitigating thin-sheet distortion, and establishing robust optical and spectroscopic monitoring frameworks for critical marine, structural, and electronic applications.</p>\n<h3>1. Welding Technologies in Marine Engineering and Heavy Steel Fabrication</h3>\n<p>Fabricating corrosion-resistant marine structures exposed to harsh seawater environments demands rigorous control over metallurgical and electrochemical integrity. A comprehensive review <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> examined dominant welding techniques including gas tungsten arc welding (GTAW), gas metal arc welding (GMAW), shielded metal arc welding (SMAW), flux-cored arc welding (FCAW), submerged arc welding (SAW), and friction stir welding (FSW). Materials analyzed encompassed duplex stainless steels, aluminum, copper-nickel, and nickel-based superalloys. The investigation underscored degradation pathways including pitting, crevice, and stress corrosion cracking, identifying a key industrial need for standardized comparative protocols and extended in-situ exposure trials <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p>\n<p>The diagram below presents common welding processes implemented in the fabrication of marine components:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Common welding techniques used in marine component fabrication.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Common welding techniques used in marine component fabrication. <span class=\"fig-credit\">Source: Fig. 2 of the original article – John et al. (2026), “Evaluation of Welding Techniques for Fabricating Corrosion-Resistant Marine Components”, <em>Zenodo (CERN European Organization for Nuclear Research)</em>, <a href=\"https://doi.org/10.5281/zenodo.23660464\" target=\"_blank\" rel=\"noopener\">doi:10.5281/zenodo.23660464</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>In maritime auxiliary systems, such as tugboat fuel oil piping, the hardness distribution across pipe-to-plate joints is critical to service reliability. Experimental trials <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> joining seamless ASTM A106 Grade B pipe to SS400 structural plate via SMAW (using E6013 with an E7016 LB-52U root pass) under currents of 60 A, 75 A, and 90 A demonstrated that the weld metal consistently exhibited the highest hardness. Peak values reached 183.86 HV for single bevel and 187.03 HV for non-bevel configurations at 90 A, with non-bevel joints providing a noticeably more stable hardness profile across the fusion boundary <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. In heavy maintenance tooling, SOLIDWORKS modeling coupled with electric arc welding has been systematically documented to fabricate high-strength carbon steel base frames for roll impression installation equipment (ABPIR), ensuring structural rigidity under high operational loads <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p>\n<h3>2. Plasma Plume Spectroscopic Diagnostics and Microjoining Packaging Materials</h3>\n<p>In-line quality assessment of laser beam welding on 09G2S low-alloy structural steel requires sensitive, non-destructive sensing modalities. A monitoring framework utilizing optical emission spectroscopy (OES) captured laser-induced plasma emissions across three spectral bands during continuous-wave fiber laser welding <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Statistical indicators extracted from the spectrograms—including the mean, standard deviation, and kurtosis—demonstrated strong correlations with the physical dimensions of defects such as continuous undercut, root concavity, lack of penetration, excess penetration, and sagging <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<p>The cross-sectional optical micrographs below show characteristic weld profile defects detected during the laser welding trials:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Cross-sectional images of weld samples exhibiting various defects: continuous undercut (a), root concavity (b), lack of penetration (c), excess penetration (d), sagging (e), and linear misalignment (f).\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Cross-sectional images of weld samples exhibiting various defects: continuous undercut (a), root concavity (b), lack of penetration (c), excess penetration (d), sagging (e), and linear misalignment (f). <span class=\"fig-credit\">Source: Fig. 2 of the original article – Gresko et al. (2026), “Plasma plume radiation spectrograms for assessing weld quality during laser welding of steel”, <em>Scientific and technical journal of information technologies mechanics and optics</em>, <a href=\"https://doi.org/10.17586/2226-1494-2026-26-5-909-918\" target=\"_blank\" rel=\"noopener\">doi:10.17586/2226-1494-2026-26-5-909-918</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>In microelectronics packaging, the transition to green materials has driven the formulation of lead-free glass binders for thick-film gold conductor pastes. Investigating the Bi<sub>2</sub>O<sub>3</sub>/B<sub>2</sub>O<sub>3</sub> ratio in Bi<sub>2</sub>O<sub>3</sub>–B<sub>2</sub>O<sub>3</sub>–TeO<sub>2</sub> glasses revealed that excessive bismuth oxide induces localized glass-phase segregation, whereas surplus boron oxide impairs substrate wettability and pore filling <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. The optimized A3 glass composition yielded sintered P3 thick films with a low porosity of 3.12%, sheet resistance of 2.92 mΩ/sq, and interfacial adhesion of 3.78 N/mm<sup>2</sup>. The sheet resistance drifted by only +0.96% and −1.02% after two refiring cycles, demonstrating superior electrical stability for high-reliability packages <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<h3>3. Multi-Wire Arc Welding Optimization and Post-Fire WAAM Integrity</h3>\n<p>TWIN tandem gas metal arc welding (GMAW) operates two independent consumable wires within a shared molten pool to achieve elevated deposition rates. Robotic welding experiments on 12 mm S355J2+N structural steel comprising 44 parameter runs evaluated in triplicate (132 specimens total) mapped the interactions among welding speed, root face, and arc modes (pulsed vs. spray) between the leading and trailing wires <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Numerical optimization successfully established an operating point at a travel speed of 54.39 cm/min, root face of 1.34 mm, and dual pulsed-arc operation, delivering 12.00 mm complete penetration, 18.02 mm weld width, and 1.22 mm excess weld reinforcement with an overall desirability of 1.000 <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n<p>The diagnostic plot below illustrates the verification of the normal distribution assumption for weld penetration modeling:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Checking the assumption on normal distribution of weld penetration.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Checking the assumption on normal distribution of weld penetration. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Jagnjić et al. (2026), “Experimental Investigation and Optimization of Welding Speed, Root Face and Arc-Mode Distribution in TWIN Tandem GMAW”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110453\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110453</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Regarding wire arc additive manufacturing (WAAM), the post-fire structural integrity of 2.5 mm wall thickness square hollow sections (SHS) was investigated across four wire alloys: austenitic ER308L, duplex ER2209, and carbon steels ER70S and ER120S <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Across 32 coupon specimens subjected to electric furnace exposure between 300 °C and 1000 °C, ER308L exhibited superior retention of tensile strength and ductility upon cooling. Conversely, all ER2209 duplex specimens exposed to 850 °C and above suffered brittle fracture before reaching measurable ultimate tensile strength or strain limits. Modified constitutive models evaluated against existing literature curves yielded median normalized root-mean-square errors of only 1.87% to 3.60% <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<h3>4. Advances in Metal Additive Manufacturing: DED and L-PBF</h3>\n<p>In blown-powder directed energy deposition (DED-LP), recovering solidified bead geometry from monocular melt pool imagery remains a major computer vision challenge. By combining intensity-based contour segmentation with affine projection calibration, an analytical model achieved mean absolute percentage errors (MAPE) of 2.5% for bead width and 16.2% for height <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. By augmenting these geometric proxies with process parameters in a Gaussian process regression (GPR) framework, the prediction errors were reduced to 1.4% for width and 3.7% for height across varying traverse speeds <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<p>To overcome the acute near-infrared reflectivity of pure T2 copper substrates, a hybrid blue and near-infrared laser DED process was formulated to deposit CuCrZr alloy targeted at a 15% dilution level <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Following Taguchi optimization supported by FLOW-3D hydrodynamic simulations, the ideal parameter set—2700 W near-infrared laser power, 12 g/min powder feed rate, 18 mm/s scanning speed, and 0.7 mm hatching distance—achieved 14.81% mean dilution and approximately 99.99% relative density. Relative to the pure copper substrate, deposit microhardness increased by 15.90%, friction coefficient dropped by 20.5%, and volumetric wear dropped by 49.9% <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<p>The powder characterization below depicts the size distribution and spherical SEM morphology of the CuCrZr alloy feedstock:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Particle size distribution and SEM morphology of the CuCrZr alloy powder: (a) particle size distribution; (b) SEM image.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Particle size distribution and SEM morphology of the CuCrZr alloy powder: (a) particle size distribution; (b) SEM image. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Liu et al. (2026), “Process Optimization and Performance Evaluation of CuCrZr Alloy Deposited by Blue–Near-Infrared Hybrid Laser Directed Energy Deposition”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214488\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214488</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>In laser powder bed fusion (L-PBF), industrial serial readiness requires rapid machine qualification workflows to replace cumbersome physical artifacts and destructive testing protocols <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Simultaneously, optical tomography (OT) is advancing as a leading candidate for full-field, layer-wise in-situ defect detection, facilitating real-time digital twins and closed-loop control <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. On a microstructural level, residual stress buildup in L-PBF steels diverges fundamentally between non-transforming alloys (e.g., austenitic 316L, dominated by thermal contraction gradients) and phase-transforming tool steels (e.g., H13), where martensitic or bainitic transformation strains dynamically interact with thermal shrinkage stresses <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p>\n<h3>5. Microstructural Refinement and Distortion Mitigation via Torch Oscillation</h3>\n<p>Arc welding of thin-gauge Al-Mg sheet often suffers from pronounced out-of-plane buckling and coarse columnar grain growth induced by concentrated heat input. Sinusoidal torch-oscillation-assisted cold metal transfer (CMT) was applied to butt joints of 2 mm-thick AA5083-H112 sheets using ER5183 filler <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Varying oscillation amplitudes between 0 mm and 4 mm revealed that appropriate oscillation redistributes heat flux and induces hydrodynamic molten-pool stirring, which refines grains and transitions the fusion zone toward equiaxed morphologies while reducing texture intensity.</p>\n<p>The statistical grain size distribution below demonstrates the significant grain refinement achieved in the weld center and fusion line with torch oscillation:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Grain size statistics for the weld center zone and fusion line inner side with and without torch oscillation.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Grain size statistics for the weld center zone and fusion line inner side with and without torch oscillation. <span class=\"fig-credit\">Source: Fig. 9 of the original article – Wang et al. (2026), “Torch Oscillation-Induced Microstructure Evolution, Deformation Mitigation and Mechanical Property Enhancement in Thin-Plate 5083 Aluminum Alloy Butt Welds”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19204344\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19204344</a> [<a href=\"#ref-13\">13</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>At an optimal amplitude of 2 mm, the joint attained an ultimate tensile strength of 219.03 MPa, yield strength of 112.14 MPa, and elongation of 18.45%, accompanied by typical ductile dimple fracture surfaces <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. However, exceeding an amplitude of 3 mm induced molten pool instability, promoting porosity and lack-of-fusion defects that caused severe embrittlement and premature failure <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p>\n<h3>6. Numerical Solidification Modeling in Vibration-Assisted Welding</h3>\n<p>The application of low-frequency external mechanical vibration during gas metal arc welding of Q450NQR1 weathering steel was analyzed through a coupled macroscopic finite element thermal field and microscopic Cellular Automaton (CA) dendrite growth model <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. The numerical framework incorporated dynamic dendrite fragmentation mechanics induced by fluid shear and oscillatory pressure waves.</p>\n<p>The multiscale simulation results below depict the thermal-fluid field and the corresponding dendritic solidification morphology:</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-10-28-diem-tin-khoa-hoc/fig6.jpg\" alt=\"(a) Simulation results of temperature and flow fields, (b) YZ section temperature field, (c) dendrite growth morphology.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> (a) Simulation results of temperature and flow fields, (b) YZ section temperature field, (c) dendrite growth morphology. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Wei et al. (2026), “Numerical Study on Dendritic Growth During Solidification in Vibration-Assisted GMAW of Q450NQR1 Steel Using a Coupled Temperature–Cellular Automaton Model”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19204328\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19204328</a> [<a href=\"#ref-14\">14</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Both simulation and experimental trials confirmed that dynamic vibration fragments primary dendrite arms, converting them into dispersed, stable nucleation sites. At a mechanical amplitude of 0.10 mm, increasing vibration frequency from 0 to 50 Hz reduced the average grain size from 68.5 µm to 35.2 µm—a refinement efficiency of 48.6%—while notably suppressing macroscopic solute segregation throughout the weld center <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p>\n<h3>Practical Implications for Industry and Engineering Education</h3>\n<ul>\n<li><strong>Adoption of Advanced Multi-Wire and Oscillating Arc Systems:</strong> Heavy fabrication and shipyard facilities in Vietnam can implement TWIN tandem GMAW or transverse torch oscillation to achieve deep penetration on thick plates or mitigate out-of-plane distortion in thin aluminum sheets, substantially reducing post-weld rework and straightening costs.</li>\n<li><strong>Investment in Hybrid Additive Processing of Conductive Alloys:</strong> Utilizing blue–infrared hybrid laser systems enables additive deposition of high-conductivity copper alloys with near-complete density (&gt;99.99%), opening up localized repair and surface enhancement opportunities for die-casting tools and marine heat-exchange components.</li>\n<li><strong>Integration of Data-Driven In-Situ Diagnostics in Curricula:</strong> Universities and technical training centers should incorporate real-time spectroscopic analysis, monocular melt pool computer vision, and multiscale solidification modeling (such as Cellular Automaton frameworks) into advanced welding engineering and manufacturing curricula.</li>\n</ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Andrew John",
+        "Siedougha Clement Afoegba",
+        "Samuel Bagudu Elkanah"
+      ],
+      "more_authors": false,
+      "title": "Evaluation of Welding Techniques for Fabricating Corrosion-Resistant Marine Components",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "date": "2026-10-26",
+      "doi": "10.5281/zenodo.23660464",
+      "url": "https://doi.org/10.5281/zenodo.23660464",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Yudi Andika",
+        "Moh. Syaiful Amri",
+        "Titus Hadiwikarta"
+      ],
+      "more_authors": false,
+      "title": "Analysis of the Effect of Current Variation and Pipe-to-Plate Joint Design on the Hardness of Fuel Oil Tank Piping in Tugboats",
+      "journal": "ARMATUR Artikel Teknik Mesin & Manufaktur",
+      "date": "2026-10-17",
+      "doi": "10.24127/armatur.v8i1.12908",
+      "url": "https://doi.org/10.24127/armatur.v8i1.12908",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Ahmad Maulana Fardiansyah",
+        "Rachmat Firdaus"
+      ],
+      "more_authors": false,
+      "title": "Design and Fabrication of the Base Frame for the Roll Impression Installation Assistance Tool (ABPIR)",
+      "journal": "Procedia of Engineering and Life Science",
+      "date": "2026-10-17",
+      "doi": "10.21070/pels.v10i1.2918",
+      "url": "https://doi.org/10.21070/pels.v10i1.2918",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Vladislav R. Gresko",
+        "A.D. Dolgopolov",
+        "Mikhail Sokolov"
+      ],
+      "more_authors": false,
+      "title": "Plasma plume radiation spectrograms for assessing weld quality during laser welding of steel",
+      "journal": "Scientific and technical journal of information technologies mechanics and optics",
+      "date": "2026-10-25",
+      "doi": "10.17586/2226-1494-2026-26-5-909-918",
+      "url": "https://doi.org/10.17586/2226-1494-2026-26-5-909-918",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Xinyu Zhou",
+        "Renlong Zhu",
+        "Zhiqiang Xia",
+        "Qiang Wen",
+        "Zhen Pang",
+        "Zhuo Qian"
+      ],
+      "more_authors": true,
+      "title": "Effects of Bi2O3/B2O3 Ratio in Lead-Free Glass on Sintering Behavior and Thick-Film Performance of Gold Conductor Pastes",
+      "journal": "Inorganics",
+      "date": "2026-10-26",
+      "doi": "10.3390/inorganics14110274",
+      "url": "https://doi.org/10.3390/inorganics14110274",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Mario Jagnjić",
+        "Dejan Marić",
+        "Tomislav Šolić",
+        "Iva Deanović"
+      ],
+      "more_authors": false,
+      "title": "Experimental Investigation and Optimization of Welding Speed, Root Face and Arc-Mode Distribution in TWIN Tandem GMAW",
+      "journal": "Journal of Manufacturing and Materials Processing",
+      "date": "2026-10-23",
+      "doi": "10.3390/jmmp10110453",
+      "url": "https://doi.org/10.3390/jmmp10110453",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Senbin Huang",
+        "Yan Lu",
+        "Blankenhagen Jakob",
+        "Mensinger Martin",
+        "Cai Yancheng"
+      ],
+      "more_authors": false,
+      "title": "Experimental investigation on material properties of WAAM carbon steel and stainless steel after exposure to high temperatures",
+      "journal": "Thin-Walled Structures",
+      "date": "2026-10-18",
+      "doi": "10.1016/j.tws.2026.115854",
+      "url": "https://doi.org/10.1016/j.tws.2026.115854",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "William Huggins",
+        "Alan Burl",
+        "George Bourgikos",
+        "Christopher Saldaña",
+        "Kyle S. Saleeby"
+      ],
+      "more_authors": false,
+      "title": "Optical imaging framework for melt pool monitoring and bead geometry prediction in blown powder directed energy deposition",
+      "journal": "The International Journal of Advanced Manufacturing Technology",
+      "date": "2026-10-27",
+      "doi": "10.1007/s00170-026-19360-3",
+      "url": "https://doi.org/10.1007/s00170-026-19360-3",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Xuantong Liu",
+        "Xiaosong Zhou",
+        "Sen Yang",
+        "Quan Wu",
+        "Yongsheng Yu",
+        "Zejing Zhou"
+      ],
+      "more_authors": true,
+      "title": "Process Optimization and Performance Evaluation of CuCrZr Alloy Deposited by Blue–Near-Infrared Hybrid Laser Directed Energy Deposition",
+      "journal": "Materials",
+      "date": "2026-10-24",
+      "doi": "10.3390/ma19214488",
+      "url": "https://doi.org/10.3390/ma19214488",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Ali Kiass",
+        "El Mehdi Kiass",
+        "Khalid Zarbane"
+      ],
+      "more_authors": false,
+      "title": "Production readiness validation approaches for laser powder bed fusion a literature review",
+      "journal": "Discover Mechanical Engineering",
+      "date": "2026-10-26",
+      "doi": "10.1007/s44245-026-00390-w",
+      "url": "https://doi.org/10.1007/s44245-026-00390-w",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Yusef Qazzaz",
+        "S. Mohammad H. Hojjatzadeh"
+      ],
+      "more_authors": false,
+      "title": "Optical tomography for in-situ quality assurance in laser powder bed fusion: From defect detection to closed-loop control: A critical review",
+      "journal": "The International Journal of Advanced Manufacturing Technology",
+      "date": "2026-10-26",
+      "doi": "10.1007/s00170-026-19351-4",
+      "url": "https://doi.org/10.1007/s00170-026-19351-4",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Yuhang Yang",
+        "Nan Kang",
+        "Mohamed El Mansori"
+      ],
+      "more_authors": false,
+      "title": "Residual stress and multiscale microstructural evolution in steels processed by laser powder bed fusion",
+      "journal": "Review of Materials Research",
+      "date": "2026-10-25",
+      "doi": "10.1016/j.revmat.2026.100331",
+      "url": "https://doi.org/10.1016/j.revmat.2026.100331",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Yuwen Wang",
+        "Yiming Chen",
+        "Xue Li",
+        "Jie Liu",
+        "Qing Xue",
+        "Zhenhua Wang"
+      ],
+      "more_authors": true,
+      "title": "Torch Oscillation-Induced Microstructure Evolution, Deformation Mitigation and Mechanical Property Enhancement in Thin-Plate 5083 Aluminum Alloy Butt Welds",
+      "journal": "Materials",
+      "date": "2026-10-15",
+      "doi": "10.3390/ma19204344",
+      "url": "https://doi.org/10.3390/ma19204344",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Yachen Wei",
+        "Dongyuan Lou",
+        "Tianxiang Qi",
+        "Yang Wang",
+        "Xuemei Li",
+        "Rui Fan"
+      ],
+      "more_authors": true,
+      "title": "Numerical Study on Dendritic Growth During Solidification in Vibration-Assisted GMAW of Q450NQR1 Steel Using a Coupled Temperature–Cellular Automaton Model",
+      "journal": "Materials",
+      "date": "2026-10-15",
+      "doi": "10.3390/ma19204328",
+      "url": "https://doi.org/10.3390/ma19204328",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "裕介 石原",
+        "Shusuke Kageyama",
+        "Ken-ichi Ajiki",
+        "Tomohiro Sonoyama",
+        "克樹 横手",
+        "Akiyoshi Kanazawa"
+      ],
+      "more_authors": false,
+      "title": "Evaluation of a Medical Generative AI Environment for Active Ingredient Dose-Equivalence Checking in the Reconciliation of Patients’ own Medications",
+      "journal": "Iryo Yakugaku (Japanese Journal of Pharmaceutical Health Care and Sciences)",
+      "date": "2026-10-09",
+      "doi": "10.5649/jjphcs.52.723",
+      "url": "https://doi.org/10.5649/jjphcs.52.723",
+      "license": "",
+      "topic": "packaging"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

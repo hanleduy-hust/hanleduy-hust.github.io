@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-30-diem-tin-khoa-hoc",
+    "date": "2026-10-30",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Bản tin Công nghệ Hàn & Gia công Bồi đắp Kim loại (30/10/2026): Tối ưu hóa vi cấu trúc, liên kết dị chủng siêu xung và chuyển đổi số quy trình hàn",
+    "title_en": "Welding & Metal Additive Manufacturing Digest (October 30, 2026): Microstructural Engineering, Ultrafast Dissimilar Joining, and Process Digitalization",
+    "summary_vi": "Bản tin tổng hợp 15 nghiên cứu mới nhất về gia công bồi đắp kim loại, hàn laser siêu xung ghép nối quang học - kim loại, công nghệ hàn vảy gắn linh kiện điện tử và các mô hình thông minh nhận diện khuyết tật mối hàn. Các kết quả mang lại giải pháp đột phá từ cấp độ luyện kim tế vi đến tối ưu hóa dây chuyền công nghiệp.",
+    "summary_en": "This digest reviews 15 recent studies spanning metal additive manufacturing, ultrafast laser dissimilar joining of metals to optics, electronic packaging brazing, and AI-driven weld defect detection. The reported findings provide actionable solutions ranging from microscopic metallurgical control to industrial process optimization.",
+    "tags": [
+      "Additive Manufacturing",
+      "Laser Welding",
+      "Resistance Brazing",
+      "Weld Defect Detection",
+      "Hydrogen Embrittlement"
+    ],
+    "cover": "images/blog/2026-10-30-diem-tin-khoa-hoc/fig6.jpg",
+    "file": "posts/2026-10-30-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-29-diem-tin-khoa-hoc",
     "date": "2026-10-29",
     "type": "digest",

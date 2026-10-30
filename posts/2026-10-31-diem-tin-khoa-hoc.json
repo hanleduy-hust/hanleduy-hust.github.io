@@ -1,0 +1,296 @@
+{
+  "id": "2026-10-31-diem-tin-khoa-hoc",
+  "date": "2026-10-31",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Bản tin công nghệ hàn và nối: Tiến bộ trong hàn dị bản, hàn khuấy ma sát, in 3D kim loại và đóng gói vi điện tử",
+  "title_en": "Welding and Joining Science Digest: Advances in Dissimilar Joining, Friction Stir Welding, Metal AM, and Electronic Packaging",
+  "summary_vi": "Bản tin tổng hợp các nghiên cứu nổi bật ngày 31/10/2026 về luyện kim mối hàn thép không gỉ dị bản, tối ưu hóa quá trình hàn khuấy ma sát và kiểm soát bắn tóe trong chế tạo bồi đắp kim loại. Ngoài ra, các phương pháp đo biến dạng màng vi mạch và gia công laser chính xác cho linh kiện đóng gói điện tử cũng mang lại nhiều đóng góp kỹ thuật quan trọng.",
+  "summary_en": "This digest highlights key publications from 31 October 2026 covering dissimilar stainless steel metallurgy, process optimization in friction stir welding, and spatter dynamics in metal additive manufacturing. Critical developments in surface-metric strain estimation and precision laser processing for advanced electronic packaging are also examined.",
+  "tags": [
+    "Welding Metallurgy",
+    "Friction Stir Welding",
+    "Additive Manufacturing",
+    "Laser Welding",
+    "Electronic Packaging"
+  ],
+  "cover": "images/blog/2026-10-31-diem-tin-khoa-hoc/fig1.jpg",
+  "content_vi": "<p class=\"lead\">Điểm tin khoa học hôm nay tổng hợp các công bố mới nhất về luyện kim mối hàn nóng chảy, kỹ thuật hàn khuấy ma sát trên các hợp kim nhôm thế hệ mới, giải pháp in 3D kim loại và kiểm soát khuyết tật trong đóng gói vi điện tử. Các công trình làm sáng tỏ tương quan giữa chế độ nhiệt hàn với tổ chức vi cấu trúc và độ bền cơ tính, đồng thời đề xuất nhiều mô hình thực nghiệm và mô phỏng số tiên tiến phục vụ sản xuất công nghiệp.</p><h3>Hàn hồ quang nóng chảy và an toàn bức xạ nghề nghiệp</h3><p>Trong nghiên cứu hàn hồ quang vonfram trong môi trường khí bảo vệ (GTAW) cho các liên kết dị bản giữa thép không gỉ siêu austenit 254 SMO, thép chịu nhiệt austenit 310S và thép hai pha 2205 sử dụng kim loại điền đầy gốc niken ERNiCrMo-3, chất lượng luyện kim của ba cặp liên kết đã được đánh giá chi tiết <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Phân tích SEM–EDS cho thấy gradient nồng độ Fe–Ni xuất hiện tại ranh giới nóng chảy do sự hòa tan kim loại nền vào bể hàn gốc niken, cùng với sự kết tinh của các hợp phần giàu Nb–Mo tại biên hạt gai cây và các hạt giàu Ti–Nb phân tán trong kim loại mối hàn <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Liên kết 254 SMO–310S đạt độ bền kéo và độ giãn dài cao nhất, lần lượt là 776 MPa và 43,6%, tiếp theo là liên kết 254 SMO–2205 với 742 MPa và 27,7% (cả hai đều đứt ngoài vùng mối hàn); trong khi đó liên kết 310S–2205 chỉ đạt độ bền kéo 578 MPa cùng độ giãn dài 12,3% và đứt ngay tại vùng mối hàn <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Thử nghiệm ăn mòn theo tiêu chuẩn ASTM G48 cho thấy tổn thất khối lượng thấp và không phát hiện ăn mòn cục bộ ưu tiên tại kim loại mối hàn hay vùng ảnh hưởng nhiệt (HAZ) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><p>Ảnh chụp vĩ mô dưới đây thể hiện biên dạng hình học và mặt cắt ngang không có khuyết tật của mối hàn dị bản 254 SMO–310S:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Ảnh hiển vi lập thể mặt cắt ngang mối hàn 254 SMO–310S: (a) hình dạng tổng thể mối hàn.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Ảnh hiển vi lập thể mặt cắt ngang mối hàn 254 SMO–310S: (a) hình dạng tổng thể mối hàn. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Iakovidis et al. (2026), “Microstructure, Corrosion Resistance and Mechanical Properties of Dissimilar Welded Austenitic, Super-Austenitic and Duplex Stainless Steels”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214583\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214583</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Đối với hàn hồ quang tay (SMAW) thép cacbon ASTM A36, năng lượng đường và loại que hàn tác động trực tiếp đến sự chuyển biến pha và độ dai va đập <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Khảo sát ba mức năng lượng đường gồm 0,91, 1,33 và 1,89 kJ/mm trên hai loại que hàn E7018 và E6013 cho thấy ở mức nhiệt vào 0,91 kJ/mm, cấu trúc vi mô của kim loại mối hàn ở cả hai loại điện cực chủ yếu là ferit kim (acicular ferrite) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Thử nghiệm va đập Charpy chỉ ra rằng việc gia tăng năng lượng nhiệt hàn làm suy giảm độ dai va đập của liên kết; giá trị độ dai va đập cao nhất đạt 26,43 J khi sử dụng que hàn E7018 ở mức nhiệt 0,91 kJ/mm, và thấp nhất là 18,60 J đối với que hàn E6013 ở mức 1,89 kJ/mm <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Bên cạnh yếu tố cơ tính kim loại, việc bảo hộ an toàn bức xạ trong môi trường làm việc ngành hàn đóng vai trò thiết yếu đối với sức khỏe nghề nghiệp <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Tổng quan dịch tễ học và y học lao động nhấn mạnh rằng bằng chứng lâm sàng rõ ràng nhất ghi nhận mối liên hệ giữa bức xạ ion hóa và quang học không ion hóa từ hồ quang hàn với tình trạng đục thủy tinh thể, đòi hỏi các khung bảo hộ thị giác chuyên biệt tại nhà xưởng <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><h3>Kỹ thuật hàn khuấy ma sát trên các hợp kim nhôm tiên tiến</h3><p>Hàn khuấy ma sát (FSW) hợp kim nhôm dị bản AA6061-T6 và AA2024-T3 đã được tối ưu hóa thông qua quy hoạch thực nghiệm Taguchi L9 với ba dạng biên dạng chốt: chốt ren côn (TTPP), chốt vuông (SPP) và chốt ren trụ (CTPP) <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Tốc độ quay của trục chính từ 600 đến 800 vòng/phút và tốc độ hàn từ 25 đến 35 mm/phút đã được khảo sát. Kết quả thực nghiệm xác nhận chốt ren côn (TTPP) mang lại các chỉ số cơ tính vượt trội nhất với độ bền kéo giới hạn (UTS) đạt 210 MPa, độ cứng tế vi vùng khuấy (SZ) đạt 162 HV và độ giãn dài đạt 8,89%, nhờ khả năng trộn dẻo vật liệu tối ưu và chu trình nhiệt thuận lợi <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><p>Hình ảnh chụp bề mặt các mối hàn FSW dưới đây phản ánh sự khác biệt về dòng chảy kim loại và chất lượng bề mặt tạo bởi ba biên dạng chốt dụng cụ:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Ảnh chụp vĩ mô bề mặt mối hàn FSW với các biên dạng chốt: A) CTPP (chốt trụ có ren), B) SPP (chốt vuông), C) TTPP (chốt côn có ren).\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Ảnh chụp vĩ mô bề mặt mối hàn FSW với các biên dạng chốt: A) CTPP (chốt trụ có ren), B) SPP (chốt vuông), C) TTPP (chốt côn có ren). <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Kabnur et al. (2026), “Effect on mechanical properties, corrosion behaviour and fracture behaviour of FSWed AA 6061-T6 and AA 2024-T3 by using different pin profiles”, <em>Frattura ed Integrità Strutturale</em>, <a href=\"https://doi.org/10.3221/igf-esis.79.04\" target=\"_blank\" rel=\"noopener\">doi:10.3221/igf-esis.79.04</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trên hợp kim nhôm AA3103, tác động đồng thời của các thông số hàn FSW tối ưu hóa theo Taguchi và nhiệt luyện sau hàn (PWHT) đã được khảo sát và mô hình hóa bằng mạng nơ-ron nhân tạo (ANN) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Nghiên cứu tiến hành 27 thí nghiệm bao gồm ba dạng chốt (vuông, tròn, tam giác), các tỷ lệ đường kính vai hàn trên chốt (D/d = 3, 4, 5), tốc độ quay (355, 710, 1400 vòng/phút) và tốc độ hàn (20, 40, 80 mm/phút) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Quy trình PWHT gồm hai giai đoạn: ủ hồi phục ở 350 °C trong 2 giờ và hóa già nhân tạo ở 200–225 °C sau đó tôi nước. Tỷ lệ D/d đóng vai trò là yếu tố chi phối mạnh mẽ nhất đến sự bảo toàn độ bền, là thông số duy nhất có ý nghĩa thống kê đối với giới hạn chảy <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Bộ thông số tối ưu (chốt tròn, D/d = 3, tốc độ quay 1400 vòng/phút, tốc độ hàn 40 mm/phút) kết hợp với PWHT giúp ổn định hạt tinh thể hạt mịn đẳng trục trong vùng khuấy và giảm sai số mô hình hồi quy xuống trong phạm vi ±8% <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><p>Về kiểm soát nhiệt độ, nghiên cứu so sánh mối hàn FSW giáp mối giữa hợp kim Al–Cu–Li độ bền cao và hợp kim Al–Zn–Cu–Mg biến tính Ag, Zr, Sc dưới điều kiện làm mát tự nhiên và làm mát cưỡng bức bằng nước đã làm rõ cơ chế ổn định pha <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Làm mát bằng nước giúp hạn chế nhiệt độ đỉnh và rút ngắn thời gian tiếp xúc nhiệt, từ đó ức chế sự phát triển hạt kết tinh lại động trong vùng khuấy ở cả hai hợp kim <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Ở hợp kim Al–Cu–Li, làm nguội nhanh ngăn chặn sự hòa tan hoàn toàn của pha siêu bền T<sub>1</sub>-Al<sub>2</sub>CuLi, trong khi các hạt kết tủa nano Al<sub>3</sub>(Sc, Zr) bền nhiệt ở hợp kim Al–Zn–Cu–Mg ghim giữ biên hạt theo cơ chế Zener, duy trì kích thước hạt siêu mịn (≤1 µm) ngay cả trong không khí và nâng hiệu suất mối hàn lên trên 85% khi làm mát bằng nước <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><p>Ảnh thái cấu trúc vĩ mô và vi mô dưới đây minh họa sự tiến triển tổ chức của mối hàn hợp kim Al–Cu–Li dưới các điều kiện làm mát và xử lý nhiệt khác nhau:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Cấu trúc vĩ mô và vi mô của mối hàn FSW trên hợp kim Al–Cu–Li: (a) làm nguội trong không khí, (b) làm nguội bằng chất lỏng, (c) làm nguội bằng chất lỏng kết hợp hóa già nhân tạo.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Cấu trúc vĩ mô và vi mô của mối hàn FSW trên hợp kim Al–Cu–Li: (a) làm nguội trong không khí, (b) làm nguội bằng chất lỏng, (c) làm nguội bằng chất lỏng kết hợp hóa già nhân tạo. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Tarasov et al. (2026), “A Comparative Study on Microstructure and Mechanical Properties of Friction Stir Welded Butt Joints Produced Under Different Cooling Conditions in a High-Strength Al–Cu–Li Alloy and an Al–Zn–Cu–Mg Alloy Modified with Ag, Zr, and Sc”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214578\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214578</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>In 3D kim loại và kiểm soát ứng suất dư</h3><p>Vật liệu siêu vật liệu kim loại có cơ tính biến đổi theo gradient (FGMM) chế tạo bằng phương pháp sản xuất bồi đắp (AM) mang lại khả năng tối ưu hóa hình học và thành phần chưa từng có <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Các công nghệ chế tạo bồi đắp lắng đọng năng lượng trực tiếp (DED) và in 3D kim loại bằng hồ quang dây (WAAM) cung cấp sự linh hoạt trong việc tạo gradient thành phần trên các chi tiết kích thước lớn, trong khi công nghệ nung chảy bột kim loại bằng laser trên bàn hội tụ (LPBF) cho phép chế tạo các kiến trúc mạng lưới và mặt cực tiểu tuần hoàn ba chiều (TPMS) với độ phân giải cao <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><p>Hình ảnh phân bố trường ứng suất mô phỏng dưới đây thể hiện các thành phần ứng suất dọc, ứng suất pháp và ứng suất von Mises bên trong cấu trúc vật liệu:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Phân bố của (a1, a2) ứng suất dọc σ11, (b1, b2) ứng suất pháp σ33, và (c1, c3) von Mises.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Phân bố của (a1, a2) ứng suất dọc σ11, (b1, b2) ứng suất pháp σ33, và (c1, c3) von Mises. <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Giri et al. (2026), “Functionally Graded Metal Metamaterials: Additive Manufacturing, Materials, Architectures, Intelligent Design and Industrial Application—A Review”, <em>Journal of Composites Science</em>, <a href=\"https://doi.org/10.3390/jcs10110580\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jcs10110580</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Nhằm nâng cao cơ tính của thép không gỉ 316L chế tạo bằng WAAM, nghiên cứu bổ sung 2% khối lượng Nb đã được triển khai với các góc lắng đọng 0°, 67°, 90° và thời gian chờ giữa các lớp là 2 và 5 phút <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Sự xuất hiện của 2% Nb làm biến đổi cấu trúc tế vi, hình thái hạt và kết cấu tinh thể, góp phần cải thiện độ cứng và tính năng chống mài mòn của chi tiết lắng đọng <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><p>Để kiểm tra nhanh ứng suất dư kéo dọc trong mẫu thép không gỉ 316L in bằng công nghệ nung chảy bột laser (PBF-LB), các nhà nghiên cứu đã phát triển ba phương pháp thử nghiệm kéo đơn trục cơ học dựa trên hiện tượng vi chảy dẻo sớm ở vùng cận bề mặt <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Phương pháp I (mật độ công biến dạng dẻo từ chu trình tải-dỡ tải) và Phương pháp II (dỡ tải ảo từ dữ liệu kéo đơn trục thông thường) đạt độ tương quan tuyến tính lần lượt là R<sup>2</sup> = 0,75 và 0,71 khi đối chiếu với dữ liệu nhiễu xạ neutron (ND) từ trạng thái sau in đến nhiệt luyện ở 1000 °C <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Phương pháp III dựa trên ngưỡng vi chảy dẻo vĩ mô ở độ biến dạng 0,01% cũng phản ánh chính xác xu hướng giải tỏa ứng suất dư, được củng cố bởi phân tích EBSD về sự tích tụ mật độ lệch mạng cần thiết về mặt hình học (GND) trước khi biến dạng dẻo khối xảy ra <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><h3>Động học bắn tóe trong chế tạo bồi đắp kim loại L-PBF</h3><p>Sự hình thành hạt bắn tóe do tương tác giữa chùm laser và vũng hàn nóng chảy là nguyên nhân chính gây ra khuyết tật và làm suy giảm độ tin cậy của các chi tiết in từ bột hợp kim Ti6Al4V bằng công nghệ L-PBF <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Bằng phương pháp chụp ảnh cắt lớp quang học (optical tomography - OT) tại chỗ, các nhà khoa học đã định lượng được sự biến thiên không gian của hiện tượng này <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Thể tích và mật độ hạt bắn tóe tăng rõ rệt tại các góc quét laser nhất định và tại các vị trí cục bộ trong buồng in, đồng thời động học bắn tóe có sự khác biệt rõ rệt giữa vùng đón gió và khuất gió so với dòng khí thổi bảo vệ <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><p>Biểu đồ phân bố cường độ xám dưới đây ghi nhận sự biến thiên phát xạ quang học của hạt bắn tóe tại các vùng quan tâm khác nhau trong buồng in đối với bột PA và bột GA:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig6.jpg\" alt=\"So sánh phân bố cường độ thang độ xám trong Vùng 0 (Zone 0) cho các mẻ in từ 1 đến 6: (a, b) kết quả cho các vùng quan tâm (ROI) phía sau và phía trước đối với mẫu in bằng bột PA; (c, d) kết quả cho các ROI phía sau và phía trước đối với mẫu in bằng bột GA.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> So sánh phân bố cường độ thang độ xám trong Vùng 0 (Zone 0) cho các mẻ in từ 1 đến 6: (a, b) kết quả cho các vùng quan tâm (ROI) phía sau và phía trước đối với mẫu in bằng bột PA; (c, d) kết quả cho các ROI phía sau và phía trước đối với mẫu in bằng bột GA. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Lund et al. (2026), “Understanding Spatter and Its Spatial Variations in Laser Powder Bed Fusion of Ti6Al4V”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214575\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214575</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Hàn laser chính xác và vật liệu đóng gói điện tử</h3><p>Trong quy trình đóng gói cụm phát quang đồng trục (TOSA) chuẩn 2,5 G, hàn laser nối giữa sợi quang và thấu kính hội tụ giữ vai trò then chốt quyết định công suất quang và độ tin cậy <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Quan sát kim tương cho thấy hạt tinh thể dạng cột chiếm ưu thế trong vùng nóng chảy và phát triển vuông góc với mặt phân giới rắn–lỏng <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Vùng cửa sổ công nghệ tối ưu được xác lập gồm: mức năng lượng laser 2,5 J, khe hở lắp ghép giữa bộ chuyển tiếp sợi quang và vỏ laser từ 20 đến 60 μm, cùng vị trí dịch chuyển tiêu cự khoảng −200 μm, giúp giảm thiểu độ dịch chuyển dọc trục và suy hao công suất quang sau hàn mà vẫn đảm bảo lực kéo cơ học <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><p>Ảnh chụp kim tương và đường quét EDS dưới đây thể hiện sự phân bố tổ chức tế vi và gradient thành phần nguyên tố qua vùng liên kết hàn laser của cụm TOSA:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Ảnh kim tương của vùng hàn laser: (a, d) ảnh tế vi quang học; (b) ảnh SEM của vùng kim loại cơ bản; (c) ảnh SEM của vùng mối hàn; (e) đường quét phân bố nguyên tố qua mặt phân giới giữa vũng hàn và kim loại cơ bản kèm phần trăm khối lượng định lượng của các nguyên tố.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Ảnh kim tương của vùng hàn laser: (a, d) ảnh tế vi quang học; (b) ảnh SEM của vùng kim loại cơ bản; (c) ảnh SEM của vùng mối hàn; (e) đường quét phân bố nguyên tố qua mặt phân giới giữa vũng hàn và kim loại cơ bản kèm phần trăm khối lượng định lượng của các nguyên tố. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Liu et al. (2026), “Coaxial Transmitter Optical Sub-Assembly Laser Welding Mechanism and Process Research”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16111197\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16111197</a> [<a href=\"#ref-11\">11</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Đối với việc đo hệ số giãn nở nhiệt (CTE) của các màng mỏng đóng gói điện tử bị cong vênh trong quá trình gia nhiệt, phương pháp ước lượng biến dạng metric bề mặt dựa trên kỹ thuật tương quan hình ảnh số không gian ba chiều (3D-DIC) đã được đề xuất <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Bằng cách so sánh các dạng cơ bản thứ nhất giữa bề mặt chuẩn và bề mặt gia nhiệt, phương pháp này loại bỏ sai số chiếu phụ thuộc độ cong của các thuật toán khớp mặt phẳng dịch chuyển (DPF) truyền thống <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Trên màng lá đồng chuẩn NIST, phương pháp metric bề mặt đạt sai số toàn phương trung bình (RMSE) chỉ 0,170 ppm·K<sup>−1</sup>, cho phép đo chính xác CTE định hướng mà không cần giả định trước hình dạng hay độ cong vênh <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>Trường mô phỏng độ cong vênh bề mặt dưới đây biểu thị các dạng biến dạng hình học được dùng để kiểm chứng độ chính xác của phương pháp đo:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Trường độ cong vênh mô phỏng: (a) dãn phẳng; (b, c) uốn trụ; (d) đẳng cự dạng chữ S mượt mà; (e) độ cong Gauss; (f) thể hiện nhiễu tọa độ minh họa. Màu sắc trong (a–e) thể hiện độ cao tương đối của bề mặt; trục Z biểu thị độ cao số liệu. Trong (f), thang màu biểu thị sai số tọa độ trục Z tính bằng µm.\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Trường độ cong vênh mô phỏng: (a) dãn phẳng; (b, c) uốn trụ; (d) đẳng cự dạng chữ S mượt mà; (e) độ cong Gauss; (f) thể hiện nhiễu tọa độ minh họa. Màu sắc trong (a–e) thể hiện độ cao tương đối của bề mặt; trục Z biểu thị độ cao số liệu. Trong (f), thang màu biểu thị sai số tọa độ trục Z tính bằng µm. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Liu et al. (2026), “Surface-Metric Strain Estimation from Three-Dimensional Digital Image Correlation for CTE Measurement of Warping Electronic-Packaging Films”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214576\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214576</a> [<a href=\"#ref-12\">12</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Bên cạnh đó, các giải pháp gia công và vật liệu tiên tiến khác cho đóng gói vi điện tử cũng ghi nhận bước tiến mới. Quy trình ăn mòn ướt tuần hoàn bằng axit citric kết hợp phơi tia UV cho phép kiểm soát độ lõm của đệm đồng (Cu pad) với độ chính xác nanomet phục vụ hàn lai (hybrid bonding) wafer-to-wafer và die-to-wafer <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Nồng độ axit citric 0,05% khối lượng cho tốc độ ăn mòn ổn định 24,6 nm/phút, và mỗi chu kỳ UV kết hợp ăn mòn tạo độ lõm khoảng 1,5 nm, kết hợp bước rửa bằng nước chức năng (dung dịch NH<sub>4</sub>OH siêu loãng) giúp triệt tiêu hoàn toàn hiện tượng ăn mòn cục bộ trên đệm đồng <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Trong tản nhiệt công suất cao, vi kênh trên vật liệu composite nền đồng gia cường hạt kim cương (Cu/diamond) đã được gia công thành công bằng laser picosecond bước sóng tử ngoại kết hợp mạng nơ-ron PSO-BP để tối ưu hóa hình học rãnh tản nhiệt <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Cuối cùng, vật liệu composite epoxy lai sợi thủy tinh dẹt (5% khối lượng) và sợi aramid nano (0,5% khối lượng) mang lại độ bền uốn 170,72 MPa (tăng 68,4%), độ dai uốn 1,45 MJ/m<sup>3</sup> (tăng 229,5%), độ bền va đập 4,58 kJ/m<sup>2</sup> (tăng 103,6%) so với epoxy nguyên chất, đồng thời duy trì hằng số điện môi thấp 2,34 và tổn hao điện môi 0,0102 ở tần số 1 kHz <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Hàm ý thực tiễn</h3><ul><li><strong>Tối ưu hóa hàn dị bản và kiểm soát nhiệt:</strong> Các đơn vị gia công cơ khí chính xác và chế tạo bồn bể áp lực tại Việt Nam có thể ứng dụng que hàn niken ERNiCrMo-3 cho các liên kết thép không gỉ cao cấp, đồng thời áp dụng giải pháp làm mát cưỡng bức bằng nước trong hàn FSW hợp kim nhôm để hạn chế sự suy giảm pha hóa bền.</li><li><strong>Kiểm chuẩn ứng suất và giám sát in 3D kim loại:</strong> Phương pháp ước lượng ứng suất dư thông qua thử kéo đơn trục mở ra cách tiếp cận chi phí thấp cho các phòng kiểm định vật liệu công nghiệp, trong khi dữ liệu chụp cắt lớp quang học giúp các cơ sở in 3D LPBF kiểm soát vị trí dễ phát sinh khuyết tật do bắn tóe.</li><li><strong>Định hướng đóng gói vi mạch và bán dẫn:</strong> Kỹ thuật ăn mòn đệm đồng bằng axit citric và đo biến dạng màng mỏng bằng 3D-DIC cung cấp các giải pháp đo lường và chế tạo chính xác có thể chuyển giao cho các dây chuyền lắp ráp bán dẫn và vi điện tử tiên tiến đang phát triển tại Việt Nam.</li></ul>",
+  "content_en": "<p class=\"lead\">Today's digest highlights recent advances in fusion welding metallurgy, friction stir welding of advanced aluminum alloys, metal additive manufacturing, and electronic packaging reliability. The featured studies provide critical quantitative insights into thermal cycles, phase transformations, and residual stress evaluation, establishing practical frameworks for aerospace, structural, and microelectronic manufacturing.</p><h3>Fusion Arc Welding Metallurgy and Occupational Radiation Safety</h3><p>The metallurgical and corrosion performance of three dissimilar stainless steel joints—super-austenitic 254 SMO to austenitic 310S, 254 SMO to duplex 2205, and 310S to 2205—joined via gas tungsten arc welding (GTAW) using an ERNiCrMo-3 nickel-base filler metal was systematically examined <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. SEM–EDS analyses showed distinct Fe–Ni composition gradients across the fusion boundaries corresponding to local filler dilution, alongside Nb–Mo-rich interdendritic constituents and dispersed Ti–Nb-rich precipitates in the fusion zone <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. The 254 SMO–310S joint achieved the highest ultimate tensile strength of 776 MPa with 43.6% elongation, followed by the 254 SMO–2205 joint at 742 MPa and 27.7% elongation (both fracturing in the base metals), whereas the 310S–2205 combination exhibited lower strength (578 MPa) and ductility (12.3%), failing within the weld zone <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. ASTM G48 testing demonstrated low mass loss without preferential localized attack in the weld seam or heat-affected zone (HAZ) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><p>The stereomicrograph below depicts the macroscopic morphology and defect-free cross-section of the dissimilar 254 SMO–310S weld:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Stereomicrographs of the 254 SMO–310S weld cross-section: (a) overall weld profile.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Stereomicrographs of the 254 SMO–310S weld cross-section: (a) overall weld profile. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Iakovidis et al. (2026), “Microstructure, Corrosion Resistance and Mechanical Properties of Dissimilar Welded Austenitic, Super-Austenitic and Duplex Stainless Steels”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214583\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214583</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In structural carbon steel joining, the influence of heat input and electrode classification on ASTM A36 butt welds made by shielded metal arc welding (SMAW) was evaluated at heat inputs of 0.91, 1.33, and 1.89 kJ/mm using E7018 and E6013 consumables <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. At 0.91 kJ/mm, the weld metal microstructures were dominated by acicular ferrite for both electrodes <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Charpy impact testing showed that increasing heat input reduced joint toughness, with the maximum impact energy of 26.43 J obtained using E7018 at 0.91 kJ/mm, compared to a minimum of 18.60 J using E6013 at 1.89 kJ/mm <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Occupational health considerations associated with welding processes were reviewed regarding radiation damage to ocular structures <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. A synthesis of clinical evidence established that ionizing and optical non-ionizing radiation from welding arcs presents a primary risk for crystalline lens opacification and cataract formation, underscoring the necessity for exposure-tailored eye protection protocols in fabrication environments <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><h3>Friction Stir Welding of Advanced Aluminum Alloys</h3><p>The solid-state joining of dissimilar AA6061-T6 and AA2024-T3 alloys was investigated using Taguchi L9 experimental design across three tool pin profiles: taper threaded (TTPP), square (SPP), and cylindrical threaded (CTPP), with rotational speeds of 600–800 rpm and welding speeds of 25–35 mm/min <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. The TTPP tool produced optimal mechanical properties, achieving an ultimate tensile strength of 210 MPa, stir zone hardness of 162 HV, and 8.89% elongation, driven by enhanced plastic material flow and favorable thermal cycles during stirring <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><p>The macroscopic joint appearances below reveal surface finish and material flow features produced by the different tool pin geometries:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Macroscopic images of the surface of FSWed joints: A) CTPP, B) SPP, C) TTPP.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Macroscopic images of the surface of FSWed joints: A) CTPP, B) SPP, C) TTPP. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Kabnur et al. (2026), “Effect on mechanical properties, corrosion behaviour and fracture behaviour of FSWed AA 6061-T6 and AA 2024-T3 by using different pin profiles”, <em>Frattura ed Integrità Strutturale</em>, <a href=\"https://doi.org/10.3221/igf-esis.79.04\" target=\"_blank\" rel=\"noopener\">doi:10.3221/igf-esis.79.04</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In AA3103 friction stir welds, the combined effects of tool geometry, process parameters, and two-stage post-weld heat treatment (PWHT, comprising 350 °C annealing for 2 h and 200–225 °C artificial aging followed by water quenching) were evaluated using Taguchi methods and artificial neural networks (ANN) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Across 27 experimental runs evaluating square, circular, and triangular pins, shoulder-to-pin diameter ratios (D/d = 3, 4, 5), spindle speeds (355, 710, 1400 rpm), and welding speeds (20, 40, 80 mm/min), the D/d ratio was identified as the dominant parameter governing strength retention and the sole statistically significant factor for yield strength <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. The optimum condition (circular pin, D/d = 3, 1400 rpm, 40 mm/min) combined with PWHT stabilized fine equiaxed grains in the stir zone and restricted regression residuals to within ±8% <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><p>Thermal cycle control in FSW was further explored by comparing forced water cooling against ambient air cooling in high-strength Al–Cu–Li and Ag-, Zr-, Sc-modified Al–Zn–Cu–Mg butt joints <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Water cooling suppressed peak temperatures and curtailed thermal exposure, mitigating dynamic recrystallization grain coarsening in the stir zones of both alloys <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. In the Al–Cu–Li alloy, rapid cooling curtailed the complete dissolution of the strengthening T<sub>1</sub>-Al<sub>2</sub>CuLi phase, whereas in the modified Al–Zn–Cu–Mg alloy, thermally stable Al<sub>3</sub>(Sc, Zr) nanoprecipitates provided strong Zener pinning, maintaining ultra-fine grains (≤1 µm) even during air cooling and enabling water-cooled joints to exceed 85% joint efficiency <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><p>The macro- and microstructural images below illustrate the structural evolution in the Al–Cu–Li FSW joint under varied cooling and aging conditions:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Macro- and microstructure of the FSW joint on the Al–Cu–Li alloy: (a) air cooling, (b) liquid cooling, (c) liquid cooling followed by artificial aging.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Macro- and microstructure of the FSW joint on the Al–Cu–Li alloy: (a) air cooling, (b) liquid cooling, (c) liquid cooling followed by artificial aging. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Tarasov et al. (2026), “A Comparative Study on Microstructure and Mechanical Properties of Friction Stir Welded Butt Joints Produced Under Different Cooling Conditions in a High-Strength Al–Cu–Li Alloy and an Al–Zn–Cu–Mg Alloy Modified with Ag, Zr, and Sc”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214578\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214578</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Metal Additive Manufacturing: Gradients and Residual Stresses</h3><p>Functionally graded metal metamaterials (FGMMs) produced through additive manufacturing offer unprecedented architectural freedom <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. A state-of-the-art review highlighted that directed energy deposition (DED) and wire arc additive manufacturing (WAAM) excel in large-scale compositional grading, whereas laser powder bed fusion (LPBF) delivers high resolution for intricate lattice and triply periodic minimal surface (TPMS) architectures <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><p>The stress distribution plots below show simulated longitudinal, normal, and von Mises stress fields across graded structural elements:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Distribution of (a1, a2) longitudinal stress σ11, (b1, b2) normal stress σ33, and (c1, c3) von Mises stress.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Distribution of (a1, a2) longitudinal stress σ11, (b1, b2) normal stress σ33, and (c1, c3) von Mises stress. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Giri et al. (2026), “Functionally Graded Metal Metamaterials: Additive Manufacturing, Materials, Architectures, Intelligent Design and Industrial Application—A Review”, <em>Journal of Composites Science</em>, <a href=\"https://doi.org/10.3390/jcs10110580\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jcs10110580</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In WAAM processing of 316L stainless steel, the addition of 2 wt.% Nb was investigated at build orientations of 0°, 67°, and 90° with interlayer dwell times of 2 and 5 min <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Microstructural characterization via EBSD and SEM showed that Nb additions modified grain morphology, crystallographic texture, and secondary phases, yielding marked improvements in microhardness and wear resistance <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><p>Addressing the challenge of residual stress (RS) characterization in PBF-LB 316L components, three rapid uniaxial tensile testing methodologies were benchmarked against neutron diffraction (ND) measurements up to 1000 °C annealing <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Energy-based approaches utilizing plastic work density from cyclic loading (Method I) and virtual unloading from standard monotonic curves (Method II) demonstrated linear correlations with ND stress relaxation (R<sup>2</sup> = 0.75 and 0.71, respectively) <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Detecting a 0.01% strain micro-yielding threshold (Method III) accurately captured stress relaxation trends, supported by EBSD observations of localized geometrically necessary dislocation (GND) pileups prior to macroscopic yielding <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><h3>Spatter Dynamics and Defect Monitoring in L-PBF</h3><p>During L-PBF of Ti6Al4V alloy powder, laser-melt pool interactions generate spatter ejections that threaten structural integrity <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Utilizing in situ optical tomography (OT), spatial variations in spatter emissions were mapped within the build volume <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Spatter generation was significantly elevated at specific laser scan angles and chamber positions, with dynamic behavior varying markedly between upwind and downwind gas flow orientations, thereby providing an effective signature for detecting defect-prone build regions <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><p>The grayscale intensity distributions below show optical tomography signatures of spatter generation across distinct regions of interest for different powder feedstocks:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig6.jpg\" alt=\"Comparison of the grayscale intensity distribution within Zone 0 for Builds 1 to 6: (a, b) show results for back and front ROIs for builds performed with PA powder; (c, d) show results for back and front ROIs for builds performed with GA powder.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Comparison of the grayscale intensity distribution within Zone 0 for Builds 1 to 6: (a, b) show results for back and front ROIs for builds performed with PA powder; (c, d) show results for back and front ROIs for builds performed with GA powder. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Lund et al. (2026), “Understanding Spatter and Its Spatial Variations in Laser Powder Bed Fusion of Ti6Al4V”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214575\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214575</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Precision Laser Welding and Advanced Electronic Packaging</h3><p>In 2.5 G coaxial transmitter optical sub-assembly (TOSA) packaging, precision laser welding between the fiber adapter and laser housing was investigated to mitigate post-weld longitudinal displacement and optical power attenuation <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Solidification microstructure analysis identified rapid columnar grain growth perpendicular to the fusion boundary <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Parametric testing established an optimal processing window consisting of 2.5 J laser pulse energy, 20–60 μm assembly clearance, and a −200 μm beam focal position, ensuring minimal optical power loss and displacement while preserving joint tensile strength <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><p>The optical and SEM micrographs along with the EDS line scan below illustrate the weld nugget morphology and elemental transition across the laser-welded joint:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Metallographic micrographs of the laser-welded region: (a, d) optical metallography micrographs; (b) SEM micrograph of the base metal zone; (c) SEM micrograph of the weld seam region; (e) elemental distribution line scan across the weld nugget and base metal interface, with quantitative mass fractions of elements displayed.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Metallographic micrographs of the laser-welded region: (a, d) optical metallography micrographs; (b) SEM micrograph of the base metal zone; (c) SEM micrograph of the weld seam region; (e) elemental distribution line scan across the weld nugget and base metal interface, with quantitative mass fractions of elements displayed. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Liu et al. (2026), “Coaxial Transmitter Optical Sub-Assembly Laser Welding Mechanism and Process Research”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16111197\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16111197</a> [<a href=\"#ref-11\">11</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>For electronic packaging substrates experiencing thermal warpage, a surface-metric strain estimation methodology using three-dimensional digital image correlation (3D-DIC) was developed to determine directional coefficients of thermal expansion (CTE) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. By comparing the first fundamental forms of deformed and reference surfaces in common material coordinates, the algorithm eliminates projection errors inherent in standard displacement-plane fitting (DPF) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Benchmarking on copper foil demonstrated a root-mean-square error (RMSE) of 0.170 ppm·K<sup>−1</sup> relative to NIST copper standards, providing reliable CTE quantification without predefining warpage curvature <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>The simulated displacement fields below depict various developable warpage modes used to validate the surface-metric strain formulation:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Simulated warpage fields: (a) flat expansion; (b, c) cylindrical bending; (d) smooth S-shaped isometry; (e) Gaussian warpage; (f) illustrative coordinate-noise realization. Colors in (a–e) indicate relative surface height within each panel; the Z axes give numerical heights. In (f), color indicates Z-coordinate error in µm.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> Simulated warpage fields: (a) flat expansion; (b, c) cylindrical bending; (d) smooth S-shaped isometry; (e) Gaussian warpage; (f) illustrative coordinate-noise realization. Colors in (a–e) indicate relative surface height within each panel; the Z axes give numerical heights. In (f), color indicates Z-coordinate error in µm. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Liu et al. (2026), “Surface-Metric Strain Estimation from Three-Dimensional Digital Image Correlation for CTE Measurement of Warping Electronic-Packaging Films”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214576\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214576</a> [<a href=\"#ref-12\">12</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Additional packaging developments include a cyclic wet-etching process using 0.05 wt.% citric acid (providing a stable etch rate of 24.6 nm/min) combined with UV exposure for nanometer-scale copper pad recessing (~1.5 nm per cycle) and ultra-dilute NH<sub>4</sub>OH rinsing for corrosion-free hybrid bonding <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. For high-power thermal management, UV picosecond laser micromachining guided by a PSO-BP neural network successfully generated microchannels in diamond-reinforced copper matrix composites (Cu/diamond) <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Furthermore, a flat glass fiber (5 wt.%) and aramid nanofiber (0.5 wt.%) epoxy composite delivered a flexural strength of 170.72 MPa (+68.4%), flexural toughness of 1.45 MJ/m<sup>3</sup> (+229.5%), and impact strength of 4.58 kJ/m<sup>2</sup> (+103.6%), alongside a low relative permittivity of 2.34 and dielectric loss of 0.0102 at 1 kHz <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Practical Implications</h3><ul><li><strong>Dissimilar joining and thermal control:</strong> Fabrication shops welding dissimilar austenitic and duplex stainless steels should implement Ni-base ERNiCrMo-3 fillers to prevent localized galvanic attack; for aluminum FSW, forced water cooling offers a viable shop-floor solution to retain precipitate-hardening phases.</li><li><strong>Residual stress and additive manufacturing QA:</strong> Mechanical micro-yielding analysis from standard tensile tests offers an accessible alternative to diffraction for evaluating stress relief, while in situ spatter monitoring assists L-PBF operators in optimizing inert gas flow to prevent build defects.</li><li><strong>Semiconductor packaging and testing:</strong> Citric acid recessing and 3D-DIC surface-metric strain estimation offer scalable processing and characterization protocols applicable to domestic advanced packaging and electronic assembly facilities.</li></ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Isidoros Iakovidis",
+        "Stavros K. Chionopoulos",
+        "Ιωάννης Ραχούτης"
+      ],
+      "more_authors": false,
+      "title": "Microstructure, Corrosion Resistance and Mechanical Properties of Dissimilar Welded Austenitic, Super-Austenitic and Duplex Stainless Steels",
+      "journal": "Materials",
+      "date": "2026-10-29",
+      "doi": "10.3390/ma19214583",
+      "url": "https://doi.org/10.3390/ma19214583",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Rizki Setiawan",
+        "Dwita Suastiyanti",
+        "Ismojo",
+        "Pathya Rupajati",
+        "Samuel Trinata Winnyarto"
+      ],
+      "more_authors": false,
+      "title": "Karakteristik Ketangguhan Impact dan Struktur Mikro Shielded Metal Arc Welding (SMAW) Baja ASTM A36",
+      "journal": "Jurnal Teknik Mesin",
+      "date": "2026-10-29",
+      "doi": "10.9744/jtm.23.2.70-81",
+      "url": "https://doi.org/10.9744/jtm.23.2.70-81",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Amir Ashraf Jalaludin",
+        "Ahmad Naqiuddin Azahari",
+        "Baqiatu’l Sabiqi ‘Assfi Rahmat",
+        "Baljit Kaur Hardial Singh",
+        "Marliana Mahmud"
+      ],
+      "more_authors": false,
+      "title": "Occupational Radiation Effects on Ocular Structures and Visual Function: A Comprehensive Review",
+      "journal": "Vision",
+      "date": "2026-10-29",
+      "doi": "10.3390/vision10050089",
+      "url": "https://doi.org/10.3390/vision10050089",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Ranjana Kabnur Ranjana Kabnur",
+        "Rajkumar D G Rajkumar D G",
+        "Manjunath Vatnalmath",
+        "C N Vikas",
+        "Bindu Pavan Venkatachala",
+        "Jagadeesha D N Jagadeesha D N"
+      ],
+      "more_authors": false,
+      "title": "Effect on mechanical properties, corrosion behaviour and fracture behaviour of FSWed AA 6061-T6 and AA 2024-T3 by using different pin profiles",
+      "journal": "Frattura ed Integrità Strutturale",
+      "date": "2026-10-11",
+      "doi": "10.3221/igf-esis.79.04",
+      "url": "https://doi.org/10.3221/igf-esis.79.04",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Ganesh Jagannath Pagar",
+        "Gajanan N. Shelke"
+      ],
+      "more_authors": false,
+      "title": "Taguchi-Based Optimization and Artificial Neural Network Modeling of Post-Weld Heat Treatment Effects on the Microstructural and Mechanical Performance of Friction Stir Welded AA3103 Alloy",
+      "journal": "Periodica Polytechnica Mechanical Engineering",
+      "date": "2026-10-29",
+      "doi": "10.3311/ppme.44265",
+      "url": "https://doi.org/10.3311/ppme.44265",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "S. Yu. Tarasov",
+        "Evgeny A. Sidorov",
+        "Denis A. Gurianov",
+        "В. Е. Рубцов",
+        "С. В. Фортуна",
+        "Ксения Сергеевна Осипович"
+      ],
+      "more_authors": true,
+      "title": "A Comparative Study on Microstructure and Mechanical Properties of Friction Stir Welded Butt Joints Produced Under Different Cooling Conditions in a High-Strength Al–Cu–Li Alloy and an Al–Zn–Cu–Mg Alloy Modified with Ag, Zr, and Sc",
+      "journal": "Materials",
+      "date": "2026-10-29",
+      "doi": "10.3390/ma19214578",
+      "url": "https://doi.org/10.3390/ma19214578",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Jayant P Giri",
+        "Sarthak Jaiswal",
+        "Surajudeen  Olalekan Sikiru",
+        "Mohd Muzamir Mahat",
+        "Mohammad A. Kanan"
+      ],
+      "more_authors": false,
+      "title": "Functionally Graded Metal Metamaterials: Additive Manufacturing, Materials, Architectures, Intelligent Design and Industrial Application—A Review",
+      "journal": "Journal of Composites Science",
+      "date": "2026-10-29",
+      "doi": "10.3390/jcs10110580",
+      "url": "https://doi.org/10.3390/jcs10110580",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Waqar Ahmed",
+        "Tito Tchoõnga Joaquim",
+        "Danna Lizbeth Contreras Meza",
+        "Francisco Maciel de Brito Neto",
+        "Carlos Alberto Fortulan",
+        "Renato Goulart Jasinevicius"
+      ],
+      "more_authors": true,
+      "title": "Microstructure, crystallographic texture, and enhanced wear and hardness properties of 2 wt.% Nb-modified 316L stainless steel fabricated by wire arc additive manufacturing at different deposition orientations",
+      "journal": "Progress in Additive Manufacturing",
+      "date": "2026-10-29",
+      "doi": "10.1007/s40964-026-01946-8",
+      "url": "https://doi.org/10.1007/s40964-026-01946-8",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Boris S. Voloskov",
+        "И. Д. Карпов",
+        "Vyacheslav T. Em",
+        "Denis G. Firsov",
+        "Alexey P. Simonov",
+        "Radmir Karamov"
+      ],
+      "more_authors": true,
+      "title": "Rapid residual stress assessment in additively manufactured specimens via standard uniaxial tensile testing",
+      "journal": "Scientific Reports",
+      "date": "2026-10-29",
+      "doi": "10.1038/s41598-026-78163-4",
+      "url": "https://doi.org/10.1038/s41598-026-78163-4",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Daniel Lund",
+        "Mark Sorna",
+        "Dwayne D. Arola",
+        "Mamidala RAMULU"
+      ],
+      "more_authors": false,
+      "title": "Understanding Spatter and Its Spatial Variations in Laser Powder Bed Fusion of Ti6Al4V",
+      "journal": "Materials",
+      "date": "2026-10-29",
+      "doi": "10.3390/ma19214575",
+      "url": "https://doi.org/10.3390/ma19214575",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Manyu Liu",
+        "Cong Xu",
+        "Duoyun Chen",
+        "Fan Zhang",
+        "Ji’an Duan"
+      ],
+      "more_authors": false,
+      "title": "Coaxial Transmitter Optical Sub-Assembly Laser Welding Mechanism and Process Research",
+      "journal": "Metals",
+      "date": "2026-10-29",
+      "doi": "10.3390/met16111197",
+      "url": "https://doi.org/10.3390/met16111197",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Shen Liu",
+        "Yuanqiang Chen",
+        "Chaoqian Huang",
+        "Shuai Wang",
+        "Yuan Fang",
+        "Kang Wei"
+      ],
+      "more_authors": true,
+      "title": "Surface-Metric Strain Estimation from Three-Dimensional Digital Image Correlation for CTE Measurement of Warping Electronic-Packaging Films",
+      "journal": "Materials",
+      "date": "2026-10-29",
+      "doi": "10.3390/ma19214576",
+      "url": "https://doi.org/10.3390/ma19214576",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Yang Han",
+        "Yoichi Tanaka",
+        "Yusuke Okazaki",
+        "Koji Nakata",
+        "Nobuko Gan",
+        "Hideaki Iino"
+      ],
+      "more_authors": true,
+      "title": "Corrosion-Free Copper Pad Recess Enabled by Wet Acid Etching and Functional Water Rinse for Hybrid Bonding Applications",
+      "journal": "Diffusion and defect data, solid state data. Part B, Solid state phenomena/Solid state phenomena",
+      "date": "2026-10-29",
+      "doi": "10.4028/p-sxdll1",
+      "url": "https://doi.org/10.4028/p-sxdll1",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Haodong Li",
+        "Ye Ding",
+        "Chen Wang",
+        "Liangliang Xu",
+        "Shuiwang Wang",
+        "Yang Liu"
+      ],
+      "more_authors": true,
+      "title": "Ultraviolet picosecond laser fabrication of Cu/diamond composite microchannel heat sinks for enhanced thermal management",
+      "journal": "Case Studies in Thermal Engineering",
+      "date": "2026-10-29",
+      "doi": "10.1016/j.csite.2026.108681",
+      "url": "https://doi.org/10.1016/j.csite.2026.108681",
+      "license": "cc-by-nc-nd",
+      "topic": "packaging"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Min‐Young Hwang",
+        "Min–Cheol Kim",
+        "Sung‐Hyuck Park",
+        "Won‐Wook Lee",
+        "Jiwon Park",
+        "Young Gyu Jeong"
+      ],
+      "more_authors": false,
+      "title": "Multiscale Flat Glass Fiber/Aramid Nanofiber Epoxy Composites With Enhanced Mechanical Performance and Low Permittivity",
+      "journal": "Polymer Composites",
+      "date": "2026-10-28",
+      "doi": "10.1002/pc.71786",
+      "url": "https://doi.org/10.1002/pc.71786",
+      "license": "",
+      "topic": "packaging"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

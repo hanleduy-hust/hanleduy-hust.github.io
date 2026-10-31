@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-diem-tin-khoa-hoc",
+    "date": "2026-10-31",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Bản tin công nghệ hàn và nối: Tiến bộ trong hàn dị bản, hàn khuấy ma sát, in 3D kim loại và đóng gói vi điện tử",
+    "title_en": "Welding and Joining Science Digest: Advances in Dissimilar Joining, Friction Stir Welding, Metal AM, and Electronic Packaging",
+    "summary_vi": "Bản tin tổng hợp các nghiên cứu nổi bật ngày 31/10/2026 về luyện kim mối hàn thép không gỉ dị bản, tối ưu hóa quá trình hàn khuấy ma sát và kiểm soát bắn tóe trong chế tạo bồi đắp kim loại. Ngoài ra, các phương pháp đo biến dạng màng vi mạch và gia công laser chính xác cho linh kiện đóng gói điện tử cũng mang lại nhiều đóng góp kỹ thuật quan trọng.",
+    "summary_en": "This digest highlights key publications from 31 October 2026 covering dissimilar stainless steel metallurgy, process optimization in friction stir welding, and spatter dynamics in metal additive manufacturing. Critical developments in surface-metric strain estimation and precision laser processing for advanced electronic packaging are also examined.",
+    "tags": [
+      "Welding Metallurgy",
+      "Friction Stir Welding",
+      "Additive Manufacturing",
+      "Laser Welding",
+      "Electronic Packaging"
+    ],
+    "cover": "images/blog/2026-10-31-diem-tin-khoa-hoc/fig1.jpg",
+    "file": "posts/2026-10-31-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-30-diem-tin-khoa-hoc",
     "date": "2026-10-30",
     "type": "digest",

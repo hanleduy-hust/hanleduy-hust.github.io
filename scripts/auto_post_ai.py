@@ -58,10 +58,10 @@ WEEKLY_TOPICS = [
      "queries": ['welding AND aerospace', 'welding AND nuclear', 'welding AND hydrogen AND pipeline', 'welding AND battery', 'welding AND shipbuilding'],
      "must": [r"\bweld|joining", r"aerospace|aircraft|nuclear|hydrogen|pipeline|battery|automotive|ship|offshore|energy"],
      "outline": "Năng lượng và đường ống;Ô tô và pin xe điện;Hàng không, đóng tàu và công trình biển"},
-    {"key": "low_temp_solder", "vi": "Nghiên cứu về vảy hàn nhiệt độ thấp", "en": "Low-temperature solders",
-     "queries": ['"low temperature" AND solder', '"Sn-Bi" AND solder', '"indium" AND solder'],
-     "must": [r"solder", r"low[- ]temperature|low[- ]melting|sn[-– ]?bi|bi[-– ]?sn|indium|in[-– ]?sn|sn[-– ]?in"],
-     "outline": "Thiết kế thành phần và nhiệt độ nóng chảy;Thấm ướt và phản ứng liên kim;Cơ tính, già hóa và độ tin cậy"},
+    {"key": "low_temp_solder", "vi": "Hợp kim hàn không chì và vảy hàn nhiệt độ thấp", "en": "Lead-free solder alloys and low-temperature solders",
+     "queries": ['"lead-free" AND solder', '"lead free" AND "solder alloy"', '"low temperature" AND solder', '"Sn-Bi" AND solder', '"indium" AND solder'],
+     "must": [r"solder", r"lead[- ]free|pb[- ]free|low[- ]temperature|low[- ]melting|sn[-– ]?bi|bi[-– ]?sn|indium|in[-– ]?sn|sn[-– ]?in"],
+     "outline": "Hợp kim hàn không chì và thiết kế thành phần;Vảy hàn nhiệt độ thấp và nhiệt độ nóng chảy;Thấm ướt và phản ứng liên kim;Cơ tính, già hóa và độ tin cậy"},
     {"key": "packaging", "vi": "Xu thế công nghệ và vật liệu liên kết trong electronic packaging", "en": "Joining in electronic packaging",
      "queries": ['"electronic packaging" AND bonding', '"die attach" AND sintering', '"hybrid bonding" AND copper', '"power module" AND interconnect'],
      "must": [r"bond|solder|sinter|interconnect|die[- ]attach", r"electron|chip|semiconductor|power module|microelectron|packag"],
@@ -1119,7 +1119,7 @@ def main():
 
     prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
     if AUTO_WEEKLY:
-        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing. Do not reconstruct missing or truncated numerical thresholds. Do not claim absolute accuracy, complete elimination of defects, replacement of inspection, or regulatory certification from laboratory results. Keep measured performance scoped to the reported dataset.")
+        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, lead-free solder alloys and low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing. Do not reconstruct missing or truncated numerical thresholds. Do not claim absolute accuracy, complete elimination of defects, replacement of inspection, or regulatory certification from laboratory results. Keep measured performance scoped to the reported dataset.")
     # Keep source evidence even when the generation provider is unavailable.
     import shutil
     DRAFT_DIR.mkdir(parents=True, exist_ok=True)

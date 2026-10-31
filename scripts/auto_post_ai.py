@@ -200,7 +200,7 @@ def abstract_from_inverted(inv):
 
 
 def clean_text(s, limit=None, strip_label=False):
-    s = re.sub(r"<[^>]+>", " ", s or "")
+    s = re.sub(r"</?[A-Za-z][A-Za-z0-9:_-]*(?:\s[^<>]*?)?\s*/?>", " ", s or "")
     s = html.unescape(re.sub(r"\s+", " ", s)).strip()
     if strip_label:
         s = re.sub(r"^(abstract|summary)[:.\s]+", "", s, flags=re.I)
@@ -1119,7 +1119,7 @@ def main():
 
     prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
     if AUTO_WEEKLY:
-        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing.")
+        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing. Do not reconstruct missing or truncated numerical thresholds. Do not claim absolute accuracy, complete elimination of defects, replacement of inspection, or regulatory certification from laboratory results. Keep measured performance scoped to the reported dataset.")
     # Keep source evidence even when the generation provider is unavailable.
     import shutil
     DRAFT_DIR.mkdir(parents=True, exist_ok=True)

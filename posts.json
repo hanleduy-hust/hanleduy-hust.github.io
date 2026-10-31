@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-01-diem-tin-khoa-hoc",
+    "date": "2026-11-01",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Giám sát quang phổ thông minh, tối ưu hóa vi cấu trúc in 3D kim loại và tiến bộ liên kết đóng gói bán dẫn",
+    "title_en": "Intelligent Optical Monitoring, Microstructural Optimization in Metal AM, and Advances in Semiconductor Packaging Interconnects",
+    "summary_vi": "Bản tin tổng hợp các nghiên cứu mới về mô hình học sâu và quang phổ giám sát khuyết tật hàn laser, cơ chế tăng bền trong in 3D bột đồng, cùng các giải pháp liên kết tiên tiến cho đóng gói điện tử và đóng tàu.",
+    "summary_en": "This digest highlights new studies on deep learning and spectroscopy for laser weld defect monitoring, strengthening mechanisms in copper additive manufacturing, and advanced joining methods for electronic packaging and shipbuilding.",
+    "tags": [
+      "laser welding",
+      "additive manufacturing",
+      "deep learning",
+      "electronic packaging",
+      "soldering"
+    ],
+    "cover": "images/blog/2026-11-01-diem-tin-khoa-hoc/fig6.jpg",
+    "file": "posts/2026-11-01-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
     "date": "2026-10-31",
     "type": "feature",

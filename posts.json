@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong công nghệ và vật liệu liên kết đóng gói vi điện tử: Từ liên kết lai đồng, thiêu kết nano đến tích hợp bán dẫn công suất",
+    "title_en": "Advances in Electronic Packaging Interconnect Materials and Technologies: From Copper Hybrid Bonding and Nanosintering to Power Semiconductor Integration",
+    "summary_vi": "Tổng quan chuyên sâu phân tích các bước tiến công nghệ liên kết trong đóng gói vi điện tử, tập trung vào liên kết lai Cu-Cu nhiệt độ thấp, thiêu kết hạt nano cho linh kiện dải bán dẫn rộng (WBG), cải tiến vật liệu hàn nhiệt độ thấp và kỹ thuật kiểm soát pha trung gian dưới tác động của ứng suất nhiệt cơ. Dựa trên 15 nghiên cứu và tổng quan công bố gần đây, bài viết làm rõ các giải pháp công nghệ nhằm vượt qua rào cản ngân sách nhiệt, điện trở ranh giới nhiệt và suy giảm độ tin cậy cơ nhiệt.",
+    "summary_en": "This in-depth feature examines recent advancements in electronic packaging interconnect technologies and materials, highlighting low-temperature Cu-Cu hybrid bonding, nano-sintering solutions for wide-bandgap (WBG) power devices, low-temperature multicomponent solders, and interphase engineering under thermomechanical stress. Grounded in 15 recent research articles and reviews, it elucidates technological strategies addressing thermal budget constraints, thermal boundary resistance, and thermomechanical reliability degradation.",
+    "tags": [
+      "Electronic Packaging",
+      "Hybrid Bonding",
+      "Nano-Sintering",
+      "Wide-Bandgap Semiconductors",
+      "Die-Attach Materials"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig2.jpg",
+    "file": "posts/2026-10-31-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
     "date": "2026-10-31",
     "type": "feature",

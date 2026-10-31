@@ -1,0 +1,89 @@
+name: Bài thứ Sáu về công nghệ hàn tiên tiến và gửi duyệt
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/run_friday_20261031.yml']
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: requested-friday-20261031
+  cancel-in-progress: false
+jobs:
+  friday-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 pillow pymupdf python-docx
+      - name: Tạo bài theo đúng cấu hình thứ Sáu
+        id: gen
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/friday-preview
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          CONTACT_EMAIL: ${{ secrets.MAIL_USERNAME }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/auto_post_ai.py").resolve()
+          source = path.read_text(encoding="utf-8")
+          needle = "WEEKDAY = dt.datetime.now(VN_TZ).weekday()"
+          assert source.count(needle) == 1
+          source = source.replace(needle, "WEEKDAY = 4  # Friday requested by user")
+          exec(compile(source, str(path), "exec"), {"__name__": "__main__", "__file__": str(path)})
+          PY
+      - name: Đồng bộ main trước khi tạo nhánh nội dung
+        if: steps.gen.outputs.skipped == 'false'
+        run: |
+          git stash push --include-untracked -- posts.json posts images/blog
+          git fetch origin main
+          git reset --hard origin/main
+          git stash pop
+      - name: Tạo PR chờ người dùng duyệt đăng
+        id: cpr
+        if: steps.gen.outputs.skipped == 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: review-friday-${{ github.run_id }}
+          base: main
+          delete-branch: true
+          add-paths: |
+            posts.json
+            posts/**
+            images/blog/**
+          commit-message: "Bài thứ Sáu: ${{ steps.gen.outputs.title }}"
+          title: "[Chờ duyệt - Thứ Sáu] ${{ steps.gen.outputs.title }}"
+          body: |
+            Chủ đề thứ Sáu: Các công nghệ hàn tiên tiến.
+            Bài do AI tổng hợp từ tài liệu khoa học, song ngữ Việt–Anh và có hình kèm nguồn.
+            Email duyệt được gửi tới hanleduy@gmail.com theo yêu cầu người dùng.
+            Chưa công bố. Merge pull request khi đồng ý đăng.
+            Sau khi duyệt, Word được tự động lưu trong thư mục news_blog_AI trên Drive.
+      - name: Gửi bài thứ Sáu để người dùng xác nhận đăng
+        if: always() && steps.cpr.outputs.pull-request-url != ''
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/friday-preview
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+          MAIL_TO: hanleduy@gmail.com
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+        run: python scripts/send_review_email.py
+      - name: Xuất Word xem trước
+        if: always() && steps.gen.outputs.skipped == 'false'
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/friday-preview
+        run: python scripts/export_post_word.py "$DRAFT_DIR/post.json" "$DRAFT_DIR/Thu_Sau_Cong_nghe_han_tien_tien.docx" --root "$DRAFT_DIR"
+      - name: Lưu dữ liệu nguồn và bản nháp
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: friday-preview
+          path: ${{ runner.temp }}/friday-preview
+          if-no-files-found: warn
+          retention-days: 14

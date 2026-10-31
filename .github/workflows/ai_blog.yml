@@ -71,6 +71,14 @@ jobs:
           FEATURE_OUTLINE: ${{ github.event.inputs.feature_outline }}
         run: python scripts/auto_post_ai.py
 
+      - name: Đồng bộ main trước khi tạo nhánh bài viết
+        if: steps.gen.outputs.skipped == 'false'
+        run: |
+          git stash push --include-untracked -- posts.json posts images/blog
+          git fetch origin main
+          git reset --hard origin/main
+          git stash pop
+
       - name: Tạo Pull Request bản nháp
         id: cpr
         if: steps.gen.outputs.skipped == 'false'

@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong Gia công Bồi đắp Dây Hồ quang và In 3D Kim loại: Kiểm soát Nhiệt, Vi cấu trúc và Ứng dụng Vật liệu Tiên tiến",
+    "title_en": "Advances in Wire Arc Additive Manufacturing and Metal 3D Printing: Thermal Control, Microstructure, and Advanced Material Applications",
+    "summary_vi": "Bài viết phân tích các nghiên cứu công bố đến tháng 10 năm 2026 về công nghệ chế tạo bồi đắp hồ quang dây (WAAM) và in 3D kim loại, tập trung vào cơ chế điều khiển nhiệt lượng, tối ưu hóa vi cấu trúc, ứng suất dư và ứng dụng vật liệu tiên tiến.",
+    "summary_en": "This article analyzes research published up to October 2026 on Wire Arc Additive Manufacturing (WAAM) and metal 3D printing, focusing on thermal control mechanisms, microstructural optimization, residual stresses, and advanced material applications.",
+    "tags": [
+      "WAAM",
+      "Metal AM",
+      "Microstructure",
+      "Residual Stress",
+      "Process Optimization"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig2.jpg",
+    "file": "posts/2026-10-31-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-cac-cong-nghe-han-tien-tien",
     "date": "2026-10-31",
     "type": "feature",

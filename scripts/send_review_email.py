@@ -109,7 +109,17 @@ def main():
     alt.attach(MIMEText(body, "html", "utf-8"))
     msg.attach(alt)
 
-    for img in sorted((ROOT / "images" / "blog" / post["id"]).glob("fig*.jpg")):
+    # create-pull-request restores the checkout; the checkpoint retains draft figures.
+    expected = sorted(set(re.findall(r'src="(images/blog/[^"]+/fig\\d+\\.jpg)"',
+                                     post["content_vi"] + post["content_en"])))
+    resolved_figures = []
+    for relative in expected:
+        candidates = [DRAFT_DIR / relative, ROOT / relative]
+        img = next((p for p in candidates if p.is_file()), None)
+        if img is None:
+            sys.exit("Thiếu hình cho email duyệt: " + relative + "; chưa gửi email.")
+        resolved_figures.append(img)
+    for img in resolved_figures:
         part = MIMEImage(img.read_bytes(), _subtype="jpeg")
         part.add_header("Content-ID", f"<{img.stem}>")
         part.add_header("Content-Disposition", "inline", filename=img.name)

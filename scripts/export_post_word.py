@@ -13,6 +13,7 @@ import requests
 from bs4 import BeautifulSoup, NavigableString
 from PIL import Image
 from docx import Document
+from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 
@@ -25,6 +26,11 @@ def export_post(post, output, root, asset_base=""):
     for name in ("Normal", "Title", "Heading 1", "Heading 2", "Caption"):
         style = doc.styles[name]
         style.font.name = "Times New Roman"
+        fonts = style.element.get_or_add_rPr().get_or_add_rFonts()
+        for key in ("ascii", "hAnsi", "eastAsia", "cs"):
+            fonts.set(qn("w:" + key), "Times New Roman")
+        for key in ("asciiTheme", "hAnsiTheme", "eastAsiaTheme", "cstheme"):
+            fonts.attrib.pop(qn("w:" + key), None)
         style.font.color.rgb = RGBColor(0, 0, 0)
     doc.styles["Normal"].font.size = Pt(12)
     doc.styles["Normal"].paragraph_format.space_after = Pt(6)
@@ -110,6 +116,9 @@ def export_post(post, output, root, asset_base=""):
                 f'{ref.get("date", "")}. {ref.get("url") or ref.get("doi", "")}'
             )
     output.parent.mkdir(parents=True, exist_ok=True)
+    for part in (doc.element, doc.styles.element):
+        for border in part.iter(qn("w:pBdr")):
+            border.getparent().remove(border)
     doc.save(output)
 
 

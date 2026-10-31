@@ -11,6 +11,7 @@ from urllib.parse import urlsplit
 
 import requests
 from bs4 import BeautifulSoup, NavigableString
+from PIL import Image
 from docx import Document
 from docx.shared import Cm, Pt, RGBColor
 
@@ -76,7 +77,11 @@ def export_post(post, output, root, asset_base=""):
                 for img in child.find_all("img"):
                     p = doc.add_paragraph()
                     p.paragraph_format.keep_with_next = True
-                    p.add_run().add_picture(picture(img["src"]), width=Cm(16))
+                    image_data = picture(img["src"])
+                    with Image.open(image_data) as image:
+                        width, height = image.size
+                    image_data.seek(0)
+                    p.add_run().add_picture(image_data, width=Cm(min(16, 21 * width / height)))
                 caption = child.find("figcaption")
                 if caption:
                     inline(doc.add_paragraph(style="Caption"), caption)
@@ -91,7 +96,7 @@ def export_post(post, output, root, asset_base=""):
             doc.add_page_break()
         doc.add_paragraph(post["title_" + lang], style="Title")
         doc.add_paragraph(("Ngày đăng: " if lang == "vi" else "Published: ") + post["date"])
-        doc.add_paragraph("https://hanleduy-hust.github.io/blog.html#post=" + post["id"])
+        doc.add_paragraph("https://hanleduy-hust.github.io/blog.html?post=" + post["id"])
         if post.get("summary_" + lang):
             doc.add_paragraph(post["summary_" + lang])
         blocks(BeautifulSoup(post["content_" + lang], "html.parser"))

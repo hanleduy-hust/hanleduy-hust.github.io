@@ -113,3 +113,12 @@ jobs:
           MAIL_TO: ${{ secrets.MAIL_TO }}
           PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
         run: python scripts/send_review_email.py
+
+      - name: Giữ dữ liệu nguồn và bản nháp kể cả khi AI lỗi
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: science-post-checkpoint-${{ github.run_id }}
+          path: ${{ runner.temp }}/draft
+          if-no-files-found: warn
+          retention-days: 14

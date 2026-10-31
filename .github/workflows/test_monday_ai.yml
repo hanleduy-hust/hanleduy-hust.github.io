@@ -1,9 +1,6 @@
 name: Chạy thử chuyên đề thứ Hai
 # Retry with supported-model discovery and exponential backoff.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/test_monday_ai.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -45,6 +42,14 @@ jobs:
           source = source.replace("    ai = gemini_json(prompt)", checkpoint, 1)
           exec(compile(source, str(path), "exec"), {"__name__": "__main__", "__file__": str(path)})
           PY
+      - name: Đồng bộ main trước khi tạo nhánh bài viết
+        if: steps.gen.outputs.skipped == 'false'
+        run: |
+          git stash push --include-untracked -- posts.json posts images/blog
+          git fetch origin main
+          git reset --hard origin/main
+          git stash pop
+
       - name: Tạo PR để kiểm tra bài
         if: steps.gen.outputs.skipped == 'false'
         id: cpr
@@ -66,7 +71,7 @@ jobs:
             File Word và JSON xem trước có trong artifact monday-preview của workflow.
             Bấm Merge pull request khi đồng ý đăng và kích hoạt sao lưu Word lên Drive.
       - name: Xuất Word xem trước
-        if: steps.gen.outputs.skipped == 'false'
+        if: always() && steps.gen.outputs.skipped == 'false'
         env:
           DRAFT_DIR: ${{ runner.temp }}/monday-preview
         run: |

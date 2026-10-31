@@ -1,0 +1,289 @@
+{
+  "id": "2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
+  "date": "2026-10-31",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Hợp kim hàn không chì và vảy hàn nhiệt độ thấp",
+  "title_en": "Lead-Free Solder Alloys and Low-Temperature Soldering Materials",
+  "summary_vi": "Tổng quan chuyên sâu về thiết kế hợp kim hàn không chì, hệ vảy hàn nhiệt độ thấp, cơ chế tương tác tại giao diện và độ tin cậy cơ học dựa trên các tài liệu nghiên cứu gần đây.",
+  "summary_en": "An in-depth overview of lead-free solder alloy design, low-temperature soldering systems, interfacial reaction mechanisms, and mechanical reliability based on recent literature.",
+  "tags": [
+    "lead-free solder",
+    "low-temperature soldering",
+    "intermetallic compounds",
+    "microstructure",
+    "reliability"
+  ],
+  "cover": "images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg",
+  "content_vi": "<h3>Dẫn nhập</h3><p class=\"lead\">Sự chuyển dịch sang các công nghệ điện tử tiên tiến, linh kiện đóng gói mật độ cao và thiết bị điện tử ô tô đòi hỏi các giải pháp kết nối tiên tiến nhằm giảm thiểu ứng suất nhiệt trong quá trình chế tạo. Các hệ hợp kim hàn không chì truyền thống thường yêu cầu nhiệt độ nóng chảy cao, gây hư hại cho các chất nền nhạy cảm nhiệt và hạn chế khả năng ứng dụng trong các cấu trúc 3D phức tạp. Do đó, việc nghiên cứu phát triển các hợp kim hàn không chì cùng vảy hàn nhiệt độ thấp (LTS) đã trở thành trọng tâm kỹ thuật trong ngành vật liệu và công nghệ ghép nối.</p><h3>Bối cảnh</h3><p>Việc loại bỏ chì (Pb) khỏi quy trình lắp ráp điện tử từ đầu những năm 2000 đã thúc đẩy sự phát triển mạnh mẽ của các hệ hợp kim không chì, trong đó Sn-Ag-Cu (SAC) là hệ tiêu chuẩn nhưng lại có nhiệt độ nóng chảy tương đối cao (trên 217 °C) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>]</sup>. Sự gia tăng của các ứng dụng điện tử linh hoạt, thiết bị đeo tay, quang điện hữu cơ và bao bì quang điện tử VCSEL đòi hỏi nhiệt độ liên kết thấp hơn để bảo vệ các chất nền hữu cơ nhạy cảm nhiệt <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>]</sup>. Tuy nhiên, các hệ vảy hàn nhiệt độ thấp như Sn-Bi hay Sn-In lại đối mặt với các thách thức lớn về độ giòn của pha giàu bismuth, sự phát triển không kiểm soát của hợp chất liên kim (IMC) tại giao diện, cũng như hiện tượng tạo râu thiếc (Sn whisker) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-5\">5</a>]</sup>. Các nghiên cứu được tổng hợp trong khoảng thời gian từ năm 2000 đến 2026 tập trung giải quyết các bài toán về tối ưu hóa thành phần, kiểm soát động học phát triển IMC, cải thiện độ bền cơ học và nâng cao độ tin cậy dưới các điều kiện vận hành khắc nghiệt như bức xạ hạt nhân và không gian <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>, <a href=\"#ref-10\">10</a>, <a href=\"#ref-11\">11</a>, <a href=\"#ref-12\">12</a>, <a href=\"#ref-13\">13</a>, <a href=\"#ref-14\">14</a>, <a href=\"#ref-15\">15</a>]</sup>.</p><h3>Hợp kim hàn không chì và thiết kế thành phần</h3><p>Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> đã nghiên cứu ảnh hưởng của việc bổ sung hàm lượng nhỏ sắt (Fe từ 0,2 đến 0,5% trọng lượng) và thời gian già hóa nhiệt lên vi cấu trúc, độ ma sát nội, mô-đun Young động học và hành vi ăn mòn của hợp kim hàn eutectic Sn-0.7Cu. Kết quả chỉ ra rằng việc bổ sung 0,4% trọng lượng Fe giúp tinh luyện vi cấu trúc nền và đạt được sự phân bố đồng đều của các kết tủa liên kim FeSn<sub>2</sub> và Cu<sub>6</sub>Sn<sub>5</sub>, qua đó kìm hãm sự di chuyển của lệch và cải thiện mô-đun Young động học <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Trong một nghiên cứu khác về hệ Sn-3Ag-0.5Cu có pha tạp bismuth (SAC305-xBi với x = 0, 1, 2 và 4% trọng lượng), nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> ghi nhận rằng hàm lượng Bi thấp giúp tăng cường dung dịch rắn, tinh luyện các hạt β-Sn và biến đổi pha Ag<sub>3</sub>Sn hình kim thành hình cầu đẳng trục, mặc dù hàm lượng Bi dư thừa có thể gây kết tủa các hạt Bi giòn và làm suy giảm độ ổn định vi cấu trúc.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg\" alt=\"Dòng ăn mòn của các hợp kim SAC305-xBi so sánh với dữ liệu của Luo và cộng sự [19].\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Dòng ăn mòn của các hợp kim SAC305-xBi so sánh với dữ liệu của Luo và cộng sự [19]. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Halmanová et al. (2026), “Microstructure and Corrosion Resistance of Sn-3Ag-0.5Cu-xBi Solders”, <em>Technologies</em>, <a href=\"https://doi.org/10.3390/technologies14080509\" target=\"_blank\" rel=\"noopener\">doi:10.3390/technologies14080509</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Bên cạnh đó, việc bổ sung vi lượng các nguyên tố như Ag, Sb và Ni vào hợp kim SnBi cũng được khảo sát nhằm đánh giá hành vi làm mềm biến dạng và cơ chế biến dạng cắt <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Các thử nghiệm trên cụm vi mạch cho thấy các hợp kim chứa Sb thể hiện khả năng chống hình thành mạng vi nứt tốt hơn so với hợp kim nhị phân Sn58Bi vốn xuất hiện các vết nứt tế vi rộng trong cấu trúc khối <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig4.jpg\" alt=\"Biến dạng dẻo phát triển tại giao diện đệm mối hàn dưới lực cắt đơn điệu [11].\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Biến dạng dẻo phát triển tại giao diện đệm mối hàn dưới lực cắt đơn điệu [11]. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Lai et al. (2026), “Strain Softening Behavior and Impact of Microalloying in SnBi Solder Alloys”, <em>Journal of Electronic Materials</em>, <a href=\"https://doi.org/10.1007/s11664-026-13210-4\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s11664-026-13210-4</a> [<a href=\"#ref-11\">11</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Vảy hàn nhiệt độ thấp và nhiệt độ nóng chảy</h3><p>Các hệ vảy hàn nhiệt độ thấp đóng vai trò then chốt trong việc giảm thiểu thiệt hại nhiệt cho các linh kiện nhạy cảm <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Hợp kim Sn-58Bi có nhiệt độ eutectic khoảng 139 °C giúp giảm đáng kể nhiệt độ hàn, tuy nhiên vấn đề giòn của pha giàu Bi và sự thô hóa vi cấu trúc hai pha vẫn là thách thức lớn <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Để khắc phục, việc bổ sung Zn hoặc In, hoặc sử dụng cấu trúc màng mỏng hai lớp Sn/Bi mạ điện và vảy hàn hỗn hợp Sn-Sb/Sn-Bi đã được phát triển để tạo ra các liên kết ở nhiệt độ thấp <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Đối với các ứng dụng liên kết pha lỏng tạm thời (TLP - transient liquid phase bonding) trong bao bì VCSEL ô tô, hệ Ag-In cho phép liên kết không dùng trợ dung ở nhiệt độ 180–205 °C hoặc gia công gần 250 °C với độ bền cắt đạt tới 82,87 MPa <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Ngoài ra, các loại vảy hàn đa thành phần cũng được thiết kế nhằm hạ thấp nhiệt độ nóng chảy và giảm thiểu biến dạng chip trong các gói vi mạch 3D <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><h3>Thấm ướt và phản ứng liên kim</h3><p>Tương tác tại giao diện giữa vảy hàn và lớp lót đóng vai trò quyết định đến độ tin cậy lâu dài của mối hàn <sup class=\"cite\">[<a href=\"#ref-10\">10</a>, <a href=\"#ref-14\">14</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã khảo sát phản ứng giao diện trong cặp vật liệu Sn-Zn/Ag/Cu ở 170 °C mà không qua quá trình hàn hồi lưu (reflow), cho thấy lớp Ag mỏng giữ vai trò trung gian thúc đẩy các phản ứng tạo pha Ag<sub>3</sub>Sn, Ag<sub>5</sub>Zn<sub>8</sub> và sự chuyển dịch sang hình thành Cu<sub>6</sub>Sn<sub>5</sub> khi Zn bị tiêu thụ dần <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Trong nghiên cứu về vảy hàn Zn-5Al-3Mg trên chất nền Cu ở 693 K, việc bổ sung Magiê (Mg) làm thay đổi hoàn toàn chuỗi phản ứng giao diện, tạo ra ba lớp rõ rệt gồm lớp ngoài Mg<sub>2</sub>Zn<sub>11</sub>, lớp hỗn hợp hai pha CuZn<sub>4</sub>/Mg<sub>2</sub>CuZn<sub>3</sub> và lớp trong Cu<sub>5</sub>Zn<sub>8</sub> liền kề chất nền Cu thông qua phản ứng cận chu tinh (quasi-peritectic reaction) <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig2.jpg\" alt=\"Sơ đồ tiến hóa vi cấu trúc của SZ/PC-Cu trong quá trình già hóa ở 175 °C [15].\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Sơ đồ tiến hóa vi cấu trúc của SZ/PC-Cu trong quá trình già hóa ở 175 °C [15]. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Kim et al. (2026), “Overview of Low-Temperature Sn-Bi and Sn-Zn Solder Systems and Cu Interfacial Reliability for Advanced Electronic Packaging”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi17111216\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi17111216</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig3.jpg\" alt=\"Kết quả kính hiển vi điện tử phân tích cho hợp kim vảy hàn Zn-5Al-3Mg: (a) đường cong nhiệt lượng quét vi sai (DSC); (b) giản đồ nhiễu xạ tia X (XRD); (c) ảnh STEM-HAADF; (d) bản đồ EDS [10].\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Kết quả kính hiển vi điện tử phân tích cho hợp kim vảy hàn Zn-5Al-3Mg: (a) đường cong nhiệt lượng quét vi sai (DSC); (b) giản đồ nhiễu xạ tia X (XRD); (c) ảnh STEM-HAADF; (d) bản đồ EDS [10]. <span class=\"fig-credit\">Nguồn: Hình 1 trong bài gốc – Bae et al. (2026), “Characterization of Interfacial Reaction Layers Between a Zn-5Al-3Mg Solder Alloy and Cu Substrate”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16080901\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16080901</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Hơn nữa, loại lớp hoàn thiện bề mặt (surface finish) cũng ảnh hưởng mạnh mẽ đến sự phát triển của hợp chất liên kim (IMC) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-14\">14</a>]</sup>. Khi đánh giá độ tin cậy mối hàn (SJR) sử dụng vảy hàn chứa Indium trên bề mặt ENIG (Electroless Ni-P/Immersion Au), nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> phát hiện rằng lớp Ni-P hàm lượng phốt-pho cao (HP-Ni) duy trì độ tin cậy tốt và không phát triển IMC quá mức sau nhiều lần hàn hồi lưu nhờ sự hình thành pha InP kiểm soát, trong khi lớp Ni-P hàm lượng phốt-pho trung bình (MP-Ni) tạo ra lớp IMC dày hơn và suy giảm độ bền cắt <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><h3>Cơ tính, già hóa và độ tin cậy</h3><p>Độ tin cậy cơ học của mối hàn chịu ảnh hưởng lớn bởi vi cấu trúc, nhiệt độ và các điều kiện môi trường khắc nghiệt <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-12\">12</a>, <a href=\"#ref-13\">13</a>, <a href=\"#ref-15\">15</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> đã nghiên cứu ảnh hưởng của In và Ni đến độ dai va đập và nhiệt độ chuyển dịch dẻo - giòn (DBTT) của hợp kim Sn-0.7Cu, trong đó việc bổ sung In giúp phân tán mịn hạt Cu<sub>6</sub>Sn<sub>5</sub> trong nền β-Sn, trong khi việc bổ sung 5% nguyên tử Ni tạo ra pha (Ni,Cu)<sub>3</sub>Sn<sub>4</sub> dạng que thô và làm giảm độ dai va đập ngay cả ở nhiệt độ phòng <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Đối với hệ SAC305 nguyên khối, các thử nghiệm kéo ở nhiệt độ từ -40 °C đến 125 °C cho thấy sự chuyển dịch gãy từ dạng mặt cắt kết hợp hố trũng nông sang dạng hố trũng dẻo hoàn toàn, đồng thời mô hình Anand cải tiến đã được hiệu chỉnh giúp giảm 59% sai lệch đường cong so với công thức truyền thống <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig5.jpg\" alt=\"Cấu trúc hạt của các lớp SnCu và SnPb (sự phát triển râu từ hạt trụ) [5].\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Cấu trúc hạt của các lớp SnCu và SnPb (sự phát triển râu từ hạt trụ) [5]. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Choi et al. (2025), “Sn Whisker Growth Mitigation by Modifying the Composition of the Solder Alloys: A Brief Review”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18051130\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18051130</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Đặc biệt, sự suy giảm độ tin cậy do bức xạ trong các môi trường hàng không vũ trụ và hạt nhân cũng được tổng hợp hệ thống qua 24 nghiên cứu <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>. Bức xạ gamma thúc đẩy động học khuếch tán giao diện, dẫn đến sự dày lên của lớp IMC, hiện tượng ôxy hóa và giảm độ bền cắt, trong đó liều lượng thấp có thể làm cứng vật liệu tạm thời nhưng liều lượng cao gây giòn hóa <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>. Các mối hàn không chì SAC305 thể hiện độ nhạy cảm với bức xạ cao hơn so với hệ Sn-Pb, biểu hiện qua tốc độ phát triển IMC nhanh và sự mất ổn định mạng tinh thể do hiệu ứng khuếch tán tăng cường bởi bức xạ (RED) <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig6.jpg\" alt=\"Ảnh SEM hiển thị mặt trên của các hạt hợp chất liên kim (IMC) hình thành trong giao diện SnBiIn-2Zn/Cu [4].\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Ảnh SEM hiển thị mặt trên của các hạt hợp chất liên kim (IMC) hình thành trong giao diện SnBiIn-2Zn/Cu [4]. <span class=\"fig-credit\">Nguồn: Hình 9 trong bài gốc – Wu et al. (2025), “Applications and Recent Advances of Low-Temperature Multicomponent Solders in Electronic Packaging: A Review”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi16030300\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi16030300</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig7.jpg\" alt=\"Quan sát SEM đại diện về sự xuống cấp do bức xạ trong các mối hàn [11].\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Quan sát SEM đại diện về sự xuống cấp do bức xạ trong các mối hàn [11]. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Ismail et al. (2026), “Radiation-Induced Interfacial Degradation and Mechanical Reliability of Sn-Based Solder Joints: A Systematic Review”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19194175\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19194175</a> [<a href=\"#ref-15\">15</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Thách thức</h3><p>Mặc dù đã có nhiều tiến bộ trong việc thiết kế hợp kim và kiểm soát giao diện, ngành công nghệ hàn vẫn đối mặt với nhiều thách thức đáng kể dựa trên các tài liệu đã công bố. Sự khan hiếm dữ liệu thực nghiệm tiêu chuẩn hóa đối với các hợp kim đa thành phần mới và việc thiếu các mô hình dự báo tuổi thọ kết hợp đa ứng suất (như bức xạ kết hợp chu trình nhiệt) làm hạn chế khả năng khái quát hóa kết quả phòng thí nghiệm vào thực tế công nghiệp <sup class=\"cite\">[<a href=\"#ref-8\">8</a>, <a href=\"#ref-15\">15</a>]</sup>. Các phương pháp đo lường cơ học trên các mối hàn vi mô (microscale solder joints) vẫn gặp khó khăn do kích thước nhỏ gọn của linh kiện, dẫn đến độ phân tán dữ liệu đo lường cao <sup class=\"cite\">[<a href=\"#ref-8\">8</a>, <a href=\"#ref-13\">13</a>]</sup>. Ngoài ra, hiện tượng tạo râu thiếc trong các hệ thống không chì, sự hình thành các pha liên kim giòn (như Bi giàu pha hoặc các pha giàu Ni, Cu) và sự suy giảm tính chất dưới tác động của bức xạ hoặc già hóa nhiệt kéo dài vẫn chưa được giải quyết triệt để trong mọi điều kiện vận hành thực tế <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-11\">11</a>, <a href=\"#ref-12\">12</a>, <a href=\"#ref-15\">15</a>]</sup>. Việc tích hợp các kết quả nghiên cứu vật liệu vào tiêu chuẩn thực hành công nghiệp đòi hỏi các phương pháp kiểm chứng nghiêm ngặt hơn nữa.</p><h3>Xu thế tương lai</h3><p>Dựa trên các nghiên cứu tổng quan, các xu hướng phát triển trong tương lai được kỳ vọng sẽ tập trung vào một số định hướng chính. Thứ nhất, cộng đồng nghiên cứu kỳ vọng sẽ thiết kế thành công các hệ vảy hàn đa thành phần mới dựa trên nền tảng tối ưu hóa tỷ lệ nguyên tố vi lượng (như Bi, In, Zn, Mg, Fe) nhằm cân bằng giữa nhiệt độ nóng chảy thấp và độ bền cơ học cao <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-10\">10</a>]</sup>. Thứ hai, việc ứng dụng các mô hình mô phỏng đaスケール (multiscale modeling) kết hợp cơ chế khuếch tán tăng cường bởi bức xạ được kỳ vọng sẽ cải thiện độ chính xác trong việc dự báo tuổi thọ mối hàn trong môi trường khắc nghiệt <sup class=\"cite\">[<a href=\"#ref-13\">13</a>, <a href=\"#ref-15\">15</a>]</sup>. Thứ ba, các giải pháp công nghệ tiên tiến như mạ điện cấu trúc màng mỏng (Sn/Bi bilayers) và liên kết pha lỏng tạm thời (TLP) dạng không trợ dung dự kiến sẽ được mở rộng ứng dụng trong đóng gói 3D và linh kiện quang điện tử <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-3\">3</a>]</sup>. Cuối cùng, việc phát triển các phương pháp kiểm tra không phá hủy tiên tiến để đánh giá chất lượng giao diện mối hàn vi mô sẽ tiếp tục nhận được sự quan tâm đầu tư từ cộng đồng kỹ thuật <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><h3>Hàm ý thực tiễn</h3><p>Các kết quả nghiên cứu được tổng hợp mang lại một số hàm ý thực tiễn quan trọng cho ngành công nghiệp và giáo dục kỹ thuật tại Việt Nam. Đối với ngành công nghiệp lắp ráp điện tử và chế tạo thiết bị, việc nắm bắt các cơ chế tương tác giao diện giữa vảy hàn nhiệt độ thấp và các lớp hoàn thiện bề mặt (như ENIG với hàm lượng P khác nhau) giúp tối ưu hóa thông số quy trình hàn hồi lưu, hạn chế sự hình thành IMC giòn và nâng cao độ tin cậy của sản phẩm <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-14\">14</a>]</sup>. Trong lĩnh vực đào tạo kỹ thuật và bậc sau đại học, các dữ liệu về mô hình hóa cơ tính (như mô hình Anand đã chỉnh sửa) và cơ chế biến dạng của hợp kim hàn không chì nên được tích hợp vào chương trình giảng dạy chuyên ngành khoa học vật liệu và kỹ thuật hàn <sup class=\"cite\">[<a href=\"#ref-11\">11</a>, <a href=\"#ref-13\">13</a>]</sup>. Cuối cùng, việc đẩy mạnh nghiên cứu thực nghiệm đối với các hệ hợp kim mới sẽ tạo tiền đề cho các kỹ sư Việt Nam làm chủ công nghệ đóng gói vi mạch tiên tiến và thiết bị điện tử ô tô trong tương lai <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-12\">12</a>]</sup>.</p>",
+  "content_en": "<h3>Introduction</h3><p class=\"lead\">The transition toward advanced electronic technologies, high-density packaging, and automotive electronics demands advanced interconnection solutions to minimize thermal stress during manufacturing. Traditional lead-free solder alloy systems typically require high melting temperatures, causing thermal damage to heat-sensitive substrates and limiting applicability in complex 3D structures. Consequently, researching and developing lead-free solder alloys and low-termperature soldering (LTS) materials has become a key technical focus in materials science and joining technology.</p><h3>Background</h3><p>The elimination of lead (Pb) from electronic assembly since the early 2000s has strongly driven the development of lead-free systems, among which Sn-Ag-Cu (SAC) remains the most popular alloy but possesses a relatively high melting point above 217 °C <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>]</sup>. The rise of flexible electronics, wearable devices, organic photovoltaics, and VCSEL optoelectronic packaging requires lower bonding temperatures to protect heat-sensitive organic substrates <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>]</sup>. However, low-temperature solder systems such as Sn-Bi and Sn-In face major challenges regarding the brittleness of Bi-rich phases, uncontrolled growth of intermetallic compound (IMC) layers at interfaces, and Sn whisker formation <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-5\">5</a>]</sup>. The reviewed literature spanning from 2000 to 2026 focuses on resolving compositional optimization, controlling IMC growth kinetics, improving mechanical strength, and enhancing reliability under severe operating conditions such as nuclear and space radiation <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>, <a href=\"#ref-10\">10</a>, <a href=\"#ref-11\">11</a>, <a href=\"#ref-12\">12</a>, <a href=\"#ref-13\">13</a>, <a href=\"#ref-14\">14</a>, <a href=\"#ref-15\">15</a>]</sup>.</p><h3>Lead-Free Solder Alloys and Compositional Design</h3><p>The authors of <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> investigated the effects of minor iron additions (0.2 to 0.5 wt.%) and thermal aging time on the microstructure, internal friction, dynamic Young's modulus, and corrosion behavior of eutectic Sn-0.7Cu solder alloys. The results indicate that adding 0.4 wt.% Fe effectively refines the matrix microstructure and achieves a uniform distribution of FeSn<sub>2</sub> and Cu<sub>6</sub>Sn<sub>5</sub> intermetallic precipitates, which pin dislocations and increase the dynamic Young's modulus <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. In another study on Bi-alloyed Sn-3Ag-0.5Cu (SAC305-xBi where x = 0, 1, 2, and 4 wt.%), the authors of <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> noted that low Bi concentrations strengthen the solder through solid-solution strengthening, refine β–Sn grains, and transform needle-like Ag<sub>3</sub>Sn phases into equiaxed morphologies, although excessive Bi may precipitate brittle Bi particles and cause microstructural instability.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg\" alt=\"Corrosion currents of the SAC305-xBi alloys compared to Luo et al. [19].\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Corrosion currents of the SAC305-xBi alloys compared to Luo et al. [19]. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Halmanová et al. (2026), “Microstructure and Corrosion Resistance of Sn-3Ag-0.5Cu-xBi Solders”, <em>Technologies</em>, <a href=\"https://doi.org/10.3390/technologies14080509\" target=\"_blank\" rel=\"noopener\">doi:10.3390/technologies14080509</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Furthermore, the effects of microalloying additions such as Ag, Sb, and Ni on SnBi solder alloys were examined to understand strain-softening behavior and shear deformation mechanisms <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Tests on microscale circuit board assemblies showed that Sb-containing solders exhibit better resistance to extensive microcrack networks compared to binary Sn58Bi alloys, which develop widespread microcracks in the bulk structure <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig4.jpg\" alt=\"Plastic strain developed at the solder joint pad interface under monotonic lap shear [11].\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Plastic strain developed at the solder joint pad interface under monotonic lap shear [11]. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Lai et al. (2026), “Strain Softening Behavior and Impact of Microalloying in SnBi Solder Alloys”, <em>Journal of Electronic Materials</em>, <a href=\"https://doi.org/10.1007/s11664-026-13210-4\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s11664-026-13210-4</a> [<a href=\"#ref-11\">11</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Low-Temperature Soldering and Melting Points</h3><p>Low-temperature multicomponent solder systems play a crucial role in minimizing thermal damage to sensitive components <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Sn-58Bi alloy has a eutectic temperature of approximately 139 °C, which markedly reduces the soldering temperature; however, the brittle Bi-rich phase and coarsening of the two-phase microstructure remain major challenges <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. To overcome this, the addition of Zn or In, electrodeposited Sn/Bi bilayers, and mixed Sn-Sb/Sn-Bi solders have been developed to form low-temperature joints <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. For transient-liquid-phase (TLP) bonding applications in automotive VCSEL packaging, the Ag-In system enables fluxless joining near 180–205 °C or processing near 250 °C with shear strengths up to 82.87 MPa <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Additionally, multicomponent solders are engineered to lower melting temperatures and minimize chip deformation in 3D packaging <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><h3>Wettability and Interfacial Reactions</h3><p>Interfacial reactions between solders and substrates dictate the long-term reliability of joints <sup class=\"cite\">[<a href=\"#ref-10\">10</a>, <a href=\"#ref-14\">14</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> investigated solid-state reactions in Sn–Zn/Ag/Cu couples at 170 °C without reflow soldering, revealing that the intermediate Ag layer promotes the formation of Ag<sub>3</sub>Sn, Ag<sub>5</sub>Zn<sub>8</sub> phases and transitions into Cu<sub>6</sub>Sn<sub>5</sub> as Zn is progressively depleted <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. In evaluating Zn-5Al-3Mg solder on Cu substrates at 693 K, minor Magnesium additions fundamentally alter the interfacial reaction pathway, producing three distinct layers consisting of an outer Mg<sub>2</sub>Zn<sub>11</sub> layer, a middle biphasic CuZn<sub>4</sub>/Mg<sub>2</sub>CuZn<sub>3</sub> mixture, and an inner Cu<sub>5</sub>Zn<sub>8</sub> layer adjacent to the Cu substrate via a quasi-peritectic reaction <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig2.jpg\" alt=\"Schematic of the microstructure evolution of SZ/PC-Cu during aging at 175 °C [15].\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Schematic of the microstructure evolution of SZ/PC-Cu during aging at 175 °C [15]. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Kim et al. (2026), “Overview of Low-Temperature Sn-Bi and Sn-Zn Solder Systems and Cu Interfacial Reliability for Advanced Electronic Packaging”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi17111216\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi17111216</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig3.jpg\" alt=\"Analytical electron microscopy results for the Zn-5Al-3Mg solder alloy: (a) DSC curve; (b) XRD pattern; (c) STEM-HAADF image; (d) EDS mapping [10].\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Analytical electron microscopy results for the Zn-5Al-3Mg solder alloy: (a) DSC curve; (b) XRD pattern; (c) STEM-HAADF image; (d) EDS mapping [10]. <span class=\"fig-credit\">Source: Fig. 1 of the original article – Bae et al. (2026), “Characterization of Interfacial Reaction Layers Between a Zn-5Al-3Mg Solder Alloy and Cu Substrate”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16080901\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16080901</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Moreover, surface finishes strongly influence intermetallic compound (IMC) growth <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-14\">14</a>]</sup>. When evaluating solder joint reliability (SJR) using indium-containing solders on ENIG (Electroless Ni-P/Immersion Au) surface finishes, the authors of <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> found that high-phosphorus electroless Ni-P (HP-Ni) maintains good reliability without excessive IMC growth after multiple reflows due to the formation of a controlling InP phase, whereas middle-phosphorus Ni-P (MP-Ni) forms thicker IMCs and exhibits reduced shear strength <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><h3>Mechanical Behavior, Aging, and Reliability</h3><p>The mechanical reliability of solder joints is heavily influenced by microstructure, temperature, and harsh environmental conditions <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-12\">12</a>, <a href=\"#ref-13\">13</a>, <a href=\"#ref-15\">15</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> investigated the influence of In and Ni on the impact toughness and ductile-to-brittle transition temperature (DBTT) of Sn-0.7Cu solder, showing that In refines Cu<sub>6</sub>Sn<sub>5</sub> dispersion within β-Sn, whereas adding 5 at.% Ni yields coarser rod-like (Ni,Cu)<sub>3</sub>Sn<sub>4</sub> phases and reduces impact toughness even at room temperature <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. For bulk cast SAC305, tensile tests from −40 °C to 125 °C demonstrated a transition from mixed faceted/shallow dimple to ductile dimple fracture, while a calibrated modified Anand model reduced mean curve-shape discrepancy by 59% relative to the conventional formulation <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig5.jpg\" alt=\"Grain structure of SnCu and SnPb layers: hillock growth from a columnar grain [5].\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Grain structure of SnCu and SnPb layers: hillock growth from a columnar grain [5]. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Choi et al. (2025), “Sn Whisker Growth Mitigation by Modifying the Composition of the Solder Alloys: A Brief Review”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18051130\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18051130</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Notably, radiation-induced reliability degradation in aerospace and nuclear environments was systematically reviewed across 24 studies <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>. Gamma irradiation accelerates interfacial diffusion kinetics, resulting in IMC thickening, oxidation, and shear strength reductions, where low doses temporarily harden the material while higher doses induce brittleness <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>. Lead-free SAC305 solders exhibit higher radiation sensitivity than Sn-Pb systems, characterized by accelerated IMC growth and lattice instability driven by radiation-enhanced diffusion (RED) <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig6.jpg\" alt=\"SEM images showing the top view of IMC grains formed in the SnBiIn-2Zn/Cu interface [4].\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> SEM images showing the top view of IMC grains formed in the SnBiIn-2Zn/Cu interface [4]. <span class=\"fig-credit\">Source: Fig. 9 of the original article – Wu et al. (2025), “Applications and Recent Advances of Low-Temperature Multicomponent Solders in Electronic Packaging: A Review”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi16030300\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi16030300</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig7.jpg\" alt=\"Representative SEM observations of radiation-induced degradation in solder joints [11].\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> Representative SEM observations of radiation-induced degradation in solder joints [11]. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Ismail et al. (2026), “Radiation-Induced Interfacial Degradation and Mechanical Reliability of Sn-Based Solder Joints: A Systematic Review”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19194175\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19194175</a> [<a href=\"#ref-15\">15</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Challenges</h3><p>Despite significant progress in alloy design and interfacial control, the joining industry faces notable challenges based on published literature. The scarcity of standardized experimental data for newly developed multicomponent alloys and the lack of multi-stressor lifetime predictive models (such as radiation combined with thermal cycling) limit the generalization of laboratory results to industrial practice <sup class=\"cite\">[<a href=\"#ref-8\">8</a>, <a href=\"#ref-15\">15</a>]</sup>. Mechanical testing of microscale solder joints remains challenging due to compact component dimensions, leading to high data scatter <sup class=\"cite\">[<a href=\"#ref-8\">8</a>, <a href=\"#ref-13\">13</a>]</sup>. Furthermore, Sn whisker formation in lead-free systems, the precipitation of brittle intermetallic phases (such as Bi-rich or Ni- and Cu-rich phases), and property degradation under radiation or prolonged thermal aging have not been fully resolved across all operational conditions <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-11\">11</a>, <a href=\"#ref-12\">12</a>, <a href=\"#ref-15\">15</a>]</sup>. Integrating materials research findings into industrial standards requires rigorous validation methodologies.</p><h3>Future Trends</h3><p>Based on the reviewed literature, future developments are expected to focus on several key directions. First, the research community expects successful design of novel multicomponent solder systems through optimized minor element additions (such as Bi, In, Zn, Mg, Fe) to balance low melting points with high mechanical strength <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-10\">10</a>]</sup>. Second, the application of multiscale modeling coupled with radiation-enhanced diffusion mechanisms is expected to improve the predictive accuracy of joint lifetimes in extreme environments <sup class=\"cite\">[<a href=\"#ref-13\">13</a>, <a href=\"#ref-15\">15</a>]</sup>. Third, advanced technological solutions such as thin-film Sn/Bi bilayers and fluxless transient-liquid-phase (TLP) bonding are anticipated to expand into 3D packaging and optoelectronic devices <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-3\">3</a>]</sup>. Finally, the development of advanced non-destructive testing methods to evaluate microscale solder joint interfaces will continue to attract investment from the technical community <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><h3>Practical Implications</h3><p>The synthesized research findings yield several practical implications for industry and technical education in Vietnam. For the electronic assembly and manufacturing industry, understanding interfacial reaction mechanisms between low-temperature solders and surface finishes (such as ENIG with varying P content) helps optimize reflow soldering process parameters, limit brittle IMC formation, and enhance product reliability <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-14\">14</a>]</sup>. In technical education and graduate studies, data regarding constitutive modeling (such as the modified Anand model) and deformation mechanisms of lead-free solders should be integrated into materials science and welding engineering curricula <sup class=\"cite\">[<a href=\"#ref-11\">11</a>, <a href=\"#ref-13\">13</a>]</sup>. Finally, accelerating experimental research on novel alloy systems will lay the groundwork for domestic engineers to master advanced microchip packaging and automotive electronics technologies <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-12\">12</a>]</sup>.</p>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Eunsung Kim",
+        "Sujith Lal",
+        "Omkar A. Patil",
+        "Chih‐Ming Chen",
+        "Baoyang Lu",
+        "Sooman Lim"
+      ],
+      "more_authors": true,
+      "title": "Overview of Low-Temperature Sn-Bi and Sn-Zn Solder Systems and Cu Interfacial Reliability for Advanced Electronic Packaging",
+      "journal": "Micromachines",
+      "date": "2026-10-22",
+      "doi": "10.3390/mi17111216",
+      "url": "https://doi.org/10.3390/mi17111216",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Mutsumi Komeyama",
+        "Toma Sasaki",
+        "Fuminori Shibayama",
+        "Katsuhisa Tanabe",
+        "Shigeo Hashimoto"
+      ],
+      "more_authors": false,
+      "title": "Solder Joint Reliability of Middle P% and High P% Ni/Au with Low Melting Point Solder Containing Indium",
+      "journal": "Journal of Surface Mount Technology",
+      "date": "2026-09-01",
+      "doi": "10.37665/t96qew15",
+      "url": "https://doi.org/10.37665/t96qew15",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Nandita Gyanchandani",
+        "Ajinkya Jadhav"
+      ],
+      "more_authors": false,
+      "title": "Ag-In transient-liquid-phase bonding for die attach: Processing, microstructure, properties and comparison with other TLP systems, with automotive VCSEL packaging as an application case",
+      "journal": "Next Materials",
+      "date": "2026-10-01",
+      "doi": "10.1016/j.nxmate.2026.103828",
+      "url": "https://doi.org/10.1016/j.nxmate.2026.103828",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Guodong Wu",
+        "Jingfang Shen",
+        "Ding Zhou",
+        "Muhammad Khairi Faiz",
+        "Yew Hoong Wong"
+      ],
+      "more_authors": false,
+      "title": "Applications and Recent Advances of Low-Temperature Multicomponent Solders in Electronic Packaging: A Review",
+      "journal": "Micromachines",
+      "date": "2025-03-03",
+      "doi": "10.3390/mi16030300",
+      "url": "https://doi.org/10.3390/mi16030300",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Halim Choi",
+        "Balázs Illés",
+        "Karel Dušek"
+      ],
+      "more_authors": false,
+      "title": "Sn Whisker Growth Mitigation by Modifying the Composition of the Solder Alloys: A Brief Review",
+      "journal": "Materials",
+      "date": "2025-03-02",
+      "doi": "10.3390/ma18051130",
+      "url": "https://doi.org/10.3390/ma18051130",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Shereen M. Abdelaziz",
+        "M. Abd El-Hafez",
+        "Heba Yehia Zahran",
+        "Alaa Farag Abd El-Rehim",
+        "Eman AbdElRhiem"
+      ],
+      "more_authors": false,
+      "title": "The effect of minor iron additions and aging time on the internal friction, dynamic Young's modulus, and corrosion behavior of Sn-0.7Cu lead-free solder alloy",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-10-12",
+      "doi": "10.1016/j.jmrt.2026.10.093",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.10.093",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "M. Halmanová",
+        "Ivona Černičková",
+        "Patrícia Danišovičová",
+        "Patrik Šulhánek",
+        "Marián Drienovský",
+        "Xabier Zubizarreta Cuerda"
+      ],
+      "more_authors": true,
+      "title": "Microstructure and Corrosion Resistance of Sn-3Ag-0.5Cu-xBi Solders",
+      "journal": "Technologies",
+      "date": "2026-08-17",
+      "doi": "10.3390/technologies14080509",
+      "url": "https://doi.org/10.3390/technologies14080509",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Emily Lina Brüning",
+        "Adithya Harithas Venkatesh",
+        "Christian Kreischer"
+      ],
+      "more_authors": false,
+      "title": "Development of a System for Soldering of 2G HTS Tapes, Including Primary Exploratory Solder Joint Analysis at Various Process Parameters",
+      "journal": "Journal of Experimental and Theoretical Analyses",
+      "date": "2026-09-24",
+      "doi": "10.3390/jeta4040033",
+      "url": "https://doi.org/10.3390/jeta4040033",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Chao-hong Wang",
+        "Chu-An Li"
+      ],
+      "more_authors": false,
+      "title": "Microstructural Evolution in Solid-State Sn–Zn/Ag/Cu Interfacial Reactions at 170 °C",
+      "journal": "Materials",
+      "date": "2026-10-03",
+      "doi": "10.3390/ma19194217",
+      "url": "https://doi.org/10.3390/ma19194217",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Jee‐Hwan Bae",
+        "Yena Kwon",
+        "Seung-Moon Baek",
+        "Choong-Do Lee",
+        "Cheol‐Woong Yang"
+      ],
+      "more_authors": false,
+      "title": "Characterization of Interfacial Reaction Layers Between a Zn-5Al-3Mg Solder Alloy and Cu Substrate",
+      "journal": "Metals",
+      "date": "2026-08-12",
+      "doi": "10.3390/met16080901",
+      "url": "https://doi.org/10.3390/met16080901",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Sean Yenyu Lai",
+        "Hannah N. Fowler",
+        "Lijia Xie",
+        "P. L. Sukshitha Achar",
+        "Chung-Shuo Lee",
+        "Nilesh U. Badwe"
+      ],
+      "more_authors": true,
+      "title": "Strain Softening Behavior and Impact of Microalloying in SnBi Solder Alloys",
+      "journal": "Journal of Electronic Materials",
+      "date": "2026-10-12",
+      "doi": "10.1007/s11664-026-13210-4",
+      "url": "https://doi.org/10.1007/s11664-026-13210-4",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Ayushi Thakur",
+        "Subha Sanket Panda",
+        "Sudhanshu Shekhar Singh",
+        "Jayant Jain",
+        "Sangeeta Santra"
+      ],
+      "more_authors": false,
+      "title": "Effect of Indium and Nickel on Impact Toughness of Sn–0.7Cu Solder: Interplay of Solubility, Phase Configuration, and an Improved Ductile‐to‐Brittle Transition Temperature Analysis",
+      "journal": "Advanced Engineering Materials",
+      "date": "2026-09-21",
+      "doi": "10.1002/adem.71285",
+      "url": "https://doi.org/10.1002/adem.71285",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "A.S. Anousheh",
+        "Andrew Gryguć",
+        "Jim Chen",
+        "Wensheng Zhang",
+        "Hamid Jahed"
+      ],
+      "more_authors": false,
+      "title": "Tensile behavior of lead-free SAC305 solder: constitutive modeling and fracture mechanisms",
+      "journal": "Materials & Design",
+      "date": "2026-09-16",
+      "doi": "10.1016/j.matdes.2026.117056",
+      "url": "https://doi.org/10.1016/j.matdes.2026.117056",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Mohd Izrul Izwan Ramli",
+        "Mohd Arif Anuar Mohd Salleh",
+        "Mohd Mustafa Al Bakri Abdullah",
+        "Nur Syahirah Mohamad Zaimi",
+        "Andrei Victor Sandu",
+        "Petrică Vizureanu"
+      ],
+      "more_authors": true,
+      "title": "Formation and Growth of Intermetallic Compounds in Lead-Free Solder Joints: A Review",
+      "journal": "Materials",
+      "date": "2022-02-15",
+      "doi": "10.3390/ma15041451",
+      "url": "https://doi.org/10.3390/ma15041451",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Norliza Ismail",
+        "Nurhakimah Norhashim",
+        "Wan Yusmawati Wan Yusoff",
+        "Sabarina Abdul Hamid",
+        "N. L. Mohd Kamal",
+        "Zulhilmy Sahwee"
+      ],
+      "more_authors": true,
+      "title": "Radiation-Induced Interfacial Degradation and Mechanical Reliability of Sn-Based Solder Joints: A Systematic Review",
+      "journal": "Materials",
+      "date": "2026-09-30",
+      "doi": "10.3390/ma19194175",
+      "url": "https://doi.org/10.3390/ma19194175",
+      "license": "cc-by",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

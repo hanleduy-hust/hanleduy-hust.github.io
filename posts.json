@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-cac-cong-nghe-han-tien-tien",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong Công nghệ Hàn Tiên tiến: Cơ chế Vi cấu trúc, Tối ưu hóa Năng lượng và Mô hình hóa Nhiệt-Cơ-Đàn-Dẻo",
+    "title_en": "Advances in Advanced Welding Technologies: Microstructural Mechanisms, Energy Optimization, and Thermo-Elasto-Plastic Modeling",
+    "summary_vi": "Bài viết phân tích các tiến bộ gần đây trong công nghệ hàn tiên tiến dựa trên cơ sở dữ liệu khoa học đến tháng 10 năm 2026, tập trung vào hàn laser siêu ngắn, hàn khuấy ma sát, xử lý dòng điện xung và mô hình hóa nhiệt độ số.",
+    "summary_en": "This article reviews recent advances in advanced welding technologies based on scientific literature up to October 2026, focusing on ultrashort pulse laser welding, friction stir welding, electric current pulse treatment, and numerical thermal modeling.",
+    "tags": [
+      "advanced welding",
+      "microstructure evolution",
+      "numerical modeling",
+      "laser welding",
+      "friction stir welding"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-cac-cong-nghe-han-tien-tien/fig1.jpg",
+    "file": "posts/2026-10-31-chuyen-de-cac-cong-nghe-han-tien-tien.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
     "date": "2026-10-31",
     "type": "feature",

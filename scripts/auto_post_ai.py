@@ -701,44 +701,95 @@ def collect_figures(papers, post_id):
 # ----------------------------------------------------------------------------
 # 3. Viết bài bằng Gemini
 
-GEMINI_MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(),
-                             "gemini-flash-latest", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash"] if m]
+GEMINI_MODELS = [m for m in [
+    os.environ.get("GEMINI_MODEL", "").strip(), "gemini-flash-latest"
+] if m]
+
+
+def gemini_candidates():
+    """Discover current text Flash models; listing is not proof of generation access."""
+    preferred = list(dict.fromkeys(GEMINI_MODELS))
+    metadata = {}
+    try:
+        response = SESSION.get(
+            "https://generativelanguage.googleapis.com/v1beta/models",
+            headers={"x-goog-api-key": GEMINI_API_KEY},
+            params={"pageSize": 1000}, timeout=30)
+        if response.status_code == 200:
+            for model in response.json().get("models", []):
+                name = model.get("name", "").removeprefix("models/")
+                if ("generateContent" in model.get("supportedGenerationMethods", [])
+                        and "flash" in name and name.startswith("gemini-")
+                        and not re.search(r"image|audio|tts|live|robot", name, re.I)):
+                    metadata[name] = model
+            preferred = [m for m in preferred if m in metadata] + sorted(metadata, reverse=True)
+        else:
+            log(f"Không lấy được danh sách model (HTTP {response.status_code}); dùng cấu hình.")
+    except (requests.RequestException, ValueError):
+        log("Không lấy được danh sách model; dùng cấu hình.")
+    names = list(dict.fromkeys(preferred))[:4]
+    if not names:
+        raise RuntimeError("API không liệt kê model Flash văn bản hỗ trợ generateContent.")
+    return [(name, metadata.get(name, {})) for name in names]
 
 
 def gemini_json(prompt):
+    import random
     errors = []
-    for model in GEMINI_MODELS:
+    started = time.monotonic()
+    required = ("title_vi", "title_en", "content_vi", "content_en")
+    for model, metadata in gemini_candidates():
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         body = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.4, "responseMimeType": "application/json", "maxOutputTokens": 65536},
+            "generationConfig": {"responseMimeType": "application/json",
+                                 "maxOutputTokens": min(65536, metadata.get("outputTokenLimit") or 65536)},
         }
-        for attempt in range(2):
+        for attempt in range(4):
+            if time.monotonic() - started > 720:
+                raise RuntimeError("Gemini chưa phục hồi sau giới hạn 12 phút. Dữ liệu nguồn đã được giữ lại.")
+            retry_after = 0
             try:
-                r = SESSION.post(url, headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
-                                 json=body, timeout=600)
-            except requests.RequestException as e:
-                errors.append(f"{model}: {type(e).__name__}")
-                continue
-            if r.status_code == 200:
-                try:
-                    cand = r.json()["candidates"][0]
-                    finish = cand.get("finishReason", "")
-                    text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", [])
-                                   if not p.get("thought"))
-                    text = re.sub(r"^```(json)?|```$", "", text.strip()).strip()
-                    data = json.loads(text)
-                    log(f"Gemini model: {model}")
-                    return data
-                except Exception as e:
-                    errors.append(f"{model}: không đọc được JSON (finishReason={finish or '?'}, {type(e).__name__}, "
-                                  f"{len(text) if 'text' in dir() else 0} ký tự)")
-                    continue
-            errors.append(f"{model}: HTTP {r.status_code} {r.text[:160]}")
-            if r.status_code in (400, 403, 404):
-                break  # model không dùng được → thử model kế tiếp
-            time.sleep(10)
-    raise RuntimeError("Gọi Gemini thất bại: " + " | ".join(errors))
+                response = SESSION.post(
+                    url, headers={"x-goog-api-key": GEMINI_API_KEY, "Content-Type": "application/json"},
+                    json=body, timeout=180)
+            except requests.RequestException as exc:
+                reason = type(exc).__name__
+            else:
+                if response.status_code == 200:
+                    try:
+                        candidate = response.json()["candidates"][0]
+                        if candidate.get("finishReason") != "STOP":
+                            raise ValueError("Bài chưa hoàn chỉnh")
+                        text = "".join(p.get("text", "") for p in candidate.get("content", {}).get("parts", [])
+                                       if not p.get("thought"))
+                        text = re.sub(r"^\x60\x60\x60(json)?|\x60\x60\x60$", "", text.strip()).strip()
+                        data = json.loads(text)
+                        if not isinstance(data, dict) or not all(isinstance(data.get(k), str) and data[k].strip() for k in required):
+                            raise ValueError("Thiếu nội dung song ngữ")
+                        log(f"Gemini model: {model}")
+                        return data
+                    except (KeyError, IndexError, TypeError, ValueError):
+                        reason = "JSON không hợp lệ hoặc bài chưa hoàn chỉnh"
+                else:
+                    reason = f"HTTP {response.status_code}"
+                    if response.status_code in (401, 402, 403):
+                        raise RuntimeError(f"Gemini {reason}: kiểm tra quyền API hoặc thanh toán; không tự thử tiếp.")
+                    if response.status_code not in (408, 429, 500, 502, 503, 504):
+                        errors.append(f"{model}: {reason}")
+                        break
+                    try:
+                        retry_after = max(0, float(response.headers.get("Retry-After", 0)))
+                    except (ValueError, TypeError):
+                        pass
+            errors.append(f"{model}: {reason}")
+            log(f"Gemini {model}, lần {attempt + 1}/4: {reason}")
+            if attempt < 3:
+                delay = min(60, max(retry_after, 10 * (2 ** attempt) + random.uniform(0, 3)))
+                log(f"Chờ {delay:.0f} giây trước khi thử lại.")
+                time.sleep(delay)
+        log(f"Chuyển sang model Flash dự phòng sau khi {model} không hoàn thành.")
+    raise RuntimeError("Gọi Gemini thất bại sau khi thử lại có giãn cách: " + " | ".join(errors[-8:]))
 
 
 def build_feature_prompt(papers, figures, today):

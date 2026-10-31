@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-nghien-cuu-ve-vay-han-nhiet-o-thap",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Nghiên cứu về vảy hàn nhiệt độ thấp",
+    "title_en": "Research on Low-Temperature Solder Alloys",
+    "summary_vi": "Tổng quan toàn diện về các hệ vảy hàn nhiệt độ thấp như Sn-Bi, Sn-Zn, Ag-In và hệ đa nguyên tố, tập trung vào thiết kế thành phần, động học lớp trung gian và độ tin cậy cơ học cho đóng gói vi điện tử tiên tiến.",
+    "summary_en": "A comprehensive review of low-temperature solder systems such as Sn-Bi, Sn-Zn, Ag-In, and multi-principal-element alloys, focusing on compositional design, interfacial layer kinetics, and mechanical reliability for advanced electronic packaging.",
+    "tags": [
+      "low-temperature solder",
+      "electronic packaging",
+      "intermetallic compounds",
+      "microstructure",
+      "mechanical reliability"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-nghien-cuu-ve-vay-han-nhiet-o-thap/fig1.jpg",
+    "file": "posts/2026-10-31-chuyen-de-nghien-cuu-ve-vay-han-nhiet-o-thap.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
     "date": "2026-10-31",
     "type": "feature",

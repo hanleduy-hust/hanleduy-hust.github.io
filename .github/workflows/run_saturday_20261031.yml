@@ -1,0 +1,89 @@
+name: Bài thứ Bảy về WAAM và in 3D kim loại và gửi duyệt
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/run_saturday_20261031.yml']
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: requested-saturday-20261031
+  cancel-in-progress: false
+jobs:
+  saturday-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 pillow pymupdf python-docx
+      - name: Tạo bài theo đúng cấu hình thứ Bảy
+        id: gen
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/saturday-preview
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          CONTACT_EMAIL: ${{ secrets.MAIL_USERNAME }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/auto_post_ai.py").resolve()
+          source = path.read_text(encoding="utf-8")
+          needle = "WEEKDAY = dt.datetime.now(VN_TZ).weekday()"
+          assert source.count(needle) == 1
+          source = source.replace(needle, "WEEKDAY = 5  # Saturday requested by user")
+          exec(compile(source, str(path), "exec"), {"__name__": "__main__", "__file__": str(path)})
+          PY
+      - name: Đồng bộ main trước khi tạo nhánh nội dung
+        if: steps.gen.outputs.skipped == 'false'
+        run: |
+          git stash push --include-untracked -- posts.json posts images/blog
+          git fetch origin main
+          git reset --hard origin/main
+          git stash pop
+      - name: Tạo PR chờ người dùng duyệt đăng
+        id: cpr
+        if: steps.gen.outputs.skipped == 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: review-saturday-${{ github.run_id }}
+          base: main
+          delete-branch: true
+          add-paths: |
+            posts.json
+            posts/**
+            images/blog/**
+          commit-message: "Bài thứ Bảy: ${{ steps.gen.outputs.title }}"
+          title: "[Chờ duyệt - Thứ Bảy] ${{ steps.gen.outputs.title }}"
+          body: |
+            Chủ đề thứ Bảy: Nghiên cứu mới về WAAM và in 3D kim loại.
+            Bài do AI tổng hợp từ tài liệu khoa học, song ngữ Việt–Anh và có hình kèm nguồn.
+            Email duyệt được gửi tới hanleduy@gmail.com theo yêu cầu người dùng.
+            Chưa công bố. Merge pull request khi đồng ý đăng.
+            Sau khi duyệt, Word được tự động lưu trong thư mục news_blog_AI trên Drive.
+      - name: Gửi bài thứ Bảy để người dùng xác nhận đăng
+        if: always() && steps.cpr.outputs.pull-request-url != ''
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/saturday-preview
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+          MAIL_TO: hanleduy@gmail.com
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+        run: python scripts/send_review_email.py
+      - name: Xuất Word xem trước
+        if: always() && steps.gen.outputs.skipped == 'false'
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/saturday-preview
+        run: python scripts/export_post_word.py "$DRAFT_DIR/post.json" "$DRAFT_DIR/Thu_Bay_WAAM_In_3D_kim_loai.docx" --root "$DRAFT_DIR"
+      - name: Lưu dữ liệu nguồn và bản nháp
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saturday-preview
+          path: ${{ runner.temp }}/saturday-preview
+          if-no-files-found: warn
+          retention-days: 14

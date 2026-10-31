@@ -1,4 +1,5 @@
 name: Chạy thử chuyên đề thứ Hai
+# Retry with supported-model discovery and exponential backoff.
 on:
   push:
     branches: [main]

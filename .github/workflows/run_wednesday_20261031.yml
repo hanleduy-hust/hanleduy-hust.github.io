@@ -1,4 +1,4 @@
-name: Bài thứ Tư và gửi duyệt tới hanleduy@gmail.com
+name: Thử lại bài thứ Tư về hợp kim hàn không chì và vảy hàn nhiệt độ thấp
 on:
   push:
     branches: [main]
@@ -60,7 +60,7 @@ jobs:
           commit-message: "Bài thứ Tư: ${{ steps.gen.outputs.title }}"
           title: "[Chờ duyệt - Thứ Tư] ${{ steps.gen.outputs.title }}"
           body: |
-            Chủ đề thứ Tư: Nghiên cứu về vảy hàn nhiệt độ thấp.
+            Chủ đề thứ Tư: Hợp kim hàn không chì và vảy hàn nhiệt độ thấp.
             Bài do AI tổng hợp từ tài liệu khoa học, song ngữ Việt–Anh và có hình kèm nguồn.
             Email duyệt được gửi tới hanleduy@gmail.com theo yêu cầu người dùng.
             Chưa công bố. Merge pull request khi đồng ý đăng.
@@ -78,7 +78,7 @@ jobs:
         if: always() && steps.gen.outputs.skipped == 'false'
         env:
           DRAFT_DIR: ${{ runner.temp }}/wednesday-preview
-        run: python scripts/export_post_word.py "$DRAFT_DIR/post.json" "$DRAFT_DIR/Thu_Tu_Vay_han_nhiet_do_thap.docx" --root "$DRAFT_DIR"
+        run: python scripts/export_post_word.py "$DRAFT_DIR/post.json" "$DRAFT_DIR/Thu_Tu_Hop_kim_han_khong_chi_va_vay_han_nhiet_do_thap.docx" --root "$DRAFT_DIR"
       - name: Lưu dữ liệu nguồn và bản nháp
         if: always()
         uses: actions/upload-artifact@v4

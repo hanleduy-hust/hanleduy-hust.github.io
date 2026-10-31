@@ -1,4 +1,4 @@
-name: Điểm tin khoa học hằng ngày (AI) – gửi email duyệt
+name: Chuyên đề khoa học theo ngày (AI) – gửi email duyệt
 
 on:
   schedule:
@@ -12,7 +12,7 @@ on:
         type: boolean
         default: true
       feature_topic:
-        description: 'Bài chuyên đề: chủ đề (để trống = bản tin hằng ngày)'
+        description: 'Bài chuyên đề: chủ đề (để trống = chủ đề theo thứ, giờ Việt Nam)'
         type: string
         default: ''
       feature_queries:
@@ -88,7 +88,7 @@ jobs:
           title: "📝 [Cần duyệt] ${{ steps.gen.outputs.title }}"
           labels: blog-draft
           body: |
-            Bản tin khoa học hằng ngày do AI tổng hợp: **${{ steps.gen.outputs.title }}**
+            Bài khoa học theo lịch chuyên đề trong tuần do AI tổng hợp: **${{ steps.gen.outputs.title }}**
 
             - **Đọc bản xem trước:** đã gửi qua email (có hình). Hoặc xem tab **Files changed**.
             - **Sửa câu chữ:** Files changed → `posts/${{ steps.gen.outputs.post_id }}.json` → ✏️.

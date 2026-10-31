@@ -1120,6 +1120,16 @@ def main():
     prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
     if AUTO_WEEKLY:
         prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing.")
+    # Keep source evidence even when the generation provider is unavailable.
+    import shutil
+    DRAFT_DIR.mkdir(parents=True, exist_ok=True)
+    (DRAFT_DIR / "sources.json").write_text(
+        json.dumps({"papers": papers, "figures": figures, "prompt": prompt,
+                    "post_id": post_id, "today": today}, ensure_ascii=False, indent=2),
+        encoding="utf-8")
+    if (IMG_DIR / post_id).is_dir():
+        shutil.copytree(IMG_DIR / post_id, DRAFT_DIR / "images" / "blog" / post_id,
+                        dirs_exist_ok=True)
     ai = gemini_json(prompt)
     bad = self_refs(ai)
     if bad:  # AI vẫn nhắc tên tác giả blog / "chuyên gia" → yêu cầu viết lại một lần

@@ -110,8 +110,10 @@ def main():
     msg.attach(alt)
 
     # create-pull-request restores the checkout; the checkpoint retains draft figures.
-    expected = sorted(set(re.findall(r'src="(images/blog/[^"]+/fig\\d+\\.jpg)"',
+    expected = sorted(set(re.findall(r'src="(images/blog/[^"]+/fig\d+\.jpg)"',
                                      post["content_vi"] + post["content_en"])))
+    if n_figs and len(expected) != n_figs:
+        sys.exit("Số hình trong nội dung không khớp danh sách đính kèm; chưa gửi email.")
     resolved_figures = []
     for relative in expected:
         candidates = [DRAFT_DIR / relative, ROOT / relative]

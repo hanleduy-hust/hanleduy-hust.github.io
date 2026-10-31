@@ -36,6 +36,12 @@ jobs:
           needle = "WEEKDAY = dt.datetime.now(VN_TZ).weekday()"
           assert source.count(needle) == 1
           source = source.replace(needle, "WEEKDAY = 0  # Monday preview only")
+          checkpoint = """    DRAFT_DIR.mkdir(parents=True, exist_ok=True)
+              (DRAFT_DIR / "sources.json").write_text(json.dumps({"papers": papers, "figures": figures, "prompt": prompt, "post_id": post_id, "today": today}, ensure_ascii=False, indent=2), encoding="utf-8")
+              import shutil
+              shutil.copytree(IMG_DIR, DRAFT_DIR / "images" / "blog", dirs_exist_ok=True)
+              ai = gemini_json(prompt)"""
+          source = source.replace("    ai = gemini_json(prompt)", checkpoint, 1)
           exec(compile(source, str(path), "exec"), {"__name__": "__main__", "__file__": str(path)})
           PY
       - name: Tạo PR để kiểm tra bài

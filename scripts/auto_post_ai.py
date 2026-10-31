@@ -1120,6 +1120,20 @@ def main():
     prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
     if AUTO_WEEKLY:
         prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, lead-free solder alloys and low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing. Do not reconstruct missing or truncated numerical thresholds. Do not claim absolute accuracy, complete elimination of defects, replacement of inspection, or regulatory certification from laboratory results. Keep measured performance scoped to the reported dataset.")
+    # The weekday topic guides source selection; each article needs its own headline.
+    recent_titles = []
+    if POSTS_INDEX.exists():
+        published_index = json.loads(POSTS_INDEX.read_text(encoding="utf-8"))
+        recent_titles = [{k: item.get(k, "") for k in ("title_vi", "title_en")}
+                         for item in published_index[:30]]
+    prompt += (
+        "\nHEADLINE RULES: The editorial topic is a research scope, not the article headline. "
+        "Create a specific Vietnamese headline and a faithful English counterpart based on the "
+        "most notable findings, materials, methods or applications actually supported by the supplied papers. "
+        "Do not copy or merely paraphrase the fixed weekday topic as a generic headline. "
+        "Avoid repeating recent headlines or changing only a date. Do not invent novelty or exaggerate results. "
+        "Recent published headlines to avoid: " + json.dumps(recent_titles, ensure_ascii=False)
+    )
     # Keep source evidence even when the generation provider is unavailable.
     import shutil
     DRAFT_DIR.mkdir(parents=True, exist_ok=True)

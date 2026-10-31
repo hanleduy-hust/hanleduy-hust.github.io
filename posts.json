@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Kỹ Thuật Hàn và Liên Kết Tiên Tiến trong Các Ngành Công Nghiệp Trọng Điểm: Từ Cơ Chế Luyện Kim đến Kiểm Soát Thông Minh",
+    "title_en": "Advanced Welding and Joining Technologies in Key Strategic Industries: From Metallurgical Mechanisms to Intelligent Quality Control",
+    "summary_vi": "Bài viết phân tích toàn diện các tiến bộ và thách thức của kỹ thuật hàn trong các lĩnh vực chiến lược như năng lượng, ô tô điện, hàng không và công trình biển dựa trên 15 công bố khoa học từ năm 2021 đến tháng 10 năm 2026. Nội dung tập trung làm rõ hành vi giòn hóa hydro ở đường ống, liên kết đa lớp cho pin xe điện, hàn khuấy ma sát hợp kim nhẹ và ứng dụng trí tuệ nhân tạo trong kiểm soát chất lượng mối hàn.",
+    "summary_en": "This article provides an in-depth review of advanced welding and joining technologies across strategic sectors including energy, electric vehicles, aerospace, and marine engineering based on 15 scientific publications from 2021 to October 2026. It highlights critical mechanisms such as hydrogen embrittlement in pipelines, multi-layer foil joining for battery packs, solid-state friction stir processing of lightweight alloys, and artificial intelligence integration for non-destructive weld inspection.",
+    "tags": [
+      "welding engineering",
+      "solid-state joining",
+      "hydrogen embrittlement",
+      "battery welding",
+      "quality control AI"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig3.jpg",
+    "file": "posts/2026-10-31-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
     "date": "2026-10-31",
     "type": "feature",

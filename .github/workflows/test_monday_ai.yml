@@ -70,6 +70,15 @@ jobs:
             Chỉ là bản nháp; chưa đăng website và chưa sao lưu vào thư mục bài đã duyệt.
             File Word và JSON xem trước có trong artifact monday-preview của workflow.
             Bấm Merge pull request khi đồng ý đăng và kích hoạt sao lưu Word lên Drive.
+      - name: Gửi email duyệt bài thử
+        if: always() && steps.cpr.outputs.pull-request-url != ''
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/monday-preview
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+        run: python scripts/send_review_email.py
       - name: Xuất Word xem trước
         if: always() && steps.gen.outputs.skipped == 'false'
         env:

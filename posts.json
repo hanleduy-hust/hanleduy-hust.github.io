@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Ứng dụng Trí tuệ Nhân tạo trong Công nghiệp Hàn: Từ Giám sát Thời gian thực, Nhận diện Khuyết tật đến Quản lý Độ bền Mỏi Kết cấu",
+    "title_en": "Artificial Intelligence in Welding Engineering: From In-Process Monitoring and Defect Detection to Structural Fatigue Life Management",
+    "summary_vi": "Tổng quan chuyên sâu về ứng dụng trí tuệ nhân tạo và học máy trong các quy trình hàn tiên tiến, tích hợp dữ liệu từ quang phổ, phát xạ âm và thị giác máy tính. Bài viết phân tích các kiến trúc học sâu trong phân loại khuyết tật, tối ưu hóa thông số công nghệ và dự đoán tuổi thọ mỏi kết cấu dựa trên mô hình lai vật lý - dữ liệu.",
+    "summary_en": "An in-depth review of artificial intelligence and machine learning applications across advanced welding processes, integrating spectroscopy, acoustic emission, and computer vision data. The article examines deep learning architectures for defect classification, process parameter optimization, and hybrid physics-informed structural fatigue life forecasting.",
+    "tags": [
+      "Artificial Intelligence",
+      "Welding Technology",
+      "Defect Detection",
+      "Process Optimization",
+      "Fatigue Prediction"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-ung-dung-ai-trong-cong-nghiep-han/fig1.jpg",
+    "file": "posts/2026-10-31-chuyen-de-ung-dung-ai-trong-cong-nghiep-han.json"
+  },
+  {
     "id": "2026-10-31-diem-tin-khoa-hoc",
     "date": "2026-10-31",
     "type": "digest",

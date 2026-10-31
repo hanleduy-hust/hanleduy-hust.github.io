@@ -1,0 +1,82 @@
+name: Chạy thử chuyên đề thứ Hai
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/test_monday_ai.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: test-monday-ai
+  cancel-in-progress: false
+jobs:
+  monday-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 pillow pymupdf python-docx
+      - name: Chạy đúng cấu hình thứ Hai, giữ ngày chạy thực tế
+        id: gen
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/monday-preview
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          CONTACT_EMAIL: ${{ secrets.MAIL_USERNAME }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/auto_post_ai.py").resolve()
+          source = path.read_text(encoding="utf-8")
+          needle = "WEEKDAY = dt.datetime.now(VN_TZ).weekday()"
+          assert source.count(needle) == 1
+          source = source.replace(needle, "WEEKDAY = 0  # Monday preview only")
+          exec(compile(source, str(path), "exec"), {"__name__": "__main__", "__file__": str(path)})
+          PY
+      - name: Tạo PR để kiểm tra bài
+        if: steps.gen.outputs.skipped == 'false'
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: test-monday-ai-${{ github.run_id }}
+          base: main
+          delete-branch: true
+          add-paths: |
+            posts.json
+            posts/**
+            images/blog/**
+          commit-message: "Bài thử thứ Hai: ${{ steps.gen.outputs.title }}"
+          title: "[Bài thử thứ Hai] ${{ steps.gen.outputs.title }}"
+          body: |
+            Bài thử cấu hình thứ Hai: Ứng dụng AI trong công nghiệp hàn.
+            Chỉ là bản nháp; chưa đăng website và chưa sao lưu vào thư mục bài đã duyệt.
+            File Word và JSON xem trước có trong artifact monday-preview của workflow.
+            Bấm Merge pull request khi đồng ý đăng và kích hoạt sao lưu Word lên Drive.
+      - name: Xuất Word xem trước
+        if: steps.gen.outputs.skipped == 'false'
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/monday-preview
+        run: |
+          python scripts/export_post_word.py "$DRAFT_DIR/post.json" "$DRAFT_DIR/Thu_Hai_AI_trong_cong_nghiep_han.docx" --root .
+          cp -r images "$DRAFT_DIR/images"
+      - name: Lưu bản xem trước và thông tin chạy
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monday-preview
+          path: ${{ runner.temp }}/monday-preview
+          if-no-files-found: warn
+      - name: Kết quả
+        if: always()
+        env:
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+          SKIPPED: ${{ steps.gen.outputs.skipped }}
+        run: |
+          echo "PR xem trước: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "Bỏ qua vì thiếu nguồn hoặc đã có bài: $SKIPPED" >> "$GITHUB_STEP_SUMMARY"

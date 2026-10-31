@@ -46,6 +46,46 @@ CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "").strip()
 MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "15"))
 MIN_PAPERS = 5
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "21"))
+
+# Lịch chuyên đề theo giờ Việt Nam; FEATURE_TOPIC thủ công được ưu tiên.
+VN_TZ = dt.timezone(dt.timedelta(hours=7))
+WEEKLY_TOPICS = [
+    {"key": "ai_welding", "vi": "Ứng dụng AI trong công nghiệp hàn", "en": "AI in welding",
+     "queries": ['welding AND "artificial intelligence"', 'welding AND "machine learning"', 'welding AND "deep learning"'],
+     "must": [r"\bweld|joining", r"artificial intelligence|machine learning|deep learning|neural network|computer vision"],
+     "outline": "Giám sát và điều khiển quá trình;Phát hiện khuyết tật và kiểm tra chất lượng;Robot hàn và tối ưu thông số"},
+    {"key": "applications", "vi": "Ứng dụng hàn trong các ngành công nghiệp trọng điểm", "en": "Welding in key industries",
+     "queries": ['welding AND aerospace', 'welding AND nuclear', 'welding AND hydrogen AND pipeline', 'welding AND battery', 'welding AND shipbuilding'],
+     "must": [r"\bweld|joining", r"aerospace|aircraft|nuclear|hydrogen|pipeline|battery|automotive|ship|offshore|energy"],
+     "outline": "Năng lượng và đường ống;Ô tô và pin xe điện;Hàng không, đóng tàu và công trình biển"},
+    {"key": "low_temp_solder", "vi": "Nghiên cứu về vảy hàn nhiệt độ thấp", "en": "Low-temperature solders",
+     "queries": ['"low temperature" AND solder', '"Sn-Bi" AND solder', '"indium" AND solder'],
+     "must": [r"solder", r"low[- ]temperature|low[- ]melting|sn[-– ]?bi|bi[-– ]?sn|indium|in[-– ]?sn|sn[-– ]?in"],
+     "outline": "Thiết kế thành phần và nhiệt độ nóng chảy;Thấm ướt và phản ứng liên kim;Cơ tính, già hóa và độ tin cậy"},
+    {"key": "packaging", "vi": "Xu thế công nghệ và vật liệu liên kết trong electronic packaging", "en": "Joining in electronic packaging",
+     "queries": ['"electronic packaging" AND bonding', '"die attach" AND sintering', '"hybrid bonding" AND copper', '"power module" AND interconnect'],
+     "must": [r"bond|solder|sinter|interconnect|die[- ]attach", r"electron|chip|semiconductor|power module|microelectron|packag"],
+     "outline": "Đóng gói tiên tiến và liên kết 3D;Vật liệu die-attach và liên kết đồng;Quản lý nhiệt và độ tin cậy"},
+    {"key": "welding", "vi": "Các công nghệ hàn tiên tiến", "en": "Advanced welding technologies",
+     "queries": ['"laser welding"', '"friction stir welding"', '"hybrid welding"', '"electron beam welding"', '"diffusion bonding"'],
+     "must": [r"weld|diffusion bond", r"laser|friction stir|hybrid|electron beam|diffusion"],
+     "outline": "Nguyên lý và tiến bộ công nghệ;Vi cấu trúc, khuyết tật và cơ tính;Khả năng ứng dụng và giới hạn"},
+    {"key": "metal_am", "vi": "Nghiên cứu mới về WAAM và in 3D kim loại", "en": "WAAM and metal 3D printing",
+     "queries": ['"wire arc additive manufacturing"', '"directed energy deposition"', '"laser powder bed fusion"'],
+     "must": [r"additive(ly)? manufactur|\bwaam\b|directed energy deposition|powder bed fusion|3d[- ]print", r"metal|alloy|steel|titanium|nickel|alumin|copper|inconel"],
+     "outline": "WAAM và điều khiển quá trình;DED và L-PBF;Tổ chức, cơ tính, ứng suất dư và xử lý sau in"},
+]
+WEEKDAY = dt.datetime.now(VN_TZ).weekday()
+AUTO_WEEKLY = not os.environ.get("FEATURE_TOPIC", "").strip()
+if AUTO_WEEKLY and WEEKDAY < 6:
+    selected = WEEKLY_TOPICS[WEEKDAY]
+    os.environ["FEATURE_TOPIC"] = selected["vi"]
+    os.environ["FEATURE_QUERIES"] = ";".join(selected["queries"])
+    os.environ["FEATURE_DOMAIN"] = selected["must"][0]
+    os.environ["FEATURE_MUST"] = selected["must"][1]
+    os.environ["FEATURE_OUTLINE"] = selected["outline"]
+    os.environ.setdefault("FEATURE_PAPERS", "15")
+
 # Chế độ BÀI CHUYÊN ĐỀ (thay cho bản tin hằng ngày) khi có FEATURE_TOPIC
 FEATURE_TOPIC = os.environ.get("FEATURE_TOPIC", "").strip()
 FEATURE_QUERIES = [q.strip() for q in os.environ.get("FEATURE_QUERIES", "").split(";") if q.strip()]
@@ -94,6 +134,9 @@ TOPICS = [
      "queries": ['welding AND nuclear', 'weld AND hydrogen AND pipeline', 'welding AND aerospace', 'welding AND battery', 'welding AND (ship OR shipbuilding)'],
      "must": [r"\bweld|braz|solder|joining"]},
 ]
+
+if AUTO_WEEKLY:
+    TOPICS = WEEKLY_TOPICS
 
 # Giấy phép cho phép tái sử dụng hình (có ghi nguồn). Không dùng biến thể ND để an toàn.
 REUSABLE_LICENSES = {"cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nc-sa", "cc0", "public-domain"}
@@ -280,7 +323,7 @@ def collect_feature_papers():
     Chọn xen kẽ theo từng truy vấn để mọi khía cạnh của chủ đề đều có bài, và lọc chặt độ liên quan."""
     today = dt.date.today()
     since_review = (today - dt.timedelta(days=5 * 365)).isoformat()
-    since_recent = (today - dt.timedelta(days=548)).isoformat()
+    since_recent = (today - dt.timedelta(days=90 if AUTO_WEEKLY else 548)).isoformat()
     must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
     domain = None if FEATURE_DOMAIN == "-" else (re.compile(FEATURE_DOMAIN, re.I) if FEATURE_DOMAIN else JOINING)
     queries = FEATURE_QUERIES or [FEATURE_TOPIC]
@@ -297,7 +340,7 @@ def collect_feature_papers():
     for qi, q in enumerate(queries):
         for kind, since in (("review", since_review), ("article", since_recent)):
             try:
-                items = openalex_search(q, since, work_type=kind, sort="cited_by_count:desc", per_page=10)
+                items = openalex_search(q, since, work_type=kind, sort=("publication_date:desc" if AUTO_WEEKLY and kind == "article" else "cited_by_count:desc"), per_page=10)
             except Exception as e:
                 diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
                 items = []
@@ -326,7 +369,8 @@ def collect_feature_papers():
             if len(chosen) >= FEATURE_PAPERS:
                 break
 
-    take(pools["review"], 7)                      # khung tổng quan
+    take(pools["article"], max(0, FEATURE_PAPERS - 4)) if AUTO_WEEKLY else None
+    take(pools["review"], 4 if AUTO_WEEKLY else 7)                      # khung tổng quan
     take(pools["article"], FEATURE_PAPERS)        # ví dụ nghiên cứu cụ thể, mới
     log(f"Chọn {len(chosen)} bài cho chuyên đề "
         f"({sum(1 for c in chosen if c['kind'] == 'review')} tổng quan)")
@@ -335,7 +379,7 @@ def collect_feature_papers():
 
 def collect_papers():
     since = (dt.date.today() - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
-    published = load_published()
+    published = set() if AUTO_WEEKLY and WEEKDAY == 6 else load_published()
     per_topic = {}
     for t in TOPICS:
         found = []
@@ -994,7 +1038,7 @@ def main():
     if not GEMINI_API_KEY:
         sys.exit("Thiếu biến môi trường GEMINI_API_KEY")
 
-    now_vn = dt.datetime.utcnow() + dt.timedelta(hours=7)
+    now_vn = dt.datetime.now(VN_TZ)
     today = now_vn.date().isoformat()
 
     feature = bool(FEATURE_TOPIC)
@@ -1005,6 +1049,10 @@ def main():
         return
 
     post_id = f"{today}-chuyen-de-{slugify(FEATURE_TOPIC, 50)}" if feature else f"{today}-diem-tin-khoa-hoc"
+    if AUTO_WEEKLY and (POSTS_DIR / f"{post_id}.json").exists():
+        log("Bài theo lịch hôm nay đã tồn tại – không tạo trùng.")
+        write_output(skipped="true")
+        return
     if (POSTS_DIR / f"{post_id}.json").exists():
         post_id += "-" + now_vn.strftime("%H%M")
 
@@ -1019,6 +1067,8 @@ def main():
     log(f"Thu được {len(figures)} hình minh họa")
 
     prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
+    if AUTO_WEEKLY:
+        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing.")
     ai = gemini_json(prompt)
     bad = self_refs(ai)
     if bad:  # AI vẫn nhắc tên tác giả blog / "chuyên gia" → yêu cầu viết lại một lần

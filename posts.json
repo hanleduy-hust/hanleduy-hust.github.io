@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
+    "date": "2026-10-31",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Hợp kim hàn không chì và vảy hàn nhiệt độ thấp",
+    "title_en": "Lead-Free Solder Alloys and Low-Temperature Soldering Materials",
+    "summary_vi": "Tổng quan chuyên sâu về thiết kế hợp kim hàn không chì, hệ vảy hàn nhiệt độ thấp, cơ chế tương tác tại giao diện và độ tin cậy cơ học dựa trên các tài liệu nghiên cứu gần đây.",
+    "summary_en": "An in-depth overview of lead-free solder alloy design, low-temperature soldering systems, interfacial reaction mechanisms, and mechanical reliability based on recent literature.",
+    "tags": [
+      "lead-free solder",
+      "low-temperature soldering",
+      "intermetallic compounds",
+      "microstructure",
+      "reliability"
+    ],
+    "cover": "images/blog/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg",
+    "file": "posts/2026-10-31-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap.json"
+  },
+  {
     "id": "2026-10-31-chuyen-de-nghien-cuu-ve-vay-han-nhiet-o-thap",
     "date": "2026-10-31",
     "type": "feature",

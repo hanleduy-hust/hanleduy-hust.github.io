@@ -1,0 +1,36 @@
+name: Gửi thư duyệt bài thứ Hai tới hanleduy@gmail.com
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/send_review_22.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: send-review-22
+  cancel-in-progress: false
+jobs:
+  send-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: a523fc691207648978e32b68a5cc9fa8532a691d
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Chuẩn bị bài thứ Hai đã rà soát ở PR 22
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/review-22
+        run: |
+          mkdir -p "$DRAFT_DIR"
+          cp posts/2026-10-31-chuyen-de-ung-dung-ai-trong-cong-nghiep-han.json "$DRAFT_DIR/post.json"
+      - name: Gửi email duyệt bài tới hanleduy@gmail.com theo xác nhận của người dùng
+        env:
+          DRAFT_DIR: ${{ runner.temp }}/review-22
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+          MAIL_TO: hanleduy@gmail.com
+          PR_URL: https://github.com/hanleduy-hust/hanleduy-hust.github.io/pull/22
+        run: python scripts/send_review_email.py

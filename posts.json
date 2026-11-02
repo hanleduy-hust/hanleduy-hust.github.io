@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-02-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
+    "date": "2026-11-02",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tích hợp Trí tuệ Nhân tạo và Cảm biến Thông minh trong Giám sát Trực tuyến và Dự đoán Độ bền Mỏi Mối hàn",
+    "title_en": "Integration of Artificial Intelligence and Smart Sensors in Real-Time Monitoring and Fatigue Life Prediction of Welded Joints",
+    "summary_vi": "Bài viết tổng quan phân tích các nghiên cứu gần đây về việc ứng dụng trí tuệ nhân tạo, học máy và thị giác máy tính nhằm nâng cao chất lượng, tự động hóa kiểm tra khuyết tật và dự đoán tuổi thọ mỏi trong công nghiệp hàn.",
+    "summary_en": "This feature article reviews recent research on the application of artificial intelligence, machine learning, and computer vision to enhance weld quality, automate defect inspection, and predict fatigue life in welding engineering.",
+    "tags": [
+      "Artificial Intelligence",
+      "Welding Quality Control",
+      "Machine Learning",
+      "Structural Health Monitoring",
+      "Fatigue Prediction"
+    ],
+    "cover": "images/blog/2026-11-02-chuyen-de-ung-dung-ai-trong-cong-nghiep-han/fig2.jpg",
+    "file": "posts/2026-11-02-chuyen-de-ung-dung-ai-trong-cong-nghiep-han.json"
+  },
+  {
     "id": "2026-11-01-diem-tin-khoa-hoc",
     "date": "2026-11-01",
     "type": "digest",

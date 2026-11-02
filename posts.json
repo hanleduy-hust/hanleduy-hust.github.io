@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
+    "date": "2026-11-03",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong Công nghệ Hàn và Liên kết Vật liệu Tiên tiến: Cơ chế Luyện kim và Ứng dụng Công nghiệp Trọng điểm",
+    "title_en": "Advances in Advanced Welding and Materials Joining Technologies: Metallurgical Mechanisms and Key Industrial Applications",
+    "summary_vi": "Bài viết phân tích các nghiên cứu gần đây về công nghệ hàn và liên kết trong các ngành công nghiệp trọng điểm như năng lượng, ô tô, hàng không và đóng tàu, tập trung vào hành vi vi cấu trúc, tối ưu hóa thông số và độ tin cậy cơ học.",
+    "summary_en": "This article analyzes recent research on welding and joining technologies in key industries such as energy, automotive, aerospace, and shipbuilding, focusing on microstructural behavior, parameter optimization, and mechanical reliability.",
+    "tags": [
+      "welding technology",
+      "dissimilar joining",
+      "microstructure",
+      "mechanical properties",
+      "industrial applications"
+    ],
+    "cover": "images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig3.jpg",
+    "file": "posts/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem.json"
+  },
+  {
     "id": "2026-11-02-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
     "date": "2026-11-02",
     "type": "feature",

@@ -210,8 +210,14 @@ def clean_text(s, limit=None, strip_label=False):
 
 
 def load_published():
-    """Các DOI đã đăng (để không lặp lại)."""
+    """Các DOI đã dùng trong mọi bài đã đăng (posts/*.json) và trong danh sách bổ sung used_dois.json."""
     seen = set()
+    extra = ROOT / "used_dois.json"
+    if extra.exists():
+        try:
+            seen |= {norm_doi(d) for d in json.loads(extra.read_text(encoding="utf-8"))}
+        except Exception:
+            pass
     for f in POSTS_DIR.glob("*.json"):
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
@@ -322,8 +328,9 @@ def collect_feature_papers():
     """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng).
     Chọn xen kẽ theo từng truy vấn để mọi khía cạnh của chủ đề đều có bài, và lọc chặt độ liên quan."""
     today = dt.date.today()
-    since_review = (today - dt.timedelta(days=5 * 365)).isoformat()
+    since_review = (today - dt.timedelta(days=(2 if AUTO_WEEKLY else 5) * 365)).isoformat()
     since_recent = (today - dt.timedelta(days=90 if AUTO_WEEKLY else 548)).isoformat()
+    published = load_published()  # không dùng lại bài báo đã có trong các bài đã đăng / bản nháp
     must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
     domain = None if FEATURE_DOMAIN == "-" else (re.compile(FEATURE_DOMAIN, re.I) if FEATURE_DOMAIN else JOINING)
     queries = FEATURE_QUERIES or [FEATURE_TOPIC]
@@ -333,21 +340,22 @@ def collect_feature_papers():
         return rx is None or rx.search(it["title"]) or len(rx.findall(it["abstract"])) >= 2
 
     def ok(it):
-        return it["doi"] and len(it["abstract"]) >= 200 and strong(domain, it) and strong(must, it)
+        return (it["doi"] and it["doi"] not in published and len(it["abstract"]) >= 200
+                and strong(domain, it) and strong(must, it))
 
     key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
     pools = {"review": [], "article": []}
     for qi, q in enumerate(queries):
         for kind, since in (("review", since_review), ("article", since_recent)):
             try:
-                items = openalex_search(q, since, work_type=kind, sort=("publication_date:desc" if AUTO_WEEKLY and kind == "article" else "cited_by_count:desc"), per_page=10)
+                items = openalex_search(q, since, work_type=kind, sort=("publication_date:desc" if AUTO_WEEKLY and kind == "article" else "cited_by_count:desc"), per_page=25)
             except Exception as e:
                 diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
                 items = []
             good = sorted([it for it in items if ok(it)], key=key, reverse=True)
             dropped = len(items) - len(good)
             if dropped:
-                log(f"  [{kind}] {q[:50]}: bỏ {dropped} bài ít liên quan")
+                log(f"  [{kind}] {q[:50]}: bỏ {dropped} bài (đã dùng hoặc ít liên quan)")
             pools[kind].append(good)
             time.sleep(0.3)
 
@@ -379,7 +387,7 @@ def collect_feature_papers():
 
 def collect_papers():
     since = (dt.date.today() - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
-    published = set() if AUTO_WEEKLY and WEEKDAY == 6 else load_published()
+    published = load_published()  # mọi bài (kể cả bản tổng hợp Chủ nhật) chỉ dùng bài báo chưa từng đăng
     per_topic = {}
     for t in TOPICS:
         found = []
@@ -502,6 +510,35 @@ def candidate_images(page_url, soup):
     return sorted(cands, key=lambda c: figure_score(c[1], c[2]), reverse=True)
 
 
+_USED_HASHES = None
+
+
+def ahash(im):
+    """Dấu vân tay ảnh (average hash 16×16): ảnh giống nhau dù khác kích thước/nén vẫn trùng."""
+    g = im.convert("L").resize((16, 16), Image.LANCZOS)
+    px = list(g.getdata())
+    avg = sum(px) / len(px)
+    return int("".join("1" if v > avg else "0" for v in px), 2)
+
+
+def used_hashes():
+    global _USED_HASHES
+    if _USED_HASHES is None:
+        _USED_HASHES = []
+        for f in IMG_DIR.glob("*/*.jpg"):
+            try:
+                with Image.open(f) as im:
+                    _USED_HASHES.append(ahash(im))
+            except Exception:
+                pass
+    return _USED_HASHES
+
+
+def is_used_image(im):
+    h = ahash(im)
+    return any(bin(h ^ u).count("1") <= 12 for u in used_hashes())
+
+
 def save_image(data, dest, min_w=400):
     """Kiểm tra, thu nhỏ (tối đa 1200 px) và lưu JPEG. Trả về kích thước hoặc None."""
     if not data or len(data) > 12_000_000:
@@ -514,6 +551,9 @@ def save_image(data, dest, min_w=400):
     w, h = im.size
     if w < min_w or h < 200 or w / h > 4 or h / w > 3:  # bỏ ảnh nhỏ / quá dài (logo, banner)
         return None
+    if is_used_image(im):  # hình này đã xuất hiện ở bài khác → không dùng lại
+        diag(f"    bỏ hình trùng với bài đã đăng ({dest.name})")
+        return None
     if im.mode in ("RGBA", "LA", "P"):
         im = im.convert("RGBA")
         bg = Image.new("RGB", im.size, "white")
@@ -524,6 +564,7 @@ def save_image(data, dest, min_w=400):
         im = im.resize((1200, int(h * 1200 / w)), Image.LANCZOS)
     dest.parent.mkdir(parents=True, exist_ok=True)
     im.save(dest, "JPEG", quality=85, optimize=True, progressive=True)
+    used_hashes().append(ahash(im))
     return im.size
 
 

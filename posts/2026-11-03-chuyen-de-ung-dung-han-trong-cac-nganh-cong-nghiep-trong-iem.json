@@ -1,0 +1,296 @@
+{
+  "id": "2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
+  "date": "2026-11-03",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Tiến bộ trong Công nghệ Hàn và Liên kết Vật liệu Tiên tiến: Cơ chế Luyện kim và Ứng dụng Công nghiệp Trọng điểm",
+  "title_en": "Advances in Advanced Welding and Materials Joining Technologies: Metallurgical Mechanisms and Key Industrial Applications",
+  "summary_vi": "Bài viết phân tích các nghiên cứu gần đây về công nghệ hàn và liên kết trong các ngành công nghiệp trọng điểm như năng lượng, ô tô, hàng không và đóng tàu, tập trung vào hành vi vi cấu trúc, tối ưu hóa thông số và độ tin cậy cơ học.",
+  "summary_en": "This article analyzes recent research on welding and joining technologies in key industries such as energy, automotive, aerospace, and shipbuilding, focusing on microstructural behavior, parameter optimization, and mechanical reliability.",
+  "tags": [
+    "welding technology",
+    "dissimilar joining",
+    "microstructure",
+    "mechanical properties",
+    "industrial applications"
+  ],
+  "cover": "images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig3.jpg",
+  "content_vi": "<h3>1. Dẫn nhập</h3>\n<p class=\"lead\">Sự phát triển nhanh chóng của các ngành công nghiệp chiến lược như năng lượng hạt nhân, giao thông điện khí hóa và hàng không vũ trụ đang đặt ra những yêu cầu khắt khe đối với công nghệ hàn và liên kết vật liệu. Các phương pháp hàn truyền thống thường gặp khó khăn khi ứng dụng cho các vật liệu dị chủng, kết cấu thành mỏng hoặc các môi trường vận hành khắc nghiệt. Việc nghiên cứu sâu sắc về cơ chế luyện kim, tối ưu hóa thông số quy trình và kiểm soát vi cấu trúc đóng vai trò quyết định trong việc bảo đảm độ tin cậy kết cấu.</p>\n<p class=\"lead\">Trong bối cảnh đó, các công trình nghiên cứu gần đây đã cung cấp những dữ liệu thực nghiệm và mô hình số quan trọng nhằm giải quyết các bài toán kỹ thuật cụ thể. Bài viết này tổng hợp và phân tích các tiến bộ kỹ thuật từ các tài liệu khoa học mới nhất, làm rõ các phương pháp, kết quả đạt được cũng như những thách thức tồn đọng trong quá trình ứng dụng thực tế.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig3.jpg\" alt=\"Hình thái vĩ mô của các mẫu thử kéo bị gãy [(a) C1900, (b) C1875] chịu kéo đơn trục. Mẫu (a) gãy giòn và mẫu (b) gãy dẻo. Các mũi tên đỏ chỉ ra ranh giới chất nền đồng trước khi hàn được ước tính.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Hình thái vĩ mô của các mẫu thử kéo bị gãy [(a) C1900, (b) C1875] chịu kéo đơn trục. Mẫu (a) gãy giòn và mẫu (b) gãy dẻo. Các mũi tên đỏ chỉ ra ranh giới chất nền đồng trước khi hàn được ước tính. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Dellepiane et al. (2026), “Metallurgical and Mechanical Property Investigation of ETP Cu Similar Hybrid Friction Welds for Nuclear Fusion Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19194066\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19194066</a> [<a href=\"#ref-14\">14</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>2. Bối cảnh</h3>\n<p>Ngành công nghiệp hiện đại đòi hỏi các cấu trúc hàn không chỉ đạt cường độ cơ học cao mà còn phải chịu được các điều kiện làm việc khắc nghiệt như nhiệt độ cao, áp suất lớn và môi trường ăn mòn. Các vấn đề nghẽn cổ chai truyền thống bao gồm sự hình thành các hợp chất liên kim loại (intermetallic compounds - IMCs) giòn trong mối hàn dị chủng, ứng suất dư và biến dạng nhiệt lớn trong quá trình gia công bồi đắp, cùng với sự suy giảm độ dẻo do hiện tượng giòn vì hydro ở các đường ống dẫn năng lượng cũ <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. Theo nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, quá trình chuyển đổi từ kiểm soát thông số dựa trên kinh nghiệm sang điều khiển dựa trên cơ chế vật lý là chìa khóa để nâng cao chất lượng mối hàn trong hệ thống đường ống phi kim loại và ống dẫn năng lượng.</p>\n<p>Bên cạnh đó, việc áp dụng các công nghệ mới như hàn khuấy ma sát (friction stir welding - FSW), hàn hồ quang áp suất âm (negative pressure arc - NPA) hay hàn la-de đòi hỏi phải hiểu rõ bản chất của sự phát triển trường nhiệt độ, động học chuyển pha và hành vi khuếch tán tại giao diện <sup class=\"cite\">[<a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>]</sup>. Những nỗ lực nghiên cứu gần đây tập trung vào việc kết hợp giữa mô phỏng số đa vật lý và thực nghiệm để dự đoán chính xác hơn ứng xử của vật liệu <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig8.jpg\" alt=\"Phân tích mạng lưới cộng sinh dựa trên VOSviewer. Các vùng màu khác nhau đại diện cho các kết quả phân cụm khác nhau.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Phân tích mạng lưới cộng sinh dựa trên VOSviewer. Các vùng màu khác nhau đại diện cho các kết quả phân cụm khác nhau. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Hong et al. (2026), “Advances in Electrofusion Welding Technology for Polymeric Pipelines: From Process Optimization to Mechanism-Driven Control”, <em>Polymers</em>, <a href=\"https://doi.org/10.3390/polym18111402\" target=\"_blank\" rel=\"noopener\">doi:10.3390/polym18111402</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>3. Các ứng dụng công nghiệp trọng điểm</h3>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig7.jpg\" alt=\"Ảnh SEM về hình thái vết nứt của các vết nứt CISCC ở chế độ điện tử thứ cấp.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Ảnh SEM về hình thái vết nứt của các vết nứt CISCC ở chế độ điện tử thứ cấp. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Jose et al. (2025), “Peening Techniques for Mitigating Chlorine-Induced Stress Corrosion Cracking of Dry Storage Canisters for Nuclear Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18020438\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18020438</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Năng lượng và đường ống</h3>\n<p>Trong lĩnh vực năng lượng, việc đánh giá tính toàn vẹn của các mối hàn trong đường ống dẫn khí tự nhiên cũ (vintage pipelines) được chuyển đổi sang vận chuyển hydro đặt ra nhiều thách thức do vùng ảnh hưởng nhiệt (heat-affected zone - HAZ) rất không đồng nhất <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> đã sử dụng các mẫu thử kích thước nhỏ kết hợp với hệ thống đo giãn dài quang học không tiếp xúc (Edge-Tracing extensometry) để khảo sát mối hàn hồ quang chìm (submerged-arc weld) hai lớp trên thép API 5L X52 dày 11,3 mm. Kết quả chỉ ra rằng dưới tải trọng kéo, vùng HAZ dưới tới hạn (sub-critical HAZ - SCHAZ) là vùng mềm nhất với độ thắt diện tích (reduction of area) đạt Z = 15,6% và là nguyên nhân gây ra đứt gãy xuyên mối hàn, trong khi vùng HAZ hạt thô (coarse-grained HAZ - CGHAZ) thể hiện khả năng chống nứt kém nhất với giá trị J<sub>IC</sub> bằng 30 kJ/m<sup>2</sup> (thấp hơn một nửa so với vật liệu nền) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p>\n<p>Đối với các đường ống đã qua sử dụng trong 24 năm và phơi nhiễm khí hydro ở áp suất 1,22 MPa trong 257 ngày, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> ghi nhận rằng mặc dù độ bền kéo và độ cứng không thay đổi đáng kể, độ giãn dài và độ thắt diện tích giảm rõ rệt (độ thắt diện tích giảm từ 11,6% đến 14,6% tùy theo mẫu). Vị trí đứt gãy dịch chuyển từ vật liệu nền sang vùng HAZ sau khi tiếp xúc với hydro, đồng thời hình thái đứt gãy chuyển từ dạng lõm sâu sang hỗn hợp dẻo và bán tách chẻ <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Trong lĩnh vực năng lượng hạt nhân, việc chế tạo các thùng chứa lưu trữ khô (dry storage canisters - DSCs) từ thép không gỉ austenit (austenitic stainless steel - ASS) đối mặt với nguy cơ nứt ứng suất do ăn mòn bởi clorua (chloride-induced stress corrosion cracking - CISCC). Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> đã tổng hợp các kỹ thuật phun bi cải tiến như phun bi siêu âm (ultrasonic impact peening - UIP) và phun bi la-de (laser shock peening - LSP) để giảm thiểu hiện tượng CISCC bằng cách tạo ứng suất nén bề mặt.</p>\n<p>Đối với hệ thống đường ống phi kim loại và năng lượng carbon thấp, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> đã tổng hợp các tiến bộ trong công nghệ hàn điện nung chảy (electrofusion welding), làm rõ quá trình tiến hóa của trường nhiệt độ, vùng dung hợp và ứng xử nhiệt-cơ.</p>\n<h3>Ô tô và pin xe điện</h3>\n<p>Trong ngành công nghiệp ô tô và pin xe điện (electric vehicles - EVs), việc kết nối các thanh cái (busbars) bằng nhôm và đồng đòi hỏi kiểm soát chặt chẽ nhiệt lượng và điện trở tiếp xúc <sup class=\"cite\">[<a href=\"#ref-8\">8</a>, <a href=\"#ref-11\">11</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> đã khảo sát các thanh cái nhôm hàn la-de thông qua thử nghiệm xung dòng điện một chiều được làm mát bằng dầu ở nhiệt độ môi trường từ -10 °C đến 70 °C kết hợp với mô phỏng điện-nhiệt COMSOL Multiphysics 3D. Kết quả thực nghiệm cho thấy điện trở mối hàn trung bình trong 60 giây đầu dao động từ 12,05 µΩ đến 17,29 µΩ và tăng theo dòng điện cũng như nhiệt độ môi trường. Ở dòng điện 700 A, nhiệt độ đỉnh của mối hàn tăng từ 8,59 °C ở môi trường -10 °C lên 84,24 °C ở môi trường 70 °C, với sai số tuyệt đối trung bình của mô hình là 3,82 °C <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<p>Để chế tạo các mối hàn lai hợp (hybrid joints) trọng lượng nhẹ giữa hợp kim đồng C23000 và polymer polyethylene (PE) không dùng keo hay ốc vít, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> đã áp dụng phương pháp hàn khuấy ma sát không chốt (pinless friction stir welding - FSW). Độ bền kéo-trượt tối đa đạt 3256 N khi thực hiện ở tốc độ quay 1400 vòng/phút và thời gian hàn 2 phút, với chiều rộng giao diện cơ học đạt 19–24 µm <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig2.jpg\" alt=\"Kết quả lực kéo-trượt cho các mối hàn lai hợp hợp kim đồng C23000 và polymer PE được hàn ở các tốc độ quay khác nhau.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Kết quả lực kéo-trượt cho các mối hàn lai hợp hợp kim đồng C23000 và polymer PE được hàn ở các tốc độ quay khác nhau. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Barrak et al. (2026), “Analysis of a sustainable welding process for joining copper alloy C23000 to polyethylene polymer as a hybrid joint”, <em>International Journal of Automotive and Mechanical Engineering</em>, <a href=\"https://doi.org/10.15282/ijame.23.3.2026.10.1046\" target=\"_blank\" rel=\"noopener\">doi:10.15282/ijame.23.3.2026.10.1046</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Bên cạnh đó, các phương pháp hàn bấm kháng điện (resistance welding - RW), hàn chùm tia la-de (laser beam welding - LBW) và hàn siêu âm (ultrasonic welding - USW) đối với các mối nối vấu pin (tab-to-busbar) đã được đánh giá tổng quan về ưu nhược điểm liên quan đến sự hình thành hợp chất liên kim loại giòn và hiện tượng rỗ khí <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p>\n<h3>Hàng không, đóng tàu và công trình biển</h3>\n<p>Trong lĩnh vực hàng không và đóng tàu, việc liên kết các vật liệu dị chủng như nhôm và titan (Al/Ti) đóng vai trò quan trọng <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> đã nghiên cứu quá trình hàn điểm khuấy ma sát có châm bù (refill friction stir spot welding - RFSSW) cho cặp vật liệu Al/Ti với thời gian lưu (dwell time) thay đổi. Khi tăng thời gian lưu, nhiệt độ đỉnh và tốc độ biến dạng tăng, dẫn đến hiện tượng lớn hạt và lớp khuếch tán dày hơn. Hợp chất liên kim loại duy nhất được xác định tại giao diện là TiAl<sub>3</sub>. Tải trọng phá hủy kéo-trượt đạt giá trị cực đại 6,39 kN tại thời điểm lưu 6 giây <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig1.jpg\" alt=\"Phân bố trường biến dạng: (a) 2 s; (b) 4 s; (c) 6 s; (d) 8 s.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Phân bố trường biến dạng: (a) 2 s; (b) 4 s; (c) 6 s; (d) 8 s. <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Wang et al. (2026), “The effect of dwell time on Al/Ti refill friction stir spot welded joints: diffusion behavior and mechanical properties”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02679-6\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02679-6</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Đối với kết cấu thép đóng tàu cường độ cao độ tôi và ram 690 (quenched and tempered 690 high-strength ship steel), nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã xác định các thông số vật liệu thông bằng thiết bị giãn nở nhiệt dập tắt (quenching dilatometer) nhằm cải thiện độ chính xác dự đoán ứng suất dư và biến dạng trong mô phỏng cơ học hàn (computational welding mechanics - CWM) <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig4.jpg\" alt=\"Các điểm chuyển pha được xác định từ dữ liệu đo delta L/độ C.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Các điểm chuyển pha được xác định từ dữ liệu đo delta L/độ C. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Riski et al. (2026), “Experimental characterisation of mechanical properties and continuous cooling transformation analysis for structural 690 quenched and tempered high-strength steel”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02623-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02623-8</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Trong chế tạo tự động hóa, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> đã phát triển thuật toán dự đoán hình dạng vảy hàn hai chiều cho quá trình hàn hồ quang lõi thuốc (flux-cored arc welding - FCAW) trên các điều kiện lệch mỏ hàn từ -2 mm đến +2 mm và tốc độ hàn từ 6,0 đến 9,0 mm/s. Mô hình hồi quy phi tuyến kết hợp nội suy Hermite bậc ba (PCHIP) đạt sai số bình phương trung bình gốc (RMSE) dưới 0,7 mm và sai số tuyệt đối trung bình (MAE) dưới 0,5 mm đối với các thông số chiều dài chân mối hàn, với thời gian chạy thuật toán dưới 1 ms <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Ngoài ra, công nghệ hàn hồ quang áp suất âm (negative pressure arc - NPA) sử dụng điện cực vonfram rỗng kết hợp từ trường dọc đã được tổng hợp, cho phép tạo ra lực hướng lên chống trọng lực để neo giữ vũng hàn và giảm khoảng 11% công suất tiêu thụ so với các phương pháp thông thường <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig5.jpg\" alt=\"So sánh cấu trúc mỏ hàn của các quy trình TIG và PAW.\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> So sánh cấu trúc mỏ hàn của các quy trình TIG và PAW. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Patra et al. (2026), “Comprehensive Review of Negative Pressure Arc Welding: Physical Principles, Adsorption Mechanisms, and Evolutionary Dynamics in Precision Manufacturing”, <em>Journal of Mechanical Engineering Advancements</em>, <a href=\"https://doi.org/10.65525/jmea.v3i2.53\" target=\"_blank\" rel=\"noopener\">doi:10.65525/jmea.v3i2.53</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n\n<h3>4. Thách thức</h3>\n<p>Mặc dù đã có nhiều tiến bộ, các nghiên cứu chỉ ra rằng công nghệ hàn và liên kết vật liệu vẫn đối mặt với nhiều thách thức kỹ thuật cốt lõi. Trong lĩnh vực chế tạo bồi đắp và hàn các kết cấu thành dày cho lò phản ứng mô-đun nhỏ (Small Modular Reactors - SMRs), các khuyết tật như thiếu sự ngâm chảy (lack of fusion), rỗ khí, tạp chất xỉ, ứng suất dư và tính dị hướng vẫn là các vấn đề mở đòi hỏi quy trình kiểm tra không phá hủy nghiêm ngặt <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Đối với vật liệu đồng và hợp kim đồng, độ dẫn nhiệt cao và vấn đề oxy hóa gây ra nhiều khó khăn trong hàn nấu chảy truyền thống, đòi hỏi phải tối ưu hóa chặt chẽ hình học dụng cụ và thông số quy trình trong hàn khuấy ma sát <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig6.jpg\" alt=\"Vi cấu trúc và độ cứng vi mô của Cu-ETP R220.\" loading=\"lazy\"><figcaption><strong>Hình 8.</strong> Vi cấu trúc và độ cứng vi mô của Cu-ETP R220. <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Bulacu et al. (2024), “A Review on Friction Stir Welding of Copper: Tool Geometry, Process Parameters, and Joint Properties”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma17215374\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma17215374</a> [<a href=\"#ref-13\">13</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Trong các mối hàn dị chủng nhôm-đồng hoặc nhôm-titan, sự phát triển quá mức của các lớp hợp chất liên kim loại giòn (ví dụ TiAl<sub>3</sub>) làm tăng nguy cơ nứt và suy giảm độ bền cơ học khi thay đổi thông số nhiệt <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-11\">11</a>]</sup>. Đối với hạ tầng năng lượng cũ, việc thu thập dữ liệu về độ không đồng nhất vi cấu trúc của vùng ảnh hưởng nhiệt và đánh giá độ nhạy cảm với hiện tượng giòn vì hydro vẫn gặp nhiều hạn chế do kích thước mẫu nhỏ và sự phức tạp của trạng thái ứng suất cục bộ <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. Các thách thức khác bao gồm sự mài mòn điện cực trong hàn kháng điện <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, sự mài mòn dụng cụ trong hàn siêu âm <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, cũng như việc tích hợp dữ liệu đa nguồn để nhận diện khuyết tật thời gian thực trong ống dẫn phi kim loại <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<h3>5. Xu thế tương lai</h3>\n<p>Dựa trên các tổng quan nghiên cứu, giới chuyên môn kỳ vọng các xu thế phát triển sau sẽ định hình ngành công nghệ hàn và liên kết trong thời gian tới:</p>\n<ul>\n<li><strong>Chuyển dịch sang điều khiển dựa trên cơ chế vật lý:</strong> Các quy trình hàn sẽ dịch chuyển mạnh mẽ từ việc tối ưu hóa thực nghiệm thuần túy sang mô hình hóa cơ chế vi cấu trúc, tiến hóa trường nhiệt độ và ứng xử nhiệt-cơ <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</li>\n<li><strong>Ứng dụng rộng rãi mô hình mô phỏng số nâng cao:</strong> Việc tích hợp dữ liệu giãn nở nhiệt và mô hình vật liệu chính xác vào phần mềm mô phỏng cơ học hàn (CWM) sẽ được đẩy mạnh nhằm giảm thiểu hiệu chuẩn thực nghiệm <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</li>\n<li><strong>Phát triển kỹ thuật biến tính bề mặt tiên tiến cho môi trường khắc nghiệt:</strong> Các kỹ thuật phun bi như UIP và LSP sẽ tiếp tục được hoàn thiện để ngăn ngừa hiện tượng nứt do ứng suất ăn mòn trong các ứng dụng hạt nhân và năng lượng sạch <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</li>\n<li><strong>Tích hợp trí tuệ nhân tạo và xử lý dữ liệu thời gian thực:</strong> Các thuật toán xử lý nhanh (như thuật toán dự đoán hình dạng vảy hàn dưới 1 ms) được kỳ vọng sẽ tích hợp sâu vào hệ thống điều khiển theo dõi đường hàn tự động <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</li>\n<li><strong>Mở rộng phương pháp liên kết trạng thái rắn và kết hợp:</strong> Các phương pháp như hàn khuấy ma sát (FSW, RFSSW) và hàn hồ quang áp suất âm (NPA) sẽ được mở rộng sang nhiều cặp vật liệu dị chủng mới nhằm đáp ứng yêu cầu trọng lượng nhẹ trong hàng không và ô tô <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-13\">13</a>]</sup>.</li>\n</ul>\n<h3>6. Hàm ý thực tiễn</h3>\n<p>Các kết quả nghiên cứu tổng hợp từ tài liệu mang lại những hàm ý quan trọng đối với ngành công nghiệp và giáo dục kỹ thuật tại Việt Nam:</p>\n<ul>\n<li><strong>Nâng cao năng lực đánh giá toàn vẹn kết cấu cũ:</strong> Các kỹ thuật thử nghiệm sử dụng mẫu kích thước nhỏ (sub-size specimens) và đo giãn dài quang học có thể được áp dụng để đánh giá độ an toàn của hệ thống đường ống dẫn dầu khí và năng lượng đã qua thời gian vận hành lâu năm <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>.</li>\n<li><strong>Chuẩn hóa quy trình hàn vật liệu tiên tiến:</strong> Ngành công nghiệp chế tạo cơ khí và ô tô cần tiếp nhận các dữ liệu thực nghiệm về hàn la-de thanh cái pin và hàn khuấy ma sát vật liệu dị chủng để kiểm soát khuyết tật hợp chất liên kim loại <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-8\">8</a>]</sup>.</li>\n<li><strong>Đổi mới chương trình đào tạo kỹ thuật hàn:</strong> Các cơ sở đào tạo đại học và sau đại học cần tích hợp kiến thức về mô phỏng số đa vật lý (COMSOL, CWM) và cơ sở lý thuyết luyện kim hàn thay vì chỉ đào tạo kỹ năng vận hành thủ công <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>]</sup>.</li>\n<li><strong>Thúc đẩy tự động hóa và kiểm soát quá trình:</strong> Các kỹ sư và nhà nghiên cứu trong nước có thể áp dụng các mô hình hồi quy và thuật toán tối ưu hóa hình dạng vảy hàn (như PCHIP) để phát triển các hệ thống bám mép tự động trong sản xuất công nghiệp <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</li>\n</ul>",
+  "content_en": "<h3>1. Introduction</h3>\n<p class=\"lead\">The rapid development of strategic industries such as nuclear energy, electrified transportation, and aerospace imposes stringent demands on welding and materials joining technologies. Traditional fusion welding methods often encounter difficulties when applied to dissimilar materials, thin-walled structures, or harsh operating environments. In-depth research into metallurgical mechanisms, process parameter optimization, and microstructural control plays a decisive role in ensuring structural reliability.</p>\n<p class=\"lead\">Against this backdrop, recent research works have provided crucial experimental data and numerical models to address specific engineering challenges. This article synthesizes and analyzes technical advancements from the latest scientific literature, clarifying the methods, achieved results, and remaining challenges in practical applications.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig3.jpg\" alt=\"Macroscopic appearance of fractured tensile samples [(a) C1900, (b) C1875] uniaxial tension. Sample (a) brittle fracture and sample (b) ductile fracture. Red arrows indicate the estimated pre-weld copper substrate interface.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Macroscopic appearance of fractured tensile samples [(a) C1900, (b) C1875] uniaxial tension. Sample (a) brittle fracture and sample (b) ductile fracture. Red arrows indicate the estimated pre-weld copper substrate interface. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Dellepiane et al. (2026), “Metallurgical and Mechanical Property Investigation of ETP Cu Similar Hybrid Friction Welds for Nuclear Fusion Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19194066\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19194066</a> [<a href=\"#ref-14\">14</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>2. Background</h3>\n<p>Modern industry demands welded structures that not only achieve high mechanical strength but also withstand severe working conditions such as high temperatures, high pressures, and corrosive environments <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. Traditional bottlenecks include the formation of brittle intermetallic compounds (IMCs) in dissimilar welds, high residual stresses and thermal distortions during additive manufacturing, and ductility reduction caused by hydrogen embrittlement in aging energy pipelines <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. According to the authors of <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, the transition from empirical parameter optimization to mechanism-based control is key to improving weld quality in non-metallic pipeline systems and energy transport networks.</p>\n<p>Furthermore, the implementation of emerging technologies such as friction stir welding (FSW), negative pressure arc (NPA) welding, or laser beam welding requires a fundamental understanding of temperature field evolution, phase transformation kinetics, and interfacial diffusion behavior <sup class=\"cite\">[<a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>]</sup>. Recent research efforts focus on combining multi-physics numerical simulation with experiments to predict material behavior more accurately <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig8.jpg\" alt=\"VOSviewer-based symbiotic network analysis. Different colored regions represent different clustering results.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> VOSviewer-based symbiotic network analysis. Different colored regions represent different clustering results. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Hong et al. (2026), “Advances in Electrofusion Welding Technology for Polymeric Pipelines: From Process Optimization to Mechanism-Driven Control”, <em>Polymers</em>, <a href=\"https://doi.org/10.3390/polym18111402\" target=\"_blank\" rel=\"noopener\">doi:10.3390/polym18111402</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>3. Key Industrial Applications</h3>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig7.jpg\" alt=\"The SEM images of the crack morphology of CISCC cracks in the secondary electron mode.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> The SEM images of the crack morphology of CISCC cracks in the secondary electron mode. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Jose et al. (2025), “Peening Techniques for Mitigating Chlorine-Induced Stress Corrosion Cracking of Dry Storage Canisters for Nuclear Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18020438\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18020438</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Energy and Pipelines</h3>\n<p>In the energy sector, assessing the structural integrity of vintage natural gas pipelines repurposed for hydrogen transport poses significant challenges due to highly heterogeneous and poorly characterized heat-affected zones (HAZs) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> employed sub-size specimens combined with non-contact optical Edge-Tracing extensometry to investigate a double-pass submerged-arc weld in an 11.3 mm-thick API 5L X52 steel pipe. The results indicated that under tensile loading, the sub-critical HAZ (SCHAZ) is the softest region with a reduction of area of Z = 15.6% and consistently triggers cross-weld failure, whereas the coarse-grained HAZ (CGHAZ) exhibits the lowest crack-growth resistance with a J<sub>IC</sub> value of 30 kJ/m<sup>2</sup> (less than half the base-metal value) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p>\n<p>For pipelines in service for 24 years and subsequently exposed to gaseous hydrogen at approximately 1.22 MPa for 257 days, the authors of <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> reported that while tensile strength and hardness remained stable, tensile ductility decreased noticeably (reduction of area decreased by 11.6% to 14.6% depending on the specimen). The documented cross-weld fracture location shifted from the base metal before exposure to the HAZ after hydrogen exposure, and fracture morphology changed from deep dimpled rupture toward mixed ductile/quasi-cleavage with secondary cracking <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. In nuclear applications, dry storage canisters (DSCs) manufactured from austenitic stainless steels (ASS) are prone to chloride-induced stress corrosion cracking (CISCC). The authors of <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> reviewed advanced peening techniques, such as ultrasonic impact peening (UIP) and laser shock peening (LSP), to mitigate CISCC by introducing compressive residual stresses.</p>\n<p>For non-metallic pipelines and low-carbon energy systems, the authors of <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> synthesized advancements in electrofusion welding technology, clarifying the evolution of temperature fields, fusion zones, and thermo-mechanical behavior.</p>\n<h3>Automotive and Electric Vehicle Batteries</h3>\n<p>In the automotive and electric vehicle (EV) battery manufacturing sectors, interconnecting aluminum and copper busbars requires precise control of heat input and electrical contact resistance <sup class=\"cite\">[<a href=\"#ref-8\">8</a>, <a href=\"#ref-11\">11</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> investigated laser-welded aluminum busbars using oil-cooled direct-current pulse tests at ambient temperatures ranging from -10 °C to 70 °C combined with three-dimensional COMSOL Multiphysics electro-thermal simulations. Experimental results showed that mean joint resistance during the first 60 s ranged from 12.05 µΩ to 17.29 µΩ and increased with current and ambient temperature. At a current of 700 A, peak weld temperature increased from 8.59 °C at -10 °C to 84.24 °C at 70 °C, with a mean absolute model error of 3.82 °C <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<p>To produce lightweight hybrid joints between copper alloy C23000 and polyethylene (PE) polymer without additional adhesives or fasteners, the authors of <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> applied pinless friction stir welding (FSW). A maximum tensile-shear strength of 3256 N was achieved at a rotational speed of 1400 rpm and a welding time of 2 min, with a mechanical interlock interfacial width of 19–24 µm <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig2.jpg\" alt=\"Tensile-shear force results for C23000 copper alloy-to-PE polymer hybrid joints welded at different rotational speeds.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Tensile-shear force results for C23000 copper alloy-to-PE polymer hybrid joints welded at different rotational speeds. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Barrak et al. (2026), “Analysis of a sustainable welding process for joining copper alloy C23000 to polyethylene polymer as a hybrid joint”, <em>International Journal of Automotive and Mechanical Engineering</em>, <a href=\"https://doi.org/10.15282/ijame.23.3.2026.10.1046\" target=\"_blank\" rel=\"noopener\">doi:10.15282/ijame.23.3.2026.10.1046</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Additionally, resistance welding (RW), laser beam welding (LBW), and ultrasonic welding (USW) for tab-to-busbar interconnections were reviewed in terms of their advantages and drawbacks concerning brittle intermetallic compound formation and porosity <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p>\n<h3>Aerospace, Shipbuilding, and Marine Structures</h3>\n<p>In aerospace and shipbuilding, joining dissimilar materials such as aluminum and titanium (Al/Ti) plays a critical role <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> investigated refill friction stir spot welding (RFSSW) of Al/Ti dissimilar joints under varying dwell times. With a prolonged dwell time, peak temperature and strain rate increased, resulting in grain coarsening and a thicker diffusion layer. TiAl<sub>3</sub> was identified as the sole intermetallic compound at the interface. The tensile-shear failure load reached a maximum of 6.39 kN at a dwell time of 6 s <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig1.jpg\" alt=\"The strain field distribution: (a) 2 s; (b) 4 s; (c) 6 s; (d) 8 s.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> The strain field distribution: (a) 2 s; (b) 4 s; (c) 6 s; (d) 8 s. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Wang et al. (2026), “The effect of dwell time on Al/Ti refill friction stir spot welded joints: diffusion behavior and mechanical properties”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02679-6\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02679-6</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>For quenched and tempered 690 high-strength shipbuilding steel, the authors of <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> determined material parameters using a quenching dilatometer to enhance the predictive accuracy of residual stresses and distortions in computational welding mechanics (CWM) <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig4.jpg\" alt=\"Transformation points determined from the delta L/degrees C measurement data.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Transformation points determined from the delta L/degrees C measurement data. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Riski et al. (2026), “Experimental characterisation of mechanical properties and continuous cooling transformation analysis for structural 690 quenched and tempered high-strength steel”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02623-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02623-8</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>In automated manufacturing, the authors of <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> developed a two-dimensional bead shape prediction algorithm for flux-cored arc welding (FCAW) under torch offset conditions ranging from -2 mm to +2 mm and welding speeds from 6.0 to 9.0 mm/s. The nonlinear regression model combined with piecewise cubic Hermite interpolation (PCHIP) achieved a root mean square error (RMSE) below 0.7 mm and mean absolute error (MAE) below 0.5 mm for leg-length parameters, with a computation time under 1 ms <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Furthermore, negative pressure arc (NPA) welding utilizing a hollow tungsten electrode combined with longitudinal magnetic fields was reviewed, generating an upward anti-gravity force to anchor the molten pool and reducing power consumption by approximately 11% compared to conventional processes <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig5.jpg\" alt=\"Comparison of the torch construction of TIG and PAW processes.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> Comparison of the torch construction of TIG and PAW processes. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Patra et al. (2026), “Comprehensive Review of Negative Pressure Arc Welding: Physical Principles, Adsorption Mechanisms, and Evolutionary Dynamics in Precision Manufacturing”, <em>Journal of Mechanical Engineering Advancements</em>, <a href=\"https://doi.org/10.65525/jmea.v3i2.53\" target=\"_blank\" rel=\"noopener\">doi:10.65525/jmea.v3i2.53</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; resized, content unchanged.</span></figcaption></figure>\n\n<h3>4. Challenges</h3>\n<p>Despite significant progress, literature indicates that welding and joining technologies still face core technical challenges. In additive manufacturing and thick-walled component welding for Small Modular Reactors (SMRs), defects such as lack of fusion, porosity, slag inclusions, residual stresses, and anisotropy remain open issues requiring rigorous non-destructive inspection <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. For copper and copper alloys, high thermal conductivity and oxidation issues cause difficulties in conventional fusion welding, requiring strict optimization of tool geometry and process parameters in friction stir welding <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig6.jpg\" alt=\"Microstructure and microhardness of Cu-ETP R220.\" loading=\"lazy\"><figcaption><strong>Figure 8.</strong> Microstructure and microhardness of Cu-ETP R220. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Bulacu et al. (2024), “A Review on Friction Stir Welding of Copper: Tool Geometry, Process Parameters, and Joint Properties”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma17215374\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma17215374</a> [<a href=\"#ref-13\">13</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>In dissimilar aluminum-copper or aluminum-titanium joints, excessive growth of brittle intermetallic compound layers (e.g., TiAl<sub>3</sub>) increases cracking susceptibility and degrades mechanical strength under thermal variations <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-11\">11</a>]</sup>. For aging energy infrastructure, gathering data on microstructural heterogeneity in heat-affected zones and assessing susceptibility to hydrogen embrittlement remain constrained by small specimen sizes and complex local stress states <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>. Other challenges include electrode wear in resistance welding <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, tool wear in ultrasonic welding <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, and the integration of multi-source data for real-time defect identification in non-metallic pipelines <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<h3>5. Future Trends</h3>\n<p>Based on the reviewed literature, experts anticipate that the following development trends will shape the welding and joining industry in the near future:</p>\n<ul>\n<li><strong>Shift toward mechanism-driven process control:</strong> Welding processes will transition strongly from purely empirical parameter optimization toward the modeling of microstructural mechanisms, temperature field evolution, and thermo-mechanical behavior <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</li>\n<li><strong>Widespread adoption of advanced numerical simulation models:</strong> The integration of thermal dilatation data and precise material models into computational welding mechanics (CWM) software will be intensified to minimize empirical calibration <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</li>\n<li><strong>Development of advanced surface modification techniques for harsh environments:</strong> Peening techniques such as UIP and LSP will be further refined to prevent stress corrosion cracking in nuclear and clean energy applications <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</li>\n<li><strong>Integration of artificial intelligence and real-time data processing:</strong> Fast-processing algorithms (such as bead shape prediction algorithms running under 1 ms) are expected to be deeply integrated into automated seam-tracking control systems <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</li>\n<li><strong>Expansion of solid-state and hybrid joining methods:</strong> Techniques such as friction stir welding (FSW, RFSSW) and negative pressure arc (NPA) welding will be expanded to various new dissimilar material pairs to meet lightweight requirements in aerospace and automotive sectors <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-13\">13</a>]</sup>.</li>\n</ul>\n<h3>6. Practical Implications</h3>\n<p>The research findings synthesized from the literature offer critical implications for industry and technical education:</p>\n<ul>\n<li><strong>Enhancing structural integrity assessment of aging infrastructure:</strong> Testing techniques using sub-size specimens and optical extensometry can be applied to evaluate the safety of long-operated oil and gas and energy pipeline systems <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>]</sup>.</li>\n<li><strong>Standardizing advanced material welding procedures:</strong> Mechanical manufacturing and automotive industries should adopt experimental data on battery busbar laser welding and dissimilar friction stir welding to control intermetallic compound defects <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-8\">8</a>]</sup>.</li>\n<li><strong>Modernizing welding engineering curricula:</strong> University and graduate educational programs should integrate knowledge of multi-physics numerical simulation (COMSOL, CWM) and welding metallurgy fundamentals rather than focusing solely on manual operational skills <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>]</sup>.</li>\n<li><strong>Promoting automation and process control:</strong> Domestic engineers and researchers can apply regression models and bead shape optimization algorithms (such as PCHIP) to develop automated seam-tracking systems in industrial manufacturing <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</li>\n</ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Martin Werz",
+        "Sven Sewalski",
+        "Tim Fritschle"
+      ],
+      "more_authors": false,
+      "title": "Potential and application scenarios of additive manufacturing processes in the production of SMRs and microreactors",
+      "journal": "Kerntechnik",
+      "date": "2026-08-27",
+      "doi": "10.1515/kern-2026-0060",
+      "url": "https://doi.org/10.1515/kern-2026-0060",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "S. Belkacemi",
+        "Luciano Meirelles Santana",
+        "Abdennour Meddour",
+        "V. Farrugia",
+        "Jacques Besson",
+        "Yazid Madi"
+      ],
+      "more_authors": false,
+      "title": "Mechanical characterization via sub-size specimens: Application to a longitudinal seam weld in vintage X52 pipeline steel",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-08-31",
+      "doi": "10.1016/j.jmrt.2026.08.182",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.08.182",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Xinye He",
+        "Tao Gao",
+        "Bowen Ren",
+        "Xiaoqiang Ma",
+        "Xiaoming Chen",
+        "Jianyang Wu"
+      ],
+      "more_authors": false,
+      "title": "Hydrogen-induced fracture relocation in a 24-year-serviced X52 pipeline weld",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-09-17",
+      "doi": "10.1016/j.jmrt.2026.09.126",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.09.126",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Bingyuan Hong",
+        "Zhongjian Sun",
+        "Zenan Wu",
+        "Yu Meng",
+        "Zhiwei Chen",
+        "Xianlei Chen"
+      ],
+      "more_authors": true,
+      "title": "Advances in Electrofusion Welding Technology for Polymeric Pipelines: From Process Optimization to Mechanism-Driven Control",
+      "journal": "Polymers",
+      "date": "2026-06-05",
+      "doi": "10.3390/polym18111402",
+      "url": "https://doi.org/10.3390/polym18111402",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Jiancheng Wang",
+        "Li Zhou",
+        "Xinchen Nan",
+        "Chengyue Ma",
+        "Li Zhou",
+        "Yuchun Liu"
+      ],
+      "more_authors": true,
+      "title": "The effect of dwell time on Al/Ti refill friction stir spot welded joints: diffusion behavior and mechanical properties",
+      "journal": "Welding in the World",
+      "date": "2026-10-26",
+      "doi": "10.1007/s40194-026-02679-6",
+      "url": "https://doi.org/10.1007/s40194-026-02679-6",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Osamah Sabah Barrak",
+        "Mahmood Mohammed Hamzah",
+        "Sabah Khammass Hussein",
+        "Nabil Kadhim Taieh"
+      ],
+      "more_authors": false,
+      "title": "Analysis of a sustainable welding process for joining copper alloy C23000 to polyethylene polymer as a hybrid joint",
+      "journal": "International Journal of Automotive and Mechanical Engineering",
+      "date": "2026-09-30",
+      "doi": "10.15282/ijame.23.3.2026.10.1046",
+      "url": "https://doi.org/10.15282/ijame.23.3.2026.10.1046",
+      "license": "cc-by-nc",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Soumyadip Patra",
+        "Mateen Ali",
+        "Saran S"
+      ],
+      "more_authors": false,
+      "title": "Comprehensive Review of Negative Pressure Arc Welding: Physical Principles, Adsorption Mechanisms, and Evolutionary Dynamics in Precision Manufacturing",
+      "journal": "Journal of Mechanical Engineering Advancements",
+      "date": "2026-09-25",
+      "doi": "10.65525/jmea.v3i2.53",
+      "url": "https://doi.org/10.65525/jmea.v3i2.53",
+      "license": "cc-by-nc",
+      "topic": "feature"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "M. Chelladurai Asirvatham",
+        "Thomas R. B. Grandjean",
+        "Mahyar J. Koshkouei",
+        "Andrew D. Moore",
+        "Tanveerkhan S. Pathan",
+        "Manlio Valerio Morganti"
+      ],
+      "more_authors": true,
+      "title": "Experimental investigation and simulation of thermal and electrical performance of laser welded aluminium-based busbars for electric vehicle batteries",
+      "journal": "Journal of Energy Storage",
+      "date": "2026-09-28",
+      "doi": "10.1016/j.est.2026.124821",
+      "url": "https://doi.org/10.1016/j.est.2026.124821",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Jani Riski",
+        "M. Neumann",
+        "Kevin Hoefer",
+        "Jonas Hensel",
+        "Tuomas Skriko",
+        "A. Ahola"
+      ],
+      "more_authors": false,
+      "title": "Experimental characterisation of mechanical properties and continuous cooling transformation analysis for structural 690 quenched and tempered high-strength steel",
+      "journal": "Welding in the World",
+      "date": "2026-09-24",
+      "doi": "10.1007/s40194-026-02623-8",
+      "url": "https://doi.org/10.1007/s40194-026-02623-8",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Subin Antony Jose",
+        "Merbin John",
+        "Manoranjan Misra",
+        "Pradeep L. Menezes"
+      ],
+      "more_authors": false,
+      "title": "Peening Techniques for Mitigating Chlorine-Induced Stress Corrosion Cracking of Dry Storage Canisters for Nuclear Applications",
+      "journal": "Materials",
+      "date": "2025-01-18",
+      "doi": "10.3390/ma18020438",
+      "url": "https://doi.org/10.3390/ma18020438",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Sooyong Choi",
+        "Sooman Lim",
+        "Ali Shan",
+        "Jinkyu Lee",
+        "Tae Gwang Yun",
+        "Byungil Hwang"
+      ],
+      "more_authors": false,
+      "title": "Tab-to-Busbar Interconnections in EV Battery Packs: An Introductory Review of Typical Welding Methods",
+      "journal": "Micromachines",
+      "date": "2025-12-19",
+      "doi": "10.3390/mi17010002",
+      "url": "https://doi.org/10.3390/mi17010002",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Taehyung Na",
+        "Junsung Bae",
+        "Sang-Hyun Ahn",
+        "Gwang-Ho Jeong",
+        "Dae-Won Cho",
+        "이동희"
+      ],
+      "more_authors": true,
+      "title": "Development of a Two-Dimensional Bead Shape Prediction Algorithm for Fillet FCAW Considering Welding Speed and Torch Offset",
+      "journal": "Processes",
+      "date": "2026-09-28",
+      "doi": "10.3390/pr14193104",
+      "url": "https://doi.org/10.3390/pr14193104",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Răducu Nicolae Bulacu",
+        "Matthieu Dhondt",
+        "Younès Demmouche",
+        "Claudiu Bădulescu",
+        "Eduard Niţu",
+        "Monica Daniela IORDACHE"
+      ],
+      "more_authors": false,
+      "title": "A Review on Friction Stir Welding of Copper: Tool Geometry, Process Parameters, and Joint Properties",
+      "journal": "Materials",
+      "date": "2024-11-03",
+      "doi": "10.3390/ma17215374",
+      "url": "https://doi.org/10.3390/ma17215374",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Michail Dellepiane",
+        "Laurie Da Silva",
+        "Athanasios Toumpis"
+      ],
+      "more_authors": false,
+      "title": "Metallurgical and Mechanical Property Investigation of ETP Cu Similar Hybrid Friction Welds for Nuclear Fusion Applications",
+      "journal": "Materials",
+      "date": "2026-09-23",
+      "doi": "10.3390/ma19194066",
+      "url": "https://doi.org/10.3390/ma19194066",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Ashu Singh",
+        "Dr. P.K. Mishra",
+        "Manish Kumar",
+        "Arjun Sanjay Paul",
+        "Shweta Ranjan",
+        "Satyam Singh"
+      ],
+      "more_authors": false,
+      "title": "CAD-Based Design and Fabrication of a Power-operated Seed Drill for Wheat (Triticum aestivum L.) Sowing",
+      "journal": "Journal of Experimental Agriculture International",
+      "date": "2026-09-05",
+      "doi": "10.9734/jeai/2026/v48i94488",
+      "url": "https://doi.org/10.9734/jeai/2026/v48i94488",
+      "license": "cc-by",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

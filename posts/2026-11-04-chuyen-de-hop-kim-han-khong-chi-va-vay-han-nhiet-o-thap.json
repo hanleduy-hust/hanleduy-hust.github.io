@@ -1,0 +1,151 @@
+{
+  "id": "2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
+  "date": "2026-11-04",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Tối ưu hóa Vi cấu trúc, Cơ chế Ôxy hóa và Đặc tính Vảy hàn Nhiệt độ Thấp trong Đóng gói Vi điện tử",
+  "title_en": "Microstructural Optimization, Oxidation Mechanisms, and Low-Temperature Solder Characteristics in Electronic Packaging",
+  "summary_vi": "Tổng quan các tiến bộ nghiên cứu tính đến tháng 11 năm 2026 về hợp kim hàn không chì, vảy hàn nhiệt độ thấp, cơ chế vi hợp kim hóa và độ tin cậy mối hàn.",
+  "summary_en": "An overview of research advancements as of November 2026 concerning lead-free solder alloys, low-temperature soldering materials, microalloying mechanisms, and joint reliability.",
+  "tags": [
+    "Lead-Free Solder",
+    "Low-Temperature Solder",
+    "Microstructure",
+    "Wetting Behavior",
+    "Mechanical Reliability"
+  ],
+  "cover": "images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg",
+  "content_vi": "<h3>1. Dẫn nhập</h3><p class=\"lead\">Sự phát triển mạnh mẽ của công nghệ đóng gói vi điện tử hiện đại đòi hỏi các giải pháp kết nối tiên tiến có khả năng hoạt động ở nhiệt độ thấp nhằm bảo vệ các linh kiện nhạy cảm nhiệt. Các nghiên cứu gần đây công bố đến tháng 11 năm 2026 đã tập trung giải quyết các bài toán hóc búa về vi cấu trúc, hiện tượng ôxy hóa bề mặt và độ bền cơ học của các hệ hợp kim hàn không chì (lead-free solder). Việc ứng dụng các kỹ thuật vi hợp kim hóa và điều khiển năng lượng bề mặt đang mở ra những hướng đi mới cho công nghệ chế tạo mối hàn chất lượng cao.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg\" alt=\"Mối quan hệ giữa thể tích pha β-Sn và cơ tính của hợp kim hàn SAC305 cùng hợp kim SAC305 biến tính Ce: (a) Độ cứng Vickers và (b) Giới hạn bền kéo (UTS).\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Mối quan hệ giữa thể tích pha β-Sn và cơ tính của hợp kim hàn SAC305 cùng hợp kim SAC305 biến tính Ce: (a) Độ cứng Vickers và (b) Giới hạn bền kéo (UTS). <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Akbar et al. (2026), “Microstructural refinement and mechanical strengthening of SAC305 lead-free solder through cerium microalloying”, <em>Journal of Materials Science Materials in Electronics</em>, <a href=\"https://doi.org/10.1007/s10854-026-18635-5\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10854-026-18635-5</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig2.jpg\" alt=\"Mẫu thử thấm ướt cho (a) tỷ lệ lan rộng và (b) góc tiếp xúc, kết hợp quan sát hình thái học vi cấu trúc và phân bố nguyên tố.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Mẫu thử thấm ướt cho (a) tỷ lệ lan rộng và (b) góc tiếp xúc, kết hợp quan sát hình thái học vi cấu trúc và phân bố nguyên tố. <span class=\"fig-credit\">Nguồn: Hình1 trong bài gốc – Azam et al. (2026), “Thermal, wetting, and microstructural properties of the tin–bismuth (Sn–58Bi) solder joint at different reflow temperatures”, <em>Journal of Materials Science Materials in Electronics</em>, <a href=\"https://doi.org/10.1007/s10854-026-18461-9\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10854-026-18461-9</a> [<a href=\"#ref-3\">3</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig3.jpg\" alt=\"Ảnh SEM của bột hợp kim ở các biên độ siêu âm khác nhau: (a, d) 20%, (b, e) 25%, và (c) các giá trị tương ứng.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Ảnh SEM của bột hợp kim ở các biên độ siêu âm khác nhau: (a, d) 20%, (b, e) 25%, và (c) các giá trị tương ứng. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Ren et al. (2026), “Ambient-atmosphere ultrasonic atomization of low-melting-point wood’s alloy powders: process optimization, atomization mechanism, and solderability”, <em>Journal of Materials Science Materials in Electronics</em>, <a href=\"https://doi.org/10.1007/s10854-026-18601-1\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10854-026-18601-1</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig4.jpg\" alt=\"Ảnh hiển vi điện tử quét (SEM) bề mặt gãy của các mẫu lão hóa sau thử nghiệm kéo: (a) Cu, (b) Cu pha tạp thiếc 0,26Sn, và (c) hợp kim Cu-0,57Sn.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Ảnh hiển vi điện tử quét (SEM) bề mặt gãy của các mẫu lão hóa sau thử nghiệm kéo: (a) Cu, (b) Cu pha tạp thiếc 0,26Sn, và (c) hợp kim Cu-0,57Sn. <span class=\"fig-credit\">Nguồn: Hình 10 trong bài gốc – Kaisera (2026), “MECHANICAL AND FRACTURE BEHAVIOR OF VARIOUS LEVELS TIN-DOPED COPPER FROM LEAD-FREE SOLDER JOINTS SUBJECTED TO THERMAL AGING”, <em>Journal of Management and Engineering Sciences .</em>, <a href=\"https://doi.org/10.61552/jmes.2026.03.002\" target=\"_blank\" rel=\"noopener\">doi:10.61552/jmes.2026.03.002</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>",
+  "content_en": "<h3>1. Introduction</h3><p class=\"lead\">The rapid advancement of modern electronic packaging technologies demands state-of-the-art interconnection solutions capable of operating at low temperatures to protect thermally sensitive components. Recent research studies published up to November 2026 have focused on addressing critical challenges regarding the microstructure, surface oxidation behavior, and mechanical reliability of lead-free solder systems. The implementation of microalloying techniques and surface energy control strategies is opening new pathways for fabricating high-quality solder joints.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg\" alt=\"Relation between β-Sn volume fraction and the mechanical properties of SAC305 and Ce-modified SAC305 solder alloys: (a) Vickers hardness and (b) ultimate tensile strength (UTS).\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Relation between β-Sn volume fraction and the mechanical properties of SAC305 and Ce-modified SAC305 solder alloys: (a) Vickers hardness and (b) ultimate tensile strength (UTS). <span class=\"fig-credit\">Source: Fig. 7 of the original article – Akbar et al. (2026), “Microstructural refinement and mechanical strengthening of SAC305 lead-free solder through cerium microalloying”, <em>Journal of Materials Science Materials in Electronics</em>, <a href=\"https://doi.org/10.1007/s10854-026-18635-5\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10854-026-18635-5</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig2.jpg\" alt=\"Wetting samples for (a) spreading ratio and (b) contact angle, along with microstructural and elemental distribution analysis.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Wetting samples for (a) spreading ratio and (b) contact angle, along with microstructural and elemental distribution analysis. <span class=\"fig-credit\">Source: Fig.1 of the original article – Azam et al. (2026), “Thermal, wetting, and microstructural properties of the tin–bismuth (Sn–58Bi) solder joint at different reflow temperatures”, <em>Journal of Materials Science Materials in Electronics</em>, <a href=\"https://doi.org/10.1007/s10854-026-18461-9\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10854-026-18461-9</a> [<a href=\"#ref-3\">3</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig3.jpg\" alt=\"SEM images of powder at different amplitudes: (a) and (d) 20%, (b) and (e) 25%, (c) and corresponding values.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> SEM images of powder at different amplitudes: (a) and (d) 20%, (b) and (e) 25%, (c) and corresponding values. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Ren et al. (2026), “Ambient-atmosphere ultrasonic atomization of low-melting-point wood’s alloy powders: process optimization, atomization mechanism, and solderability”, <em>Journal of Materials Science Materials in Electronics</em>, <a href=\"https://doi.org/10.1007/s10854-026-18601-1\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10854-026-18601-1</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><figure class=\"post-figure\"><img src=\"images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig4.jpg\" alt=\"SEM fractography due to tensile test of the aged samples: (a) Cu, (b) tin-doped Cu-0.26Sn, and (c) Cu-0.57Sn alloy.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> SEM fractography due to tensile test of the aged samples: (a) Cu, (b) tin-doped Cu-0.26Sn, and (c) Cu-0.57Sn alloy. <span class=\"fig-credit\">Source: Fig. 10 of the original article – Kaisera (2026), “MECHANICAL AND FRACTURE BEHAVIOR OF VARIOUS LEVELS TIN-DOPED COPPER FROM LEAD-FREE SOLDER JOINTS SUBJECTED TO THERMAL AGING”, <em>Journal of Management and Engineering Sciences .</em>, <a href=\"https://doi.org/10.61552/jmes.2026.03.002\" target=\"_blank\" rel=\"noopener\">doi:10.61552/jmes.2026.03.002</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY-NC</a>; resized, content unchanged.</span></figcaption></figure>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Nasir Akbar",
+        "Muhammad Sadiq Khattak",
+        "Hamaad Jamal",
+        "Mohammad Younas",
+        "Syed Abu Huraira",
+        "Muhammad Owais"
+      ],
+      "more_authors": false,
+      "title": "Microstructural refinement and mechanical strengthening of SAC305 lead-free solder through cerium microalloying",
+      "journal": "Journal of Materials Science Materials in Electronics",
+      "date": "2026-10-01",
+      "doi": "10.1007/s10854-026-18635-5",
+      "url": "https://doi.org/10.1007/s10854-026-18635-5",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Lingxue Guo",
+        "Jieli Liao",
+        "Wei Sun",
+        "Yong Zhang",
+        "Qinfen Gu",
+        "Ruifeng Zhang"
+      ],
+      "more_authors": true,
+      "title": "Synergistic effects of Ga and P microalloying on surface oxidation and passivation in molten Sn-0.7Cu lead-free solder alloys",
+      "journal": "Corrosion Communications",
+      "date": "2026-09-01",
+      "doi": "10.1016/j.corcom.2026.09.003",
+      "url": "https://doi.org/10.1016/j.corcom.2026.09.003",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Huzaifa Azam",
+        "Amares Singh",
+        "Wei Hong TAN",
+        "Muhammad Amir Aziat Ishak",
+        "Bahman Nasiri‐Tabrizi",
+        "Rubentheren Viyapuri"
+      ],
+      "more_authors": true,
+      "title": "Thermal, wetting, and microstructural properties of the tin–bismuth (Sn–58Bi) solder joint at different reflow temperatures",
+      "journal": "Journal of Materials Science Materials in Electronics",
+      "date": "2026-09-01",
+      "doi": "10.1007/s10854-026-18461-9",
+      "url": "https://doi.org/10.1007/s10854-026-18461-9",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Dingying Ren",
+        "Haodi Li",
+        "Xiaofeng Yang",
+        "Hao Lan",
+        "Xiaoqiang Hu",
+        "Peng Yu"
+      ],
+      "more_authors": true,
+      "title": "Ambient-atmosphere ultrasonic atomization of low-melting-point wood’s alloy powders: process optimization, atomization mechanism, and solderability",
+      "journal": "Journal of Materials Science Materials in Electronics",
+      "date": "2026-10-01",
+      "doi": "10.1007/s10854-026-18601-1",
+      "url": "https://doi.org/10.1007/s10854-026-18601-1",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Mohammad Salim Kaisera"
+      ],
+      "more_authors": false,
+      "title": "MECHANICAL AND FRACTURE BEHAVIOR OF VARIOUS LEVELS TIN-DOPED COPPER FROM LEAD-FREE SOLDER JOINTS SUBJECTED TO THERMAL AGING",
+      "journal": "Journal of Management and Engineering Sciences .",
+      "date": "2026-09-01",
+      "doi": "10.61552/jmes.2026.03.002",
+      "url": "https://doi.org/10.61552/jmes.2026.03.002",
+      "license": "cc-by-nc",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Heebo Ha",
+        "S. K. Choi",
+        "Péter Baumli",
+        "Chih‐Ming Chen",
+        "Byungil Hwang"
+      ],
+      "more_authors": false,
+      "title": "SURFACE-ENERGY-DRIVEN SELECTIVE SOLDERING OF SN-58BI ON HOLEY POLYIMIDE FOR LOW-TEMPERATURE, ROBUST FLEXIBLE INTERCONNECTS",
+      "journal": "Facta Universitatis Series Mechanical Engineering",
+      "date": "2026-08-30",
+      "doi": "10.22190/fume260418012h",
+      "url": "https://doi.org/10.22190/fume260418012h",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Jiaqi Feng",
+        "Jingtao Hong",
+        "Qi Xie",
+        "Suichen Xiong",
+        "Yuan Zhang",
+        "Luke Ma"
+      ],
+      "more_authors": true,
+      "title": "Contrasting Roles of Zn and Sb in Phase Formation and Mechanical Response of Sn–Bi–In Low-Temperature Solders",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-10-01",
+      "doi": "10.1016/j.jmrt.2026.10.264",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.10.264",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
+    "date": "2026-11-04",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tối ưu hóa Vi cấu trúc, Cơ chế Ôxy hóa và Đặc tính Vảy hàn Nhiệt độ Thấp trong Đóng gói Vi điện tử",
+    "title_en": "Microstructural Optimization, Oxidation Mechanisms, and Low-Temperature Solder Characteristics in Electronic Packaging",
+    "summary_vi": "Tổng quan các tiến bộ nghiên cứu tính đến tháng 11 năm 2026 về hợp kim hàn không chì, vảy hàn nhiệt độ thấp, cơ chế vi hợp kim hóa và độ tin cậy mối hàn.",
+    "summary_en": "An overview of research advancements as of November 2026 concerning lead-free solder alloys, low-temperature soldering materials, microalloying mechanisms, and joint reliability.",
+    "tags": [
+      "Lead-Free Solder",
+      "Low-Temperature Solder",
+      "Microstructure",
+      "Wetting Behavior",
+      "Mechanical Reliability"
+    ],
+    "cover": "images/blog/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig1.jpg",
+    "file": "posts/2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap.json"
+  },
+  {
     "id": "2026-11-03-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
     "date": "2026-11-03",
     "type": "feature",

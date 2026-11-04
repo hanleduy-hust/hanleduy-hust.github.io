@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
+    "date": "2026-11-05",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong Công nghệ Đóng gói Tiên tiến và Vật liệu Liên kết: Từ Vi kết nối Đồng Nén đến Thiêu kết Nano và Chất nền Thủy tinh",
+    "title_en": "Advances in Advanced Packaging Technology and Interconnect Materials: From Compressible Copper Microinterconnects to Nanosintering and Glass Core Substrates",
+    "summary_vi": "Bài viết phân tích các xu thế công nghệ và vật liệu liên kết mới nhất trong đóng gói điện tử dựa trên các tài liệu nghiên cứu và tổng quan công bố gần đây, tập trung vào liên kết vi mạch 3D, vật liệu gắn chip nhiệt độ cao và quản lý nhiệt.",
+    "summary_en": "This article analyzes the latest technological trends and interconnect materials in electronic packaging based on recent research and review papers, focusing on 3D microinterconnections, high-temperature die-attach materials, and thermal management.",
+    "tags": [
+      "electronic packaging",
+      "copper sintering",
+      "glass core substrates",
+      "flip-chip bonding",
+      "power electronics"
+    ],
+    "cover": "images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg",
+    "file": "posts/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr.json"
+  },
+  {
     "id": "2026-11-04-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
     "date": "2026-11-04",
     "type": "feature",

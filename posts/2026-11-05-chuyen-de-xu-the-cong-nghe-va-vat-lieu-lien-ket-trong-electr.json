@@ -1,0 +1,200 @@
+{
+  "id": "2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
+  "date": "2026-11-05",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Tiến bộ trong Công nghệ Đóng gói Tiên tiến và Vật liệu Liên kết: Từ Vi kết nối Đồng Nén đến Thiêu kết Nano và Chất nền Thủy tinh",
+  "title_en": "Advances in Advanced Packaging Technology and Interconnect Materials: From Compressible Copper Microinterconnects to Nanosintering and Glass Core Substrates",
+  "summary_vi": "Bài viết phân tích các xu thế công nghệ và vật liệu liên kết mới nhất trong đóng gói điện tử dựa trên các tài liệu nghiên cứu và tổng quan công bố gần đây, tập trung vào liên kết vi mạch 3D, vật liệu gắn chip nhiệt độ cao và quản lý nhiệt.",
+  "summary_en": "This article analyzes the latest technological trends and interconnect materials in electronic packaging based on recent research and review papers, focusing on 3D microinterconnections, high-temperature die-attach materials, and thermal management.",
+  "tags": [
+    "electronic packaging",
+    "copper sintering",
+    "glass core substrates",
+    "flip-chip bonding",
+    "power electronics"
+  ],
+  "cover": "images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg",
+  "content_vi": "<p class=\"lead\">Sự bùng nổ của trí tuệ nhân tạo (AI), điện toán hiệu năng cao (HPC) và xe điện đang thúc đẩy các hệ thống đóng gói điện tử vượt qua giới hạn của vật liệu và cấu trúc truyền thống. Việc chuyển dịch sang các kiến trúc đóng gói 2.5D và 3D đòi hỏi những đột phá căn bản trong công nghệ kết nối, vật liệu gắn chip và khả năng quản lý nhiệt. Bài viết này tổng hợp các xu thế công nghệ và vật liệu liên kết mới nhất từ các nghiên cứu khoa học được công bố trong giai đoạn từ năm 2025 đến 2026.</p>\n<h3>Bối cảnh</h3>\n<p>Các chất nền lớp phủ hữu cơ truyền thống, dù mang lại hiệu quả chi phí, đang đối mặt với những hạn chế nghiêm trọng về độ ổn định kích thước, sự chênh lệch hệ số giãn nở nhiệt (CTE) và hiệu suất điện khi thu nhỏ kích thước <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Trong lĩnh vực điện tử ô tô, tiêu chuẩn AEC-Q100 Grade-0 đòi hỏi triết lý không khiếm khuyết, buộc các linh kiện phải duy trì hiệu suất hoàn hảo dưới điều kiện chu trình nhiệt, độ ẩm và điện áp khắc nghiệt <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Đồng thời, các công nghệ đóng gói truyền thống như hàn và liên kết thông thường gặp khó khăn trong việc đáp ứng nhu cầu tản nhiệt và độ tin cậy của các thiết bị bán dẫn băng thông rộng (WBG) thế hệ mới <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Những thách thức này đòi hỏi sự phát triển của các nền tảng vật liệu mới, bao gồm chất nền lõi thủy tinh, vật liệu thiêu kết đồng và các phương pháp liên kết vi mô tiên tiến <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>]</sup>.</p>\n<h3>Đóng gói tiên tiến và liên kết 3D</h3>\n<p>Trong lĩnh vực đóng gói 3D và vi điện tử làm lạnh sâu (cryogenic), nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> đã chế tạo và phân tích các vi kết nối đồng nén (CMI) tự do phục vụ cho đóng gói điện tử nhiệt độ cực thấp. CMI dạng tiếp xúc áp lực này thể hiện hành vi đàn hồi tuyến tính, yêu cầu lực liên kết tương đối thấp và có khả năng tháo lắp sửa chữa (reworkability). Các phép đo điện trở ngoại vi ở nhiệt độ phòng và nội vi từ 300 K xuống 14 mK trên mảng CMI gắn lật (flip-chip) cho thấy điện trở giảm tới 39.6% khi làm lạnh <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Phân tích mô hình phần tử hữu hạn (FEA) kết hợp đo lực - dịch chuyển đã xác nhận độ bền cơ học của cấu trúc này <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Bên cạnh đó, các kỹ thuật hàn và liên kết vảy hàn trực tiếp và gián tiếp, cùng với các phương pháp tạo bướu (bump), đóng vai trò cốt lõi trong việc hình thành cấu trúc 3D-SiP <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg\" alt=\"Sơ đồ nguyên lý của hệ thống phun giọt vật liệu hàn.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Sơ đồ nguyên lý của hệ thống phun giọt vật liệu hàn. <span class=\"fig-credit\">Nguồn: Hình 10 trong bài gốc – Li et al. (2025), “Soldering and Bonding in Contemporary Electronic Device Packaging”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18092015\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18092015</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n\n<h3>Vật liệu die-attach và liên kết đồng</h3>\n<p>Để giải quyết bài toán gắn chip (die-attach) cho các module công suất SiC hoạt động ở nhiệt độ cao, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> đã đánh giá độ tin cậy nhiệt của các mối nối thiêu kết đồng hai mô đun (bimodal Cu-sintered joints). Sử dụng bột đồng gồm các hạt kích thước 1 µm và 0.3 µm theo tỷ lệ khối lượng 25:75, các chip SiC phủ ENIG được hàn lên chất nền AlN AMB ở 250 ℃ dưới áp suất 10 MPa trong 10 phút <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Sau 2,000 giờ lão hóa nhiệt độ cao ở 200 ℃, độ bền cắt tăng từ 36.44 MPa lên 41.08 MPa, trong khi điện trở suất giảm từ 0.69 Ω xuống 0.58 Ω <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Các mối nối này cũng vượt qua 20,000 chu kỳ công suất mà không xuất hiện hiện tượng tách lớp giao diện hay nứt xuyên bản, với điện trở nhiệt thay đổi không đáng kể ở mức khoảng 2.0% <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Tuy nhiên, các phương pháp thiêu kết hạt nano, liên kết pha lỏng tạm thời (TLP) và thiêu kết pha lỏng (TLPS) nhìn chung vẫn gặp thách thức về thời gian liên kết dài, hiện tượng rỗng, oxy hóa bột và dư lượng dung môi hữu cơ <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Đối với các kim loại lỏng gốc Gallium (GLMs), dù sở hữu độ dẫn nhiệt cao và tính linh động ở nhiệt độ phòng, việc tích hợp đáng tin cậy vẫn gặp khó khăn do các phản ứng giao diện và sự mất ổn định với chất nền kim loại <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig2.jpg\" alt=\"Sơ đồ biểu diễn con đường phát triển của lớp hợp chất liên kim loại (IMC) qua bề mặt tiếp xúc.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Sơ đồ biểu diễn con đường phát triển của lớp hợp chất liên kim loại (IMC) qua bề mặt tiếp xúc. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Wu et al. (2025), “A Review of Novel Die Attach Materials for High-Temperature WBG Power Electronic Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18163841\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18163841</a> [<a href=\"#ref-3\">3</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig3.jpg\" alt=\"(a) Sơ đồ bề mặt tiếp xúc chuẩn bị cho quá trình liên kết pha lỏng tạm thời (TLPB) Cu/Ga; (b) sơ đồ mặt cắt của cặp ghép bánh mì Cu/Pt/Ga/Pt/Cu.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> (a) Sơ đồ bề mặt tiếp xúc chuẩn bị cho quá trình liên kết pha lỏng tạm thời (TLPB) Cu/Ga; (b) sơ đồ mặt cắt của cặp ghép bánh mì Cu/Pt/Ga/Pt/Cu. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Liu et al. (2026), “Ga-Based Liquid Metals: Advances in Interface Thermal and Electrical Regulations for Power Electronics Integration”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19081599\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19081599</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n\n<h3>Quản lý nhiệt và độ tin cậy</h3>\n<p>Vấn đề quản lý nhiệt và độ tin cậy cơ nhiệt gắn liền với cấu trúc vật liệu nền. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> chỉ ra rằng chất nền lõi thủy tinh sở hữu hệ số CTE rất gần với silicon, giúp giảm thiểu ứng suất nhiệt cơ và hiện tượng cong vênh so với chất nền hữu cơ. Độ phẳng bề mặt cao của thủy tinh hỗ trợ công nghệ in quang litho mạch mịn và các lớp tái phân phối đa lớp (RDL), đồng thời tính trong suốt cho phép tích hợp các kết nối quang học <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Trong khi đó, để nâng cao cơ tính của chất nền gốm đồng kết nung nhiệt độ thấp (LTCC), nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> đã khắc phục sự đánh đổi giữa độ bền và độ đặc chắc thông qua cơ chế khử trùng hợp mạng lưới thủy tinh bằng chất điều biến Ca<sup>2+</sup>. Phương pháp này tạo ra pha lỏng độ nhớt thấp thuộc hệ CaO-Al<sub>2</sub>O<sub>3</sub>-B<sub>2</sub>O<sub>3</sub>-SiO<sub>2</sub> ở nhiệt độ cao, thúc đẩy quá trình đặc chắc cho composite chứa từ 65% khối lượng bột Al<sub>2</sub>O<sub>3</sub> trở lên <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Sự di chuyển cục bộ của Al tạo ra lớp giao diện Ca(Al<sub>2</sub>Si<sub>2</sub>O<sub>8</sub>) liên kết hóa học, giúp đạt độ bền uốn 437 MPa mà vẫn duy trì hằng số điện môi ở mức 7.4 và hệ số tổn hao tanδ là 4.6 × 10<sup>-3</sup> ở tần số 15 GHz <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig4.jpg\" alt=\"Sơ đồ nguyên lý của cấu trúc đóng gói 2D: (a) mặt cắt gói 2D đại diện với các thành phần gắn lật (flip-chip) và nối dây; (b) mặt cắt gói hiển thị liên kết chip-với-chất nền và lắp ráp bản mạch in (PCB).\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Sơ đồ nguyên lý của cấu trúc đóng gói 2D: (a) mặt cắt gói 2D đại diện với các thành phần gắn lật (flip-chip) và nối dây; (b) mặt cắt gói hiển thị liên kết chip-với-chất nền và lắp ráp bản mạch in (PCB). <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Huang et al. (2026), “Advanced Electronic Packaging Technologies: A Comparative Review of Architectures, Applications, Reliability”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi17091039\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi17091039</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n\n<h3>Thách thức</h3>\n<p>Ngành đóng gói điện tử hiện đối mặt với nhiều thách thức mang tính hệ thống. Việc chuyển đổi từ dây vàng (Au) sang dây đồng (Cu) và đồng phủ paladi (PCC) trong công nghệ nối dây mang lại ưu thế về chi phí và độ dẫn điện, nhưng làm tăng mạnh độ nhạy cảm với ăn mòn và hiện tượng rỗng tại giao diện Cu-Al trong môi trường khắc nghiệt do sự chênh lệch thế điện hóa và sự xâm nhập của ion clorua (Cl<sup>-</sup>) <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Trong lĩnh vực đóng gói quang tử (photonic packaging), các chất kết dính quang học đóng vai trò thiết yếu nhưng các đặc tính cơ - quang của chúng, hiệu quả truyền dẫn và khả năng kháng môi trường vẫn chưa được nghiên cứu đầy đủ, gây khó khăn cho việc kiểm soát căn chỉnh quang học chính xác <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Ngoài ra, việc mở rộng kích thước chất nền thủy tinh lên định dạng cấp panel (lên tới 510 × 515 mm) đòi hỏi độ đồng đều về độ dày cực kỳ nghiêm ngặt <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Các phương pháp như thiêu kết nano hay liên kết pha lỏng cũng đòi hỏi kiểm soát chặt chẽ để giảm thiểu lỗ rỗng và ngăn ngừa quá trình oxy hóa <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p>\n<h3>Xu thế tương lai</h3>\n<p>Dựa trên các nghiên cứu tổng quan, các xu thế công nghệ trong tương lai được kỳ vọng sẽ tập trung vào các hướng sau đây. Đầu tiên, ngành công nghiệp dự kiến sẽ đẩy mạnh áp dụng chất nền lõi thủy tinh nhằm thay thế các vật liệu hữu cơ truyền thống trong các ứng dụng AI và HPC nhờ ưu điểm về hệ số giãn nở nhiệt và độ phẳng <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-9\">9</a>]</sup>. Thứ hai, công nghệ liên kết lai (hybrid bonding) và tích hợp dị thể (heterogeneous integration) được kỳ vọng sẽ đóng vai trò chủ đạo để vượt qua giới hạn thu nhỏ transistor vật lý <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Thứ ba, các vật liệu gắn chip nhiệt độ cao mới như bột đồng bimodal, cấu trúc xốp Cu phủ Sn và màng nano không chứa chất hữu cơ dự kiến sẽ thay thế dần các vật liệu hàn truyền thống trong các module điện tử công suất WBG <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Thứ tư, việc tích hợp thiết kế đa vật lý có hỗ trợ của trí tuệ nhân tạo (AI-assisted multiphysics design) được kỳ vọng sẽ tối ưu hóa cấu trúc gói và dự đoán độ tin cậy <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Cuối cùng, việc ứng dụng các kim loại lỏng gốc Gallium kết hợp với các chiến lược biến tính bề mặt tiên tiến được kỳ vọng sẽ giải quyết triệt để các bài toán tản nhiệt công suất cao <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<h3>Hàm ý thực tiễn</h3>\n<p>Các kết quả nghiên cứu trên mang lại những hàm ý thực tiễn quan trọng cho ngành công nghiệp và giáo dục tại Việt Nam. Một là, các kỹ sư và nhà máy sản xuất linh kiện điện tử tại Việt Nam cần nhanh chóng tiếp cận công nghệ đóng gói tiên tiến như đóng gói 2.5D/3D và vật liệu thiêu kết đồng để đáp ứng yêu cầu khắt khe của chuỗi cung ứng bán dẫn toàn cầu. Hai là, ngành công nghiệp ô tô và điện tử công suất trong nước cần chú trọng kiểm soát các khuyết tật ăn mòn giao diện (như tại mối nối Cu-Al) khi chuyển đổi sang vật liệu dây đồng theo tiêu chuẩn AEC-Q100 <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Ba là, các cơ sở đào tạo đại học và sau đại học cần cập nhật chương trình giảng dạy về khoa học vật liệu liên kết, công nghệ đóng gói vi điện tử và mô phỏng số (như phân tích phần tử hữu hạn FEA) nhằm đào tạo nguồn nhân lực chất lượng cao đáp ứng sự dịch chuyển của chuỗi cung ứng bán dẫn sang khu vực Đông Nam Á.</p>",
+  "content_en": "<p class=\"lead\">The rapid expansion of artificial intelligence (AI), high-performance computing (HPC), and electric vehicles is driving electronic packaging systems beyond the limits of traditional materials and architectures. The transition toward 2.5D and 3D packaging architectures demands fundamental breakthroughs in interconnection technologies, die-attach materials, and thermal management capabilities. This article synthesizes the latest technological trends and interconnect materials from research published between 2025 and 2026.</p>\n<h3>Background</h3>\n<p>Traditional organic laminate substrates, while cost-efficient, face growing limitations in dimensional stability, coefficient of thermal expansion (CTE) mismatch, and electrical performance when scaled to larger formats <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. In the automotive electronics sector, AEC-Q100 Grade-0 standards mandate a zero-defect philosophy, compelling components to sustain near-perfect performance under extreme thermal excursions, humidity, and electrical bias <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Furthermore, conventional soldering and bonding processes struggle to meet the thermal management and reliability demands of emerging wide-bandgap (WBG) power semiconductor devices <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. These challenges necessitate the development of novel material platforms, including glass core substrates, copper sintering materials, and advanced microinterconnection methods <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>]</sup>.</p>\n<h3>Advanced Packaging and 3D Integration</h3>\n<p>In the domain of 3D packaging and cryogenic electronic packaging, the authors of <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> fabricated and analyzed free-standing copper compressible microinterconnects (CMIs). This pressure-contact-based CMI exhibits linear elastic behavior, requires a relatively low bonding force, and offers reworkability. Ex-situ and in-situ resistance measurements from 300 K down to 14 mK on a flip-chip bonded CMI array revealed up to a 39.6% reduction in resistance upon cool down <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Finite element analysis (FEA) force-stress analysis combined with force-displacement measurements verified the robustness of this structure <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. In addition, direct and indirect wafer bonding techniques, along with bump-making methods, serve as core processes for forming 3D-SiP packages, with copper bump bonding remaining a major research focus <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg\" alt=\"Conceptual view of the solder droplet jetting system.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Conceptual view of the solder droplet jetting system. <span class=\"fig-credit\">Source: Fig. 10 of the original article – Li et al. (2025), “Soldering and Bonding in Contemporary Electronic Device Packaging”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18092015\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18092015</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n\n<h3>Die-Attach Materials and Copper Sintering</h3>\n<p>To address die-attach challenges for encapsulated SiC power modules operating at high temperatures, the authors of <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> evaluated the thermal reliability of bimodal Cu-sintered joints. Utilizing a bimodal Cu paste consisting of 1 µm and 0.3 µm particles at a 25:75 wt.% ratio, ENIG-finished SiC MOSFET chips were bonded to AlN AMB substrates at 250 ℃ under 10 MPa for 10 min <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. After 2,000 hours of high-temperature aging at 200 ℃, shear strength increased from 36.44 MPa to 41.08 MPa, while electrical resistance decreased from 0.69 Ω to 0.58 Ω <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. These joints also withstood 20,000 power cycles without interfacial delamination or through-thickness cracks, exhibiting a minimal thermal resistance change of approximately 2.0% <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Nevertheless, nanoparticle sintering, transient liquid phase (TLP), and transient liquid phase sintering (TLPS) methods generally face challenges such as long bonding times, joint voids, powder oxidation, and organic solvent residues <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Regarding Gallium-based liquid metals (GLMs), despite offering high thermal conductivity and room-temperature fluidity, reliable integration remains challenging due to interfacial reactions and instability with metal substrates <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig2.jpg\" alt=\"Schematic diagram of IMC growth path through the interface.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Schematic diagram of IMC growth path through the interface. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Wu et al. (2025), “A Review of Novel Die Attach Materials for High-Temperature WBG Power Electronic Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18163841\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18163841</a> [<a href=\"#ref-3\">3</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig3.jpg\" alt=\"(a) Schematic of the interface prepared for Cu/Ga TLPB process; (b) schematic cross-sections of the Cu/Pt/Ga/Pt/Cu sandwich couples.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> (a) Schematic of the interface prepared for Cu/Ga TLPB process; (b) schematic cross-sections of the Cu/Pt/Ga/Pt/Cu sandwich couples. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Liu et al. (2026), “Ga-Based Liquid Metals: Advances in Interface Thermal and Electrical Regulations for Power Electronics Integration”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19081599\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19081599</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n\n<h3>Thermal Management and Reliability</h3>\n<p>Thermal management and thermomechanical reliability are closely tied to substrate material structures. The authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> note that glass core substrates possess a CTE close to that of silicon, reducing thermomechanical stress and warpage compared to organics. High surface planarity of glass supports fine-line lithography and multilayer redistribution layers (RDLs), while transparency enables the integration of optical interconnects <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Meanwhile, to enhance the mechanical strength of low-temperature co-fired ceramic (LTCC) substrates, the authors of <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> resolved the strength-densification trade-off by strategically incorporating Ca<sup>2+</sup> modifiers to partially depolymerize the borosilicate framework. This maintains a low-viscosity liquid phase of the CaO-Al<sub>2</sub>O<sub>3</sub>-B<sub>2</sub>O<sub>3</sub>-SiO<sub>2</sub> system at elevated temperatures, facilitating densification for composites containing ≥65 wt% Al<sub>2</sub>O<sub>3</sub> filler <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Localized Al diffusion promotes the in-situ formation of a chemically bonded Ca(Al<sub>2</sub>Si<sub>2</sub>O<sub>8</sub>) interfacial layer, achieving a bending strength of 437 MPa while maintaining an exceptional dielectric constant ε<sub>r</sub> of 7.4 and a loss tangent tanδ of 4.6 × 10<sup>-3</sup> at 15 GHz <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig4.jpg\" alt=\"Schematic diagram of 2D packaging structures: (a) representative 2D package cross-section with flip-chip and wire-bonded components; (b) package cross-section showing chip-to-substrate interconnection and PCB mounting.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Schematic diagram of 2D packaging structures: (a) representative 2D package cross-section with flip-chip and wire-bonded components; (b) package cross-section showing chip-to-substrate interconnection and PCB mounting. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Huang et al. (2026), “Advanced Electronic Packaging Technologies: A Comparative Review of Architectures, Applications, Reliability”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi17091039\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi17091039</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n\n<h3>Challenges</h3>\n<p>The electronic packaging industry currently faces several systemic challenges. Transitioning from gold (Au) to copper (Cu) and palladium-coated copper (PCC) wire bonding improves cost-efficiency and electrical conductivity, but significantly increases susceptibility to corrosion and voiding at the Cu-Al interface in harsh environments due to electrochemical potential differences and chloride ion (Cl<sup>-</sup>) ingress <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. In photonic packaging, optical adhesives play a vital role, yet their optical-mechanical properties, transmission performance, and environmental resistance remain insufficiently understood, complicating precise optical alignment <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Furthermore, scaling glass substrates to panel-level formats (up to 510 × 515 mm) demands stringent thickness uniformity <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Sintering and liquid-phase bonding techniques also require rigorous process control to minimize voids and suppress oxidation <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p>\n<h3>Future Trends</h3>\n<p>Drawing from the review literature, future technological trends are expected to focus on several key directions. First, the industry is anticipated to accelerate the adoption of glass core substrates to replace traditional organic materials in AI and HPC applications due to thermal expansion matching and planarity advantages <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-9\">9</a>]</sup>. Second, hybrid bonding and heterogeneous integration technologies are expected to play a central role in overcoming physical transistor scaling limits <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Third, novel high-temperature die-attach materials such as bimodal Cu pastes, Sn-coated Cu foam structures, and organic-free nanoparticle films are projected to gradually replace traditional solders in WBG power modules <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Fourth, the integration of AI-assisted multiphysics design is expected to optimize package structures and predict reliability <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Finally, utilizing Gallium-based liquid metals paired with advanced surface modification strategies is expected to address high-power thermal management demands <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<h3>Practical Implications</h3>\n<p>These research findings yield critical practical implications for industry and education in Vietnam. First, engineers and electronic manufacturing facilities in Vietnam must proactively adopt advanced packaging technologies such as 2.5D/3D integration and copper sintering to meet the rigorous demands of the global semiconductor supply chain. Second, the domestic automotive and power electronics sectors must emphasize the control of interfacial corrosion defects (such as in Cu-Al wire bonds) when transitioning to copper wire materials under AEC-Q100 standards <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Third, universities and graduate programs should update their curricula to include joint material science, microelectronic packaging technology, and digital simulation (such as finite element analysis FEA) to cultivate high-quality engineering talent in alignment with the semiconductor supply chain shift toward Southeast Asia.</p>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Jonas Discher"
+      ],
+      "more_authors": false,
+      "title": "Enabling Next Generation Packaging with Glass Core Substrates: Material, TGV and Metallization Requirements",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-08-17",
+      "doi": "10.4071/001c.167503",
+      "url": "https://doi.org/10.4071/001c.167503",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Shinoj Sridharan Nair",
+        "Dinesh Kumar Kumaravel",
+        "Pavan Singh Ahluwalia",
+        "Khanh Tuyet Anh Tran",
+        "Duwage Anushka Sandaruwan Perera",
+        "Shyam Muralidharan Nair"
+      ],
+      "more_authors": true,
+      "title": "Defect-Free Cu-AI Interconnects: Enhancing Automotive Reliability via Dual-Metal Passivation",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-08-12",
+      "doi": "10.4071/001c.167031",
+      "url": "https://doi.org/10.4071/001c.167031",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Ningyuan Wu",
+        "Yuxiang Li"
+      ],
+      "more_authors": false,
+      "title": "A Review of Novel Die Attach Materials for High-Temperature WBG Power Electronic Applications",
+      "journal": "Materials",
+      "date": "2025-08-15",
+      "doi": "10.3390/ma18163841",
+      "url": "https://doi.org/10.3390/ma18163841",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Euichul Chung",
+        "Michael A. Nieves Calderon",
+        "Zhonghao Zhang",
+        "Mustafa Mert Torunbalcı",
+        "Martin Damyanov",
+        "Georg Aigeldinger"
+      ],
+      "more_authors": true,
+      "title": "Flip-Chip Bonding of 3-D Copper Compressible Microinterconnects for Cryogenic Electronic Packaging",
+      "journal": "IEEE Transactions on Components Packaging and Manufacturing Technology",
+      "date": "2026-08-06",
+      "doi": "10.1109/tcpmt.2026.3720606",
+      "url": "https://doi.org/10.1109/tcpmt.2026.3720606",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Dong-Yurl Yu",
+        "Junhyuk Son",
+        "Junghwan Bang"
+      ],
+      "more_authors": false,
+      "title": "Thermal Reliability Evaluation of Cu-Sintered Joints in Encapsulated SiC Power Modules",
+      "journal": "Journal of Welding and Joining",
+      "date": "2026-08-31",
+      "doi": "10.5781/jwj.2026.44.4.3",
+      "url": "https://doi.org/10.5781/jwj.2026.44.4.3",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Yuxuan Li",
+        "Bei Pan",
+        "Zhenting Ge",
+        "Pengpeng Chen",
+        "Bo Bi",
+        "Xin Yi"
+      ],
+      "more_authors": true,
+      "title": "Soldering and Bonding in Contemporary Electronic Device Packaging",
+      "journal": "Materials",
+      "date": "2025-04-29",
+      "doi": "10.3390/ma18092015",
+      "url": "https://doi.org/10.3390/ma18092015",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Canyu Liu",
+        "Tianqi Liu",
+        "Zhiwei Huang",
+        "Xiangyi Li",
+        "Jiabao Zheng",
+        "Guoxi Li"
+      ],
+      "more_authors": true,
+      "title": "Ga-Based Liquid Metals: Advances in Interface Thermal and Electrical Regulations for Power Electronics Integration",
+      "journal": "Materials",
+      "date": "2026-04-16",
+      "doi": "10.3390/ma19081599",
+      "url": "https://doi.org/10.3390/ma19081599",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Tingbo Wang",
+        "Wen Dai",
+        "Fenglin Wang",
+        "Xingyu Chen",
+        "Zhuofeng Liu",
+        "Haijun Mao"
+      ],
+      "more_authors": true,
+      "title": "Breaking the strength and densification trade-off in low-temperature co-fired ceramic substrates via glass network depolymerization",
+      "journal": "Materials & Design",
+      "date": "2026-09-18",
+      "doi": "10.1016/j.matdes.2026.117081",
+      "url": "https://doi.org/10.1016/j.matdes.2026.117081",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Yuxian Huang",
+        "Dingguan Wang",
+        "Qianyi Li",
+        "Zhiming Pan"
+      ],
+      "more_authors": false,
+      "title": "Advanced Electronic Packaging Technologies: A Comparative Review of Architectures, Applications, Reliability",
+      "journal": "Micromachines",
+      "date": "2026-08-30",
+      "doi": "10.3390/mi17091039",
+      "url": "https://doi.org/10.3390/mi17091039",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Garian Lim",
+        "Alexander Hartwig",
+        "Simon Seethaler",
+        "T.X. Guo",
+        "H. Wang",
+        "Oliver Matyssek"
+      ],
+      "more_authors": false,
+      "title": "Adhesives Properties Impact on Optical Alignment and Packaging",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-08-11",
+      "doi": "10.4071/001c.166910",
+      "url": "https://doi.org/10.4071/001c.166910",
+      "license": "",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

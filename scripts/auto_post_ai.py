@@ -814,6 +814,12 @@ def gemini_json(prompt):
                         reason = "JSON không hợp lệ hoặc bài chưa hoàn chỉnh"
                 else:
                     reason = f"HTTP {response.status_code}"
+                    try:  # ghi rõ lý do (hết hạn mức ngày, quá tải…) để dễ chẩn đoán
+                        msg = response.json().get("error", {}).get("message", "")
+                        if msg:
+                            reason += " – " + re.sub(r"\s+", " ", msg)[:160]
+                    except ValueError:
+                        pass
                     if response.status_code in (401, 402, 403):
                         raise RuntimeError(f"Gemini {reason}: kiểm tra quyền API hoặc thanh toán; không tự thử tiếp.")
                     if response.status_code not in (408, 429, 500, 502, 503, 504):

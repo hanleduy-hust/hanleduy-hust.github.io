@@ -4,6 +4,9 @@ on:
   schedule:
     # 06:17 sáng giờ Việt Nam (23:17 UTC hôm trước), mỗi ngày
     - cron: '17 23 * * *'
+    # Chạy bù nếu lần sáng thất bại (Gemini quá tải…): 10:17, 14:17, 18:17 giờ Việt Nam.
+    # Các lần bù tự bỏ qua nếu hôm nay đã có bản nháp hoặc bài đã đăng.
+    - cron: '17 3,7,11 * * *'
   # Cho phép bấm "Run workflow" để chạy thử bất kỳ lúc nào
   workflow_dispatch:
     inputs:
@@ -45,18 +48,39 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Kiểm tra hôm nay đã có bài chưa (chỉ với lịch tự động)
+        id: guard
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          today=$(TZ=Asia/Ho_Chi_Minh date +%F)
+          n=$(gh pr list --repo "$GITHUB_REPOSITORY" --label blog-draft --state all --limit 20 \
+                --json createdAt --jq '.[].createdAt' \
+              | while read -r t; do TZ=Asia/Ho_Chi_Minh date -d "$t" +%F; done | grep -c "^$today$" || true)
+          if [ "${n:-0}" -gt 0 ]; then
+            echo "Hôm nay ($today) đã có bản nháp – bỏ qua lần chạy bù."
+            echo "done=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "done=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout mã nguồn
+        if: steps.guard.outputs.done != 'true'
         uses: actions/checkout@v5
 
       - name: Cài đặt Python
+        if: steps.guard.outputs.done != 'true'
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Cài đặt thư viện
+        if: steps.guard.outputs.done != 'true'
         run: pip install requests beautifulsoup4 pillow pymupdf
 
       - name: Thu thập bài báo & viết bản tin bằng AI
+        if: steps.guard.outputs.done != 'true'
         id: gen
         env:
           DRAFT_DIR: ${{ runner.temp }}/draft

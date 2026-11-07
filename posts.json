@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-11-07-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
+    "date": "2026-11-07",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Kiểm soát Luyện kim, Khuyết tật và Trường nhiệt trong Gia công Bồi đắp Kim loại: Từ Hồ quang Dây (WAAM) đến Nóng chảy Bột Laser (L-PBF)",
+    "title_en": "Metallurgical Control, Defect Mitigation, and Thermal Field Engineering in Metal Additive Manufacturing: From WAAM to L-PBF",
+    "summary_vi": "Tổng hợp các nghiên cứu mới nhất giai đoạn 2025–2026 về công nghệ in 3D kim loại và bồi đắp hồ quang (WAAM). Phân tích làm rõ cơ chế hình thành khuyết tật, động thái luyện kim vi mô, phương pháp điều khiển trường nhiệt chủ động và kỹ thuật biến dạng lai nhằm tối ưu hóa cơ tính chi tiết cơ khí.",
+    "summary_en": "A comprehensive review of 2025–2026 research in metal additive manufacturing and wire arc additive manufacturing (WAAM). This article analyzes defect formation mechanisms, microstructural evolution, active thermal field manipulation, and hybrid deformation processing for mechanical property optimization.",
+    "tags": [
+      "WAAM",
+      "L-PBF",
+      "Directed Energy Deposition",
+      "Microstructure Control",
+      "Thermal Field Modeling",
+      "Defect Mitigation"
+    ],
+    "cover": "images/blog/2026-11-07-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig3.jpg",
+    "file": "posts/2026-11-07-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai.json"
+  },
+  {
     "id": "2026-11-05-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
     "date": "2026-11-05",
     "type": "feature",

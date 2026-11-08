@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-08-diem-tin-khoa-hoc",
+    "date": "2026-11-08",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Đột phá liên kết vi cấu trúc bimetal, công nghệ đóng gói nano đồng siêu nhanh và tối ưu hóa hàn thông minh bằng học máy",
+    "title_en": "Breakthroughs in Bimetallic Interfacial Bonding, Ultrafast Copper Nano-Sintering, and Machine Learning-Driven Welding Optimization",
+    "summary_vi": "Bản tin tổng hợp các công bố khoa học nổi bật đầu tháng 11/2026 trong lĩnh vực hàn, gia công bồi đắp kim loại và đóng gói bán dẫn. Trọng tâm bao gồm công nghệ thiêu kết hạt nano đồng trong 10 giây, định lượng liên kết lai Cu–Cu, mô phỏng chùm tia synchrotron và các thuật toán học máy tối ưu hóa mối hàn.",
+    "summary_en": "This digest highlights key scientific publications from early November 2026 across welding, metal additive manufacturing, and semiconductor packaging. Key developments include 10-second ultrafast copper nanosintering, quantitative Cu–Cu hybrid bonding metrology, synchrotron X-ray spatter imaging, and machine learning models for welding optimization.",
+    "tags": [
+      "metal AM",
+      "electronic packaging",
+      "laser welding",
+      "machine learning",
+      "friction stir welding"
+    ],
+    "cover": "images/blog/2026-11-08-diem-tin-khoa-hoc/fig4.jpg",
+    "file": "posts/2026-11-08-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-11-07-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
     "date": "2026-11-07",
     "type": "feature",

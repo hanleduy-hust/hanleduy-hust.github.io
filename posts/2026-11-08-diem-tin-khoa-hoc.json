@@ -1,0 +1,292 @@
+{
+  "id": "2026-11-08-diem-tin-khoa-hoc",
+  "date": "2026-11-08",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Đột phá liên kết vi cấu trúc bimetal, công nghệ đóng gói nano đồng siêu nhanh và tối ưu hóa hàn thông minh bằng học máy",
+  "title_en": "Breakthroughs in Bimetallic Interfacial Bonding, Ultrafast Copper Nano-Sintering, and Machine Learning-Driven Welding Optimization",
+  "summary_vi": "Bản tin tổng hợp các công bố khoa học nổi bật đầu tháng 11/2026 trong lĩnh vực hàn, gia công bồi đắp kim loại và đóng gói bán dẫn. Trọng tâm bao gồm công nghệ thiêu kết hạt nano đồng trong 10 giây, định lượng liên kết lai Cu–Cu, mô phỏng chùm tia synchrotron và các thuật toán học máy tối ưu hóa mối hàn.",
+  "summary_en": "This digest highlights key scientific publications from early November 2026 across welding, metal additive manufacturing, and semiconductor packaging. Key developments include 10-second ultrafast copper nanosintering, quantitative Cu–Cu hybrid bonding metrology, synchrotron X-ray spatter imaging, and machine learning models for welding optimization.",
+  "tags": [
+    "metal AM",
+    "electronic packaging",
+    "laser welding",
+    "machine learning",
+    "friction stir welding"
+  ],
+  "cover": "images/blog/2026-11-08-diem-tin-khoa-hoc/fig4.jpg",
+  "content_vi": "<p class=\"lead\">Điểm tin khoa học ngày 08/11/2026 tổng hợp các nghiên cứu mới được xuất bản từ cuối tháng 10 đến đầu tháng 11 năm 2026 trong các lĩnh vực công nghệ hàn, gia công bồi đắp kim loại và đóng gói điện tử. Các công bố tuần này mang đến những bước tiến đáng chú ý về cơ chế thiêu kết siêu nhanh hạt nano đồng, định lượng tiếp xúc liên kết lai Cu–Cu, kỹ thuật giám sát áp suất mỏ hàn laser cầm tay, cũng như các mô hình học máy ứng dụng trong kiểm soát khuyết tật và dự đoán cơ tính mối ghép.</p><h3>Cảm biến góc nghiêng và học máy trong tối ưu hóa quy trình hàn</h3><p>Độ lặp lại của kỹ thuật hàn laser cầm tay vốn chịu ảnh hưởng lớn từ góc nghiêng mỏ hàn so với bề mặt phôi, đặc biệt là trong khâu sản xuất và sửa chữa cụm pin xe điện. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã giới thiệu phương pháp đo gián tiếp góc cầm mỏ hàn (θ) thông qua áp suất khí bảo vệ tại miệng chụp khí, độc lập với góc xoay quanh trục (β). Thử nghiệm trên bốn mức lưu lượng khí (15–30 L/phút) và sáu góc nghiêng (15°–60°) cho thấy độ lệch 5° tạo ra chênh lệch áp suất khoảng 4 kPa ở lưu lượng 30 L/phút. Kết quả này mang lại độ phân giải lý thuyết 0,5° và độ phân giải thực tế khoảng 1° khi sử dụng cảm biến thương mại, cung cấp nền tảng hàm truyền thực nghiệm để phản hồi vị trí mỏ hàn theo thời gian thực.</p><p>Mặt cắt ngang của dòng khí thoát ở các góc nghiêng khác nhau của mỏ hàn được thể hiện dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Mặt cắt ngang cửa thoát khí ở các góc nghiêng mỏ hàn khác nhau: (a) góc nghiêng thoải (θ lớn hơn) và (b) góc nghiêng dốc (θ nhỏ hơn) [41].\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Mặt cắt ngang cửa thoát khí ở các góc nghiêng mỏ hàn khác nhau: (a) góc nghiêng thoải (θ lớn hơn) và (b) góc nghiêng dốc (θ nhỏ hơn) [41]. <span class=\"fig-credit\">Nguồn: Hình 5 trong bài gốc – Kaya et al. (2026), “Pressure-based indirect sensing of torch angular position in hand-held laser welding”, <em>Measurement Science and Technology</em>, <a href=\"https://doi.org/10.1088/1361-6501/aebd05\" target=\"_blank\" rel=\"noopener\">doi:10.1088/1361-6501/aebd05</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Bên cạnh cảm biến cơ học, học máy đang chứng tỏ năng lực giải quyết các bài toán dữ liệu mẫu nhỏ và kiểm tra bất phá hủy. Nhóm nghiên cứu <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> đã xây dựng khung dự đoán độ bền mối hàn ma sát ống–tấm bằng dụng cụ ngoài (FWTPET) từ 9 mẫu thực nghiệm theo mảng trực giao Taguchi L9. Mô hình hồi quy đa thức bậc hai đạt kết quả tốt nhất cho cấu hình có lỗ (WH) với R<sup>2</sup> = 0,8983, RMSE = 3,6550 MPa và MAE = 2,8734 MPa; trong khi hồi quy tuyến tính cho kết quả tốt nhất với cấu hình không lỗ (WoH) với R<sup>2</sup> = 0,7337, RMSE = 6,0642 MPa. Phân tích tầm quan trọng hoán vị, SHAP và PDP–ICE đều xác định tốc độ quay là thông số quan trọng nhất, tương đồng với phân tích Taguchi–ANOVA, dù hệ số tương quan thứ bậc Spearman giữa hai phương pháp ở các thông số thứ cấp đạt 0,50 <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Trong lĩnh vực kiểm tra khuyết tật mối hàn đầu cực pin xe điện, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> đã phát triển mô hình phân loại đám mây điểm dựa trên kiến trúc Transformer mang tên TDSPnet, tích hợp cơ chế chú ý tương đồng động nhằm nhận diện các khuyết tật hình học như thiếu vảy hàn, rãnh khuyết, mất liên tục bề mặt. Thử nghiệm trên tập dữ liệu BWS từ nhà sản xuất pin và hãng Hexagon cho thấy TDSPnet đạt độ chính xác 0,9555, tỷ lệ bỏ sót 4,52% và tỷ lệ báo động giả 4,37%, vượt trội so với các mạng PointNet, PCT và DGCNN về tốc độ hội tụ và độ ổn định <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Ở quy trình hàn hồ quang kim loại trong môi trường khí bảo vệ (MIG) dạng ngắn mạch (SAM) trên thép IS 2062 E250, nghiên cứu <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> cho thấy điện áp hàn là yếu tố chi phối lớn nhất đến độ bền kéo (chiếm 64,2% theo ANOVA), tiếp theo là dòng điện và tốc độ hàn. Độ bền kéo tối đa đạt 498 MPa ở mẫu số 8, và bộ thông số tối ưu xác định qua phân tích tỷ số S/N là 14,2 V, 130 A và 90 mm/phút, trong đó mô hình Hồi quy quá trình Gaussian (GPR) đạt độ chính xác dự đoán cao nhất với sai số dự báo thấp nhất <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><h3>Động lực học vũng hàn laser xuyên thấu và mô phỏng số hàn khuấy ma sát</h3><p>Hiện tượng bắn tóe ở mặt dưới tấm thép không gỉ AISI 304 khi hàn laser thấu hoàn toàn (full penetration) là nguyên nhân gây phế phẩm nghiêm trọng trong chế tạo bồn bể và đường ống công nghiệp do xỉ hàn bám dính không thể loại bỏ sau hàn. Sử dụng kỹ thuật chụp ảnh X-quang synchrotron tốc độ cao, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> đã trực quan hóa trực tiếp dao động của lỗ khóa (keyhole) và cơ chế hình thành bắn tóe tại mặt đáy. Nghiên cứu xác định hai chế độ biến thiên rõ rệt theo vận tốc hàn: ở tốc độ dưới 12 m/phút, một khối u kim loại lỏng phồng lên phía sau cửa thoát lỗ khóa và bắn tóe văng ngược chiều hàn; khi tốc độ hàn tăng lên, khối u phía sau này biến mất và chuyển dịch sang tích tụ kim loại lỏng ở hai bên sườn vũng hàn <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><p>Thiết lập thí nghiệm quan sát nguồn tia và phân bố cường độ chùm laser gần tiêu điểm được minh họa dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Thiết lập thực nghiệm; (a) Sơ đồ minh họa theo [15], (b) Phân bố cường độ chùm tia laser đo được gần vị trí tiêu điểm ở góc tới chuẩn trực, hiển thị dưới dạng mặt cắt ngang tại mặt phẳng trung tâm.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Thiết lập thực nghiệm; (a) Sơ đồ minh họa theo [15], (b) Phân bố cường độ chùm tia laser đo được gần vị trí tiêu điểm ở góc tới chuẩn trực, hiển thị dưới dạng mặt cắt ngang tại mặt phẳng trung tâm. <span class=\"fig-credit\">Nguồn: Hình 1 trong bài gốc – Diegel et al. (2026), “Fundamental mechanisms of spatter formation during full penetration laser welding revealed by high-speed synchrotron X-ray imaging”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02687-6\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02687-6</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Đối với hàn khuấy ma sát (FSW) thép không gỉ Austenit AISI 304, việc kiểm soát ứng suất tiếp xúc của dụng cụ hàn và trường nhiệt độ đóng vai trò quyết định đến tuổi thọ đầu khuấy. Mô hình số 3D theo phương pháp Euler–Lagrange kết hợp (CEL) được xây dựng trong <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> đã mô phỏng chi tiết các giai đoạn cắm đầu khuấy (plunge), giữ nhiệt (dwell) và tịnh tiến (travel), được kiểm chứng độ chính xác thông qua lực cắm thực nghiệm. Kết quả cho thấy tốc độ quay của đầu khuấy có ảnh hưởng vượt trội đến nhiệt độ đỉnh, biến dạng dẻo, hình thái vùng khuấy (SZ) và vùng ảnh hưởng nhiệt (HAZ) so với tốc độ hàn; trạng thái cân bằng tối ưu giữa nhiệt độ đỉnh và ứng suất tiếp xúc bề mặt đạt được tại 300 rpm và 1,25 mm/s. Đặc biệt, nhiệt sinh ra do biến dạng dẻo chiếm 18,8% tổng lượng nhiệt ở 200 rpm và tăng lên 43,5% ở 500 rpm <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><p>Phân bố biến dạng dẻo mô phỏng qua tiết diện mối hàn ở giai đoạn cắm đầu khuấy dưới các điều kiện vận hành khác nhau được thể hiện dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Phân bố biến dạng dẻo trên tiết diện mối hàn trong giai đoạn cắm đầu khuấy ứng với các điều kiện vận hành: (a) 200 rpm/10 mm/phút, (b) 300 rpm/10 mm/phút, (c) 200 rpm/5 mm/phút, và (d) 300 rpm/5 mm/phút.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Phân bố biến dạng dẻo trên tiết diện mối hàn trong giai đoạn cắm đầu khuấy ứng với các điều kiện vận hành: (a) 200 rpm/10 mm/phút, (b) 300 rpm/10 mm/phút, (c) 200 rpm/5 mm/phút, và (d) 300 rpm/5 mm/phút. <span class=\"fig-credit\">Nguồn: Hình 5 trong bài gốc – Ragab et al. (2026), “Numerical Investigation of Thermo-Mechanical Response, Tool Contact Stress, and Heat Generation Mechanisms in FSW of AISI 304 Stainless Steel Across Plunge, Dwell, and Travel Phases”, <em>Crystals</em>, <a href=\"https://doi.org/10.3390/cryst16110706\" target=\"_blank\" rel=\"noopener\">doi:10.3390/cryst16110706</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Tiến bộ luyện kim trong công nghiệp hạt nhân và hàn vảy dị chủng</h3><p>Tính hàn của thép không gỉ Austenit chịu chiếu xạ neutron trong lò phản ứng nước áp lực (PWR) bị suy giảm nghiêm trọng do sự tích tụ khí heli tại biên hạt bắt nguồn từ phản ứng biến đổi hạt nhân. Nhóm nghiên cứu <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> đã phát triển mô hình đa giai đoạn giải thích quá trình tiến hóa bọt khí heli trong vùng HAZ khi hàn, từ tạo mầm, liên kết, phát triển nhiệt độ cao đến giai đoạn chịu ứng suất kéo khi nguội, tương quan định lượng mật độ/đường kính bọt khí với nồng độ He ban đầu (0,2–20 appm), nhiệt độ và ứng suất (0–200 MPa). Kết quả cho thấy nồng độ He ảnh hưởng phi tuyến tính đến sự phát triển bọt khí (đường kính tăng gấp 3 lần ở mức 20 appm so với 0,2 appm trong giai đoạn làm nguội); nhiệt độ điều khiển động học phát triển với ngưỡng tới hạn trên 900 K, trong khi ứng suất kéo đẩy nhanh sự giãn nở bọt khí và đạt trạng thái bão hòa ở khoảng 200 MPa. Năng lượng hàn quá lớn làm kết thúc sớm giai đoạn liên kết bọt khí, làm tăng mật độ bọt khí dư và thúc đẩy nứt do heli <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><p>Đồ thị tiến hóa đường kính bọt khí heli theo thời gian dưới các mức ứng suất kéo khác nhau được thể hiện dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Quy luật tiến hóa của đường kính bọt khí heli theo thời gian dưới các ứng suất kéo khác nhau.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Quy luật tiến hóa của đường kính bọt khí heli theo thời gian dưới các ứng suất kéo khác nhau. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Yin et al. (2026), “Research on the Evolution Model of Grain Boundary Helium Bubbles in the Weld Heat-Affected Zone of Austenitic Stainless Steel After Irradiation”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214716\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214716</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong ngành đóng tàu và công trình biển, liên kết dị chủng giữa đồng và thép không gỉ Austenit đòi hỏi tính toàn vẹn cấu trúc và độ dẫn nhiệt cao. Nghiên cứu <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> đã áp dụng quy trình hàn vảy MIG (MIG braze-welding) trong khung thông số 150–170 A, 19–21 V và tốc độ dịch chuyển 220–320 mm/phút. Các mối nối không khuyết tật đạt độ bền kéo giới hạn (UTS) từ 123 đến 131 MPa, trong đó độ bền cao nhất 131 MPa đạt được ở thông số 170 A, 19 V và 320 mm/phút. Phân tích kim thái học xác nhận quá trình hình thành mối nối diễn ra bất đối xứng giữa mặt biên phía đồng và phía thép do sự chênh lệch lớn về đặc tính nhiệt và luyện kim giữa hai vật liệu <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><p>Ảnh SEM vi cấu trúc vùng phân giới và bản đồ phân bố nguyên tố tương ứng được trình bày dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Vi cấu trúc mặt phân giới (ảnh SEM) và bản đồ phân bố nguyên tố EDS của Si, Fe, Mn, Cr và Cu.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Vi cấu trúc mặt phân giới (ảnh SEM) và bản đồ phân bố nguyên tố EDS của Si, Fe, Mn, Cr và Cu. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Szczucka-Lasota et al. (2026), “Proposed Diffusion Mechanism and Microstructural Evolution in MIG Braze-Welded Cu–Austenitic Steel Joints”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214685\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214685</a> [<a href=\"#ref-8\">8</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Chế tạo bồi đắp laser bột kim loại: Lắng đọng bimetal và tối ưu hóa thành mỏng</h3><p>Chế tạo bồi đắp bằng công nghệ nung chảy bột kim loại qua chùm laser (PBF-LB/M) cho các hệ vật liệu bimetal đối mặt với sự khác biệt lớn về tính chất nhiệt - vật lý giữa hai kim loại. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã nghiên cứu lắng đọng đường đơn và lớp đơn giữa thép maraging M300 và hợp kim đồng C18150 trên máy SLM 280 2.0 2MA trang bị cặp laser sợi quang 700 W, khảo sát dải tốc độ quét 500–1100 mm/s, công suất laser 300–550 W và khoảng dịch tia 0,08–0,14 mm. Khi lắng đọng đường đơn M300 trên nền C18150, tốc độ quét tăng làm tăng độ nhám bề mặt và giảm kích thước vũng hàn, trong khi công suất cao hơn mở rộng thể tích vũng hàn. Ngược lại, việc phủ C18150 trên nền thép M300 gây ra hiện tượng đứt đoạn đường hàn và vũng chảy mất ổn định. Đối với lớp phủ đơn, bề mặt nhẵn của lớp M300 trên C18150 đạt được ở tốc độ quét thấp 500–700 mm/s, khoảng dịch tia hẹp 0,08–0,1 mm và công suất laser cao 400–450 W <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><p>Khi gia công hợp kim AlSi10Mg dạng thành mỏng bằng công nghệ LPBF, các thông số công nghệ ảnh hưởng trực tiếp đến mật độ và cơ tính chi tiết. Nghiên cứu <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> sử dụng phương pháp bề mặt phản hồi Box–Behnken (BBD) gồm 27 thực nghiệm với bề dày thành từ 1 đến 3 mm, công suất laser 320–380 W, tốc độ quét 730–1070 mm/s và khoảng dịch tia 80–130 μm. Phân tích thống kê chỉ ra rằng chiều dày thành và tốc độ quét chi phối mạnh nhất đến tính chất kéo. Tối ưu hóa đa mục tiêu đồng thời bốn chỉ tiêu cơ tính đã xác định điểm tối ưu tại bề dày thành 3,0 mm, công suất laser 320 W, tốc độ quét 1070 mm/s và khoảng dịch tia khoảng 100,46 μm, mang lại UTS dự đoán 354,7 MPa, giới hạn chảy 193,8 MPa, độ giãn dài khi đứt 13,54% và độ cứng 112,6 HV với hàm độ thỏa dụng 0,892 <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><p>Các bề mặt phản hồi biểu diễn tương quan giữa thông số công nghệ và cơ tính của vật liệu được minh họa dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig6.jpg\" alt=\"Mặt phản hồi đối với (a,b) độ giãn dài khi đứt theo độ dày thành và tốc độ quét; (c,d) độ cứng theo độ dày thành và công suất laser; và (e,f) độ cứng theo công suất laser và khoảng cách dịch tia.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Mặt phản hồi đối với (a,b) độ giãn dài khi đứt theo độ dày thành và tốc độ quét; (c,d) độ cứng theo độ dày thành và công suất laser; và (e,f) độ cứng theo công suất laser và khoảng cách dịch tia. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Majeed et al. (2026), “Multi-Response Process-Thickness-Property Optimization of Thin-Walled AlSi10Mg Alloy Fabricated by Laser Powder Bed Fusion”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110490\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110490</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>Đóng gói vi điện tử, thiêu kết hạt nano và độ tin cậy liên kết vảy hàn</h3><p>Trong công nghệ liên kết lai (hybrid bonding) Cu–Cu phục vụ đóng gói bán dẫn 3D ở ngân sách nhiệt thấp, việc đánh giá chất lượng tiếp xúc vi cấu trúc biên hạt đòi hỏi phương pháp đo lường khách quan. Nghiên cứu <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup> đã giới thiệu khung đo lường tự động dựa trên xử lý ảnh FIB-SEM mang tên Bond IQ với ba chỉ số: Tỷ lệ phân giới kết nối (BIF), Mức độ rỗ khí mặt phân giới (IVL) và Chiều sâu xuyên thấu biên hạt chuẩn hóa (GPD) cho các liên kết ép nhiệt ở 210 °C trong 2 giờ. Cặp bề mặt hạt thô (CG/CG) cho kết quả thấp nhất với IVL cao (5,4 nm), BIF thấp (6,1%) và GPD chỉ 0,20. Ngược lại, cặp kết hợp CG/FG-TD (hạt mịn linh động nhiệt) đạt BIF cao nhất (54,5%) với IVL thấp (0,6 nm); trong khi tổ hợp CG/FG-L (hạt mịn khóa cấu trúc) đạt GPD cao nhất (0,89) với BIF 32,7%. Đặc biệt, cấu hình đồng nhất hạt mịn FG-L/FG-L cho IVL thấp nhất (0,5 nm), chứng minh vai trò ngăn ngừa lỗ xốp của cấu trúc hạt mịn <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><p>Kết quả định lượng các chỉ số liên kết theo hệ thống đo lường hình ảnh được minh họa dưới đây:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Kết quả phân tích Bond IQ cho các tổ hợp liên kết Cu–Cu khác nhau được đánh giá trong nghiên cứu, định lượng qua các chỉ số IVL, BIF và GPD biểu thị độ xốp tế vi, tính liên tục của mặt phân giới và độ xuyên sâu biên hạt.\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Kết quả phân tích Bond IQ cho các tổ hợp liên kết Cu–Cu khác nhau được đánh giá trong nghiên cứu, định lượng qua các chỉ số IVL, BIF và GPD biểu thị độ xốp tế vi, tính liên tục của mặt phân giới và độ xuyên sâu biên hạt. <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Kumar et al. (2026), “Cu–Cu Grain Intermixing Quantification for Hybrid Bonding Applications”, <em>Nanomaterials</em>, <a href=\"https://doi.org/10.3390/nano16211424\" target=\"_blank\" rel=\"noopener\">doi:10.3390/nano16211424</a> [<a href=\"#ref-11\">11</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Nhằm giải quyết bài toán oxy hóa và thời gian thiêu kết kéo dài của hạt đồng trong đóng gói công suất bán dẫn khoảng cách vùng cấm rộng (WBG), nghiên cứu <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> đã chứng minh kỹ thuật thiêu kết nano đồng dưới áp suất cực nhanh ngay trong môi trường không khí. Bằng việc sử dụng hạt nano đồng giả cầu 70 nm kết hợp với dung môi khử giúp mở rộng cửa sổ thiêu kết 245–331 °C, quá trình thiêu kết ở 300 °C dưới áp suất 5 MPa đã hình thành các biên hạt đồng nguyên bản kèm song tinh. Mối liên kết đạt độ bền cắt khoảng 46 MPa chỉ sau 10 giây ép trong không khí; khi kéo dài thời gian lên 30 giây, độ bền cắt đạt xấp xỉ 60 MPa và tăng lên khoảng 68 MPa khi có thổi khí nitơ, với cơ chế phá hủy dẻo kết dính <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>Đối với vật liệu hàn vảy nhiệt độ thấp Sn–40Bi trên đế Cu, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup> nhận thấy việc bổ sung 2% và 10% khối lượng Zn đã ức chế sự phát triển liên tục của lớp hợp chất liên kim (IMC) Cu<sub>6</sub>Sn<sub>5</sub> trong quá trình già hóa đẳng nhiệt ở 90–120 °C (lên đến 360 giờ), thay vào đó thúc đẩy hình thành các pha γ-Cu<sub>5</sub>Zn<sub>8</sub> và ε-CuZn<sub>5</sub>. Dù Zn làm giảm độ bền kéo ban đầu, lớp pha dị thể này giúp giảm tốc độ suy giảm cơ tính khi làm việc dài hạn ở nhiệt độ cao <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Ngược lại, trong mối hàn nhiệt độ cao giàu Pb, nghiên cứu <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup> phát hiện hiện tượng nứt chuyển vị dị thường tại mặt tiếp giáp giữa hai lớp IMC dị pha gồm Lớp I Ni<sub>3</sub>Sn (có vết Au) và Lớp II (Ni,Au)<sub>3</sub>Sn<sub>2</sub> cùng (Ni,Au)Sn. Ứng suất nhiệt sinh ra do sai lệch giãn nở khoảng 40 MPa tạo động lực thúc đẩy nứt tại các điểm nối ba (triple junctions) dạng chữ Y sau 700 đến 1000 chu trình nhiệt <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Về mặt kiểm chuẩn tiêu chuẩn, bài tổng quan <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup> đã phân tích hệ thống tiêu chuẩn kiểm tra độ tin cậy mối hàn bán dẫn cho ngành ô tô và hàng không vũ trụ, chỉ rõ sự khác biệt căn bản giữa triết lý đánh giá theo xác suất mẫu thử nghiệm (ô tô) và việc truy soát tính toàn vẹn của từng mối hàn đơn lẻ (hàng không vũ trụ), cũng như chiến lược chuyển đổi hoàn toàn sang hàn không chì so với việc tiếp tục cho phép sử dụng hợp kim cơ sở chì SnPb trong không gian <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Hàm ý thực tiễn</h3><ul><li><strong>Tích hợp cảm biến áp suất và thị giác AI trong sản xuất pack pin:</strong> Việc ứng dụng cảm biến áp suất đầu mỏ hàn gián tiếp (độ phân giải ~1°) và mạng nơ-ron Transformer (độ chính xác &gt;95%) cung cấp giải pháp khả thi cho các dây chuyền lắp ráp và trạm sửa chữa mô-đun pin xe điện tại Việt Nam nhằm kiểm soát sai lệch góc thao tác của thợ hàn và tự động phân loại khuyết tật 3D.</li><li><strong>Ứng dụng đóng gói bán dẫn công suất bằng hạt nano Cu:</strong> Quy trình thiêu kết nano Cu trong không khí chỉ mất 10–30 giây đạt độ bền 46–60 MPa mở ra hướng đi chi phí thấp, thay thế vật liệu nano bạc đắt tiền trong lắp ráp biến tần và thiết bị điện tử công suất cao tại các nhà máy đóng gói bán dẫn trong nước.</li><li><strong>Kiểm soát nhiệt đầu vào trong hàn phục hồi và chế tạo bimetal:</strong> Các đơn vị gia công cơ khí chính xác và chế tạo bồi đắp cần lưu ý ngưỡng thông số tốc độ quét/công suất laser khi in bimetal thép–đồng, cũng như tránh năng lượng hàn quá mức để ngăn chặn hiện tượng tạo chuỗi bọt khí heli gây nứt trong các chi tiết công nghiệp nặng.</li></ul>",
+  "content_en": "<p class=\"lead\">This science digest summarizes the latest peer-reviewed research published between late October and early November 2026 across welding, metal additive manufacturing, and microelectronics packaging. Key highlights include ultrafast 10-second copper nanoparticle sinter-bonding in air, quantitative metrology for Cu–Cu hybrid bonding, pressure-based torch angle sensing in hand-held laser welding, and machine learning models for defect detection and joint strength optimization.</p><h3>Sensors and Machine Learning in Welding Process Optimization</h3><p>Process repeatability in hand-held laser welding depends strongly on maintaining a stable torch-to-workpiece angle, which is particularly vital during precision tasks such as electric vehicle battery repair. The authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> introduced an indirect sensing methodology to monitor the torch holding angle (θ) by measuring shielding gas pressure at the nozzle outlet, independent of axial rotation (β). Experiments across four gas flow rates (15–30 L/min) and six torch angles (15°–60°) demonstrated that a 5° angular change produces an approximate 4 kPa pressure variation at 30 L/min. This yields a theoretical angular resolution of 0.5° and an operational resolution of ~1° using commercial sensors, establishing an empirical transfer function suitable for real-time operator guidance <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><p>The gas outlet cross-sections under different torch holding orientations are shown below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Gas outlet cross-sections at different welding torch holding angles: (a) inclined angles (higher θ) and (b) steep angles (lower θ) [41].\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Gas outlet cross-sections at different welding torch holding angles: (a) inclined angles (higher θ) and (b) steep angles (lower θ) [41]. <span class=\"fig-credit\">Source: Fig. 5 of the original article – Kaya et al. (2026), “Pressure-based indirect sensing of torch angular position in hand-held laser welding”, <em>Measurement Science and Technology</em>, <a href=\"https://doi.org/10.1088/1361-6501/aebd05\" target=\"_blank\" rel=\"noopener\">doi:10.1088/1361-6501/aebd05</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Complementing sensor hardware, machine learning frameworks are proving effective for small-sample datasets and non-destructive quality evaluation. The authors of <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> established a predictive framework combining machine learning, interpretability tools, and Taguchi–ANOVA for friction welding of tube-to-plate assemblies using an external tool (FWTPET) based on an L9 orthogonal array (9 observations). A second-order polynomial regression model performed best for joints with holes (WH), recording an R<sup>2</sup> of 0.8983, an RMSE of 3.6550 MPa, and an MAE of 2.8734 MPa; linear regression was optimal for joints without holes (WoH), yielding an R<sup>2</sup> of 0.7337, an RMSE of 6.0642 MPa, and an MAE of 4.6814 MPa. Permutation importance, SHAP, and PDP–ICE analyses identified rotational speed as the primary governing parameter, aligning with ANOVA findings, despite a moderate Spearman rank correlation of 0.50 on secondary parameter rankings <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>For defect detection in power battery terminal welds, the authors of <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> proposed TDSPnet, a lightweight Transformer-based point cloud classification model incorporating a dynamic similarity attention mechanism. Evaluated on the industrial BWS dataset provided by Hexagon and a battery manufacturer, TDSPnet achieved an overall classification accuracy of 0.9555, with a miss rate of 4.52% and a false alarm rate of 4.37%, outperforming PointNet, PCT, and DGCNN architectures in training stability, convergence speed, and inference efficiency <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Furthermore, in robotic short-arc mode (SAM) MIG welding of IS 2062 E250 steel, statistical analysis revealed that welding voltage accounted for 64.2% of the variation in joint tensile strength, followed by current and travel speed; an optimal parameter combination of 14.2 V, 130 A, and 90 mm/min was established via S/N ratio analysis, while a Gaussian Process Regression (GPR) model delivered the lowest predictive error <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p><h3>Dynamics of Full-Penetration Laser Welding and FSW Numerical Modeling</h3><p>In full-penetration laser beam welding of AISI 304 stainless steel sheets, root-side spatter ejection presents a major manufacturing defect in closed vessels and piping where internal cleaning is impossible. Utilizing high-speed synchrotron X-ray imaging, the authors of <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> visualized keyhole aperture fluctuations and droplet detachment mechanisms at the bottom side. Two distinct hydrodynamic regimes were uncovered as a function of welding speed: at speeds below 12 m/min, a liquid melt swelling forms directly behind the root keyhole opening, ejecting spatters backward relative to the travel direction. As welding speed exceeds this threshold, the rear swelling disappears, transitioning into melt accumulations along the pool lateral flanks <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><p>The experimental arrangement and the focal beam intensity profile are illustrated below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Experimental setup; (a) Schematic illustration according to [15], (b) Measured intensity distribution of the laser beam near the focal position at normal incidence, shown as a cross-section in the center plane.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Experimental setup; (a) Schematic illustration according to [15], (b) Measured intensity distribution of the laser beam near the focal position at normal incidence, shown as a cross-section in the center plane. <span class=\"fig-credit\">Source: Fig. 1 of the original article – Diegel et al. (2026), “Fundamental mechanisms of spatter formation during full penetration laser welding revealed by high-speed synchrotron X-ray imaging”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02687-6\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02687-6</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>For friction stir welding (FSW) of AISI 304 austenitic stainless steel, mitigating excessive tool contact stresses while generating adequate plastic flow is essential for tool longevity. A 3D numerical model utilizing a Coupled Eulerian–Lagrangian (CEL) formulation was developed in <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> to simulate the plunge, dwell, and travel phases, showing close agreement with experimental plunge force histories. The simulations demonstrated that rotational speed exerts a significantly stronger influence on peak temperature, plastic strain, stir zone geometry, and heat-affected zone dimensions than welding speed. An optimal balance between thermal softening and tool surface contact stress was identified at 300 rpm and 1.25 mm/s travel speed; plastic deformation heating contributed 18.8% of total heat generation at 200 rpm, rising to 43.5% at 500 rpm <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><p>The simulated plastic strain distributions across the weld cross-section during the plunge phase under various rotational and plunge velocities are shown below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Plastic strain distribution over the weld cross-section during plunge phase for operational conditions of (a) 200 rpm/10 mm/min, (b) 300 rpm/10 mm/min, (c) 200 rpm/5 mm/min, and (d) 300 rpm/5 mm/min.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Plastic strain distribution over the weld cross-section during plunge phase for operational conditions of (a) 200 rpm/10 mm/min, (b) 300 rpm/10 mm/min, (c) 200 rpm/5 mm/min, and (d) 300 rpm/5 mm/min. <span class=\"fig-credit\">Source: Fig. 5 of the original article – Ragab et al. (2026), “Numerical Investigation of Thermo-Mechanical Response, Tool Contact Stress, and Heat Generation Mechanisms in FSW of AISI 304 Stainless Steel Across Plunge, Dwell, and Travel Phases”, <em>Crystals</em>, <a href=\"https://doi.org/10.3390/cryst16110706\" target=\"_blank\" rel=\"noopener\">doi:10.3390/cryst16110706</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Metallurgical Advances in Nuclear Welding and Dissimilar MIG Braze-Welding</h3><p>The repair weldability of neutron-irradiated austenitic stainless steels in pressurized water reactors (PWRs) is severely impaired by helium accumulation along grain boundaries resulting from transmutation reactions. The authors of <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> formulated a multistage kinetic model tracing helium bubble nucleation, coalescence, high-temperature growth, and cooling-induced expansion under tensile stress, covering helium concentrations of 0.2–20 appm, temperatures up to peak thermal cycles, and stresses from 0 to 200 MPa. Bubble growth exhibited a non-linear dependence on helium concentration, expanding three-fold in diameter at 20 appm compared to 0.2 appm during the cooling phase. Growth kinetics activated above a threshold of 900 K, while tensile stress accelerated expansion until saturating at ~200 MPa. Excessive welding heat input prematurely arrested bubble coalescence, elevating residual bubble density and promoting intergranular void chain cracking <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><p>The predicted evolution of helium bubble diameter over time under varying tensile stress levels is presented below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Evolution law of helium bubble diameter with time under different tensile stresses.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Evolution law of helium bubble diameter with time under different tensile stresses. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Yin et al. (2026), “Research on the Evolution Model of Grain Boundary Helium Bubbles in the Weld Heat-Affected Zone of Austenitic Stainless Steel After Irradiation”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214716\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214716</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In dissimilar joining for marine and naval engineering, the authors of <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> investigated MIG braze-welding of pure copper to austenitic stainless steel across an operating window of 150–170 A, 19–21 V, and 220–320 mm/min. Defect-free joints exhibited ultimate tensile strengths between 123 and 131 MPa, with the peak strength of 131 MPa obtained at 170 A, 19 V, and 320 mm/min. Metallurgical observations revealed asymmetric interfacial reaction zones on the copper and steel substrates, driven by stark differences in base-metal thermal conductivity and elemental diffusion rates <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><p>The interface microstructure and corresponding elemental EDS distribution maps are shown below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Microstructure of interface (SEM) and EDS map identification of Si, Fe, Mn, Cr, and Cu.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Microstructure of interface (SEM) and EDS map identification of Si, Fe, Mn, Cr, and Cu. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Szczucka-Lasota et al. (2026), “Proposed Diffusion Mechanism and Microstructural Evolution in MIG Braze-Welded Cu–Austenitic Steel Joints”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214685\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214685</a> [<a href=\"#ref-8\">8</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Laser Powder Bed Fusion: Bimetallic Deposition and Thin-Walled Optimization</h3><p>Laser powder bed fusion (PBF-LB/M) of bimetallic structures is complicated by dissimilar thermophysical properties between alloy layers. The authors of <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> explored single-track and single-layer depositions of M300 maraging steel and C18150 copper alloy using a dual-laser system (twin 700 W lasers), varying laser power (300–550 W), scan speed (500–1100 mm/s), and hatch spacing (0.08–0.14 mm). Deposition of M300 tracks onto C18150 substrates demonstrated that elevated scan speeds increased surface roughness and narrowed melt pool dimensions, whereas higher laser power enlarged the melt pool. Conversely, depositing C18150 onto M300 resulted in track discontinuity and melt pool instability. For single-layer deposition, smooth M300 coatings on C18150 substrates were achieved at 500–700 mm/s, hatch spacings of 0.08–0.1 mm, and powers of 400–450 W <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p><p>In the fabrication of thin-walled AlSi10Mg components via LPBF, structural dimensions strongly interact with processing parameters. The authors of <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> implemented a 27-run Box–Behnken response surface design evaluating wall thickness (1–3 mm), laser power (320–380 W), scan speed (730–1070 mm/s), and hatch distance (80–130 μm). Statistical analysis established wall thickness and scan velocity as primary drivers of tensile behavior. A multi-response optimization candidate identified at 3.0 mm wall thickness, 320 W laser power, 1070 mm/s scan speed, and 100.46 μm hatch spacing achieved a composite desirability of 0.892, with predicted ultimate tensile strength of 354.7 MPa, yield strength of 193.8 MPa, elongation of 13.54%, and hardness of 112.6 HV <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><p>The response surface plots illustrating the mechanical performance dependencies on process parameters are displayed below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig6.jpg\" alt=\"Response surfaces for (a,b) elongation at fracture as functions of wall thickness and scan speed; (c,d) hardness as functions of wall thickness and laser power; and (e,f) hardness as functions of laser power and hatch distance.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Response surfaces for (a,b) elongation at fracture as functions of wall thickness and scan speed; (c,d) hardness as functions of wall thickness and laser power; and (e,f) hardness as functions of laser power and hatch distance. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Majeed et al. (2026), “Multi-Response Process-Thickness-Property Optimization of Thin-Walled AlSi10Mg Alloy Fabricated by Laser Powder Bed Fusion”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110490\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110490</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>Microelectronic Packaging, Nanoparticle Sintering, and Solder Joint Reliability</h3><p>Direct Cu–Cu hybrid bonding at low thermal budgets requires quantitative interfacial characterization to evaluate grain boundary migration across the bond line. The authors of <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup> developed \"Bond IQ\", an automated image-processing metrology framework based on FIB-SEM datasets that extracts three physical metrics: Bridged Interface Fraction (BIF), Interface Void Loading (IVL), and normalized Grain Penetration Depth (GPD). Evaluating five combinations of coarse-grain (CG), fine-grain locked (FG-L), and fine-grain thermally dynamic (FG-TD) copper bonded at 210 °C for 2 h revealed distinct kinetics: symmetric CG/CG yielded high voiding (IVL = 5.4 nm) and minimal bridging (BIF = 6.1%, GPD = 0.20), whereas CG/FG-TD produced maximum bridging (BIF = 54.5%, IVL = 0.6 nm). The CG/FG-L pairing achieved the highest penetration (GPD = 0.89, BIF = 32.7%), and symmetric FG-L/FG-L exhibited the lowest void loading (0.5 nm) <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><p>The quantitative metrics extracted by the metrology framework across all five material pairings are plotted below:</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-08-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Bond IQ analysis results for the different Cu–Cu bonding combinations evaluated in this study, quantified using IVL, BIF, and GPD assessing interfacial voiding, bonded interface continuity, and grain penetration across the interface.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> Bond IQ analysis results for the different Cu–Cu bonding combinations evaluated in this study, quantified using IVL, BIF, and GPD assessing interfacial voiding, bonded interface continuity, and grain penetration across the interface. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Kumar et al. (2026), “Cu–Cu Grain Intermixing Quantification for Hybrid Bonding Applications”, <em>Nanomaterials</em>, <a href=\"https://doi.org/10.3390/nano16211424\" target=\"_blank\" rel=\"noopener\">doi:10.3390/nano16211424</a> [<a href=\"#ref-11\">11</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Addressing oxidation barriers in power electronics die-attach, the authors of <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> demonstrated pressure-assisted sinter-bonding using 70 nm quasi-spherical Cu nanoparticles and reductive vehicles that permit bonding directly in ambient air. TG-DTA and XPS identified an active sintering window of 245–331 °C. Applying 5 MPa pressure at 300 °C converted particle boundaries into genuine copper grain boundaries containing deformation twins. Remarkably, shear strengths reached ~46 MPa after just 10 s of bonding in air under 5 MPa, climbing to ~60 MPa at 30 s and ~68 MPa under nitrogen purging, with fracture surfaces exhibiting ductile cohesive failure <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>For low-temperature interconnects, adding 2–10 wt.% Zn to Sn–40Bi solders soldered on Cu suppressed the continuous growth of brittle Cu<sub>6</sub>Sn<sub>5</sub> intermetallic compounds during thermal aging at 90–120 °C for up to 360 h, favoring γ-Cu<sub>5</sub>Zn<sub>8</sub> and ε-CuZn<sub>5</sub> phases and reducing thermal degradation rates <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. In contrast, in high-temperature Pb-rich interconnects, atomic-scale analysis revealed anomalous crack relocation to the heterophase interface between Layer I Ni<sub>3</sub>Sn and Layer II (Ni,Au)<sub>3</sub>Sn<sub>2</sub>/(Ni,Au)Sn phases, driven by ~40 MPa thermal mismatch stress accumulating at Y-type triple junctions after 700–1000 thermal cycles <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. At the systems level, a comprehensive review of automotive and space electronics standards highlighted divergent qualification philosophies—statistical sample lot testing in automotive vs. individual joint screening in aerospace—and differing lead-free compliance frameworks <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p><h3>Practical implications</h3><ul><li><strong>Integration of pneumatic angle sensing and point-cloud AI in battery assembly:</strong> Real-time torch holding angle sensing (~1° practical resolution) paired with Transformer point-cloud defect inspection (&gt;95% accuracy) provides an accessible, non-destructive quality framework for electric vehicle battery manufacturing and repair facilities.</li><li><strong>Adoption of ultrafast Cu nano-sintering for power module packaging:</strong> Achieving shear strengths of 46–60 MPa within 10–30 s in ambient air offers an economical, pressure-assisted alternative to expensive nano-silver formulations for local wide-bandgap semiconductor packaging lines.</li><li><strong>Thermal input management in repair welding and bimetal AM:</strong> Engineers working on bimetallic 3D printing and nuclear component repairs should carefully balance scan speeds and limit welding heat inputs to avoid melt pool instability and prevent helium-bubble-induced intergranular cracking.</li></ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Deniz Kaya",
+        "Mustafa Kemal İşman",
+        "Ebubekir Beyzaoglu",
+        "Murat Reis"
+      ],
+      "more_authors": false,
+      "title": "Pressure-based indirect sensing of torch angular position in hand-held laser welding",
+      "journal": "Measurement Science and Technology",
+      "date": "2026-11-03",
+      "doi": "10.1088/1361-6501/aebd05",
+      "url": "https://doi.org/10.1088/1361-6501/aebd05",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Krishnan Venkatachalam",
+        "Senthil Kumaran Selvaraj",
+        "Sundaramali G"
+      ],
+      "more_authors": false,
+      "title": "Interpretable small sample machine learning for FWTPET joint strength prediction: Consistency with classical design of experiments analysis",
+      "journal": "Next Materials",
+      "date": "2026-11-05",
+      "doi": "10.1016/j.nxmate.2026.103952",
+      "url": "https://doi.org/10.1016/j.nxmate.2026.103952",
+      "license": "cc-by-nc",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Zhenyu Tang",
+        "Shanzhai Feng",
+        "Jian Hao",
+        "Changku Sun"
+      ],
+      "more_authors": false,
+      "title": "Research on power battery welding defect detection based on deep learning models with transformer architecture",
+      "journal": "Discover Applied Sciences",
+      "date": "2026-11-03",
+      "doi": "10.1007/s42452-026-09788-3",
+      "url": "https://doi.org/10.1007/s42452-026-09788-3",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Rajkumar Devapiriam Ramachandran",
+        "Sivasundar Vijayakumar",
+        "Ragunath Palanichamy",
+        "Helen Selvi Malayappan",
+        "Ataklti Hagos Hailu",
+        "Movva Naga Swapna Sri"
+      ],
+      "more_authors": true,
+      "title": "Optimization of Short Arc Mode robotic MIG welding through statistical analysis, microstructural characterization, and machine learning",
+      "journal": "Advances in Mechanical Engineering",
+      "date": "2026-11-01",
+      "doi": "10.1177/16878132261500371",
+      "url": "https://doi.org/10.1177/16878132261500371",
+      "license": "cc-by-nc",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Christian Diegel",
+        "Leander Schmidt",
+        "Klaus Schricker",
+        "Marc Seibold",
+        "Hannes Friedmann",
+        "Peter Hellwig"
+      ],
+      "more_authors": true,
+      "title": "Fundamental mechanisms of spatter formation during full penetration laser welding revealed by high-speed synchrotron X-ray imaging",
+      "journal": "Welding in the World",
+      "date": "2026-11-04",
+      "doi": "10.1007/s40194-026-02687-6",
+      "url": "https://doi.org/10.1007/s40194-026-02687-6",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Mohamed Ragab",
+        "Ashraf Bakkar",
+        "Mohamed M. El-Sayed Seleman",
+        "Sabbah Ataya",
+        "Ali S Hammad"
+      ],
+      "more_authors": false,
+      "title": "Numerical Investigation of Thermo-Mechanical Response, Tool Contact Stress, and Heat Generation Mechanisms in FSW of AISI 304 Stainless Steel Across Plunge, Dwell, and Travel Phases",
+      "journal": "Crystals",
+      "date": "2026-11-04",
+      "doi": "10.3390/cryst16110706",
+      "url": "https://doi.org/10.3390/cryst16110706",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Shaohua Yin",
+        "Zhiqiang SUN",
+        "YingJie Chen",
+        "Zizhen Guo",
+        "Zhen LUO"
+      ],
+      "more_authors": false,
+      "title": "Research on the Evolution Model of Grain Boundary Helium Bubbles in the Weld Heat-Affected Zone of Austenitic Stainless Steel After Irradiation",
+      "journal": "Materials",
+      "date": "2026-11-05",
+      "doi": "10.3390/ma19214716",
+      "url": "https://doi.org/10.3390/ma19214716",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Bożena Szczucka-Lasota",
+        "Klaudiusz Gołombek",
+        "Tomasz Węgrzyn",
+        "Oktawian Bialas",
+        "B. Łazarz",
+        "Patrycja Lasota"
+      ],
+      "more_authors": false,
+      "title": "Proposed Diffusion Mechanism and Microstructural Evolution in MIG Braze-Welded Cu–Austenitic Steel Joints",
+      "journal": "Materials",
+      "date": "2026-11-03",
+      "doi": "10.3390/ma19214685",
+      "url": "https://doi.org/10.3390/ma19214685",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Tahir Abbas",
+        "Shahrooz Nafisi",
+        "Ling Chen",
+        "Geoff Robert de Looze",
+        "David Ritchie",
+        "Daniel East"
+      ],
+      "more_authors": true,
+      "title": "M300-C18150 bimetal 3D printing by laser powder bed fusion: effect of process parameters on single track and layer development",
+      "journal": "Progress in Additive Manufacturing",
+      "date": "2026-11-06",
+      "doi": "10.1007/s40964-026-02040-9",
+      "url": "https://doi.org/10.1007/s40964-026-02040-9",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Arfan Majeed",
+        "Muhammad Muzamil",
+        "Asad Ali Zaidi",
+        "Maaz Akhtar",
+        "Mohsin Sattar",
+        "Jingxiang Lv"
+      ],
+      "more_authors": true,
+      "title": "Multi-Response Process-Thickness-Property Optimization of Thin-Walled AlSi10Mg Alloy Fabricated by Laser Powder Bed Fusion",
+      "journal": "Journal of Manufacturing and Materials Processing",
+      "date": "2026-11-06",
+      "doi": "10.3390/jmmp10110490",
+      "url": "https://doi.org/10.3390/jmmp10110490",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Ankit Kumar",
+        "Jeyavel Velmurugan",
+        "Jae Shin",
+        "Roshni Ramakrishnan",
+        "Bryan Buckalew"
+      ],
+      "more_authors": false,
+      "title": "Cu–Cu Grain Intermixing Quantification for Hybrid Bonding Applications",
+      "journal": "Nanomaterials",
+      "date": "2026-11-05",
+      "doi": "10.3390/nano16211424",
+      "url": "https://doi.org/10.3390/nano16211424",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Horyun Kim",
+        "Kim Shyong Siow",
+        "Jong‐Hyun Lee"
+      ],
+      "more_authors": false,
+      "title": "Ultrafast pressure-assisted sinter-bonding in air within 10 s using 70 nm Cu nanoparticles: microstructural densification and twin formation",
+      "journal": "Journal of Materials Research and Technology",
+      "date": "2026-11-01",
+      "doi": "10.1016/j.jmrt.2026.11.013",
+      "url": "https://doi.org/10.1016/j.jmrt.2026.11.013",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Carolina de Siqueira Simioli",
+        "Guilherme Lisboa de Gouveia",
+        "Pedro Henrique Fernandes Oliveira",
+        "Xin Fu Tan",
+        "José Eduardo Spinelli"
+      ],
+      "more_authors": false,
+      "title": "Impact of Zn additions on Sn-40Bi/Cu interfacial reactions: a microstructural, mechanical, and kinetic study for solder alloy design",
+      "journal": "Journal of Materials Science Materials in Electronics",
+      "date": "2026-11-01",
+      "doi": "10.1007/s10854-026-18760-1",
+      "url": "https://doi.org/10.1007/s10854-026-18760-1",
+      "license": "cc-by",
+      "topic": "low_temp_solder"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Nannan Bi",
+        "Jinhong Liu",
+        "Xingyu Fang",
+        "Qiangqiang Nie",
+        "Yucheng Wu"
+      ],
+      "more_authors": false,
+      "title": "Atomic-scale origin of anomalous crack relocation at heterophase intermetallic interfaces in high-temperature solder interconnects",
+      "journal": "Advanced Composites and Hybrid Materials",
+      "date": "2026-11-05",
+      "doi": "10.1007/s42114-026-02165-z",
+      "url": "https://doi.org/10.1007/s42114-026-02165-z",
+      "license": "cc-by-nc-nd",
+      "topic": "low_temp_solder"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Doh-Hun Kim",
+        "Dongjin Kim",
+        "Yong-Ho Ko",
+        "Sehoon Yoo"
+      ],
+      "more_authors": false,
+      "title": "An Overview of Standards for Automotive and Space Semiconductor Solder Joints",
+      "journal": "Journal of Welding and Joining",
+      "date": "2026-10-30",
+      "doi": "10.5781/jwj.2026.44.5.8",
+      "url": "https://doi.org/10.5781/jwj.2026.44.5.8",
+      "license": "",
+      "topic": "low_temp_solder"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

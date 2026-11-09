@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-09-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
+    "date": "2026-11-09",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Trí tuệ nhân tạo và mô hình vật lý lai trong công nghiệp hàn: Từ cơ chế truyền nhiệt, dự đoán khuyết tật đến thích ứng quy trình thời gian thực",
+    "title_en": "Artificial Intelligence and Hybrid Physics-Informed Frameworks in Welding: From Thermal Dynamics and Defect Prediction to Real-Time Process Adaptation",
+    "summary_vi": "Bài viết phân tích các tiến bộ mới nhất trong ứng dụng trí tuệ nhân tạo (AI) và học máy (ML) tích hợp cơ chế vật lý vào công nghệ hàn, bao gồm mô phỏng trường nhiệt bể hàn laser, dự đoán độ xốp qua đặc trưng vô thứ nguyên, kiểm soát nứt nóng hợp kim niken và phân tích đa tiêu chí hàn khuấy ma sát. Đồng thời, bài báo làm rõ các giải pháp học mẫu ít (few-shot learning), tăng cường dữ liệu tổng hợp dựa trên cơ chế luyện kim và định hướng triển khai thực tế cho ngành chế tạo.",
+    "summary_en": "This article examines recent advances in artificial intelligence (AI) and physics-informed machine learning (ML) applied to welding processes, covering laser melt pool thermal modeling, porosity prediction via dimensionless metrics, nickel superalloy hot-cracking mitigation, and multi-criteria optimization in friction stir welding. It further highlights few-shot defect detection, mechanism-based synthetic data augmentation, and practical implications for industrial manufacturing and engineering education.",
+    "tags": [
+      "Physics-Informed ML",
+      "Welding Defect Prediction",
+      "Process Monitoring",
+      "Thermal Field Surrogates",
+      "Few-Shot Learning"
+    ],
+    "cover": "images/blog/2026-11-09-chuyen-de-ung-dung-ai-trong-cong-nghiep-han/fig2.jpg",
+    "file": "posts/2026-11-09-chuyen-de-ung-dung-ai-trong-cong-nghiep-han.json"
+  },
+  {
     "id": "2026-11-08-diem-tin-khoa-hoc",
     "date": "2026-11-08",
     "type": "digest",

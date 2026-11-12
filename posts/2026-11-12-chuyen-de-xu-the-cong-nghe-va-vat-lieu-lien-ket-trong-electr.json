@@ -1,0 +1,288 @@
+{
+  "id": "2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
+  "date": "2026-11-12",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Cơ chế Giao diện và Vật liệu Liên kết Tiên tiến trong Đóng gói Vi điện tử: Từ Thiêu kết Nano đến Liên kết Lai Đồng",
+  "title_en": "Interface Mechanisms and Advanced Interconnect Materials in Electronic Packaging: From Nanosintering to Copper Hybrid Bonding",
+  "summary_vi": "Bài viết phân tích các tiến bộ gần đây trong công nghệ đóng gói vi điện tử, tập trung vào kỹ thuật liên kết lai đồng, vật liệu thiêu kết gốc bạc và đồng, cùng với các giải pháp quản lý nhiệt nhằm đáp ứng yêu cầu của linh kiện bán dẫn công suất và hệ thống tính toán hiệu năng cao.",
+  "summary_en": "This article reviews recent advances in electronic packaging technologies, focusing on copper hybrid bonding, silver- and copper-based sintering materials, and thermal management solutions designed to meet the demands of power semiconductors and high-performance computing systems.",
+  "tags": [
+    "electronic packaging",
+    "hybrid bonding",
+    "silver sintering",
+    "copper interconnects",
+    "power modules"
+  ],
+  "cover": "images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg",
+  "content_vi": "<p class=\"lead\">Sự phát triển mạnh mẽ của hệ thống tính toán hiệu năng cao (HPC), trí tuệ nhân tạo (AI) và xe điện đòi hỏi các giải pháp đóng gói tiên tiến (advanced packaging) vượt ra ngoài giới hạn của công nghệ đóng gói truyền thống. Việc thu nhỏ kích thước hình học và chuyển dịch sang cấu trúc xếp chồng ba chiều (3D-stacking) đặt ra thách thức lớn đối với vật liệu liên kết và độ tin cậy giao diện <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>]</sup>. Bài viết này tổng hợp các tiến bộ mới nhất từ các công trình nghiên cứu công bố đến tháng 11 năm 2026, làm rõ cơ chế luyện kim, giải pháp vật liệu và định hướng phát triển trong tương lai của ngành.</p>\n<h3>Bối cảnh</h3>\n<p>Trong ngành công nghiệp vi điện tử hiện đại, việc tích hợp dị thể (heterogeneous integration) các chiplet, bộ xử lý logic và bộ nhớ đòi hỏi mật độ kết nối cực cao với khoảng cách bước chân (pitch) thu nhỏ xuống dưới mức đơn micron <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Các phương pháp hàn vảy (soldering) truyền thống sử dụng hợp kim chứa chì cao (high-Pb) hoặc vật liệu không chì gặp nhiều rủi ro về giới hạn nhiệt độ vận hành, hiện tượng dịch chuyển điện động (electromigration) và ứng suất nhiệt do hệ số giãn nở nhiệt (CTE) không tương hợp <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>]</sup>. Đồng thời, sự bùng nổ của các thiết bị bán dẫn dải năng lượng rộng (wide-bandgap - WBG) như silicon carbide (SiC) và gallium nitride (GaN) yêu cầu các vật liệu gắn linh kiện (die-attach) và màng tiếp xúc nhiệt (thermal interface materials - TIMs) có khả năng duy trì độ bền cơ học và hiệu suất dẫn nhiệt cao ở nhiệt độ vận hành vượt trội <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>]</sup>. Để giải quyết các điểm nghẽn này, các hướng tiếp cận mới tập trung vào công nghệ liên kết lai đồng với đồng (Cu-Cu hybrid bonding), thiêu kết hạt nano bạc và đồng ở nhiệt độ thấp, cùng với các cấu trúc nhúng (embedding) tiên tiến nhằm tối ưu hóa đường truyền tín hiệu và tản nhiệt <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>, <a href=\"#ref-10\">10</a>]</sup>.</p>\n<h3>Đóng gói tiên tiến và liên kết 3D</h3>\n<p>Liên kết lai đồng (Cu-Cu hybrid bonding) đóng vai trò là công nghệ nền tảng cho việc tích hợp hệ thống chiplet 3D, cho phép truyền dữ liệu băng thông lớn trên chip <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-11\">11</a>]</sup>. Tuy nhiên, quá trình chế tạo đối mặt với thách thức lớn từ sự hình thành tự phát của các lớp oxit đồng (Cu<sub>2</sub>O và CuO), cản trở khuếch tán nguyên tử và gây ra hiện tượng rỗng giao diện <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> đã nghiên cứu quá trình khử oxy bề mặt bằng plasma phóng điện rào cản điện môi áp suất khí quyển (DBD) sử dụng hỗn hợp khí H<sub>2</sub>/N2. Phương pháp này đạt độ sâu khử vượt quá 4 nm ở tốc độ quét 5 mm/s, vượt yêu cầu công nghiệp 2 nm, đồng thời chỉ ra rằng hiệu suất vận chuyển khối của hơi nước phụ trợ theo nguyên lý Le Chatelier đóng vai trò quyết định để tránh tái oxy hóa <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Ở một hướng tiếp cận khác nhằm khắc phục hiện tượng tự ủ (self-annealing) làm suy giảm chất lượng mạ đồng hạt nano (ng-Cu) trong quá trình chế tạo, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> đã phát triển lớp ng-Cu trên nền tảng chất nền Cu có cấu trúc song tinh nano định hướng (111) (ng/nt-Cu). Giao diện Cu(111) này cản trở sự di chuyển ranh giới hạt và ức chế sự hấp phụ nguyên tử, giúp giữ vững vi cấu trúc trong hơn 30 ngày và hỗ trợ liên kết Cu-Cu ở nhiệt độ thấp <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Để đánh giá độ tin cậy cơ học của các cấu trúc đệm đồng trước khi liên kết, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> đã ứng dụng kỹ thuật kính hiển vi lực nguyên tử (AFM) kết hợp cộng hưởng tiếp xúc và đo độ lõm đa bước để xác định ứng suất chảy nano, mô đun đàn hồi và đường cong ứng suất-biến dạng của đồng mạ điện. Ngoài ra, việc ứng dụng liên kết lai vào kiến trúc tính toán trong bộ nhớ (DRAM-PIM) đã được minh chứng qua bộ xử lý siêu bộ nhớ (SMPU) do nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup> đề xuất, đạt băng thông hệ thống 8-bank lên đến 2 TB/s thông qua kết nối đồng thẳng đứng.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg\" alt=\"Cơ chế giao diện so sánh của Cu(111) và các mặt tinh thể đồng khác, bao gồm bản đồ EBSD IPF-z và biên dạng mạ điện [8].\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Cơ chế giao diện so sánh của Cu(111) và các mặt tinh thể đồng khác, bao gồm bản đồ EBSD IPF-z và biên dạng mạ điện [8]. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Peng et al. (2026), “Interface Engineering Suppresses Self‐Annealing in Electroplated Nanograined Copper for Low‐Temperature Copper‐to‐Copper Bonding”, <em>Advanced Science</em>, <a href=\"https://doi.org/10.1002/advs.202521964\" target=\"_blank\" rel=\"noopener\">doi:10.1002/advs.202521964</a> [<a href=\"#ref-8\">8</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig6.jpg\" alt=\"So sánh độ lõm một bước bằng kính hiển vi lực nguyên tử AFM giữa độ dẻo tại ranh giới hạt và trong lòng hạt [2].\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> So sánh độ lõm một bước bằng kính hiển vi lực nguyên tử AFM giữa độ dẻo tại ranh giới hạt và trong lòng hạt [2]. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Alderete et al. (2025), “Probing the Nanoscale Onset of Plasticity in Electroplated Copper for Hybrid Bonding Structures via Multimodal Atomic Force Microscopy”, <em>ACS Applied Nano Materials</em>, <a href=\"https://doi.org/10.1021/acsanm.5c05142\" target=\"_blank\" rel=\"noopener\">doi:10.1021/acsanm.5c05142</a> [<a href=\"#ref-2\">2</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig8.jpg\" alt=\"Kiến trúc hệ thống bộ xử lý siêu bộ nhớ SMPU tích hợp trong FPGA [11].\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Kiến trúc hệ thống bộ xử lý siêu bộ nhớ SMPU tích hợp trong FPGA [11]. <span class=\"fig-credit\">Nguồn: Hình 11 trong bài gốc – Zhao et al. (2026), “A Super Memory Processing Unit Based on 3D Stacking and Hybrid Bonding for High-Efficiency AI Computing”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi17070802\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi17070802</a> [<a href=\"#ref-11\">11</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Vật liệu die-attach và liên kết đồng</h3>\n<p>Đối với việc gắn chip công suất cao, công nghệ thiêu kết vật liệu gốc bạc và đồng đang dần thay thế các mối hàn truyền thống nhờ nhiệt độ nóng chảy cao sau khi thiêu kết và độ dẫn nhiệt vượt trội <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-9\">9</a>]</sup>. Các hạt bạc hình cầu thông thường thường gặp hạn chế về hiệu suất thiêu kết do diện tích tiếp xúc nhỏ <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã khảo sát vảy bạc hình tam giác dưới micron, đạt cường độ cắt cao 35,2 MPa với độ xốp thấp 9,48% và độ dẫn nhiệt 134,9 W/(m·K) ở nhiệt độ 250 °C trong điều kiện không có áp suất (pressureless). Để đạt được khả năng thiêu kết không áp suất hiệu quả, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> đã phát triển loại keo lai gồm hạt nano bạc và dung dịch phức hợp bạc, ứng dụng chiến lược cung cấp khối lượng chủ động thông qua khử tại chỗ (in situ reduction) để lấp đầy các khoảng trống giữa các hạt ở nhiệt độ đỉnh 250 °C. Ở quy mô công nghiệp, vật liệu keo thiêu kết bạc không áp suất DA252 đã được nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> đánh giá trên gói PQFN chứa Si-MOSFET, ghi nhận độ dày đường hàn suy giảm dưới 25%, hàm lượng lỗ rỗng trung bình dưới 0,2% và độ bền cắt &gt; 1,5 kg/mm² (&gt; 15 MPa) ở cả nhiệt độ phòng lẫn 260 °C, đồng thời duy trì điện trở trạng thái bật (R<sub>DS(on)</sub>) ổn định qua 2000 chu kỳ nhiệt (-55 °C đến 150 °C) và 2000 giờ lưu trữ ở nhiệt độ cao. Song song đó, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup> đã thực hiện mô phỏng động lực học phân tử (MD) đối với bột hàn hạt nhân-vỏ Cu@Ag, xác định các thông số tối ưu ở áp suất 600-700 MPa và nhiệt độ 650-700 K giúp thúc đẩy quá trình khuếch tán nguyên tử, loại bỏ khuyết tật và tạo cấu trúc thiêu kết bền vững.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig2.jpg\" alt=\"Vi cấu trúc mặt cắt và hình thái vảy bạc thiêu kết của cấu trúc kẹp ở các nhiệt độ khác nhau [9].\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Vi cấu trúc mặt cắt và hình thái vảy bạc thiêu kết của cấu trúc kẹp ở các nhiệt độ khác nhau [9]. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Lin et al. (2026), “Low-Temperature Sintering Mechanism and Bonding Performance of Submicron Triangular Silver Paste for Advanced Electronic Packaging”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19112182\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19112182</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig4.jpg\" alt=\"Ảnh hưởng của áp suất thiêu kết đến cơ tính của thể thiêu kết, đường cong ứng suất-biến dạng và độ dịch chuyển bình phương trung bình MSD [13].\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Ảnh hưởng của áp suất thiêu kết đến cơ tính của thể thiêu kết, đường cong ứng suất-biến dạng và độ dịch chuyển bình phương trung bình MSD [13]. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Zhang et al. (2026), “Molecular Dynamics Study of the Sintering Behavior and Mechanical Properties of Cu@Ag Core–Shell Nanoparticle Solder Paste”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19081612\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19081612</a> [<a href=\"#ref-13\">13</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig5.jpg\" alt=\"Ảnh SEM độ phóng đại thấp, cao và giản đồ nhiễu xạ XRD của vật liệu [12].\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Ảnh SEM độ phóng đại thấp, cao và giản đồ nhiễu xạ XRD của vật liệu [12]. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Park et al. (2026), “Enhanced Pressureless Sinter-Bonding of Ag Nanoparticle Paste Through In Situ Ag Complex Reduction”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16060604\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16060604</a> [<a href=\"#ref-12\">12</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Quản lý nhiệt và độ tin cậy</h3>\n<p>Hiệu suất tản nhiệt và độ tin cậy của mô-đun công suất phụ thuộc lớn vào vật liệu giao diện nhiệt (TIMs) và cấu trúc tích hợp <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> đã phát triển hệ vật liệu composite lai vi-nano bạc-đồng (AgCuMNHs) kết hợp từ các vi hạt đồng (CuMPs), vảy nano bạc (AgNFs) và hạt nano bạc (AgNPs). Vật liệu này đạt độ dẫn nhiệt lên tới 330,0 W/(m·K) và độ dẫn điện 5,6 × 10⁷ S/m khi thiêu kết ở 220 °C dưới áp suất 0,7 MPa <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Khi ứng dụng làm keo gắn chip cho mô hình đèn LED, vật liệu AgCuMNHs mang lại nhiệt trở hiệu dụng 0,56 K/W, cải thiện hơn 40% so với vật liệu thương mại đối chứng (1,00 K/W) <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Để đáp ứng yêu cầu khắt khe của bộ biến tần động cơ xe điện sử dụng SiC MOSFET, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> đã đề xuất công nghệ đóng gói nhúng (embedding), trong đó các linh kiện trần được gắn lên chất nền bằng cách thiêu kết bạc, ép chân chìm nhiều lớp bằng vật liệu prepreg epoxy, và tạo kết nối điện thông qua các vi lỗ khoan laser mạ đồng điện phân. Cách tiếp cận này giúp giảm thiểu đáng kể điện cảm rò và tối ưu hóa khả năng tản nhiệt <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Ngoài ra, công nghệ thiêu kết bột nhão nano (nanopaste) còn được mở rộng sang lĩnh vực chuyển giao màng mỏng chức năng. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup> đã chứng minh việc sử dụng bột nhão nano để liên kết và chuyển giao màng kép SRO-STO ở áp suất thấp 0,125 MPa, mở ra triển vọng tích hợp linh hoạt các vật liệu 2D và màng mỏng cho cảm biến và thiết bị điện tử <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Trong một hướng nghiên cứu khác về kết cấu trụ dẫn điện, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup> đã chế tạo các trụ trụ Cu và AlSi10Mg trực tiếp trên chất nền AMB bằng phương pháp nóng chảy chọn lọc bằng laser (SLM), sau đó phủ bạc không điện hóa kết hợp ram nhiệt ôn hòa giúp giảm điện trở khoảng 41% ở trụ Cu và 36% ở trụ AlSi10Mg nhờ khắc phục hiệu ứng điện trở giao diện <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig3.jpg\" alt=\"Ảnh vi hợp vi điện tử SEM của vật liệu nanocomposite lai AgCuMNHs thiêu kết dưới các áp suất và nhiệt độ khác nhau [7].\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Ảnh vi hợp vi điện tử SEM của vật liệu nanocomposite lai AgCuMNHs thiêu kết dưới các áp suất và nhiệt độ khác nhau [7]. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – He et al. (2026), “Silver-copper hybrid nanocomposite thermal interface materials for power electronic device packaging”, <em>Scientific Reports</em>, <a href=\"https://doi.org/10.1038/s41598-026-64292-3\" target=\"_blank\" rel=\"noopener\">doi:10.1038/s41598-026-64292-3</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig7.jpg\" alt=\"Ảnh kính hiển vi điện tử quét mô tả mặt cắt màng kép SRO-STO được liên kết ở áp suất thấp [14].\" loading=\"lazy\"><figcaption><strong>Hình 8.</strong> Ảnh kính hiển vi điện tử quét mô tả mặt cắt màng kép SRO-STO được liên kết ở áp suất thấp [14]. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Rheingans et al. (2026), “Nanopaste sinter-bonding for thin-film transfer and integration”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02470-7\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02470-7</a> [<a href=\"#ref-14\">14</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Thách thức</h3>\n<p>Mặc dù đạt được nhiều tiến bộ đáng kể trong phòng thí nghiệm, việc thương mại hóa các công nghệ liên kết và vật liệu đóng gói tiên tiến vẫn vướng mắc nhiều rào cản kỹ thuật cốt lõi. Đối với công nghệ liên kết lai đồng (Cu-Cu), thách thức lớn nằm ở việc kiểm soát nghiêm ngặt độ nhám bề mặt ở cấp độ nanomet, hiện tượng ăn mòn điện môi (dielectric erosion) và lún đồng (dishing) trong quá trình mài phẳng cơ - hóa (CMP) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Hơn nữa, quá trình khử oxit bằng plasma mặc dù đạt tốc độ cao nhưng lại bị giới hạn bởi tốc độ vận chuyển khối của sản phẩm phụ hơi nước, đòi hỏi phải tối ưu hóa phần cứng hệ thống như tích hợp cơ cấu hút khí cục bộ để duy trì trạng thái kim loại bề mặt theo nguyên lý Le Chatelier <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Trong lĩnh vực thiêu kết hạt nano bạc và đồng, việc đạt được độ đặc chắc cao mà không cần áp suất lớn (hoặc ở áp suất cực thấp) vẫn đòi hỏi kiểm soát chặt chẽ biểu đồ nhiệt độ để loại bỏ hoàn toàn khí thải từ chất hữu cơ mà không gây ra lỗ rỗng dư thừa <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-12\">12</a>]</sup>. Đối với công nghệ nhúng mạch và cấu trúc in 3D trực tiếp (SLM), ứng suất nhiệt cơ sinh ra do sự không tương hợp hệ số giãn nở nhiệt giữa các vật liệu dị thể (như Cu, AlSi10Mg, gốm Si<sub>3</sub>N<sub>4</sub> và epoxy) dễ dẫn đến hiện tượng cong vênh chất nền và suy giảm độ bền mỏi dưới chu kỳ nhiệt <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-15\">15</a>]</sup>. Cuối cùng, việc mở rộng quy mô sản xuất công nghiệp đòi hỏi các tiêu chuẩn đo lường, kiểm tra khuyết tật nội vi và kiểm soát độ ổn định của mẻ sản xuất phải được nâng tầm để đáp ứng tiêu chuẩn chất lượng khắt khe của ngành ô tô và điện toán hiệu năng cao <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-3\">3</a>]</sup>.</p>\n<h3>Xu thế tương lai</h3>\n<p>Ngành đóng gói vi điện tử được kỳ vọng sẽ tiếp tục chứng kiến sự dịch chuyển mạnh mẽ hướng tới các cấu trúc tích hợp 3D siêu vi mô và vật liệu không chì hoàn toàn <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-3\">3</a>]</sup>. Các chuyên gia dự báo công nghệ liên kết lai đồng-đồng với bước chân dưới micron sẽ trở thành tiêu chuẩn chủ đạo cho việc tích hợp hệ thống chiplet và bộ nhớ cao cấp, đòi hỏi các hệ thống metrology nội tuyến có độ phân giải nguyên tử để kiểm soát khuyết tật giao diện <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>]</sup>. Về mặt vật liệu liên kết, xu hướng phát triển sẽ tập trung vào các hệ vật liệu composite lai (như hệ Ag-Cu và cấu trúc nhân-vỏ Cu@Ag) nhằm kết hợp ưu điểm dẫn nhiệt/dẫn điện cao của kim loại quý với chi phí thấp và độ bền cơ học của đồng <sup class=\"cite\">[<a href=\"#ref-7\">7</a>, <a href=\"#ref-13\">13</a>]</sup>. Các kỹ thuật thiêu kết hỗ trợ trường năng lượng (như plasma, trường điện và siêu âm) dự kiến sẽ được mở rộng nhằm hạ thấp hơn nữa nhiệt độ và áp suất thiêu kết, giảm thiểu tối đa ứng suất nhiệt cho linh kiện bán dẫn dải năng lượng rộng <sup class=\"cite\">[<a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>]</sup>. Bên cạnh đó, công nghệ đóng gói nhúng và sản xuất bồi đắp trực tiếp trên chất nền gốm AMB có thể sẽ đóng vai trò chủ chốt trong việc chế tạo các mô-đun công suất siêu gọn nhẹ dành cho xe điện thế hệ mới <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-15\">15</a>]</sup>. Cuối cùng, việc ứng dụng các kiến trúc đóng gói tiên tiến như bộ nhớ tích hợp tính toán (DRAM-PIM) thông qua liên kết lai dự kiến sẽ được mở rộng sang nhiều mô hình AI đa dạng hơn để phá vỡ bức tường bộ nhớ <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p>\n<h3>Hàm ý thực tiễn</h3>\n<ul>\n<li><strong>Phát triển chương trình đào tạo kỹ thuật chuyên sâu:</strong> Các trường đại học và cơ sở giáo dục tại Việt Nam cần cập nhật chương trình giảng dạy về khoa học vật liệu bán dẫn, công nghệ đóng gói tiên tiến (advanced packaging), và cơ chế luyện kim giao diện nhằm cung cấp nguồn nhân lực am hiểu về liên kết lai Cu-Cu và công nghệ thiêu kết nano <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-8\">8</a>]</sup>.</li>\n<li><strong>Đầu tư hạ tầng nghiên cứu và đo lường nanoscale:</strong> Các phòng thí nghiệm trong nước định hướng nghiên cứu vi điện tử cần trang bị các công cụ đo lường độ chính xác cao như kính hiển vi lực nguyên tử (AFM) để khảo sát cơ tính bề mặt và điểm bắt đầu dẻo hóa của vật liệu màng mỏng trước khi liên kết <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</li>\n<li><strong>Thúc đẩy hợp tác nghiên cứu ứng dụng công nghiệp công suất:</strong> Doanh nghiệp công nghiệp phụ trợ và điện tử tại Việt Nam có thể tận dụng các kết quả nghiên cứu về keo thiêu kết bạc không áp suất (như DA252) để cải tiến quy trình lắp ráp linh kiện bán dẫn công suất, nâng cao độ bền nhiệt và độ tin cậy theo tiêu chuẩn ô tô <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-6\">6</a>]</sup>.</li>\n<li><strong>Tối ưu hóa quy trình chế tạo vật liệu trong nước:</strong> Các kỹ sư và nhà nghiên cứu có thể áp dụng các chiến lược thiết kế bột nhão lai (hybrid paste) và kiểm soát vi cấu trúc ranh giới hạt để giải quyết bài toán oxy hóa và nâng cao độ dẫn nhiệt cho các sản phẩm linh kiện điện tử nội địa <sup class=\"cite\">[<a href=\"#ref-7\">7</a>, <a href=\"#ref-9\">9</a>, <a href=\"#ref-12\">12</a>]</sup>.</li>\n</ul>",
+  "content_en": "<p class=\"lead\">The rapid advancement of high-performance computing (HPC), artificial intelligence (AI), and electric mobility demands advanced packaging solutions that transcend the limits of traditional packaging technologies. The continuous miniaturization of geometric features and the paradigm shift toward three-dimensional (3D) stacked architectures impose severe demands on interconnect materials and interface reliability <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>]</sup>. This article synthesizes the latest breakthroughs from research publications up to November 2026, elucidating metallurgical mechanisms, material solutions, and future developmental directions within the field.</p>\n<h3>Background</h3>\n<p>In modern microelectronics, the heterogeneous integration of chiplets, logic processors, and memory requires ultra-high-density interconnects with sub-micron pitch dimensions <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Traditional soldering methods utilizing high-Pb solders or conventional lead-free alloys face critical limitations regarding operating temperature thresholds, electromigration, and thermomechanical stresses induced by coefficient of thermal expansion (CTE) mismatches <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>]</sup>. Simultaneously, the proliferation of wide-bandgap (WBG) semiconductors such as silicon carbide (SiC) and gallium nitride (GaN) necessitates die-attach materials and thermal interface materials (TIMs) capable of sustaining high mechanical integrity and superior thermal conductivity under extreme operating temperatures <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>]</sup>. To overcome these bottlenecks, emerging approaches focus on copper-to-copper (Cu-Cu) hybrid bonding, low-temperature silver and copper nanoparticle sintering, and advanced embedding structures designed to optimize signal transmission paths and heat spreading <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-8\">8</a>, <a href=\"#ref-9\">9</a>, <a href=\"#ref-10\">10</a>]</sup>.</p>\n<h3>Advanced Packaging and 3D Interconnects</h3>\n<p>Copper-to-copper (Cu-Cu) hybrid bonding serves as a foundational technology for 3D chiplet integration, enabling high-bandwidth on-chip data transmission <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-11\">11</a>]</sup>. However, fabrication processes encounter severe hurdles from the spontaneous formation of copper oxide layers (Cu<sub>2</sub>O and CuO), which inhibit atomic diffusion and induce interfacial voiding <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> investigated atmospheric-pressure dielectric barrier discharge (DBD) plasma reduction utilizing an H<sub>2</sub>/N<sub>2</sub> gas mixture. This approach achieved reduction depths exceeding 4 nm at a scanning speed of 5 mm/s, surpassing the industrial requirement of 2 nm, while establishing that the mass transport efficiency of water vapor byproduct governed by Le Chatelier's principle is critical to prevent re-oxidation <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. In a separate approach to mitigate self-annealing—which degrades electroplated nanograined copper (ng-Cu) microstructures during fabrication—the authors of <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> engineered an ng-Cu layer atop a (111)-oriented nanotwinned Cu substrate (ng/nt-Cu). This Cu(111) interface successfully suppressed grain boundary migration and atom adsorption, preserving the microstructure for over 30 days and enabling low-temperature Cu-Cu bonding <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. To evaluate the mechanical reliability of copper pad structures prior to bonding, the authors of <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup> employed an atomic force microscopy (AFM)-based protocol combining contact resonance and multistep indentation to extract nanoscopic yield stress statistics, elastic moduli, and indentation stress-strain curves. Furthermore, the integration of hybrid bonding into memory-centric computing architectures (DRAM-PIM) was demonstrated through the Super Memory Processing Unit (SMPU) proposed by the authors of <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, achieving an 8-bank system bandwidth of up to 2 TB/s via vertical copper interconnects.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg\" alt=\"Comparative interface mechanisms of Cu(111) and other Cu facets, including EBSD IPF-z maps and electroplating profiles [8].\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Comparative interface mechanisms of Cu(111) and other Cu facets, including EBSD IPF-z maps and electroplating profiles [8]. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Peng et al. (2026), “Interface Engineering Suppresses Self‐Annealing in Electroplated Nanograined Copper for Low‐Temperature Copper‐to‐Copper Bonding”, <em>Advanced Science</em>, <a href=\"https://doi.org/10.1002/advs.202521964\" target=\"_blank\" rel=\"noopener\">doi:10.1002/advs.202521964</a> [<a href=\"#ref-8\">8</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig6.jpg\" alt=\"AFM single-step indentation comparison between grain boundary and grain interior plasticity [2].\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> AFM single-step indentation comparison between grain boundary and grain interior plasticity [2]. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Alderete et al. (2025), “Probing the Nanoscale Onset of Plasticity in Electroplated Copper for Hybrid Bonding Structures via Multimodal Atomic Force Microscopy”, <em>ACS Applied Nano Materials</em>, <a href=\"https://doi.org/10.1021/acsanm.5c05142\" target=\"_blank\" rel=\"noopener\">doi:10.1021/acsanm.5c05142</a> [<a href=\"#ref-2\">2</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig8.jpg\" alt=\"SMPU system architecture implemented in FPGA [11].\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> SMPU system architecture implemented in FPGA [11]. <span class=\"fig-credit\">Source: Fig. 11 of the original article – Zhao et al. (2026), “A Super Memory Processing Unit Based on 3D Stacking and Hybrid Bonding for High-Efficiency AI Computing”, <em>Micromachines</em>, <a href=\"https://doi.org/10.3390/mi17070802\" target=\"_blank\" rel=\"noopener\">doi:10.3390/mi17070802</a> [<a href=\"#ref-11\">11</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Die-Attach Materials and Copper Bonding</h3>\n<p>For high-power semiconductor packaging, silver- and copper-based sintering technologies are gradually replacing traditional solders due to their high post-sintering melting points and superior thermal conductivities <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-9\">9</a>]</sup>. Conventional spherical silver particles suffer from limited sintering efficiency due to restricted contact areas <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> investigated submicron triangular silver flake paste, achieving a high joint strength of 35.2 MPa with a low porosity of 9.48% and a thermal conductivity of 134.9 W/(m·K) at 250 °C under pressureless conditions. To achieve effective pressureless sintering, the authors of <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> developed a hybrid paste comprising silver nanoparticles and a silver complex solution, implementing an active mass supply strategy via in situ reduction to bridge interparticle voids during a peak temperature profile of 250 °C. At an industrial scale, pressureless pure Ag-sinter paste DA252 was evaluated by the authors of <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> on automotive-grade PQFN-packaged Si-MOSFETs, demonstrating bondline thickness shrinkage below 25%, an average void content below 0.2%, and a die shear strength &gt; 1.5 kg/mm² (&gt; 15 MPa) at both room temperature and 260 °C, while maintaining stable on-state resistance (R<sub>DS(on)</sub>) over 2000 thermal cycles (-55 °C to 150 °C) and 2000 hours of high-temperature storage. Concurrently, the authors of <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup> performed molecular dynamics (MD) simulations on Cu@Ag core-shell nanoparticle solder pastes, identifying optimal processing parameters at 600-700 MPa pressure and 650-700 K temperature to promote atomic mobility, eliminate defects, and yield stable sintered structures.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig2.jpg\" alt=\"Cross-section and sintered silver paste morphology of the sandwich-like structure at different temperatures [9].\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Cross-section and sintered silver paste morphology of the sandwich-like structure at different temperatures [9]. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Lin et al. (2026), “Low-Temperature Sintering Mechanism and Bonding Performance of Submicron Triangular Silver Paste for Advanced Electronic Packaging”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19112182\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19112182</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig4.jpg\" alt=\"Effect of sintering pressures on the mechanical properties, stress-strain curves, densification, and MSD of sintered bodies [13].\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Effect of sintering pressures on the mechanical properties, stress-strain curves, densification, and MSD of sintered bodies [13]. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Zhang et al. (2026), “Molecular Dynamics Study of the Sintering Behavior and Mechanical Properties of Cu@Ag Core–Shell Nanoparticle Solder Paste”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19081612\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19081612</a> [<a href=\"#ref-13\">13</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig5.jpg\" alt=\"Low- and high-magnification SEM images and XRD pattern of the material [12].\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Low- and high-magnification SEM images and XRD pattern of the material [12]. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Park et al. (2026), “Enhanced Pressureless Sinter-Bonding of Ag Nanoparticle Paste Through In Situ Ag Complex Reduction”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16060604\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16060604</a> [<a href=\"#ref-12\">12</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Thermal Management and Reliability</h3>\n<p>The thermal performance and reliability of power modules depend heavily on thermal interface materials (TIMs) and integrated packaging architectures <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-7\">7</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> developed silver-copper micro-nano hybrid composite pastes (AgCuMNHs) combining copper microparticles (CuMPs), silver nanoflakes (AgNFs), and silver nanoparticles (AgNPs). This material achieved a thermal conductivity of up to 330.0 W/(m·K) and an electrical conductivity of 5.6 × 10⁷ S/m when sintered at 220 °C under 0.7 MPa <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. When implemented as a die-attach paste in an LED packaging model, the AgCuMNH composites yielded an effective thermal resistance of 0.56 K/W, representing a more than 40% performance improvement over commercial counterparts (1.00 K/W) <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. To meet the stringent demands of electric vehicle traction inverters utilizing SiC MOSFETs, the authors of <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> proposed an advanced embedding technology wherein bare dies are attached to substrates via silver sintering, vacuum-laminated with epoxy prepreg materials, and electrically interconnected through laser-drilled micro vias and electrolytic copper plating, thereby reducing stray inductance and enhancing thermal spreading <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Additionally, nanopaste sinter-bonding has been extended to functional thin-film transfer. The authors of <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup> demonstrated the use of nanopastes to transfer and bond an SRO-STO double-layer film at a low pressure of 0.125 MPa, opening avenues for flexible integration of 2D materials and thin films in electronic devices <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. In a separate study on conductive interconnect pillars, the authors of <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup> fabricated Cu and AlSi10Mg pillars directly on Si<sub>3</sub>N<sub>4</sub>-based AMB substrates using selective laser melting (SLM); subsequent electroless silver metallization and moderate annealing reduced electrical resistance by approximately 41% in Cu and 36% in AlSi10Mg pillars by mitigating interfacial resistance effects <sup class=\"cite\">[<a href=\"#ref-15\">15</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig3.jpg\" alt=\"SEM micrographs of AgCuMNHs sintered under different pressures and temperatures, along with electrical and thermal conductivity data [7].\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> SEM micrographs of AgCuMNHs sintered under different pressures and temperatures, along with electrical and thermal conductivity data [7]. <span class=\"fig-credit\">Source: Fig. 3 of the original article – He et al. (2026), “Silver-copper hybrid nanocomposite thermal interface materials for power electronic device packaging”, <em>Scientific Reports</em>, <a href=\"https://doi.org/10.1038/s41598-026-64292-3\" target=\"_blank\" rel=\"noopener\">doi:10.1038/s41598-026-64292-3</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig7.jpg\" alt=\"Scanning electron microscopy images of a transferred SRO-STO double-layer film cross-section bonded at low pressure [14].\" loading=\"lazy\"><figcaption><strong>Figure 8.</strong> Scanning electron microscopy images of a transferred SRO-STO double-layer film cross-section bonded at low pressure [14]. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Rheingans et al. (2026), “Nanopaste sinter-bonding for thin-film transfer and integration”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02470-7\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02470-7</a> [<a href=\"#ref-14\">14</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Challenges</h3>\n<p>Despite significant laboratory milestones, commercializing advanced interconnect technologies and packaging materials entails major technical hurdles. For copper-to-copper (Cu-Cu) hybrid bonding, critical challenges include stringent nanometer-scale surface roughness control, dielectric erosion, and copper dishing during chemical-mechanical planarization (CMP) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Furthermore, plasma de-oxidation processes, while achieving high reaction rates, are limited by the mass transport efficiency of water vapor byproducts, necessitating hardware-level optimizations such as localized exhaust to maintain metallic surface states in accordance with Le Chatelier's principle <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. In silver and copper nanoparticle sintering, achieving high densification without high external pressures requires meticulous thermal profile control to ensure complete organic out-gassing without introducing excessive residual porosity <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-12\">12</a>]</sup>. For embedding technologies and direct additive manufacturing (SLM) structures, thermomechanical stresses arising from thermal expansion coefficient mismatches among dissimilar materials (Cu, AlSi10Mg, Si<sub>3</sub>N<sub>4</sub> ceramics, and epoxy) frequently lead to substrate warpage and fatigue degradation under thermal cycling <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-15\">15</a>]</sup>. Finally, scaling to high-volume manufacturing demands robust metrology, internal defect inspection, and lot-to-lot consistency to meet rigorous automotive and HPC quality standards <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-3\">3</a>]</sup>.</p>\n<h3>Future Trends</h3>\n<p>The electronic packaging sector is expected to witness an accelerated transition toward ultra-fine pitch 3D stacked architectures and fully lead-free interconnect materials <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-3\">3</a>]</sup>. Experts anticipate that sub-micron pitch Cu-Cu hybrid bonding will become the mainstream standard for chiplet and high-end memory integration, driving the adoption of atomic-resolution inline metrology for interface defect inspection <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>]</sup>. In interconnect materials, development trends will likely focus on hybrid composite systems (such as Ag-Cu mixtures and Cu@Ag core-shell structures) that combine the superior thermal and electrical conductivity of precious metals with the cost-efficiency and mechanical robustness of copper <sup class=\"cite\">[<a href=\"#ref-7\">7</a>, <a href=\"#ref-13\">13</a>]</sup>. Energy field-assisted sintering techniques (including plasma, electric, and ultrasonic fields) are expected to be scaled to further lower bonding temperatures and pressures, minimizing thermal stress on wide-bandgap semiconductors <sup class=\"cite\">[<a href=\"#ref-4\">4</a>, <a href=\"#ref-5\">5</a>]</sup>. Moreover, embedding packaging and direct additive manufacturing on AMB ceramic substrates are projected to play pivotal roles in fabricating compact power modules for next-generation electric vehicles <sup class=\"cite\">[<a href=\"#ref-6\">6</a>, <a href=\"#ref-15\">15</a>]</sup>. Finally, advanced packaging architectures such as in-memory computing (DRAM-PIM) enabled by hybrid bonding are expected to expand across diverse AI model workloads to effectively shatter the memory wall <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p>\n<h3>Practical Implications</h3>\n<ul>\n<li><strong>Curriculum Development in Advanced Microelectronics:</strong> Universities and educational institutions in Vietnam should update educational programs focusing on semiconductor materials science, advanced packaging technologies, and interfacial metallurgy to equip engineers with expertise in Cu-Cu hybrid bonding and nanosintering <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-5\">5</a>, <a href=\"#ref-8\">8</a>]</sup>.</li>\n<li><strong>Investment in Nanoscale Metrology Infrastructure:</strong> Domestic research laboratories aiming to specialize in microelectronics packaging must acquire high-resolution characterization tools such as atomic force microscopy (AFM) to evaluate surface mechanical heterogeneity and incipient plasticity in thin films prior to bonding <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</li>\n<li><strong>Fostering Industry-Academia Collaboration in Power Electronics:</strong> Domestic electronics and packaging manufacturing enterprises can leverage research findings on pressureless silver sinter pastes (such as DA252) to upgrade power semiconductor assembly lines, enhancing thermal durability and reliability according to automotive standards <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-6\">6</a>]</sup>.</li>\n<li><strong>Optimization of Local Material Processing:</strong> Engineers and researchers can adopt hybrid paste formulation strategies and grain boundary microstructural control to mitigate oxidation challenges and enhance thermal conductivity for indigenous electronic components <sup class=\"cite\">[<a href=\"#ref-7\">7</a>, <a href=\"#ref-9\">9</a>, <a href=\"#ref-12\">12</a>]</sup>.</li>\n</ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Charles Woychik",
+        "Jonathan Abdilla",
+        "Chris Scanlan",
+        "Victor Vilar",
+        "Robert Patti",
+        "Dadi Setiadi"
+      ],
+      "more_authors": true,
+      "title": "Technical Challenges for Ultra Fine Pitch Hybrid Bonding",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-11-02",
+      "doi": "10.4071/001c.173484",
+      "url": "https://doi.org/10.4071/001c.173484",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Nicolas A. Alderete",
+        "Paresh D. Daharwal",
+        "Cristian V. Ciobanu",
+        "Gheorghe Stan"
+      ],
+      "more_authors": false,
+      "title": "Probing the Nanoscale Onset of Plasticity in Electroplated Copper for Hybrid Bonding Structures via Multimodal Atomic Force Microscopy",
+      "journal": "ACS Applied Nano Materials",
+      "date": "2025-12-09",
+      "doi": "10.1021/acsanm.5c05142",
+      "url": "https://doi.org/10.1021/acsanm.5c05142",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Henry Martin",
+        "B. Senthil Kumar",
+        "Frans G. M. Meeuwsen",
+        "Edsger C. P. Smits",
+        "Ruud D. Wit"
+      ],
+      "more_authors": false,
+      "title": "Reliability Benchmarking Novel Ag-sinter Die-Attach Against High-Pb Solder Under Thermal Cycling and High-Temperature Storage Testing",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-11-04",
+      "doi": "10.4071/001c.173577",
+      "url": "https://doi.org/10.4071/001c.173577",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Mengchun Fu",
+        "Panpan Lin",
+        "Weijie Fu",
+        "Yongtong Li",
+        "Guangze Dong",
+        "Huiying Liu"
+      ],
+      "more_authors": true,
+      "title": "Energy field-assisted technology for ceramic/metal joining: a review",
+      "journal": "Advanced Materials Joining",
+      "date": "2026-09-08",
+      "doi": "10.1007/s44500-026-00014-z",
+      "url": "https://doi.org/10.1007/s44500-026-00014-z",
+      "license": "cc-by-nc-nd",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Tetsu Yonezawa",
+        "Qianhao ZUO"
+      ],
+      "more_authors": false,
+      "title": "Copper Particle Sintering for Low‐Temperature Electronic Joining: A Review of Materials Design and Processing Strategies",
+      "journal": "Advanced Engineering Materials",
+      "date": "2026-04-28",
+      "doi": "10.1002/adem.202502392",
+      "url": "https://doi.org/10.1002/adem.202502392",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "L. Böttcher",
+        "David Schütze",
+        "Thomas Löher",
+        "Manuel Seckel",
+        "Andreas Ostmann"
+      ],
+      "more_authors": false,
+      "title": "Advanced Embedding Technologies for High Performance SiC Power Modules in Automotive Applications",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-10-26",
+      "doi": "10.4071/001c.173028",
+      "url": "https://doi.org/10.4071/001c.173028",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Haiying He",
+        "Haobo Zhang",
+        "Li Hu",
+        "Haibo Sun",
+        "Zhihao Yang"
+      ],
+      "more_authors": false,
+      "title": "Silver-copper hybrid nanocomposite thermal interface materials for power electronic device packaging",
+      "journal": "Scientific Reports",
+      "date": "2026-07-30",
+      "doi": "10.1038/s41598-026-64292-3",
+      "url": "https://doi.org/10.1038/s41598-026-64292-3",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Gangqiang Peng",
+        "Xinyi Dong",
+        "Binzhao Li",
+        "Chuan He",
+        "Cong Chen",
+        "Licheng Huang"
+      ],
+      "more_authors": true,
+      "title": "Interface Engineering Suppresses Self‐Annealing in Electroplated Nanograined Copper for Low‐Temperature Copper‐to‐Copper Bonding",
+      "journal": "Advanced Science",
+      "date": "2026-01-04",
+      "doi": "10.1002/advs.202521964",
+      "url": "https://doi.org/10.1002/advs.202521964",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Pengrong Lin",
+        "Zirui Tong",
+        "Shimeng Xu",
+        "Yue Wang",
+        "Shang Wang",
+        "Yanhong Tian"
+      ],
+      "more_authors": false,
+      "title": "Low-Temperature Sintering Mechanism and Bonding Performance of Submicron Triangular Silver Paste for Advanced Electronic Packaging",
+      "journal": "Materials",
+      "date": "2026-05-22",
+      "doi": "10.3390/ma19112182",
+      "url": "https://doi.org/10.3390/ma19112182",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Kelvin Chiu",
+        "Kuo-Chao Liang",
+        "Chun-Cheng Wu",
+        "Nick Chen",
+        "Winson Hsu"
+      ],
+      "more_authors": false,
+      "title": "Breaking the Oxide Barrier: Cost-Efficient Plasma De-oxidation of Copper Surfaces for Advanced Hybrid Bonding",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-10-27",
+      "doi": "10.4071/001c.173343",
+      "url": "https://doi.org/10.4071/001c.173343",
+      "license": "",
+      "topic": "feature"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Ruiyong Zhao",
+        "Yu Hu",
+        "J L Chen"
+      ],
+      "more_authors": false,
+      "title": "A Super Memory Processing Unit Based on 3D Stacking and Hybrid Bonding for High-Efficiency AI Computing",
+      "journal": "Micromachines",
+      "date": "2026-06-30",
+      "doi": "10.3390/mi17070802",
+      "url": "https://doi.org/10.3390/mi17070802",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Changsu Park",
+        "Jong‐Hyun Lee"
+      ],
+      "more_authors": false,
+      "title": "Enhanced Pressureless Sinter-Bonding of Ag Nanoparticle Paste Through In Situ Ag Complex Reduction",
+      "journal": "Metals",
+      "date": "2026-05-31",
+      "doi": "10.3390/met16060604",
+      "url": "https://doi.org/10.3390/met16060604",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Xuezhi Zhang",
+        "Jian Gao",
+        "L Zhang"
+      ],
+      "more_authors": false,
+      "title": "Molecular Dynamics Study of the Sintering Behavior and Mechanical Properties of Cu@Ag Core–Shell Nanoparticle Solder Paste",
+      "journal": "Materials",
+      "date": "2026-04-17",
+      "doi": "10.3390/ma19081612",
+      "url": "https://doi.org/10.3390/ma19081612",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Bastian Rheingans",
+        "Fabio La Mattina",
+        "Jordan Bouaziz",
+        "Claudia Cancellieri",
+        "Jolanta Janczak‐Rusch"
+      ],
+      "more_authors": false,
+      "title": "Nanopaste sinter-bonding for thin-film transfer and integration",
+      "journal": "Welding in the World",
+      "date": "2026-05-01",
+      "doi": "10.1007/s40194-026-02470-7",
+      "url": "https://doi.org/10.1007/s40194-026-02470-7",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Nikhil Gupta",
+        "Fatin Battal",
+        "Peter Mulder",
+        "Willem Dirk van Driel",
+        "Henk W. van Zeijl",
+        "Guoqi Zhang"
+      ],
+      "more_authors": true,
+      "title": "Characterization of SLM-Fabricated Cu and AlSi10Mg Interconnect Pillars with Ag Metallization",
+      "journal": "IEEE Transactions on Components Packaging and Manufacturing Technology",
+      "date": "2026-01-01",
+      "doi": "10.1109/tcpmt.2026.3730292",
+      "url": "https://doi.org/10.1109/tcpmt.2026.3730292",
+      "license": "cc-by",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien",
+    "date": "2026-11-13",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Nghiên cứu và Tiến bộ trong Công nghệ Hàn Tiên tiến: Cơ chế Vi cấu trúc, Mô hình hóa Học máy và Kiểm soát Khuyết tật",
+    "title_en": "Research and Advances in Advanced Welding Technologies: Microstructural Mechanisms, Machine Learning Modeling, and Defect Control",
+    "summary_vi": "Bài viết phân tích các công nghệ hàn tiên tiến dựa trên tài liệu nghiên cứu gần đây, tập trung vào hàn laser dao động, hàn khuấy ma sát, hàn lai và phương pháp học máy để dự đoán cơ tính mối hàn. Các thách thức về khuyết tật vi cấu trúc, kiểm soát ứng suất nhiệt và ứng dụng công nghiệp cũng được thảo luận chi tiết.",
+    "summary_en": "This article examines advanced welding technologies based on recent research literature, focusing on oscillating laser welding, friction stir welding, hybrid welding, and machine learning methods for predicting weld mechanical properties. Challenges related to microstructural defects, thermal stress control, and industrial applications are discussed in detail.",
+    "tags": [
+      "advanced welding",
+      "friction stir welding",
+      "laser welding",
+      "machine learning",
+      "microstructure"
+    ],
+    "cover": "images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig2.jpg",
+    "file": "posts/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien.json"
+  },
+  {
     "id": "2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr",
     "date": "2026-11-12",
     "type": "feature",

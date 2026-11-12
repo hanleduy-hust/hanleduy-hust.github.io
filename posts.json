@@ -5,18 +5,18 @@
     "type": "feature",
     "category_vi": "Chuyên đề",
     "category_en": "In-depth",
-    "title_vi": "Tiến bộ trong Công nghệ Đóng gói Điện tử: Từ Thiêu kết Bạc, Liên kết Lai Đồng đến Mô-đun Công suất SiC",
-    "title_en": "Advances in Electronic Packaging Technologies: From Silver Sintering and Copper Hybrid Bonding to SiC Power Modules",
-    "summary_vi": "Bài viết phân tích các xu thế công nghệ và vật liệu liên kết tiên tiến trong đóng gói điện tử (electronic packaging) dựa trên các nghiên cứu mới nhất đến cuối năm 2026, bao gồm vật liệu thiêu kết bạc không áp lực, liên kết lai đồng, khử ôxy bằng plasma và kỹ thuật nhúng mô-đun công suất.",
-    "summary_en": "This article analyzes advanced trends in electronic packaging technologies and interconnect materials based on recent studies up to late 2026, covering pressureless silver sintering, copper hybrid bonding, plasma deoxidation, and power module embedding techniques.",
+    "title_vi": "Cơ chế Giao diện và Vật liệu Liên kết Tiên tiến trong Đóng gói Vi điện tử: Từ Thiêu kết Nano đến Liên kết Lai Đồng",
+    "title_en": "Interface Mechanisms and Advanced Interconnect Materials in Electronic Packaging: From Nanosintering to Copper Hybrid Bonding",
+    "summary_vi": "Bài viết phân tích các tiến bộ gần đây trong công nghệ đóng gói vi điện tử, tập trung vào kỹ thuật liên kết lai đồng, vật liệu thiêu kết gốc bạc và đồng, cùng với các giải pháp quản lý nhiệt nhằm đáp ứng yêu cầu của linh kiện bán dẫn công suất và hệ thống tính toán hiệu năng cao.",
+    "summary_en": "This article reviews recent advances in electronic packaging technologies, focusing on copper hybrid bonding, silver- and copper-based sintering materials, and thermal management solutions designed to meet the demands of power semiconductors and high-performance computing systems.",
     "tags": [
       "electronic packaging",
-      "silver sintering",
       "hybrid bonding",
-      "power modules",
-      "plasma deoxidation"
+      "silver sintering",
+      "copper interconnects",
+      "power modules"
     ],
-    "cover": "",
+    "cover": "images/blog/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr/fig1.jpg",
     "file": "posts/2026-11-12-chuyen-de-xu-the-cong-nghe-va-vat-lieu-lien-ket-trong-electr.json"
   },
   {

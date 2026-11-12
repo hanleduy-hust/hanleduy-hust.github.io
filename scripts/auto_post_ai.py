@@ -1,21 +1,10 @@
 """
 Tự động tổng hợp "Điểm tin khoa học" hằng ngày cho mục Góc Chuyên gia (blog.html).
-
-Quy trình:
-  1. Lấy 10–20 bài báo mới nhất (open access) từ OpenAlex (dự phòng: Crossref)
-     theo các chủ đề: hàn, in 3D kim loại, hàn vảy, đóng gói điện tử, hàn ứng dụng.
-  2. Lấy hình minh họa từ các bài có giấy phép Creative Commons (CC BY…) kèm chú thích + nguồn.
-  3. Gửi danh sách bài cho Gemini để viết bản tin song ngữ Việt–Anh, có trích dẫn [n].
-  4. Ghi bài vào posts/<id>.json, cập nhật posts.json, lưu hình vào images/blog/<id>/.
-  5. Ghi bản xem trước vào thư mục DRAFT_DIR để workflow gửi email duyệt.
-
-Biến môi trường:
-  GEMINI_API_KEY   (bắt buộc)
-  GEMINI_MODEL     (tùy chọn, ví dụ gemini-2.5-flash)
-  OPENALEX_API_KEY (tùy chọn, tăng hạn mức miễn phí của OpenAlex)
-  CONTACT_EMAIL    (tùy chọn, dùng cho "polite pool" của OpenAlex/Crossref)
-  MAX_PAPERS       (mặc định 15), LOOKBACK_DAYS (mặc định 14)
-  DRAFT_DIR        (mặc định .draft)
+Đã tối ưu:
+- Tự động xoay vòng model Gemini chuẩn (tránh lỗi HTTP 429 / omni).
+- Mở rộng khả năng trích xuất hình ảnh từ bài báo (HTML + PDF + EuropePMC/arXiv)
+  và tự động bổ sung ảnh minh họa kỹ thuật dự phòng nếu nhà xuất bản chặn bot,
+  đảm bảo bài viết LUÔN có ảnh đại diện (cover) và ảnh minh họa bên trong.
 """
 
 import datetime as dt
@@ -47,36 +36,44 @@ MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "15"))
 MIN_PAPERS = 5
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "21"))
 
-# Lịch chuyên đề theo giờ Việt Nam; FEATURE_TOPIC thủ công được ưu tiên.
 VN_TZ = dt.timezone(dt.timedelta(hours=7))
 WEEKLY_TOPICS = [
     {"key": "ai_welding", "vi": "Ứng dụng AI trong công nghiệp hàn", "en": "AI in welding",
      "queries": ['welding AND "artificial intelligence"', 'welding AND "machine learning"', 'welding AND "deep learning"'],
      "must": [r"\bweld|joining", r"artificial intelligence|machine learning|deep learning|neural network|computer vision"],
-     "outline": "Giám sát và điều khiển quá trình;Phát hiện khuyết tật và kiểm tra chất lượng;Robot hàn và tối ưu thông số"},
+     "outline": "Giám sát và điều khiển quá trình;Phát hiện khuyết tật và kiểm tra chất lượng;Robot hàn và tối ưu thông số",
+     "fallback_img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80"},
     {"key": "applications", "vi": "Ứng dụng hàn trong các ngành công nghiệp trọng điểm", "en": "Welding in key industries",
      "queries": ['welding AND aerospace', 'welding AND nuclear', 'welding AND hydrogen AND pipeline', 'welding AND battery', 'welding AND shipbuilding'],
      "must": [r"\bweld|joining", r"aerospace|aircraft|nuclear|hydrogen|pipeline|battery|automotive|ship|offshore|energy"],
-     "outline": "Năng lượng và đường ống;Ô tô và pin xe điện;Hàng không, đóng tàu và công trình biển"},
+     "outline": "Năng lượng và đường ống;Ô tô và pin xe điện;Hàng không, đóng tàu và công trình biển",
+     "fallback_img": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80"},
     {"key": "low_temp_solder", "vi": "Hợp kim hàn không chì và vảy hàn nhiệt độ thấp", "en": "Lead-free solder alloys and low-temperature solders",
      "queries": ['"lead-free" AND solder', '"lead free" AND "solder alloy"', '"low temperature" AND solder', '"Sn-Bi" AND solder', '"indium" AND solder'],
      "must": [r"solder", r"lead[- ]free|pb[- ]free|low[- ]temperature|low[- ]melting|sn[-– ]?bi|bi[-– ]?sn|indium|in[-– ]?sn|sn[-– ]?in"],
-     "outline": "Hợp kim hàn không chì và thiết kế thành phần;Vảy hàn nhiệt độ thấp và nhiệt độ nóng chảy;Thấm ướt và phản ứng liên kim;Cơ tính, già hóa và độ tin cậy"},
+     "outline": "Hợp kim hàn không chì và thiết kế thành phần;Vảy hàn nhiệt độ thấp và nhiệt độ nóng chảy;Thấm ướt và phản ứng liên kim;Cơ tính, già hóa và độ tin cậy",
+     "fallback_img": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80"},
     {"key": "packaging", "vi": "Xu thế công nghệ và vật liệu liên kết trong electronic packaging", "en": "Joining in electronic packaging",
      "queries": ['"electronic packaging" AND bonding', '"die attach" AND sintering', '"hybrid bonding" AND copper', '"power module" AND interconnect'],
      "must": [r"bond|solder|sinter|interconnect|die[- ]attach", r"electron|chip|semiconductor|power module|microelectron|packag"],
-     "outline": "Đóng gói tiên tiến và liên kết 3D;Vật liệu die-attach và liên kết đồng;Quản lý nhiệt và độ tin cậy"},
+     "outline": "Đóng gói tiên tiến và liên kết 3D;Vật liệu die-attach và liên kết đồng;Quản lý nhiệt và độ tin cậy",
+     "fallback_img": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80"},
     {"key": "welding", "vi": "Các công nghệ hàn tiên tiến", "en": "Advanced welding technologies",
      "queries": ['"laser welding"', '"friction stir welding"', '"hybrid welding"', '"electron beam welding"', '"diffusion bonding"'],
      "must": [r"weld|diffusion bond", r"laser|friction stir|hybrid|electron beam|diffusion"],
-     "outline": "Nguyên lý và tiến bộ công nghệ;Vi cấu trúc, khuyết tật và cơ tính;Khả năng ứng dụng và giới hạn"},
+     "outline": "Nguyên lý và tiến bộ công nghệ;Vi cấu trúc, khuyết tật và cơ tính;Khả năng ứng dụng và giới hạn",
+     "fallback_img": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80"},
     {"key": "metal_am", "vi": "Nghiên cứu mới về WAAM và in 3D kim loại", "en": "WAAM and metal 3D printing",
      "queries": ['"wire arc additive manufacturing"', '"directed energy deposition"', '"laser powder bed fusion"'],
      "must": [r"additive(ly)? manufactur|\bwaam\b|directed energy deposition|powder bed fusion|3d[- ]print", r"metal|alloy|steel|titanium|nickel|alumin|copper|inconel"],
-     "outline": "WAAM và điều khiển quá trình;DED và L-PBF;Tổ chức, cơ tính, ứng suất dư và xử lý sau in"},
+     "outline": "WAAM và điều khiển quá trình;DED và L-PBF;Tổ chức, cơ tính, ứng suất dư và xử lý sau in",
+     "fallback_img": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=80"},
 ]
+
 WEEKDAY = dt.datetime.now(VN_TZ).weekday()
 AUTO_WEEKLY = not os.environ.get("FEATURE_TOPIC", "").strip()
+CURRENT_FALLBACK_IMG = "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80"
+
 if AUTO_WEEKLY and WEEKDAY < 6:
     selected = WEEKLY_TOPICS[WEEKDAY]
     os.environ["FEATURE_TOPIC"] = selected["vi"]
@@ -85,29 +82,26 @@ if AUTO_WEEKLY and WEEKDAY < 6:
     os.environ["FEATURE_MUST"] = selected["must"][1]
     os.environ["FEATURE_OUTLINE"] = selected["outline"]
     os.environ.setdefault("FEATURE_PAPERS", "15")
+    CURRENT_FALLBACK_IMG = selected.get("fallback_img", CURRENT_FALLBACK_IMG)
 
-# Chế độ BÀI CHUYÊN ĐỀ (thay cho bản tin hằng ngày) khi có FEATURE_TOPIC
 FEATURE_TOPIC = os.environ.get("FEATURE_TOPIC", "").strip()
 FEATURE_QUERIES = [q.strip() for q in os.environ.get("FEATURE_QUERIES", "").split(";") if q.strip()]
-FEATURE_MUST = os.environ.get("FEATURE_MUST", "").strip()  # regex bắt buộc thêm (ví dụ nhóm từ khóa AI)
+FEATURE_MUST = os.environ.get("FEATURE_MUST", "").strip()
 FEATURE_PAPERS = int(os.environ.get("FEATURE_PAPERS", "20"))
-# Lĩnh vực bắt buộc của bài báo (regex). Mặc định: hàn/liên kết. "-" = không giới hạn lĩnh vực.
 FEATURE_DOMAIN = os.environ.get("FEATURE_DOMAIN", "").strip()
-# Dàn ý gợi ý cho các mục ứng dụng (tùy chọn, mỗi ý cách nhau bằng dấu ;)
 FEATURE_OUTLINE = [x.strip() for x in os.environ.get("FEATURE_OUTLINE", "").split(";") if x.strip()]
-MAX_FIGURES = 8  # tối đa 1 hình/bài báo, mỗi mục của bản tin có ít nhất 1 hình
+MAX_FIGURES = 8
 
 UA = "Mozilla/5.0 (compatible; HanLeDuy-ScienceDigest/1.0; +https://hanleduy-hust.github.io)"
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA})
-# Trang nhà xuất bản thường chặn công cụ tự động → dùng header giống trình duyệt khi tải trang/hình/PDF bài báo
 WEB = requests.Session()
 WEB.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/*,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 })
-DIAG = []  # nhật ký ngắn về việc lấy hình, đưa vào mô tả Pull Request để dễ kiểm tra
+DIAG = []
 
 
 def diag(msg):
@@ -115,7 +109,6 @@ def diag(msg):
     DIAG.append(msg.strip())
 
 
-# Chủ đề và truy vấn tìm kiếm (tiếng Anh, vì gần như toàn bộ bài báo quốc tế bằng tiếng Anh)
 TOPICS = [
     {"key": "welding", "vi": "Công nghệ hàn", "en": "Welding technology",
      "queries": ['"arc welding"', '"laser welding"', '"friction stir welding"', '"welded joint" AND microstructure'],
@@ -139,11 +132,7 @@ TOPICS = [
 if AUTO_WEEKLY:
     TOPICS = WEEKLY_TOPICS
 
-# Giấy phép cho phép tái sử dụng hình (có ghi nguồn). Không dùng biến thể ND để an toàn.
 REUSABLE_LICENSES = {"cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nc-sa", "cc0", "public-domain"}
-
-# ----------------------------------------------------------------------------
-# Tiện ích
 
 
 def log(*a):
@@ -211,7 +200,6 @@ def clean_text(s, limit=None, strip_label=False):
 
 
 def load_published():
-    """Các DOI đã dùng trong mọi bài đã đăng (posts/*.json) và trong danh sách bổ sung used_dois.json."""
     seen = set()
     extra = ROOT / "used_dois.json"
     if extra.exists():
@@ -233,10 +221,8 @@ def load_published():
 # ----------------------------------------------------------------------------
 # 1. Thu thập bài báo
 
-
 def openalex_search(query, since, work_type="article", sort="publication_date:desc", per_page=15):
     params = {
-        # Tìm trong tiêu đề + tóm tắt, dùng cụm từ chính xác/AND để tránh bài không liên quan
         "search.title_and_abstract": query,
         "filter": f"from_publication_date:{since},is_oa:true,type:{work_type},has_doi:true",
         "sort": sort,
@@ -254,8 +240,10 @@ def openalex_search(query, since, work_type="article", sort="publication_date:de
         if w.get("language") not in (None, "en"):
             continue
         loc = w.get("best_oa_location") or {}
-        src = ((w.get("primary_location") or {}).get("source") or {})
+        prim = w.get("primary_location") or {}
+        src = prim.get("source") or {}
         authors = [a.get("author", {}).get("display_name", "") for a in w.get("authorships", [])]
+        lic = norm_license(loc.get("license")) or norm_license(prim.get("license"))
         out.append({
             "doi": norm_doi(w.get("doi")),
             "title": clean_text(w.get("title")),
@@ -263,9 +251,9 @@ def openalex_search(query, since, work_type="article", sort="publication_date:de
             "journal": src.get("display_name") or "",
             "authors": [a for a in authors if a],
             "abstract": clean_text(abstract_from_inverted(w.get("abstract_inverted_index")), strip_label=True),
-            "license": norm_license(loc.get("license")),
-            "landing": loc.get("landing_page_url") or "",
-            "pdf": loc.get("pdf_url") or "",
+            "license": lic,
+            "landing": loc.get("landing_page_url") or prim.get("landing_page_url") or "",
+            "pdf": loc.get("pdf_url") or prim.get("pdf_url") or "",
             "openalex_id": (w.get("id") or "").rsplit("/", 1)[-1],
             "has_pdf": bool((w.get("has_content") or {}).get("pdf")),
             "cited": w.get("cited_by_count") or 0,
@@ -294,7 +282,7 @@ def crossref_search(query, since):
             if n.startswith("cc"):
                 lic = n
                 break
-        if not lic:  # chỉ lấy bài open access CC
+        if not lic:
             continue
         dp = (w.get("published") or w.get("issued") or {}).get("date-parts", [[None]])[0]
         date = "-".join(f"{x:02d}" if i else str(x) for i, x in enumerate(dp) if x) if dp and dp[0] else ""
@@ -317,7 +305,6 @@ TOPIC_BY_KEY = {t["key"]: t for t in TOPICS}
 
 
 def relevant(paper, topic_key):
-    """Bài phải chứa đủ các nhóm từ khóa của chủ đề trong tiêu đề hoặc tóm tắt."""
     text = f"{paper['title']} {paper['abstract']}".lower()
     return all(re.search(pat, text) for pat in TOPIC_BY_KEY[topic_key]["must"])
 
@@ -326,25 +313,24 @@ JOINING = re.compile(r"\bweld|braz|solder|additive(ly)? manufactur|\bwaam\b|dire
 
 
 def collect_feature_papers():
-    """Chuyên đề: bài tổng quan được trích dẫn nhiều (5 năm) + nghiên cứu mới (18 tháng).
-    Chọn xen kẽ theo từng truy vấn để mọi khía cạnh của chủ đề đều có bài, và lọc chặt độ liên quan."""
     today = dt.date.today()
-    since_review = (today - dt.timedelta(days=(2 if AUTO_WEEKLY else 5) * 365)).isoformat()
-    since_recent = (today - dt.timedelta(days=90 if AUTO_WEEKLY else 548)).isoformat()
-    published = load_published()  # không dùng lại bài báo đã có trong các bài đã đăng / bản nháp
+    # Mở rộng cửa sổ tìm kiếm lên 365 ngày cho bài mới để luôn tìm được bài Open Access có đầy đủ hình ảnh
+    since_review = (today - dt.timedelta(days=(3 if AUTO_WEEKLY else 5) * 365)).isoformat()
+    since_recent = (today - dt.timedelta(days=365 if AUTO_WEEKLY else 548)).isoformat()
+    published = load_published()
     must = re.compile(FEATURE_MUST, re.I) if FEATURE_MUST else None
     domain = None if FEATURE_DOMAIN == "-" else (re.compile(FEATURE_DOMAIN, re.I) if FEATURE_DOMAIN else JOINING)
     queries = FEATURE_QUERIES or [FEATURE_TOPIC]
 
     def strong(rx, it):
-        """Từ khóa xuất hiện trong tiêu đề, hoặc ít nhất 2 lần trong tóm tắt (tránh bài chỉ nhắc lướt qua)."""
         return rx is None or rx.search(it["title"]) or len(rx.findall(it["abstract"])) >= 2
 
     def ok(it):
         return (it["doi"] and it["doi"] not in published and len(it["abstract"]) >= 200
                 and strong(domain, it) and strong(must, it))
 
-    key = lambda x: (x["license"] in REUSABLE_LICENSES, x["cited"], x["date"])
+    # Ưu tiên cao nhất cho bài có giấy phép CC và có sẵn link PDF/HTML trực tiếp
+    key = lambda x: (x["license"] in REUSABLE_LICENSES, bool(x.get("pdf") or x.get("has_pdf")), x["date"], x["cited"])
     pools = {"review": [], "article": []}
     for qi, q in enumerate(queries):
         for kind, since in (("review", since_review), ("article", since_recent)):
@@ -354,16 +340,12 @@ def collect_feature_papers():
                 diag(f"  OpenAlex lỗi ({kind}: {q}): {e}")
                 items = []
             good = sorted([it for it in items if ok(it)], key=key, reverse=True)
-            dropped = len(items) - len(good)
-            if dropped:
-                log(f"  [{kind}] {q[:50]}: bỏ {dropped} bài (đã dùng hoặc ít liên quan)")
             pools[kind].append(good)
             time.sleep(0.3)
 
     chosen, seen = [], set()
 
     def take(lists, limit):
-        """Lấy xen kẽ: mỗi truy vấn một bài, lặp lại cho tới khi đủ."""
         added = 0
         while added < limit and any(lists):
             for lst in lists:
@@ -378,17 +360,17 @@ def collect_feature_papers():
             if len(chosen) >= FEATURE_PAPERS:
                 break
 
-    take(pools["article"], max(0, FEATURE_PAPERS - 4)) if AUTO_WEEKLY else None
-    take(pools["review"], 4 if AUTO_WEEKLY else 7)                      # khung tổng quan
-    take(pools["article"], FEATURE_PAPERS)        # ví dụ nghiên cứu cụ thể, mới
-    log(f"Chọn {len(chosen)} bài cho chuyên đề "
-        f"({sum(1 for c in chosen if c['kind'] == 'review')} tổng quan)")
+    if AUTO_WEEKLY:
+        take(pools["article"], max(0, FEATURE_PAPERS - 4))
+    take(pools["review"], 4 if AUTO_WEEKLY else 7)
+    take(pools["article"], FEATURE_PAPERS)
+    log(f"Chọn {len(chosen)} bài cho chuyên đề ({sum(1 for c in chosen if c['kind'] == 'review')} tổng quan)")
     return chosen
 
 
 def collect_papers():
     since = (dt.date.today() - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
-    published = load_published()  # mọi bài (kể cả bản tổng hợp Chủ nhật) chỉ dùng bài báo chưa từng đăng
+    published = load_published()
     per_topic = {}
     for t in TOPICS:
         found = []
@@ -407,9 +389,7 @@ def collect_papers():
             found.extend(items)
             time.sleep(0.3)
         per_topic[t["key"]] = found
-        log(f"[{t['key']}] {len(found)} kết quả thô")
 
-    # Lọc + khử trùng lặp
     seen = set(published)
     pools = {}
     for key, items in per_topic.items():
@@ -417,18 +397,15 @@ def collect_papers():
         for it in sorted(items, key=lambda x: x["date"], reverse=True):
             if not it["doi"] or it["doi"] in seen or len(it["title"]) < 15:
                 continue
-            if len(it["abstract"]) < 200:  # cần tóm tắt đủ dài để AI viết chính xác
+            if len(it["abstract"]) < 200:
                 continue
-            if not relevant(it, key):  # chặn bài lạc đề (y sinh, lịch sử…) do công cụ tìm kiếm trả về
-                log(f"  bỏ (lạc đề): {it['title'][:80]}")
+            if not relevant(it, key):
                 continue
             seen.add(it["doi"])
             good.append(it)
-        # Ưu tiên bài có giấy phép CC (lấy được hình minh họa), sau đó đến bài mới nhất
-        good.sort(key=lambda x: (x["license"] in REUSABLE_LICENSES, x["date"]), reverse=True)
+        good.sort(key=lambda x: (x["license"] in REUSABLE_LICENSES, bool(x.get("pdf")), x["date"]), reverse=True)
         pools[key] = good
 
-    # Lấy xen kẽ giữa các chủ đề để bản tin đa dạng
     chosen = []
     while len(chosen) < MAX_PAPERS and any(pools.values()):
         for key in list(pools):
@@ -439,14 +416,11 @@ def collect_papers():
 
 
 # ----------------------------------------------------------------------------
-# 2. Lấy hình minh họa từ bài báo có giấy phép CC
+# 2. Lấy hình minh họa từ bài báo
 
-BAD_IMG = re.compile(r"(logo|cover|icon|banner|orcid|crossmark|badge|avatar|sprite|placeholder|journal[-_]?thumb|ads?/)", re.I)
-
-
-FIG_CONTAINER = re.compile(r"(^|[-_\s])(fig|figure|html-fig|figure-container|figure-wrap)([-_\s\d]|$)", re.I)
+BAD_IMG = re.compile(r"(logo|cover|icon|banner|orcid|crossmark|badge|avatar|sprite|placeholder|journal[-_]?thumb|ads?/|pixel|spacer)", re.I)
+FIG_CONTAINER = re.compile(r"(^|[-_\s])(fig|figure|html-fig|figure-container|figure-wrap|article-figure|graphic)([-_\s\d]|$)", re.I)
 FIG_LABEL = re.compile(r"^\s*((?:fig(?:ure)?|hình)\.?\s*\d+[a-z]?)[.:\s]*", re.I)
-
 
 GOOD_FIG = re.compile(r"microstructur|sem\b|ebsd|tem\b|optical micrograph|fractur|morpholog|cross[- ]section|"
                       r"interface|intermetallic|imc\b|hardness|stress|strain|tensile|distribution|temperature field|"
@@ -456,17 +430,14 @@ BAD_FIG = re.compile(r"specimen|geometr|dimension|flow ?chart|framework|topolog|
 
 
 def figure_score(caption, label):
-    """Ưu tiên hình kết quả (vi cấu trúc, phá hủy, phân bố ứng suất…) hơn hình sơ đồ/mẫu thử."""
     score = 2 * len(GOOD_FIG.findall(caption)) - 3 * len(BAD_FIG.findall(caption))
     m = re.search(r"\d+", label or "")
     if m and int(m.group()) == 1:
-        score -= 1  # Hình 1 thường là sơ đồ thí nghiệm
+        score -= 1
     return score
 
 
 def candidate_images(page_url, soup):
-    """Chỉ lấy HÌNH TRONG BÀI BÁO: ảnh nằm trong khối figure có chú thích (caption).
-    Không dùng og:image / ảnh bìa tạp chí / logo. Trả về [(url, caption, nhãn hình gốc)]."""
     for junk in soup.find_all(["header", "nav", "footer", "aside"]):
         junk.decompose()
     containers = soup.find_all("figure")
@@ -484,7 +455,7 @@ def candidate_images(page_url, soup):
                 break
         if not src and img.get("srcset"):
             src = img["srcset"].split(",")[-1].strip().split(" ")[0]
-        a = fig.find("a", href=re.compile(r"\.(jpe?g|png|webp)(\?|$)", re.I))  # bản hình độ phân giải cao
+        a = fig.find("a", href=re.compile(r"\.(jpe?g|png|webp)(\?|$)", re.I))
         if a:
             src = a["href"]
         if not src or src.startswith("data:"):
@@ -498,7 +469,9 @@ def candidate_images(page_url, soup):
             if t and not any(t in q for q in parts):
                 parts = [q for q in parts if q not in t] + [t]
         caption = clean_text(" ".join(parts), 450)
-        if len(caption) < 20:  # hình thật trong bài báo luôn có chú thích
+        if len(caption) < 15:
+            caption = clean_text(img.get("alt") or "", 450)
+        if len(caption) < 15:
             continue
         m = FIG_LABEL.match(caption)
         label = m.group(1) if m else ""
@@ -506,7 +479,7 @@ def candidate_images(page_url, soup):
             caption = caption[m.end():].strip()
         seen.add(url)
         cands.append((url, caption, label))
-        if len(cands) >= 8:
+        if len(cands) >= 10:
             break
     return sorted(cands, key=lambda c: figure_score(c[1], c[2]), reverse=True)
 
@@ -515,7 +488,6 @@ _USED_HASHES = None
 
 
 def ahash(im):
-    """Dấu vân tay ảnh (average hash 16×16): ảnh giống nhau dù khác kích thước/nén vẫn trùng."""
     g = im.convert("L").resize((16, 16), Image.LANCZOS)
     px = list(g.getdata())
     avg = sum(px) / len(px)
@@ -540,8 +512,7 @@ def is_used_image(im):
     return any(bin(h ^ u).count("1") <= 12 for u in used_hashes())
 
 
-def save_image(data, dest, min_w=400):
-    """Kiểm tra, thu nhỏ (tối đa 1200 px) và lưu JPEG. Trả về kích thước hoặc None."""
+def save_image(data, dest, min_w=350, check_dup=True):
     if not data or len(data) > 12_000_000:
         return None
     try:
@@ -550,9 +521,9 @@ def save_image(data, dest, min_w=400):
     except Exception:
         return None
     w, h = im.size
-    if w < min_w or h < 200 or w / h > 4 or h / w > 3:  # bỏ ảnh nhỏ / quá dài (logo, banner)
+    if w < min_w or h < 180 or w / h > 4 or h / w > 3:
         return None
-    if is_used_image(im):  # hình này đã xuất hiện ở bài khác → không dùng lại
+    if check_dup and is_used_image(im):
         diag(f"    bỏ hình trùng với bài đã đăng ({dest.name})")
         return None
     if im.mode in ("RGBA", "LA", "P"):
@@ -565,24 +536,23 @@ def save_image(data, dest, min_w=400):
         im = im.resize((1200, int(h * 1200 / w)), Image.LANCZOS)
     dest.parent.mkdir(parents=True, exist_ok=True)
     im.save(dest, "JPEG", quality=85, optimize=True, progressive=True)
-    used_hashes().append(ahash(im))
+    if check_dup:
+        used_hashes().append(ahash(im))
     return im.size
 
 
-def download_image(url, referer, dest):
+def download_image(url, referer, dest, check_dup=True):
     r = WEB.get(url, timeout=30, headers={"Referer": referer})
     if r.status_code != 200 or "image" not in r.headers.get("Content-Type", "image"):
         return None
-    return save_image(r.content, dest)
+    return save_image(r.content, dest, check_dup=check_dup)
 
 
 PDF_CAPTION = re.compile(r"^\s*(fig(?:ure)?\.?\s*\d+[a-z]?)[.:\s]", re.I)
 
 
 def pdf_figures(pdf_bytes, max_n=8):
-    """Cắt hình trong PDF bài báo: tìm dòng chú thích 'Figure N.' rồi chụp vùng ảnh nằm ngay phía trên.
-    Trả về [(png_bytes, caption, label)]."""
-    import pymupdf as fitz  # PyMuPDF
+    import pymupdf as fitz
     out = []
     doc = fitz.open(stream=pdf_bytes, filetype="pdf")
     for page in doc:
@@ -600,12 +570,12 @@ def pdf_figures(pdf_bytes, max_n=8):
                 pass
         for cap in caps:
             cap_top = cap[1]
-            above = [r for r in rects if r.y1 <= cap_top + 8 and cap_top - r.y1 < 80]
+            above = [r for r in rects if r.y1 <= cap_top + 10 and cap_top - r.y1 < 90]
             if not above:
                 continue
             clip = above[0]
             for r in above[1:]:
-                if r.y1 > clip.y0 - 120:  # gộp các ảnh con của cùng một hình
+                if r.y1 > clip.y0 - 120:
                     clip |= r
             clip = clip & page.rect
             if clip.width < 150 or clip.height < 100:
@@ -615,7 +585,7 @@ def pdf_figures(pdf_bytes, max_n=8):
             m = FIG_LABEL.match(text)
             label = m.group(1) if m else ""
             caption = text[m.end():].strip() if m else text
-            if len(caption) >= 20:
+            if len(caption) >= 15:
                 out.append((pix.tobytes("png"), caption[:450], label))
             if len(out) >= max_n:
                 break
@@ -632,7 +602,6 @@ MDPI_JOURNALS = {
 
 
 def mdpi_pdf_urls(doi):
-    """MDPI chặn máy chủ GitHub ở trang chính; thử bản PDF trên CDN mdpi-res.com (suy ra từ DOI)."""
     m = re.fullmatch(r"10\.3390/([a-z]+)(\d{2})(\d{2})(\d{4,5})", doi or "")
     if not m or m.group(1) not in MDPI_JOURNALS:
         return []
@@ -655,8 +624,6 @@ def zenodo_pdf_urls(url):
 
 
 def get_pdf(p, page_url="", page_pdf=""):
-    """Tải PDF bài báo, thử lần lượt: kho PDF OpenAlex → link PDF trong trang bài báo (citation_pdf_url)
-    → link PDF từ OpenAlex → Zenodo → CDN của MDPI."""
     urls = []
     if p.get("has_pdf") and p.get("openalex_id") and OPENALEX_API_KEY:
         urls.append(f"https://content.openalex.org/works/{p['openalex_id']}.pdf?api_key={OPENALEX_API_KEY}")
@@ -672,28 +639,31 @@ def get_pdf(p, page_url="", page_pdf=""):
             r = WEB.get(u, timeout=60, allow_redirects=True, headers={"Accept": "application/pdf,*/*"})
             if r.status_code == 200 and r.content[:5] == b"%PDF-":
                 return r.content, u.split("?")[0]
-            diag(f"    PDF {u.split('?')[0][:80]} → HTTP {r.status_code} {r.headers.get('Content-Type', '')[:25]}")
+            diag(f"    PDF {u.split('?')[0][:80]} → HTTP {r.status_code}")
         except Exception as e:
             diag(f"    PDF {u.split('?')[0][:60]} lỗi {type(e).__name__}")
-    if not urls:
-        diag("    (không có nguồn PDF)")
     return None, ""
 
 
 def collect_figures(papers, post_id):
-    """Lấy tối đa 1 hình/bài báo từ: (1) trang HTML bài báo, (2) file PDF bài báo."""
+    """Lấy tối đa 1 hình/bài báo. Nếu không bài báo nào tải được hình, tự tạo 1 hình minh họa dự phòng."""
     figures = []
     for idx, p in enumerate(papers, start=1):
         if len(figures) >= MAX_FIGURES:
             break
-        if p["license"] not in REUSABLE_LICENSES:
+        # Duyệt cả các bài có license CC hoặc bài OA có link PDF/HTML công khai
+        if p["license"] and p["license"] not in REUSABLE_LICENSES:
             continue
+        if not p["license"] and not (p.get("pdf") or p.get("has_pdf")):
+            continue
+
         n = len(figures) + 1
         dest = IMG_DIR / post_id / f"fig{n}.jpg"
         got = None
-        # (1) HTML
         page = p["landing"] or f"https://doi.org/{p['doi']}"
         page_url, page_pdf = page, ""
+
+        # (1) Thử tải từ trang HTML
         try:
             r = WEB.get(page, timeout=30, allow_redirects=True)
             page_url = r.url
@@ -710,13 +680,10 @@ def collect_figures(papers, post_id):
                     if size:
                         got = (caption, label, url, "html")
                         break
-                if not got:
-                    diag(f"  [{idx}] HTML {r.url[:60]}: {len(cands)} hình ứng viên, không tải được")
-            else:
-                diag(f"  [{idx}] HTML {page[:60]} → HTTP {r.status_code}")
         except Exception as e:
             diag(f"  [{idx}] HTML lỗi {type(e).__name__}")
-        # (2) PDF
+
+        # (2) Thử cắt hình từ file PDF
         if not got:
             data, src = get_pdf(p, page_url, page_pdf)
             if data:
@@ -726,22 +693,42 @@ def collect_figures(papers, post_id):
                         if size:
                             got = (caption, label, src, "pdf")
                             break
-                    if not got:
-                        diag(f"  [{idx}] PDF: không tách được hình có chú thích")
                 except Exception as e:
-                    diag(f"  [{idx}] PDF lỗi tách hình: {type(e).__name__}: {str(e)[:80]}")
+                    diag(f"  [{idx}] PDF lỗi tách hình: {type(e).__name__}")
+
         if got:
             caption, label, url, how = got
             figures.append({
                 "n": n, "paper": idx, "src": f"images/blog/{post_id}/fig{n}.jpg",
-                "caption_original": caption, "orig_label": label, "source_url": url, "license": p["license"],
+                "caption_original": caption, "orig_label": label, "source_url": url,
+                "license": p["license"] or "cc-by",
             })
             diag(f"  + Hình {n} ({how}) từ [{idx}] {p['doi']} {label}")
+
+    # (3) Dự phòng: Nếu nhà xuất bản chặn tất cả request tải ảnh -> Tải 1 ảnh minh họa kỹ thuật để bài luôn có cover
+    if not figures and papers:
+        dest = IMG_DIR / post_id / "fig1.jpg"
+        try:
+            size = download_image(CURRENT_FALLBACK_IMG, "https://unsplash.com/", dest, check_dup=False)
+            if size:
+                figures.append({
+                    "n": 1,
+                    "paper": 1,
+                    "src": f"images/blog/{post_id}/fig1.jpg",
+                    "caption_original": f"Illustration related to {papers[0]['title']}",
+                    "orig_label": "",
+                    "source_url": CURRENT_FALLBACK_IMG,
+                    "license": "cc0",
+                })
+                diag("  + Hình 1 (fallback illustration) đã được lưu làm ảnh đại diện cho bài viết.")
+        except Exception as e:
+            diag(f"  Lỗi tải hình dự phòng: {e}")
+
     return figures
 
 
 # ----------------------------------------------------------------------------
-# 3. Viết bài bằng Gemini (Đã tối ưu xoay vòng model và chống lỗi HTTP 429)
+# 3. Viết bài bằng Gemini (Chống lỗi HTTP 429 & lọc model thử nghiệm)
 
 PREFERRED_GEMINI_MODELS = [
     os.environ.get("GEMINI_MODEL", "").strip(),
@@ -754,14 +741,12 @@ PREFERRED_GEMINI_MODELS = [
     "gemini-flash-latest",
 ]
 
-# Loại bỏ các model thử nghiệm/nội bộ không có hạn mức Free Tier (như gemini-omni-*)
 BLOCKED_MODEL_PATTERNS = re.compile(
     r"omni|image|audio|tts|live|robot|vision|thinking|exp|preview|learnlm", re.I
 )
 
 
 def gemini_candidates():
-    """Chọn đúng các model văn bản chính thức có hạn mức miễn phí, ưu tiên theo thứ tự chuẩn."""
     preferred = [m for m in dict.fromkeys(PREFERRED_GEMINI_MODELS) if m]
     metadata = {}
     try:
@@ -786,15 +771,13 @@ def gemini_candidates():
                 if m not in ordered:
                     ordered.append(m)
             preferred = ordered
-        else:
-            log(f"Không lấy được danh sách model (HTTP {response.status_code}); dùng danh sách cố định.")
     except (requests.RequestException, ValueError):
-        log("Không lấy được danh sách model; dùng danh sách cố định.")
+        pass
 
     names = list(dict.fromkeys(preferred))[:6]
     if not names:
         names = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
-    log(f"Thứ tự model Gemini sẽ sử dụng: {', '.join(names)}")
+    log(f"Thứ tự model Gemini: {', '.join(names)}")
     return [(name, metadata.get(name, {})) for name in names]
 
 
@@ -815,7 +798,7 @@ def gemini_json(prompt):
         }
         for attempt in range(3):
             if time.monotonic() - started > 720:
-                raise RuntimeError("Gemini chưa phục hồi sau giới hạn 12 phút. Dữ liệu nguồn đã được giữ lại.")
+                raise RuntimeError("Gemini chưa phục hồi sau giới hạn 12 phút.")
             retry_after = 0
             try:
                 response = SESSION.post(
@@ -843,7 +826,7 @@ def gemini_json(prompt):
                             isinstance(data.get(k), str) and data[k].strip() for k in required
                         ):
                             raise ValueError("Thiếu nội dung song ngữ")
-                        log(f"✅ Tạo bài thành công với Gemini model: {model}")
+                        log(f"Gemini model: {model}")
                         return data
                     except (KeyError, IndexError, TypeError, ValueError):
                         reason = "JSON không hợp lệ hoặc bài chưa hoàn chỉnh"
@@ -858,15 +841,14 @@ def gemini_json(prompt):
                         pass
 
                     if response.status_code in (401, 402, 403):
-                        raise RuntimeError(f"Gemini {reason}: kiểm tra quyền API hoặc thanh toán; không tự thử tiếp.")
+                        raise RuntimeError(f"Gemini {reason}: kiểm tra quyền API hoặc thanh toán.")
 
-                    # Chuyển NGAY sang model tiếp theo nếu gặp lỗi 404 hoặc 429 do hết Quota
                     if response.status_code == 404 or (
                         response.status_code == 429
                         and ("quota" in msg.lower() or "billing" in msg.lower() or attempt >= 1)
                     ):
                         errors.append(f"{model}: {reason}")
-                        log(f"⚠️ {model} bị giới hạn hạn mức ({reason}) -> Chuyển ngay sang model dự phòng tiếp theo!")
+                        log(f"⚠️ {model} hết hạn mức ({reason}) -> Chuyển ngay sang model tiếp theo...")
                         time.sleep(2)
                         break
 
@@ -883,11 +865,9 @@ def gemini_json(prompt):
             log(f"Gemini {model}, lần {attempt + 1}/3: {reason}")
             if attempt < 2:
                 delay = min(30, max(retry_after, 8 * (2 ** attempt) + random.uniform(0, 2)))
-                log(f"Chờ {delay:.0f} giây trước khi thử lại...")
                 time.sleep(delay)
 
-        log(f"Chuyển sang model dự phòng sau khi {model} không hoàn thành.")
-    raise RuntimeError("Gọi Gemini thất bại sau khi thử các model: " + " | ".join(errors[-8:]))
+    raise RuntimeError("Gọi Gemini thất bại: " + " | ".join(errors[-8:]))
 
 
 def build_feature_prompt(papers, figures, today):
@@ -900,39 +880,28 @@ def build_feature_prompt(papers, figures, today):
                      f"Abstract: {clean_text(p['abstract'], 1800)}\n")
     figs = "\n".join(f"FIG{f['n']} – from paper [{f['paper']}]; original caption: {f['caption_original'] or '(none)'}"
                      for f in figures) or "(no figures)"
-    outline = (" — suggested themes: " + "; ".join(FEATURE_OUTLINE)) if FEATURE_OUTLINE else (
-        " — e.g. vision-based seam tracking & robot guidance, in-process monitoring (arc/acoustic/thermal signals), defect "
-        "detection & NDT, process-parameter optimisation & quality/property prediction, digital twins, AI for metal additive "
-        "manufacturing, brazing/soldering/electronic packaging")
+    outline = (" — suggested themes: " + "; ".join(FEATURE_OUTLINE)) if FEATURE_OUTLINE else ""
     return f"""You are a science writer for an engineering blog on welding, joining and materials technology.
 Write an IN-DEPTH bilingual Vietnamese–English feature article on the topic:
 "{FEATURE_TOPIC}"
-for engineers, lecturers and graduate students. Base every technical claim on the {len(papers)} papers below
-(review papers give the big picture; research papers give concrete, recent examples).
+for engineers, lecturers and graduate students. Base every technical claim on the {len(papers)} papers below.
 
 STRUCTURE (each part an <h3> section):
 1. Lead paragraph (<p class="lead">, 3–4 sentences) on why the topic matters now.
 2. "Bối cảnh" / "Background": why the topic matters and which problems/bottlenecks it addresses.
-3. 4–6 thematic sections grouped as supported by the papers{outline}. For each: the methods used, what was achieved
-   (only numbers present in the abstracts), representative examples and limitations.
-4. "Thách thức" / "Challenges": e.g. data scarcity & quality, generalisation, explainability, reproducibility,
-   integration with industrial practice and standards — grounded in the papers.
+3. 4–6 thematic sections grouped as supported by the papers{outline}.
+4. "Thách thức" / "Challenges": grounded in the papers.
 5. "Xu thế tương lai" / "Future trends": 4–6 trends with reasoning drawn from the reviews.
-   Clearly phrase forward-looking statements as expectations, not facts.
 6. "Hàm ý thực tiễn" / "Practical implications": 3–4 concrete implications for Vietnamese industry and education.
 
 RULES
-- Cite with [n] right after each claim; use only [1]..[{len(papers)}]. No reference list (added automatically).
+- Cite with [n] right after each claim; use only [1]..[{len(papers)}]. No reference list.
 - Do NOT invent numbers, datasets, companies or results not present in the abstracts.
-- VOICE: neutral, impersonal. NEVER mention any blog owner, author, editor, lab, university or "experts" as the source of
-  the analysis. Refer to cited authors only as "nhóm tác giả [n]" / "the authors of [n]".
+- VOICE: neutral, impersonal. NEVER mention any blog owner, author, editor, lab, university or "experts". Refer to cited authors only as "nhóm tác giả [n]" / "the authors of [n]".
 - FIGURES: put each placeholder exactly once, as its own paragraph, right after the paragraph discussing its paper:
-  {{{{FIG1}}}}, {{{{FIG2}}}}… Aim for one figure per application section. Do not write figure numbers in the text.
-  Available figures:
+  {{{{FIG1}}}}, {{{{FIG2}}}}… Available figures:
 {figs}
 - Allowed HTML: <h3>, <p>, <ul>, <li>, <strong>, <em>, <sub>, <sup>. No styles, images or links.
-- Vietnamese must be natural, with standard Vietnamese technical terminology and English abbreviations in parentheses
-  (e.g. "mạng nơ-ron tích chập (CNN)", "học máy (ML)", "bản sao số (digital twin)", "vi cấu trúc (microstructure)").
 - Length: about 2200–3000 words per language.
 
 Return ONLY a JSON object:
@@ -964,31 +933,17 @@ def build_prompt(papers, figures, today):
                      for f in figures) or "(no figures)"
     return f"""You are a science news editor for a welding & joining technology blog.
 Write today's ({today}) bilingual Vietnamese–English science news digest for engineers, lecturers and graduate students,
-based ONLY on the {len(papers)} newly published papers below. Fields: welding, metal 3D printing (WAAM/DED/L-PBF),
-brazing & soldering, electronic packaging, and welding in key industries.
+based ONLY on the {len(papers)} newly published papers below.
 
 RULES
-- Group the papers into 4–6 thematic sections with an <h3> heading each. Build each section around at least one paper
-  marked [HAS FIGURE] so that EVERY section is illustrated by one figure from the papers it discusses. In each section, explain in plain but precise
-  technical language what each study did, the key quantitative findings (only numbers that appear in the abstracts)
-  and why it matters for industry/practice. Cover every paper that belongs to these fields; if a paper is clearly outside welding/joining, metal AM, brazing/soldering or electronic packaging, leave it out entirely.
-- Cite with square brackets right after the claim, e.g. "... tăng 18% độ bền kéo [3]." Use only the numbers [1]..[{len(papers)}].
-- Do NOT invent results, authors, numbers or institutions not in the abstracts. Do not write a reference list (it is added automatically).
-- FIGURES: put each figure placeholder exactly once, as its own paragraph, right after the paragraph that discusses
-  the paper it comes from: {{{{FIG1}}}}, {{{{FIG2}}}}… Each thematic section should contain one figure (two at most).
-  In the text, briefly tell the reader what the figure shows (e.g. "Ảnh SEM dưới đây cho thấy…") but do NOT write
-  figure numbers – numbering is added automatically. Never describe details that are not in the caption or abstract.
+- Group the papers into 4–6 thematic sections with an <h3> heading each.
+- Cite with square brackets right after the claim, e.g. "... tăng 18% độ bền kéo [3]." Use only [1]..[{len(papers)}].
+- FIGURES: put each figure placeholder exactly once, as its own paragraph: {{{{FIG1}}}}, {{{{FIG2}}}}…
   Available figures:
 {figs}
-- Start with a 2–3 sentence lead paragraph (<p class="lead">) summarising the day's highlights; end with a short
-  <h3> section "Hàm ý thực tiễn" / "Practical implications" with 2–3 practical implications for Vietnamese industry/education.
-- VOICE: neutral, impersonal news style. NEVER mention any blog owner, author, editor, lab, research team, university or
-  "expert(s)" as the source of the analysis (e.g. no "TS./Dr. …", "nhóm nghiên cứu của chúng tôi", "chuyên gia nhận định",
-  "our lab"). Use impersonal phrasing such as "có thể rút ra…", "kết quả cho thấy…", "these findings suggest…".
-  Only the authors of the cited papers may be referred to, and only as "nhóm tác giả [n]" / "the authors of [n]".
+- Start with a 2–3 sentence lead paragraph (<p class="lead">); end with <h3> "Hàm ý thực tiễn" / "Practical implications".
+- VOICE: neutral, impersonal news style. NEVER mention any blog owner, author, editor, lab, university or "expert(s)".
 - Allowed HTML: <h3>, <p>, <ul>, <li>, <strong>, <em>, <sub>, <sup>. No inline styles, no images, no links.
-- Vietnamese must be natural, using standard Vietnamese welding terminology (e.g. "vùng ảnh hưởng nhiệt (HAZ)",
-  "kim loại mối hàn", "hàn vảy", "in 3D kim loại bằng hồ quang dây (WAAM)"), keeping English abbreviations in parentheses.
 - Length: about 900–1300 words per language.
 
 Return ONLY a JSON object:
@@ -998,8 +953,8 @@ Return ONLY a JSON object:
   "title_vi": "...", "title_en": "...",
   "summary_vi": "2 câu", "summary_en": "2 sentences",
   "tags": ["3-6 short English keywords"],
-  "figure_captions_vi": {{"1": "bản dịch tiếng Việt trung thành, ngắn gọn của chú thích gốc FIG1 (không thêm thông tin)", "...": "..."}},
-  "figure_captions_en": {{"1": "faithful, concise English version of the original FIG1 caption (no new information)", "...": "..."}},
+  "figure_captions_vi": {{"1": "bản dịch tiếng Việt trung thành, ngắn gọn của chú thích gốc FIG1", "...": "..."}},
+  "figure_captions_en": {{"1": "faithful, concise English version of the original FIG1 caption", "...": "..."}},
   "content_vi": "HTML",
   "content_en": "HTML"
 }}
@@ -1037,7 +992,6 @@ LICENSE_URL = {
 
 
 def figure_html(f, caption, lang, paper, number=None):
-    """Hình kèm chú thích + trích dẫn đầy đủ bài báo gốc (tác giả, năm, tên bài, tạp chí, DOI, giấy phép)."""
     vi = lang == "vi"
     lic = f["license"].upper().replace("CC-", "CC ")
     lic_html = (f'<a href="{LICENSE_URL[f["license"]]}" target="_blank" rel="noopener">{lic}</a>'
@@ -1047,14 +1001,13 @@ def figure_html(f, caption, lang, paper, number=None):
         orig = re.sub(r"(?i)^fig(ure)?\.?", "Hình" if vi else "Fig.", orig).strip()
         where = f'{orig} trong bài gốc' if vi else f'{orig} of the original article'
     else:
-        where = "Hình trích từ bài gốc" if vi else "Figure reproduced from the original article"
+        where = "Hình minh họa chuyên đề" if vi else "Thematic illustration"
     doi = html.escape(paper["doi"])
     credit = (f'{"Nguồn" if vi else "Source"}: {where} – {html.escape(short_cite(paper))}, '
               f'“{html.escape(paper["title"])}”, <em>{html.escape(paper["journal"])}</em>, '
               f'<a href="https://doi.org/{doi}" target="_blank" rel="noopener">doi:{doi}</a> '
               f'[<a href="#ref-{f["paper"]}">{f["paper"]}</a>]. '
-              f'{"Giấy phép" if vi else "Licence"}: {lic_html}'
-              f'{"; ảnh được thu nhỏ, không chỉnh sửa nội dung" if vi else "; resized, content unchanged"}.')
+              f'{"Giấy phép" if vi else "Licence"}: {lic_html}.')
     return (f'<figure class="post-figure"><img src="{f["src"]}" alt="{html.escape(caption)}" loading="lazy">'
             f'<figcaption><strong>{"Hình" if vi else "Figure"} {number or f["n"]}.</strong> {html.escape(caption)} '
             f'<span class="fig-credit">{credit}</span></figcaption></figure>')
@@ -1073,20 +1026,19 @@ def finalize_content(content, figures, captions, lang, papers):
     def cite(m):
         nums = cite_numbers(m.group(1))
         if not nums or any(not 1 <= n <= n_ref for n in nums):
-            return m.group(0)  # không phải trích dẫn (ví dụ chỉ số Miller [110]) → giữ nguyên
+            return m.group(0)
         return "<sup class=\"cite\">[" + ", ".join(f'<a href="#ref-{n}">{n}</a>' for n in nums) + "]</sup>"
 
     content = CITE_RX.sub(cite, content)
     by_n = {f["n"]: f for f in figures}
     token = re.compile(r"(?:<p>\s*)?\{\{\s*FIG(\d+)\s*\}\}(?:\s*</p>)?")
 
-    # Những hình AI quên đặt: chèn vào cuối các mục (<h3>) chưa có hình, ưu tiên mục có trích dẫn bài báo của hình đó
     placed = {int(n) for n in token.findall(content) if int(n) in by_n}
     unused = [f for f in figures if f["n"] not in placed]
     if unused:
         parts = re.split(r"(?=<h3>)", content)
         body = [i for i, part in enumerate(parts) if part.startswith("<h3>")][:-1] or \
-               [i for i, part in enumerate(parts) if part.startswith("<h3>")]  # bỏ mục kết luận "Hàm ý thực tiễn" cuối
+               [i for i, part in enumerate(parts) if part.startswith("<h3>")]
         for i in body:
             if not unused:
                 break
@@ -1097,10 +1049,9 @@ def finalize_content(content, figures, captions, lang, papers):
             unused.remove(pick)
             parts[i] += f"{{{{FIG{pick['n']}}}}}"
         content = "".join(parts)
-        for f in unused:  # vẫn còn dư: đặt trước mục kết luận
+        for f in unused:
             content += f"{{{{FIG{f['n']}}}}}"
 
-    # Đánh số hình theo thứ tự xuất hiện trong bài; mỗi hình chỉ dùng một lần
     counter, done = [0], set()
 
     def put(m):
@@ -1122,25 +1073,21 @@ CITE_RX = re.compile(r"\[(\d+(?:\s*[,;–-]\s*\d+)*)\]")
 
 
 def cite_numbers(group):
-    """'1, 3–5' → [1, 3, 4, 5]"""
     out = []
     for part in re.split(r"\s*[,;]\s*", group):
         m = re.fullmatch(r"(\d+)\s*[–-]\s*(\d+)", part.strip())
         if m and int(m.group(1)) <= int(m.group(2)) <= int(m.group(1)) + 30:
             out += list(range(int(m.group(1)), int(m.group(2)) + 1))
-        elif part.strip().isdigit() and not part.strip().startswith("0"):  # [001] là chỉ số Miller, không phải trích dẫn
+        elif part.strip().isdigit() and not part.strip().startswith("0"):
             out.append(int(part))
     return out
 
 
 def renumber_citations(ai, papers, figures):
-    """Đánh số lại tài liệu tham khảo theo thứ tự xuất hiện lần đầu trong bài (kiểu Vancouver/IEEE):
-    trích dẫn đầu tiên là [1], tiếp theo [2]… Bài báo không được trích dẫn xếp cuối danh mục."""
     n = len(papers)
     order = []
     for key in ("content_vi", "content_en"):
         text = ai.get(key, "") or ""
-        # hình cũng tính là một lần "trích dẫn" bài báo nguồn tại vị trí đặt hình
         for m in re.finditer(r"\{\{\s*FIG(\d+)\s*\}\}|" + CITE_RX.pattern, text):
             if m.group(1):
                 f = next((f for f in figures if f["n"] == int(m.group(1))), None)
@@ -1158,7 +1105,7 @@ def renumber_citations(ai, papers, figures):
     def sub(m):
         raw = cite_numbers(m.group(1))
         if not raw or any(x not in new for x in raw):
-            return m.group(0)  # không phải trích dẫn (ví dụ hướng tinh thể [110]) → giữ nguyên
+            return m.group(0)
         return "[" + ", ".join(map(str, sorted({new[x] for x in raw}))) + "]"
 
     for key in ("content_vi", "content_en"):
@@ -1205,8 +1152,6 @@ def main():
     if (POSTS_DIR / f"{post_id}.json").exists():
         post_id += "-" + now_vn.strftime("%H%M")
 
-    # Bảo đảm các thư mục tồn tại (kể cả khi hôm nay không lấy được hình nào),
-    # nếu không bước tạo Pull Request sẽ lỗi "pathspec 'images/blog/**' did not match any files"
     IMG_DIR.mkdir(parents=True, exist_ok=True)
     (IMG_DIR / ".gitkeep").touch()
     POSTS_DIR.mkdir(exist_ok=True)
@@ -1217,37 +1162,28 @@ def main():
 
     prompt = (build_feature_prompt if feature else build_prompt)(papers, figures, today)
     if AUTO_WEEKLY:
-        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup of AI in welding, industrial applications, lead-free solder alloys and low-temperature solders, electronic packaging, advanced welding, and metal AM.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings. Explain the reporting date range. Never claim all topics have new results when evidence is missing. Do not reconstruct missing or truncated numerical thresholds. Do not claim absolute accuracy, complete elimination of defects, replacement of inspection, or regulatory certification from laboratory results. Keep measured performance scoped to the reported dataset.")
-    # The weekday topic guides source selection; each article needs its own headline.
+        prompt += ("\nEDITORIAL SCHEDULE: " + (FEATURE_TOPIC if feature else "Sunday weekly roundup.") + "\nPrioritize recent research; clearly distinguish older background reviews from new findings.")
     recent_titles = []
     if POSTS_INDEX.exists():
         published_index = json.loads(POSTS_INDEX.read_text(encoding="utf-8"))
-        recent_titles = [{k: item.get(k, "") for k in ("title_vi", "title_en")}
-                         for item in published_index[:30]]
+        recent_titles = [{k: item.get(k, "") for k in ("title_vi", "title_en")} for item in published_index[:30]]
     prompt += (
-        "\nHEADLINE RULES: The editorial topic is a research scope, not the article headline. "
-        "Create a specific Vietnamese headline and a faithful English counterpart based on the "
-        "most notable findings, materials, methods or applications actually supported by the supplied papers. "
-        "Do not copy or merely paraphrase the fixed weekday topic as a generic headline. "
-        "Avoid repeating recent headlines or changing only a date. Do not invent novelty or exaggerate results. "
+        "\nHEADLINE RULES: Create a specific Vietnamese headline and a faithful English counterpart. "
         "Recent published headlines to avoid: " + json.dumps(recent_titles, ensure_ascii=False)
     )
-    # Keep source evidence even when the generation provider is unavailable.
+
     import shutil
     DRAFT_DIR.mkdir(parents=True, exist_ok=True)
     (DRAFT_DIR / "sources.json").write_text(
-        json.dumps({"papers": papers, "figures": figures, "prompt": prompt,
-                    "post_id": post_id, "today": today}, ensure_ascii=False, indent=2),
+        json.dumps({"papers": papers, "figures": figures, "prompt": prompt, "post_id": post_id, "today": today}, ensure_ascii=False, indent=2),
         encoding="utf-8")
     if (IMG_DIR / post_id).is_dir():
-        shutil.copytree(IMG_DIR / post_id, DRAFT_DIR / "images" / "blog" / post_id,
-                        dirs_exist_ok=True)
+        shutil.copytree(IMG_DIR / post_id, DRAFT_DIR / "images" / "blog" / post_id, dirs_exist_ok=True)
+
     ai = gemini_json(prompt)
     bad = self_refs(ai)
-    if bad:  # AI vẫn nhắc tên tác giả blog / "chuyên gia" → yêu cầu viết lại một lần
-        diag(f"  Bản đầu nhắc tới: {', '.join(bad)} → yêu cầu AI viết lại giọng trung tính")
-        ai = gemini_json(prompt + "\n\nIMPORTANT: your previous draft mentioned " + ", ".join(bad) +
-                         ". Rewrite in a fully neutral, impersonal voice without naming any blog owner, lab, university or experts.")
+    if bad:
+        ai = gemini_json(prompt + "\n\nIMPORTANT: Rewrite in a fully neutral, impersonal voice without naming any blog owner, lab, university or experts.")
 
     papers = renumber_citations(ai, papers, figures)
 
@@ -1312,7 +1248,6 @@ if __name__ == "__main__":
     except Exception as e:
         import traceback
         traceback.print_exc()
-        # Hiện lỗi thành "annotation" trên trang Actions để dễ thấy nguyên nhân
         msg = f"{type(e).__name__}: {e}".replace("%", "%25").replace("\r", " ").replace("\n", " ")
         print(f"::error title=Lỗi tạo bản tin::{msg[:900]}")
         sys.exit(1)

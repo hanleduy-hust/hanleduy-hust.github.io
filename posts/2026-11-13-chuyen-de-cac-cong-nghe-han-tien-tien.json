@@ -1,0 +1,279 @@
+{
+  "id": "2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien",
+  "date": "2026-11-13",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Nghiên cứu và Tiến bộ trong Công nghệ Hàn Tiên tiến: Cơ chế Vi cấu trúc, Mô hình hóa Học máy và Kiểm soát Khuyết tật",
+  "title_en": "Research and Advances in Advanced Welding Technologies: Microstructural Mechanisms, Machine Learning Modeling, and Defect Control",
+  "summary_vi": "Bài viết phân tích các công nghệ hàn tiên tiến dựa trên tài liệu nghiên cứu gần đây, tập trung vào hàn laser dao động, hàn khuấy ma sát, hàn lai và phương pháp học máy để dự đoán cơ tính mối hàn. Các thách thức về khuyết tật vi cấu trúc, kiểm soát ứng suất nhiệt và ứng dụng công nghiệp cũng được thảo luận chi tiết.",
+  "summary_en": "This article examines advanced welding technologies based on recent research literature, focusing on oscillating laser welding, friction stir welding, hybrid welding, and machine learning methods for predicting weld mechanical properties. Challenges related to microstructural defects, thermal stress control, and industrial applications are discussed in detail.",
+  "tags": [
+    "advanced welding",
+    "friction stir welding",
+    "laser welding",
+    "machine learning",
+    "microstructure"
+  ],
+  "cover": "images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig2.jpg",
+  "content_vi": "<h3>1. Dẫn nhập</h3><p class=\"lead\">Sự phát triển không ngừng của các ngành công nghiệp chế tạo tiên tiến đòi hỏi những phương pháp liên kết vật liệu có độ chính xác cao, khả năng kiểm soát nhiệt tốt và độ bền cơ học vượt trội. Các công nghệ hàn truyền thống hiện đang đối mặt với giới hạn kỹ thuật khi gia công các hợp kim nhẹ và cấu trúc dị chủng hiện đại. Việc ứng dụng các kỹ thuật hàn năng lượng tập trung, hàn trạng thái rắn và mô hình hóa tiên tiến đóng vai trò then chốt trong việc khắc phục những rào cản này.</p><p class=\"lead\">Bối cảnh nghiên cứu cập nhật đến tháng 11 năm 2026 cho thấy nhiều bước tiến lớn trong việc tối ưu hóa vi cấu trúc, kiểm soát khuyết tật vũng hàn và tích hợp trí tuệ nhân tạo. Bài viết này tổng hợp và phân tích các kết quả thực nghiệm từ các công trình khoa học quốc tế gần đây nhằm cung cấp bức tranh toàn diện cho các kỹ sư và nhà nghiên cứu.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig2.jpg\" alt=\"Ảnh vi hợp kim quang học của (a) vật liệu nền AA7475, (b) vật liệu nền AA2050, và (c) vùng khuấy.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Ảnh vi hợp kim quang học của (a) vật liệu nền AA7475, (b) vật liệu nền AA2050, và (c) vùng khuấy. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Cholairaj et al. (2026), “Predictive Modelling of Ultimate Tensile Strength in Similar and Dissimilar AA2050-AA7475 Friction Stir Welds Using Machine Learning”, <em>Materials Research Express</em>, <a href=\"https://doi.org/10.1088/2053-1591/aebfe6\" target=\"_blank\" rel=\"noopener\">doi:10.1088/2053-1591/aebfe6</a> [<a href=\"#ref-2\">2</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>2. Bối cảnh</h3><p>Trong ngành chế tạo ô tô, hàng không vũ trụ và điện tử chính xác, yêu cầu giảm trọng lượng kết cấu thông qua việc sử dụng vật liệu nhẹ như hợp kim nhôm cường độ cao, titan và vật liệu composite ngày càng trở nên bức thiết <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>]</sup>. Tuy nhiên, các phương pháp hàn nóng chảy truyền thống thường gây ra hiện tượng biến dạng nhiệt lớn, hình thành các pha giòn ở vùng giao diện và khuyết tật nứt nóng <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>]</sup>.</p><p>Các thách thức kỹ thuật cốt lõi bao gồm việc kiểm soát sự hình thành hợp chất liên kim loại (IMC) quá dày trong mối hàn dị chủng <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, hiện tượng rỗ khí và mất ổn định lỗ khóa trong hàn laser <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>, cũng như sự suy giảm cơ tính do tăng trưởng hạt quá mức ở vùng ảnh hưởng nhiệt (HAZ) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-8\">8</a>]</sup>. Để giải quyết các vấn đề này, các công nghệ hàn tiên tiến như hàn laser dao động, hàn khuấy ma sát (FSW), hàn lai laser-hồ quang (LAHW) và các phương pháp mô hình hóa học máy (ML) đã được phát triển và nghiên cứu sâu rộng nhằm tối ưu hóa năng lượng đầu vào và nâng cao độ tin cậy của mối liên kết <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-9\">9</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig3.jpg\" alt=\"Sự phân bố nhiệt độ trên bề mặt của giọt kim loại lỏng.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Sự phân bố nhiệt độ trên bề mặt của giọt kim loại lỏng. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Gou et al. (2026), “A review on critical aspects influencing droplet transfer in laser-arc hybrid welding”, <em>Journal of the Brazilian Society of Mechanical Sciences and Engineering</em>, <a href=\"https://doi.org/10.1007/s40430-026-06701-2\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40430-026-06701-2</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>3. Nguyên lý, Tiến bộ Công nghệ và Vi cấu trúc</h3><p>Công nghệ hàn laser dao động sợi quang (fiber laser welding) đã được đánh giá như một giải pháp thay thế hiệu quả cho hàn hồ quang kim loại khí bảo vệ hoạt tính (GMAW/MAG) trong chế tạo vành bánh xe nông nghiệp từ thép SAE 1010 dày 4,25 mm <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> chỉ ra rằng năng lượng nhiệt danh định của hàn laser thấp hơn đáng kể (0,019 kJ/mm so với 0,64 kJ/mm của GMAW/MAG). Kết quả thực nghiệm trên một mặt cắt ngang cho thấy mối hàn laser có chiều rộng bề mặt nhỏ hơn (5,70 mm so với 12,97 mm), độ lồi thấp hơn (0,56 mm so với 3,93 mm) và vùng ảnh hưởng nhiệt hẹp hơn (0,85 mm so với 2,10 mm) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Độ cứng trung bình ở vùng nóng chảy đạt 158,6 ± 18,9 HV1 đối với hàn laser và 190,4 ± 11,0 HV1 đối với GMAW/MAG <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Tất cả các mẫu hàn laser đều vượt qua thử nghiệm uốn định hình và hoàn thành quá trình tạo hình công nghiệp, trong khi có 2 trên 10 mẫu GMAW/MAG bị nứt <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig1.jpg\" alt=\"Ảnh vi hợp kim quang học của vật liệu nền và vùng ảnh hưởng nhiệt: (a) hàn laser, vật liệu nền; (b) hàn laser, vùng ảnh hưởng nhiệt; (c) GMAW/MAG, vật liệu nền; và (d) GMAW/MAG, vùng ảnh hưởng nhiệt.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Ảnh vi hợp kim quang học của vật liệu nền và vùng ảnh hưởng nhiệt: (a) hàn laser, vật liệu nền; (b) hàn laser, vùng ảnh hưởng nhiệt; (c) GMAW/MAG, vật liệu nền; và (d) GMAW/MAG, vùng ảnh hưởng nhiệt. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Queiroz et al. (2026), “Comparative Evaluation of Oscillating Fiber Laser Welding and GMAW/MAG for SAE 1010 Agricultural Wheel Rims”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214746\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214746</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong lĩnh vực hàn trạng thái rắn, hàn khuấy ma sát (FSW) và hàn chùm tia điện tử (EBW) đã được khảo sát trên hợp kim nhôm-magiê-silic (Al-Mg-Si) để đánh giá sự ổn định vi cấu trúc dưới tác động của nhiệt luyện sau hàn (PWHT) <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Cả hai phương pháp đều tạo ra ứng suất dư kéo vượt quá 130 MPa ở trạng thái sau hàn <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Tuy nhiên, EBW giữ lại cấu trúc nhánh cây thô với kích thước trung bình khoảng 34 µm ở vùng nóng chảy, trong khi FSW tạo ra vùng khuấy tái kết tinh động với cấu trúc hạt mịn khoảng 2 µm <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Sau quá trình nhiệt luyện hoàn toàn, các mẫu EBW đạt hiệu suất kéo lên tới 108% so với vật liệu nền T6 <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><p>Đối với việc nối hợp kim nhôm với thép cường độ cao, nghiên cứu về hàn khuấy ma sát hỗ trợ bằng laser (LAFSW) trên hợp kim Al 5052 và thép DP 590 cho thấy cường độ kéo tối đa đạt 193 MPa, tương đương khoảng 88% độ bền kéo của vật liệu nền nhôm <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Lớp hợp chất liên kim loại dày khoảng 5 µm được hình thành gồm các pha FeAl, Fe2Al5 và Fe4Al13, góp phần tăng cường độ bền mối hàn <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig6.jpg\" alt=\"Hình thái bề mặt gãy sau thử nghiệm kéo của các mẫu hàn dị chủng.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Hình thái bề mặt gãy sau thử nghiệm kéo của các mẫu hàn dị chủng. <span class=\"fig-credit\">Nguồn: Hình 11 trong bài gốc – Kim et al. (2026), “Joining of Al 5052 Alloy to Advanced High-Strength Steel Sheets of Dissimilar Thickness Using Laser-Assisted Friction Stir Welding”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214677\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214677</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Hàn lai laser-hồ quang (LAHW) cũng ghi nhận nhiều cải tiến quan trọng trong việc điều khiển dòng chuyển giọt và tăng chiều sâu ngấu khi kết hợp nguồn nhiệt laser liên tục hoặc xung với hồ quang <sup class=\"cite\">[<a href=\"#ref-9\">9</a>, <a href=\"#ref-10\">10</a>]</sup>. Nghiên cứu trên hợp kim nhôm 5083 cho thấy việc kiểm soát đồng thời tần số xung và công suất laser giúp tăng diện tích kim loại nóng chảy và chiều sâu ngấu so với phương pháp hàn hồ quang thông thường <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><h3>4. Kiểm soát Khuyết tật và Cơ chế Biến dạng</h3><p>Khuyết tật nứt nóng xuyên tâm trong quá trình hàn tốc độ cao các hợp kim nhôm sê-ri 6000 thường xuất hiện do sụt giảm áp suất tĩnh trong vũng hàn <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Để khắc phục, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> đã đề xuất áp dụng cơ chế nén cơ học theo phương vuông góc với hướng hàn bằng thiết bị kẹp chuyên dụng. Kết quả thực nghiệm cho thấy việc áp dụng ứng suất nén ngang –30 MPa giúp giảm số lượng vết nứt nóng xuyên tâm đi bốn lần so với điều kiện kẹp tiêu chuẩn (–0,5 MPa) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig5.jpg\" alt=\"Số lượng vết nứt nóng xuyên tâm trung bình và biến dạng xuyên tâm khi kết thúc vũng hàn.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Số lượng vết nứt nóng xuyên tâm trung bình và biến dạng xuyên tâm khi kết thúc vũng hàn. <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Michel et al. (2026), “Application of compressive stress during high-speed laser welding to mitigate transverse hot cracking in a 6000-series aluminum alloy”, <em>Materials &amp; Design</em>, <a href=\"https://doi.org/10.1016/j.matdes.2026.117451\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.matdes.2026.117451</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong quá trình hàn laser nhiều lớp lá nhôm vào tấm nền, sự bất ổn định của lỗ khóa (keyhole) dẫn đến hiện tượng rỗ khí và thiếu ngấu <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Thông qua quan sát bằng tia X đồng bộ (synchrotron X-ray), nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> đã xác định rằng việc tiền cố định siêu âm làm giảm độ tương thích của chồng lá nhôm, gây ra dao động lỗ khóa lớn và tăng tỷ lệ rỗ khí. Ngược lại, các chồng lá nhôm không tiền cố định có độ co giãn hiệu quả cao hơn, giúp ổn định hành vi lỗ khóa và giảm thiểu khuyết tật <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig7.jpg\" alt=\"Bản đồ quy trình hàn laser nhiều lớp lá nhôm vào tấm nền.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Bản đồ quy trình hàn laser nhiều lớp lá nhôm vào tấm nền. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Bhatt et al. (2026), “Interfacial contact and stack compliance effects on keyhole instability and defect formation in multilayer laser welding”, <em>Journal of Materials Processing Technology</em>, <a href=\"https://doi.org/10.1016/j.jmatprotec.2026.119562\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.jmatprotec.2026.119562</a> [<a href=\"#ref-7\">7</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Đối với vật liệu composite nền titan (MMCs) được gia cố bằng hạt TiC và TiB, quá trình luyện kim bột kết hợp ép đẳng nhiệt nóng (HIP) cho thấy sự kiểm soát chặt chẽ cấu trúc hạt và hình thái pha gia cố (như hình kim hoặc dạng cầu gai của TiB) đóng vai trò quyết định trong việc ngăn ngừa khuyết tật rỗ khí tại chân các hạt gia cố và cải thiện độ dai va đập <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig4.jpg\" alt=\"Ảnh hiển vi điện tử quét (SEM) của vật liệu composite gia cố bằng TiC (a) và TiB (b–d).\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Ảnh hiển vi điện tử quét (SEM) của vật liệu composite gia cố bằng TiC (a) và TiB (b–d). <span class=\"fig-credit\">Nguồn: Hình 5 trong bài gốc – Prikhodko (2026), “Titanium-Based Laminated and Hybrid Architectures Fabricated by Powder Metallurgy: Evolution from Constituent Design Toward Interface and Deformation Control”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110476\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110476</a> [<a href=\"#ref-3\">3</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><p>Trong các mối hàn dị chủng chịu nhiệt độ cao như hợp kim 718/718Plus được hàn bằng chùm tia điện tử và phơi nhiễm nhiệt dài hạn ở 760 °C trong 1000 giờ, pha Laves không ổn định đã chuyển đổi tại chỗ thành tập hợp pha δ + η + σ <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Các pha này phát triển chậm dọc theo mặt phẳng mầm {111}γ, giải thích cho sự tồn tại và độ bền kéo dài của mối hàn trong điều kiện vận hành nhiệt độ cao khắc nghiệt <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><h3>5. Mô hình hóa Học máy và Tối ưu hóa Quy trình</h3><p>Việc ứng dụng các thuật toán học máy (ML) để dự đoán cơ tính và tối ưu hóa thông số hàn đang trở thành xu hướng tất yếu trong kỹ thuật nối vật liệu <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Trong nghiên cứu về hàn khuấy ma sát các hợp kim nhôm hàng không AA2050 và AA7475, một tập dữ liệu gồm 108 thí nghiệm đã được xây dựng dựa trên sáu thông số quá trình: góc nghiêng, đường kính vai dụng cụ, tốc độ quay, đường kính chốt, độ lệch tâm và tốc độ tịnh tiến <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Năm mô hình học máy gồm Mạng nơ-ron nhân tạo (ANN), Hồi quy véc-tơ hỗ trợ (SVR), Rừng ngẫu nhiên (RFR), XGBoost và Hồi quy quá trình Gaussian (GPR) đã được đánh giá <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Mô hình XGBoost đạt độ chính xác dự đoán cao nhất với hệ số xác định R² = 0,761, trong khi mô hình GPR được lựa chọn nhờ khả năng mô tả biến thiên liên tục và ước tính độ bất định với sai số tương đối trung bình tuyệt đối (MAPE) chỉ 2,1% <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Kết quả phân tích xác định loại liên kết là yếu tố ảnh hưởng mạnh nhất đến giới hạn bền kéo (UTS), với các thông số tối ưu nằm ở tốc độ quay 700–900 vòng/phút đối với mối nối dị chủng và tốc độ tịnh tiến 180–220 mm/phút đối với mối nối đồng chủng <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig8.jpg\" alt=\"Ảnh hiển vi điện tử truyền qua (TEM) của mặt ghép Sn–Zn–Al/sapphire.\" loading=\"lazy\"><figcaption><strong>Hình 8.</strong> Ảnh hiển vi điện tử truyền qua (TEM) của mặt ghép Sn–Zn–Al/sapphire. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Yan et al. (2025), “Advances of Welding Technology of Glass for Electrical Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18174096\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18174096</a> [<a href=\"#ref-14\">14</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>6. Thách thức</h3><p>Mặc dù các công nghệ hàn tiên tiến đạt được nhiều thành tựu đáng kể, việc triển khai công nghiệp vẫn vấp phải nhiều rào cản kỹ thuật <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Các thách thức lớn bao gồm sự mâu thuẫn giữa ràng buộc nhiệt động lực học, tính chất vật lý nội tại của vật liệu và các bất định hình học không gian <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>Trong các kỹ thuật hàn lai và hàn ghép dính (weld-bonding), việc quản lý ứng suất dư, bảo vệ lớp keo cấu trúc không bị suy thoái nhiệt và đảm bảo độ bền mỏi dài hạn dưới tải trọng động vẫn là những bài toán phức tạp <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Đối với hàn kính và vật liệu gốm, việc kiểm soát ứng suất dư do khác biệt hệ số giãn nở nhiệt (CTE) và thiết kế khả năng tương thích giao diện đòi hỏi quy trình cực kỳ nghiêm ngặt <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Thêm vào đó, chất lượng và sự thiếu hụt dữ liệu đầu vào chuẩn hóa cho các mô hình học máy làm giảm khả năng tổng quát hóa của thuật toán trong điều kiện sản xuất công nghiệp thực tế <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><h3>7. Xu thế tương lai</h3><p>Dựa trên các tài liệu tổng quan, một số định hướng phát triển trong tương lai được kỳ vọng sẽ định hình ngành công nghệ hàn:</p><ul><li>Tích hợp cảm biến thông minh và hệ thống điều khiển thích ứng thời gian thực nhằm bù đắp biến dạng nhiệt và dao động vũng hàn ngay trong quá trình gia công <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-9\">9</a>]</sup>.</li><li>Phát triển các mô hình học máy kết hợp vật lý (physics-informed machine learning) để nâng cao độ chính xác trong việc dự đoán vi cấu trúc và độ bền mỏi của mối hàn dị chủng <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-13\">13</a>]</sup>.</li><li>Mở rộng ứng dụng các phương pháp hàn năng lượng lai kết hợp trường vật lý phụ trợ (như siêu âm, từ trường hoặc áp lực cơ học) nhằm kiểm soát tốt hơn hình thái vũng hàn và giảm thiểu khuyết tật <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-9\">9</a>]</sup>.</li><li>Tối ưu hóa các hệ thống hàn vi mô và đóng gói chính xác cho thiết bị điện tử, quang điện và hệ thống cơ điện tử vi mô (MEMS) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>, <a href=\"#ref-14\">14</a>]</sup>.</li></ul><h3>8. Hàm ý thực tiễn</h3><p>Các kết quả nghiên cứu mang lại những bài học thực tiễn quan trọng đối với ngành công nghiệp và giáo dục kỹ thuật tại Việt Nam:</p><ul><li>Các doanh nghiệp cơ khí và chế tạo ô tô cần đẩy mạnh chuyển giao công nghệ hàn laser dao động và hàn khuấy ma sát để nâng cao chất lượng sản phẩm, giảm thiểu công đoạn gia công tinh sau hàn như mài nhám <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</li><li>Các cơ sở đào tạo kỹ thuật cần cập nhật chương trình giảng dạy, tích hợp kiến thức về mô hình hóa học máy, khoa học vật liệu tính toán (CALPHAD) và phân tích vi cấu trúc vào chuyên ngành công nghệ chế tạo <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-11\">11</a>]</sup>.</li><li>Ngành công nghiệp phụ trợ nên chú trọng đầu tư nghiên cứu các giải pháp hàn dị chủng (như nhôm-thép hoặc nhôm-composite) nhằm đáp ứng nhu cầu giảm trọng lượng kết cấu trong giao thông vận tải <sup class=\"cite\">[<a href=\"#ref-4\">4</a>, <a href=\"#ref-6\">6</a>]</sup>.</li></ul>",
+  "content_en": "<h3>1. Introduction</h3><p class=\"lead\">The continuous evolution of advanced manufacturing industries demands high-precision material joining methods characterized by superior thermal control and exceptional mechanical integrity. Traditional welding processes increasingly encounter technical limitations when fabricating modern lightweight alloys and complex heterogeneous structures. The application of concentrated energy beam welding, solid-state joining, and advanced computational modeling plays a pivotal role in overcoming these barriers.</p><p class=\"lead\">Current research literature up to November 2026 demonstrates major strides in microstructural optimization, weld pool defect control, and artificial intelligence integration. This article synthesizes and analyzes empirical findings from recent international scientific works to provide a comprehensive perspective for engineers and researchers.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig2.jpg\" alt=\"Optical micrographs of (a) AA7475 base metal, (b) AA2050 base metal, and (c) stir zone.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Optical micrographs of (a) AA7475 base metal, (b) AA2050 base metal, and (c) stir zone. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Cholairaj et al. (2026), “Predictive Modelling of Ultimate Tensile Strength in Similar and Dissimilar AA2050-AA7475 Friction Stir Welds Using Machine Learning”, <em>Materials Research Express</em>, <a href=\"https://doi.org/10.1088/2053-1591/aebfe6\" target=\"_blank\" rel=\"noopener\">doi:10.1088/2053-1591/aebfe6</a> [<a href=\"#ref-2\">2</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>2. Background</h3><p>In the automotive, aerospace, and precision electronics sectors, the demand for structural weight reduction through the use of lightweight materials such as high-strength aluminum alloys, titanium, and composites has become critical <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-3\">3</a>, <a href=\"#ref-4\">4</a>]</sup>. However, conventional fusion welding methods frequently induce severe thermal distortion, the formation of brittle interfacial phases, and hot cracking defects <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-6\">6</a>]</sup>.</p><p>Core technical challenges involve controlling excessive intermetallic compound (IMC) layer growth in dissimilar joints <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>, porosity and keyhole instability in laser welding <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>, and mechanical degradation caused by excessive grain coarsening in heat-affected zones (HAZ) <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-8\">8</a>]</sup>. To address these issues, advanced welding technologies including oscillating fiber laser welding, friction stir welding (FSW), laser-arc hybrid welding (LAHW), and machine learning (ML) predictive modeling have been developed and extensively investigated to optimize energy input and enhance joint reliability <sup class=\"cite\">[<a href=\"#ref-1\">1</a>, <a href=\"#ref-2\">2</a>, <a href=\"#ref-6\">6</a>, <a href=\"#ref-9\">9</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig3.jpg\" alt=\"Thermal distribution across the surface of a molten droplet.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Thermal distribution across the surface of a molten droplet. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Gou et al. (2026), “A review on critical aspects influencing droplet transfer in laser-arc hybrid welding”, <em>Journal of the Brazilian Society of Mechanical Sciences and Engineering</em>, <a href=\"https://doi.org/10.1007/s40430-026-06701-2\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40430-026-06701-2</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>3. Principles, Technological Advances, and Microstructure</h3><p>Oscillating fiber laser welding has been evaluated as an effective alternative to gas metal arc welding with active shielding gas (GMAW/MAG) for manufacturing 4.25 mm thick SAE 1010 agricultural wheel rims <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. The authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> reported a substantially lower nominal laser energy input (0.019 kJ/mm versus 0.64 kJ/mm for GMAW/MAG). Transverse cross-section measurements demonstrated a smaller weld-face width (5.70 mm vs. 12.97 mm), lower convexity (0.56 mm vs. 3.93 mm), and a narrower heat-affected zone (0.85 mm vs. 2.10 mm) for laser welding <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Mean fusion-zone hardness reached 158.6 ± 18.9 HV1 for laser welding and 190.4 ± 11.0 HV1 for GMAW/MAG <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. All laser-welded specimens passed guided-bend tests and completed industrial forming, whereas two out of ten GMAW/MAG specimens fractured <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig1.jpg\" alt=\"Optical micrographs of the base metal and heat-affected zone: (a) laser welding, base metal; (b) laser welding, heat-affected zone; (c) GMAW/MAG, base metal; and (d) GMAW/MAG, heat-affected zone.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Optical micrographs of the base metal and heat-affected zone: (a) laser welding, base metal; (b) laser welding, heat-affected zone; (c) GMAW/MAG, base metal; and (d) GMAW/MAG, heat-affected zone. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Queiroz et al. (2026), “Comparative Evaluation of Oscillating Fiber Laser Welding and GMAW/MAG for SAE 1010 Agricultural Wheel Rims”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214746\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214746</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In solid-state joining, friction stir welding (FSW) and electron beam welding (EBW) were investigated on precipitate-hardened Al-Mg-Si alloys to evaluate microstructural stability under post-welding heat treatment (PWHT) <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Both techniques generated tensile residual stresses exceeding 130 MPa in as-welded conditions <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. However, EBW retained a coarse dendritic morphology with an average size of ~34 µm in the fusion zone, whereas FSW produced a dynamically recrystallized stir zone with a fine-grained structure of ~2 µm <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Following full PWHT, EBW specimens achieved a joint efficiency of up to 108% relative to the T6 base material <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p><p>For joining aluminum to advanced high-strength steel, laser-assisted friction stir welding (LAFSW) of Al 5052 and DP 590 yielded a maximum tensile strength of 193 MPa, corresponding to approximately 88% of the aluminum base metal strength <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. An intermetallic compound layer of approximately 5 µm thickness comprising FeAl, Fe2Al5, and Fe4Al13 phases formed at the interface, contributing to joint strength <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig6.jpg\" alt=\"Fracture surface morphologies after tensile test for dissimilar joints.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Fracture surface morphologies after tensile test for dissimilar joints. <span class=\"fig-credit\">Source: Fig. 11 of the original article – Kim et al. (2026), “Joining of Al 5052 Alloy to Advanced High-Strength Steel Sheets of Dissimilar Thickness Using Laser-Assisted Friction Stir Welding”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19214677\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19214677</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>Laser-arc hybrid welding (LAHW) also exhibited significant improvements in governing droplet transfer dynamics and increasing penetration depth by combining continuous or pulsed laser sources with electric arcs <sup class=\"cite\">[<a href=\"#ref-9\">9</a>, <a href=\"#ref-10\">10</a>]</sup>. Research on aluminum alloy 5083 demonstrated that synchronized control of pulse frequency and laser power increased both the melted metal area and penetration depth compared to conventional arc welding <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p><h3>4. Defect Control and Deformation Mechanisms</h3><p>Transverse hot cracking during high-speed laser welding of 6000-series aluminum alloys typically occurs due to a static pressure drop within the melt pool <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. To mitigate this issue, the authors of <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> proposed applying uniaxial mechanical compressive stress transverse to the welding direction using a specialized clamping device. Experimental findings showed that applying a transverse compressive stress of –30 MPa reduced the number of transverse hot cracks by a factor of four compared to standard clamping conditions (–0.5 MPa) <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig5.jpg\" alt=\"Average number of transverse hot cracks counted and transverse strain at the end of the melt pool.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Average number of transverse hot cracks counted and transverse strain at the end of the melt pool. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Michel et al. (2026), “Application of compressive stress during high-speed laser welding to mitigate transverse hot cracking in a 6000-series aluminum alloy”, <em>Materials &amp; Design</em>, <a href=\"https://doi.org/10.1016/j.matdes.2026.117451\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.matdes.2026.117451</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>During multilayer laser welding of aluminum foils to substrates, keyhole instability leads to porosity and lack of fusion defects <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Using operando synchrotron X-ray imaging, the authors of <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> established that ultrasonic pre-consolidation reduces stack conformity, leading to pronounced keyhole fluctuations and increased porosity. Conversely, unconsolidated foil stacks exhibited higher effective compliance, stabilizing keyhole behavior and reducing defect formation <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig7.jpg\" alt=\"Process map for laser welding multilayer aluminum foil stacks to aluminum substrates.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Process map for laser welding multilayer aluminum foil stacks to aluminum substrates. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Bhatt et al. (2026), “Interfacial contact and stack compliance effects on keyhole instability and defect formation in multilayer laser welding”, <em>Journal of Materials Processing Technology</em>, <a href=\"https://doi.org/10.1016/j.jmatprotec.2026.119562\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.jmatprotec.2026.119562</a> [<a href=\"#ref-7\">7</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>For titanium matrix composites (MMCs) reinforced with TiC and TiB particles, powder metallurgy combined with hot isostatic pressing (HIP) demonstrated that rigorous control of grain morphology and reinforcement topology (such as needle-like or sea-urchin morphologies of TiB) is critical in preventing pore nucleation at particle bases and improving impact toughness <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig4.jpg\" alt=\"SEM micrographs of TiC- (a) and TiB-reinforced (b–d) MMCs.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> SEM micrographs of TiC- (a) and TiB-reinforced (b–d) MMCs. <span class=\"fig-credit\">Source: Fig. 5 of the original article – Prikhodko (2026), “Titanium-Based Laminated and Hybrid Architectures Fabricated by Powder Metallurgy: Evolution from Constituent Design Toward Interface and Deformation Control”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110476\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110476</a> [<a href=\"#ref-3\">3</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><p>In high-temperature dissimilar joints such as Alloy 718/718Plus welded via electron beam and exposed to long-term thermal service at 760 °C for up to 1000 hours, unstable Laves phases transformed in situ into a δ + η + σ phase assemblage <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. These phases grew slowly along semicoherent {111}γ habit planes, accounting for the long-term persistence and mechanical stability of the joint under severe operating conditions <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p><h3>5. Machine Learning Modeling and Process Optimization</h3><p>The application of machine learning (ML) algorithms to predict mechanical properties and optimize welding parameters has become essential in joining engineering <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. In a study on friction stir welding of aerospace-grade aluminum alloys AA2050 and AA7475, a dataset of 108 experimental trials was generated using six process parameters: tilt angle, shoulder diameter, rotational speed, pin diameter, tool offset, and traverse speed <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><p>Five ML models including Artificial Neural Networks (ANN), Support Vector Regressors (SVR), Random Forest Regression (RFR), XGBoost, and Gaussian Process Regression (GPR) were evaluated <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. XGBoost achieved the highest prediction accuracy with R² = 0.761, while GPR was selected for its capability to model continuous variations and estimate uncertainty, yielding a mean absolute percentage error (MAPE) of only 2.1% <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Joint type was identified as the most influential factor on ultimate tensile strength (UTS), with optimal parameters established at rotational speeds of 700–900 rpm for dissimilar joints and traverse speeds of 180–220 mm/min for similar joints <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><figure class=\"post-figure\"><img src=\"images/blog/2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien/fig8.jpg\" alt=\"TEM image of the Sn–Zn–Al/sapphire interface.\" loading=\"lazy\"><figcaption><strong>Figure 8.</strong> TEM image of the Sn–Zn–Al/sapphire interface. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Yan et al. (2025), “Advances of Welding Technology of Glass for Electrical Applications”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma18174096\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma18174096</a> [<a href=\"#ref-14\">14</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>6. Challenges</h3><p>Despite significant achievements, industrial deployment of advanced welding technologies still faces numerous hurdles <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Major challenges include the conflicting constraints among thermodynamic boundaries, intrinsic material physical properties, and spatial geometric contradictions <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p><p>In hybrid joining and weld-bonding processes, managing residual stresses, protecting structural adhesives from thermal degradation, and ensuring long-term fatigue performance under dynamic loads remain complex tasks <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. For glass and ceramic joining, controlling residual stresses caused by thermal expansion coefficient (CTE) mismatches and designing interfacial compatibility require rigorous procedures <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>. Furthermore, data scarcity and inconsistent input quality for machine learning models constrain the generalization capability of algorithms in real manufacturing environments <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p><h3>7. Future Trends</h3><p>Based on reviewed literature, several future developmental directions are expected to shape welding technology:</p><ul><li>Integration of smart sensors and real-time adaptive control systems to compensate for thermal distortion and weld pool fluctuations during fabrication <sup class=\"cite\">[<a href=\"#ref-5\">5</a>, <a href=\"#ref-9\">9</a>]</sup>.</li><li>Development of physics-informed machine learning models to improve prediction accuracy for microstructures and fatigue life in dissimilar joints <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-13\">13</a>]</sup>.</li><li>Expansion of hybrid energy joining methods combined with auxiliary physical fields (such as ultrasound, magnetic fields, or mechanical pressure) to better govern melt pool dynamics and suppress defects <sup class=\"cite\">[<a href=\"#ref-3\">3</a>, <a href=\"#ref-7\">7</a>, <a href=\"#ref-9\">9</a>]</sup>.</li><li>Optimization of micro-welding and precision packaging systems for electronic devices, optoelectronics, and micro-electro-mechanical systems (MEMS) <sup class=\"cite\">[<a href=\"#ref-12\">12</a>, <a href=\"#ref-14\">14</a>]</sup>.</li></ul><h3>8. Practical Implications</h3><p>These research findings offer important practical implications for Vietnamese industry and technical education:</p><ul><li>Mechanical and automotive manufacturing enterprises should accelerate the technology transfer of oscillating laser welding and friction stir welding to enhance product quality and eliminate post-weld grinding operations <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</li><li>Technical educational institutions should update curricula by integrating knowledge of machine learning modeling, computational materials science (CALPHAD), and microstructural analysis into manufacturing engineering programs <sup class=\"cite\">[<a href=\"#ref-2\">2</a>, <a href=\"#ref-11\">11</a>]</sup>.</li><li>The supporting industry should focus investments on researching dissimilar joining solutions (such as aluminum-steel or aluminum-composites) to meet structural lightweighting demands in transportation <sup class=\"cite\">[<a href=\"#ref-4\">4</a>, <a href=\"#ref-6\">6</a>]</sup>.</li></ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Willian de Queiroz",
+        "Francisco Briones",
+        "Carola Martínez",
+        "William Haupt"
+      ],
+      "more_authors": false,
+      "title": "Comparative Evaluation of Oscillating Fiber Laser Welding and GMAW/MAG for SAE 1010 Agricultural Wheel Rims",
+      "journal": "Materials",
+      "date": "2026-11-08",
+      "doi": "10.3390/ma19214746",
+      "url": "https://doi.org/10.3390/ma19214746",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "T Cholairaj",
+        "Amala Justus Selvam"
+      ],
+      "more_authors": false,
+      "title": "Predictive Modelling of Ultimate Tensile Strength in Similar and Dissimilar AA2050-AA7475 Friction Stir Welds Using Machine Learning",
+      "journal": "Materials Research Express",
+      "date": "2026-11-09",
+      "doi": "10.1088/2053-1591/aebfe6",
+      "url": "https://doi.org/10.1088/2053-1591/aebfe6",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Sergey V. Prikhodko"
+      ],
+      "more_authors": false,
+      "title": "Titanium-Based Laminated and Hybrid Architectures Fabricated by Powder Metallurgy: Evolution from Constituent Design Toward Interface and Deformation Control",
+      "journal": "Journal of Manufacturing and Materials Processing",
+      "date": "2026-11-02",
+      "doi": "10.3390/jmmp10110476",
+      "url": "https://doi.org/10.3390/jmmp10110476",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Yuan Zhang",
+        "Shuo Wang",
+        "Yibo Sun",
+        "Changlong Zhao",
+        "Weiwei Li"
+      ],
+      "more_authors": false,
+      "title": "Friction Stir Welding of Dissimilar Materials: A Review on Joining Mechanism, Defects, and Process Optimization",
+      "journal": "Materials",
+      "date": "2026-06-01",
+      "doi": "10.3390/ma19112327",
+      "url": "https://doi.org/10.3390/ma19112327",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Johannes Michel",
+        "Frauke Holder",
+        "Felix Zaiß",
+        "Jonas Wagner",
+        "Christian Hagenlocher",
+        "Thomas G. Graf"
+      ],
+      "more_authors": false,
+      "title": "Application of compressive stress during high-speed laser welding to mitigate transverse hot cracking in a 6000-series aluminum alloy",
+      "journal": "Materials & Design",
+      "date": "2026-11-04",
+      "doi": "10.1016/j.matdes.2026.117451",
+      "url": "https://doi.org/10.1016/j.matdes.2026.117451",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Kyoung-Hak Kim",
+        "Hee-Seon Bang"
+      ],
+      "more_authors": false,
+      "title": "Joining of Al 5052 Alloy to Advanced High-Strength Steel Sheets of Dissimilar Thickness Using Laser-Assisted Friction Stir Welding",
+      "journal": "Materials",
+      "date": "2026-11-03",
+      "doi": "10.3390/ma19214677",
+      "url": "https://doi.org/10.3390/ma19214677",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Alisha Bhatt",
+        "Rakesh R. Kamath",
+        "Tianzhao Wang",
+        "Samuel J. Clark",
+        "Wei Zhang",
+        "Andrew Chihpin Chuang"
+      ],
+      "more_authors": true,
+      "title": "Interfacial contact and stack compliance effects on keyhole instability and defect formation in multilayer laser welding",
+      "journal": "Journal of Materials Processing Technology",
+      "date": "2026-11-01",
+      "doi": "10.1016/j.jmatprotec.2026.119562",
+      "url": "https://doi.org/10.1016/j.jmatprotec.2026.119562",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Marta Lipińska",
+        "Anna Paradowska",
+        "Florian Pixner",
+        "Andreas Huetter",
+        "Kamil Majchrowicz",
+        "Norbert Enzinger"
+      ],
+      "more_authors": true,
+      "title": "Microstructural stability and mechanical performance of friction stir and electron beam welded Al-Mg-Si joints subjected to post-welding heat treatment",
+      "journal": "Materials Chemistry and Physics",
+      "date": "2026-09-28",
+      "doi": "10.1016/j.matchemphys.2026.133172",
+      "url": "https://doi.org/10.1016/j.matchemphys.2026.133172",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Xinglu Gou",
+        "Peilei Zhang",
+        "Lingxiao Song",
+        "Zufa Li",
+        "Junbo Feng",
+        "Zhanpeng Chen"
+      ],
+      "more_authors": true,
+      "title": "A review on critical aspects influencing droplet transfer in laser-arc hybrid welding",
+      "journal": "Journal of the Brazilian Society of Mechanical Sciences and Engineering",
+      "date": "2026-10-01",
+      "doi": "10.1007/s40430-026-06701-2",
+      "url": "https://doi.org/10.1007/s40430-026-06701-2",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "А.М. Zhernosekov",
+        "V.Yu. Khaskin"
+      ],
+      "more_authors": false,
+      "title": "Improving the efficiency of the hybrid laser-arc welding process of aluminum alloys .",
+      "journal": "TECHNICAL SCIENCES AND TECHNOLOGIES",
+      "date": "2026-09-15",
+      "doi": "10.25140/2411-5363-2026-3(45)-9-15",
+      "url": "https://doi.org/10.25140/2411-5363-2026-3(45)-9-15",
+      "license": "cc-by-nc",
+      "topic": "feature"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Adam Kruk",
+        "Grzegorz Cempura"
+      ],
+      "more_authors": false,
+      "title": "Multiscale Characterization of Phase Evolution in the Fusion Zone of an Electron Beam-Welded Dissimilar Alloy 718/718Plus Joint During Long-Term Thermal Exposure at 760 °C",
+      "journal": "Metallurgical and Materials Transactions A",
+      "date": "2026-09-22",
+      "doi": "10.1007/s11661-026-08377-8",
+      "url": "https://doi.org/10.1007/s11661-026-08377-8",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Haoyu Cai",
+        "Renche Wang",
+        "Xingmei Feng",
+        "Huili Cao",
+        "Tao Wang",
+        "Huamin Yu"
+      ],
+      "more_authors": true,
+      "title": "Review of Welding Technologies for Electronic Precision Equipment: Status, Limitations, and Prospects",
+      "journal": "Materials",
+      "date": "2026-09-19",
+      "doi": "10.3390/ma19183976",
+      "url": "https://doi.org/10.3390/ma19183976",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Anna Krawczuk"
+      ],
+      "more_authors": false,
+      "title": "Hybrid Weld-Bonded Joints: A Critical Comparative Review of Welding Processes, Adhesive Interaction and Joint Performance",
+      "journal": "Materials",
+      "date": "2026-05-28",
+      "doi": "10.3390/ma19112288",
+      "url": "https://doi.org/10.3390/ma19112288",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Dejun Yan",
+        "Lili Ma",
+        "Jiaqi Lu",
+        "Dasen Wang",
+        "Xiaopeng Li"
+      ],
+      "more_authors": false,
+      "title": "Advances of Welding Technology of Glass for Electrical Applications",
+      "journal": "Materials",
+      "date": "2025-09-01",
+      "doi": "10.3390/ma18174096",
+      "url": "https://doi.org/10.3390/ma18174096",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Lennard Thamm",
+        "Gurdial Blugan",
+        "Christian Minnert",
+        "Jakob J. Schwiedrzik",
+        "Khachatur V. Manukyan",
+        "Mirva Eriksson"
+      ],
+      "more_authors": true,
+      "title": "Diffusion bonding of alumina-alumina via in-situ Ti5Si3 interlayers formed by self-propagating high-temperature synthesis in spark plasma sintering",
+      "journal": "Journal of the European Ceramic Society",
+      "date": "2026-09-11",
+      "doi": "10.1016/j.jeurceramsoc.2026.118836",
+      "url": "https://doi.org/10.1016/j.jeurceramsoc.2026.118836",
+      "license": "cc-by",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

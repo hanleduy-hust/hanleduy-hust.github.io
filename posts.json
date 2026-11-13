@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-11-14-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
+    "date": "2026-11-14",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Động lực học Luyện kim, Tối ưu hóa Năng lượng và Điều khiển Thích ứng trong Gia công Bồi đắp Kim loại: Khảo cứu Đa quy trình từ WAAM đến L-PBF và DED",
+    "title_en": "Metallurgical Dynamics, Energy Optimization, and Adaptive Control in Metal Additive Manufacturing: A Multi-Process Investigation from WAAM to L-PBF and DED",
+    "summary_vi": "Bài viết phân tích toàn diện các nghiên cứu mới nhất trong công nghệ gia công bồi đắp kim loại, bao gồm WAAM, DED và L-PBF, dựa trên các công bố khoa học từ cuối năm 2024 đến tháng 11 năm 2026. Nội dung tập trung làm rõ các giới hạn vật lý của mật độ năng lượng thể tích, cơ chế tái kết tinh tự sinh, tương tác nhiệt - cơ và các giải pháp điều khiển thích ứng đa quy trình.",
+    "summary_en": "This feature provides an in-depth analysis of the latest breakthroughs in metal additive manufacturing across WAAM, DED, and L-PBF, synthesized from peer-reviewed literature through November 2026. The discussion elucidates the physical boundaries of volumetric energy density, autogenous recrystallization mechanisms, thermo-mechanical coupling, and multi-process adaptive control strategies.",
+    "tags": [
+      "WAAM",
+      "L-PBF",
+      "DED",
+      "Microstructure Evolution",
+      "Process Modeling",
+      "Defect Mitigation"
+    ],
+    "cover": "images/blog/2026-11-14-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig1.jpg",
+    "file": "posts/2026-11-14-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai.json"
+  },
+  {
     "id": "2026-11-13-chuyen-de-cac-cong-nghe-han-tien-tien",
     "date": "2026-11-13",
     "type": "feature",

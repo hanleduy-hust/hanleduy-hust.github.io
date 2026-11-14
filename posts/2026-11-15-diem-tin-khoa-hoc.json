@@ -1,0 +1,294 @@
+{
+  "id": "2026-11-15-diem-tin-khoa-hoc",
+  "date": "2026-11-15",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Tiến bộ trong Hàn Gốm Kỹ thuật, Kiểm soát Biến dạng Hợp kim Nhôm và Tự động hóa Trí tuệ Nhân tạo",
+  "title_en": "Advances in Technical Ceramic Joining, Aluminum Alloy Distortion Control, and AI-Driven Automation",
+  "summary_vi": "Bản tin tổng hợp các nghiên cứu mới công bố từ ngày 27 tháng 10 đến ngày 15 tháng 11 năm 2026 về công nghệ hàn vảy gốm SiC, xử lý bề mặt bằng laser và các giải pháp học máy trong sản xuất. Các kết quả cung cấp dữ liệu định lượng về độ bền cơ học, độ cứng và hiệu suất vận hành của hệ thống tự động.",
+  "summary_en": "This digest reviews newly published research from October 27 to November 15, 2026, focusing on SiC ceramic vacuum brazing, laser surface treatment, and machine learning solutions in manufacturing. The findings provide quantitative data on mechanical strength, microhardness, and the operational performance of automated systems.",
+  "tags": [
+    "welding",
+    "metal-am",
+    "brazing",
+    "electronic-packaging",
+    "ai-in-welding"
+  ],
+  "cover": "images/blog/2026-11-15-diem-tin-khoa-hoc/fig1.jpg",
+  "content_vi": "<p class=\"lead\">Bản tin khoa học tuần này (15/11/2026) giới thiệu các tiến bộ mới trong lĩnh vực hàn vảy vật liệu chịu nhiệt, xử lý cơ nhiệt hợp kim nhôm, mô hình hóa in 3D kim loại và ứng dụng thị giác máy tính trong sản xuất. Các công trình cung cấp dữ liệu thực nghiệm chi tiết phục vụ cho việc nâng cao độ bền cấu trúc và tự động hóa quy trình.</p>\n<h3>Hàn vảy và Liên kết Vật liệu Tiên tiến trong Môi trường Khắc nghiệt</h3>\n<p>Để giải quyết thách thức hàn gốm silicon carbide (SiC) phục vụ cho các ứng dụng lò phản ứng hạt nhân, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã nghiên cứu sử dụng chất hàn composite mới mang tên Si-Ti-Al/Mo trong quá trình hàn vảy chân không. Mo đóng vai trò là tác nhân mầm dị thể, ưu tiên phản ứng với Si để ngăn chặn sự hình thành quá mức pha TiSi<sub>2</sub> đồng thời làm nhỏ mịn cấu trúc hạt. Ảnh SEM dưới đây cho thấy rõ sự khác biệt về vi cấu trúc và đặc tính cơ học giữa các mẫu sử dụng chất hàn cải tiến.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig1.jpg\" alt=\"So sánh vi cấu trúc và tính năng cơ học của mối nối SiC: (a,b) Chất hàn composite Si-Ti-Al/Mo, (c,d) Chất hàn Si-Ti-Al, (e) Tính năng cơ học của mối nối.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> So sánh vi cấu trúc và tính năng cơ học của mối nối SiC: (a,b) Chất hàn composite Si-Ti-Al/Mo, (c,d) Chất hàn Si-Ti-Al, (e) Tính năng cơ học của mối nối. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Wei et al. (2026), “Microstructure and Mechanical Properties of Solid-State Sintered SiC Brazed with a Novel Si-Ti-Al/Mo Composite Filler”, <em>Coatings</em>, <a href=\"https://doi.org/10.3390/coatings16111349\" target=\"_blank\" rel=\"noopener\">doi:10.3390/coatings16111349</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Kết quả thực nghiệm cho thấy quá trình hàn vảy ở nhiệt độ 1360 °C đạt độ bền cắt tối đa ở nhiệt độ phòng là 144 MPa, và duy trì độ bền cắt 64 MPa tại nhiệt độ kiểm tra 1000 °C <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. Trong một hướng nghiên cứu khác về vật liệu liên kết điện tử, dòng vảy không chì Innolot® được so sánh với tiêu chuẩn công nghiệp SAC305 trên chất nền ENIG <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Kết quả kiểm tra cho thấy Innolot® duy trì độ bền cắt cao hơn ít nhất 10% so với SAC305 trong mọi điều kiện thử nghiệm, đồng thời giảm tốc độ phát triển lớp hợp kim trung gian (IMC) và cải thiện độ ổn định vi cấu trúc <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Những cải tiến này giúp nâng cao độ tin cậy của mối nối trong các thiết bị vi điện tử hoạt động dưới tải trọng chu kỳ nhiệt khắc nghiệt.</p>\n<h3>Công nghệ Xử lý Cơ nhiệt và Cải thiện Độ bền Mối hàn Hợp kim Nhôm</h3>\n<p>Nhằm khắc phục ứng suất dư và cải thiện độ bền của mối hàn khuấy ma sát (FSW) trên hợp kim nhôm 7075, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> đã áp dụng phương pháp phun bi xung laser (LSP) một mặt. Phân tích nhiễu xạ tán xạ lại điện tử (EBSD) cho thấy sự thay đổi kích thước hạt phụ thuộc vào chiều sâu, trong đó kích thước hạt trung bình tại vị trí cách bề mặt được xử lý 100 µm giảm từ 7.95 µm ở mẫu đối chứng xuống còn 1.54 µm sau khi xử lý LSP. Ảnh EBSD dưới đây mô tả chi tiết đặc điểm vi cấu trúc của vật liệu nền trước khi gia công.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Kết quả phân tích EBSD cho vật liệu nền (BM). Bản đồ định hướng tinh thể nghịch đảo (IPF) ở Hình 3a cho thấy các hạt kéo dài rõ rệt dọc theo hướng cán, với phân bố kích thước hạt rộng đặc trưng của vi cấu trúc cán.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Kết quả phân tích EBSD cho vật liệu nền (BM). Bản đồ định hướng tinh thể nghịch đảo (IPF) ở Hình 3a cho thấy các hạt kéo dài rõ rệt dọc theo hướng cán, với phân bố kích thước hạt rộng đặc trưng của vi cấu trúc cán. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Hu et al. (2026), “Effect of Laser Shock Peening on Gradient Microstructural Evolution and Mechanical Properties of Friction-Stir-Welded 7075 Aluminium Alloy Joints”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110506\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110506</a> [<a href=\"#ref-3\">3</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Ứng suất dư theo chiều dọc mối hàn chuyển từ kéo sang nén tại bề mặt được xử lý, đạt xấp xỉ −280 MPa, và đổi dấu ở độ sâu 0,5–0,6 mm <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Tại độ sâu 0,5 mm, độ vi cứng tăng từ 126,8 lên 135,6 HV <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Về mặt cơ tính kéo ngang, giới hạn chảy trung bình tăng từ 346,8 lên 383,9 MPa, độ bền kéo đứt tăng từ 381,2 lên 419,8 MPa, và độ giãn dài sau khi đứt tăng từ 5,47% lên 7,13% <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Trong một nghiên cứu mô phỏng số khác về hàn FSW hợp kim nhôm dị chủng AA6061-T6 và AA5083-H111, việc áp dụng lực nén dọc trục từ 0 đến 40 kN thông qua phần mềm ANSYS Workbench đã được khảo sát <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. Kết quả mô hình hóa chỉ ra rằng mức lực nén 35 kN làm giảm đáng kể ứng suất tương đương từ 213,01 xuống 168,02 MPa, ứng suất dọc từ 115,37 xuống 56,21 MPa, và biến dạng đàn hồi tương đương từ 0,0030916 xuống 0,0024389 <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, mở ra giải pháp kiểm soát biến dạng nhiệt hiệu quả cho kết cấu hàn dị chủng.</p>\n<h3>Mô hình Hóa Hình học và Kiểm soát Quy trình Bồi đắp Kim loại</h3>\n<p>Trong lĩnh vực chế tạo bồi đắp hồ quang dây (WAAM), việc dự đoán hình học đường hàn theo chiều dọc đường đi là yếu tố then chốt để đảm bảo chất lượng cấu trúc. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> đã xây dựng khung trích xuất đám mây điểm 3D từ 50 mẫu đường hàn đơn được tạo ra với dòng điện hàn từ 65–155 A và tốc độ dịch chuyển từ 20–40 cm/min. Biểu đồ phân tích sai số phương pháp bình phương trung bình (RMSE) cục bộ minh họa mức độ dao động của mặt phẳng nền dọc theo các tiết diện đo.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Sự phân bố sai số phương pháp bình phương trung bình (RMSE) cục bộ của mặt phẳng nền trên các tiết diện dọc đã đo.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Sự phân bố sai số phương pháp bình phương trung bình (RMSE) cục bộ của mặt phẳng nền trên các tiết diện dọc đã đo. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Šket et al. (2026), “Longitudinal Prediction of WAAM Bead Geometry from 3D Point-Cloud Linear Measurements Using Machine Learning”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19224809\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19224809</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Các mô hình học máy gồm hồi quy ridge tuyến tính, hồi quy ridge bậc hai và hồi quy quá trình Gaussian đã đạt giá trị hệ số xác định R<sup>2</sup> trung bình trên tập kiểm định lần lượt là 0,981 đối với chiều rộng, 0,965 đối với chiều cao vững chắc, và 0,985 đối với diện tích mặt cắt ngang <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Đối với công nghệ nấu chảy bột laser (PBF-LB/M), các nghiên cứu tổng quan đã chỉ ra tiềm năng của phương pháp giám sát đồng trục vũng hàn nhằm kiểm soát độ sâu vũng hàn, giúp ngăn chặn các khuyết tật rỗng do thiếu năng lượng hoặc hiện tượng tạo lỗ khóa <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n<h3>Trí tuệ Nhân tạo, Tự động hóa và Kiểm định Chất lượng Bề mặt</h3>\n<p>Ứng dụng trí tuệ nhân tạo và hệ thống biên trong xưởng sản xuất đang ngày càng được chú trọng để đánh giá rủi ro côngοn học và tự động hóa quy trình. Một hệ thống đánh giá tư thế làm việc tích hợp MediaPipe Pose, phương pháp REBA và thiết bị Jetson Orin Nano đã được thử nghiệm qua luồng camera RTSP với 93.729 khung hình trong 2 giờ, ghi nhận độ trễ trung bình 74,14 ± 19,64 ms và thông lượng đạt 13,04 ± 2,08 FPS <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Bên cạnh đó, kiến trúc bản sao số (Digital Twin) tích hợp tương tác giữa người, robot hình người và máy móc (DT-H<sub>2</sub>MI) đã được đề xuất với cấu trúc luồng điều khiển và dữ liệu gồm bốn giai đoạn: cảm biến, phân tích, quyết định và chấp hành, như được mô tả trong sơ đồ dưới đây <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Dữ liệu đầu cuối và luồng điều khiển cho tác vụ bám đường hàn, được theo dõi qua vòng lặp bốn giai đoạn cảm biến-phân tích-quyết định-chấp hành.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Dữ liệu đầu cuối và luồng điều khiển cho tác vụ bám đường hàn, được theo dõi qua vòng lặp bốn giai đoạn cảm biến-phân tích-quyết định-chấp hành. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Bajestani et al. (2026), “A digital twin-based architecture for human-humanoid-machine interaction (DT-H2MI) in smart manufacturing”, <em>Journal of Intelligent Manufacturing</em>, <a href=\"https://doi.org/10.1007/s10845-026-03024-w\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10845-026-03024-w</a> [<a href=\"#ref-8\">8</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Để kiểm tra chất lượng bề mặt mối hàn khuấy ma sát mà không cần kiểm định thủ công mất thời gian, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã ứng dụng mạng neuron tích chập (CNN) theo phương pháp phân khúc mức điểm ảnh (semantic segmentation). Kết quả cho thấy độ chính xác toàn cục đạt 97,69% và giá trị trung bình chỉ số giao nhau trên hợp (mIoU) đạt 83,78% khi phân loại các khuyết tật như bavia (flash), xước bề mặt (surface galling) và thiếu hụt vật liệu bề mặt (surface lack of fill) <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. Hình ảnh kết quả phân khúc các loại khuyết tật này được thể hiện rõ qua ảnh cắt xén bên dưới.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Kết quả phân khúc cho tổ hợp tất cả các loại khuyết tật (ảnh cắt xén).\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Kết quả phân khúc cho tổ hợp tất cả các loại khuyết tật (ảnh cắt xén). <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Vieltorf et al. (2026), “Image segmentation in friction stir welding using convolutional neural networks”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02683-w\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02683-w</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Hàm ý thực tiễn</h3>\n<ul>\n<li><strong>Ứng dụng công nghệ hàn vảy gốm và hợp kim chịu nhiệt:</strong> Sử dụng chất hàn composite chứa Mo giúp cải thiện đáng kể độ bền cơ học của mối nối gốm SiC ở nhiệt độ cao, tạo tiền đề ứng dụng trong các cấu trúc kỹ thuật chịu nhiệt cực đoan.</li>\n<li><strong>Kiểm soát ứng suất và tự động hóa kiểm định:</strong> Việc kết hợp phương pháp phun bi laser (LSP) và mô hình học sâu phân khúc khuyết tật bề mặt giúp nâng cao độ bền kéo của hợp kim nhôm và tự động hóa khâu kiểm tra chất lượng mối hàn trong công nghiệp ô tô và hàng không.</li>\n</ul>",
+  "content_en": "<p class=\"lead\">This week's science digest (November 15, 2026) highlights recent advances in high-temperature ceramic brazing, thermomechanical processing of aluminum alloys, metal AM geometric modeling, and computer vision applications in manufacturing. These studies provide detailed quantitative data to improve structural integrity and process automation.</p>\n<h3>Advanced Brazing and Joining Materials in Harsh Environments</h3>\n<p>To address the challenge of joining silicon carbide (SiC) ceramics for nuclear reactor applications, the authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> investigated a novel Si-Ti-Al/Mo composite filler during vacuum brazing. Mo acts as a heterogeneous nucleating agent, preferentially reacting with Si to suppress extensive formation of the TiSi<sub>2</sub> phase while refining grain structures. The SEM image below illustrates the microstructure and mechanical property differences among the tested joints.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Comparison of microstructure and mechanical properties of SiC joints: (a,b) Si-Ti-Al/Mo Composite Filler, (c,d) Si-Ti-Al filler, (e) mechanical properties of the joints.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Comparison of microstructure and mechanical properties of SiC joints: (a,b) Si-Ti-Al/Mo Composite Filler, (c,d) Si-Ti-Al filler, (e) mechanical properties of the joints. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Wei et al. (2026), “Microstructure and Mechanical Properties of Solid-State Sintered SiC Brazed with a Novel Si-Ti-Al/Mo Composite Filler”, <em>Coatings</em>, <a href=\"https://doi.org/10.3390/coatings16111349\" target=\"_blank\" rel=\"noopener\">doi:10.3390/coatings16111349</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Experimental results demonstrated that vacuum brazing at 1360 °C achieved a peak room-temperature shear strength of 144 MPa, retaining 64 MPa at a testing temperature of 1000 °C <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>. In a separate study on electronic interconnect materials, the lead-free Innolot® solder alloy was compared against the industry standard SAC305 on ENIG substrates <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. The findings revealed that Innolot® consistently exhibited at least 10% higher shear strength than SAC305 across all test conditions, while showing a reduced intermetallic compound (IMC) growth rate and improved microstructural stability <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>, thereby enhancing reliability in microelectronic devices under cyclic thermal loads.</p>\n<h3>Thermomechanical Processing and Strength Enhancement of Aluminum Welds</h3>\n<p>To mitigate residual stress and improve the mechanical strength of friction stir welded (FSW) 7075 aluminum alloy joints, the authors of <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup> applied a one-sided laser shock peening (LSP) treatment. Electron backscatter diffraction (EBSD) measurements showed depth-dependent grain refinement, with the mean grain size 100 µm below the treated surface decreasing from 7.95 µm in the untreated joint to 1.54 µm after LSP. The EBSD map below depicts the base metal's microstructural characteristics.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig2.jpg\" alt=\"EBSD characterisation results for the base metal (BM). The inverse pole figure (IPF) map in Figure 3a reveals distinctly elongated grains extending along the rolling direction, with a broad grain size distribution characteristic of a rolled microstructure.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> EBSD characterisation results for the base metal (BM). The inverse pole figure (IPF) map in Figure 3a reveals distinctly elongated grains extending along the rolling direction, with a broad grain size distribution characteristic of a rolled microstructure. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Hu et al. (2026), “Effect of Laser Shock Peening on Gradient Microstructural Evolution and Mechanical Properties of Friction-Stir-Welded 7075 Aluminium Alloy Joints”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110506\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110506</a> [<a href=\"#ref-3\">3</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>The weld-longitudinal residual stress shifted from tensile to compressive at the treated surface, reaching approximately −280 MPa, and changed sign at a depth of 0.5–0.6 mm <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. At a depth of 0.5 mm, microhardness increased from 126.8 to 135.6 HV <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. In transverse tension, mean yield strength increased from 346.8 to 383.9 MPa, ultimate tensile strength from 381.2 to 419.8 MPa, and elongation after fracture from 5.47% to 7.13% <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. In another numerical study on dissimilar FSW joints of AA6061-T6 and AA5083-H111 alloys, applying an external compressive axial prestress ranging from 0 to 40 kN using ANSYS Workbench was evaluated <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>. The simulation indicated that a 35 kN prestress significantly reduced equivalent stress from 213.01 to 168.02 MPa, longitudinal stress from 115.37 to 56.21 MPa, and equivalent elastic strain from 0.0030916 to 0.0024389 <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, providing an effective approach for controlling thermal distortion in dissimilar joints.</p>\n<h3>Geometric Modeling and Process Control in Metal Additive Manufacturing</h3>\n<p>In wire arc additive manufacturing (WAAM), predicting longitudinal bead geometry along the deposition path is vital for ensuring structural quality. The authors of <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup> developed a 3D point-cloud extraction framework from 50 single-bead deposits produced at welding currents of 65–155 A and travel speeds of 20–40 cm/min. The local substrate-plane root mean square error (RMSE) distribution chart illustrates the variation of reference planes across measured sections.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Distribution of local substrate-plane RMSE across measured longitudinal sections.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Distribution of local substrate-plane RMSE across measured longitudinal sections. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Šket et al. (2026), “Longitudinal Prediction of WAAM Bead Geometry from 3D Point-Cloud Linear Measurements Using Machine Learning”, <em>Materials</em>, <a href=\"https://doi.org/10.3390/ma19224809\" target=\"_blank\" rel=\"noopener\">doi:10.3390/ma19224809</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Machine learning models including linear ridge regression, quadratic ridge regression, and Gaussian process regression achieved mean held-out bead R<sup>2</sup> values of 0.981 for width, 0.965 for robust height, and 0.985 for cross-sectional area <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. For laser powder bed fusion (PBF-LB/M), review studies highlighted the potential of coaxial meltpool monitoring to control meltpool depth, helping prevent lack-of-fusion and keyhole porosity defects <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig4.jpg\" alt=\"End-to-end data and control flow for the weld-seam-tracking task, traced through the four-stage sensing-analysis-decision-actuation loop.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> End-to-end data and control flow for the weld-seam-tracking task, traced through the four-stage sensing-analysis-decision-actuation loop. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Bajestani et al. (2026), “A digital twin-based architecture for human-humanoid-machine interaction (DT-H2MI) in smart manufacturing”, <em>Journal of Intelligent Manufacturing</em>, <a href=\"https://doi.org/10.1007/s10845-026-03024-w\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s10845-026-03024-w</a> [<a href=\"#ref-8\">8</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Artificial Intelligence, Automation, and Surface Quality Inspection</h3>\n<p>Artificial intelligence and edge computing are increasingly deployed in industrial workshops to evaluate ergonomic risks and automate workflows. An ergonomic assessment system integrating MediaPipe Pose, the REBA method, and a Jetson Orin Nano was tested via an RTSP camera stream over 93,729 frames across two hours, achieving a mean latency of 74.14 ± 19.64 ms and a throughput of 13.04 ± 2.08 FPS <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Furthermore, a digital twin-based architecture for human-humanoid-machine interaction (DT-H<sub>2</sub>MI) was introduced, tracing the sensing-analysis-decision-actuation control loop as illustrated above <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<p>To inspect surface quality in friction stir welding without time-consuming manual evaluation, the authors of <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> utilized convolutional neural networks (CNNs) in a pixel-level semantic segmentation approach. The results yielded a global accuracy of 97.69% and a mean intersection over union (mIoU) of 83.78% for segmenting defects such as flash, surface galling, and surface lack of fill <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>. The segmentation results for these defect types are displayed in the cropped images below.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-15-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Segmentation results for the combination of all defect types (cropped images).\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Segmentation results for the combination of all defect types (cropped images). <span class=\"fig-credit\">Source: Fig. 7 of the original article – Vieltorf et al. (2026), “Image segmentation in friction stir welding using convolutional neural networks”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02683-w\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02683-w</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Practical implications</h3>\n<ul>\n<li><strong>Application of ceramic brazing and high-temperature alloys:</strong> Employing Mo-containing composite fillers substantially enhances the high-temperature mechanical strength of SiC ceramic joints, laying the groundwork for applications in extreme thermal environments.</li>\n<li><strong>Stress control and automated inspection:</strong> Combining laser shock peening (LSP) and deep learning-based surface defect segmentation improves the tensile properties of aluminum alloys and automates weld quality inspection in automotive and aerospace manufacturing.</li>\n</ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Lianfeng Wei",
+        "Zhuyue Lv",
+        "Hangze Zhou",
+        "Yuhe Lin",
+        "Ce Wang",
+        "Yong Zheng"
+      ],
+      "more_authors": true,
+      "title": "Microstructure and Mechanical Properties of Solid-State Sintered SiC Brazed with a Novel Si-Ti-Al/Mo Composite Filler",
+      "journal": "Coatings",
+      "date": "2026-11-13",
+      "doi": "10.3390/coatings16111349",
+      "url": "https://doi.org/10.3390/coatings16111349",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "B. Senthil Kumar",
+        "S. Murali",
+        "Zhang Rui Fen",
+        "Agala Joel",
+        "Tan Tze Qing",
+        "Zhang HanWen"
+      ],
+      "more_authors": false,
+      "title": "Reliability Advantages of Innolot® Lead‑Free Solder over SAC305 on Fine Pitch Interconnects",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-10-27",
+      "doi": "10.4071/001c.173321",
+      "url": "https://doi.org/10.4071/001c.173321",
+      "license": "",
+      "topic": "low_temp_solder"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Bin Hu",
+        "Long Li"
+      ],
+      "more_authors": false,
+      "title": "Effect of Laser Shock Peening on Gradient Microstructural Evolution and Mechanical Properties of Friction-Stir-Welded 7075 Aluminium Alloy Joints",
+      "journal": "Journal of Manufacturing and Materials Processing",
+      "date": "2026-11-12",
+      "doi": "10.3390/jmmp10110506",
+      "url": "https://doi.org/10.3390/jmmp10110506",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Navnath  Palde",
+        "Mohammed Ali"
+      ],
+      "more_authors": false,
+      "title": "THERMO-MECHANICAL FINITE ELEMENT ANALYSIS OF COMPRESSIVE AXIAL PRESTRESS IN FRICTION STIR WELDING OF DISSIMILAR AA6061-T6 AND AA5083-H111 ALLOYS",
+      "journal": "Acta Innovations",
+      "date": "2026-11-03",
+      "doi": "10.62441/actainnovations.vi.2970",
+      "url": "https://doi.org/10.62441/actainnovations.vi.2970",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Kristijan Šket",
+        "Mirko Ficko",
+        "Timi Karner",
+        "Rok Belšak",
+        "Janez Gotlih"
+      ],
+      "more_authors": false,
+      "title": "Longitudinal Prediction of WAAM Bead Geometry from 3D Point-Cloud Linear Measurements Using Machine Learning",
+      "journal": "Materials",
+      "date": "2026-11-12",
+      "doi": "10.3390/ma19224809",
+      "url": "https://doi.org/10.3390/ma19224809",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Dominik Kozjek",
+        "Drago Bračun",
+        "Andrej Jeromen",
+        "Fred M. Carter",
+        "Primož Podržaj",
+        "Edvard Govekar"
+      ],
+      "more_authors": false,
+      "title": "Coaxial Monitoring of Meltpool for Laser Powder Bed Fusion Process Control",
+      "journal": "Strojniški vestnik – Journal of Mechanical Engineering",
+      "date": "2026-11-13",
+      "doi": "10.5545/sv-jme.2026.1837",
+      "url": "https://doi.org/10.5545/sv-jme.2026.1837",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Anis Rohmana Malik",
+        "Novita Lizza Anggraini",
+        "Putri Gesan Prabawa Anwar",
+        "Ridho Mufrih Jazil",
+        "Andre Saputra Pata'dungan",
+        "Athaya Nur Khayyirah"
+      ],
+      "more_authors": true,
+      "title": "Development of an AI-Based Awkward Working Posture Detection System Using the REBA Method with Edge Computing and Deep Learning Approaches in Industrial Workshops",
+      "journal": "Jurnal Teknik Industri Jurnal Hasil Penelitian dan Karya Ilmiah dalam Bidang Teknik Industri",
+      "date": "2026-11-13",
+      "doi": "10.24014/jti.v12i2.40725",
+      "url": "https://doi.org/10.24014/jti.v12i2.40725",
+      "license": "cc-by-nc-sa",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Mahdi Sadeqi Bajestani",
+        "Duhwan Mun",
+        "Duck Bong Kim"
+      ],
+      "more_authors": false,
+      "title": "A digital twin-based architecture for human-humanoid-machine interaction (DT-H2MI) in smart manufacturing",
+      "journal": "Journal of Intelligent Manufacturing",
+      "date": "2026-11-10",
+      "doi": "10.1007/s10845-026-03024-w",
+      "url": "https://doi.org/10.1007/s10845-026-03024-w",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Fabian Vieltorf",
+        "Côme Calluaud",
+        "Moritz Goeldner",
+        "Martina Elisabeth Sigl",
+        "Michael F. Zaeh"
+      ],
+      "more_authors": false,
+      "title": "Image segmentation in friction stir welding using convolutional neural networks",
+      "journal": "Welding in the World",
+      "date": "2026-11-12",
+      "doi": "10.1007/s40194-026-02683-w",
+      "url": "https://doi.org/10.1007/s40194-026-02683-w",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Fugeng Wu",
+        "Jinbing Zhang",
+        "Wentao Shao",
+        "Yu Wu",
+        "Yinchen Li",
+        "翁承嘉"
+      ],
+      "more_authors": true,
+      "title": "Thermally Conductive and Electrically Insulating Thermal Interface Materials for Advanced Packaging: From Filler and Interface Engineering to Thermal Networks",
+      "journal": "Electron",
+      "date": "2026-11-07",
+      "doi": "10.1002/elt2.70076",
+      "url": "https://doi.org/10.1002/elt2.70076",
+      "license": "cc-by",
+      "topic": "packaging"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Michael Sebok",
+        "Christopher Masuo",
+        "Bradley J. Sampson",
+        "Saket Thapliyal",
+        "Tim Gräning",
+        "Eliott Fountain"
+      ],
+      "more_authors": true,
+      "title": "In-situ repair of eroded tungsten plasma facing components using wire arc directed energy deposition",
+      "journal": "Fusion Engineering and Design",
+      "date": "2026-11-13",
+      "doi": "10.1016/j.fusengdes.2026.116135",
+      "url": "https://doi.org/10.1016/j.fusengdes.2026.116135",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Banhao Ruan",
+        "Shenzhen Chang",
+        "Yanhong Chen",
+        "Junwei Zhao",
+        "Qinhe Pan"
+      ],
+      "more_authors": false,
+      "title": "Welding Two Fields: Covalent Assembly of Polyoxometalates and Covalent Organic Frameworks for Multifunctional Applications",
+      "journal": "cMat",
+      "date": "2026-11-13",
+      "doi": "10.1002/cmt2.70058",
+      "url": "https://doi.org/10.1002/cmt2.70058",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Oliver M. ‐R. Chyan",
+        "Kevin Antony Jesu Durai",
+        "Khanh Tuyet Anh Tran",
+        "Duwage Anushka Sandaruwan Perera",
+        "Shinoj Sridharan Nair"
+      ],
+      "more_authors": false,
+      "title": "Enabling Low-Temperature Cu-to-Cu Direct Bonding via Nanocrystalline Cu and Cu-Selective Oxide Suppression Coating",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-10-26",
+      "doi": "10.4071/001c.173036",
+      "url": "https://doi.org/10.4071/001c.173036",
+      "license": "",
+      "topic": "low_temp_solder"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Ryosuke Yamazaki",
+        "Hsiang Chuan Chen",
+        "Joseph R. Sootsman",
+        "Xi Yang",
+        "Katsuhiro Akiyama",
+        "Eun Ko"
+      ],
+      "more_authors": false,
+      "title": "Multifunctional Silicone Hotmelt Materials Integrating Stress Relaxation and Thermal Management for Advanced Electronic",
+      "journal": "IMAPSource Proceedings",
+      "date": "2026-10-27",
+      "doi": "10.4071/001c.173328",
+      "url": "https://doi.org/10.4071/001c.173328",
+      "license": "",
+      "topic": "packaging"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "蔡翠兰",
+        "Zhehao Zhang",
+        "蔡翠兰",
+        "Jun Yi",
+        "Jinzhe Ye",
+        "Dongliang Li"
+      ],
+      "more_authors": true,
+      "title": "Effect of Keyhole Kinetics on Asymmetric Features of Weld Seam in Laser Welding of M42/D6A Bimetallic Band Saw Blades",
+      "journal": "Journal of Alloys and Metallurgical Systems",
+      "date": "2026-11-01",
+      "doi": "10.1016/j.jalmes.2026.100292",
+      "url": "https://doi.org/10.1016/j.jalmes.2026.100292",
+      "license": "cc-by",
+      "topic": "welding"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

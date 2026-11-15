@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-15-diem-tin-khoa-hoc",
+    "date": "2026-11-15",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Tiến bộ trong Hàn Gốm Kỹ thuật, Kiểm soát Biến dạng Hợp kim Nhôm và Tự động hóa Trí tuệ Nhân tạo",
+    "title_en": "Advances in Technical Ceramic Joining, Aluminum Alloy Distortion Control, and AI-Driven Automation",
+    "summary_vi": "Bản tin tổng hợp các nghiên cứu mới công bố từ ngày 27 tháng 10 đến ngày 15 tháng 11 năm 2026 về công nghệ hàn vảy gốm SiC, xử lý bề mặt bằng laser và các giải pháp học máy trong sản xuất. Các kết quả cung cấp dữ liệu định lượng về độ bền cơ học, độ cứng và hiệu suất vận hành của hệ thống tự động.",
+    "summary_en": "This digest reviews newly published research from October 27 to November 15, 2026, focusing on SiC ceramic vacuum brazing, laser surface treatment, and machine learning solutions in manufacturing. The findings provide quantitative data on mechanical strength, microhardness, and the operational performance of automated systems.",
+    "tags": [
+      "welding",
+      "metal-am",
+      "brazing",
+      "electronic-packaging",
+      "ai-in-welding"
+    ],
+    "cover": "images/blog/2026-11-15-diem-tin-khoa-hoc/fig1.jpg",
+    "file": "posts/2026-11-15-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-11-14-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
     "date": "2026-11-14",
     "type": "feature",

@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-11-16-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
+    "date": "2026-11-16",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Trí tuệ nhân tạo trong công nghiệp hàn: Từ mô hình hóa động học thời gian thực, học máy vật lý đến điều khiển thích ứng quy trình",
+    "title_en": "Artificial Intelligence in Welding Engineering: From Real-Time Dynamic Modeling and Physics-Informed Learning to Adaptive Process Control",
+    "summary_vi": "Tổng quan chuyên sâu về việc tích hợp trí tuệ nhân tạo và học máy trong công nghệ hàn và gia công bồi đắp kim loại, phân tích các giải pháp từ mô hình chuỗi thời gian, học sâu không giám sát đến học máy định hướng vật lý nhằm giải quyết các thách thức giám sát trực tuyến và tối ưu hóa vận hành.",
+    "summary_en": "An in-depth review of artificial intelligence and machine learning integration in welding and metal additive manufacturing, analyzing advancements from sequential models and unsupervised deep learning to physics-informed architectures for real-time monitoring and adaptive process control.",
+    "tags": [
+      "Artificial Intelligence",
+      "Welding Technology",
+      "Process Monitoring",
+      "Machine Learning",
+      "Defect Detection",
+      "Wire Arc Additive Manufacturing"
+    ],
+    "cover": "images/blog/2026-11-16-chuyen-de-ung-dung-ai-trong-cong-nghiep-han/fig1.jpg",
+    "file": "posts/2026-11-16-chuyen-de-ung-dung-ai-trong-cong-nghiep-han.json"
+  },
+  {
     "id": "2026-11-15-diem-tin-khoa-hoc",
     "date": "2026-11-15",
     "type": "digest",

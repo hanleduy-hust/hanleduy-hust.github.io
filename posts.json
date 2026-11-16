@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-17-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
+    "date": "2026-11-17",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong Công nghệ Hàn và Liên kết Vật liệu Tiên tiến: Cơ chế Luyện kim, Tối ưu hóa Thông minh và Ứng dụng Công nghiệp Trọng điểm",
+    "title_en": "Advances in Advanced Welding and Joining Technologies: Metallurgical Mechanisms, Intelligent Optimization, and Key Industrial Applications",
+    "summary_vi": "Khảo cứu tổng hợp các tiến bộ trong công nghệ hàn và liên kết vật liệu cho năng lượng, ô tô, hàng không và đóng tàu. Bài viết phân tích các cơ chế vi cấu trúc, phương pháp tối ưu hóa thông minh và thách thức thực tiễn dựa trên dữ liệu công bố từ năm 2025 đến 2026.",
+    "summary_en": "This feature article synthesizes recent advancements in welding and materials joining technologies across energy, automotive, aerospace, and marine sectors. It examines microstructural mechanisms, intelligent optimization frameworks, and practical challenges based on literature published between 2025 and 2026.",
+    "tags": [
+      "welding technology",
+      "microstructure",
+      "process optimization",
+      "dissimilar joining",
+      "industrial applications"
+    ],
+    "cover": "images/blog/2026-11-17-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem/fig3.jpg",
+    "file": "posts/2026-11-17-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem.json"
+  },
+  {
     "id": "2026-11-16-chuyen-de-ung-dung-ai-trong-cong-nghiep-han",
     "date": "2026-11-16",
     "type": "feature",

@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-18-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
+    "date": "2026-11-18",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Tiến bộ trong Hợp kim Hàn Không Chì và Vảy Hàn Nhiệt độ Thấp: Cơ chế Vi cấu trúc, Động lực học Tương tác Giao diện và Độ tin cậy",
+    "title_en": "Advances in Lead-Free Solder Alloys and Low-Temperature Soldering Materials: Microstructural Mechanisms, Interfacial Kinetics, and Reliability",
+    "summary_vi": "Chuyên đề phân tích các tiến bộ gần đây trong việc phát triển hợp kim hàn không chì và vảy hàn nhiệt độ thấp, tập trung vào thiết kế vi cấu trúc, cơ chế kiểm soát hợp chất liên kim (IMC) và độ tin cậy trong đóng gói vi điện tử.",
+    "summary_en": "This feature article analyzes recent advances in the development of lead-free solder alloys and low-temperature soldering materials, focusing on microstructural design, intermetallic compound (IMC) control mechanisms, and electronic packaging reliability.",
+    "tags": [
+      "lead-free solder",
+      "low-temperature soldering",
+      "intermetallic compounds",
+      "microstructure",
+      "reliability"
+    ],
+    "cover": "images/blog/2026-11-18-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap/fig3.jpg",
+    "file": "posts/2026-11-18-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap.json"
+  },
+  {
     "id": "2026-11-17-chuyen-de-ung-dung-han-trong-cac-nganh-cong-nghiep-trong-iem",
     "date": "2026-11-17",
     "type": "feature",

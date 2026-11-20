@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-20-chuyen-de-cac-cong-nghe-han-tien-tien",
+    "date": "2026-11-20",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Kiểm soát Động lực học Năng lượng, Tương tác Giao diện và Độ toàn vẹn Cấu trúc trong Các Công nghệ Hàn Tiên tiến",
+    "title_en": "Energy Dynamics, Interfacial Phenomena, and Structural Integrity in Advanced Welding and Joining Technologies",
+    "summary_vi": "Khảo cứu chuyên sâu về các công nghệ hàn và ghép nối vật liệu tiên tiến, tập trung vào động lực học vũng hàn mật độ năng lượng cao, liên kết trạng thái rắn, luyện kim mối hàn dị chủng và các phương pháp nâng cao độ tin cậy kết cấu công nghiệp.",
+    "summary_en": "An in-depth investigation into advanced welding and joining technologies, focusing on high-energy-density molten pool dynamics, solid-state bonding, dissimilar metallurgy, and structural integrity assessment for demanding industrial applications.",
+    "tags": [
+      "Advanced Welding",
+      "Beam Shaping",
+      "Solid-State Joining",
+      "Dissimilar Metallurgy",
+      "Structural Integrity"
+    ],
+    "cover": "images/blog/2026-11-20-chuyen-de-cac-cong-nghe-han-tien-tien/fig4.jpg",
+    "file": "posts/2026-11-20-chuyen-de-cac-cong-nghe-han-tien-tien.json"
+  },
+  {
     "id": "2026-11-18-chuyen-de-hop-kim-han-khong-chi-va-vay-han-nhiet-o-thap",
     "date": "2026-11-18",
     "type": "feature",

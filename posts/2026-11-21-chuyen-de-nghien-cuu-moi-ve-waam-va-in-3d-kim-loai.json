@@ -1,0 +1,292 @@
+{
+  "id": "2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
+  "date": "2026-11-21",
+  "type": "feature",
+  "category_vi": "Chuyên đề",
+  "category_en": "In-depth",
+  "title_vi": "Động lực học Quy trình, Vi cấu trúc và Hiệu năng Cơ học trong Gia công Bồi đắp Hồ quang Dây và In 3D Kim loại",
+  "title_en": "Process Dynamics, Microstructure, and Mechanical Performance in Wire Arc Additive Manufacturing and Metal 3D Printing",
+  "summary_vi": "Bài viết phân tích các nghiên cứu mới nhất về gia công bồi đắp hồ quang dây (WAAM) và in 3D kim loại, tập trung vào điều kiện nhiệt, chuyển chế độ dòng điện, tối ưu hóa vi cấu trúc và giảm thiểu khuyết tật.",
+  "summary_en": "This article analyzes the latest research on wire arc additive manufacturing (WAAM) and metal 3D printing, focusing on thermal conditions, transfer modes, microstructural optimization, and defect mitigation.",
+  "tags": [
+    "WAAM",
+    "L-PBF",
+    "Microstructure",
+    "Mechanical Properties",
+    "Additive Manufacturing"
+  ],
+  "cover": "images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig5.jpg",
+  "content_vi": "<h3>1. Dẫn nhập</h3><p class=\"lead\">Gia công bồi đắp hồ quang dây (WAAM) và in 3D kim loại đang chuyển dịch từ phương pháp chế tạo thử nghiệm sang sản xuất công nghiệp quy mô lớn nhờ khả năng tạo hình gần sát hình dạng thực (near-net-shape) cho các kết cấu phức tạp. Tuy nhiên, các thách thức về kiểm soát dòng nhiệt, khuyết tật tế vi và sự đồng nhất cơ tính vẫn đòi hỏi những nghiên cứu thực nghiệm và mô hình hóa sâu rộng <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Bài viết này tổng hợp các tiến bộ mới nhất từ các công bố khoa học trong giai đoạn 2025–2026, cung cấp cái nhìn toàn diện cho các kỹ sư và nhà nghiên cứu.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig5.jpg\" alt=\"Phân tích vi cấu trúc của mẫu GB-16 sử dụng kính hiển vi quang học (OM) và kính hiển vi điện tử quét (SEM).\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> Phân tích vi cấu trúc của mẫu GB-16 sử dụng kính hiển vi quang học (OM) và kính hiển vi điện tử quét (SEM). <span class=\"fig-credit\">Nguồn: Hình 7 trong bài gốc – Reindl et al. (2026), “Microstructure and mechanical performance of functionally graded low-alloy steel structures produced by tandem wire-arc directed energy deposition”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02704-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02704-8</a> [<a href=\"#ref-6\">6</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>2. Bối cảnh</h3><p>Sự phát triển của công nghệ chế tạo bồi đắp kim loại (AM) đặt ra yêu cầu cấp thiết về việc giải quyết các bài toán kỹ thuật cốt lõi như ứng suất dư, khuyết tật rỗ khí, sự hình thành vết nứt và độ biến thiên cơ tính giữa các lớp vật liệu. Các phương pháp như lắng đọng năng lượng định hướng bằng hồ quang (DED-Arc), nung chảy bột bằng laser (L-PBF) và lắng đọng bột thổi (BP-DED) mang lại năng suất cao nhưng cũng làm gia tăng độ phức tạp trong việc kiểm soát vi cấu trúc <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Các nghiên cứu gần đây tập trung vào việc hiểu rõ bản chất nhiệt động lực học, quá trình đông đặc và tương tác pha để vượt qua các giới hạn truyền thống của quá trình hàn và đúc <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig7.jpg\" alt=\"Kết quả phân tích TEM của mẫu có bổ sung bột TiC.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Kết quả phân tích TEM của mẫu có bổ sung bột TiC. <span class=\"fig-credit\">Nguồn: Hình 9 trong bài gốc – Meng et al. (2026), “Wire-powder arc additive manufacturing of Al matrix composites: Interfacial behavior and damage evolution”, <em>Advanced Light Materials</em>, <a href=\"https://doi.org/10.1016/j.almate.2026.10.006\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.almate.2026.10.006</a> [<a href=\"#ref-8\">8</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>3. WAAM và điều khiển quá trình</h3><p>Quá trình gia công bồi đắp hồ quang dây (WAAM) phụ thuộc lớn vào chế độ truyền nhiệt và kiểu chuyển dịch dòng điện hàn. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã khảo sát ảnh hưởng của đầu vào nhiệt và chế độ chuyển dịch (ngắn mạch và chuyển phun) ở tốc độ di chuyển cao lên vật liệu ER70S-6. Kết quả cho thấy các điều kiện nhiệt thấp tạo ra đường hàn hẹp và cao hơn do lan rộng ngang giảm và tốc độ nguội tăng. Ở tốc độ 1000 mm/phút, chế độ chuyển dịch ngắn mạch gặp hạn chế do rỗ khí ở lớp trên cùng, trong khi chế độ chuyển phun cho phép lắng đọng ít khuyết tật và đạt tốc độ dịch chuyển tới 1600 mm/phút ở các cấu trúc thành mỏng <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig1.jpg\" alt=\"So sánh hình thái và kích thước hạt cột giữa (A) chuyển mạch ngắn 1000 mm/phút; (B) chuyển phun 1000 mm/phút (×50, ăn mòn mẫu).\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> So sánh hình thái và kích thước hạt cột giữa (A) chuyển mạch ngắn 1000 mm/phút; (B) chuyển phun 1000 mm/phút (×50, ăn mòn mẫu). <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – McNicol et al. (2026), “High-Speed Wire Arc Additive Manufacturing: Investigating the Influence of Heat Input, Transfer Modes and Parameter Selection”, <em>Applied Sciences</em>, <a href=\"https://doi.org/10.3390/app162211370\" target=\"_blank\" rel=\"noopener\">doi:10.3390/app162211370</a> [<a href=\"#ref-1\">1</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Đối với vật liệu thép cường độ cao, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> đã sử dụng phương pháp lắng đọng năng lượng định hướng hồ quang song sinh (T-WA-DED) với dây hàn ER70 và ER120 để chế tạo các cấu trúc chuyển đổi chức năng (FGM) dài tới 140 mm. Nghiên cứu xác định các gradient theo hướng hàn từ 8–16 mm mang lại sự cân bằng tốt giữa độ bền kéo và độ giãn dài, đồng thời đường cong độ cứng tuân theo xu hướng tuyến tính đáng tin cậy <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Trong một ứng dụng khác nhằm cải thiện khả năng chống mài mòn cho thép 42CrMo, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> đã phủ đồng thiếc bằng WAAM với tỷ lệ chồng lấn 45%. Ở tỷ lệ chồng lấn 40%, lớp đắp đạt độ cứng vi mô trung bình 122,7 HV, hệ số ma sát thấp 0,2517, độ bền cắt 382 MPa và tổn thất mòn chỉ 0,0100 mg/phút <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<h3>4. DED và L-PBF: Tối ưu hóa vi cấu trúc và dung nạp khuyết tật</h3><p>Công nghệ lắng đọng năng lượng định hướng dùng bột thổi (BP-DED) và nung chảy bột trên giường laser (L-PBF) đóng vai trò quan trọng trong việc chế tạo các chi tiết hiệu suất cao. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> đã thiết kế và chế tạo mối nối chuyển đổi phi tuyến tính (GTJ) giữa thép không gỉ austenit SS347H và thép ferit-martenxit P91 bằng BP-DED dựa trên mô hình hóa nhiệt động lực học CALPHAD. Mối nối phi tuyến tính này đạt độ bền chảy trung bình $478\\pm16\\text{ MPa}$, vượt qua vật liệu nền và chịu được thử nghiệm giãn nở nhiệt mà không bị nứt ở vùng chuyển tiếp <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig2.jpg\" alt=\"Đường cong kéo cho mối nối Grad (GTJ) phi tuyến tính, và sự tiến hóa phân bố biến dạng trong phần đo trong quá trình kéo.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Đường cong kéo cho mối nối Grad (GTJ) phi tuyến tính, và sự tiến hóa phân bố biến dạng trong phần đo trong quá trình kéo. <span class=\"fig-credit\">Nguồn: Hình 8 trong bài gốc – Nandwana et al. (2026), “Design and additive manufacturing of nonlinear graded joints between austenitic and ferritic-martensitic steels”, <em>Scientific Reports</em>, <a href=\"https://doi.org/10.1038/s41598-026-59819-7\" target=\"_blank\" rel=\"noopener\">doi:10.1038/s41598-026-59819-7</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Trong lĩnh vực vật liệu composite ma trận nhôm, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> đã kết hợp nạp đồng thời dây và hạt gốm (TiC hoặc $TiB_2$) trong quá trình bồi đắp hồ quang để cải thiện chất lượng tạo hình. Việc bổ sung bột TiC làm giảm độ nhám bề mặt thành mỏng từ 33,12 xuống 15,17 $\\mu\\text{m}$, tăng giới hạn bền kéo (UTS) lên 289,21 MPa (tăng 7,4%), độ giãn dài 26,41% và độ rỗ chỉ 0,18% nhờ liên kết mạch lạc giữa TiC và nền nhôm <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. Đối với vật liệu thép không gỉ AISI 316L in bằng L-PBF, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> đã áp dụng công nghệ cấy ion plasma nitơ được kiểm soát nhiệt độ (TC-NPIII) ở nhiệt độ 450–520 °C trong 1–3 giờ. Điều kiện tối ưu ở 450 °C trong 3 giờ tạo ra lớp austenit mở rộng ($\\gamma_N$) dày từ 18,30 đến 28,40 $\\mu\\text{m}$, đẩy độ cứng nano mặt cắt lên khoảng 386–751 HV so với mức 238 HV của mẫu in chưa xử lý <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig6.jpg\" alt=\"Ảnh FEG-SEM của thép không gỉ AISI 316L cho thấy hình thái vi mô bột với độ phóng đại 500 lần và 2,50k lần.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Ảnh FEG-SEM của thép không gỉ AISI 316L cho thấy hình thái vi mô bột với độ phóng đại 500 lần và 2,50k lần. <span class=\"fig-credit\">Nguồn: Hình 2 trong bài gốc – Jimenez et al. (2026), “Plasma Immersion Ion Implantation of AISI 316L Stainless Steel Parts Manufactured by Laser Powder Bed Fusion”, <em>Journal of Materials Engineering and Performance</em>, <a href=\"https://doi.org/10.1007/s11665-026-15481-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s11665-026-15481-8</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>5. Tổ chức, cơ tính, ứng suất dư và xử lý sau in</h3><p>Việc kiểm soát cấu trúc vi mô và ứng suất dư đóng vai trò quyết định đến độ bền mỏi và tuổi thọ chi tiết in 3D. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> đã khảo sát ảnh hưởng của việc bổ sung zirconi (Zr) vào hợp kim Monel 400 trong quá trình bồi đắp đa dây hồ quang (MWAAM). Hợp kim chứa 1 wt.% Zr thể hiện hạt được tinh luyện mạnh nhất, độ cứng đạt khoảng 160 HV0.2 ở đỉnh, 165 HV0.2 và 140–145 HV0.2 ở đáy, cùng với giới hạn bền kéo hướng ngang đạt 310 MPa và độ bền chảy 440 MPa <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig4.jpg\" alt=\"Toàn cảnh hệ thống lắng đọng kim loại tạo hình (SMD).\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Toàn cảnh hệ thống lắng đọng kim loại tạo hình (SMD). <span class=\"fig-credit\">Nguồn: Hình 1 trong bài gốc – Hlail et al. (2026), “INFLUENCE OF ZIRCONIUM ON MECHANICAL AND WEAR PROPERTIES OF MONEL400 BY DOUBLE-WIRE ARC ADDITIVE MANUFACTURING”, <em>Kufa Journal of Engineering</em>, <a href=\"https://doi.org/10.30572/2018/kje/170427\" target=\"_blank\" rel=\"noopener\">doi:10.30572/2018/kje/170427</a> [<a href=\"#ref-10\">10</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Để khắc phục nhược điểm của lớp vi cấu trúc dạng kim (acicular) ở bề mặt hợp kim Ti-6Al-4V (Ti64) gia công bằng L-DED, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup> đã đề xuất quy trình phun nước mài mòn hai giai đoạn (dual-stage AWJP). Phương pháp này giúp đạt độ cứng tối đa 475 HV tại độ sâu 50 $\\mu\\text{m}$ (tăng 6,5% so với phun đơn giai đoạn thông thường) và duy trì lớp biến dạng dày tới khoảng 45 $\\mu\\text{m}$ <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Bên cạnh đó, nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> đã phân tích năng lượng sơ cấp từ nôi đến cửa (cradle-to-gate) của L-PBF cho các hợp kim nhôm, titan và magie hàng không, chỉ ra rằng tỷ lệ sử dụng vật liệu (buy-to-fly ratio) đóng vai trò quyết định trong việc tiết kiệm năng lượng đối với titan, trong khi magie chưa thể hiện ưu thế năng lượng rõ rệt so với phương pháp đúc truyền thống <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig3.jpg\" alt=\"Ranh giới hệ thống cho so sánh năng lượng từ nôi đến cửa (cradle-to-gate) giữa quy trình L-PBF từ quặng đến chi tiết hoàn thiện và phương pháp đúc truyền thống.\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Ranh giới hệ thống cho so sánh năng lượng từ nôi đến cửa (cradle-to-gate) giữa quy trình L-PBF từ quặng đến chi tiết hoàn thiện và phương pháp đúc truyền thống. <span class=\"fig-credit\">Nguồn: Hình 1 trong bài gốc – Hrushko et al. (2026), “Cradle-to-Gate Energy of Laser Powder Bed Fusion for Aerospace Titanium, Aluminium, and Magnesium Alloys: A Review”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110510\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110510</a> [<a href=\"#ref-12\">12</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>6. Thách thức</h3><p>Mặc dù các tiến bộ gần đây rất đáng khích lệ, việc ứng dụng rộng rãi công nghệ in 3D kim loại và WAAM vẫn đối mặt với nhiều rào cản kỹ thuật nghiêm trọng. Khuyết tật rỗ khí, sự hình thành pha không ổn định dưới biến dạng dẻo lớn <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, và sự biến động tính chất cơ học theo hướng xây dựng vẫn chưa được triệt tiêu hoàn toàn <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Các nghiên cứu chỉ ra rằng dữ liệu thực nghiệm về một số vật liệu như hợp kim magie (WE43, AZ91) còn rất hạn chế và thiếu tính đồng bộ giữa các chu trình chế tạo <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Hơn nữa, việc tích hợp các hệ thống giám sát trực tuyến trong quá trình lắng đọng năng lượng định hướng bằng laser (DED-LB/M) để phát hiện khuyết tật thời gian thực vẫn gặp thách thức lớn về khả năng xử lý tín hiệu và độ tin cậy trong môi trường công nghiệp khắc nghiệt <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Tiêu chuẩn hóa quy trình và chứng nhận chất lượng cho các cấu trúc phức tạp phục vụ ngành hàng không vũ trụ và y tế vẫn đang trong giai đoạn hoàn thiện.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig8.jpg\" alt=\"Vết nứt ưu thế được xác định rõ trong mẫu LPBF Scalmalloy xy-10 và ảnh SEM của vị trí vết nứt hỏng.\" loading=\"lazy\"><figcaption><strong>Hình 8.</strong> Vết nứt ưu thế được xác định rõ trong mẫu LPBF Scalmalloy xy-10 và ảnh SEM của vị trí vết nứt hỏng. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – Ang et al. (2026), “Comparing the Effect of Prior Exposure on the Durability of Boeing Space, Intelligence, and Weapons Systems LPBF Scalmalloy and LPBF 7A77”, <em>Fatigue &amp; Fracture of Engineering Materials &amp; Structures</em>, <a href=\"https://doi.org/10.1111/ffe.70520\" target=\"_blank\" rel=\"noopener\">doi:10.1111/ffe.70520</a> [<a href=\"#ref-15\">15</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure><h3>7. Xu thế tương lai</h3><p>Dựa trên các tài liệu tổng quan, một số xu thế phát triển trong tương lai được kỳ vọng sẽ định hình lĩnh vực chế tạo bồi đắp kim loại:</p>\n<ul>\n<li>Kỳ vọng tích hợp trí tuệ nhân tạo (AI) và học máy (ML) vào các vòng lặp tối ưu hóa thông số in 3D và dự đoán khuyết tật theo thời gian thực nhằm nâng cao độ lặp lại <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</li>\n<li>Sự phát triển mạnh mẽ của công nghệ hợp kim hóa tại chỗ (in-situ alloying) sử dụng dây lõi thuốc (MCAW) và cấp liệu hỗn hợp bột-dây nhằm mở rộng dải vật liệu chế tạo mà không gây ra hiện tượng không đồng nhất hóa học <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</li>\n<li>Mở rộng ứng dụng cấu trúc chức năng lai (FGM) và các mối nối chuyển đổi phi tuyến tính để triệt tiêu tập trung ứng suất tại ranh giới vật liệu dị chủng <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</li>\n<li>Kỳ vọng chuẩn hóa các chỉ descriptor đánh giá năng lượng vòng đời (cradle-to-gate) và phát triển các quy trình xử lý bề mặt tiên tiến như phun mài mòn đa giai đoạn nhằm tối ưu hóa toàn diện độ toàn vẹn bề mặt <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</li>\n</ul>\n<h3>8. Hàm ý thực tiễn</h3><p>Các kết quả nghiên cứu mới mang lại những hàm ý quan trọng cho nền công nghiệp và giáo dục kỹ thuật tại Việt Nam:</p>\n<ul>\n<li>Ngành công nghiệp cơ khí nặng và đóng tàu có thể áp dụng công nghệ WAAM với chế độ chuyển phun tốc độ cao để chế tạo các kết cấu lớn bằng thép carbon và hợp kim nhôm với năng suất vượt trội <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</li>\n<li>Các doanh nghiệp chế tạo phụ tùng hàng không và y tế cần chú trọng tích hợp các phương pháp xử lý sau in như cấy ion plasma hoặc gia công phun mài mòn để nâng cao tuổi thọ mỏi và khả năng chống mài mòn <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</li>\n<li>Các trường đại học và viện nghiên cứu kỹ thuật cần cập nhật chương trình đào tạo theo hướng kết hợp giữa luyện kim hàn, mô hình hóa nhiệt động lực học (như CALPHAD) và công nghệ gia công bồi đắp <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</li>\n<li>Việc phát triển năng lực nội địa hóa dây hàn lõi thuốc (MCAW) và vật liệu bổ sung có kiểm soát vi cấu trúc sẽ giúp giảm sự phụ thuộc vào nguyên liệu nhập khẩu đắt đỏ <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</li>\n</ul>",
+  "content_en": "<h3>1. Lead Paragraph</h3><p class=\"lead\">Wire arc additive manufacturing (WAAM) and metal 3D printing are rapidly transitioning from exploratory techniques to large-scale industrial manufacturing, driven by their capability to produce near-net-shape complex geometries. However, critical challenges regarding thermal field control, microstructural defects, and mechanical anisotropy continue to demand rigorous experimental and numerical investigations <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. This article synthesizes the latest scientific findings published between 2025 and 2026, offering a comprehensive review for engineers, researchers, and graduate students.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig5.jpg\" alt=\"Microstructure analysis of sample GB-16 using OM and SEM.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Microstructure analysis of sample GB-16 using OM and SEM. <span class=\"fig-credit\">Source: Fig. 7 of the original article – Reindl et al. (2026), “Microstructure and mechanical performance of functionally graded low-alloy steel structures produced by tandem wire-arc directed energy deposition”, <em>Welding in the World</em>, <a href=\"https://doi.org/10.1007/s40194-026-02704-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s40194-026-02704-8</a> [<a href=\"#ref-6\">6</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>2. Background</h3><p>The advancement of metal additive manufacturing (AM) highlights the urgent need to address core metallurgical bottlenecks, including residual stresses, porosity, cracking susceptibility, and property variations across deposited layers. Technologies such as directed energy deposition by arc (DED-Arc), laser powder bed fusion (L-PBF), and blown powder directed energy deposition (BP-DED) provide high fabrication efficiency but introduce significant complexities in microstructure management <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Recent studies focus on understanding underlying thermodynamic principles, solidification dynamics, and phase interactions to transcend the conventional limits of welding and casting <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig7.jpg\" alt=\"TEM analysis results of specimen with TiC powder addition.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> TEM analysis results of specimen with TiC powder addition. <span class=\"fig-credit\">Source: Fig. 9 of the original article – Meng et al. (2026), “Wire-powder arc additive manufacturing of Al matrix composites: Interfacial behavior and damage evolution”, <em>Advanced Light Materials</em>, <a href=\"https://doi.org/10.1016/j.almate.2026.10.006\" target=\"_blank\" rel=\"noopener\">doi:10.1016/j.almate.2026.10.006</a> [<a href=\"#ref-8\">8</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>3. WAAM and Process Control</h3><p>Wire arc additive manufacturing (WAAM) relies heavily on thermal input management and metal transfer modes. The authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> investigated the effects of heat input and transfer modes (short-circuit versus spray transfer) at high travel speeds on ER70S-6 depositions. Lower heat input conditions produced narrower and taller beads due to reduced lateral spreading and increased cooling rates. At 1000 mm/min, short-circuit transfer exhibited porosity limitations in top layers, whereas spray transfer enabled low-defect depositions with travel speeds reaching 1600 mm/min for thin walls <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig1.jpg\" alt=\"Comparison of columnar grain morphology and size between (A) 1000 mm/min short-circuit; (B) 1000 mm/min spray transfer (×50, etched).\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> Comparison of columnar grain morphology and size between (A) 1000 mm/min short-circuit; (B) 1000 mm/min spray transfer (×50, etched). <span class=\"fig-credit\">Source: Fig. 3 of the original article – McNicol et al. (2026), “High-Speed Wire Arc Additive Manufacturing: Investigating the Influence of Heat Input, Transfer Modes and Parameter Selection”, <em>Applied Sciences</em>, <a href=\"https://doi.org/10.3390/app162211370\" target=\"_blank\" rel=\"noopener\">doi:10.3390/app162211370</a> [<a href=\"#ref-1\">1</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>For low-alloy steel systems, the authors of <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup> utilized tandem wire-arc directed energy deposition (T-WA-DED) with ER70 and ER120 filler wires to fabricate functionally graded material (FGM) components up to 140 mm in length. Welding-direction gradients of 8–16 mm achieved an optimal balance between yield strength and ductility, while hardness profiles followed a reliable linear trend <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. In an application focusing on wear resistance improvement for 42CrMo steel substrates, the authors of <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup> deposited tin bronze layers via WAAM. At a 40% overlap rate, the deposited layer achieved an average microhardness of 122.7 HV, a low friction coefficient of 0.2517, a shear strength of 382 MPa, and a wear mass loss rate of only 0.0100 mg/min <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>.</p>\n<h3>4. DED and L-PBF: Microstructural Optimization and Defect Tolerance</h3><p>Blown powder directed energy deposition (BP-DED) and laser powder bed fusion (L-PBF) play vital roles in producing high-performance components. The authors of <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup> designed and fabricated nonlinear graded transition joints (GTJs) between austenitic stainless steel SS347H and ferritic-martensitic P91 steel using BP-DED, guided by CALPHAD thermo-kinetic modeling. The nonlinear joint exhibited an average yield strength of $478\\pm16\\text{ MPa}$, outperforming base materials and remaining intact during pressurized creep testing <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig2.jpg\" alt=\"Tensile curves for the nonlinear GTJ, and evolution of strain distribution in the gage section during loading.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Tensile curves for the nonlinear GTJ, and evolution of strain distribution in the gage section during loading. <span class=\"fig-credit\">Source: Fig. 8 of the original article – Nandwana et al. (2026), “Design and additive manufacturing of nonlinear graded joints between austenitic and ferritic-martensitic steels”, <em>Scientific Reports</em>, <a href=\"https://doi.org/10.1038/s41598-026-59819-7\" target=\"_blank\" rel=\"noopener\">doi:10.1038/s41598-026-59819-7</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>In aluminum matrix composites, the authors of <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup> adopted a wire-powder arc additive manufacturing process to simultaneously feed wire and ceramic particles (TiC or $TiB_2$). The addition of TiC reduced surface roughness from 33.12 to 15.17 $\\mu\\text{m}$, increased ultimate tensile strength (UTS) to 289.21 MPa (a 7.4% improvement), achieved 26.41% elongation, and limited porosity to 0.18% through coherent interfacial bonding <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>. For AISI 316L stainless steel manufactured via L-PBF, the authors of <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup> applied temperature-controlled nitrogen plasma immersion ion implantation (TC-NPIII) at 450–520 °C for 1–3 hours. The optimal condition at 450 °C for 3 hours generated an expanded austenite ($\\gamma_N$) layer of 18.30 to 28.40 $\\mu\\text{m}$, increasing cross-sectional nanoindentation hardness to 386–751 HV compared to 238 HV for untreated LPBF samples <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig6.jpg\" alt=\"FEG-SEM images of AISI 316L showing the powder micromorphology with magnification of 500x and 2.50kx.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> FEG-SEM images of AISI 316L showing the powder micromorphology with magnification of 500x and 2.50kx. <span class=\"fig-credit\">Source: Fig. 2 of the original article – Jimenez et al. (2026), “Plasma Immersion Ion Implantation of AISI 316L Stainless Steel Parts Manufactured by Laser Powder Bed Fusion”, <em>Journal of Materials Engineering and Performance</em>, <a href=\"https://doi.org/10.1007/s11665-026-15481-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s11665-026-15481-8</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>5. Microstructure, Mechanical Properties, Residual Stress, and Post-Processing</h3><p>Controlling microstructure and residual stress is critical for the fatigue strength and service life of additively manufactured parts. The authors of <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup> examined the influence of zirconium (Zr) additions on Monel 400 alloy produced by multi-wire arc additive manufacturing (MWAAM). The alloy containing 1 wt.% Zr showed refined grain structures, higher hardness reaching ~160 HV0.2 at the top, 165 HV0.2, and 140–145 HV0.2 at the bottom, alongside superior horizontal ultimate tensile strength (310 MPa) and yield strength (440 MPa) <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig4.jpg\" alt=\"Overall view of the shaped metal deposition (SMD) system.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Overall view of the shaped metal deposition (SMD) system. <span class=\"fig-credit\">Source: Fig. 1 of the original article – Hlail et al. (2026), “INFLUENCE OF ZIRCONIUM ON MECHANICAL AND WEAR PROPERTIES OF MONEL400 BY DOUBLE-WIRE ARC ADDITIVE MANUFACTURING”, <em>Kufa Journal of Engineering</em>, <a href=\"https://doi.org/10.30572/2018/kje/170427\" target=\"_blank\" rel=\"noopener\">doi:10.30572/2018/kje/170427</a> [<a href=\"#ref-10\">10</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>To overcome the limitations of as-deposited acicular microstructures in L-DED Ti-6Al-4V (Ti64), the authors of <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup> proposed a dual-stage abrasive waterjet peening (AWJP) process. This treatment achieved a maximum hardness of 475 HV at a depth of 50 $\\mu\\text{m}$ (a 6.5% enhancement over single-stage peening) and maintained a deformed layer depth of approximately 45 $\\mu\\text{m}$ <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>. Furthermore, the authors of <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup> evaluated the cradle-to-gate primary energy of L-PBF for aerospace alloys, concluding that buy-to-fly ratios govern energy savings for titanium, whereas magnesium alloys currently show no net energy advantage over conventional casting <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig3.jpg\" alt=\"System boundary for the cradle-to-gate comparison, showing the L-PBF route from ore to the finished part and the conventional comparator.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> System boundary for the cradle-to-gate comparison, showing the L-PBF route from ore to the finished part and the conventional comparator. <span class=\"fig-credit\">Source: Fig. 1 of the original article – Hrushko et al. (2026), “Cradle-to-Gate Energy of Laser Powder Bed Fusion for Aerospace Titanium, Aluminium, and Magnesium Alloys: A Review”, <em>Journal of Manufacturing and Materials Processing</em>, <a href=\"https://doi.org/10.3390/jmmp10110510\" target=\"_blank\" rel=\"noopener\">doi:10.3390/jmmp10110510</a> [<a href=\"#ref-12\">12</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>6. Challenges</h3><p>Despite encouraging recent progress, the widespread adoption of metal additive manufacturing and WAAM continues to face severe technical bottlenecks. Porosity, phase instability under high plastic deformation <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>, and mechanical property anisotropy remain insufficiently resolved <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Evidence indicates that empirical datasets for specific alloys such as magnesium (WE43, AZ91) are sparse and lack cycle-resolved consistency <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>. Moreover, integrating in-situ monitoring technologies into laser-based directed energy deposition (DED-LB/M) systems for real-time defect detection encounters substantial hurdles regarding data processing bandwidth and industrial reliability <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Standardization and regulatory qualification frameworks for safety-critical aerospace and biomedical components remain under development.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig8.jpg\" alt=\"A well-defined dominant crack in BSI&amp;WS LPBF Scalmalloy specimen xy-10 and SEM of the failure location crack.\" loading=\"lazy\"><figcaption><strong>Figure 8.</strong> A well-defined dominant crack in BSI&amp;WS LPBF Scalmalloy specimen xy-10 and SEM of the failure location crack. <span class=\"fig-credit\">Source: Fig. 3 of the original article – Ang et al. (2026), “Comparing the Effect of Prior Exposure on the Durability of Boeing Space, Intelligence, and Weapons Systems LPBF Scalmalloy and LPBF 7A77”, <em>Fatigue &amp; Fracture of Engineering Materials &amp; Structures</em>, <a href=\"https://doi.org/10.1111/ffe.70520\" target=\"_blank\" rel=\"noopener\">doi:10.1111/ffe.70520</a> [<a href=\"#ref-15\">15</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure><h3>7. Future Trends</h3><p>Drawing from recent review literature, several future developments are anticipated to shape the metal additive manufacturing landscape:</p>\n<ul>\n<li>Expectations for integrating artificial intelligence (AI) and machine learning (ML) into closed-loop process optimization and real-time defect prediction frameworks <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>.</li>\n<li>Rapid advancement in in-situ alloying technologies utilizing metal-cored arc welding (MCAW) wires and hybrid powder-wire feedstock to expand accessible alloy compositions without chemical segregation <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</li>\n<li>Expansion of functionally graded materials (FGM) and nonlinear transition joints to eliminate stress concentrations at dissimilar material interfaces <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>.</li>\n<li>Expectations for standardizing cradle-to-gate life cycle energy descriptors and advancing multi-stage surface peening techniques to optimize surface integrity <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</li>\n</ul>\n<h3>8. Practical Implications</h3><p>These recent research findings yield concrete implications for Vietnamese industry and engineering education:</p>\n<ul>\n<li>Heavy machinery and shipbuilding industries can adopt high-speed spray transfer WAAM processes to fabricate large-scale carbon steel and aluminum components with superior productivity <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup>.</li>\n<li>Aerospace and biomedical component manufacturers should integrate post-processing surface treatments, such as plasma ion implantation or dual-stage peening, to enhance fatigue life and wear resistance <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</li>\n<li>Engineering universities and technical institutes should update curricula to integrate welding metallurgy, thermo-kinetic modeling (such as CALPHAD), and advanced manufacturing technologies <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</li>\n<li>Developing domestic capabilities in cored welding wire production and tailored feedstock engineering will reduce reliance on costly imported materials <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>, <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</li>\n</ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Jonah McNicol",
+        "Andrew Gorrie",
+        "Keagan De Menezes",
+        "Ryan Stevenson",
+        "Athanasios Toumpis"
+      ],
+      "more_authors": false,
+      "title": "High-Speed Wire Arc Additive Manufacturing: Investigating the Influence of Heat Input, Transfer Modes and Parameter Selection",
+      "journal": "Applied Sciences",
+      "date": "2026-11-17",
+      "doi": "10.3390/app162211370",
+      "url": "https://doi.org/10.3390/app162211370",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Ahmed Nabil Elalem",
+        "Husam Alrehaili",
+        "Mohammad Azad Alam",
+        "Sufian Raja",
+        "Azim Uddin"
+      ],
+      "more_authors": false,
+      "title": "Application and Adaptation of Arc-Based Welding Processes to Wire Arc Additive Manufacturing: A Review",
+      "journal": "Materials",
+      "date": "2026-10-16",
+      "doi": "10.3390/ma19204362",
+      "url": "https://doi.org/10.3390/ma19204362",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Md Jonaet Ansari",
+        "Anthony Roccisano",
+        "Elias Arcondoulis",
+        "Christiane Schulz",
+        "Thomas Schläfer",
+        "Colin J. Hall"
+      ],
+      "more_authors": false,
+      "title": "Advancements in In-Situ Monitoring Technologies for Detecting Process-Induced Defects in the Directed Energy Deposition Process: A Comprehensive Review",
+      "journal": "Materials",
+      "date": "2025-09-14",
+      "doi": "10.3390/ma18184304",
+      "url": "https://doi.org/10.3390/ma18184304",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Peeyush Nandwana",
+        "Rangasayee Kannan",
+        "Selda Nayir",
+        "Brian H. Jordan",
+        "Hong Wang",
+        "Niyanth Sridharan"
+      ],
+      "more_authors": true,
+      "title": "Design and additive manufacturing of nonlinear graded joints between austenitic and ferritic-martensitic steels",
+      "journal": "Scientific Reports",
+      "date": "2026-11-17",
+      "doi": "10.1038/s41598-026-59819-7",
+      "url": "https://doi.org/10.1038/s41598-026-59819-7",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Yu Wang",
+        "Guodong Niu",
+        "Jian Mao"
+      ],
+      "more_authors": false,
+      "title": "Solidification‐Derived Intermetallic Architectures in Heat‐Resistant Aluminum Alloys: A Review",
+      "journal": "Advanced Engineering Materials",
+      "date": "2026-10-13",
+      "doi": "10.1002/adem.71330",
+      "url": "https://doi.org/10.1002/adem.71330",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Thomas Reindl",
+        "C. Hagner",
+        "S. Rotzsche",
+        "Rafael Paiotti Marcondes Guimarães",
+        "Josip Vinčić",
+        "Nico Hempel"
+      ],
+      "more_authors": true,
+      "title": "Microstructure and mechanical performance of functionally graded low-alloy steel structures produced by tandem wire-arc directed energy deposition",
+      "journal": "Welding in the World",
+      "date": "2026-11-16",
+      "doi": "10.1007/s40194-026-02704-8",
+      "url": "https://doi.org/10.1007/s40194-026-02704-8",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "Siyuan Li",
+        "Xianfen Li",
+        "Chenxi Liu",
+        "Dian Gu",
+        "Wengang Zhai"
+      ],
+      "more_authors": false,
+      "title": "Enhancing wear resistance of 42CrMo steel via tin bronze deposition using wire arc additive manufacturing",
+      "journal": "Figshare",
+      "date": "2026-11-16",
+      "doi": "10.6084/m9.figshare.35025456",
+      "url": "https://doi.org/10.6084/m9.figshare.35025456",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "Yunfei Meng",
+        "Mengjiao Deng",
+        "Qianxi Yu",
+        "Xiaohan Guo",
+        "Beibei Li",
+        "Jie Li"
+      ],
+      "more_authors": true,
+      "title": "Wire-powder arc additive manufacturing of Al matrix composites: Interfacial behavior and damage evolution",
+      "journal": "Advanced Light Materials",
+      "date": "2026-11-12",
+      "doi": "10.1016/j.almate.2026.10.006",
+      "url": "https://doi.org/10.1016/j.almate.2026.10.006",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "Laila Ribeiro De Andrade Acevedo Jimenez",
+        "Marian Ferreira Baptista da Silva",
+        "Aline Gonçalves Capella",
+        "Rogério de Moraes Oliveira"
+      ],
+      "more_authors": false,
+      "title": "Plasma Immersion Ion Implantation of AISI 316L Stainless Steel Parts Manufactured by Laser Powder Bed Fusion",
+      "journal": "Journal of Materials Engineering and Performance",
+      "date": "2026-11-13",
+      "doi": "10.1007/s11665-026-15481-8",
+      "url": "https://doi.org/10.1007/s11665-026-15481-8",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Haneen Hameed Hlail",
+        "Basem Al-Zubaidy",
+        "Zuheir Talib Khulief"
+      ],
+      "more_authors": false,
+      "title": "INFLUENCE OF ZIRCONIUM ON MECHANICAL AND WEAR PROPERTIES OF MONEL400 BY DOUBLE-WIRE ARC ADDITIVE MANUFACTURING",
+      "journal": "Kufa Journal of Engineering",
+      "date": "2026-11-14",
+      "doi": "10.30572/2018/kje/170427",
+      "url": "https://doi.org/10.30572/2018/kje/170427",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Fengrui Zhang",
+        "Shusong Zan",
+        "Andres Gameros",
+        "Andy Norton",
+        "Zhirong Liao"
+      ],
+      "more_authors": false,
+      "title": "Surface integrity and strengthening mechanisms of Ti-6Al-4 V fabricated by laser directed energy deposition under dual-stage abrasive waterjet peening",
+      "journal": "Journal of Manufacturing Processes",
+      "date": "2026-11-19",
+      "doi": "10.1016/j.jmapro.2026.11.050",
+      "url": "https://doi.org/10.1016/j.jmapro.2026.11.050",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Oleksandr Hrushko",
+        "Mykyta Aikin",
+        "Volodymyr Valentynovych Kukhar"
+      ],
+      "more_authors": false,
+      "title": "Cradle-to-Gate Energy of Laser Powder Bed Fusion for Aerospace Titanium, Aluminium, and Magnesium Alloys: A Review",
+      "journal": "Journal of Manufacturing and Materials Processing",
+      "date": "2026-11-14",
+      "doi": "10.3390/jmmp10110510",
+      "url": "https://doi.org/10.3390/jmmp10110510",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "Yixuan Shi",
+        "Yu-Zhe Zheng",
+        "Chengcong Huang",
+        "Shangyan Zhao",
+        "Xuan Li",
+        "Yuchen Lu"
+      ],
+      "more_authors": true,
+      "title": "Influence of Processing Parameters on Additively Manufactured Architected Cellular Metals: Emphasis on Biomedical Applications",
+      "journal": "Journal of Functional Biomaterials",
+      "date": "2025-02-08",
+      "doi": "10.3390/jfb16020053",
+      "url": "https://doi.org/10.3390/jfb16020053",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Ulf Ziesing",
+        "Fabian Siepmann",
+        "Sebastian Weber",
+        "Jonathan Lentz"
+      ],
+      "more_authors": false,
+      "title": "Qualification of different welding wire types for DED-Arc/M-processing of austenitic stainless steels",
+      "journal": "Journal of Materials Processing Technology",
+      "date": "2026-11-16",
+      "doi": "10.1016/j.jmatprotec.2026.119591",
+      "url": "https://doi.org/10.1016/j.jmatprotec.2026.119591",
+      "license": "cc-by",
+      "topic": "feature"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Andrew Siao Ming Ang",
+        "Richard W. Aston",
+        "Shareen S. L. Chan",
+        "Nicole D. Schoenborn",
+        "Daren Peng",
+        "Rhys Jones"
+      ],
+      "more_authors": false,
+      "title": "Comparing the Effect of Prior Exposure on the Durability of Boeing Space, Intelligence, and Weapons Systems LPBF Scalmalloy and LPBF 7A77",
+      "journal": "Fatigue & Fracture of Engineering Materials & Structures",
+      "date": "2026-11-13",
+      "doi": "10.1111/ffe.70520",
+      "url": "https://doi.org/10.1111/ffe.70520",
+      "license": "cc-by",
+      "topic": "feature"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}

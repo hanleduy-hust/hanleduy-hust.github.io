@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-22-diem-tin-khoa-hoc",
+    "date": "2026-11-22",
+    "type": "digest",
+    "category_vi": "Điểm tin khoa học",
+    "category_en": "Science Digest",
+    "title_vi": "Nghiên cứu mới về công nghệ hàn, gia công bồi đắp kim loại và vảy hàn điện tử: Từ mô hình học máy thích ứng đến vi cấu trúc vật liệu tiên tiến",
+    "title_en": "New Research on Welding, Metal Additive Manufacturing, and Electronic Packaging: From Adaptive Machine Learning to Advanced Microstructures",
+    "summary_vi": "Bản tin tổng hợp các công trình nghiên cứu công bố tuần qua (22/11/2026) trong lĩnh vực hàn công nghiệp, in 3D kim loại và vật liệu liên kết điện tử. Các nghiên cứu tập trung tối ưu hóa thông số quy trình, cải thiện vi cấu trúc và ứng dụng trí tuệ nhân tạo trong kiểm soát chất lượng.",
+    "summary_en": "This digest reviews research papers published over the past week (22/11/2026) in industrial welding, metal additive manufacturing, and electronic packaging. The studies focus on process parameter optimization, microstructural refinement, and the application of artificial intelligence in quality control.",
+    "tags": [
+      "welding",
+      "metal-am",
+      "electronic-packaging",
+      "ai-in-welding",
+      "friction-stir-welding"
+    ],
+    "cover": "images/blog/2026-11-22-diem-tin-khoa-hoc/fig6.jpg",
+    "file": "posts/2026-11-22-diem-tin-khoa-hoc.json"
+  },
+  {
     "id": "2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
     "date": "2026-11-21",
     "type": "feature",

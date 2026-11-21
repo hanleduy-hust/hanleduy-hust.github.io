@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai",
+    "date": "2026-11-21",
+    "type": "feature",
+    "category_vi": "Chuyên đề",
+    "category_en": "In-depth",
+    "title_vi": "Động lực học Quy trình, Vi cấu trúc và Hiệu năng Cơ học trong Gia công Bồi đắp Hồ quang Dây và In 3D Kim loại",
+    "title_en": "Process Dynamics, Microstructure, and Mechanical Performance in Wire Arc Additive Manufacturing and Metal 3D Printing",
+    "summary_vi": "Bài viết phân tích các nghiên cứu mới nhất về gia công bồi đắp hồ quang dây (WAAM) và in 3D kim loại, tập trung vào điều kiện nhiệt, chuyển chế độ dòng điện, tối ưu hóa vi cấu trúc và giảm thiểu khuyết tật.",
+    "summary_en": "This article analyzes the latest research on wire arc additive manufacturing (WAAM) and metal 3D printing, focusing on thermal conditions, transfer modes, microstructural optimization, and defect mitigation.",
+    "tags": [
+      "WAAM",
+      "L-PBF",
+      "Microstructure",
+      "Mechanical Properties",
+      "Additive Manufacturing"
+    ],
+    "cover": "images/blog/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai/fig5.jpg",
+    "file": "posts/2026-11-21-chuyen-de-nghien-cuu-moi-ve-waam-va-in-3d-kim-loai.json"
+  },
+  {
     "id": "2026-11-20-chuyen-de-cac-cong-nghe-han-tien-tien",
     "date": "2026-11-20",
     "type": "feature",

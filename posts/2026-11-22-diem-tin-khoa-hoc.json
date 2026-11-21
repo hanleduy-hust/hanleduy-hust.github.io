@@ -1,0 +1,267 @@
+{
+  "id": "2026-11-22-diem-tin-khoa-hoc",
+  "date": "2026-11-22",
+  "type": "digest",
+  "category_vi": "Điểm tin khoa học",
+  "category_en": "Science Digest",
+  "title_vi": "Nghiên cứu mới về công nghệ hàn, gia công bồi đắp kim loại và vảy hàn điện tử: Từ mô hình học máy thích ứng đến vi cấu trúc vật liệu tiên tiến",
+  "title_en": "New Research on Welding, Metal Additive Manufacturing, and Electronic Packaging: From Adaptive Machine Learning to Advanced Microstructures",
+  "summary_vi": "Bản tin tổng hợp các công trình nghiên cứu công bố tuần qua (22/11/2026) trong lĩnh vực hàn công nghiệp, in 3D kim loại và vật liệu liên kết điện tử. Các nghiên cứu tập trung tối ưu hóa thông số quy trình, cải thiện vi cấu trúc và ứng dụng trí tuệ nhân tạo trong kiểm soát chất lượng.",
+  "summary_en": "This digest reviews research papers published over the past week (22/11/2026) in industrial welding, metal additive manufacturing, and electronic packaging. The studies focus on process parameter optimization, microstructural refinement, and the application of artificial intelligence in quality control.",
+  "tags": [
+    "welding",
+    "metal-am",
+    "electronic-packaging",
+    "ai-in-welding",
+    "friction-stir-welding"
+  ],
+  "cover": "images/blog/2026-11-22-diem-tin-khoa-hoc/fig6.jpg",
+  "content_vi": "<p class=\"lead\">Bản tin khoa học tuần này cập nhật các tiến bộ mới nhất trong lĩnh vực công nghệ hàn, gia công bồi đắp kim loại (AM), vảy hàn điện tử và tự động hóa công nghiệp thông minh. Các công trình làm nổi bật vai trò của trí tuệ nhân tạo, tối ưu hóa vi cấu trúc và kiểm soát nhiệt độ trong việc nâng cao độ bền kết cấu.</p>\n<h3>Trí tuệ nhân tạo và Tự động hóa trong Quy trình Hàn</h3>\n<p>Việc ứng dụng học máy và trí tuệ nhân tạo trong tự động hóa hàn đang giải quyết bài toán kiểm tra chất lượng và điều khiển thời gian thực. Nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> đã xây dựng một cửa sổ quy trình tùy chỉnh cho quá trình hàn vảy laser robot (LWB) nhằm kiểm soát khuyết tật, thiết lập phương pháp điều chỉnh nhiệt lượng theo tốc độ cấp dây để phân biệt ranh giới giữa điều kiện không khuyết tật và các hiện tượng thiếu bám dính, rỗ khí, hay chảy kim loại cơ bản. Trong một hướng đi khác về tối ưu hóa quy trình, hệ thống điều khiển thích ứng dựa trên học sâu (DL-ACS) kết hợp mạng thần kinh tích chập 1 chiều (1D-CNN) và mạng LSTM hai chiều được đánh giá qua mô phỏng công nghiệp 24 tuần <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. Hệ thống DL-ACS đạt hiệu suất tổng thể thiết bị (OEE) 91.8% so với 71.6% của bộ điều khiển PID truyền thống, đồng thời giảm thời gian dừng máy ngoài dự kiến 83.4% và cắt giảm tỷ lệ phế phẩm 61.2% <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig6.jpg\" alt=\"So sánh Hiệu suất tổng thể thiết bị (OEE) giữa bốn hệ thống điều khiển trong mô phỏng công nghiệp 24 tuần.\" loading=\"lazy\"><figcaption><strong>Hình 1.</strong> So sánh Hiệu suất tổng thể thiết bị (OEE) giữa bốn hệ thống điều khiển trong mô phỏng công nghiệp 24 tuần. <span class=\"fig-credit\">Nguồn: Hình 3 trong bài gốc – U et al. (2026), “Adaptive Intelligence in the Factory: A Deep Learning Framework for Real-Time Anomaly Response and Adaptive Process Control in Industrial Manufacturing Automation”, <em>Computer and decision making.</em>, <a href=\"https://doi.org/10.1922/comdem.v3i7s.19116\" target=\"_blank\" rel=\"noopener\">doi:10.1922/comdem.v3i7s.19116</a> [<a href=\"#ref-2\">2</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Để đảm bảo tính nhất quán của dữ liệu công nghiệp, một ngôn ngữ ràng buộc lai mang tên GraphCo đã được phát triển để xác thực các đường ống học máy trong đồ thị tri thức công nghiệp tại các dây chuyền hàn điểm kháng trở <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Ngoài ra, việc ứng dụng AI và mạng thần kinh nhân tạo trong việc đánh giá cơ tính hợp kim nhôm AA7075, dự đoán ăn mòn và phân loại khuyết tật tự động cũng được tổng hợp toàn diện trong nghiên cứu của nhóm tác giả <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Sơ đồ nguyên lý quá trình Hall-Heroult.\" loading=\"lazy\"><figcaption><strong>Hình 2.</strong> Sơ đồ nguyên lý quá trình Hall-Heroult. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Ali (2026), “Materials Engineering, Degradation Mechanisms, and the Role of Artificial Intelligence for Aluminium Alloy AA7075: A Technical Review”, <em>Zenodo (CERN European Organization for Nuclear Research)</em>, <a href=\"https://doi.org/10.5281/zenodo.24084622\" target=\"_blank\" rel=\"noopener\">doi:10.5281/zenodo.24084622</a> [<a href=\"#ref-4\">4</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Hàn khuấy ma sát và Xử lý Cơ nhiệt Vật liệu</h3>\n<p>Công nghệ hàn khuấy ma sát (FSW) và xử lý ma sát (FSP) tiếp tục cho thấy ưu thế vượt trội trong việc cải thiện vi cấu trúc và cơ tính các vật liệu khó hàn. Nghiên cứu trên hợp kim nhôm 6061-T6 cho thấy việc áp dụng nhiệt luyện sau hàn (PWHT) gồm dung dịch hóa ở 520 °C trong 1 giờ, tôi nước và hóa già nhân tạo ở 170 °C trong 7 giờ đã làm tăng kích thước hạt trung bình trong vùng hạt nhân từ 10,17 lên 16,15 µm, nâng tỷ lệ hạt tái kết tinh từ 84,8% lên 95,8% <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Giới hạn bền kéo và giới hạn chảy của mối hàn sau nhiệt luyện tăng lần lượt từ 202,3 MPa lên 299,8 MPa và từ 149,8 MPa lên 249,6 MPa <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig3.jpg\" alt=\"Cấu trúc hạt EBSD và kích thước hạt trung bình trong vùng HAZ, TMAZ và NZ của mối hàn FSW hợp kim nhôm 6061-T6 trước và sau nhiệt luyện sau hàn.\" loading=\"lazy\"><figcaption><strong>Hình 3.</strong> Cấu trúc hạt EBSD và kích thước hạt trung bình trong vùng HAZ, TMAZ và NZ của mối hàn FSW hợp kim nhôm 6061-T6 trước và sau nhiệt luyện sau hàn. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Hu et al. (2026), “Effects of Post-Weld Heat Treatment on Microstructural Evolution and Mechanical Properties of Friction Stir Welded 6061-T6 Aluminium Alloy Joints”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16111274\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16111274</a> [<a href=\"#ref-5\">5</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Đối với gang dẻo (60-40-18), quá trình xử lý ma sát nhiều lượt (multi-pass FSP) giúp giảm kích thước các hạt liên kim loại trong vùng khuấy, cải thiện độ tinh mịn hạt trung bình tới 43% <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Sau 1, 2 và 3 lượt xử lý, độ cứng tăng lần lượt 37%, 61% và 87%, trong khi khả năng chống mài mòn tăng tương ứng 41%, 65% và 75% so với vật liệu nền <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. Trong lĩnh vực hàn kết cấu nhôm bọt kẹp (AFS), phương pháp hàn khuấy ma sát dùng chôn kép (BT-FSW) với tốc độ tịnh tiến 12 mm/phút và tốc độ quay 1250 vòng/phút đã đạt ứng suất nén tối đa 99,1 MPa ở biến dạng 0,3135, lực uốn ba điểm tối đa 7250,8 N và lực cắt 2104 N mà không cần dùng keo dán hay vật liệu vảy hàn bổ sung <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. Đối với cặp vật liệu dị chủng đồng ETP và hợp kim nhôm AA6063, mô hình tối ưu hóa đa mục tiêu kết hợp phương pháp bề mặt đáp ứng (RSM) và phân tích quyết định đa tiêu chí mờ trực cảm (IFMCDA) đã xác định thành công các thông số hàn tối ưu cho độ bền kéo, độ giãn dài và độ cứng <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<h3>Luyện kim hàn và Nâng cấp Cơ tính Mối nối Công nghiệp</h3>\n<p>Việc phủ đắp bề mặt và lựa chọn vật liệu phụ đóng vai trò quyết định trong việc cải thiện khả năng hàn của các loại thép kết cấu độ bền cao. Nghiên cứu về việc phủ đắp thép không gỉ mactenxit AISI 420 và austenit 430 lên thép cường độ cao A-517 bằng phương pháp hàn TIG (GTAW) ở các trạng thái hàn và xử lý nhiệt khác nhau (200 °C và 300 °C) cho thấy khả năng hàn và độ bền kéo được cải thiện rõ rệt <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Độ cứng dọc theo mặt cắt của đường 1.\" loading=\"lazy\"><figcaption><strong>Hình 4.</strong> Độ cứng dọc theo mặt cắt của đường 1. <span class=\"fig-credit\">Nguồn: Hình 11 trong bài gốc – Rostami et al. (2027), “Investigation on A-517 GTAW Cladding Effect on Mechanical Properties and Weldability by Stainless Steel Filler Metal”, <em>International Journal of Engineering</em>, <a href=\"https://doi.org/10.5829/ije.2027.40.01a.17\" target=\"_blank\" rel=\"noopener\">doi:10.5829/ije.2027.40.01a.17</a> [<a href=\"#ref-9\">9</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Trong khi đó, việc đánh giá độ rỗng và độ cứng cục bộ trên các chi tiết nhôm 6061 chế tạo bằng công nghệ bồi đắp phun lạnh (CSAM) khi hàn bằng các phương pháp TIG, MIG và FSW cho thấy các phương pháp nóng chảy như TIG và MIG tạo ra vùng rỗ khí lớn do hydro, với tỷ lệ diện tích lỗ hổng 2D giảm từ 26,3% xuống 18,6% (đối với TIG) và từ 30,7% xuống 22,1% (đối với MIG) khi tiền gia nhiệt mối hàn <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Ngược lại, phương pháp FSW ít xuất hiện rỗ khí vĩ mô hơn hẳn và đạt mức khôi phục độ cứng khoảng 82–84% <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Đối với các mối nối pin lithium-ion, việc kiểm soát khuyết tật hàn mối nối (tab weld) và các lỗi sản xuất đóng vai trò then chốt trong việc ngăn ngừa hiện tượng quá nhiệt và phá hỏng catatrophic <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Lộ trình hướng tới chất lượng pin khép kín, dự đoán được.\" loading=\"lazy\"><figcaption><strong>Hình 5.</strong> Lộ trình hướng tới chất lượng pin khép kín, dự đoán được. <span class=\"fig-credit\">Nguồn: Hình 6 trong bài gốc – Chaudhary et al. (2026), “Closing the Loop From Manufacturing Defects to Field Failures: Root Causes, Detection, and Quality Control Strategies for Preventing Thermal Runaway in Lithium‐Ion Batteries”, <em>Safety Science and Technology</em>, <a href=\"https://doi.org/10.1002/sst3.70071\" target=\"_blank\" rel=\"noopener\">doi:10.1002/sst3.70071</a> [<a href=\"#ref-11\">11</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Gia công Bồi đắp Kim loại và Vật liệu Liên kết Điện tử</h3>\n<p>Trong lĩnh vực in 3D kim loại và đóng gói vi điện tử, các nghiên cứu tập trung vào mô hình hóa nhiệt độ và vật liệu thiêu kết nhiệt độ thấp. Để dự đoán trường nhiệt độ tức thời trong quá trình nung chảy bột laser (L-PBF) hợp kim SS316L, một mạng thần kinh dựa trên dữ liệu có sự điều regular hóa vật lý đã đạt sai số bình phương trung bình gốc (RMSE) là 9.01 K <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Mô tả không gian các vùng nhiệt độ khác nhau trong mô phỏng LPBF.\" loading=\"lazy\"><figcaption><strong>Hình 6.</strong> Mô tả không gian các vùng nhiệt độ khác nhau trong mô phỏng LPBF. <span class=\"fig-credit\">Nguồn: Hình 4 trong bài gốc – Manjunath et al. (2026), “A parameterized data-driven neural network with physics-based regularization for thermal field prediction in metal additive manufacturing”, <em>The International Journal of Advanced Manufacturing Technology</em>, <a href=\"https://doi.org/10.1007/s00170-026-19571-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s00170-026-19571-8</a> [<a href=\"#ref-12\">12</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<p>Liên quan đến việc tái sử dụng bột in trong quá trình L-PBF hợp kim AlSi7Mg, phương pháp làm mới bột (refreshing) giúp giảm 20.3% thời gian chảy Hall qua 4 chu kỳ chạy máy, trong khi phương pháp dùng lại đơn mẻ làm thay đổi đặc tính bột từ không chảy sang chảy được, với hàm lượng magie giảm lần lượt 7.1% và 9.4% <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. Trong công nghệ thiêu kết hạt nano đồng cho mô-đun công suất diện tích lớn (12 mm × 12 mm), việc sử dụng bột đồng dạng cành cây (dendritic) giúp đạt độ bền cắt 35.1 và 70.6 MPa (ở áp suất 15 MPa trong 1 và 10 phút) cùng độ xốp đường nối dưới 10% <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Ảnh hiển thị vi cấu trúc quang học ở vùng ngoài cùng của đường nối sau khi thiêu kết mẫu 3 mm × 3 mm.\" loading=\"lazy\"><figcaption><strong>Hình 7.</strong> Ảnh hiển thị vi cấu trúc quang học ở vùng ngoài cùng của đường nối sau khi thiêu kết mẫu 3 mm × 3 mm. <span class=\"fig-credit\">Nguồn: Hình 4a trong bài gốc – Oh et al. (2026), “Low-Temperature, Large-Area Sinter-Bonding of Dendritic Cu Paste for Substrate-to-Base-Plate Joints”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16111254\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16111254</a> [<a href=\"#ref-14\">14</a>]. Giấy phép: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; ảnh được thu nhỏ, không chỉnh sửa nội dung.</span></figcaption></figure>\n<h3>Hàm ý thực tiễn</h3>\n<ul>\n<li>Việc tích hợp các mô hình học sâu và hệ thống điều khiển thích ứng (như DL-ACS) mang lại tiềm năng lớn để tự động hóa phát hiện khuyết tật và giảm thiểu thời gian dừng máy trong các dây chuyền hàn tự động tại các nhà máy cơ khí.</li>\n<li>Ứng dụng nhiệt luyện sau hàn (PWHT) và xử lý ma sát bề mặt (FSP) cung cấp giải pháp kỹ thuật hiệu quả để phục hồi cơ tính, tăng độ cứng và cải thiện độ bền mỏi cho các kết cấu hợp kim nhôm và gang chịu lực cao.</li>\n<li>Công nghệ thiêu kết bột đồng nhiệt độ thấp và hàn khuấy ma sát chôn kép mở ra hướng đi mới trong việc chế tạo mối nối linh kiện điện tử công suất lớn và kết cấu nhôm bọt mà không cần dùng keo dán hay vật liệu vảy hàn truyền thống.</li>\n</ul>",
+  "content_en": "<p class=\"lead\">This week's science digest covers the latest advancements in welding technology, metal additive manufacturing (AM), electronic packaging, and smart industrial automation. The studies highlight the role of artificial intelligence, microstructural optimization, and thermal control in improving structural integrity.</p>\n<h3>Artificial Intelligence and Automation in Welding Processes</h3>\n<p>The application of machine learning and artificial intelligence in welding automation is addressing quality inspection and real-time control challenges. The authors of <sup class=\"cite\">[<a href=\"#ref-1\">1</a>]</sup> established a custom process window for robotic laser weld brazing (LWB) to control defects, defining a wire-adjusted heat input approach to delineate boundaries between defect-free conditions and lack of adhesion, pores, or base metal melting. In another process optimization effort, a Deep Learning-based Adaptive Control System (DL-ACS) combining a 1D Convolutional Neural Network and a Bi-LSTM network was evaluated through a 24-week industrial simulation <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>. The DL-ACS achieved an Overall Equipment Effectiveness (OEE) of 91.8% compared to 71.6% for traditional PID control, while reducing unplanned downtime by 83.4% and cutting scrap rates by 61.2% <sup class=\"cite\">[<a href=\"#ref-2\">2</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig6.jpg\" alt=\"Overall Equipment Effectiveness (OEE) comparison across four control systems over a 24-week industrial simulation.\" loading=\"lazy\"><figcaption><strong>Figure 1.</strong> Overall Equipment Effectiveness (OEE) comparison across four control systems over a 24-week industrial simulation. <span class=\"fig-credit\">Source: Fig. 3 of the original article – U et al. (2026), “Adaptive Intelligence in the Factory: A Deep Learning Framework for Real-Time Anomaly Response and Adaptive Process Control in Industrial Manufacturing Automation”, <em>Computer and decision making.</em>, <a href=\"https://doi.org/10.1922/comdem.v3i7s.19116\" target=\"_blank\" rel=\"noopener\">doi:10.1922/comdem.v3i7s.19116</a> [<a href=\"#ref-2\">2</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>To ensure industrial data consistency, a hybrid constraint language named GraphCo was introduced to validate machine learning pipelines within industrial knowledge graphs for resistance spot welding lines <sup class=\"cite\">[<a href=\"#ref-3\">3</a>]</sup>. Furthermore, the application of artificial intelligence and neural networks in evaluating AA7075 aluminum alloy properties, predicting corrosion, and automating defect classification was comprehensively reviewed in <sup class=\"cite\">[<a href=\"#ref-4\">4</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig5.jpg\" alt=\"Schematic diagram of Hall-Heroult Process.\" loading=\"lazy\"><figcaption><strong>Figure 2.</strong> Schematic diagram of Hall-Heroult Process. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Ali (2026), “Materials Engineering, Degradation Mechanisms, and the Role of Artificial Intelligence for Aluminium Alloy AA7075: A Technical Review”, <em>Zenodo (CERN European Organization for Nuclear Research)</em>, <a href=\"https://doi.org/10.5281/zenodo.24084622\" target=\"_blank\" rel=\"noopener\">doi:10.5281/zenodo.24084622</a> [<a href=\"#ref-4\">4</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Friction Stir Welding and Thermomechanical Materials Processing</h3>\n<p>Friction Stir Welding (FSW) and Friction Stir Processing (FSP) continue to demonstrate superior capabilities in refining microstructures and mechanical properties of difficult-to-weld materials. Research on 6061-T6 aluminum alloy joints showed that applying Post-Weld Heat Treatment (PWHT)—consisting of solution treatment at 520 °C for 1 h, water quenching, and artificial aging at 170 °C for 7 h—increased the mean grain size in the nugget zone from 10.17 to 16.15 µm and the recrystallized fraction from 84.8% to 95.8% <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>. Ultimate tensile and yield strengths of the heat-treated joints increased from 202.3 to 299.8 MPa and from 149.8 to 249.6 MPa, respectively <sup class=\"cite\">[<a href=\"#ref-5\">5</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig3.jpg\" alt=\"EBSD grain structures and average grain sizes in the HAZ, TMAZ, and NZ of the 6061-T6 aluminium alloy FSW joints before and after PWHT.\" loading=\"lazy\"><figcaption><strong>Figure 3.</strong> EBSD grain structures and average grain sizes in the HAZ, TMAZ, and NZ of the 6061-T6 aluminium alloy FSW joints before and after PWHT. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Hu et al. (2026), “Effects of Post-Weld Heat Treatment on Microstructural Evolution and Mechanical Properties of Friction Stir Welded 6061-T6 Aluminium Alloy Joints”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16111274\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16111274</a> [<a href=\"#ref-5\">5</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>For ductile cast iron (60-40-18), multi-pass FSP reduced intermetallic particle size in the stir zone and improved average grain refinement by 43% <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. After 1, 2, and 3 passes, hardness increased by 37%, 61%, and 87%, respectively, while wear resistance improved by 41%, 65%, and 75% compared to the base metal <sup class=\"cite\">[<a href=\"#ref-6\">6</a>]</sup>. In Aluminum Foam Sandwich (AFS) panel joining, Bobbin Tool Friction Stir Welding (BT-FSW) at a traverse speed of 12 mm/min and rotational speed of 1250 rpm achieved a maximum compressive stress of 99.1 MPa at a strain of 0.3135, a maximum three-point bending load of 7250.8 N, and an interfacial shear load of 2104 N without adhesives or brazing fillers <sup class=\"cite\">[<a href=\"#ref-7\">7</a>]</sup>. For dissimilar ETP copper and AA6063 aluminum alloy joints, an integrated optimization model combining Response Surface Methodology (RSM) and Fuzzy Multi-Criteria Decision Analysis (IFMCDA) successfully identified optimal parameters for tensile strength, elongation, and microhardness <sup class=\"cite\">[<a href=\"#ref-8\">8</a>]</sup>.</p>\n<h3>Welding Metallurgy and Industrial Joint Upgrading</h3>\n<p>Surfacing and filler metal selection play critical roles in enhancing the weldability of high-strength structural steels. Research on cladding AISI 420 martensitic and 430 austenitic stainless steels onto A-517 high-strength steel via GTAW across different as-welded and heat-treated conditions (200 °C and 300 °C) demonstrated improved weldability and mechanical performance <sup class=\"cite\">[<a href=\"#ref-9\">9</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig1.jpg\" alt=\"Hardness along the cross section of line 1.\" loading=\"lazy\"><figcaption><strong>Figure 4.</strong> Hardness along the cross section of line 1. <span class=\"fig-credit\">Source: Fig. 11 of the original article – Rostami et al. (2027), “Investigation on A-517 GTAW Cladding Effect on Mechanical Properties and Weldability by Stainless Steel Filler Metal”, <em>International Journal of Engineering</em>, <a href=\"https://doi.org/10.5829/ije.2027.40.01a.17\" target=\"_blank\" rel=\"noopener\">doi:10.5829/ije.2027.40.01a.17</a> [<a href=\"#ref-9\">9</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Meanwhile, an investigation into porosity formation and local hardness in Cold Spray Additive Manufacturing (CSAM) 6061 aluminum joined by TIG, MIG, and FSW revealed that fusion processes like TIG and MIG generated substantial hydrogen-assisted porosity, with 2D pore area fractions dropping from 26.3% to 18.6% (TIG) and from 30.7% to 22.1% (MIG) after pre-weld heat treatment <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. Conversely, FSW exhibited significantly less macro-porosity and achieved hardness recoveries of approximately 82–84% <sup class=\"cite\">[<a href=\"#ref-10\">10</a>]</sup>. In lithium-ion battery manufacturing, controlling tab weld defects and production irregularities is essential for mitigating internal short circuits and thermal runaway risks <sup class=\"cite\">[<a href=\"#ref-11\">11</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig7.jpg\" alt=\"Roadmap toward predictive, closed-loop battery quality.\" loading=\"lazy\"><figcaption><strong>Figure 5.</strong> Roadmap toward predictive, closed-loop battery quality. <span class=\"fig-credit\">Source: Fig. 6 of the original article – Chaudhary et al. (2026), “Closing the Loop From Manufacturing Defects to Field Failures: Root Causes, Detection, and Quality Control Strategies for Preventing Thermal Runaway in Lithium‐Ion Batteries”, <em>Safety Science and Technology</em>, <a href=\"https://doi.org/10.1002/sst3.70071\" target=\"_blank\" rel=\"noopener\">doi:10.1002/sst3.70071</a> [<a href=\"#ref-11\">11</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Metal Additive Manufacturing and Electronic Packaging Interconnects</h3>\n<p>In metal additive manufacturing and electronic packaging, studies focused on thermal field modeling and low-temperature sintering materials. To predict transient thermal fields in Laser Powder Bed Fusion (L-PBF) of SS316L, a physics-regularized data-driven neural network achieved a root mean squared error (RMSE) of 9.01 K <sup class=\"cite\">[<a href=\"#ref-12\">12</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig4.jpg\" alt=\"Spatial visualization of the different thermal regions in the LPBF simulation.\" loading=\"lazy\"><figcaption><strong>Figure 6.</strong> Spatial visualization of the different thermal regions in the LPBF simulation. <span class=\"fig-credit\">Source: Fig. 4 of the original article – Manjunath et al. (2026), “A parameterized data-driven neural network with physics-based regularization for thermal field prediction in metal additive manufacturing”, <em>The International Journal of Advanced Manufacturing Technology</em>, <a href=\"https://doi.org/10.1007/s00170-026-19571-8\" target=\"_blank\" rel=\"noopener\">doi:10.1007/s00170-026-19571-8</a> [<a href=\"#ref-12\">12</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<p>Regarding powder reuse in L-PBF of AlSi7Mg, powder refreshing reduced Hall flow time by 20.3% over four runs, whereas single batch reuse transitioned powder from non-flowing to flowing, with magnesium content decreasing by 7.1% and 9.4%, respectively <sup class=\"cite\">[<a href=\"#ref-13\">13</a>]</sup>. In low-temperature nanoscale copper sinter bonding for large-area power modules (12 mm × 12 mm), dendritic copper paste achieved shear strengths of 35.1 and 70.6 MPa (at 15 MPa for 1 and 10 min) with bond-line porosity below 10% <sup class=\"cite\">[<a href=\"#ref-14\">14</a>]</sup>.</p>\n<figure class=\"post-figure\"><img src=\"images/blog/2026-11-22-diem-tin-khoa-hoc/fig2.jpg\" alt=\"Optical micrograph of the cross-sectional microstructure at the outermost region of the bond line formed after sinter bonding the 3 mm × 3 mm sample.\" loading=\"lazy\"><figcaption><strong>Figure 7.</strong> Optical micrograph of the cross-sectional microstructure at the outermost region of the bond line formed after sinter bonding the 3 mm × 3 mm sample. <span class=\"fig-credit\">Source: Fig. 4a of the original article – Oh et al. (2026), “Low-Temperature, Large-Area Sinter-Bonding of Dendritic Cu Paste for Substrate-to-Base-Plate Joints”, <em>Metals</em>, <a href=\"https://doi.org/10.3390/met16111254\" target=\"_blank\" rel=\"noopener\">doi:10.3390/met16111254</a> [<a href=\"#ref-14\">14</a>]. Licence: <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY</a>; resized, content unchanged.</span></figcaption></figure>\n<h3>Practical implications</h3>\n<ul>\n<li>Integrating deep learning models and adaptive control systems (such as DL-ACS) offers significant potential for automating defect detection and reducing downtime in automated welding production lines.</li>\n<li>Applying post-weld heat treatment (PWHT) and friction stir processing (FSP) provides effective engineering solutions to restore mechanical properties, increase hardness, and enhance fatigue resistance in high-strength aluminum and cast iron structures.</li>\n<li>Low-temperature copper paste sintering and bobbin tool friction stir welding open new pathways for fabricating power electronic modules and foam sandwich structures without relying on conventional adhesives or brazing fillers.</li>\n</ul>",
+  "references": [
+    {
+      "n": 1,
+      "authors": [
+        "Shima Akbarian",
+        "Ryan Scott",
+        "Andrew Ouellette",
+        "Adib Salandari-Rabori",
+        "S. Sarafan",
+        "Priti Wanjara"
+      ],
+      "more_authors": true,
+      "title": "Process optimization of robotic laser weld brazing for AI-friendly dataset generation to enable smart ultrasonic inspection of braze joint quality in Industry 4.0",
+      "journal": "Optics & Laser Technology",
+      "date": "2026-11-17",
+      "doi": "10.1016/j.optlastec.2026.117033",
+      "url": "https://doi.org/10.1016/j.optlastec.2026.117033",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 2,
+      "authors": [
+        "Lavanya M U",
+        "Pushpalatha K R"
+      ],
+      "more_authors": false,
+      "title": "Adaptive Intelligence in the Factory: A Deep Learning Framework for Real-Time Anomaly Response and Adaptive Process Control in Industrial Manufacturing Automation",
+      "journal": "Computer and decision making.",
+      "date": "2026-11-08",
+      "doi": "10.1922/comdem.v3i7s.19116",
+      "url": "https://doi.org/10.1922/comdem.v3i7s.19116",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 3,
+      "authors": [
+        "Zhuoxun Zheng",
+        "Ognjen Savković",
+        "Baifan Zhou",
+        "Ahmet Soylu",
+        "Antonis Klironomos",
+        "Evgeny Kharlamov"
+      ],
+      "more_authors": false,
+      "title": "GraphCo: A hybrid constraint language for validating machine learning pipelines in industrial knowledge graphs",
+      "journal": "Data & Knowledge Engineering",
+      "date": "2026-11-14",
+      "doi": "10.1016/j.datak.2026.102660",
+      "url": "https://doi.org/10.1016/j.datak.2026.102660",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 4,
+      "authors": [
+        "Ali"
+      ],
+      "more_authors": false,
+      "title": "Materials Engineering, Degradation Mechanisms, and the Role of Artificial Intelligence for Aluminium Alloy AA7075: A Technical Review",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "date": "2026-11-09",
+      "doi": "10.5281/zenodo.24084622",
+      "url": "https://doi.org/10.5281/zenodo.24084622",
+      "license": "cc-by",
+      "topic": "ai_welding"
+    },
+    {
+      "n": 5,
+      "authors": [
+        "Bin Hu",
+        "Long Li"
+      ],
+      "more_authors": false,
+      "title": "Effects of Post-Weld Heat Treatment on Microstructural Evolution and Mechanical Properties of Friction Stir Welded 6061-T6 Aluminium Alloy Joints",
+      "journal": "Metals",
+      "date": "2026-11-20",
+      "doi": "10.3390/met16111274",
+      "url": "https://doi.org/10.3390/met16111274",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 6,
+      "authors": [
+        "Abdulsalam Y. Obaid",
+        "Osama Al-Jenabi",
+        "Bahjat H. Sulaiman"
+      ],
+      "more_authors": false,
+      "title": "The Effect of Multi-Pass Friction Stir Processing on Mechanical Properties of Ductile Cast Iron",
+      "journal": "The Journal of Engineering Research [TJER]",
+      "date": "2026-11-20",
+      "doi": "10.53540/1726-6742.1332",
+      "url": "https://doi.org/10.53540/1726-6742.1332",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 7,
+      "authors": [
+        "A. Rezaei",
+        "S.M. Zebarjad"
+      ],
+      "more_authors": false,
+      "title": "Evaluation of the mechanical behavior of aluminum/aluminum foam/aluminum sandwich panels fabricated by Bobbin Tool Friction Stir Welding",
+      "journal": "Next Materials",
+      "date": "2026-11-16",
+      "doi": "10.1016/j.nxmate.2026.104024",
+      "url": "https://doi.org/10.1016/j.nxmate.2026.104024",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 8,
+      "authors": [
+        "M. Sachidhanandam",
+        "N. Harshavardhana"
+      ],
+      "more_authors": false,
+      "title": "Intuitionistic Fuzzy Multi‐Criteria decision process parameter Optimization Model for Friction Stir Welding Parameters for Dissimilar Directionally rolled ETP Copper and AA6063 Alloy",
+      "journal": "Next Materials",
+      "date": "2026-11-17",
+      "doi": "10.1016/j.nxmate.2026.103782",
+      "url": "https://doi.org/10.1016/j.nxmate.2026.103782",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 9,
+      "authors": [
+        "H. Rostami",
+        "Hamid Baseri",
+        "Majid Elyasi"
+      ],
+      "more_authors": false,
+      "title": "Investigation on A-517 GTAW Cladding Effect on Mechanical Properties and Weldability by Stainless Steel Filler Metal",
+      "journal": "International Journal of Engineering",
+      "date": "2027-01-01",
+      "doi": "10.5829/ije.2027.40.01a.17",
+      "url": "https://doi.org/10.5829/ije.2027.40.01a.17",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 10,
+      "authors": [
+        "Aravinthan Arumugam",
+        "Ryan Riedel",
+        "Krishnan Kannoorpatti"
+      ],
+      "more_authors": false,
+      "title": "A study on porosity formation in cold-spray additively manufactured 6061 aluminium parts using MIG, TIG and FSW welding processes",
+      "journal": "The International Journal of Advanced Manufacturing Technology",
+      "date": "2026-11-18",
+      "doi": "10.1007/s00170-026-19537-w",
+      "url": "https://doi.org/10.1007/s00170-026-19537-w",
+      "license": "cc-by",
+      "topic": "welding"
+    },
+    {
+      "n": 11,
+      "authors": [
+        "Kemila A. Chaudhary",
+        "Ronit L. Chaudhari",
+        "Vatsal Chaudhari",
+        "Harsh P. Panchal",
+        "Arjun S. Chaudhari",
+        "Yashkumar N. Patel"
+      ],
+      "more_authors": true,
+      "title": "Closing the Loop From Manufacturing Defects to Field Failures: Root Causes, Detection, and Quality Control Strategies for Preventing Thermal Runaway in Lithium‐Ion Batteries",
+      "journal": "Safety Science and Technology",
+      "date": "2026-11-14",
+      "doi": "10.1002/sst3.70071",
+      "url": "https://doi.org/10.1002/sst3.70071",
+      "license": "cc-by",
+      "topic": "applications"
+    },
+    {
+      "n": 12,
+      "authors": [
+        "Aishwarya Manjunath",
+        "Hang Tran",
+        "Selvamurugan Palaniappan",
+        "Shashank Sharma",
+        "Song Fu",
+        "Narendra B. Dahotre"
+      ],
+      "more_authors": false,
+      "title": "A parameterized data-driven neural network with physics-based regularization for thermal field prediction in metal additive manufacturing",
+      "journal": "The International Journal of Advanced Manufacturing Technology",
+      "date": "2026-11-20",
+      "doi": "10.1007/s00170-026-19571-8",
+      "url": "https://doi.org/10.1007/s00170-026-19571-8",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 13,
+      "authors": [
+        "James H. Warner",
+        "Simon Peter Ringer",
+        "Gwénaëlle Proust"
+      ],
+      "more_authors": false,
+      "title": "Comparing the refreshing and single batch powder reuse methods for AlSi7Mg produced by laser powder bed fusion",
+      "journal": "The International Journal of Advanced Manufacturing Technology",
+      "date": "2026-11-20",
+      "doi": "10.1007/s00170-026-19589-y",
+      "url": "https://doi.org/10.1007/s00170-026-19589-y",
+      "license": "cc-by",
+      "topic": "metal_am"
+    },
+    {
+      "n": 14,
+      "authors": [
+        "Ji-Eon Oh",
+        "Jong‐Hyun Lee"
+      ],
+      "more_authors": false,
+      "title": "Low-Temperature, Large-Area Sinter-Bonding of Dendritic Cu Paste for Substrate-to-Base-Plate Joints",
+      "journal": "Metals",
+      "date": "2026-11-16",
+      "doi": "10.3390/met16111254",
+      "url": "https://doi.org/10.3390/met16111254",
+      "license": "cc-by",
+      "topic": "low_temp_solder"
+    },
+    {
+      "n": 15,
+      "authors": [
+        "Hryhorii Pidhulko"
+      ],
+      "more_authors": false,
+      "title": "Osteointegration as a biological and mechanical process",
+      "journal": "InterConf",
+      "date": "2026-11-20",
+      "doi": "10.51582/interconf.19-20.11.2026.024",
+      "url": "https://doi.org/10.51582/interconf.19-20.11.2026.024",
+      "license": "cc-by-sa",
+      "topic": "metal_am"
+    }
+  ],
+  "generated_by": "AI (Gemini)"
+}
